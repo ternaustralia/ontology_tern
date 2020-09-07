@@ -179,6 +179,15 @@ tern:Dimension a owl:Class ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#Site). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." .
 
+tern:EnvironmentalCharacteristic a owl:Class ;
+    rdfs:label "Environmental Characteristic" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass tern:Observation ;
+            owl:onProperty sosa:isFeatureOfInterestOf ],
+        sosa:FeatureOfInterest ;
+    skos:definition "The environment characteristics  is a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) of a location where [Observations](#Observation) such as the annual mean rainfall or the annual mean temperature are made." .
+
 tern:Input a owl:Class ;
     rdfs:label "Input" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -326,14 +335,6 @@ tern:cardinalDirection a rdf:Property ;
     skos:definition "The cardinal direction of the *thing* represented as a string and expressed by cardinal and intercardinal points. " ;
     skos:example "NNE, W, SE, etc." .
 
-tern:dateCommissioned a rdf:Property ;
-    rdfs:label "date commissioned" ;
-    skos:definition "The date when something was commissioned, e.g. a [Site](#Site)." .
-
-tern:dateDecommissioned a rdf:Property ;
-    rdfs:label "date decommissioned" ;
-    skos:definition "The date when something was decommissioned, e.g. a [Site](#Site)." .
-
 tern:dimension a rdf:Property ;
     rdfs:label "dimension" ;
     skos:definition "Link to a [Dimension](#Dimension)." .
@@ -463,15 +464,6 @@ tern:CollectedSample a owl:Class ;
     skos:definition "A [Collected Sample](#CollectedSample) is a [Sample](#Sample) which has been collected in the field. " ;
     skos:example "Soil sample or plant sample from the field." .
 
-tern:EnvironmentalCharacteristic a owl:Class ;
-    rdfs:label "Environmental Characteristic" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass tern:Observation ;
-            owl:onProperty sosa:isFeatureOfInterestOf ],
-        sosa:FeatureOfInterest ;
-    skos:definition "The environment characteristics  is a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) of a location where [Observations](#Observation) such as the annual mean rainfall or the annual mean temperature are made." .
-
 tern:FixedLandPlatform a owl:Class ;
     rdfs:label "Fixed Land Platform" ;
     rdfs:subClassOf tern:Platform ;
@@ -514,6 +506,12 @@ tern:PropertyValue a owl:Class ;
 tern:TestAgent a owl:Class ;
     rdfs:label "Test agent" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty schema:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty dcterms:description ],
+        [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty rdfs:label ],
         [ a owl:Restriction ;
@@ -521,19 +519,21 @@ tern:TestAgent a owl:Class ;
             owl:onProperty dcterms:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty schema:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty dcterms:description ] .
+            owl:onProperty rdfs:label ] .
 
 tern:centroidPoint a rdf:Property ;
     rdfs:label "centroid point" ;
     rdfs:range loc:Point ;
     rdfs:subPropertyOf geosparql:hasGeometry ;
     skos:definition "The centroid point of the subject." .
+
+tern:dateCommissioned a rdf:Property ;
+    rdfs:label "date commissioned" ;
+    skos:definition "The date when something was commissioned, e.g. a [Site](#Site)." .
+
+tern:dateDecommissioned a rdf:Property ;
+    rdfs:label "date decommissioned" ;
+    skos:definition "The date when something was decommissioned, e.g. a [Site](#Site)." .
 
 tern:hasSamplingPoint a rdf:Property ;
     rdfs:label "has sampling point" ;
@@ -822,9 +822,16 @@ tern:Site a owl:Class ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty prov:generatedAtTime ],
         [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:hasEnvironmentalCharacteristic ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass data:QuantitativeMeasure ;
             owl:onProperty tern:area ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:date ;
+            owl:onProperty tern:dateDecommissioned ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass xsd:string ;
@@ -854,14 +861,14 @@ tern:Site a owl:Class ;
             owl:onClass tern:Dimension ;
             owl:onProperty tern:dimension ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass tern:EnvironmentalCharacteristic ;
-            owl:onProperty tern:hasEnvironmentalCharacteristic ],
-        [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass [ a owl:Class ;
                     owl:unionOf ( loc:Point loc:Polygon ) ] ;
             owl:onProperty geosparql:hasGeometry ],
+        [ a owl:Restriction ;
+            owl:onClass xsd:date ;
+            owl:onProperty tern:dateCommissioned ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
             owl:onClass xsd:string ;
             owl:onProperty dcterms:identifier ;

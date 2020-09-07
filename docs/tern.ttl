@@ -710,9 +710,20 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:hasEnvironmentalCharacteristic ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass data:QuantitativeMeasure ;
       owl:onProperty tern:area ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass xsd:date ;
+      owl:onProperty tern:dateDecommissioned ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -758,12 +769,6 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass tern:EnvironmentalCharacteristic ;
-      owl:onProperty tern:hasEnvironmentalCharacteristic ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass [
           a owl:Class ;
@@ -773,6 +778,12 @@ tern:Site
             ) ;
         ] ;
       owl:onProperty geosparql:hasGeometry ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass xsd:date ;
+      owl:onProperty tern:dateCommissioned ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
