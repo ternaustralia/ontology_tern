@@ -1,0 +1,17 @@
+# pyLODE Inject configuration file (https://github.com/edmondchuc/pylode-inject)
+
+logo:
+    src: 'https://swift.rc.nectar.org.au/v1/AUTH_05bca33fce34447ba7033b9305947f11/static-web-assets/tern/2020-04-09/images/logo-mini-all.png'
+    alt: TERN logo.
+    href: 'https://www.tern.org.au'
+  
+overview:
+    p: An overview of the TERN Ontology.
+    figures:
+        - figure:
+            src: overview.png
+            alt: TERN Ontology diagram.
+            caption: TERN Ontology overview.
+
+classes:
+    figures: []
