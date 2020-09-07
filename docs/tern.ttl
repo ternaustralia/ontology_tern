@@ -248,6 +248,17 @@ tern:Method
   rdfs:subClassOf skos:Concept ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:allValuesFrom [
+          a owl:Class ;
+          owl:unionOf (
+              xsd:string
+              xsd:anyURI
+            ) ;
+        ] ;
+      owl:onProperty dcterms:source ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty tern:equipment ;
@@ -269,6 +280,12 @@ tern:Method
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty tern:scope ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass xsd:string ;
+      owl:onProperty skos:prefLabel ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an [Observation](#Observation) or a [Sample](#Sample). It explains the steps to be carried out to arrive at reproducible [Result](#Result)." ;
 .

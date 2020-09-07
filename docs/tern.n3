@@ -200,6 +200,10 @@ tern:Method a owl:Class ;
     rdfs:seeAlso <https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf>,
         <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:unionOf ( xsd:string xsd:anyURI ) ] ;
+            owl:onProperty dcterms:source ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:string ;
             owl:onProperty tern:equipment ],
@@ -215,6 +219,10 @@ tern:Method a owl:Class ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:string ;
             owl:onProperty tern:scope ],
+        [ a owl:Restriction ;
+            owl:onClass xsd:string ;
+            owl:onProperty skos:prefLabel ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         skos:Concept ;
     skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an [Observation](#Observation) or a [Sample](#Sample). It explains the steps to be carried out to arrive at reproducible [Result](#Result)." .
 
@@ -506,6 +514,9 @@ tern:PropertyValue a owl:Class ;
 tern:TestAgent a owl:Class ;
     rdfs:label "Test agent" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dcterms:description ],
         [ a owl:Restriction ;
@@ -516,10 +527,7 @@ tern:TestAgent a owl:Class ;
             owl:onProperty schema:name ],
         [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty dcterms:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:label ] .
+            owl:onProperty dcterms:description ] .
 
 tern:centroidPoint a rdf:Property ;
     rdfs:label "centroid point" ;
@@ -634,6 +642,12 @@ tern:SiteVisit a owl:Class ;
 tern:TestOrganization a owl:Class ;
     rdfs:label "Test organization" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty tern-org:isDissolved ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tern:TestOrganization ;
+            owl:onProperty schema:parentOrganization ],
+        [ a owl:Restriction ;
             owl:allValuesFrom tern:TestOrganization ;
             owl:onProperty schema:subOrganization ],
         [ a owl:Restriction ;
@@ -650,12 +664,6 @@ tern:TestOrganization a owl:Class ;
             owl:onClass tern:TestAddress ;
             owl:onProperty schema:address ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty tern-org:isDissolved ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tern:TestOrganization ;
-            owl:onProperty schema:parentOrganization ],
         tern:TestAgent .
 
 tern:Transect a owl:Class ;
