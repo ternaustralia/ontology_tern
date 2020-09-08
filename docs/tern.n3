@@ -19,7 +19,13 @@
 
 data:Boolean rdfs:subClassOf tern:Result .
 
-data:Concept rdfs:subClassOf tern:Result .
+data:Concept rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:globalValue ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:globalVocabulary ],
+        tern:Result .
 
 data:Count rdfs:subClassOf tern:Result .
 
@@ -50,6 +56,11 @@ tern: a owl:Ontology ;
         loc:,
         tern-org:,
         <https://w3id.org/tern/ontologies/sd/> .
+
+tern:CategoricalValue a owl:Class ;
+    rdfs:label "Categorical Value" ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A [Categorical Value](#CategoricalValue) to categorise some [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest)" .
 
 tern:FluxTower a owl:Class ;
     rdfs:label "Flux Tower" ;
@@ -90,6 +101,11 @@ tern:MobilePlatform a owl:Class ;
     rdfs:label "Mobile Platform" ;
     rdfs:subClassOf tern:Platform ;
     skos:definition "A moving mobile platform on land or in air." .
+
+tern:ObservationTheme a owl:Class ;
+    rdfs:label "Observation Theme" ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "An [Observation Theme](#ObservationTheme) categorises [Parameters](#Parameter) based on domain." .
 
 tern:Sampler a owl:Class ;
     rdfs:label "Sampler" ;
@@ -282,49 +298,6 @@ tern:SiteTaxon a owl:Class ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         tern:Sample .
 
-tern:TestAddress a owl:Class ;
-    rdfs:label "Test address" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty schema:postalCode ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass [ a owl:Class ;
-                    owl:unionOf ( xsd:string skos:Concept ) ] ;
-            owl:onProperty schema:addressCountry ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty schema:addressRegion ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty schema:postOfficeBoxNumber ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange [ a owl:Class ;
-                    owl:unionOf ( xsd:string skos:Concept ) ] ;
-            owl:onProperty schema:addressLocality ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty schema:streetAddress ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
-
-tern:TestPerson a owl:Class ;
-    rdfs:label "Test person" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom tern:TestOrganization ;
-            owl:onProperty schema:memberOf ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty schema:familyName ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty schema:givenName ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        tern:TestAgent .
-
 tern:area a rdf:Property ;
     rdfs:label "area" ;
     skos:definition "The extent or measurement of a surface or piece of land." .
@@ -349,14 +322,6 @@ tern:fluxnetID a rdf:Property ;
     rdfs:seeAlso <https://fluxnet.org/> ;
     skos:definition "The unique identifier for flux towers registered with FLUXNET." ;
     skos:example "AU-ASM" .
-
-tern:globalValue a rdf:Property ;
-    rdfs:label "global value" ;
-    skos:definition "The global controlled vocabulary concept (in the closed system)." .
-
-tern:globalVocabulary a rdf:Property ;
-    rdfs:label "global vocabulary" ;
-    skos:definition "The global vocabulary which the global:value belongs to (in the closed system)." .
 
 tern:hadSubActivity a rdf:Property ;
     rdfs:label "had sub activity" ;
@@ -503,24 +468,6 @@ tern:PropertyValue a owl:Class ;
 		data:value "Great Victoria Desert Nature Reserve" ;
 	] .""" .
 
-tern:TestAgent a owl:Class ;
-    rdfs:label "Test agent" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty schema:name ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty dcterms:description ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty rdfs:label ] .
-
 tern:centroidPoint a rdf:Property ;
     rdfs:label "centroid point" ;
     rdfs:range loc:Point ;
@@ -534,6 +481,14 @@ tern:dateCommissioned a rdf:Property ;
 tern:dateDecommissioned a rdf:Property ;
     rdfs:label "date decommissioned" ;
     skos:definition "The date when something was decommissioned, e.g. a [Site](#Site)." .
+
+tern:globalValue a rdf:Property ;
+    rdfs:label "global value" ;
+    skos:definition "The global controlled vocabulary concept (in the closed system)." .
+
+tern:globalVocabulary a rdf:Property ;
+    rdfs:label "global vocabulary" ;
+    skos:definition "The global vocabulary which the global:value belongs to (in the closed system)." .
 
 tern:hasSamplingPoint a rdf:Property ;
     rdfs:label "has sampling point" ;
@@ -638,33 +593,6 @@ tern:SiteVisit a owl:Class ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         prov:Activity ;
     skos:definition "A discrete time-bounded visit to a site, during which sampling or observation activities are undertaken." .
-
-tern:TestOrganization a owl:Class ;
-    rdfs:label "Test organization" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty tern-org:isDissolved ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tern:TestOrganization ;
-            owl:onProperty schema:parentOrganization ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tern:TestOrganization ;
-            owl:onProperty schema:subOrganization ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tern:TestPerson ;
-            owl:onProperty schema:member ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-org:isDissolved ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty schema:email ],
-        [ a owl:Restriction ;
-            owl:onClass tern:TestAddress ;
-            owl:onProperty schema:address ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        tern:TestAgent .
 
 tern:Transect a owl:Class ;
     rdfs:label "Transect" ;

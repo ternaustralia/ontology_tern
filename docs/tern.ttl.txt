@@ -1,117 +1,109 @@
 @startuml
 title TERN Ontology
+"skos:Concept" <|-- ":CategoricalValue"
+"skos:Concept" <|-- ":Parameter"
+"sosa:Sample" <|-- ":Sample"
+":Sample" <|-- ":SiteStratumTaxon"
 "sosa:FeatureOfInterest" <|-- ":EnvironmentalCharacteristic"
-":Platform" <|-- ":FixedLandPlatform"
-"sosa:ObservableProperty" <|-- ":ObservableProperty"
+"sosa:Platform" <|-- ":Platform"
+"skos:Concept" <|-- ":ObservationTheme"
+":Sample" <|-- ":SiteStratum"
 ":Point" <|-- ":SamplingPoint"
+"sosa:Procedure" <|-- ":Procedure"
+"prov:Activity" <|-- ":Observation"
+"sosa:Observation" <|-- ":Observation"
+":Platform" <|-- ":MobilePlatform"
+":Platform" <|-- ":FixedLandPlatform"
+":FixedLandPlatform" <|-- ":Site"
+":Sample" <|-- ":Site"
+"sosa:Result" <|-- ":Result"
+"schema:PropertyValue" <|-- ":PropertyValue"
+":Sample" <|-- ":SiteTaxon"
+":FixedLandPlatform" <|-- ":FluxTower"
+"ssn:Input" <|-- ":Input"
+":Sample" <|-- ":Transect"
+"sosa:ObservableProperty" <|-- ":ObservableProperty"
 "prov:Activity" <|-- ":Sampling"
 "sosa:Sampling" <|-- ":Sampling"
-":TestAgent" <|-- ":TestPerson"
-":Sample" <|-- ":Transect"
+"prov:Activity" <|-- ":SiteVisit"
+"skos:Concept" <|-- ":Method"
+"sosa:Sampler" <|-- ":Sampler"
 ":Sample" <|-- ":CollectedSample"
 "dwc:MaterialSample" <|-- ":CollectedSample"
-"sosa:Observation" <|-- ":Observation"
-"prov:Activity" <|-- ":Observation"
-"prov:Activity" <|-- ":SiteVisit"
-":FixedLandPlatform" <|-- ":FluxTower"
-"sosa:Platform" <|-- ":Platform"
-"sosa:Sampler" <|-- ":Sampler"
-":Sample" <|-- ":SiteTaxon"
-"ssn:Input" <|-- ":Input"
-"sosa:Sample" <|-- ":Sample"
-"sosa:Procedure" <|-- ":Procedure"
-"skos:Concept" <|-- ":Method"
-"sosa:Result" <|-- ":Result"
-":Platform" <|-- ":MobilePlatform"
-":TestAgent" <|-- ":TestOrganization"
-":Sample" <|-- ":SiteStratumTaxon"
-"skos:Concept" <|-- ":Parameter"
-"schema:PropertyValue" <|-- ":PropertyValue"
-":Sample" <|-- ":Site"
-":FixedLandPlatform" <|-- ":Site"
-":Sample" <|-- ":SiteStratum"
-Class ":ub1bL482C19" [[ub1bL482C19]] {
+Class ":ub1bL794C19" [[ub1bL794C19]] {
+}
+Class ":CategoricalValue" [[https://w3id.org/tern/ontologies/tern/CategoricalValue]] {
+}
+Class ":Parameter" [[https://w3id.org/tern/ontologies/tern/Parameter]] {
+}
+Class "dwc:MaterialSample" [[http://rs.tdwg.org/dwc/terms/MaterialSample]] {
+}
+Class ":Sample" [[https://w3id.org/tern/ontologies/tern/Sample]] {
+}
+Class ":SiteStratumTaxon" [[https://w3id.org/tern/ontologies/tern/SiteStratumTaxon]] {
 }
 Class ":EnvironmentalCharacteristic" [[https://w3id.org/tern/ontologies/tern/EnvironmentalCharacteristic]] {
 }
-Class ":FixedLandPlatform" [[https://w3id.org/tern/ontologies/tern/FixedLandPlatform]] {
+Class ":Platform" [[https://w3id.org/tern/ontologies/tern/Platform]] {
 }
-Class ":ObservableProperty" [[https://w3id.org/tern/ontologies/tern/ObservableProperty]] {
+Class ":ObservationTheme" [[https://w3id.org/tern/ontologies/tern/ObservationTheme]] {
 }
-Class ":TestAgent" [[https://w3id.org/tern/ontologies/tern/TestAgent]] {
+Class ":SiteStratum" [[https://w3id.org/tern/ontologies/tern/SiteStratum]] {
+}
+Class ":ub1bL331C19" [[ub1bL331C19]] {
 }
 Class ":SamplingPoint" [[https://w3id.org/tern/ontologies/tern/SamplingPoint]] {
 }
-Class ":Sampling" [[https://w3id.org/tern/ontologies/tern/Sampling]] {
+Class ":Procedure" [[https://w3id.org/tern/ontologies/tern/Procedure]] {
 }
-Class ":TestPerson" [[https://w3id.org/tern/ontologies/tern/TestPerson]] {
+Class ":Observation" [[https://w3id.org/tern/ontologies/tern/Observation]] {
+}
+Class ":ub1bL504C19" [[ub1bL504C19]] {
+}
+Class ":ub1bL1232C1" [[ub1bL1232C1]] {
+}
+Class ":ub1bL918C25" [[ub1bL918C25]] {
+}
+Class ":MobilePlatform" [[https://w3id.org/tern/ontologies/tern/MobilePlatform]] {
+}
+Class ":FixedLandPlatform" [[https://w3id.org/tern/ontologies/tern/FixedLandPlatform]] {
+}
+Class ":Site" [[https://w3id.org/tern/ontologies/tern/Site]] {
+}
+Class ":Result" [[https://w3id.org/tern/ontologies/tern/Result]] {
+}
+Class ":PropertyValue" [[https://w3id.org/tern/ontologies/tern/PropertyValue]] {
+}
+Class ":ub1bL153C19" [[ub1bL153C19]] {
+}
+Class ":SiteTaxon" [[https://w3id.org/tern/ontologies/tern/SiteTaxon]] {
+}
+Class ":FluxTower" [[https://w3id.org/tern/ontologies/tern/FluxTower]] {
+}
+Class ":ub1bL1225C1" [[ub1bL1225C1]] {
+}
+Class ":Input" [[https://w3id.org/tern/ontologies/tern/Input]] {
 }
 Class ":Transect" [[https://w3id.org/tern/ontologies/tern/Transect]] {
 [[https://w3id.org/tern/ontologies/tern/transectDirection :transectDirection]] : [[http://www.w3.org/2001/XMLSchema#string xsd:string]]
 }
-Class ":CollectedSample" [[https://w3id.org/tern/ontologies/tern/CollectedSample]] {
+Class ":ObservableProperty" [[https://w3id.org/tern/ontologies/tern/ObservableProperty]] {
 }
-Class ":Observation" [[https://w3id.org/tern/ontologies/tern/Observation]] {
+Class ":Sampling" [[https://w3id.org/tern/ontologies/tern/Sampling]] {
 }
 Class ":SiteVisit" [[https://w3id.org/tern/ontologies/tern/SiteVisit]] {
 }
-Class ":ub1bL772C19" [[ub1bL772C19]] {
+Class ":ub1bL266C25" [[ub1bL266C25]] {
 }
-Class ":ub1bL972C23" [[ub1bL972C23]] {
-}
-Class ":FluxTower" [[https://w3id.org/tern/ontologies/tern/FluxTower]] {
-}
-Class ":ub1bL137C19" [[ub1bL137C19]] {
-}
-Class ":ub1bL250C25" [[ub1bL250C25]] {
-}
-Class ":Platform" [[https://w3id.org/tern/ontologies/tern/Platform]] {
-}
-Class ":Sampler" [[https://w3id.org/tern/ontologies/tern/Sampler]] {
-}
-Class ":SiteTaxon" [[https://w3id.org/tern/ontologies/tern/SiteTaxon]] {
-}
-Class ":Input" [[https://w3id.org/tern/ontologies/tern/Input]] {
-}
-Class ":TestAddress" [[https://w3id.org/tern/ontologies/tern/TestAddress]] {
-}
-Class ":Sample" [[https://w3id.org/tern/ontologies/tern/Sample]] {
-}
-Class ":ub1bL1354C1" [[ub1bL1354C1]] {
-}
-Class ":Procedure" [[https://w3id.org/tern/ontologies/tern/Procedure]] {
-}
-Class ":ub1bL1347C1" [[ub1bL1347C1]] {
-}
-Class ":Method" [[https://w3id.org/tern/ontologies/tern/Method]] {
-}
-Class ":Result" [[https://w3id.org/tern/ontologies/tern/Result]] {
-}
-Class ":MobilePlatform" [[https://w3id.org/tern/ontologies/tern/MobilePlatform]] {
-}
-Class ":TestOrganization" [[https://w3id.org/tern/ontologies/tern/TestOrganization]] {
-}
-Class "dwc:MaterialSample" [[http://rs.tdwg.org/dwc/terms/MaterialSample]] {
-}
-Class ":ub1bL896C25" [[ub1bL896C25]] {
-}
-Class ":ub1bL948C19" [[ub1bL948C19]] {
-}
-Class ":SiteStratumTaxon" [[https://w3id.org/tern/ontologies/tern/SiteStratumTaxon]] {
-}
-Class ":Parameter" [[https://w3id.org/tern/ontologies/tern/Parameter]] {
+Class ":ub1bL141C19" [[ub1bL141C19]] {
 }
 Class ":Dimension" [[https://w3id.org/tern/ontologies/tern/Dimension]] {
 }
-Class ":PropertyValue" [[https://w3id.org/tern/ontologies/tern/PropertyValue]] {
+Class ":Method" [[https://w3id.org/tern/ontologies/tern/Method]] {
 }
-Class ":ub1bL315C19" [[ub1bL315C19]] {
+Class ":Sampler" [[https://w3id.org/tern/ontologies/tern/Sampler]] {
 }
-Class ":ub1bL125C19" [[ub1bL125C19]] {
-}
-Class ":Site" [[https://w3id.org/tern/ontologies/tern/Site]] {
-}
-Class ":SiteStratum" [[https://w3id.org/tern/ontologies/tern/SiteStratum]] {
+Class ":CollectedSample" [[https://w3id.org/tern/ontologies/tern/CollectedSample]] {
 }
 header
 Creator: Edmond Chuc (e.chuc@uq.edu.au) 

@@ -37,6 +37,16 @@ data:Boolean
 .
 data:Concept
   rdfs:subClassOf tern:Result ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:globalValue ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:globalVocabulary ;
+    ] ;
 .
 data:Count
   rdfs:subClassOf tern:Result ;
@@ -92,6 +102,12 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
+.
+tern:CategoricalValue
+  a owl:Class ;
+  rdfs:label "Categorical Value" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "A [Categorical Value](#CategoricalValue) to categorise some [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest)" ;
 .
 tern:CollectedSample
   a owl:Class ;
@@ -401,6 +417,12 @@ tern:Observation
       owl:someValuesFrom tern-org:Person ;
     ] ;
   skos:definition "*Observation* - Act of carrying out an (Observation) [Procedure](#Procedure) to estimate or calculate a value of a property of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). Links to a [Sensor](http://w3.org/ns/sosa/Sensor) to describe what made the [Observation](#Observation) and how; links to an [ObservableProperty](#ObservableProperty) to describe what the result is an estimate of, and to a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) to detail what that property was associated with." ;
+.
+tern:ObservationTheme
+  a owl:Class ;
+  rdfs:label "Observation Theme" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "An [Observation Theme](#ObservationTheme) categorises [Parameters](#Parameter) based on domain." ;
 .
 tern:Parameter
   a owl:Class ;
@@ -934,150 +956,6 @@ tern:SiteVisit
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A discrete time-bounded visit to a site, during which sampling or observation activities are undertaken." ;
-.
-tern:TestAddress
-  a owl:Class ;
-  rdfs:label "Test address" ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty schema:postalCode ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass [
-          a owl:Class ;
-          owl:unionOf (
-              xsd:string
-              skos:Concept
-            ) ;
-        ] ;
-      owl:onProperty schema:addressCountry ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty schema:addressRegion ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty schema:postOfficeBoxNumber ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange [
-          a owl:Class ;
-          owl:unionOf (
-              xsd:string
-              skos:Concept
-            ) ;
-        ] ;
-      owl:onProperty schema:addressLocality ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty schema:streetAddress ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-.
-tern:TestAgent
-  a owl:Class ;
-  rdfs:label "Test agent" ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty dcterms:description ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty rdfs:label ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty schema:name ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty dcterms:description ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty rdfs:label ;
-    ] ;
-.
-tern:TestOrganization
-  a owl:Class ;
-  rdfs:label "Test organization" ;
-  rdfs:subClassOf tern:TestAgent ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:boolean ;
-      owl:onProperty tern-org:isDissolved ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:TestOrganization ;
-      owl:onProperty schema:parentOrganization ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:TestOrganization ;
-      owl:onProperty schema:subOrganization ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:TestPerson ;
-      owl:onProperty schema:member ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-org:isDissolved ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty schema:email ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onClass tern:TestAddress ;
-      owl:onProperty schema:address ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-.
-tern:TestPerson
-  a owl:Class ;
-  rdfs:label "Test person" ;
-  rdfs:subClassOf tern:TestAgent ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:TestOrganization ;
-      owl:onProperty schema:memberOf ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty schema:familyName ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onDataRange xsd:string ;
-      owl:onProperty schema:givenName ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
 .
 tern:Transect
   a owl:Class ;
