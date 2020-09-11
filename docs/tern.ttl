@@ -103,6 +103,27 @@ tern:
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
 .
+tern:AffiliateSuperSite
+  a owl:Class ;
+  rdfs:label "Affiliate SuperSite" ;
+  rdfs:seeAlso <https://supersites.tern.org.au/> ;
+  rdfs:subClassOf tern:SuperSite ;
+.
+tern:AusPlotsSite
+  a owl:Class ;
+  rdfs:label "AusPlots Site" ;
+  rdfs:subClassOf tern:Site ;
+.
+tern:AutomaticWeatherStation
+  a owl:Class ;
+  rdfs:label "Automatic Weather Station" ;
+  rdfs:subClassOf tern:FixedPlatform ;
+.
+tern:CORVEGSite
+  a owl:Class ;
+  rdfs:label "CORVEG Site" ;
+  rdfs:subClassOf tern:Site ;
+.
 tern:CategoricalValue
   a owl:Class ;
   rdfs:label "Categorical Value" ;
@@ -163,6 +184,19 @@ tern:Dimension
     ] ;
   skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#Site). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
 .
+tern:EarthObservationSatellite
+  a owl:Class ;
+  rdfs:label "Earth Observation Satellite" ;
+  rdfs:seeAlso <https://gcmd.earthdata.nasa.gov/kms/concept/3466eed1-2fbb-49bf-ab0b-dc08731d502b> ;
+  rdfs:subClassOf tern:MobilePlatform ;
+  skos:definition "Earth observation satellites are satellites specifically designed to observe Earth from orbit, similar to spy satellites but intended for non-military uses such as environmental monitoring, meteorology, map making etc. Source: Wikipedia, http://en.wikipedia.org/wiki/Earth_observation_satellite Group: Platform_Details Entry_ID: Earth Observation Satellites Group: Platform_Identification Platform_Category: Earth Observation Satellites Short_Name: Earth Observation Satellites End_Group End_Group" ;
+.
+tern:EcosystemProcessesSite
+  a owl:Class ;
+  rdfs:label "Ecosystem Processes Site" ;
+  rdfs:subClassOf tern:Site ;
+  skos:definition "An ecological [Site](#Site) that usually hosts a [FluxTower](#FluxTower)." ;
+.
 tern:EnvironmentalCharacteristic
   a owl:Class ;
   rdfs:label "Environmental Characteristic" ;
@@ -175,16 +209,16 @@ tern:EnvironmentalCharacteristic
     ] ;
   skos:definition "The environment characteristics  is a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) of a location where [Observations](#Observation) such as the annual mean rainfall or the annual mean temperature are made." ;
 .
-tern:FixedLandPlatform
+tern:FixedPlatform
   a owl:Class ;
-  rdfs:label "Fixed Land Platform" ;
+  rdfs:label "Fixed Platform" ;
   rdfs:subClassOf tern:Platform ;
   skos:definition "A fixed platform based on land." ;
 .
 tern:FluxTower
   a owl:Class ;
   rdfs:label "Flux Tower" ;
-  rdfs:subClassOf tern:FixedLandPlatform ;
+  rdfs:subClassOf tern:FixedPlatform ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
@@ -310,6 +344,11 @@ tern:MobilePlatform
   rdfs:label "Mobile Platform" ;
   rdfs:subClassOf tern:Platform ;
   skos:definition "A moving mobile platform on land or in air." ;
+.
+tern:OEHSite
+  a owl:Class ;
+  rdfs:label "OEH Site" ;
+  rdfs:subClassOf tern:Site ;
 .
 tern:ObservableProperty
   a owl:Class ;
@@ -688,7 +727,7 @@ tern:SamplingPoint
 tern:Site
   a owl:Class ;
   rdfs:label "Site" ;
-  rdfs:subClassOf tern:FixedLandPlatform ;
+  rdfs:subClassOf tern:Platform ;
   rdfs:subClassOf tern:Sample ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -956,6 +995,13 @@ tern:SiteVisit
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A discrete time-bounded visit to a site, during which sampling or observation activities are undertaken." ;
+.
+tern:SuperSite
+  a owl:Class ;
+  rdfs:label "SuperSite" ;
+  rdfs:seeAlso <https://supersites.tern.org.au/> ;
+  rdfs:subClassOf tern:Site ;
+  skos:definition "TERN SuperSites are Long Term Ecological Research (LTER) sites co-located with TERN OzFlux eddy covariance towers, which deliver biological and environmental observations of flora, fauna, microbial biodiversity, soils and hydrology. TERN OzFlux delivers micrometeorological observations of energy, carbon and water exchange between the atmosphere and key Australian ecosystems. Each TERN SuperSite is located in a significant Australian biome and the network spans a wide range of environmental conditions. The SuperSite network collects detailed data sets on flora, fauna and biophysical processes from each SuperSite." ;
 .
 tern:Transect
   a owl:Class ;

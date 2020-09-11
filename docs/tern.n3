@@ -57,10 +57,38 @@ tern: a owl:Ontology ;
         tern-org:,
         <https://w3id.org/tern/ontologies/sd/> .
 
+tern:AffiliateSuperSite a owl:Class ;
+    rdfs:label "Affiliate SuperSite" ;
+    rdfs:seeAlso <https://supersites.tern.org.au/> ;
+    rdfs:subClassOf tern:SuperSite .
+
+tern:AusPlotsSite a owl:Class ;
+    rdfs:label "AusPlots Site" ;
+    rdfs:subClassOf tern:Site .
+
+tern:AutomaticWeatherStation a owl:Class ;
+    rdfs:label "Automatic Weather Station" ;
+    rdfs:subClassOf tern:FixedPlatform .
+
+tern:CORVEGSite a owl:Class ;
+    rdfs:label "CORVEG Site" ;
+    rdfs:subClassOf tern:Site .
+
 tern:CategoricalValue a owl:Class ;
     rdfs:label "Categorical Value" ;
     rdfs:subClassOf skos:Concept ;
     skos:definition "A [Categorical Value](#CategoricalValue) to categorise some [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest)" .
+
+tern:EarthObservationSatellite a owl:Class ;
+    rdfs:label "Earth Observation Satellite" ;
+    rdfs:seeAlso <https://gcmd.earthdata.nasa.gov/kms/concept/3466eed1-2fbb-49bf-ab0b-dc08731d502b> ;
+    rdfs:subClassOf tern:MobilePlatform ;
+    skos:definition "Earth observation satellites are satellites specifically designed to observe Earth from orbit, similar to spy satellites but intended for non-military uses such as environmental monitoring, meteorology, map making etc. Source: Wikipedia, http://en.wikipedia.org/wiki/Earth_observation_satellite Group: Platform_Details Entry_ID: Earth Observation Satellites Group: Platform_Identification Platform_Category: Earth Observation Satellites Short_Name: Earth Observation Satellites End_Group End_Group" .
+
+tern:EcosystemProcessesSite a owl:Class ;
+    rdfs:label "Ecosystem Processes Site" ;
+    rdfs:subClassOf tern:Site ;
+    skos:definition "An ecological [Site](#Site) that usually hosts a [FluxTower](#FluxTower)." .
 
 tern:FluxTower a owl:Class ;
     rdfs:label "Flux Tower" ;
@@ -94,13 +122,12 @@ tern:FluxTower a owl:Class ;
             owl:onClass loc:Point ;
             owl:onProperty tern:centroidPoint ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        tern:FixedLandPlatform ;
+        tern:FixedPlatform ;
     skos:definition "Across the globe, towers stand among the landscape, with sensors monitoring these eddies for carbon dioxide, water vapor and other gasses.  These so-called “flux towers” collect data on carbon dioxide exchange rates between the earth and atmosphere." .
 
-tern:MobilePlatform a owl:Class ;
-    rdfs:label "Mobile Platform" ;
-    rdfs:subClassOf tern:Platform ;
-    skos:definition "A moving mobile platform on land or in air." .
+tern:OEHSite a owl:Class ;
+    rdfs:label "OEH Site" ;
+    rdfs:subClassOf tern:Site .
 
 tern:ObservationTheme a owl:Class ;
     rdfs:label "Observation Theme" ;
@@ -251,6 +278,11 @@ tern:Method a owl:Class ;
         skos:Concept ;
     skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an [Observation](#Observation) or a [Sample](#Sample). It explains the steps to be carried out to arrive at reproducible [Result](#Result)." .
 
+tern:MobilePlatform a owl:Class ;
+    rdfs:label "Mobile Platform" ;
+    rdfs:subClassOf tern:Platform ;
+    skos:definition "A moving mobile platform on land or in air." .
+
 tern:ObservableProperty a owl:Class ;
     rdfs:label "Observable Property" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -297,6 +329,12 @@ tern:SiteTaxon a owl:Class ;
             owl:onProperty tern:taxon ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         tern:Sample .
+
+tern:SuperSite a owl:Class ;
+    rdfs:label "SuperSite" ;
+    rdfs:seeAlso <https://supersites.tern.org.au/> ;
+    rdfs:subClassOf tern:Site ;
+    skos:definition "TERN SuperSites are Long Term Ecological Research (LTER) sites co-located with TERN OzFlux eddy covariance towers, which deliver biological and environmental observations of flora, fauna, microbial biodiversity, soils and hydrology. TERN OzFlux delivers micrometeorological observations of energy, carbon and water exchange between the atmosphere and key Australian ecosystems. Each TERN SuperSite is located in a significant Australian biome and the network spans a wide range of environmental conditions. The SuperSite network collects detailed data sets on flora, fauna and biophysical processes from each SuperSite." .
 
 tern:area a rdf:Property ;
     rdfs:label "area" ;
@@ -429,16 +467,10 @@ tern:CollectedSample a owl:Class ;
     skos:definition "A [Collected Sample](#CollectedSample) is a [Sample](#Sample) which has been collected in the field. " ;
     skos:example "Soil sample or plant sample from the field." .
 
-tern:FixedLandPlatform a owl:Class ;
-    rdfs:label "Fixed Land Platform" ;
+tern:FixedPlatform a owl:Class ;
+    rdfs:label "Fixed Platform" ;
     rdfs:subClassOf tern:Platform ;
     skos:definition "A fixed platform based on land." .
-
-tern:Platform a owl:Class ;
-    rdfs:label "Platform" ;
-    rdfs:subClassOf sosa:Platform ;
-    skos:definition "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms." ;
-    skos:example "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators." .
 
 tern:PropertyValue a owl:Class ;
     rdfs:label "Property Value" ;
@@ -512,6 +544,12 @@ tern:taxon a rdf:Property ;
     rdfs:label "taxon" ;
     skos:definition "Taxon classification." ;
     skos:scopeNote "Value should be from a controlled vocabulary identified by a URI." .
+
+tern:Platform a owl:Class ;
+    rdfs:label "Platform" ;
+    rdfs:subClassOf sosa:Platform ;
+    skos:definition "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms." ;
+    skos:example "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators." .
 
 tern:SamplingPoint a owl:Class ;
     rdfs:label "Sampling Point" ;
@@ -723,6 +761,47 @@ tern:Observation a owl:Class ;
 
 data:QuantitativeMeasure rdfs:subClassOf tern:Result .
 
+tern:Sample a owl:Class ;
+    rdfs:label "Sample" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty rdfs:comment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tern:Sample ;
+            owl:onProperty sosa:hasSample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tern:Sample ;
+            owl:onProperty sosa:isSampleOf ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass tern:Sampling ;
+            owl:onProperty sosa:isResultOf ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:wasAttributedTo ;
+            owl:someValuesFrom tern-org:Person ],
+        [ a owl:Restriction ;
+            owl:onProperty sosa:isFeatureOfInterestOf ;
+            owl:someValuesFrom tern:Observation ],
+        sosa:Sample ;
+    skos:definition "*Sample* - Feature which is intended to be representative of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) on which [Observations](#Observation) may be made." .
+
+tern:Result a owl:Class ;
+    rdfs:label "Result" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass [ a owl:Class ;
+                    owl:unionOf ( tern:Observation tern:Sampling ) ] ;
+            owl:onProperty sosa:isResultOf ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty prov:wasAttributedTo ;
+            owl:someValuesFrom tern-org:Person ],
+        sosa:Result ;
+    skos:definition "*Result* - The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
+    skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter." .
+
 tern:Site a owl:Class ;
     rdfs:label "Site" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -812,51 +891,10 @@ tern:Site a owl:Class ;
         [ a owl:Restriction ;
             owl:onProperty rdfs:comment ;
             owl:someValuesFrom xsd:string ],
-        tern:FixedLandPlatform,
+        tern:Platform,
         tern:Sample ;
     skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
     skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#Site) and [Subsite](#Site) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha subsites." .
-
-tern:Sample a owl:Class ;
-    rdfs:label "Sample" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty rdfs:comment ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tern:Sample ;
-            owl:onProperty sosa:hasSample ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom tern:Sample ;
-            owl:onProperty sosa:isSampleOf ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:label ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass tern:Sampling ;
-            owl:onProperty sosa:isResultOf ],
-        [ a owl:Restriction ;
-            owl:onProperty prov:wasAttributedTo ;
-            owl:someValuesFrom tern-org:Person ],
-        [ a owl:Restriction ;
-            owl:onProperty sosa:isFeatureOfInterestOf ;
-            owl:someValuesFrom tern:Observation ],
-        sosa:Sample ;
-    skos:definition "*Sample* - Feature which is intended to be representative of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) on which [Observations](#Observation) may be made." .
-
-tern:Result a owl:Class ;
-    rdfs:label "Result" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass [ a owl:Class ;
-                    owl:unionOf ( tern:Observation tern:Sampling ) ] ;
-            owl:onProperty sosa:isResultOf ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onProperty prov:wasAttributedTo ;
-            owl:someValuesFrom tern-org:Person ],
-        sosa:Result ;
-    skos:definition "*Result* - The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
-    skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter." .
 
 [] a owl:Class ;
     owl:unionOf ( xsd:string xsd:int ) .
