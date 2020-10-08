@@ -825,6 +825,12 @@ tern:Site
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass loc:Polygon ;
+      owl:onProperty tern:polygon ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass tern:Dimension ;
       owl:onProperty tern:dimension ;
     ] ;
@@ -1178,6 +1184,13 @@ tern:observationTheme
   rdfs:label "observation theme" ;
   rdfs:subPropertyOf dcterms:type ;
   skos:definition "Group observations into themes. See TERN's controlled list of <a href=\"http://linked.data.gov.au/def/tern-cv/396192ae-3bd5-4050-b578-93107510129c\">observation themes</a> as example values." ;
+.
+tern:polygon
+  a rdf:Property ;
+  rdfs:label "polygon" ;
+  rdfs:range loc:Polygon ;
+  rdfs:subPropertyOf geosparql:hasGeometry ;
+  skos:definition "The polygon of the subject." ;
 .
 tern:purpose
   a owl:DatatypeProperty ;

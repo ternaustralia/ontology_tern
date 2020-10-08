@@ -392,6 +392,12 @@ tern:locationProcedure a rdf:Property ;
     rdfs:subPropertyOf tern:hasMethod ;
     skos:definition "Link to a procedure used to obtain the location." .
 
+tern:polygon a rdf:Property ;
+    rdfs:label "polygon" ;
+    rdfs:range loc:Polygon ;
+    rdfs:subPropertyOf geosparql:hasGeometry ;
+    skos:definition "The polygon of the subject." .
+
 tern:purpose a owl:DatatypeProperty ;
     rdfs:label "purpose" ;
     rdfs:range xsd:string ;
@@ -863,6 +869,10 @@ tern:Site a owl:Class ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass loc:Point ;
             owl:onProperty tern:swPoint ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass loc:Polygon ;
+            owl:onProperty tern:polygon ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass tern:Dimension ;
