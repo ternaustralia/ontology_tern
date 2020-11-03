@@ -1,4 +1,6 @@
 # baseURI: https://w3id.org/tern/ontologies/tern/
+# imports: file:///Users/uqechuc/TBCMEWorkspace/projects/external_imports/schemaorg-current-http.ttl
+# imports: http://datashapes.org/dash
 # imports: http://qudt.org/schema/qudt/
 # imports: http://www.w3.org/2004/02/skos/core#
 # imports: http://www.w3.org/2006/time#
@@ -22,6 +24,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -36,6 +39,7 @@ data:Boolean
   rdfs:subClassOf tern:Result ;
 .
 data:Concept
+  a owl:Class ;
   rdfs:subClassOf tern:Result ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -82,6 +86,19 @@ dwc:materialSampleID
 .
 tern:
   a owl:Ontology ;
+  dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:modified "2020-11-03"^^xsd:date ;
+  dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+  rdfs:seeAlso <https://www.publish.csiro.au/book/5230/> ;
+  rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn-ext/> ;
+  rdfs:seeAlso <https://www.w3.org/ns/ssn/> ;
+  owl:versionIRI <http://linked.data.gov.au/def/plot/0.1.0> ;
+  owl:versionInfo "0.1.0" ;
+  prov:wasGeneratedBy [
+      a doap:Project ;
+      a prov:Activity ;
+      doap:repository <https://github.com/ternaustralia/ontology_tern> ;
+    ] ;
   dcterms:creator [
       a schema:Person ;
       schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
@@ -89,8 +106,46 @@ tern:
       schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
       schema:name "Edmond Chuc" ;
     ] ;
-  rdfs:comment "A set of vocabularies based largely on SOSA/SSN to describe the primary entities within TERN." ;
+  dcterms:contributor [
+      a schema:Person ;
+      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema:email "j.sanchezgonzalez@uq.edu.au" ;
+      schema:name "Javier Sanchez Gonzalez" ;
+    ] ;
+  dcterms:contributor [
+      a schema:Person ;
+      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema:email "mosheh.eliyahu@adelaide.edu.au" ;
+      schema:name "Mosheh Eliyahu" ;
+    ] ;
+  dcterms:contributor [
+      a schema:Person ;
+      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema:email "t.parkhurst@uq.edu.au" ;
+      schema:name "Tina Parkhurst" ;
+    ] ;
+  dcterms:creator [
+      a schema:Person ;
+      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema:email "s.guru@uq.edu.au" ;
+      schema:identifier "https://orcid.org/0000-0002-3903-254X" ;
+      schema:name "Siddeswara Guru" ;
+    ] ;
+  dcterms:creator [
+      a schema:Person ;
+      schema:email "simon.cox@csiro.au" ;
+      schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
+      schema:memberOf [
+          a schema:Organization ;
+          schema:identifier <http://catalogue.linked.data.gov.au/def/csiro> ;
+          schema:name "CSIRO" ;
+        ] ;
+      schema:name "Simon J.D.Cox" ;
+    ] ;
+  rdfs:comment "A set of vocabularies based largely on SOSA/SSN to site-based ecological survey data. It is primary related to vegetation surveys, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
   rdfs:label "TERN Ontology" ;
+  owl:imports <file:///Users/uqechuc/TBCMEWorkspace/projects/external_imports/schemaorg-current-http.ttl> ;
+  owl:imports <http://datashapes.org/dash> ;
   owl:imports qudt: ;
   owl:imports skos: ;
   owl:imports time: ;
@@ -149,18 +204,57 @@ tern:CollectedSample
   skos:definition "A [Collected Sample](#CollectedSample) is a [Sample](#Sample) which has been collected in the field. " ;
   skos:example "Soil sample or plant sample from the field." ;
 .
+tern:DerivedObservation
+  a owl:Class ;
+  rdfs:label "Derived Observation" ;
+  rdfs:subClassOf tern:Observation ;
+  skos:definition "A derived observation." ;
+.
+tern:DigitalCamera
+  a owl:Class ;
+  rdfs:label "Digital Camera" ;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty skos:altLabel ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty skos:definition ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty schema:model ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty skos:prefLabel ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass xsd:string ;
+      owl:onProperty dcterms:source ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass xsd:string ;
+      owl:onProperty schema:manufacturer ;
+    ] ;
+  skos:definition "The model as defined by the manufacturer." ;
+  skos:example "E.g. EOS 350D" ;
+.
 tern:Dimension
   a owl:Class ;
   rdfs:label "Dimension" ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass qudt:Unit ;
-      owl:onProperty data:unit ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onClass [
+      owl:allValuesFrom [
           a owl:Class ;
           owl:unionOf (
               xsd:decimal
@@ -168,11 +262,10 @@ tern:Dimension
             ) ;
         ] ;
       owl:onProperty tern:length ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass [
+      owl:allValuesFrom [
           a owl:Class ;
           owl:unionOf (
               xsd:decimal
@@ -180,6 +273,21 @@ tern:Dimension
             ) ;
         ] ;
       owl:onProperty tern:width ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:length ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:width ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass qudt:Unit ;
+      owl:onProperty data:unit ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#Site). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -310,6 +418,12 @@ tern:Method
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass xsd:string ;
+      owl:onProperty skos:definition ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onDataRange xsd:string ;
       owl:onProperty tern:equipment ;
     ] ;
@@ -356,19 +470,7 @@ tern:ObservableProperty
   rdfs:subClassOf sosa:ObservableProperty ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty data:vocabulary ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass skos:Concept ;
-      owl:onProperty tern:globalValue ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass [
+      owl:allValuesFrom [
           a owl:Class ;
           owl:unionOf (
               skos:ConceptScheme
@@ -377,6 +479,22 @@ tern:ObservableProperty
             ) ;
         ] ;
       owl:onProperty tern:globalVocabulary ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty data:vocabulary ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:globalVocabulary ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass skos:Concept ;
+      owl:onProperty tern:globalValue ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -395,6 +513,11 @@ tern:Observation
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
       owl:onProperty rdfs:comment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Person ;
+      owl:onProperty prov:wasAttributedTo ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -449,11 +572,6 @@ tern:Observation
       owl:onDataRange xsd:dateTime ;
       owl:onProperty sosa:resultTime ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty prov:wasAttributedTo ;
-      owl:someValuesFrom tern-org:Person ;
     ] ;
   skos:definition "*Observation* - Act of carrying out an (Observation) [Procedure](#Procedure) to estimate or calculate a value of a property of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). Links to a [Sensor](http://w3.org/ns/sosa/Sensor) to describe what made the [Observation](#Observation) and how; links to an [ObservableProperty](#ObservableProperty) to describe what the result is an estimate of, and to a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) to detail what that property was associated with." ;
 .
@@ -541,7 +659,12 @@ tern:Result
   rdfs:subClassOf sosa:Result ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass [
+      owl:allValuesFrom tern-org:Person ;
+      owl:onProperty prov:wasAttributedTo ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom [
           a owl:Class ;
           owl:unionOf (
               tern:Observation
@@ -549,12 +672,11 @@ tern:Result
             ) ;
         ] ;
       owl:onProperty sosa:isResultOf ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onProperty prov:wasAttributedTo ;
-      owl:someValuesFrom tern-org:Person ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty sosa:isResultOf ;
     ] ;
   skos:definition "*Result* - The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
   skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter." ;
@@ -567,6 +689,16 @@ tern:Sample
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
       owl:onProperty rdfs:comment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-org:Person ;
+      owl:onProperty prov:wasAttributedTo ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern:Observation ;
+      owl:onProperty sosa:isFeatureOfInterestOf ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -588,16 +720,6 @@ tern:Sample
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass tern:Sampling ;
       owl:onProperty sosa:isResultOf ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty prov:wasAttributedTo ;
-      owl:someValuesFrom tern-org:Person ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty sosa:isFeatureOfInterestOf ;
-      owl:someValuesFrom tern:Observation ;
     ] ;
   skos:definition "*Sample* - Feature which is intended to be representative of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) on which [Observations](#Observation) may be made." ;
 .
@@ -630,6 +752,11 @@ tern:Sampling
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:allValuesFrom tern-org:Person ;
+      owl:onProperty prov:wasAttributedTo ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass tern:SamplingPoint ;
       owl:onProperty tern:hasSamplingPoint ;
@@ -651,11 +778,6 @@ tern:Sampling
       owl:onClass tern:Sample ;
       owl:onProperty sosa:hasResult ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty prov:wasAttributedTo ;
-      owl:someValuesFrom tern-org:Person ;
     ] ;
   skos:definition "*Sampling* - An act of [Sampling](#Sampling) carries out a (Sampling) [Procedure](#Procedure) to create or transform one or more [Samples](#Sample)." ;
   skos:scopeNote """Crushing a rock sample in a ball mill.
@@ -736,6 +858,11 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty rdfs:comment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:allValuesFrom tern:CollectedSample ;
       owl:onProperty sosa:hasSample ;
     ] ;
@@ -763,6 +890,17 @@ tern:Site
       a owl:Restriction ;
       owl:allValuesFrom tern:SiteVisit ;
       owl:onProperty tern:siteVisit ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom [
+          a owl:Class ;
+          owl:unionOf (
+              loc:Point
+              loc:Polygon
+            ) ;
+        ] ;
+      owl:onProperty geosparql:hasGeometry ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -836,14 +974,7 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass [
-          a owl:Class ;
-          owl:unionOf (
-              loc:Point
-              loc:Polygon
-            ) ;
-        ] ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:hasGeometry ;
     ] ;
   rdfs:subClassOf [
@@ -869,11 +1000,6 @@ tern:Site
       owl:onClass <http://www.w3.org/ns/dcat#Dataset> ;
       owl:onProperty <http://www.w3.org/ns/dcat#dataset> ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onProperty rdfs:comment ;
-      owl:someValuesFrom xsd:string ;
     ] ;
   skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
   skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#Site) and [Subsite](#Site) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha subsites." ;
@@ -1002,12 +1128,24 @@ tern:SiteVisit
     ] ;
   skos:definition "A discrete time-bounded visit to a site, during which sampling or observation activities are undertaken." ;
 .
+tern:SoilSampling
+  a owl:Class ;
+  rdfs:label "Soil Sampling" ;
+  rdfs:subClassOf tern:Sampling ;
+  skos:definition "An act of [Sampling](#Sampling) on soil." ;
+.
 tern:SuperSite
   a owl:Class ;
   rdfs:label "SuperSite" ;
   rdfs:seeAlso <https://supersites.tern.org.au/> ;
   rdfs:subClassOf tern:Site ;
   skos:definition "TERN SuperSites are Long Term Ecological Research (LTER) sites co-located with TERN OzFlux eddy covariance towers, which deliver biological and environmental observations of flora, fauna, microbial biodiversity, soils and hydrology. TERN OzFlux delivers micrometeorological observations of energy, carbon and water exchange between the atmosphere and key Australian ecosystems. Each TERN SuperSite is located in a significant Australian biome and the network spans a wide range of environmental conditions. The SuperSite network collects detailed data sets on flora, fauna and biophysical processes from each SuperSite." ;
+.
+tern:TERNDerivedObservation
+  a owl:Class ;
+  rdfs:label "TERN Derived Observation" ;
+  rdfs:subClassOf tern:DerivedObservation ;
+  skos:definition "A derived observation created by TERN." ;
 .
 tern:Transect
   a owl:Class ;
