@@ -16,6 +16,7 @@
 
 @prefix data: <http://linked.data.gov.au/def/datatype/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix loc: <https://w3id.org/tern/ontologies/loc/> .
@@ -24,9 +25,9 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
@@ -86,26 +87,6 @@ dwc:materialSampleID
 .
 tern:
   a owl:Ontology ;
-  dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2020-11-03"^^xsd:date ;
-  dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-  rdfs:seeAlso <https://www.publish.csiro.au/book/5230/> ;
-  rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn-ext/> ;
-  rdfs:seeAlso <https://www.w3.org/ns/ssn/> ;
-  owl:versionIRI <http://linked.data.gov.au/def/plot/0.1.0> ;
-  owl:versionInfo "0.1.0" ;
-  prov:wasGeneratedBy [
-      a doap:Project ;
-      a prov:Activity ;
-      doap:repository <https://github.com/ternaustralia/ontology_tern> ;
-    ] ;
-  dcterms:creator [
-      a schema:Person ;
-      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-      schema:email "e.chuc@uq.edu.au" ;
-      schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
-      schema:name "Edmond Chuc" ;
-    ] ;
   dcterms:contributor [
       a schema:Person ;
       schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
@@ -127,6 +108,13 @@ tern:
   dcterms:creator [
       a schema:Person ;
       schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema:email "e.chuc@uq.edu.au" ;
+      schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
+      schema:name "Edmond Chuc" ;
+    ] ;
+  dcterms:creator [
+      a schema:Person ;
+      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
       schema:email "s.guru@uq.edu.au" ;
       schema:identifier "https://orcid.org/0000-0002-3903-254X" ;
       schema:name "Siddeswara Guru" ;
@@ -142,8 +130,14 @@ tern:
         ] ;
       schema:name "Simon J.D.Cox" ;
     ] ;
+  dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+  dcterms:modified "2020-11-23"^^xsd:date ;
+  dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   rdfs:comment "A set of vocabularies based largely on SOSA/SSN to site-based ecological survey data. It is primary related to vegetation surveys, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
   rdfs:label "TERN Ontology" ;
+  rdfs:seeAlso <https://www.publish.csiro.au/book/5230/> ;
+  rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn-ext/> ;
+  rdfs:seeAlso <https://www.w3.org/ns/ssn/> ;
   owl:imports <file:///Users/uqechuc/TBCMEWorkspace/projects/external_imports/schemaorg-current-http.ttl> ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports qudt: ;
@@ -157,6 +151,13 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
+  owl:versionIRI <http://linked.data.gov.au/def/plot/0.1.1> ;
+  owl:versionInfo "0.1.1" ;
+  prov:wasGeneratedBy [
+      a doap:Project ;
+      a prov:Activity ;
+      doap:repository <https://github.com/ternaustralia/ontology_tern> ;
+    ] ;
 .
 tern:AffiliateSuperSite
   a owl:Class ;
@@ -203,6 +204,19 @@ tern:CollectedSample
     ] ;
   skos:definition "A [Collected Sample](#CollectedSample) is a [Sample](#Sample) which has been collected in the field. " ;
   skos:example "Soil sample or plant sample from the field." ;
+.
+tern:CosmOzStation
+  a owl:Class ;
+  rdfs:label "CosmOz Station" ;
+  rdfs:seeAlso <https://cosmoz.csiro.au> ;
+  rdfs:subClassOf tern:FixedPlatform ;
+  skos:definition """CosmOz is the Australian Cosmic-Ray Neutron Soil Moisture Monitoring Network
+
+Beginning in October 2010, CSIRO Land and Water installed cosmic-ray probes at a number of locations around Australia to form the inaugural CosmOz network. These sites were established at instrumented research sites operated by CSIRO and University collaborators to test and validate the operation of this new technology.
+
+These novel probes use cosmic rays originating from outer space to measure average soil moisture over an area of about 30 hectares to depths in the soil of between 10 to 50 cm. This constitutes a quantum leap over conventional on-ground soil moisture sensing technology that can only measure soil moisture content within small volumes of soil.
+
+Each system is comprised of a data logger, neutron detector, satellite telemetry, tipping bucket rain gauge, temperature humidity and pressure sensors and three surface moisture (TDR) probes. The system requires minimal maintenance and is powered by a solar charging system. The entire system is installed on a single mast. Data is logged and transmitted every 60 minutes to the CosmOz database.""" ;
 .
 tern:DerivedObservation
   a owl:Class ;
@@ -586,6 +600,11 @@ tern:Parameter
   rdfs:label "Parameter" ;
   rdfs:subClassOf skos:Concept ;
   skos:definition "A [FeatureOfInterest's](http://w3.org/ns/sosa/FeatureOfInterest) property or characteristic which an [Observation](#Observation) is measuring using some [Procedure](#Procedure)." ;
+.
+tern:Phenocam
+  a owl:Class ;
+  rdfs:label "Phenocam" ;
+  rdfs:subClassOf tern:FixedPlatform ;
 .
 tern:Platform
   a owl:Class ;

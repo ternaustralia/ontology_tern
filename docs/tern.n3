@@ -44,16 +44,16 @@ tern: a owl:Ontology ;
     rdfs:label "TERN Ontology" ;
     dcterms:contributor [ a schema:Person ;
             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+            schema:email "t.parkhurst@uq.edu.au" ;
+            schema:name "Tina Parkhurst" ],
+        [ a schema:Person ;
+            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
             schema:email "j.sanchezgonzalez@uq.edu.au" ;
             schema:name "Javier Sanchez Gonzalez" ],
         [ a schema:Person ;
             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
             schema:email "mosheh.eliyahu@adelaide.edu.au" ;
-            schema:name "Mosheh Eliyahu" ],
-        [ a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "t.parkhurst@uq.edu.au" ;
-            schema:name "Tina Parkhurst" ] ;
+            schema:name "Mosheh Eliyahu" ] ;
     dcterms:creator [ a schema:Person ;
             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
             schema:email "e.chuc@uq.edu.au" ;
@@ -72,7 +72,7 @@ tern: a owl:Ontology ;
                     schema:name "CSIRO" ] ;
             schema:name "Simon J.D.Cox" ] ;
     dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:modified "2020-11-03"^^xsd:date ;
+    dcterms:modified "2020-11-23"^^xsd:date ;
     dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
     rdfs:comment "A set of vocabularies based largely on SOSA/SSN to site-based ecological survey data. It is primary related to vegetation surveys, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
     rdfs:seeAlso <https://www.publish.csiro.au/book/5230/>,
@@ -91,8 +91,8 @@ tern: a owl:Ontology ;
         loc:,
         tern-org:,
         <https://w3id.org/tern/ontologies/sd/> ;
-    owl:versionIRI plot:0.1.0 ;
-    owl:versionInfo "0.1.0" ;
+    owl:versionIRI plot:0.1.1 ;
+    owl:versionInfo "0.1.1" ;
     prov:wasGeneratedBy [ a doap:Project,
                 prov:Activity ;
             doap:repository <https://github.com/ternaustralia/ontology_tern> ] .
@@ -118,6 +118,18 @@ tern:CategoricalValue a owl:Class ;
     rdfs:label "Categorical Value" ;
     rdfs:subClassOf skos:Concept ;
     skos:definition "A [Categorical Value](#CategoricalValue) to categorise some [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest)" .
+
+tern:CosmOzStation a owl:Class ;
+    rdfs:label "CosmOz Station" ;
+    rdfs:seeAlso <https://cosmoz.csiro.au> ;
+    rdfs:subClassOf tern:FixedPlatform ;
+    skos:definition """CosmOz is the Australian Cosmic-Ray Neutron Soil Moisture Monitoring Network
+
+Beginning in October 2010, CSIRO Land and Water installed cosmic-ray probes at a number of locations around Australia to form the inaugural CosmOz network. These sites were established at instrumented research sites operated by CSIRO and University collaborators to test and validate the operation of this new technology.
+
+These novel probes use cosmic rays originating from outer space to measure average soil moisture over an area of about 30 hectares to depths in the soil of between 10 to 50 cm. This constitutes a quantum leap over conventional on-ground soil moisture sensing technology that can only measure soil moisture content within small volumes of soil.
+
+Each system is comprised of a data logger, neutron detector, satellite telemetry, tipping bucket rain gauge, temperature humidity and pressure sensors and three surface moisture (TDR) probes. The system requires minimal maintenance and is powered by a solar charging system. The entire system is installed on a single mast. Data is logged and transmitted every 60 minutes to the CosmOz database.""" .
 
 tern:DigitalCamera a owl:Class ;
     rdfs:label "Digital Camera" ;
@@ -199,6 +211,10 @@ tern:ObservationTheme a owl:Class ;
     rdfs:label "Observation Theme" ;
     rdfs:subClassOf skos:Concept ;
     skos:definition "An [Observation Theme](#ObservationTheme) categorises [Parameters](#Parameter) based on domain." .
+
+tern:Phenocam a owl:Class ;
+    rdfs:label "Phenocam" ;
+    rdfs:subClassOf tern:FixedPlatform .
 
 tern:Sampler a owl:Class ;
     rdfs:label "Sampler" ;
@@ -556,11 +572,6 @@ tern:CollectedSample a owl:Class ;
     skos:definition "A [Collected Sample](#CollectedSample) is a [Sample](#Sample) which has been collected in the field. " ;
     skos:example "Soil sample or plant sample from the field." .
 
-tern:FixedPlatform a owl:Class ;
-    rdfs:label "Fixed Platform" ;
-    rdfs:subClassOf tern:Platform ;
-    skos:definition "A fixed platform based on land." .
-
 tern:PropertyValue a owl:Class ;
     rdfs:label "Property Value" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -752,6 +763,11 @@ tern:globalVocabulary a rdf:Property ;
     rdfs:label "global vocabulary" ;
     skos:definition "The global vocabulary which the global:value belongs to (in the closed system)." .
 
+tern:FixedPlatform a owl:Class ;
+    rdfs:label "Fixed Platform" ;
+    rdfs:subClassOf tern:Platform ;
+    skos:definition "A fixed platform based on land." .
+
 tern:Procedure a owl:Class ;
     rdfs:label "Procedure" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -904,6 +920,18 @@ tern:Result a owl:Class ;
 tern:Site a owl:Class ;
     rdfs:label "Site" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass xsd:string ;
+            owl:onProperty dcterms:identifier ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass xsd:string ;
+            owl:onProperty rdfs:label ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass <http://www.w3.org/ns/dcat#Dataset> ;
+            owl:onProperty <http://www.w3.org/ns/dcat#dataset> ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
             owl:allValuesFrom geosparql:Feature ;
             owl:onProperty geosparql:sfWithin ],
         [ a owl:Restriction ;
@@ -983,18 +1011,6 @@ tern:Site a owl:Class ;
         [ a owl:Restriction ;
             owl:onClass xsd:date ;
             owl:onProperty tern:dateCommissioned ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass xsd:string ;
-            owl:onProperty dcterms:identifier ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass xsd:string ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass <http://www.w3.org/ns/dcat#Dataset> ;
-            owl:onProperty <http://www.w3.org/ns/dcat#dataset> ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         tern:Platform,
         tern:Sample ;
