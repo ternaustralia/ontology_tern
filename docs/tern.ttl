@@ -131,7 +131,7 @@ tern:
       schema:name "Simon J.D.Cox" ;
     ] ;
   dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2020-11-23"^^xsd:date ;
+  dcterms:modified "2020-12-07"^^xsd:date ;
   dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   rdfs:comment "A set of vocabularies based largely on SOSA/SSN to site-based ecological survey data. It is primary related to vegetation surveys, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
   rdfs:label "TERN Ontology" ;
@@ -151,8 +151,8 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
-  owl:versionIRI <http://linked.data.gov.au/def/plot/0.1.1> ;
-  owl:versionInfo "0.1.1" ;
+  owl:versionIRI <http://linked.data.gov.au/def/plot/0.1.2> ;
+  owl:versionInfo "0.1.2" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;
@@ -228,6 +228,7 @@ tern:DigitalCamera
   a owl:Class ;
   rdfs:label "Digital Camera" ;
   rdfs:subClassOf skos:Concept ;
+  rdfs:subClassOf tern:Sampler ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
@@ -412,6 +413,12 @@ tern:Input
   skos:definition "*Input* - Any information that is provided to a [Procedure](#Procedure) for its use." ;
   skos:scopeNote "<a href=\"#Input\">Input</a> can be used to capture any input values for a procedure, such as the input value of the basal wedge to estimate the basal area per hectare." ;
 .
+tern:Instrument
+  a owl:Class ;
+  rdfs:label "Instrument" ;
+  rdfs:subClassOf ssn:System ;
+  skos:definition "A thing to measure or produce a sample." ;
+.
 tern:Method
   a owl:Class ;
   rdfs:label "Method" ;
@@ -471,7 +478,7 @@ tern:MobilePlatform
   a owl:Class ;
   rdfs:label "Mobile Platform" ;
   rdfs:subClassOf tern:Platform ;
-  skos:definition "A moving mobile platform on land or in air." ;
+  skos:definition "A moving mobile platform on land, in water or in space." ;
 .
 tern:OEHSite
   a owl:Class ;
@@ -601,10 +608,29 @@ tern:Parameter
   rdfs:subClassOf skos:Concept ;
   skos:definition "A [FeatureOfInterest's](http://w3.org/ns/sosa/FeatureOfInterest) property or characteristic which an [Observation](#Observation) is measuring using some [Procedure](#Procedure)." ;
 .
-tern:Phenocam
+tern:PhenologyCamera
   a owl:Class ;
-  rdfs:label "Phenocam" ;
-  rdfs:subClassOf tern:FixedPlatform ;
+  rdfs:label "Phenology Camera" ;
+  rdfs:seeAlso <https://www.neonscience.org/data-collection/phenocams> ;
+  rdfs:subClassOf tern:Sampler ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty schema:serialNumber ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty rdfs:label ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern:Platform ;
+      owl:onProperty sosa:isHostedBy ;
+    ] ;
+  skos:altLabel "Phenocam" ;
+  skos:altLabel "Phenocamera" ;
+  skos:definition "A \"phenocam\" is a digital camera capturing time-lapse images of foliage which can be used to generate quantitative measures of plant phenology. Over time, these data provide a near-continuous visual record of canopy change and environmental conditions." ;
 .
 tern:Platform
   a owl:Class ;
@@ -672,6 +698,18 @@ tern:PropertyValue
 		data:value \"Great Victoria Desert Nature Reserve\" ;
 	] .""" ;
 .
+tern:RadiationSensor
+  a owl:Class ;
+  rdfs:label "Radiation sensor" ;
+  rdfs:subClassOf tern:Sensor ;
+.
+tern:Radiometer
+  a owl:Class ;
+  rdfs:comment "A radiometer or roentgenometer is a device for measuring the radiant flux (power) of electromagnetic radiation. Generally, a radiometer is an infrared radiation detector or an ultraviolet detector." ;
+  rdfs:label "Radiometer" ;
+  rdfs:seeAlso <https://en.wikipedia.org/wiki/Radiometer> ;
+  rdfs:subClassOf tern:RadiationSensor ;
+.
 tern:Result
   a owl:Class ;
   rdfs:label "Result" ;
@@ -699,6 +737,14 @@ tern:Result
     ] ;
   skos:definition "*Result* - The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
   skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter." ;
+.
+tern:SAR
+  a owl:Class ;
+  rdfs:label "Synthetic Aperture Radar" ;
+  rdfs:seeAlso <https://earthdata.nasa.gov/learn/backgrounders/what-is-sar> ;
+  rdfs:subClassOf tern:Sensor ;
+  skos:altLabel "SAR" ;
+  skos:altLabel "Synthetic-aperture radar" ;
 .
 tern:Sample
   a owl:Class ;
@@ -746,6 +792,7 @@ tern:Sampler
   a owl:Class ;
   rdfs:label "Sampler" ;
   rdfs:subClassOf sosa:Sampler ;
+  rdfs:subClassOf tern:Instrument ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom tern:Sampling ;
@@ -864,6 +911,23 @@ tern:SamplingPoint
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A point in space where an [Observation](#Observation) or [Sampling](#Sampling) occurred. " ;
+.
+tern:Sensor
+  a owl:Class ;
+  rdfs:label "Sensor" ;
+  rdfs:subClassOf sosa:Sensor ;
+  rdfs:subClassOf tern:Instrument ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern:ObservableProperty ;
+      owl:onProperty sosa:observes ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern:Observation ;
+      owl:onProperty sosa:madeObservation ;
+    ] ;
+  skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms." ;
 .
 tern:Site
   a owl:Class ;
@@ -1152,6 +1216,13 @@ tern:SoilSampling
   rdfs:label "Soil Sampling" ;
   rdfs:subClassOf tern:Sampling ;
   skos:definition "An act of [Sampling](#Sampling) on soil." ;
+.
+tern:Spectroradiometer
+  a owl:Class ;
+  rdfs:comment "A spectroradiometer is a light measurement tool that is able to measure both the wavelength and amplitude of the light emitted from a light source." ;
+  rdfs:label "Spectroradiometer" ;
+  rdfs:seeAlso <https://en.wikipedia.org/wiki/Spectroradiometer> ;
+  rdfs:subClassOf tern:Sensor ;
 .
 tern:SuperSite
   a owl:Class ;

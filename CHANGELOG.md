@@ -5,6 +5,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.1.2] - 2020-12-07
+### Added
+- tern:DigitalCamera rdfs:subClassOf tern:Sampler
+- tern:Sampler rdfs:subClassOff tern:Instrument
+- tern:Instrument
+- tern:PhenologyCamera
+- tern:RadiationSensor
+- tern:Radiometer
+- tern:SAR
+- tern:Sensor
+- tern:Spectroradiometer
+### Changed
+- tern:Method definition - added "in water or in space".
+
+
 ## [0.1.1] - 2020-11-23
 ### Added
 - tern:CosmOzStation

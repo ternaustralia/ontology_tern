@@ -72,7 +72,7 @@ tern: a owl:Ontology ;
                     schema:name "CSIRO" ] ;
             schema:name "Simon J.D.Cox" ] ;
     dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:modified "2020-11-23"^^xsd:date ;
+    dcterms:modified "2020-12-07"^^xsd:date ;
     dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
     rdfs:comment "A set of vocabularies based largely on SOSA/SSN to site-based ecological survey data. It is primary related to vegetation surveys, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
     rdfs:seeAlso <https://www.publish.csiro.au/book/5230/>,
@@ -91,8 +91,8 @@ tern: a owl:Ontology ;
         loc:,
         tern-org:,
         <https://w3id.org/tern/ontologies/sd/> ;
-    owl:versionIRI plot:0.1.1 ;
-    owl:versionInfo "0.1.1" ;
+    owl:versionIRI plot:0.1.2 ;
+    owl:versionInfo "0.1.2" ;
     prov:wasGeneratedBy [ a doap:Project,
                 prov:Activity ;
             doap:repository <https://github.com/ternaustralia/ontology_tern> ] .
@@ -153,7 +153,8 @@ tern:DigitalCamera a owl:Class ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass xsd:string ;
             owl:onProperty schema:manufacturer ],
-        skos:Concept ;
+        skos:Concept,
+        tern:Sampler ;
     skos:definition "The model as defined by the manufacturer." ;
     skos:example "E.g. EOS 350D" .
 
@@ -212,21 +213,35 @@ tern:ObservationTheme a owl:Class ;
     rdfs:subClassOf skos:Concept ;
     skos:definition "An [Observation Theme](#ObservationTheme) categorises [Parameters](#Parameter) based on domain." .
 
-tern:Phenocam a owl:Class ;
-    rdfs:label "Phenocam" ;
-    rdfs:subClassOf tern:FixedPlatform .
-
-tern:Sampler a owl:Class ;
-    rdfs:label "Sampler" ;
+tern:PhenologyCamera a owl:Class ;
+    rdfs:label "Phenology Camera" ;
+    rdfs:seeAlso <https://www.neonscience.org/data-collection/phenocams> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom tern:Sampling ;
-            owl:onProperty sosa:madeSampling ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty schema:serialNumber ],
         [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass tern:Procedure ;
-            owl:onProperty ssn:implements ],
-        sosa:Sampler ;
-    skos:definition "*Sampler* - A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples." .
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty rdfs:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tern:Platform ;
+            owl:onProperty sosa:isHostedBy ],
+        tern:Sampler ;
+    skos:altLabel "Phenocam",
+        "Phenocamera" ;
+    skos:definition "A \"phenocam\" is a digital camera capturing time-lapse images of foliage which can be used to generate quantitative measures of plant phenology. Over time, these data provide a near-continuous visual record of canopy change and environmental conditions." .
+
+tern:Radiometer a owl:Class ;
+    rdfs:label "Radiometer" ;
+    rdfs:comment "A radiometer or roentgenometer is a device for measuring the radiant flux (power) of electromagnetic radiation. Generally, a radiometer is an infrared radiation detector or an ultraviolet detector." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Radiometer> ;
+    rdfs:subClassOf tern:RadiationSensor .
+
+tern:SAR a owl:Class ;
+    rdfs:label "Synthetic Aperture Radar" ;
+    rdfs:seeAlso <https://earthdata.nasa.gov/learn/backgrounders/what-is-sar> ;
+    rdfs:subClassOf tern:Sensor ;
+    skos:altLabel "SAR",
+        "Synthetic-aperture radar" .
 
 tern:SiteStratumTaxon a owl:Class ;
     rdfs:label "Site Stratum Taxon" ;
@@ -248,6 +263,12 @@ tern:SoilSampling a owl:Class ;
     rdfs:label "Soil Sampling" ;
     rdfs:subClassOf tern:Sampling ;
     skos:definition "An act of [Sampling](#Sampling) on soil." .
+
+tern:Spectroradiometer a owl:Class ;
+    rdfs:label "Spectroradiometer" ;
+    rdfs:comment "A spectroradiometer is a light measurement tool that is able to measure both the wavelength and amplitude of the light emitted from a light source." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Spectroradiometer> ;
+    rdfs:subClassOf tern:Sensor .
 
 tern:TERNDerivedObservation a owl:Class ;
     rdfs:label "TERN Derived Observation" ;
@@ -386,35 +407,16 @@ tern:Method a owl:Class ;
 tern:MobilePlatform a owl:Class ;
     rdfs:label "Mobile Platform" ;
     rdfs:subClassOf tern:Platform ;
-    skos:definition "A moving mobile platform on land or in air." .
-
-tern:ObservableProperty a owl:Class ;
-    rdfs:label "Observable Property" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:unionOf ( skos:ConceptScheme skos:Collection owl:Ontology ) ] ;
-            owl:onProperty tern:globalVocabulary ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty data:vocabulary ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:globalVocabulary ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass skos:Concept ;
-            owl:onProperty tern:globalValue ],
-        [ a owl:Restriction ;
-            owl:onClass tern:Parameter ;
-            owl:onProperty rdf:value ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        sosa:ObservableProperty ;
-    skos:definition "<i>Observable Property</i> - An observable quality (property, characteristic) of a <a href=\"http://w3.org/ns/sosa/FeatureOfInterest\">FeatureOfInterest</a>." .
+    skos:definition "A moving mobile platform on land, in water or in space." .
 
 tern:Parameter a owl:Class ;
     rdfs:label "Parameter" ;
     rdfs:subClassOf skos:Concept ;
     skos:definition "A [FeatureOfInterest's](http://w3.org/ns/sosa/FeatureOfInterest) property or characteristic which an [Observation](#Observation) is measuring using some [Procedure](#Procedure)." .
+
+tern:RadiationSensor a owl:Class ;
+    rdfs:label "Radiation sensor" ;
+    rdfs:subClassOf tern:Sensor .
 
 tern:SiteStratum a owl:Class ;
     rdfs:label "Site Stratum" ;
@@ -572,6 +574,34 @@ tern:CollectedSample a owl:Class ;
     skos:definition "A [Collected Sample](#CollectedSample) is a [Sample](#Sample) which has been collected in the field. " ;
     skos:example "Soil sample or plant sample from the field." .
 
+tern:Instrument a owl:Class ;
+    rdfs:label "Instrument" ;
+    rdfs:subClassOf ssn:System ;
+    skos:definition "A thing to measure or produce a sample." .
+
+tern:ObservableProperty a owl:Class ;
+    rdfs:label "Observable Property" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:unionOf ( skos:ConceptScheme skos:Collection owl:Ontology ) ] ;
+            owl:onProperty tern:globalVocabulary ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty data:vocabulary ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:globalVocabulary ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass skos:Concept ;
+            owl:onProperty tern:globalValue ],
+        [ a owl:Restriction ;
+            owl:onClass tern:Parameter ;
+            owl:onProperty rdf:value ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        sosa:ObservableProperty ;
+    skos:definition "<i>Observable Property</i> - An observable quality (property, characteristic) of a <a href=\"http://w3.org/ns/sosa/FeatureOfInterest\">FeatureOfInterest</a>." .
+
 tern:PropertyValue a owl:Class ;
     rdfs:label "Property Value" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -599,6 +629,19 @@ tern:PropertyValue a owl:Class ;
 		a data:Text ;
 		data:value "Great Victoria Desert Nature Reserve" ;
 	] .""" .
+
+tern:Sampler a owl:Class ;
+    rdfs:label "Sampler" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom tern:Sampling ;
+            owl:onProperty sosa:madeSampling ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass tern:Procedure ;
+            owl:onProperty ssn:implements ],
+        sosa:Sampler,
+        tern:Instrument ;
+    skos:definition "*Sampler* - A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples." .
 
 tern:centroidPoint a rdf:Property ;
     rdfs:label "centroid point" ;
@@ -649,11 +692,10 @@ tern:width a rdf:Property ;
     rdfs:label "width" ;
     skos:definition "The measurement or extent of something from side to side." .
 
-tern:Platform a owl:Class ;
-    rdfs:label "Platform" ;
-    rdfs:subClassOf sosa:Platform ;
-    skos:definition "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms." ;
-    skos:example "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators." .
+tern:FixedPlatform a owl:Class ;
+    rdfs:label "Fixed Platform" ;
+    rdfs:subClassOf tern:Platform ;
+    skos:definition "A fixed platform based on land." .
 
 tern:SamplingPoint a owl:Class ;
     rdfs:label "Sampling Point" ;
@@ -691,6 +733,18 @@ tern:SamplingPoint a owl:Class ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         loc:Point ;
     skos:definition "A point in space where an [Observation](#Observation) or [Sampling](#Sampling) occurred. " .
+
+tern:Sensor a owl:Class ;
+    rdfs:label "Sensor" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom tern:ObservableProperty ;
+            owl:onProperty sosa:observes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tern:Observation ;
+            owl:onProperty sosa:madeObservation ],
+        sosa:Sensor,
+        tern:Instrument ;
+    skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms." .
 
 tern:SiteVisit a owl:Class ;
     rdfs:label "Site Visit" ;
@@ -763,10 +817,11 @@ tern:globalVocabulary a rdf:Property ;
     rdfs:label "global vocabulary" ;
     skos:definition "The global vocabulary which the global:value belongs to (in the closed system)." .
 
-tern:FixedPlatform a owl:Class ;
-    rdfs:label "Fixed Platform" ;
-    rdfs:subClassOf tern:Platform ;
-    skos:definition "A fixed platform based on land." .
+tern:Platform a owl:Class ;
+    rdfs:label "Platform" ;
+    rdfs:subClassOf sosa:Platform ;
+    skos:definition "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms." ;
+    skos:example "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators." .
 
 tern:Procedure a owl:Class ;
     rdfs:label "Procedure" ;
@@ -920,6 +975,49 @@ tern:Result a owl:Class ;
 tern:Site a owl:Class ;
     rdfs:label "Site" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:date ;
+            owl:onProperty tern:dateDecommissioned ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:string ;
+            owl:onProperty tern:cardinalDirection ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:string ;
+            owl:onProperty tern:locationDescription ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:string ;
+            owl:onProperty tern:siteDescription ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass skos:Concept ;
+            owl:onProperty tern:siteShape ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass loc:Point ;
+            owl:onProperty tern:centroidPoint ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass loc:Point ;
+            owl:onProperty tern:swPoint ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass loc:Polygon ;
+            owl:onProperty tern:polygon ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass tern:Dimension ;
+            owl:onProperty tern:dimension ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geosparql:hasGeometry ],
+        [ a owl:Restriction ;
+            owl:onClass xsd:date ;
+            owl:onProperty tern:dateCommissioned ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
             owl:onClass xsd:string ;
             owl:onProperty dcterms:identifier ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
@@ -969,49 +1067,6 @@ tern:Site a owl:Class ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass data:QuantitativeMeasure ;
             owl:onProperty tern:area ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:date ;
-            owl:onProperty tern:dateDecommissioned ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:cardinalDirection ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:locationDescription ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:siteDescription ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass skos:Concept ;
-            owl:onProperty tern:siteShape ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass loc:Point ;
-            owl:onProperty tern:centroidPoint ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass loc:Point ;
-            owl:onProperty tern:swPoint ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass loc:Polygon ;
-            owl:onProperty tern:polygon ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass tern:Dimension ;
-            owl:onProperty tern:dimension ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty geosparql:hasGeometry ],
-        [ a owl:Restriction ;
-            owl:onClass xsd:date ;
-            owl:onProperty tern:dateCommissioned ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         tern:Platform,
         tern:Sample ;
     skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
