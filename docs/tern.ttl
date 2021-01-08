@@ -645,6 +645,11 @@ tern:Procedure
   rdfs:subClassOf sosa:Procedure ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:allValuesFrom skos:Concept ;
+      owl:onProperty tern:methodType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty data:vocabulary ;
     ] ;
@@ -1211,11 +1216,41 @@ tern:SiteVisit
     ] ;
   skos:definition "A discrete time-bounded visit to a site, during which sampling or observation activities are undertaken." ;
 .
-tern:SoilSampling
+tern:SoilHorizon
   a owl:Class ;
-  rdfs:label "Soil Sampling" ;
-  rdfs:subClassOf tern:Sampling ;
-  skos:definition "An act of [Sampling](#Sampling) on soil." ;
+  rdfs:label "Soil Horizon" ;
+  rdfs:subClassOf tern:Sample ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom data:QuantitativeRange ;
+      owl:onProperty loc:depth ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom data:Text ;
+      owl:onProperty tern:soilHorizon ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern:SoilProfile ;
+      owl:onProperty sosa:isSampleOf ;
+    ] ;
+.
+tern:SoilProfile
+  a owl:Class ;
+  rdfs:label "Soil Profile" ;
+  rdfs:subClassOf tern:Sample ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom data:Text ;
+      owl:onProperty tern:soilClassification ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass tern:SoilHorizon ;
+      owl:onProperty sosa:hasSample ;
+    ] ;
 .
 tern:Spectroradiometer
   a owl:Class ;
@@ -1348,6 +1383,7 @@ tern:hasEnvironmentalCharacteristic
   a owl:ObjectProperty ;
   rdfs:label "has environmental characteristic" ;
   rdfs:range tern:EnvironmentalCharacteristic ;
+  skos:definition "The subject has some environmental characteristic. Points to a set of [Observations](#Observation) within an [EnvironmentalCharacteristic](#EnvironmentalCharacteristic)." ;
 .
 tern:hasMethod
   a rdf:Property ;
@@ -1406,6 +1442,11 @@ tern:locationProcedure
   rdfs:subPropertyOf tern:hasMethod ;
   skos:definition "Link to a procedure used to obtain the location." ;
 .
+tern:methodType
+  a rdf:Property ;
+  rdfs:label "method type" ;
+  skos:definition "A particular method type used to conduct some survey." ;
+.
 tern:observationTheme
   a rdf:Property ;
   rdfs:domain tern:Observation ;
@@ -1461,11 +1502,21 @@ tern:siteVisit
   rdfs:range tern:SiteVisit ;
   skos:definition "Link to a [Site Visit](#SiteVisit)." ;
 .
+tern:soilClassification
+  a rdf:Property ;
+  rdfs:label "soil classification" ;
+  skos:definition "The term used to classify the SoilProfile." ;
+.
+tern:soilHorizon
+  a rdf:Property ;
+  rdfs:label "soil horizon" ;
+  skos:definition "Soil horizon classifier." ;
+.
 tern:stratum
   a rdf:Property ;
   rdfs:label "stratum" ;
   rdfs:subPropertyOf dcterms:type ;
-  skos:definition "Stratum classification." ;
+  skos:definition "A stratum is a distinct, easily seen, layer of foliage and branches of a measurable height." ;
   skos:scopeNote "Value should be from a controlled vocabulary identified by a URI." ;
 .
 tern:swPoint
