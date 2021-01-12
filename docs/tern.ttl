@@ -377,7 +377,7 @@ tern:FluxTower
       owl:onProperty tern:centroidPoint ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "Across the globe, towers stand among the landscape, with sensors monitoring these eddies for carbon dioxide, water vapor and other gasses.  These so-called â€œflux towersâ€� collect data on carbon dioxide exchange rates between the earth and atmosphere." ;
+  skos:definition "Across the globe, towers stand among the landscape, with sensors monitoring these eddies for carbon dioxide, water vapor and other gasses.  These so-called flux towers collect data on carbon dioxide exchange rates between the earth and atmosphere." ;
 .
 tern:Input
   a owl:Class ;
@@ -400,7 +400,7 @@ tern:Input
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "*Input* - Any information that is provided to a [Procedure](#Procedure) for its use." ;
-  skos:scopeNote "<a href=\"#Input\">Input</a> can be used to capture any input values for a procedure, such as the input value of the basal wedge to estimate the basal area per hectare." ;
+  skos:example "A wedge prism relascope can be used to estimate the Basal Area per hectare. The number of counted trees and the Basal Area Factor are inputs to estimate the Basal Area." ;
 .
 tern:Instrument
   a owl:Class ;
@@ -412,6 +412,7 @@ tern:Method
   a owl:Class ;
   rdfs:label "Method" ;
   rdfs:seeAlso <https://apps.usgs.gov/thesaurus/term-simple.php?thcode=2&code=376> ;
+  rdfs:seeAlso <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
   rdfs:subClassOf skos:Concept ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -461,7 +462,8 @@ tern:Method
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an [Observation](#Observation) or a [Sample](#Sample). It explains the steps to be carried out to arrive at reproducible [Result](#Result)." ;
-  skos:example "Borehole logging is a field method in which in situ physical measurements (e.g., temperature) are made down the length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)"
+  skos:example "Borehole logging is a field method in which in situ physical measurements (e.g., temperature) are made down the length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)" ;
+  rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
 .
 tern:MobilePlatform
   a owl:Class ;
@@ -514,8 +516,8 @@ tern:ObservableProperty
       owl:onProperty rdf:value ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-   skos:definition "An observable quality (property, characteristic) of a <a href=\"http://w3.org/ns/sosa/FeatureOfInterest\">FeatureOfInterest</a>. A feature-of-interest refers to a representative feature in the real world whose properties are measured or observed. " ;
-  skos:example "sampling depth, bulk density, pH are examples of properties of a soil sample, and the soil sample is the feature-of-interest." ;
+   skos:definition "An observable quality (property, characteristic) of a <a href=\"http://w3.org/ns/sosa/FeatureOfInterest\">FeatureOfInterest</a>. A feature-of-interest refers to a feature whose properties are measured or observed. " ;
+  skos:example "Sampling depth, bulk density, pH are examples of properties of a soil sample, and the soil sample is the feature-of-interest, representative of the area from which it is collected." ;
 .
 tern:Observation
   a owl:Class ;
@@ -586,13 +588,15 @@ tern:Observation
       owl:onProperty sosa:resultTime ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "*Observation* - Act of carrying out an (Observation) [Procedure](#Procedure) to estimate or calculate a value of a property of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). Links to a [Sensor](http://w3.org/ns/sosa/Sensor) to describe what made the [Observation](#Observation) and how; links to an [ObservableProperty](#ObservableProperty) to describe what the result is an estimate of, and to a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) to detail what that property was associated with." ;
+  skos:definition "Act of carrying out an (Observation) [Procedure](#Procedure) to estimate or calculate a value of a property of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). Links to a [Sensor](http://w3.org/ns/sosa/Sensor) to describe what made the [Observation](#Observation) and how; links to an [ObservableProperty](#ObservableProperty) to describe what the result is an estimate of, and to a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) to detail what that property was associated with." ;
+  skos:example "The activity of measuring properties such as wind speed and direction by an anemometer sensor. The results of the observation are the measurement values of the properties estimated by the sensor." ;
 .
 tern:ObservationTheme
   a owl:Class ;
   rdfs:label "Observation Theme" ;
   rdfs:subClassOf skos:Concept ;
-  skos:definition "An [Observation Theme](#ObservationTheme) categorises [Parameters](#Parameter) based on domain." ;
+  skos:definition "An [Observation Theme](#ObservationTheme) categorises [Parameters](#Parameter) (i.e., properties observed) based on a topic of interest." ;
+  skos:example "Field observations can be categorized into themes such as vegetation communities, landscape features, soil features and fauna populations." ;
 .
 tern:Parameter
   a owl:Class ;
@@ -628,8 +632,8 @@ tern:Platform
   a owl:Class ;
   rdfs:label "Platform" ;
   rdfs:subClassOf sosa:Platform ;
-  skos:definition "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms." ;
-  skos:example "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators." ;
+  skos:definition "An entity that hosts other entities, particularly Sensors, Samplers, and other Platforms." ;
+  skos:example "Ocean buoy is an example of platform that is equipped with an array of sensors such as GPS, current meters, atmospheric sensors and water quality monitors. Sensors measuring weather variables are attached to a weather station (a platform)" ;
 .
 tern:Procedure
   a owl:Class ;
@@ -657,8 +661,10 @@ tern:Procedure
       owl:onProperty rdf:value ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "*Procedure* - A workflow, protocol, plan, algorithm, or computational method specifying how to make an [Observation](#Observation), create a [Sample](#Sample), or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A [Procedure](#Procedure) is re-usable, and might be involved in many [Observations](#Observation), [Samplings](#Samplings), or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at reproducible [Results](#Result)." ;
+  skos:definition "A workflow, protocol, plan, algorithm, or computational method specifying how to make an [Observation](#Observation), create a [Sample](#Sample), or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A [Procedure](#Procedure) is re-usable, and might be involved in many [Observations](#Observation), [Samplings](#Samplings), or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at reproducible [Results](#Result)." ;
   skos:scopeNote "[Input](#Input) can be used to capture any input values for a procedure, such as the input value of the basal wedge to estimate the basal area per hectare." ;
+  skos:example "The procedure for collecting photopoints are specified in the [AusPlots Rangelands Survey Protocols Manual](http://dx.doi.org10.13140/2.1.4287.3607).
+  The DEC Nature Conservation Service Biodiversity have defined [standard procedures](https://www.dpaw.wa.gov.au/images/documents/plants-animals/monitoring/sop/sop_establishingvegetationquadrats_20090818_v1.0.pdf) for establishing quadrats for vegetation sampling." ;
 .
 tern:PropertyValue
   a owl:Class ;
@@ -732,7 +738,7 @@ tern:Result
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty sosa:isResultOf ;
     ] ;
-  skos:definition "*Result* - The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
+  skos:definition "The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
   skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter." ;
 .
 tern:SAR
@@ -783,7 +789,8 @@ tern:Sample
       owl:onClass tern:Sampling ;
       owl:onProperty sosa:isResultOf ;
     ] ;
-  skos:definition "*Sample* - Feature which is intended to be representative of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) on which [Observations](#Observation) may be made." ;
+  skos:definition "*A feature which is intended to be representative of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) on which [Observations](#Observation) may be made. Physical samples are sometimes known as physical specimens." ;
+  skos:example "Plant, animal, soil, water samples." ;
 .
 tern:Sampler
   a owl:Class ;
@@ -801,7 +808,8 @@ tern:Sampler
       owl:onClass tern:Procedure ;
       owl:onProperty ssn:implements ;
     ] ;
-  skos:definition "*Sampler* - A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples." ;
+  skos:definition "A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples." ;
+  skos:example "Soil probe is an example of device used to collect a soil core." ;
 .
 tern:Sampling
   a owl:Class ;
@@ -842,8 +850,8 @@ tern:Sampling
       owl:onProperty sosa:hasResult ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "*Sampling* - An act of [Sampling](#Sampling) carries out a (Sampling) [Procedure](#Procedure) to create or transform one or more [Samples](#Sample)." ;
-  skos:scopeNote """Crushing a rock sample in a ball mill.
+  skos:definition "An activity of [Sampling](#Sampling) carries out a (Sampling) [Procedure](#Procedure) to create or transform one or more [Samples](#Sample)." ;
+  skos:example """Crushing a rock sample in a ball mill.
 Digging a pit through a soil sequence.
 Dividing a field site into quadrants.
 Drawing blood from a patient.
@@ -1083,6 +1091,7 @@ tern:Site
     ] ;
   skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
   skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#Site) and [Subsite](#Site) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha subsites." ;
+  skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
 .
 tern:SiteStratum
   a owl:Class ;
@@ -1227,6 +1236,8 @@ tern:SoilHorizon
       owl:allValuesFrom tern:SoilProfile ;
       owl:onProperty sosa:isSampleOf ;
     ] ;
+  skos:definition "A soil horizon is a layer of soil, approximately parallel to the land surface, with morphological properties different from layers below and/or above it. Tongues of material from one horizon may penetrate into adjacent horizons (Credit:Australian Soil and Land Survey Field Handbook)." ;
+  skos:example "C Horizon consists of weathering rock." ;
 .
 tern:SoilProfile
   a owl:Class ;
@@ -1243,6 +1254,8 @@ tern:SoilProfile
       owl:onClass tern:SoilHorizon ;
       owl:onProperty sosa:hasSample ;
     ] ;
+  skos:definition "A soil profile is a vertical section of a soil from the soil surface through all its horizons to parent material, other consolidated substrate material or selected depth in unconsolidated material (Credit:Australian Soil and Land Survey Field Handbook)." ;
+  skos:example <https://www.qld.gov.au/environment/land/management/soil/soil-explained/forms> ;
 .
 tern:Spectroradiometer
   a owl:Class ;
