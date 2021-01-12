@@ -1,19 +1,3 @@
-# baseURI: https://w3id.org/tern/ontologies/tern/
-# imports: file:///Users/uqechuc/TBCMEWorkspace/projects/external_imports/schemaorg-current-http.ttl
-# imports: http://datashapes.org/dash
-# imports: http://qudt.org/schema/qudt/
-# imports: http://www.w3.org/2004/02/skos/core#
-# imports: http://www.w3.org/2006/time#
-# imports: http://www.w3.org/ns/dcat#
-# imports: http://www.w3.org/ns/prov#
-# imports: http://www.w3.org/ns/sosa/
-# imports: http://www.w3.org/ns/ssn/
-# imports: https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
-# imports: https://w3id.org/tern/ontologies/loc/
-# imports: https://w3id.org/tern/ontologies/org/
-# imports: https://w3id.org/tern/ontologies/sd/
-# prefix: tern
-
 @prefix data: <http://linked.data.gov.au/def/datatype/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
@@ -83,7 +67,7 @@ dwc:materialSampleID
   rdfs:comment "An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique." ;
   rdfs:isDefinedBy dwc: ;
   rdfs:label "material sample ID" ;
-  skos:example "06809dc5-f143-459a-be1a-6f03e63fc083" ;
+  skos:example "http://igsn.org/ASR000001" ;
 .
 tern:
   a owl:Ontology ;
@@ -133,12 +117,11 @@ tern:
   dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2020-12-07"^^xsd:date ;
   dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-  rdfs:comment "A set of vocabularies based largely on SOSA/SSN to site-based ecological survey data. It is primary related to vegetation surveys, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
+  rdfs:comment "The TERN ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation, soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
   rdfs:label "TERN Ontology" ;
   rdfs:seeAlso <https://www.publish.csiro.au/book/5230/> ;
   rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn-ext/> ;
   rdfs:seeAlso <https://www.w3.org/ns/ssn/> ;
-  owl:imports <file:///Users/uqechuc/TBCMEWorkspace/projects/external_imports/schemaorg-current-http.ttl> ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports qudt: ;
   owl:imports skos: ;
@@ -152,7 +135,7 @@ tern:
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
   owl:versionIRI <http://linked.data.gov.au/def/plot/0.1.2> ;
-  owl:versionInfo "0.1.2" ;
+  owl:versionInfo "0.1.3" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;
@@ -164,11 +147,15 @@ tern:AffiliateSuperSite
   rdfs:label "Affiliate SuperSite" ;
   rdfs:seeAlso <https://supersites.tern.org.au/> ;
   rdfs:subClassOf tern:SuperSite ;
+  skos:example "Daintree Rainforest SuperSite" ;
 .
 tern:AusPlotsSite
   a owl:Class ;
   rdfs:label "AusPlots Site" ;
   rdfs:subClassOf tern:Site ;
+  skos:definition "AusPlots is a plot-based surveillance monitoring program delivered by TERN Surveillance. An [AusPlot Site](#AusPlotsSite) refers to a [site](#Site) where AusPlots Rangelands or Forests method has been implemented." ;
+  skos:seeAlso <http://www.ausplots.org/> ;
+  skos:example <http://linked.data.gov.au/dataset/ausplots/site-QDABBN0001> ;
 .
 tern:AutomaticWeatherStation
   a owl:Class ;
@@ -179,12 +166,14 @@ tern:CORVEGSite
   a owl:Class ;
   rdfs:label "CORVEG Site" ;
   rdfs:subClassOf tern:Site ;
+  skos:definition "A [CORVEG Site] (#CORVEGSite) refers to a study location in Queensland that was visited since 1982 to collect data on physical and vegetation features, including structural and floristic attributes well as descriptions of its landscape, soil and geologic features." ;
+  dcterms:source <https://www.data.qld.gov.au/dataset/queensland-corveg-database> ;
+  skos:seeAlso <http://aekos.org.au/collection/qld.gov.au/corveg> ;
 .
 tern:CategoricalValue
   a owl:Class ;
   rdfs:label "Categorical Value" ;
   rdfs:subClassOf skos:Concept ;
-  skos:definition "A [Categorical Value](#CategoricalValue) to categorise some [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest)" ;
 .
 tern:CollectedSample
   a owl:Class ;
@@ -202,8 +191,8 @@ tern:CollectedSample
       owl:onClass loc:Point ;
       owl:onProperty tern:sampleStorageLocation ;
     ] ;
-  skos:definition "A [Collected Sample](#CollectedSample) is a [Sample](#Sample) which has been collected in the field. " ;
-  skos:example "Soil sample or plant sample from the field." ;
+  skos:definition "A [Collected Sample](#CollectedSample) is a physical [specimen](#Sample) collected from the field. " ;
+  skos:example "A soil sample, a plant sample, a vegetation sample, and a core section." ;
 .
 tern:CosmOzStation
   a owl:Class ;
@@ -388,7 +377,7 @@ tern:FluxTower
       owl:onProperty tern:centroidPoint ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "Across the globe, towers stand among the landscape, with sensors monitoring these eddies for carbon dioxide, water vapor and other gasses.  These so-called “flux towers” collect data on carbon dioxide exchange rates between the earth and atmosphere." ;
+  skos:definition "Across the globe, towers stand among the landscape, with sensors monitoring these eddies for carbon dioxide, water vapor and other gasses.  These so-called â€œflux towersâ€� collect data on carbon dioxide exchange rates between the earth and atmosphere." ;
 .
 tern:Input
   a owl:Class ;
@@ -417,13 +406,12 @@ tern:Instrument
   a owl:Class ;
   rdfs:label "Instrument" ;
   rdfs:subClassOf ssn:System ;
-  skos:definition "A thing to measure or produce a sample." ;
+  skos:definition "A device or instrument that is used for making measurements or observations." ;
 .
 tern:Method
   a owl:Class ;
   rdfs:label "Method" ;
-  rdfs:seeAlso <https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf> ;
-  rdfs:seeAlso <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
+  rdfs:seeAlso <https://apps.usgs.gov/thesaurus/term-simple.php?thcode=2&code=376> ;
   rdfs:subClassOf skos:Concept ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -473,6 +461,7 @@ tern:Method
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an [Observation](#Observation) or a [Sample](#Sample). It explains the steps to be carried out to arrive at reproducible [Result](#Result)." ;
+  skos:example "Borehole logging is a field method in which in situ physical measurements (e.g., temperature) are made down the length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)"
 .
 tern:MobilePlatform
   a owl:Class ;
@@ -484,6 +473,8 @@ tern:OEHSite
   a owl:Class ;
   rdfs:label "OEH Site" ;
   rdfs:subClassOf tern:Site ;
+  skos:definition "A plot survey site managed by the NSW Office of Environment and Heritage (OEH)." ;
+  rdfs:seeAlso <https://www.environment.nsw.gov.au/surveys/AnimalAndPlantSurveys.htm> ;
 .
 tern:ObservableProperty
   a owl:Class ;
@@ -523,7 +514,8 @@ tern:ObservableProperty
       owl:onProperty rdf:value ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "<i>Observable Property</i> - An observable quality (property, characteristic) of a <a href=\"http://w3.org/ns/sosa/FeatureOfInterest\">FeatureOfInterest</a>." ;
+   skos:definition "An observable quality (property, characteristic) of a <a href=\"http://w3.org/ns/sosa/FeatureOfInterest\">FeatureOfInterest</a>. A feature-of-interest refers to a representative feature in the real world whose properties are measured or observed. " ;
+  skos:example "sampling depth, bulk density, pH are examples of properties of a soil sample, and the soil sample is the feature-of-interest." ;
 .
 tern:Observation
   a owl:Class ;
