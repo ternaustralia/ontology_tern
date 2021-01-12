@@ -1315,7 +1315,7 @@ tern:area
   a rdf:Property ;
   rdfs:label "area" ;
   skos:definition "The extent of a [Site](#Site) area, e.g., in m2" ;
-  skos:example " The area is the Mitchell Grass Rangeland SuperSite Supersite is approximately 47 M ha."
+  skos:example " The area of the Mitchell Grass Rangeland SuperSite Supersite is approximately 47 M ha."
 .
 tern:cardinalDirection
   a rdf:Property ;
