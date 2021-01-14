@@ -1345,7 +1345,7 @@ tern:dateDecommissioned
   rdfs:label "date decommissioned" ;
   skos:definition "The date when, e.g., a [Site](#Site) is decommissioned or stopped operating." ;
   skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing end date may be set to the end of the month." ;
-  kos:example "30 Nov 2019 is the date commisioned of the [Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)" ; 
+  skos:example "30 Nov 2019 is the date commisioned of the [Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)" ; 
 .
 tern:dimension
   a rdf:Property ;
@@ -1503,7 +1503,7 @@ tern:site
 tern:siteDescription
   a rdf:Property ;
   rdfs:label "site description" ;
-  skos:definition "Contextual information is also collected at each site. This includes measures of slope an aspect, surface strew and lithology, and information on the grazing and fire history of the site (Credit:TERN AusPlots)." ;
+  skos:definition "Contextual information is collected at each site. This includes measures of slope an aspect, surface strew and lithology, and information on the grazing and fire history of the site (Credit:TERN AusPlots)." ;
   skos:example <http://ozflux.org.au/monitoringsites/alicesprings/alicesprings_description.html> ;
 .
 tern:siteShape
