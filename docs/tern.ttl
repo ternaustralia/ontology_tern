@@ -1228,13 +1228,14 @@ tern:SoilHorizon
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom data:Text ;
-      owl:onProperty tern:soilHorizon ;
+      owl:onProperty tern:soilHorizonClassifier ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom tern:SoilProfile ;
       owl:onProperty sosa:isSampleOf ;
     ] ;
+  skos:definition "A [Soil Horizon](#SoilHorizon) is a layer of soil, approximately parallel to the land surface, with mostly homogenous morphological properties different from layers below and/or above it." ;
 .
 tern:SoilProfile
   a owl:Class ;
@@ -1251,6 +1252,7 @@ tern:SoilProfile
       owl:onClass tern:SoilHorizon ;
       owl:onProperty sosa:hasSample ;
     ] ;
+  skos:definition "Vertical description of the soil that is characterized by a vertical succession of soil elements." ;
 .
 tern:Spectroradiometer
   a owl:Class ;
@@ -1507,10 +1509,10 @@ tern:soilClassification
   rdfs:label "soil classification" ;
   skos:definition "The term used to classify the SoilProfile." ;
 .
-tern:soilHorizon
+tern:soilHorizonClassifier
   a rdf:Property ;
-  rdfs:label "soil horizon" ;
-  skos:definition "Soil horizon classifier." ;
+  rdfs:label "soil horizon classifier" ;
+  skos:definition "Soil horizon classifier as defined in the Australian Soil and Land Survey Field Handbook on page 148." ;
 .
 tern:stratum
   a rdf:Property ;
