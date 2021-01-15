@@ -166,7 +166,7 @@ tern:CORVEGSite
   a owl:Class ;
   rdfs:label "CORVEG Site" ;
   rdfs:subClassOf tern:Site ;
-  skos:definition "A [CORVEG Site] (#CORVEGSite) refers to a study location in Queensland that was visited since 1982 to collect data on physical and vegetation features, including structural and floristic attributes as well as descriptions of its landscape, soil and geologic features." ;
+  skos:definition "A [CORVEG Site] (#CORVEGSite) refers to a study location in Queensland that was visited since 1982 to collect data on physical and vegetation features, including structural and floristic attributes as well as descriptions of its landscape, soil and geological features." ;
   dcterms:source <https://www.data.qld.gov.au/dataset/queensland-corveg-database> ;
   skos:seeAlso <http://aekos.org.au/collection/qld.gov.au/corveg> ;
 .
