@@ -1,6 +1,6 @@
 # TERN Ontology
 
-Documentation online: https://ternaustralia.github.io/ontology_tern/
+Online Documentation: https://ternaustralia.github.io/ontology_tern/
 
 
 ## Building the documentation
