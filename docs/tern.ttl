@@ -17,6 +17,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix loc: <https://w3id.org/tern/ontologies/loc/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -25,6 +26,8 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix schema-https: <https://schema.org/> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -75,71 +78,77 @@ dwc:MaterialSample
   rdfs:comment "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
   rdfs:isDefinedBy dwc: ;
   rdfs:label "Material Sample" ;
-  skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
+  skos:example """A whole organism preserved in a collection. 
+A part of an organism isolated for some purpose. A soil sample. A marine microbial sample.""" ;
 .
 dwc:materialSampleID
   a rdf:Property ;
   rdfs:comment "An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique." ;
   rdfs:isDefinedBy dwc: ;
   rdfs:label "material sample ID" ;
-  skos:example "IGSN:ASR000001 (Resulting URI: http://igsn.org/ASR000001) is a globally unique and persistent identifier of a soil sample." ;
+  skos:example """IGSN:ASR000001 (Resulting URI: http://igsn.org/ASR000001) 
+is a globally unique and persistent identifier of a soil sample.""" ;
+.
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> a schema-https:Organization ;
+  schema-https:name "TERN" ;
+  schema-https:identifier <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
 .
 tern:
   a owl:Ontology ;
   dcterms:contributor [
-    a schema:Person ;
-    schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-    schema:email "h.floresmoreno@uq.edu.au" ;
-    schema:name "Habacuc Flores Moreno" ;
-  ] ;
-  dcterms:contributor [
-    a schema:Person ;
-    schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-    schema:email "a.devaraju@uq.edu.au" ;
-    schema:name "Anusuriya Devaraju" ;
-  ] ;
-  dcterms:contributor [
-      a schema:Person ;
-      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-      schema:email "j.sanchezgonzalez@uq.edu.au" ;
-      schema:name "Javier Sanchez Gonzalez" ;
+      a schema-https:Person ;
+      schema-https:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema-https:email "a.devaraju@uq.edu.au" ;
+      schema-https:name "Anusuriya Devaraju" ;
     ] ;
   dcterms:contributor [
-      a schema:Person ;
-      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-      schema:email "mosheh.eliyahu@adelaide.edu.au" ;
-      schema:name "Mosheh Eliyahu" ;
+      a schema-https:Person ;
+      schema-https:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema-https:email "h.floresmoreno@uq.edu.au" ;
+      schema-https:name "Habacuc Flores Moreno" ;
     ] ;
   dcterms:contributor [
-      a schema:Person ;
-      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-      schema:email "t.parkhurst@uq.edu.au" ;
-      schema:name "Tina Parkhurst" ;
+      a schema-https:Person ;
+      schema-https:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema-https:email "j.sanchezgonzalez@uq.edu.au" ;
+      schema-https:name "Javier Sanchez Gonzalez" ;
+    ] ;
+  dcterms:contributor [
+      a schema-https:Person ;
+      schema-https:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema-https:email "mosheh.eliyahu@adelaide.edu.au" ;
+      schema-https:name "Mosheh Eliyahu" ;
+    ] ;
+  dcterms:contributor [
+      a schema-https:Person ;
+      schema-https:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema-https:email "t.parkhurst@uq.edu.au" ;
+      schema-https:name "Tina Parkhurst" ;
     ] ;
   dcterms:creator [
-      a schema:Person ;
-      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-      schema:email "e.chuc@uq.edu.au" ;
-      schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
-      schema:name "Edmond Chuc" ;
+      a schema-https:Person ;
+      schema-https:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema-https:email "e.chuc@uq.edu.au" ;
+      schema-https:identifier <https://orcid.org/0000-0002-6047-9864> ;
+      schema-https:name "Edmond Chuc" ;
     ] ;
   dcterms:creator [
-      a schema:Person ;
-      schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-      schema:email "s.guru@uq.edu.au" ;
-      schema:identifier "https://orcid.org/0000-0002-3903-254X" ;
-      schema:name "Siddeswara Guru" ;
+      a schema-https:Person ;
+      schema-https:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+      schema-https:email "s.guru@uq.edu.au" ;
+      schema-https:identifier <https://orcid.org/0000-0002-3903-254X> ;
+      schema-https:name "Siddeswara Guru" ;
     ] ;
   dcterms:creator [
-      a schema:Person ;
-      schema:email "simon.cox@csiro.au" ;
-      schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
-      schema:memberOf [
-          a schema:Organization ;
-          schema:identifier <http://catalogue.linked.data.gov.au/def/csiro> ;
-          schema:name "CSIRO" ;
+      a schema-https:Person ;
+      schema-https:email "simon.cox@csiro.au" ;
+      schema-https:identifier <https://orcid.org/0000-0002-3884-3420> ;
+      schema-https:memberOf [
+          a schema-https:Organization ;
+          schema-https:identifier <https://w3id.org/tern/resources/276dd611-5d74-4555-b20f-12f0f0b618a1> ;
+          schema-https:name "CSIRO" ;
         ] ;
-      schema:name "Simon J.D.Cox" ;
+      schema-https:name "Simon J.D.Cox" ;
     ] ;
   dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2020-12-07"^^xsd:date ;
@@ -174,8 +183,8 @@ tern:AffiliateSuperSite
   rdfs:label "Affiliate SuperSite" ;
   rdfs:seeAlso <https://supersites.tern.org.au/> ;
   rdfs:subClassOf tern:SuperSite ;
-  skos:example "Samford Peri-urban Affiliate SuperSite" ;
   skos:example <https://w3id.org/tern/resources/a05a51c0-2daa-4369-aa2b-08c3638efa7a> ;
+  skos:example "Samford Peri-urban Affiliate SuperSite" ;
 .
 tern:AusPlotsSite
   a owl:Class ;
@@ -196,8 +205,8 @@ tern:CORVEGSite
   rdfs:label "CORVEG Site" ;
   rdfs:subClassOf tern:Site ;
   skos:definition "A [CORVEG Site] (#CORVEGSite) refers to a study location in Queensland that was visited since 1982 to collect data on physical and vegetation features, including structural and floristic attributes as well as descriptions of its landscape, soil and geological features." ;
-  skos:seeAlso <http://aekos.org.au/collection/qld.gov.au/corveg> ;
   skos:example <http://linked.data.gov.au/dataset/corveg/site-12319> ;
+  skos:seeAlso <http://aekos.org.au/collection/qld.gov.au/corveg> ;
 .
 tern:CategoricalValue
   a owl:Class ;
@@ -388,8 +397,8 @@ tern:FluxTower
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "Across the globe, towers stand among the landscape, with sensors monitoring these eddies for carbon dioxide, water vapor and other gasses.  These so-called flux towers collect data on carbon dioxide exchange rates between the earth and atmosphere." ;
-  skos:example "Alice Springs Mulga flux tower" ;
   skos:example <https://w3id.org/tern/resources/fd2809a2-e705-4961-b09c-7e9ae1ffa87e> ;
+  skos:example "Alice Springs Mulga flux tower" ;
 .
 tern:Input
   a owl:Class ;
@@ -412,7 +421,8 @@ tern:Input
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "*Input* - Any information that is provided to a [Procedure](#Procedure) for its use." ;
-  skos:example "A **wedge prism** or **relascope** can be used to estimate the Basal Area per hectare. The number of counted trees and the Basal Area Factor are inputs to estimate the Basal Area." ;
+  skos:example """A **wedge prism** or **relascope** can be used to estimate the Basal Area per hectare. 
+The number of counted trees and the Basal Area Factor are inputs to estimate the Basal Area.""" ;
 .
 tern:Instrument
   a owl:Class ;
@@ -475,7 +485,9 @@ tern:Method
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an [Observation](#Observation) or a [Sample](#Sample). It explains the steps to be carried out to arrive at reproducible [Result](#Result)." ;
-  skos:example "Borehole logging is a field method in which in situ physical measurements (e.g., temperature) are made down the length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)" ;
+  skos:example """Borehole logging is a field method in which 
+in situ physical measurements (e.g., temperature) are made down the 
+length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)""" ;
 .
 tern:MobilePlatform
   a owl:Class ;
@@ -529,7 +541,9 @@ tern:ObservableProperty
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "An observable quality (property, characteristic) of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). A feature-of-interest refers to a feature whose properties are measured or observed. " ;
-  skos:example "Sampling depth, bulk density, pH are examples of properties of a soil sample, and the soil sample is the feature-of-interest, representative of the area from which it is collected." ;
+  skos:example """Sampling depth, bulk density, pH are examples of properties of a 
+soil sample, and the soil sample is the feature-of-interest, 
+representative of the area from which it is collected.""" ;
 .
 tern:Observation
   a owl:Class ;
@@ -601,14 +615,18 @@ tern:Observation
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "Act of carrying out an (Observation) [Procedure](#Procedure) to estimate or calculate a value of a property of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). Links to a [Sensor](http://w3.org/ns/sosa/Sensor) to describe what made the [Observation](#Observation) and how; links to an [ObservableProperty](#ObservableProperty) to describe what the result is an estimate of, and to a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) to detail what that property was associated with." ;
-  skos:example "The activity of measuring properties such as wind speed and direction by an anemometer sensor. The results of the observation are the measurement values of the properties estimated by the sensor." ;
+  skos:example """The activity of measuring properties such as wind speed and direction by 
+an anemometer sensor. The results of the observation are the measurement values 
+of the properties estimated by the sensor.""" ;
 .
 tern:ObservationTheme
   a owl:Class ;
   rdfs:label "Observation Theme" ;
   rdfs:subClassOf skos:Concept ;
   skos:definition "An [Observation Theme](#ObservationTheme) categorises [Parameters](#Parameter) (i.e., properties observed) based on a topic of interest." ;
-  skos:example "Field observations can be categorized into themes such as vegetation communities, landscape features, soil features and fauna populations." ;
+  skos:example """Field observations can be categorized into themes 
+such as vegetation communities, landscape features, 
+soil features and fauna populations.""" ;
   skos:scopeNote "This concept is more commonly used at the application level and is usually mappable to a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest)." ;
 .
 tern:Parameter
@@ -665,7 +683,10 @@ tern:Platform
   rdfs:label "Platform" ;
   rdfs:subClassOf sosa:Platform ;
   skos:definition "An entity that hosts other entities, particularly [Sensors](#Sensor), [Samplers](#Sampler), and other [Platforms](#Platform)." ;
-  skos:example "Ocean buoy is an example of platform that is equipped with an array of sensors such as GPS, current meters, atmospheric sensors and water quality monitors. Sensors measuring weather variables are attached to a weather station (a platform)" ;
+  skos:example """Ocean buoy is an example of platform that is equipped with 
+an array of sensors such as GPS, current meters, atmospheric sensors and water 
+quality monitors. Sensors measuring weather variables are attached to 
+a weather station (a platform)""" ;
 .
 tern:Procedure
   a owl:Class ;
@@ -694,8 +715,11 @@ tern:Procedure
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "A workflow, protocol, plan, algorithm, or computational method specifying how to make an [Observation](#Observation), create a [Sample](#Sample), or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A [Procedure](#Procedure) is re-usable, and might be involved in many [Observations](#Observation), [Samplings](#Sampling), or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at reproducible [Results](#Result)." ;
-  skos:example """The procedure for collecting photopoints are specified in the [AusPlots Rangelands Survey Protocols Manual](http://dx.doi.org/10.13140/2.1.4287.3607).
-  The DEC Nature Conservation Service Biodiversity have defined [standard procedures](https://www.dpaw.wa.gov.au/images/documents/plants-animals/monitoring/sop/sop_establishingvegetationquadrats_20090818_v1.0.pdf) for establishing quadrats for vegetation sampling.""" ;
+  skos:example """The procedure for collecting photopoints are specified in the 
+[AusPlots Rangelands Survey Protocols Manual](http://dx.doi.org/10.13140/2.1.4287.3607).
+The DEC Nature Conservation Service Biodiversity have defined 
+[standard procedures](https://www.dpaw.wa.gov.au/images/documents/plants-animals/monitoring/sop/sop_establishingvegetationquadrats_20090818_v1.0.pdf)
+for establishing quadrats for vegetation sampling.""" ;
   skos:scopeNote "[Input](#Input) can be used to capture any input values for a procedure, such as the input value of the basal wedge to estimate the basal area per hectare." ;
 .
 tern:PropertyValue
@@ -771,7 +795,8 @@ tern:Result
       owl:onProperty sosa:isResultOf ;
     ] ;
   skos:definition "The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
-  skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter." ;
+  skos:example """The value 20 as the height of a certain 
+tree together with the unit, e.g., Meter.""" ;
 .
 tern:SAR
   a owl:Class ;
@@ -822,7 +847,8 @@ tern:Sample
       owl:onProperty sosa:isResultOf ;
     ] ;
   skos:definition "*A feature which is intended to be representative of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) on which [Observations](#Observation) may be made. Physical samples are sometimes known as physical specimens." ;
-  skos:example "Plant, animal, soil and water are all examples of samples of some feature of interest." ;
+  skos:example """Plant, animal, soil and water are all 
+examples of samples of some feature of interest.""" ;
 .
 tern:Sampler
   a owl:Class ;
@@ -1363,20 +1389,23 @@ tern:centroidPoint
   rdfs:seeAlso <https://en.wikipedia.org/wiki/List_of_centroids> ;
   rdfs:subPropertyOf geosparql:hasGeometry ;
   skos:definition "The centroid point of an object-of-interest." ;
-  skos:example "The geometric center of 1-ha vegetation plot expressed as [tern-loc:Point](https://w3id.org/tern/ontologies/loc/Point) " ;
+  skos:example """The geometric center of 1-ha vegetation plot expressed 
+as [tern-loc:Point](https://w3id.org/tern/ontologies/loc/Point).""" ;
 .
 tern:dateCommissioned
   a rdf:Property ;
   rdfs:label "date commissioned" ;
   skos:definition "The date when, e.g., a [Site](#Site) is ready to commence its operations, after it is successfully installed and tested." ;
-  skos:example "1 August 2017 is the date commisioned of the [Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)" ;
+  skos:example """1 August 2017 is the date commisioned of the 
+[Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
   skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing start date may be set to the first of the month." ;
 .
 tern:dateDecommissioned
   a rdf:Property ;
   rdfs:label "date decommissioned" ;
   skos:definition "The date when, e.g., a [Site](#Site) is decommissioned or stopped operating." ;
-  skos:example "30 Nov 2019 is the date decommisioned of the [Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)" ;
+  skos:example """30 Nov 2019 is the date decommisioned of the 
+[Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
   skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing end date may be set to the end of the month." ;
 .
 tern:dimension
@@ -1409,7 +1438,12 @@ tern:globalValue
   a rdf:Property ;
   rdfs:label "global value" ;
   skos:definition "A property that links a concept from a vocabulary to another concept in an authoritative/endorsed vocabulary." ;
-  skos:example "The concept dry soil colour is defined in two vocabularies, [CORVEG](http://linked.data.gov.au/def/corveg-cv/1842b772-72a4-430f-a264-dcfd6c2c23b4) and [Ausplots](http://linked.data.gov.au/def/ausplots-cv/aa11e5f7-aec2-4e92-95b8-6332911f0c4e). The property global value is used to map the concept from the two vocabularies to the relevant [concept](http://linked.data.gov.au/def/tern-cv/beceaa5a-a296-4385-a55a-3b8c8d5b2369) specified in the main vocabulary, i.e., TERN Vocabularies." ;
+  skos:example """The concept dry soil colour is defined in two vocabularies, 
+[CORVEG](http://linked.data.gov.au/def/corveg-cv/1842b772-72a4-430f-a264-dcfd6c2c23b4) and 
+[Ausplots](http://linked.data.gov.au/def/ausplots-cv/aa11e5f7-aec2-4e92-95b8-6332911f0c4e). 
+The property global value is used to map the concept from the two vocabularies to the relevant 
+[concept](http://linked.data.gov.au/def/tern-cv/beceaa5a-a296-4385-a55a-3b8c8d5b2369) 
+specified in the main vocabulary, i.e., TERN Vocabularies.""" ;
 .
 tern:globalVocabulary
   a rdf:Property ;
@@ -1454,8 +1488,8 @@ tern:hasSamplingPoint
   a rdf:Property ;
   rdfs:label "has sampling point" ;
   rdfs:range tern:SamplingPoint ;
-  skos:definition "A property that links, e.g., a [Sampling](#Sampling) to a [SamplingPoint](#SamplingPoint)." ;
   owl:inverseOf tern:isSamplingPointOf ;
+  skos:definition "A property that links, e.g., a [Sampling](#Sampling) to a [SamplingPoint](#SamplingPoint)." ;
 .
 tern:instructions
   a owl:DatatypeProperty ;
@@ -1474,8 +1508,8 @@ tern:isGlobalMatchOf
 tern:isSamplingPointOf
   a rdf:Property ;
   rdfs:label "is sampling point of" ;
-  skos:definition "The inverse property [hasSamplingPoint](#hasSamplingPoint)." ;
   owl:inverseOf tern:hasSamplingPoint ;
+  skos:definition "The inverse property [hasSamplingPoint](#hasSamplingPoint)." ;
 .
 tern:length
   a rdf:Property ;
@@ -1487,7 +1521,9 @@ tern:locationDescription
   a rdf:Property ;
   rdfs:label "location description" ;
   skos:definition "The description of the location." ;
-  skos:example "Location description of the AusPlots site NTABRT0004 in the Alice Mulga SuperSite: Pine Hill Station. 25km South East of Ti-Tree. 20km East of Stuart Highway. South west corner of the site is 200m north west of proposed supersite flux tower" ;
+  skos:example """Location description of the AusPlots site NTABRT0004 in the Alice Mulga SuperSite: 
+Pine Hill Station. 25km South East of Ti-Tree. 20km East of Stuart Highway. 
+South west corner of the site is 200m north west of proposed supersite flux tower""" ;
 .
 tern:locationProcedure
   a rdf:Property ;
