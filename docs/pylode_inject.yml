@@ -12,10 +12,10 @@ overview:
             src: overview.png
             alt: TERN Ontology diagram.
             caption: TERN Ontology overview.
-        - figure:
-            src: result-overview.png
-            alt: TERN Ontology Result overview diagram.
-            caption: TERN Ontology Result overview diagram.
+        # - figure:
+        #     src: result-overview.png
+        #     alt: TERN Ontology Result overview diagram.
+        #     caption: TERN Ontology Result overview diagram.
 
 classes:
     figures: []

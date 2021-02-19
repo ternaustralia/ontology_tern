@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.2.0] - 2021-02-19
+### Added
+- tern:domain
+- tern:FeatureOfInterest
+### Changed
+- Ontology description
+- Ontology organisation metadata - use schema.org's https for pylode generation
+- tern:hadSubActivity -> tern:hasSubActivity
+- tern:wasSubActivityOf -> tern:isSubActivityOf
+- Label of tern:Site from "Site" to "Ecological Site"
+
+
 ## [0.1.3] - 2021-01-06
 ### Added
 - tern:methodType added to tern:Procedure

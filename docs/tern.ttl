@@ -28,7 +28,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix schema-https: <https://schema.org/> .
-@prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -88,10 +87,6 @@ dwc:materialSampleID
   rdfs:label "material sample ID" ;
   skos:example """IGSN:ASR000001 (Resulting URI: http://igsn.org/ASR000001) 
 is a globally unique and persistent identifier of a soil sample.""" ;
-.
-<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> a schema-https:Organization ;
-  schema-https:name "TERN" ;
-  schema-https:identifier <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
 .
 tern:
   a owl:Ontology ;
@@ -153,7 +148,10 @@ tern:
   dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
   dcterms:modified "2020-12-07"^^xsd:date ;
   dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-  rdfs:comment "The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
+  rdfs:comment """The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.
+  
+  
+  """ ;
   rdfs:label "TERN Ontology" ;
   rdfs:seeAlso <https://www.publish.csiro.au/book/5230/> ;
   rdfs:seeAlso <https://www.w3.org/TR/vocab-ssn-ext/> ;
@@ -190,7 +188,7 @@ tern:AusPlotsSite
   a owl:Class ;
   rdfs:label "AusPlots Site" ;
   rdfs:subClassOf tern:Site ;
-  skos:definition "AusPlots is a plot-based surveillance monitoring program delivered by TERN Surveillance. An [AusPlot Site](#AusPlotsSite) refers to a [site](#Site) where AusPlots Rangelands or Forests method has been implemented." ;
+  skos:definition "AusPlots is a plot-based surveillance monitoring program delivered by TERN Surveillance. An [AusPlot Site](#AusPlotsSite) refers to a [site](#EcologicalSite) where AusPlots Rangelands or Forests method has been implemented." ;
   skos:example <http://linked.data.gov.au/dataset/ausplots/site-QDABBN0001> ;
   skos:seeAlso <http://www.ausplots.org/> ;
 .
@@ -204,7 +202,7 @@ tern:CORVEGSite
   dcterms:source <https://www.data.qld.gov.au/dataset/queensland-corveg-database> ;
   rdfs:label "CORVEG Site" ;
   rdfs:subClassOf tern:Site ;
-  skos:definition "A [CORVEG Site] (#CORVEGSite) refers to a study location in Queensland that was visited since 1982 to collect data on physical and vegetation features, including structural and floristic attributes as well as descriptions of its landscape, soil and geological features." ;
+  skos:definition "A [CORVEG Site](#CORVEGSite) refers to a study location in Queensland that was visited since 1982 to collect data on physical and vegetation features, including structural and floristic attributes as well as descriptions of its landscape, soil and geological features." ;
   skos:example <http://linked.data.gov.au/dataset/corveg/site-12319> ;
   skos:seeAlso <http://aekos.org.au/collection/qld.gov.au/corveg> ;
 .
@@ -313,7 +311,7 @@ tern:Dimension
       owl:onProperty data:unit ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#Site). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
+  skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#EcologicalSite). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
 .
 tern:EarthObservationSatellite
   a owl:Class ;
@@ -326,7 +324,7 @@ tern:EcosystemProcessesSite
   a owl:Class ;
   rdfs:label "Ecosystem Processes Site" ;
   rdfs:subClassOf tern:Site ;
-  skos:definition "An ecological [Site](#Site) that usually hosts a [FluxTower](#FluxTower)." ;
+  skos:definition "An ecological [Site](#EcologicalSite) that usually hosts a [FluxTower](#FluxTower)." ;
 .
 tern:EnvironmentalCharacteristic
   a owl:Class ;
@@ -339,6 +337,14 @@ tern:EnvironmentalCharacteristic
       owl:onProperty sosa:isFeatureOfInterestOf ;
     ] ;
   skos:definition "The environment characteristics  is a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) of a location where [Observations](#Observation) such as the annual mean rainfall or the annual mean temperature are made." ;
+.
+tern:FeatureOfInterest
+  a rdfs:Class ;
+  a owl:Class ;
+  rdfs:label "Feature of Interest" ;
+  rdfs:subClassOf sosa:FeatureOfInterest ;
+  skos:definition "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+  skos:example "When measuring the height of a tree, the height is the observed ObservableProperty, 20m may be the Result of the Observation, and the tree is the FeatureOfInterest. A window is a FeatureOfInterest for an automatic window control Actuator."@en ;
 .
 tern:FixedPlatform
   a owl:Class ;
@@ -570,7 +576,7 @@ tern:Observation
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass tern:SiteVisit ;
-      owl:onProperty tern:wasSubActivityOf ;
+      owl:onProperty tern:isSubActivityOf ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -809,7 +815,7 @@ tern:SAR
 tern:Sample
   a owl:Class ;
   rdfs:label "Sample" ;
-  rdfs:subClassOf sosa:Sample ;
+  rdfs:subClassOf tern:FeatureOfInterest ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
@@ -994,7 +1000,7 @@ tern:Sensor
 .
 tern:Site
   a owl:Class ;
-  rdfs:label "Site" ;
+  rdfs:label "Ecological Site" ;
   rdfs:subClassOf tern:Platform ;
   rdfs:subClassOf tern:Sample ;
   rdfs:subClassOf [
@@ -1149,7 +1155,7 @@ tern:Site
     ] ;
   skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
   skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
-  skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#Site) and [Subsite](#Site) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha subsites." ;
+  skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#EcologicalSite) and [Subsite](#EcologicalSite) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha subsites." ;
 .
 tern:SiteStratum
   a owl:Class ;
@@ -1167,7 +1173,7 @@ tern:SiteStratum
       owl:onProperty sosa:isSampleOf ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:definition "Structural element covering a recognisable height range in vegetation ecosystem occurring at an observation [Site](#Site)." ;
+  skos:definition "Structural element covering a recognisable height range in vegetation ecosystem occurring at an observation [Site](#EcologicalSite)." ;
 .
 tern:SiteStratumTaxon
   a owl:Class ;
@@ -1241,7 +1247,7 @@ tern:SiteVisit
               tern:Sampling
             ) ;
         ] ;
-      owl:onProperty tern:hadSubActivity ;
+      owl:onProperty tern:hasSubActivity ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1372,7 +1378,7 @@ tern:Transect
 tern:area
   a rdf:Property ;
   rdfs:label "area" ;
-  skos:definition "The extent of a [Site](#Site) area, e.g., in m2" ;
+  skos:definition "The extent of a [Site](#EcologicalSite) area, e.g., in m2" ;
   skos:example " The area of the Mitchell Grass Rangeland SuperSite Supersite is approximately 47 M (million) ha." ;
 .
 tern:cardinalDirection
@@ -1395,7 +1401,7 @@ as [tern-loc:Point](https://w3id.org/tern/ontologies/loc/Point).""" ;
 tern:dateCommissioned
   a rdf:Property ;
   rdfs:label "date commissioned" ;
-  skos:definition "The date when, e.g., a [Site](#Site) is ready to commence its operations, after it is successfully installed and tested." ;
+  skos:definition "The date when, e.g., a [Site](#EcologicalSite) is ready to commence its operations, after it is successfully installed and tested." ;
   skos:example """1 August 2017 is the date commisioned of the 
 [Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
   skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing start date may be set to the first of the month." ;
@@ -1403,7 +1409,7 @@ tern:dateCommissioned
 tern:dateDecommissioned
   a rdf:Property ;
   rdfs:label "date decommissioned" ;
-  skos:definition "The date when, e.g., a [Site](#Site) is decommissioned or stopped operating." ;
+  skos:definition "The date when, e.g., a [Site](#EcologicalSite) is decommissioned or stopped operating." ;
   skos:example """30 Nov 2019 is the date decommisioned of the 
 [Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
   skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing end date may be set to the end of the month." ;
@@ -1411,7 +1417,13 @@ tern:dateDecommissioned
 tern:dimension
   a rdf:Property ;
   rdfs:label "dimension" ;
-  skos:definition "A property that links, e.g., a [Site](#Site) to its [Dimension](#Dimension)." ;
+  skos:definition "A property that links, e.g., a [Site](#EcologicalSite) to its [Dimension](#Dimension)." ;
+.
+tern:domain
+  a rdf:Property ;
+  rdfs:label "domain" ;
+  skos:definition "The domain of the observation." ;
+  skos:example "Vegetation, soil, disturbance, landform, etc." ;
 .
 tern:equipment
   a owl:DatatypeProperty ;
@@ -1450,11 +1462,6 @@ tern:globalVocabulary
   rdfs:label "global vocabulary" ;
   skos:definition "The global vocabulary refers to the main vocabulary, which takes precedence over other similar vocabularies to promote data harmonisation." ;
 .
-tern:hadSubActivity
-  a rdf:Property ;
-  rdfs:label "had sub activity" ;
-  skos:definition "Link to an [Observation](#Observation) or [Sampling](#Sampling)." ;
-.
 tern:hasCategoricalCollection
   a rdf:Property ;
   rdfs:label "has categorical collection" ;
@@ -1491,6 +1498,11 @@ tern:hasSamplingPoint
   owl:inverseOf tern:isSamplingPointOf ;
   skos:definition "A property that links, e.g., a [Sampling](#Sampling) to a [SamplingPoint](#SamplingPoint)." ;
 .
+tern:hasSubActivity
+  a rdf:Property ;
+  rdfs:label "has sub activity" ;
+  skos:definition "Link to an [Observation](#Observation) or [Sampling](#Sampling)." ;
+.
 tern:instructions
   a owl:DatatypeProperty ;
   rdfs:label "instructions" ;
@@ -1510,6 +1522,11 @@ tern:isSamplingPointOf
   rdfs:label "is sampling point of" ;
   owl:inverseOf tern:hasSamplingPoint ;
   skos:definition "The inverse property [hasSamplingPoint](#hasSamplingPoint)." ;
+.
+tern:isSubActivityOf
+  a rdf:Property ;
+  rdfs:label "is sub activity of" ;
+  skos:definition "A property that links an activity to its parent activity." ;
 .
 tern:length
   a rdf:Property ;
@@ -1572,7 +1589,7 @@ tern:site
   a rdf:Property ;
   rdfs:label "site" ;
   rdfs:range tern:Site ;
-  skos:definition "A property that links, e.g., a [SiteVisit](#SiteVisit) to a [Site](#Site)." ;
+  skos:definition "A property that links, e.g., a [SiteVisit](#EcologicalSiteVisit) to a [Site](#EcologicalSite)." ;
 .
 tern:siteDescription
   a rdf:Property ;
@@ -1591,7 +1608,7 @@ tern:siteVisit
   a rdf:Property ;
   rdfs:label "site visit" ;
   rdfs:range tern:SiteVisit ;
-  skos:definition "A property that links, e.g., a [Site](#Site) to a [Site Visit](#SiteVisit)." ;
+  skos:definition "A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit)." ;
 .
 tern:soilClassification
   a rdf:Property ;
@@ -1642,16 +1659,16 @@ tern:transectStartPoint
   rdfs:label "transect start point" ;
   skos:definition "Refers to the [tern-loc:Point](https://w3id.org/tern/ontologies/loc/Point) representing the start of a transect." ;
 .
-tern:wasSubActivityOf
-  a rdf:Property ;
-  rdfs:label "was sub activity of" ;
-  skos:definition "A property that links an activity to its parent activity." ;
-.
 tern:width
   a rdf:Property ;
   rdfs:label "width" ;
   rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Width> ;
   skos:definition "The measurement or extent of something from side to side." ;
+.
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
+  a schema-https:Organization ;
+  schema-https:identifier <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+  schema-https:name "TERN" ;
 .
 [
   a owl:Class ;
