@@ -168,8 +168,8 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
-  owl:versionIRI <http://linked.data.gov.au/def/plot/0.1.2> ;
-  owl:versionInfo "0.1.3" ;
+  owl:versionIRI <http://linked.data.gov.au/def/plot/0.2.0> ;
+  owl:versionInfo "0.2.0" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;

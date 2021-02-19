@@ -105,8 +105,8 @@ tern: a owl:Ontology ;
         loc:,
         tern-org:,
         <https://w3id.org/tern/ontologies/sd/> ;
-    owl:versionIRI plot:0.1.2 ;
-    owl:versionInfo "0.1.3" ;
+    owl:versionIRI plot:0.2.0 ;
+    owl:versionInfo "0.2.0" ;
     prov:wasGeneratedBy [ a doap:Project,
                 prov:Activity ;
             doap:repository <https://github.com/ternaustralia/ontology_tern> ] .
