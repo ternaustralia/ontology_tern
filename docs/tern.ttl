@@ -996,6 +996,11 @@ tern:Sensor
       owl:allValuesFrom tern:Observation ;
       owl:onProperty sosa:madeObservation ;
     ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern:Platform ;
+      owl:onProperty sosa:isHostedBy ;
+    ] ;
   skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms." ;
 .
 tern:Site
