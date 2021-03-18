@@ -146,7 +146,7 @@ tern:
       schema-https:name "Simon J.D.Cox" ;
     ] ;
   dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2020-12-07"^^xsd:date ;
+  dcterms:modified "2020-03-18"^^xsd:date ;
   dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   rdfs:comment """The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.
   
@@ -168,8 +168,8 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
-  owl:versionIRI <http://linked.data.gov.au/def/plot/0.2.0> ;
-  owl:versionInfo "0.2.0" ;
+  owl:versionIRI <http://linked.data.gov.au/def/plot/0.2.1> ;
+  owl:versionInfo "0.2.1" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;
@@ -386,6 +386,12 @@ tern:FluxTower
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty tern:purpose ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:onClass xsd:date ;
       owl:onProperty tern:dateCommissioned ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -434,6 +440,24 @@ tern:Instrument
   a owl:Class ;
   rdfs:label "Instrument" ;
   rdfs:subClassOf ssn:System ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom [
+          a owl:Class ;
+          owl:unionOf (
+              skos:Concept
+              owl:Class
+              rdfs:Class
+              owl:NamedIndividual
+            ) ;
+        ] ;
+      owl:onProperty dcterms:type ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty dcterms:type ;
+    ] ;
   skos:definition "A device or instrument that is used for making measurements or observations." ;
 .
 tern:Method
@@ -1000,6 +1024,12 @@ tern:Sensor
       a owl:Restriction ;
       owl:allValuesFrom tern:Platform ;
       owl:onProperty sosa:isHostedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onDataRange xsd:string ;
+      owl:onProperty schema:serialNumber ;
     ] ;
   skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms." ;
 .
