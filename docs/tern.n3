@@ -84,7 +84,7 @@ tern: a owl:Ontology ;
                     schema-https:name "CSIRO" ] ;
             schema-https:name "Simon J.D.Cox" ] ;
     dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:modified "2020-12-07"^^xsd:date ;
+    dcterms:modified "2020-03-18"^^xsd:date ;
     dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
     rdfs:comment """The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.
   
@@ -105,8 +105,8 @@ tern: a owl:Ontology ;
         loc:,
         tern-org:,
         <https://w3id.org/tern/ontologies/sd/> ;
-    owl:versionIRI plot:0.2.0 ;
-    owl:versionInfo "0.2.0" ;
+    owl:versionIRI plot:0.2.1 ;
+    owl:versionInfo "0.2.1" ;
     prov:wasGeneratedBy [ a doap:Project,
                 prov:Activity ;
             doap:repository <https://github.com/ternaustralia/ontology_tern> ] .
@@ -211,6 +211,10 @@ tern:FluxTower a owl:Class ;
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass tern:Site ;
             owl:onProperty sosa:isHostedBy ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty tern:purpose ],
         [ a owl:Restriction ;
             owl:onClass xsd:date ;
             owl:onProperty tern:dateCommissioned ;
@@ -580,11 +584,6 @@ tern:polygon a rdf:Property ;
     rdfs:subPropertyOf geosparql:hasGeometry ;
     skos:definition "The polygon of the subject." .
 
-tern:purpose a owl:DatatypeProperty ;
-    rdfs:label "purpose" ;
-    rdfs:range xsd:string ;
-    skos:definition "Describe the purpose of something." .
-
 tern:sampleStorageLocation a rdf:Property ;
     rdfs:label "sample storage location" ;
     rdfs:subPropertyOf geosparql:hasGeometry ;
@@ -645,7 +644,14 @@ data:Text rdfs:subClassOf tern:Result .
 
 tern:Instrument a owl:Class ;
     rdfs:label "Instrument" ;
-    rdfs:subClassOf ssn:System ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:unionOf ( skos:Concept owl:Class rdfs:Class owl:NamedIndividual ) ] ;
+            owl:onProperty dcterms:type ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty dcterms:type ],
+        ssn:System ;
     skos:definition "A device or instrument that is used for making measurements or observations." .
 
 tern:ObservableProperty a owl:Class ;
@@ -780,6 +786,11 @@ tern:locationDescription a rdf:Property ;
 Pine Hill Station. 25km South East of Ti-Tree. 20km East of Stuart Highway. 
 South west corner of the site is 200m north west of proposed supersite flux tower""" .
 
+tern:purpose a owl:DatatypeProperty ;
+    rdfs:label "purpose" ;
+    rdfs:range xsd:string ;
+    skos:definition "Describe the purpose of something." .
+
 tern:site a rdf:Property ;
     rdfs:label "site" ;
     rdfs:range tern:Site ;
@@ -851,6 +862,13 @@ tern:Sensor a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom tern:Observation ;
             owl:onProperty sosa:madeObservation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom tern:Platform ;
+            owl:onProperty sosa:isHostedBy ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty schema:serialNumber ],
         sosa:Sensor,
         tern:Instrument ;
     skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms." .
@@ -932,15 +950,6 @@ tern:hasSamplingPoint a rdf:Property ;
     owl:inverseOf tern:isSamplingPointOf ;
     skos:definition "A property that links, e.g., a [Sampling](#Sampling) to a [SamplingPoint](#SamplingPoint)." .
 
-tern:Platform a owl:Class ;
-    rdfs:label "Platform" ;
-    rdfs:subClassOf sosa:Platform ;
-    skos:definition "An entity that hosts other entities, particularly [Sensors](#Sensor), [Samplers](#Sampler), and other [Platforms](#Platform)." ;
-    skos:example """Ocean buoy is an example of platform that is equipped with 
-an array of sensors such as GPS, current meters, atmospheric sensors and water 
-quality monitors. Sensors measuring weather variables are attached to 
-a weather station (a platform)""" .
-
 tern:Procedure a owl:Class ;
     rdfs:label "Procedure" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -1004,6 +1013,15 @@ Sieving a powder to separate the subset finer than 100-mesh.
 Selecting a subset of a population.
 Splitting a piece of drill-core to create two new samples.
 Taking a diamond-drill core from a rock outcrop.""" .
+
+tern:Platform a owl:Class ;
+    rdfs:label "Platform" ;
+    rdfs:subClassOf sosa:Platform ;
+    skos:definition "An entity that hosts other entities, particularly [Sensors](#Sensor), [Samplers](#Sampler), and other [Platforms](#Platform)." ;
+    skos:example """Ocean buoy is an example of platform that is equipped with 
+an array of sensors such as GPS, current meters, atmospheric sensors and water 
+quality monitors. Sensors measuring weather variables are attached to 
+a weather station (a platform)""" .
 
 data:QuantitativeMeasure rdfs:subClassOf tern:Result .
 

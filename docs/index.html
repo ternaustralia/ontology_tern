@@ -446,20 +446,20 @@
      </a>
     </dt>
     <dd>
-     2020-12-07
+     2020-03-18
     </dd>
     <dt>
      Version Information
     </dt>
     <dd>
-     0.2.0
+     0.2.1
     </dd>
     <dt>
      Version URI
     </dt>
     <dd>
-     <a href="http://linked.data.gov.au/def/plot/0.2.0">
-      plot:0.2.0
+     <a href="http://linked.data.gov.au/def/plot/0.2.1">
+      plot:0.2.1
      </a>
     </dd>
     <dt>
@@ -1411,13 +1411,12 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
        Restrictions
       </th>
       <td>
-       <a href="http://purl.org/dc/terms/source">
-        dcterms:source
+       <a href="http://www.w3.org/2004/02/skos/core#altLabel">
+        skos:altLabel
        </a>
        <span class="cardinality">
-        min
+        only
        </span>
-       1
        <a href="http://www.w3.org/2001/XMLSchema#string">
         xsd:string
        </a>
@@ -1433,21 +1432,16 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
        </span>
        1
        <br>
-       <a href="http://www.w3.org/2004/02/skos/core#altLabel">
-        skos:altLabel
+       <a href="http://schema.org/model">
+        schema:model
        </a>
        <span class="cardinality">
-        only
+        min
        </span>
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
+       1
        <br>
-       <a href="http://schema.org/manufacturer">
-        schema:manufacturer
+       <a href="http://purl.org/dc/terms/source">
+        dcterms:source
        </a>
        <span class="cardinality">
         min
@@ -1473,13 +1467,19 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
         c
        </sup>
        <br>
-       <a href="http://schema.org/model">
-        schema:model
+       <a href="http://schema.org/manufacturer">
+        schema:manufacturer
        </a>
        <span class="cardinality">
         min
        </span>
        1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
       </td>
      </tr>
@@ -1522,41 +1522,13 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
        Restrictions
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/width">
-        tern:width
+       <a href="https://w3id.org/tern/ontologies/tern/length">
+        tern:length
        </a>
        <span class="cardinality">
-        only
+        exactly
        </span>
-       (
-       <a href="http://www.w3.org/2001/XMLSchema#decimal">
-        xsd:decimal
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       or
-       <a href="http://www.w3.org/2001/XMLSchema#integer">
-        xsd:integer
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       or
-       <a href="http://www.w3.org/2001/XMLSchema#decimal">
-        xsd:decimal
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       or
-       <a href="http://www.w3.org/2001/XMLSchema#integer">
-        xsd:integer
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       )
+       1
        <br>
        <a href="http://linked.data.gov.au/def/datatype/unit">
         data:unit
@@ -1572,8 +1544,16 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/length">
-        tern:length
+       <a href="https://w3id.org/tern/ontologies/tern/width">
+        tern:width
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/width">
+        tern:width
        </a>
        <span class="cardinality">
         only
@@ -1612,17 +1592,37 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
         tern:length
        </a>
        <span class="cardinality">
-        exactly
+        only
        </span>
-       1
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/width">
-        tern:width
+       (
+       <a href="http://www.w3.org/2001/XMLSchema#decimal">
+        xsd:decimal
        </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       or
+       <a href="http://www.w3.org/2001/XMLSchema#integer">
+        xsd:integer
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       or
+       <a href="http://www.w3.org/2001/XMLSchema#decimal">
+        xsd:decimal
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       or
+       <a href="http://www.w3.org/2001/XMLSchema#integer">
+        xsd:integer
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       )
        <br>
       </td>
      </tr>
@@ -1933,15 +1933,15 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/CosmOzStation">
-        tern:CosmOzStation
+       <a href="https://w3id.org/tern/ontologies/tern/FluxTower">
+        tern:FluxTower
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/FluxTower">
-        tern:FluxTower
+       <a href="https://w3id.org/tern/ontologies/tern/CosmOzStation">
+        tern:CosmOzStation
        </a>
        <sup class="sup-c" title="class">
         c
@@ -1985,7 +1985,7 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
       </th>
       <td>
        <pre>
-                      https://w3id.org/tern/resources/fd2809a2-e705-4961-b09c-7e9ae1ffa87e
+                      Alice Springs Mulga flux tower
                     </pre>
       </td>
      </tr>
@@ -2008,6 +2008,17 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
        Restrictions
       </th>
       <td>
+       <a href="https://w3id.org/tern/ontologies/tern/purpose">
+        tern:purpose
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
        <a href="http://purl.org/dc/terms/description">
         dcterms:description
        </a>
@@ -2030,6 +2041,33 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
        1
        <a href="https://w3id.org/tern/ontologies/tern/Site">
         tern:Site
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/2000/01/rdf-schema#comment">
+        rdfs:comment
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/dateDecommissioned">
+        tern:dateDecommissioned
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#date">
+        xsd:date
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2072,33 +2110,6 @@ A part of an organism isolated for some purpose. A soil sample. A marine microbi
        1
        <a href="http://www.w3.org/2001/XMLSchema#string">
         xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/2000/01/rdf-schema#comment">
-        rdfs:comment
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/dateDecommissioned">
-        tern:dateDecommissioned
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#date">
-        xsd:date
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2187,14 +2198,6 @@ The number of counted trees and the Basal Area Factor are inputs to estimate the
        Restrictions
       </th>
       <td>
-       <a href="http://linked.data.gov.au/def/datatype/value">
-        data:value
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br>
        <a href="http://www.w3.org/2000/01/rdf-schema#label">
         rdfs:label
        </a>
@@ -2221,6 +2224,14 @@ The number of counted trees and the Basal Area Factor are inputs to estimate the
        <sup class="sup-c" title="class">
         c
        </sup>
+       <br>
+       <a href="http://linked.data.gov.au/def/datatype/value">
+        data:value
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
        <br>
       </td>
      </tr>
@@ -2270,18 +2281,69 @@ The number of counted trees and the Basal Area Factor are inputs to estimate the
      </tr>
      <tr>
       <th>
+       Restrictions
+      </th>
+      <td>
+       <a href="http://purl.org/dc/terms/type">
+        dcterms:type
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br>
+       <a href="http://purl.org/dc/terms/type">
+        dcterms:type
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       (
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       or
+       <a href="http://www.w3.org/2002/07/owl#Class">
+        owl:Class
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       or
+       <a href="http://www.w3.org/2000/01/rdf-schema#Class">
+        rdfs:Class
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       or
+       <a href="http://www.w3.org/2002/07/owl#NamedIndividual">
+        owl:NamedIndividual
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       )
+       <br>
+      </td>
+     </tr>
+     <tr>
+      <th>
        Sub-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/Sampler">
-        tern:Sampler
+       <a href="https://w3id.org/tern/ontologies/tern/Sensor">
+        tern:Sensor
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/Sensor">
-        tern:Sensor
+       <a href="https://w3id.org/tern/ontologies/tern/Sampler">
+        tern:Sampler
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2362,30 +2424,22 @@ length of a borehole by lowering measurement instruments down the borehole via c
        Restrictions
       </th>
       <td>
+       <a href="http://www.w3.org/2004/02/skos/core#prefLabel">
+        skos:prefLabel
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="https://w3id.org/tern/ontologies/tern/scope">
         tern:scope
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/equipment">
-        tern:equipment
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/purpose">
-        tern:purpose
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
@@ -2442,19 +2496,27 @@ length of a borehole by lowering measurement instruments down the borehole via c
        </span>
        1
        <br>
-       <a href="http://www.w3.org/2004/02/skos/core#prefLabel">
-        skos:prefLabel
+       <a href="https://w3id.org/tern/ontologies/tern/equipment">
+        tern:equipment
        </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
        <span class="cardinality">
-        exactly
+        max
        </span>
        1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/purpose">
+        tern:purpose
        </a>
-       <sup class="sup-c" title="class">
-        c
+       <sup class="sup-dp" title="datatype property">
+        dp
        </sup>
+       <span class="cardinality">
+        max
+       </span>
+       1
        <br>
       </td>
      </tr>
@@ -2625,34 +2687,6 @@ representative of the area from which it is collected.
        Restrictions
       </th>
       <td>
-       <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">
-        rdf:value
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/Parameter">
-        tern:Parameter
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/globalValue">
-        tern:globalValue
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="https://w3id.org/tern/ontologies/tern/globalVocabulary">
         tern:globalVocabulary
        </a>
@@ -2690,6 +2724,20 @@ representative of the area from which it is collected.
        </span>
        1
        <br>
+       <a href="https://w3id.org/tern/ontologies/tern/globalValue">
+        tern:globalValue
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="https://w3id.org/tern/ontologies/tern/globalVocabulary">
         tern:globalVocabulary
        </a>
@@ -2697,6 +2745,20 @@ representative of the area from which it is collected.
         max
        </span>
        1
+       <br>
+       <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">
+        rdf:value
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/Parameter">
+        tern:Parameter
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
       </td>
      </tr>
@@ -2792,42 +2854,14 @@ of the properties estimated by the sensor.
        Restrictions
       </th>
       <td>
-       <a href="http://www.w3.org/ns/sosa/hasResult">
-        sosa:hasResult
-       </a>
-       <span class="cardinality">
-        min
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/Result">
-        tern:Result
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/ns/sosa/observedProperty">
-        sosa:observedProperty
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/ObservableProperty">
-        tern:ObservableProperty
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/ns/prov#wasAttributedTo">
-        prov:wasAttributedTo
+       <a href="http://www.w3.org/2000/01/rdf-schema#comment">
+        rdfs:comment
        </a>
        <span class="cardinality">
         only
        </span>
-       <a href="https://w3id.org/tern/ontologies/org/Person">
-        tern-org:Person
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
        </a>
        <sup class="sup-c" title="class">
         c
@@ -2847,46 +2881,27 @@ of the properties estimated by the sensor.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/isSubActivityOf">
-        tern:isSubActivityOf
+       <a href="https://w3id.org/tern/ontologies/tern/site">
+        tern:site
        </a>
        <span class="cardinality">
         max
        </span>
        1
-       <a href="https://w3id.org/tern/ontologies/tern/SiteVisit">
-        tern:SiteVisit
+       <a href="https://w3id.org/tern/ontologies/tern/Site">
+        tern:Site
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
-        sosa:hasFeatureOfInterest
+       <a href="http://www.w3.org/ns/sosa/resultTime">
+        sosa:resultTime
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
-       <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">
-        sosa:FeatureOfInterest
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/2000/01/rdf-schema#comment">
-        rdfs:comment
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
        <br>
        <a href="http://www.w3.org/2000/01/rdf-schema#label">
         rdfs:label
@@ -2902,13 +2917,47 @@ of the properties estimated by the sensor.
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/ns/sosa/resultTime">
-        sosa:resultTime
+       <a href="http://www.w3.org/ns/sosa/hasResult">
+        sosa:hasResult
+       </a>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/Result">
+        tern:Result
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/isSubActivityOf">
+        tern:isSubActivityOf
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/SiteVisit">
+        tern:SiteVisit
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/sosa/observedProperty">
+        sosa:observedProperty
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
+       <a href="https://w3id.org/tern/ontologies/tern/ObservableProperty">
+        tern:ObservableProperty
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
        <a href="http://www.w3.org/ns/sosa/usedProcedure">
         sosa:usedProcedure
@@ -2924,15 +2973,28 @@ of the properties estimated by the sensor.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/site">
-        tern:site
+       <a href="http://www.w3.org/ns/prov#wasAttributedTo">
+        prov:wasAttributedTo
        </a>
        <span class="cardinality">
-        max
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/org/Person">
+        tern-org:Person
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+        sosa:hasFeatureOfInterest
+       </a>
+       <span class="cardinality">
+        exactly
        </span>
        1
-       <a href="https://w3id.org/tern/ontologies/tern/Site">
-        tern:Site
+       <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">
+        sosa:FeatureOfInterest
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3155,8 +3217,8 @@ soil features and fauna populations.
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/2000/01/rdf-schema#label">
-        rdfs:label
+       <a href="http://schema.org/serialNumber">
+        schema:serialNumber
        </a>
        <span class="cardinality">
         only
@@ -3168,8 +3230,8 @@ soil features and fauna populations.
         c
        </sup>
        <br>
-       <a href="http://schema.org/serialNumber">
-        schema:serialNumber
+       <a href="http://www.w3.org/2000/01/rdf-schema#label">
+        rdfs:label
        </a>
        <span class="cardinality">
         only
@@ -3236,15 +3298,15 @@ soil features and fauna populations.
        Super-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/Sample">
-        tern:Sample
+       <a href="http://rs.tdwg.org/dwc/terms/MaterialSample">
+        dwc:MaterialSample
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://rs.tdwg.org/dwc/terms/MaterialSample">
-        dwc:MaterialSample
+       <a href="https://w3id.org/tern/ontologies/tern/Sample">
+        tern:Sample
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3355,8 +3417,8 @@ a weather station (a platform)
        Sub-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/FixedPlatform">
-        tern:FixedPlatform
+       <a href="https://w3id.org/tern/ontologies/tern/Site">
+        tern:Site
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3369,8 +3431,8 @@ a weather station (a platform)
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/Site">
-        tern:Site
+       <a href="https://w3id.org/tern/ontologies/tern/FixedPlatform">
+        tern:FixedPlatform
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3481,6 +3543,14 @@ for establishing quadrats for vegetation sampling.
        Restrictions
       </th>
       <td>
+       <a href="http://linked.data.gov.au/def/datatype/vocabulary">
+        data:vocabulary
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br>
        <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#value">
         rdf:value
        </a>
@@ -3495,27 +3565,6 @@ for establishing quadrats for vegetation sampling.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/methodType">
-        tern:methodType
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://linked.data.gov.au/def/datatype/vocabulary">
-        data:vocabulary
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br>
        <a href="http://www.w3.org/ns/ssn/hasInput">
         ssn:hasInput
        </a>
@@ -3525,6 +3574,19 @@ for establishing quadrats for vegetation sampling.
        1
        <a href="https://w3id.org/tern/ontologies/tern/Input">
         tern:Input
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/methodType">
+        tern:methodType
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3624,19 +3686,6 @@ for establishing quadrats for vegetation sampling.
         c
        </sup>
        <br>
-       <a href="http://schema.org/description">
-        schema:description
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/ns/sosa/hasResult">
         sosa:hasResult
        </a>
@@ -3646,6 +3695,19 @@ for establishing quadrats for vegetation sampling.
        1
        <a href="https://w3id.org/tern/ontologies/tern/Result">
         tern:Result
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://schema.org/description">
+        schema:description
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3871,15 +3933,8 @@ tree together with the unit, e.g., Meter.
        Sub-classes
       </th>
       <td>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://linked.data.gov.au/def/datatype/Count">
-        data:Count
+       <a href="http://linked.data.gov.au/def/datatype/Percent">
+        data:Percent
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3892,6 +3947,20 @@ tree together with the unit, e.g., Meter.
         c
        </sup>
        <br>
+       <a href="http://linked.data.gov.au/def/datatype/PercentRange">
+        data:PercentRange
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="http://linked.data.gov.au/def/datatype/Concept">
         data:Concept
        </a>
@@ -3899,8 +3968,8 @@ tree together with the unit, e.g., Meter.
         c
        </sup>
        <br>
-       <a href="http://linked.data.gov.au/def/datatype/Percent">
-        data:Percent
+       <a href="http://linked.data.gov.au/def/datatype/Count">
+        data:Count
        </a>
        <sup class="sup-c" title="class">
         c
@@ -3908,13 +3977,6 @@ tree together with the unit, e.g., Meter.
        <br>
        <a href="http://linked.data.gov.au/def/datatype/QuantitativeRange">
         data:QuantitativeRange
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://linked.data.gov.au/def/datatype/PercentRange">
-        data:PercentRange
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4031,40 +4093,23 @@ examples of samples of some feature of interest.
        Restrictions
       </th>
       <td>
-       <a href="http://www.w3.org/ns/sosa/isSampleOf">
-        sosa:isSampleOf
+       <a href="http://www.w3.org/2000/01/rdf-schema#label">
+        rdfs:label
        </a>
        <span class="cardinality">
-        only
+        exactly
        </span>
-       <a href="https://w3id.org/tern/ontologies/tern/Sample">
-        tern:Sample
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
+       1
        <br>
-       <a href="http://www.w3.org/ns/sosa/hasSample">
-        sosa:hasSample
+       <a href="http://www.w3.org/ns/sosa/isResultOf">
+        sosa:isResultOf
        </a>
        <span class="cardinality">
-        only
+        max
        </span>
-       <a href="https://w3id.org/tern/ontologies/tern/Sample">
-        tern:Sample
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
-        sosa:isFeatureOfInterestOf
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/tern/Observation">
-        tern:Observation
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/Sampling">
+        tern:Sampling
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4096,27 +4141,44 @@ examples of samples of some feature of interest.
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/ns/sosa/isResultOf">
-        sosa:isResultOf
+       <a href="http://www.w3.org/ns/sosa/isSampleOf">
+        sosa:isSampleOf
        </a>
        <span class="cardinality">
-        max
+        only
        </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/Sampling">
-        tern:Sampling
+       <a href="https://w3id.org/tern/ontologies/tern/Sample">
+        tern:Sample
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/2000/01/rdf-schema#label">
-        rdfs:label
+       <a href="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
+        sosa:isFeatureOfInterestOf
        </a>
        <span class="cardinality">
-        exactly
+        only
        </span>
-       1
+       <a href="https://w3id.org/tern/ontologies/tern/Observation">
+        tern:Observation
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/sosa/hasSample">
+        sosa:hasSample
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/tern/Sample">
+        tern:Sample
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
       </td>
      </tr>
@@ -4125,22 +4187,8 @@ examples of samples of some feature of interest.
        Sub-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/Transect">
-        tern:Transect
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/SoilHorizon">
-        tern:SoilHorizon
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/SoilProfile">
-        tern:SoilProfile
+       <a href="https://w3id.org/tern/ontologies/tern/SiteTaxon">
+        tern:SiteTaxon
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4160,15 +4208,22 @@ examples of samples of some feature of interest.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/Site">
-        tern:Site
+       <a href="https://w3id.org/tern/ontologies/tern/SoilProfile">
+        tern:SoilProfile
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/SiteTaxon">
-        tern:SiteTaxon
+       <a href="https://w3id.org/tern/ontologies/tern/SoilHorizon">
+        tern:SoilHorizon
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/Transect">
+        tern:Transect
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4176,6 +4231,13 @@ examples of samples of some feature of interest.
        <br>
        <a href="https://w3id.org/tern/ontologies/tern/SiteStratumTaxon">
         tern:SiteStratumTaxon
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/Site">
+        tern:Site
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4287,15 +4349,15 @@ examples of samples of some feature of interest.
        Sub-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/DigitalCamera">
-        tern:DigitalCamera
+       <a href="https://w3id.org/tern/ontologies/tern/PhenologyCamera">
+        tern:PhenologyCamera
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/PhenologyCamera">
-        tern:PhenologyCamera
+       <a href="https://w3id.org/tern/ontologies/tern/DigitalCamera">
+        tern:DigitalCamera
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4391,6 +4453,34 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
+       <a href="https://w3id.org/tern/ontologies/tern/hasSamplingPoint">
+        tern:hasSamplingPoint
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/SamplingPoint">
+        tern:SamplingPoint
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/sosa/usedProcedure">
+        sosa:usedProcedure
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/Procedure">
+        tern:Procedure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="http://www.w3.org/2000/01/rdf-schema#label">
         rdfs:label
        </a>
@@ -4418,20 +4508,6 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/ns/sosa/usedProcedure">
-        sosa:usedProcedure
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/Procedure">
-        tern:Procedure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/ns/prov#wasAttributedTo">
         prov:wasAttributedTo
        </a>
@@ -4454,20 +4530,6 @@ Taking a diamond-drill core from a rock outcrop.
        1
        <a href="https://w3id.org/tern/ontologies/tern/Sample">
         tern:Sample
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/hasSamplingPoint">
-        tern:hasSamplingPoint
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/SamplingPoint">
-        tern:SamplingPoint
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4546,6 +4608,34 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
+       <a href="https://w3id.org/tern/ontologies/loc/longitude">
+        loc:longitude
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://purl.org/dc/terms/identifier">
+        dcterms:identifier
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="https://w3id.org/tern/ontologies/loc/latitude">
         loc:latitude
        </a>
@@ -4559,14 +4649,6 @@ Taking a diamond-drill core from a rock outcrop.
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
        <br>
        <a href="https://w3id.org/tern/ontologies/tern/isSamplingPointOf">
         tern:isSamplingPointOf
@@ -4596,20 +4678,6 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="http://purl.org/dc/terms/identifier">
-        dcterms:identifier
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="https://w3id.org/tern/ontologies/loc/altitude">
         loc:altitude
        </a>
@@ -4624,19 +4692,13 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/longitude">
-        loc:longitude
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
        <br>
       </td>
      </tr>
@@ -4686,15 +4748,15 @@ Taking a diamond-drill core from a rock outcrop.
        Super-classes
       </th>
       <td>
-       <a href="http://www.w3.org/ns/sosa/Sensor">
-        sosa:Sensor
+       <a href="https://w3id.org/tern/ontologies/tern/Instrument">
+        tern:Instrument
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/Instrument">
-        tern:Instrument
+       <a href="http://www.w3.org/ns/sosa/Sensor">
+        sosa:Sensor
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4707,19 +4769,6 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
-       <a href="http://www.w3.org/ns/sosa/observes">
-        sosa:observes
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/tern/ObservableProperty">
-        tern:ObservableProperty
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/ns/sosa/madeObservation">
         sosa:madeObservation
        </a>
@@ -4733,6 +4782,40 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
+       <a href="http://www.w3.org/ns/sosa/observes">
+        sosa:observes
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/tern/ObservableProperty">
+        tern:ObservableProperty
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/sosa/isHostedBy">
+        sosa:isHostedBy
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/tern/Platform">
+        tern:Platform
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://schema.org/serialNumber">
+        schema:serialNumber
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
       </td>
      </tr>
      <tr>
@@ -4740,15 +4823,15 @@ Taking a diamond-drill core from a rock outcrop.
        Sub-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/SAR">
-        tern:SAR
+       <a href="https://w3id.org/tern/ontologies/tern/Spectroradiometer">
+        tern:Spectroradiometer
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/Spectroradiometer">
-        tern:Spectroradiometer
+       <a href="https://w3id.org/tern/ontologies/tern/SAR">
+        tern:SAR
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4841,20 +4924,6 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/swPoint">
-        tern:swPoint
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/loc/Point">
-        loc:Point
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/ns/dcat#dataset">
         http://www.w3.org/ns/dcat#dataset
        </a>
@@ -4869,43 +4938,29 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/dateCommissioned">
-        tern:dateCommissioned
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#date">
-        xsd:date
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://purl.org/dc/terms/identifier">
-        dcterms:identifier
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/siteDescription">
-        tern:siteDescription
+       <a href="https://w3id.org/tern/ontologies/tern/swPoint">
+        tern:swPoint
        </a>
        <span class="cardinality">
         max
        </span>
        1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
+       <a href="https://w3id.org/tern/ontologies/loc/Point">
+        loc:Point
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/dateDecommissioned">
+        tern:dateDecommissioned
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#date">
+        xsd:date
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4922,13 +4977,26 @@ Taking a diamond-drill core from a rock outcrop.
        </span>
        1
        <br>
-       <a href="http://www.w3.org/2000/01/rdf-schema#label">
-        rdfs:label
+       <a href="https://w3id.org/tern/ontologies/tern/siteShape">
+        tern:siteShape
        </a>
        <span class="cardinality">
-        exactly
+        max
        </span>
        1
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/2000/01/rdf-schema#comment">
+        rdfs:comment
+       </a>
+       <span class="cardinality">
+        only
+       </span>
        <a href="http://www.w3.org/2001/XMLSchema#string">
         xsd:string
        </a>
@@ -4936,14 +5004,49 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="http://schema.org/additionalProperty">
-        schema:additionalProperty
+       <a href="http://purl.org/dc/terms/hasPart">
+        dcterms:hasPart
        </a>
        <span class="cardinality">
         only
        </span>
-       <a href="https://w3id.org/tern/ontologies/tern/PropertyValue">
-        tern:PropertyValue
+       <a href="https://w3id.org/tern/ontologies/tern/Site">
+        tern:Site
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/prov#generatedAtTime">
+        prov:generatedAtTime
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
+       <a href="http://purl.org/dc/terms/isPartOf">
+        dcterms:isPartOf
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/tern/Site">
+        tern:Site
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/area">
+        tern:area
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
        </a>
        <sup class="sup-c" title="class">
         c
@@ -4957,33 +5060,6 @@ Taking a diamond-drill core from a rock outcrop.
        </span>
        <a href="https://w3id.org/tern/ontologies/tern/Procedure">
         tern:Procedure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/ns/sosa/hasSample">
-        sosa:hasSample
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/tern/PhysicalSpecimen">
-        tern:PhysicalSpecimen
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/centroidPoint">
-        tern:centroidPoint
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/loc/Point">
-        loc:Point
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5003,43 +5079,111 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/ns/prov#generatedAtTime">
-        prov:generatedAtTime
+       <a href="http://purl.org/dc/terms/identifier">
+        dcterms:identifier
        </a>
        <span class="cardinality">
-        max
+        exactly
        </span>
        1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
-       <a href="http://purl.org/dc/terms/hasPart">
-        dcterms:hasPart
+       <a href="http://www.w3.org/2000/01/rdf-schema#label">
+        rdfs:label
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/siteVisit">
+        tern:siteVisit
        </a>
        <span class="cardinality">
         only
        </span>
-       <a href="https://w3id.org/tern/ontologies/tern/Site">
-        tern:Site
+       <a href="https://w3id.org/tern/ontologies/tern/SiteVisit">
+        tern:SiteVisit
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/siteShape">
-        tern:siteShape
+       <a href="https://w3id.org/tern/ontologies/tern/polygon">
+        tern:polygon
        </a>
        <span class="cardinality">
         max
        </span>
        1
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
+       <a href="https://w3id.org/tern/ontologies/loc/Polygon">
+        loc:Polygon
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/locationDescription">
-        tern:locationDescription
+       <a href="http://www.w3.org/ns/sosa/hasSample">
+        sosa:hasSample
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/tern/PhysicalSpecimen">
+        tern:PhysicalSpecimen
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
+        geosparql:hasGeometry
+       </a>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/centroidPoint">
+        tern:centroidPoint
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/loc/Point">
+        loc:Point
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.opengis.net/ont/geosparql#sfWithin">
+        geosparql:sfWithin
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.opengis.net/ont/geosparql#Feature">
+        geosparql:Feature
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/siteDescription">
+        tern:siteDescription
        </a>
        <span class="cardinality">
         max
@@ -5074,61 +5218,42 @@ Taking a diamond-drill core from a rock outcrop.
        </sup>
        )
        <br>
-       <a href="http://www.w3.org/2000/01/rdf-schema#comment">
-        rdfs:comment
+       <a href="http://schema.org/additionalProperty">
+        schema:additionalProperty
        </a>
        <span class="cardinality">
         only
        </span>
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
+       <a href="https://w3id.org/tern/ontologies/tern/PropertyValue">
+        tern:PropertyValue
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://www.opengis.net/ont/geosparql#sfWithin">
-        geosparql:sfWithin
+       <a href="https://w3id.org/tern/ontologies/tern/dateCommissioned">
+        tern:dateCommissioned
        </a>
        <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.opengis.net/ont/geosparql#Feature">
-        geosparql:Feature
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
-        geosparql:hasGeometry
-       </a>
-       <span class="cardinality">
-        min
+        exactly
        </span>
        1
-       <br>
-       <a href="http://purl.org/dc/terms/isPartOf">
-        dcterms:isPartOf
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/tern/Site">
-        tern:Site
+       <a href="http://www.w3.org/2001/XMLSchema#date">
+        xsd:date
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/siteVisit">
-        tern:siteVisit
+       <a href="https://w3id.org/tern/ontologies/tern/locationDescription">
+        tern:locationDescription
        </a>
        <span class="cardinality">
-        only
+        max
        </span>
-       <a href="https://w3id.org/tern/ontologies/tern/SiteVisit">
-        tern:SiteVisit
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5148,48 +5273,6 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/polygon">
-        tern:polygon
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/loc/Polygon">
-        loc:Polygon
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/dateDecommissioned">
-        tern:dateDecommissioned
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#date">
-        xsd:date
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/area">
-        tern:area
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
       </td>
      </tr>
      <tr>
@@ -5197,8 +5280,8 @@ Taking a diamond-drill core from a rock outcrop.
        Sub-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/OEHSite">
-        tern:OEHSite
+       <a href="https://w3id.org/tern/ontologies/tern/EcosystemProcessesSite">
+        tern:EcosystemProcessesSite
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5211,13 +5294,6 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/CORVEGSite">
-        tern:CORVEGSite
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="https://w3id.org/tern/ontologies/tern/SuperSite">
         tern:SuperSite
        </a>
@@ -5225,8 +5301,15 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/EcosystemProcessesSite">
-        tern:EcosystemProcessesSite
+       <a href="https://w3id.org/tern/ontologies/tern/OEHSite">
+        tern:OEHSite
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/CORVEGSite">
+        tern:CORVEGSite
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5309,20 +5392,6 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
-       <a href="http://www.w3.org/ns/sosa/isSampleOf">
-        sosa:isSampleOf
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/Site">
-        tern:Site
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="https://w3id.org/tern/ontologies/tern/stratum">
         tern:stratum
        </a>
@@ -5332,6 +5401,20 @@ Taking a diamond-drill core from a rock outcrop.
        1
        <a href="http://www.w3.org/2004/02/skos/core#Concept">
         skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/sosa/isSampleOf">
+        sosa:isSampleOf
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/Site">
+        tern:Site
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5378,6 +5461,20 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
+       <a href="http://www.w3.org/ns/sosa/isSampleOf">
+        sosa:isSampleOf
+       </a>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/SiteTaxon">
+        tern:SiteTaxon
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="https://w3id.org/tern/ontologies/tern/taxon">
         tern:taxon
        </a>
@@ -5401,20 +5498,6 @@ Taking a diamond-drill core from a rock outcrop.
        1
        <a href="https://w3id.org/tern/ontologies/tern/SiteStratum">
         tern:SiteStratum
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/ns/sosa/isSampleOf">
-        sosa:isSampleOf
-       </a>
-       <span class="cardinality">
-        min
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/SiteTaxon">
-        tern:SiteTaxon
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5526,6 +5609,88 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
+       <a href="http://purl.org/dc/terms/identifier">
+        dcterms:identifier
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://schema.org/additionalProperty">
+        schema:additionalProperty
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/tern/PropertyValue">
+        tern:PropertyValue
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/2000/01/rdf-schema#label">
+        rdfs:label
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/site">
+        tern:site
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="https://w3id.org/tern/ontologies/tern/Site">
+        tern:Site
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/ns/prov#endedAtTime">
+        prov:endedAtTime
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#dateTime">
+        xsd:dateTime
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/siteDescription">
+        tern:siteDescription
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="http://www.w3.org/ns/prov#startedAtTime">
         prov:startedAtTime
        </a>
@@ -5534,6 +5699,20 @@ Taking a diamond-drill core from a rock outcrop.
        </span>
        <a href="http://www.w3.org/2001/XMLSchema#dateTime">
         xsd:dateTime
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/locationDescription">
+        tern:locationDescription
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://www.w3.org/2001/XMLSchema#string">
+        xsd:string
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5561,33 +5740,6 @@ Taking a diamond-drill core from a rock outcrop.
        </sup>
        )
        <br>
-       <a href="http://www.w3.org/ns/prov#endedAtTime">
-        prov:endedAtTime
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#dateTime">
-        xsd:dateTime
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/2000/01/rdf-schema#label">
-        rdfs:label
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/2000/01/rdf-schema#comment">
         rdfs:comment
        </a>
@@ -5601,61 +5753,6 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="http://schema.org/additionalProperty">
-        schema:additionalProperty
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/tern/PropertyValue">
-        tern:PropertyValue
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/siteDescription">
-        tern:siteDescription
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/locationDescription">
-        tern:locationDescription
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/site">
-        tern:site
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="https://w3id.org/tern/ontologies/tern/Site">
-        tern:Site
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/ns/sosa/hasSample">
         sosa:hasSample
        </a>
@@ -5664,20 +5761,6 @@ Taking a diamond-drill core from a rock outcrop.
        </span>
        <a href="https://w3id.org/tern/ontologies/tern/PhysicalSpecimen">
         tern:PhysicalSpecimen
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://purl.org/dc/terms/identifier">
-        dcterms:identifier
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="http://www.w3.org/2001/XMLSchema#string">
-        xsd:string
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5755,14 +5838,14 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
-       <a href="http://www.w3.org/ns/sosa/isSampleOf">
-        sosa:isSampleOf
+       <a href="https://w3id.org/tern/ontologies/loc/depth">
+        loc:depth
        </a>
        <span class="cardinality">
         only
        </span>
-       <a href="https://w3id.org/tern/ontologies/tern/SoilProfile">
-        tern:SoilProfile
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeRange">
+        data:QuantitativeRange
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5781,14 +5864,14 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/depth">
-        loc:depth
+       <a href="http://www.w3.org/ns/sosa/isSampleOf">
+        sosa:isSampleOf
        </a>
        <span class="cardinality">
         only
        </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeRange">
-        data:QuantitativeRange
+       <a href="https://w3id.org/tern/ontologies/tern/SoilProfile">
+        tern:SoilProfile
        </a>
        <sup class="sup-c" title="class">
         c
@@ -5855,19 +5938,6 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/tern/soilClassification">
-        tern:soilClassification
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/Text">
-        data:Text
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/ns/sosa/hasSample">
         sosa:hasSample
        </a>
@@ -5877,6 +5947,19 @@ Taking a diamond-drill core from a rock outcrop.
        1
        <a href="https://w3id.org/tern/ontologies/tern/SoilHorizon">
         tern:SoilHorizon
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/tern/soilClassification">
+        tern:soilClassification
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/Text">
+        data:Text
        </a>
        <sup class="sup-c" title="class">
         c
@@ -6079,27 +6162,19 @@ Taking a diamond-drill core from a rock outcrop.
        Restrictions
       </th>
       <td>
-       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
-        geosparql:hasGeometry
+       <a href="https://w3id.org/tern/ontologies/tern/transectStartPoint">
+        tern:transectStartPoint
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
-       <a href="https://w3id.org/tern/ontologies/loc/LineString">
-        loc:LineString
+       <a href="https://w3id.org/tern/ontologies/loc/Point">
+        loc:Point
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/tern/transectDirection">
-        tern:transectDirection
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
        <br>
        <a href="https://w3id.org/tern/ontologies/tern/hasSamplingPoint">
         tern:hasSamplingPoint
@@ -6128,15 +6203,23 @@ Taking a diamond-drill core from a rock outcrop.
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/tern/transectStartPoint">
-        tern:transectStartPoint
+       <a href="https://w3id.org/tern/ontologies/tern/transectDirection">
+        tern:transectDirection
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
+       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
+        geosparql:hasGeometry
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
-       <a href="https://w3id.org/tern/ontologies/loc/Point">
-        loc:Point
+       <a href="https://w3id.org/tern/ontologies/loc/LineString">
+        loc:LineString
        </a>
        <sup class="sup-c" title="class">
         c
