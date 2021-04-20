@@ -146,7 +146,7 @@ tern:
       schema-https:name "Simon J.D.Cox" ;
     ] ;
   dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2020-03-18"^^xsd:date ;
+  dcterms:modified "2021-04-20"^^xsd:date ;
   dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   rdfs:comment """The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.
   
@@ -168,8 +168,8 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
-  owl:versionIRI <http://linked.data.gov.au/def/plot/0.2.1> ;
-  owl:versionInfo "0.2.1" ;
+  owl:versionIRI <http://linked.data.gov.au/def/plot/0.2.2> ;
+  owl:versionInfo "0.2.2" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;
@@ -183,6 +183,16 @@ tern:AffiliateSuperSite
   rdfs:subClassOf tern:SuperSite ;
   skos:example <https://w3id.org/tern/resources/a05a51c0-2daa-4369-aa2b-08c3638efa7a> ;
   skos:example "Samford Peri-urban Affiliate SuperSite" ;
+.
+tern:AusPlotsForestsSite
+  a owl:Class ;
+  rdfs:label "AusPlots Forests Site" ;
+  rdfs:subClassOf tern:AusPlotsSite ;
+.
+tern:AusPlotsRangelandsSite
+  a owl:Class ;
+  rdfs:label "AusPlots Rangelands Site" ;
+  rdfs:subClassOf tern:AusPlotsSite ;
 .
 tern:AusPlotsSite
   a owl:Class ;
