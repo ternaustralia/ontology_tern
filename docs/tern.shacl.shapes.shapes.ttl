@@ -1,0 +1,1291 @@
+# baseURI: https://w3id.org/tern/shacl/tern/
+# imports: http://datashapes.org/dash
+# imports: https://w3id.org/tern/ontologies/tern/
+# prefix: tern-shape
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix tern-shape: <https://w3id.org/tern/shacl/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tern-shape:
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://w3id.org/tern/ontologies/tern/> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+tern-shape:Attribute
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Attribute" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://rdfs.org/ns/void#inDataset> ;
+      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasResult> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Result> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has result" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasSimpleResult> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has simple result" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/attribute> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/isAttributeOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Attribute> ;
+.
+tern-shape:Boolean
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Boolean" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:datatype xsd:boolean ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Boolean> ;
+.
+tern-shape:Concept
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Concept" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/localValue> ;
+      sh:description "Link to the local (dataset) value." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/localVocabulary> ;
+      sh:description "Link to the local (dataset) vocabulary." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/vocabulary> ;
+      sh:description "Link to the vocabulary with the value." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Concept> ;
+.
+tern-shape:Count
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Count" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:datatype xsd:integer ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/uncertainty> ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Count> ;
+.
+tern-shape:Date
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Date" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:datatype xsd:date ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Date> ;
+.
+tern-shape:DateTime
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Date time" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/DateTime> ;
+.
+tern-shape:FeatureOfInterest
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Feature of interest" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/identifier> ;
+      sh:datatype xsd:string ;
+      sh:name "identifier" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://rdfs.org/ns/void#inDataset> ;
+      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+      sh:class <https://w3id.org/tern/ontologies/loc/Geometry> ;
+      sh:name "has geometry" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdfs:comment ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasSample> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Sample> ;
+      sh:name "has sample" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ;
+      sh:name "is feature of interest of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/featureType> ;
+      sh:description "The type of feature. E.g. plant individual, plant population, etc." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSite> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Site> ;
+      sh:description "Link to the site." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSiteVisit> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+.
+tern-shape:IRI
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "IRI" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/IRI> ;
+.
+tern-shape:Instant
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Instant" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/2006/time#inXSDDateTimeStamp> ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "in XSDDate time stamp" ;
+    ] ;
+  sh:targetClass <http://www.w3.org/2006/time#Instant> ;
+.
+tern-shape:Instrument
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Instrument" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdfs:comment ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdfs:label ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/attribute> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/instrumentType> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Instrument> ;
+.
+tern-shape:ObservableProperty
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Observable property" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/localValue> ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/localVocabulary> ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/vocabulary> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/ObservableProperty> ;
+.
+tern-shape:Observation
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Observation" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/identifier> ;
+      sh:datatype xsd:string ;
+      sh:name "identifier" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://rdfs.org/ns/void#inDataset> ;
+      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+      sh:class <https://w3id.org/tern/ontologies/loc/Geometry> ;
+      sh:name "has geometry" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdfs:comment ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/prov#wasAttributedTo> ;
+      sh:description "The persons who performed the observation." ;
+      sh:name "was attributed to" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has feature of interest" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasResult> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Result> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has result" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasSimpleResult> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has simple result" ;
+      sh:nodeKind sh:Literal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/observedProperty> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/ObservableProperty> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "observed property" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/phenomenonTime> ;
+      sh:class <http://www.w3.org/2006/time#Instant> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "phenomenon time" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/resultTime> ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "result time" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "used procedure" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSite> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Site> ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSiteVisit> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/usedInstrument> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Instrument> ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Observation> ;
+.
+tern-shape:Percent
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Percent" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/unit> ;
+      sh:hasValue <http://qudt.org/vocab/unit/PERCENT> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Percent> ;
+.
+tern-shape:PercentRange
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Percent range" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/unit> ;
+      sh:hasValue <http://qudt.org/vocab/unit/PERCENT> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/PercentRange> ;
+.
+tern-shape:QuantitativeMeasure
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Quantitative measure" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:datatype xsd:double ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/uncertainty> ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/unit> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/QuantitativeMeasure> ;
+.
+tern-shape:QuantitativeRange
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Quantitative range" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://qudt.org/schema/qudt/maxInclusive> ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://qudt.org/schema/qudt/minInclusive> ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/uncertainty> ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/unit> ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/QuantitativeRange> ;
+.
+tern-shape:Result
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "The tern:Result class acts like an abstract class. Datatypes must use one of the subclasses of tern:Result. This class remains as an open shape." ;
+  rdfs:label "Result" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Result> ;
+.
+tern-shape:Sample
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Sample" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/identifier> ;
+      sh:datatype xsd:string ;
+      sh:name "identifier" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://rdfs.org/ns/void#inDataset> ;
+      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdfs:comment ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasSample> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Sample> ;
+      sh:name "has sample" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isSampleOf> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+      sh:minCount 1 ;
+      sh:name "is sample of" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Sample> ;
+.
+tern-shape:Sampling
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Sampling" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/identifier> ;
+      sh:datatype xsd:string ;
+      sh:name "identifier" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+      sh:class <https://w3id.org/tern/ontologies/loc/Geometry> ;
+      sh:name "has geometry" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdfs:comment ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/prov#wasAttributedTo> ;
+      sh:class <http://www.w3.org/ns/prov#Person> ;
+      sh:name "was attributed to" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "has feature of interest" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/hasResult> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Sample> ;
+      sh:minCount 1 ;
+      sh:name "has result" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/resultTime> ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "result time" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "used procedure" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSite> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Site> ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSiteVisit> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/usedInstrument> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Instrument> ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Sampling> ;
+.
+tern-shape:Site
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Site" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/hasPart> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Site> ;
+      sh:description "Link to sub-sites." ;
+      sh:name "has part" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/identifier> ;
+      sh:datatype xsd:string ;
+      sh:description "An identifier of the site." ;
+      sh:name "identifier" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/isPartOf> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Site> ;
+      sh:description "Link to the parent site." ;
+      sh:maxCount 1 ;
+      sh:name "is part of" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://rdfs.org/ns/void#inDataset> ;
+      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+      sh:class <https://w3id.org/tern/ontologies/loc/Geometry> ;
+      sh:description "Link to a GeoSPARQL Geometry of the site. Values may be a Point, LineString or Polygon." ;
+      sh:name "has geometry" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.opengis.net/ont/geosparql#sfWithin> ;
+      sh:description "Link to GeoSPARQL Features that this site is within." ;
+      sh:name "sf within" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdfs:label ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/dateCommissioned> ;
+      sh:datatype xsd:date ;
+      sh:description "The date when the site was commissioned." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/dateDecommissioned> ;
+      sh:datatype xsd:date ;
+      sh:description "The date when the site was decommissioned." ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/dimension> ;
+      sh:datatype xsd:string ;
+      sh:description "The dimension of the site. " ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+      sh:description "Non-core attributes of the site." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSiteVisit> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+      sh:description "Link to the site visits of the site." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/locationDescription> ;
+      sh:datatype xsd:string ;
+      sh:description "The description of the location of the site." ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/locationProcedure> ;
+      sh:description "The procedure used to determine the location of the site." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/polygon> ;
+      sh:class <https://w3id.org/tern/ontologies/loc/Polygon> ;
+      sh:description "The polygon description of the site." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/siteDescription> ;
+      sh:datatype xsd:string ;
+      sh:description "The description or state of the site." ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/siteType> ;
+      sh:description "The type of site. E.g. plot, transect, quadrat, etc." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Site> ;
+.
+tern-shape:SiteVisit
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Site visit" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/identifier> ;
+      sh:datatype xsd:string ;
+      sh:description "An identifier of the site visit." ;
+      sh:name "identifier" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://purl.org/dc/terms/type> ;
+      sh:maxCount 1 ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://rdfs.org/ns/void#inDataset> ;
+      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/prov#endedAtTime> ;
+      sh:datatype xsd:dateTime ;
+      sh:description "Site visit end date and time." ;
+      sh:maxCount 1 ;
+      sh:name "ended at time" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/prov#startedAtTime> ;
+      sh:datatype xsd:dateTime ;
+      sh:description "Site visit date time." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "started at time" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+      sh:description "Non-core attributes of the site visit." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasObservation> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+      sh:description "Link to the observations." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSampling> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+      sh:description "Link to samplings." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasSite> ;
+      sh:class <https://w3id.org/tern/ontologies/tern/Site> ;
+      sh:description "Link to the site." ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/locationDescription> ;
+      sh:datatype xsd:string ;
+      sh:description "The location description of the site visit." ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/siteDescription> ;
+      sh:datatype xsd:string ;
+      sh:description "The description of the site." ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+.
+tern-shape:Text
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Text" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:or (
+          [
+            sh:datatype xsd:string ;
+          ]
+          [
+            sh:datatype xsd:langString ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/sosa/isResultOf> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "is result of" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+          ]
+          [
+            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+          ]
+        ) ;
+    ] ;
+  sh:targetClass <https://w3id.org/tern/ontologies/tern/Text> ;
+.
