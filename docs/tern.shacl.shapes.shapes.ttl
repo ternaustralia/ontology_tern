@@ -465,7 +465,7 @@ tern-shape:Instrument
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path <https://w3id.org/tern/ontologies/tern/attribute> ;
+      sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute> ;
       sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
     ] ;
   sh:property [
@@ -588,7 +588,7 @@ tern-shape:Observation
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "has simple result" ;
-      sh:nodeKind sh:Literal ;
+      sh:nodeKind sh:IRIOrLiteral ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -686,6 +686,17 @@ tern-shape:PercentRange
       sh:nodeKind sh:IRI ;
     ] ;
   sh:targetClass <https://w3id.org/tern/ontologies/tern/PercentRange> ;
+.
+tern-shape:Point
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Point" ;
+  rdfs:subClassOf rdfs:Resource ;
+  sh:closed true ;
+  sh:ignoredProperties (
+      rdf:type
+    ) ;
+  sh:targetClass <https://w3id.org/tern/ontologies/loc/Point> ;
 .
 tern-shape:QuantitativeMeasure
   a rdfs:Class ;
