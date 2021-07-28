@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.1] - 2021-07-29
+### Added
+- sh:NodeShape and sh:PropertyShape are now directly on the owl:Class instead of in a separate file.
+- tern:Transect class and node shape
+- tern:Attribute, tern:hasAttribute and tern:isAttributeOf are now subclasses and subproperties of SSN
+- inverse properties to tern:isSiteOf and tern:isSiteVisitOf to tern:hasSite and tern:hasSiteVisit
+
+
 ## [0.3.0] - 2021-07-16
 ### Removed
 - Specialised classes of tern:Site
