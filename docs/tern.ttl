@@ -361,7 +361,7 @@ tern:Count
   sh:property [
       a sh:PropertyShape ;
       sh:path tern:uncertainty ;
-      sh:datatype xsd:decimal ;
+      sh:datatype xsd:double ;
       sh:maxCount 1 ;
     ] ;
 .
@@ -458,7 +458,7 @@ tern:Dimension
       owl:allValuesFrom [
           a owl:Class ;
           owl:unionOf (
-              xsd:decimal
+              xsd:double
               xsd:integer
             ) ;
         ] ;
@@ -469,7 +469,7 @@ tern:Dimension
       owl:allValuesFrom [
           a owl:Class ;
           owl:unionOf (
-              xsd:decimal
+              xsd:double
               xsd:integer
             ) ;
         ] ;
@@ -1330,12 +1330,12 @@ tern:QuantitativeMeasure
   rdfs:subClassOf tern:Result ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:decimal ;
+      owl:allValuesFrom xsd:double ;
       owl:onProperty rdf:value ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:decimal ;
+      owl:allValuesFrom xsd:double ;
       owl:onProperty tern:uncertainty ;
     ] ;
   rdfs:subClassOf [
@@ -1381,17 +1381,17 @@ tern:QuantitativeRange
   rdfs:subClassOf tern:Result ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:decimal ;
+      owl:allValuesFrom xsd:double ;
       owl:onProperty qudt:maxInclusive ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:decimal ;
+      owl:allValuesFrom xsd:double ;
       owl:onProperty qudt:minInclusive ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:decimal ;
+      owl:allValuesFrom xsd:double ;
       owl:onProperty tern:uncertainty ;
     ] ;
   rdfs:subClassOf [
@@ -2658,7 +2658,7 @@ tern:transectStartPoint
 tern:uncertainty
   a owl:DatatypeProperty ;
   rdfs:label "uncertainty" ;
-  rdfs:range xsd:decimal ;
+  rdfs:range xsd:double ;
   skos:definition "Uncertainty for a quantitative value." ;
 .
 tern:unit
