@@ -1289,6 +1289,21 @@ an array of sensors such as GPS, current meters, atmospheric sensors and water
 quality monitors. Sensors measuring weather variables are attached to 
 a weather station (a platform)""" ;
 .
+tern:Plot
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Plot" ;
+  rdfs:subClassOf tern:Site ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:siteType ;
+      sh:hasValue <http://linked.data.gov.au/def/tern-cv/8cadf069-01d7-4420-b454-cae37740c2a2> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "site type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
 tern:Procedure
   a owl:Class ;
   rdfs:label "Procedure" ;
@@ -1322,6 +1337,21 @@ The DEC Nature Conservation Service Biodiversity have defined
 [standard procedures](https://www.dpaw.wa.gov.au/images/documents/plants-animals/monitoring/sop/sop_establishingvegetationquadrats_20090818_v1.0.pdf)
 for establishing quadrats for vegetation sampling.""" ;
   skos:scopeNote "[Input](#Input) can be used to capture any input values for a procedure, such as the input value of the basal wedge to estimate the basal area per hectare." ;
+.
+tern:Quadrat
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Quadrat" ;
+  rdfs:subClassOf tern:Site ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:siteType ;
+      sh:hasValue <http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "site type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
 .
 tern:QuantitativeMeasure
   a owl:Class ;
@@ -2046,6 +2076,7 @@ tern:Site
       a sh:PropertyShape ;
       sh:path tern:siteType ;
       sh:maxCount 1 ;
+      sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -2251,11 +2282,6 @@ tern:Transect
   rdfs:subClassOf tern:Site ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty dcterms:identifier ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom loc:Point ;
       owl:onProperty tern:transectEndPoint ;
     ] ;
@@ -2276,12 +2302,6 @@ tern:Transect
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path dcterms:identifier ;
-      sh:datatype xsd:string ;
-      sh:name "identifier" ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path geosparql:hasGeometry ;
       sh:class loc:LineString ;
       sh:maxCount 1 ;
@@ -2290,8 +2310,19 @@ tern:Transect
     ] ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path tern:siteType ;
+      sh:description "A transect must have the tern:siteType value of <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1>." ;
+      sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "site type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path tern:transectDirection ;
       sh:maxCount 1 ;
+      sh:name "transect direction" ;
       sh:nodeKind sh:IRIOrLiteral ;
     ] ;
   sh:property [
@@ -2299,6 +2330,7 @@ tern:Transect
       sh:path tern:transectEndPoint ;
       sh:class loc:Point ;
       sh:maxCount 1 ;
+      sh:name "transect end point" ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -2306,6 +2338,7 @@ tern:Transect
       sh:path tern:transectStartPoint ;
       sh:class loc:Point ;
       sh:maxCount 1 ;
+      sh:name "transect start point" ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
