@@ -2076,6 +2076,7 @@ tern:Site
       a sh:PropertyShape ;
       sh:path tern:siteType ;
       sh:maxCount 1 ;
+      sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
