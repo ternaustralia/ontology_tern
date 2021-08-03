@@ -199,7 +199,7 @@ tern:Attribute
   sh:property [
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:class tern:RDFDataset ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
@@ -591,7 +591,7 @@ tern:FeatureOfInterest
   sh:property [
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:class tern:RDFDataset ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
@@ -1121,7 +1121,7 @@ of the properties estimated by the sensor.""" ;
   sh:property [
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:class tern:RDFDataset ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
@@ -1582,7 +1582,7 @@ examples of samples of some feature of interest.""" ;
   sh:property [
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:class tern:RDFDataset ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
@@ -1988,7 +1988,7 @@ tern:Site
   sh:property [
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:class tern:RDFDataset ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
@@ -2174,7 +2174,7 @@ tern:SiteVisit
   sh:property [
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class <http://rdfs.org/ns/void#Dataset> ;
+      sh:class tern:RDFDataset ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
