@@ -1603,6 +1603,25 @@ examples of samples of some feature of interest.""" ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
+tern:Sampler
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Sampler" ;
+  rdfs:subClassOf sosa:Sampler ;
+  rdfs:subClassOf tern:Instrument ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom sosa:Sampling ;
+      owl:onProperty sosa:madeSampling ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty ssn:implements ;
+    ] ;
+  skos:definition "Sampler - A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples. " ;
+  skos:example "A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device." ;
+.
 tern:Sampling
   a owl:Class ;
   a sh:NodeShape ;
