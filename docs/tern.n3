@@ -367,6 +367,20 @@ tern:PercentRange a owl:Class,
             sh:nodeKind sh:IRI ;
             sh:path tern:unit ] .
 
+tern:Sampler a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "Sampler" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Sampling ;
+            owl:onProperty sosa:madeSampling ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ssn:implements ],
+        sosa:Sampler,
+        tern:Instrument ;
+    skos:definition "Sampler - A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples. " ;
+    skos:example "A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device." .
+
 tern:Sensor a owl:Class ;
     rdfs:label "Sensor" ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -972,44 +986,6 @@ tern:vocabulary a owl:ObjectProperty ;
             owl:unionOf ( skos:ConceptScheme skos:Collection owl:Ontology ) ] ;
     skos:definition "Controlled vocabulary, taxonomy etc." .
 
-tern:Instrument a owl:Class,
-        sh:NodeShape ;
-    rdfs:label "Instrument" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom tern:Attribute ;
-            owl:onProperty tern:attribute ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a owl:Class ;
-                    owl:unionOf ( skos:Concept owl:Class rdfs:Class owl:NamedIndividual ) ] ;
-            owl:onProperty tern:instrumentType ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:instrumentType ],
-        ssn:System ;
-    skos:definition "A device or instrument that is used for making measurements or observations." ;
-    sh:property [ a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:name "type" ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:type ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path rdfs:comment ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path rdfs:label ],
-        [ a sh:PropertyShape ;
-            sh:class tern:Attribute ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:hasAttribute ],
-        [ a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:instrumentType ] .
-
 tern:Sample a owl:Class,
         sh:NodeShape ;
     rdfs:label "Sample" ;
@@ -1082,6 +1058,44 @@ examples of samples of some feature of interest.""" ;
             sh:class tern:Attribute ;
             sh:nodeKind sh:IRI ;
             sh:path tern:hasAttribute ] .
+
+tern:Instrument a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "Instrument" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom tern:Attribute ;
+            owl:onProperty tern:attribute ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:unionOf ( skos:Concept owl:Class rdfs:Class owl:NamedIndividual ) ] ;
+            owl:onProperty tern:instrumentType ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:instrumentType ],
+        ssn:System ;
+    skos:definition "A device or instrument that is used for making measurements or observations." ;
+    sh:property [ a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:name "type" ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:type ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path rdfs:comment ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path rdfs:label ],
+        [ a sh:PropertyShape ;
+            sh:class tern:Attribute ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:hasAttribute ],
+        [ a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:instrumentType ] .
 
 tern:SiteVisit a owl:Class,
         sh:NodeShape ;
