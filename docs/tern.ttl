@@ -2613,6 +2613,10 @@ tern:scope
   rdfs:range xsd:string ;
   skos:definition "Describe the scope of something." ;
 .
+tern:shortName
+  a owl:AnnotationProperty ;
+  rdfs:label "short name" ;
+.
 tern:siteDescription
   a rdf:Property ;
   rdfs:label "site description" ;
