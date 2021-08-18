@@ -826,6 +826,7 @@ tern:MaterialSample
   a rdfs:Class ;
   a sh:NodeShape ;
   rdfs:label "Material sample" ;
+  rdfs:subClassOf dwc:MaterialSample ;
   rdfs:subClassOf tern:Sample ;
   skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
   skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
