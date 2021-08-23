@@ -822,6 +822,19 @@ tern:Instrument
       sh:nodeKind sh:IRI ;
     ] ;
 .
+tern:MaterialSample
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Material sample" ;
+  rdfs:subClassOf dwc:MaterialSample ;
+  rdfs:subClassOf tern:Sample ;
+  skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
+  skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:materialSampleID ;
+    ] ;
+.
 tern:Method
   a owl:Class ;
   rdfs:label "Method" ;
@@ -2153,9 +2166,23 @@ tern:SiteVisit
   skos:definition "A Site Visit is a discrete time-bounded activity at a [Site](#Site), during which [Sampling](#Sampling) or [Observation](#Observation) activities occur. " ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path dcterms:hasPart ;
+      sh:class tern:SiteVisit ;
+      sh:name "has part" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path dcterms:identifier ;
       sh:datatype xsd:string ;
       sh:name "identifier" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dcterms:isPartOf ;
+      sh:class tern:SiteVisit ;
+      sh:name "is part of" ;
+      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
