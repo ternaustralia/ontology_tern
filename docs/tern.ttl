@@ -1527,6 +1527,7 @@ tern:Sample
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Sample" ;
+  rdfs:subClassOf sosa:Sample ;
   rdfs:subClassOf tern:FeatureOfInterest ;
   rdfs:subClassOf tern:Result ;
   rdfs:subClassOf [
@@ -1612,17 +1613,7 @@ examples of samples of some feature of interest.""" ;
       sh:minCount 1 ;
       sh:name "is result of" ;
       sh:nodeKind sh:IRI ;
-      sh:or (
-          [
-            sh:class tern:Observation ;
-          ]
-          [
-            sh:class tern:Sampling ;
-          ]
-          [
-            sh:class tern:Attribute ;
-          ]
-        ) ;
+      sh:class tern:Sampling ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
