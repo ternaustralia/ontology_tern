@@ -489,13 +489,13 @@ tern:FeatureOfInterest
   rdfs:subClassOf sosa:FeatureOfInterest ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom geosparql:Geometry ;
-      owl:onProperty geosparql:hasGeometry ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dcterms:identifier ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty dcterms:identifier ;
+      owl:allValuesFrom loc:Geometry ;
+      owl:onProperty geosparql:hasGeometry ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -564,7 +564,7 @@ tern:FeatureOfInterest
   sh:property [
       a sh:PropertyShape ;
       sh:path geosparql:hasGeometry ;
-      sh:class geosparql:Geometry ;
+      sh:class loc:Geometry ;
       sh:name "has geometry" ;
       sh:nodeKind sh:IRI ;
     ] ;
@@ -1643,6 +1643,13 @@ Taking a diamond-drill core from a rock outcrop.""" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path geosparql:hasGeometry ;
+      sh:class loc:Geometry ;
+      sh:name "has geometry" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path rdfs:comment ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
@@ -1685,13 +1692,6 @@ Taking a diamond-drill core from a rock outcrop.""" ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "used procedure" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path loc:hasGeometry ;
-      sh:class loc:Geometry ;
-      sh:name "has geometry" ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -1755,11 +1755,6 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom geosparql:Geometry ;
-      owl:onProperty geosparql:hasGeometry ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
       owl:onProperty tern:dimension ;
     ] ;
@@ -1770,28 +1765,8 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern:RDFDataset ;
-      owl:onProperty <http://rdfs.org/ns/void#inDataset> ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Site ;
-      owl:onProperty dcterms:hasPart ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Site ;
-      owl:onProperty dcterms:isPartOf ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern:SiteVisit ;
       owl:onProperty tern:hasSiteVisit ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://rdfs.org/ns/void#inDataset> ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1837,36 +1812,6 @@ tern:Site
   skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
   skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
   skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#EcologicalSite) and [Subsite](#EcologicalSite) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha plots." ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:hasPart ;
-      sh:class tern:Site ;
-      sh:name "has part" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:isPartOf ;
-      sh:class tern:Site ;
-      sh:maxCount 1 ;
-      sh:name "is part of" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class tern:RDFDataset ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path geosparql:hasGeometry ;
-      sh:class loc:Geometry ;
-      sh:name "has geometry" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path geosparql:sfWithin ;
