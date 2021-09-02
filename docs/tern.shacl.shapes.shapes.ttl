@@ -1148,17 +1148,17 @@ tern-shape:Site
     ] ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path <https://w3id.org/tern/ontologies/tern/sampleType> ;
+      sh:description "The type of site. E.g. plot, transect, quadrat, etc." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path <https://w3id.org/tern/ontologies/tern/siteDescription> ;
       sh:datatype xsd:string ;
       sh:description "The description or state of the site." ;
       sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path <https://w3id.org/tern/ontologies/tern/siteType> ;
-      sh:description "The type of site. E.g. plot, transect, quadrat, etc." ;
-      sh:maxCount 1 ;
-      sh:nodeKind sh:IRI ;
     ] ;
   sh:targetClass <https://w3id.org/tern/ontologies/tern/Site> ;
 .
