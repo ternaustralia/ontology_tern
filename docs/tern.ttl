@@ -805,18 +805,40 @@ tern:Instrument
 .
 tern:ManagedFeature
   a owl:Class ;
+  a sh:NodeShape ;
   rdfs:label "Feature which is managed for TERN purposes" ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass xsd:date ;
+      owl:allValuesFrom xsd:date ;
+      owl:onProperty tern:dateCommissioned ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:date ;
       owl:onProperty tern:dateDecommissioned ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass xsd:date ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern:dateCommissioned ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:dateDecommissioned ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:dateCommissioned ;
+      sh:datatype xsd:date ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:dateDecommissioned ;
+      sh:datatype xsd:date ;
+      sh:maxCount 1 ;
     ] ;
 .
 tern:MaterialSample
@@ -1810,10 +1832,6 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:dimension ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/site> ;
       owl:onProperty tern:sampleType ;
     ] ;
@@ -1853,18 +1871,6 @@ tern:Site
       a sh:PropertyShape ;
       sh:path rdfs:label ;
       sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:dateCommissioned ;
-      sh:datatype xsd:date ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:dateDecommissioned ;
-      sh:datatype xsd:date ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
