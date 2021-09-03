@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="windows-1252"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:cd="http://www.topbraidcomposer.org/2006/04/02/ClassDiagrams.owl#"
@@ -31,6 +32,7 @@
         <cd:class rdf:resource="http://linked.data.gov.au/def/datatype/Percent"/>
       </cd:URINode>
     </cd:nodes>
+    <rdfs:label>tern overview simple</rdfs:label>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -47,7 +49,7 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >76</cd:height>
+        >156</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >454</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -175,6 +177,8 @@
         <cd:class rdf:resource="http://linked.data.gov.au/def/datatype/Text"/>
       </cd:URINode>
     </cd:nodes>
+  </cd:Diagram>
+  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -306,6 +310,7 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Boolean"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/EarthObservationSatellite"/>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -347,6 +352,9 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
       </cd:URINode>
     </cd:nodes>
+    <rdfs:label>platforms overview</rdfs:label>
+  </cd:Diagram>
+  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -513,6 +521,9 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
       </cd:URINode>
     </cd:nodes>
+    <rdfs:label>tern overview lite</rdfs:label>
+  </cd:Diagram>
+  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -578,8 +589,6 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
       </cd:URINode>
     </cd:nodes>
-  </cd:Diagram>
-  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -606,6 +615,10 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/DSLRCameraLensModel"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
+    <rdfs:label>tern:Site Diagram</rdfs:label>
+  </cd:Diagram>
+  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -895,14 +908,14 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >204</cd:height>
+        >94</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >354</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >23</cd:y>
+        >450</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >736</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
+        >339</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sensor"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -1169,6 +1182,7 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Dimension"/>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1182,6 +1196,7 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Quadrat"/>
       </cd:URINode>
     </cd:nodes>
+    <rdfs:label>flux overview</rdfs:label>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1397,7 +1412,7 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >140</cd:height>
+        >108</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >355</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1584,7 +1599,7 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >108</cd:height>
+        >60</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >252</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1635,6 +1650,8 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
       </cd:URINode>
     </cd:nodes>
+  </cd:Diagram>
+  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1648,6 +1665,7 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/EarthObservationSatellite"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Result"/>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1661,6 +1679,7 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/AusPlotsSite"/>
       </cd:URINode>
     </cd:nodes>
+    <rdfs:label>result overview</rdfs:label>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1767,6 +1786,8 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/AutomaticWeatherStation"/>
       </cd:URINode>
     </cd:nodes>
+  </cd:Diagram>
+  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1823,6 +1844,10 @@
         <cd:class rdf:resource="http://linked.data.gov.au/def/datatype/Concept"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/DSLRCamera"/>
+    <rdfs:label>tern:DSLRCamera Diagram</rdfs:label>
+  </cd:Diagram>
+  <cd:Diagram>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1839,7 +1864,7 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >44</cd:height>
+        >0</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >169</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -1875,6 +1900,7 @@
         <cd:class rdf:resource="http://linked.data.gov.au/def/datatype/Percent"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -2102,6 +2128,7 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
       </cd:URINode>
     </cd:nodes>
+    <rdfs:label>tern ontology overview</rdfs:label>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"

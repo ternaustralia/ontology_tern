@@ -58,6 +58,9 @@ dwc:materialSampleID
   skos:example """IGSN:ASR000001 (Resulting URI: http://igsn.org/ASR000001) 
 is a globally unique and persistent identifier of a soil sample.""" ;
 .
+sosa:isSampleOf
+  a owl:TransitiveProperty ;
+.
 tern:
   a owl:Ontology ;
   dcterms:contributor [
@@ -800,12 +803,33 @@ tern:Instrument
       sh:nodeKind sh:IRI ;
     ] ;
 .
+tern:ManagedFeature
+  a owl:Class ;
+  rdfs:label "Feature which is managed for TERN purposes" ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass xsd:date ;
+      owl:onProperty tern:dateDecommissioned ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass xsd:date ;
+      owl:onProperty tern:dateCommissioned ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    ] ;
+.
 tern:MaterialSample
   a rdfs:Class ;
   a sh:NodeShape ;
   rdfs:label "Material sample" ;
   rdfs:subClassOf dwc:MaterialSample ;
   rdfs:subClassOf tern:Sample ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/materialsample> ;
+      owl:onProperty tern:sampleType ;
+    ] ;
   skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
   skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
   sh:property [
@@ -1242,9 +1266,14 @@ tern:Plot
   a sh:NodeShape ;
   rdfs:label "Plot" ;
   rdfs:subClassOf tern:Sample ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/plot> ;
+      owl:onProperty tern:sampleType ;
+    ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:siteType ;
+      sh:path tern:sampleType ;
       sh:hasValue <http://linked.data.gov.au/def/tern-cv/8cadf069-01d7-4420-b454-cae37740c2a2> ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -1291,6 +1320,11 @@ tern:Quadrat
   a sh:NodeShape ;
   rdfs:label "Quadrat" ;
   rdfs:subClassOf tern:Sample ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/quadrat> ;
+      owl:onProperty tern:sampleType ;
+    ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path tern:featureType ;
@@ -1499,6 +1533,12 @@ tern:Sample
       a owl:Restriction ;
       owl:allValuesFrom tern:Sampling ;
       owl:onProperty sosa:isResultOf ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass skos:Concept ;
+      owl:onProperty tern:sampleType ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1772,12 +1812,15 @@ tern:Site
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern:dimension ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/site> ;
+      owl:onProperty tern:sampleType ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass xsd:date ;
-      owl:onProperty tern:dateDecommissioned ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:dimension ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1794,20 +1837,8 @@ tern:Site
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass skos:Concept ;
-      owl:onProperty tern:siteType ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass loc:Polygon ;
       owl:onProperty tern:polygon ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onClass xsd:date ;
-      owl:onProperty tern:dateCommissioned ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
   skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
@@ -1869,16 +1900,16 @@ tern:Site
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:siteDescription ;
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:siteType ;
+      sh:path tern:sampleType ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:siteDescription ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
     ] ;
 .
 tern:SiteVisit
@@ -2104,6 +2135,11 @@ tern:Transect
       a owl:Restriction ;
       owl:allValuesFrom loc:Point ;
       owl:onProperty tern:transectStartPoint ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/transect> ;
+      owl:onProperty tern:sampleType ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -2450,6 +2486,12 @@ tern:sampleStorageLocation
   rdfs:subPropertyOf geosparql:hasGeometry ;
   skos:definition "A property that links a [PhysicalSpecimen](#PhysicalSpecimen) to the location [Point](https://w3id.org/tern/ontologies/loc/Point) of where it is stored." ;
 .
+tern:sampleType
+  a rdf:Property ;
+  rdfs:domain tern:Site ;
+  rdfs:label "sample or site type" ;
+  skos:definition "The sample or site type. The value is expected to be from a controlled vocabulary." ;
+.
 tern:scope
   a owl:DatatypeProperty ;
   rdfs:label "scope" ;
@@ -2462,12 +2504,6 @@ tern:siteDescription
   skos:definition "Contextual information is collected at each site. This includes measures of slope an aspect, surface strew and lithology, and information on the grazing and fire history of the site (Credit: TERN AusPlots)." ;
   skos:example <http://ozflux.org.au/monitoringsites/alicesprings/alicesprings_description.html> ;
   skos:scopeNote "Value is usually a summary sentence of the site." ;
-.
-tern:siteType
-  a rdf:Property ;
-  rdfs:domain tern:Site ;
-  rdfs:label "site type" ;
-  skos:definition "The site type. The value is expected to be from a controlled vocabulary." ;
 .
 tern:soilClassification
   a rdf:Property ;
