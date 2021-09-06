@@ -492,6 +492,12 @@ tern:FeatureOfInterest
   rdfs:subClassOf sosa:FeatureOfInterest ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      rdfs:comment "I wonder if this should be \"min 1\" rather than \"exactly 1\"" ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:featureType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:allValuesFrom geosparql:Geometry ;
       owl:onProperty geosparql:hasGeometry ;
     ] ;
@@ -530,11 +536,6 @@ tern:FeatureOfInterest
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty <http://rdfs.org/ns/void#inDataset> ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:featureType ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -828,7 +829,7 @@ tern:MaterialSample
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/materialsample> ;
-      owl:onProperty tern:sampleType ;
+      owl:onProperty tern:featureType ;
     ] ;
   skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
   skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
@@ -1269,11 +1270,11 @@ tern:Plot
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/plot> ;
-      owl:onProperty tern:sampleType ;
+      owl:onProperty tern:featureType ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:sampleType ;
+      sh:path tern:featureType ;
       sh:hasValue <http://linked.data.gov.au/def/tern-cv/8cadf069-01d7-4420-b454-cae37740c2a2> ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -1323,7 +1324,7 @@ tern:Quadrat
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/quadrat> ;
-      owl:onProperty tern:sampleType ;
+      owl:onProperty tern:featureType ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -1533,12 +1534,6 @@ tern:Sample
       a owl:Restriction ;
       owl:allValuesFrom tern:Sampling ;
       owl:onProperty sosa:isResultOf ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass skos:Concept ;
-      owl:onProperty tern:sampleType ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1826,7 +1821,7 @@ tern:Site
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/site> ;
-      owl:onProperty tern:sampleType ;
+      owl:onProperty tern:featureType ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1901,6 +1896,13 @@ tern:Site
     ] ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path tern:featureType ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path tern:hasSiteVisit ;
       sh:class tern:SiteVisit ;
       sh:nodeKind sh:IRI ;
@@ -1922,13 +1924,6 @@ tern:Site
       sh:path tern:polygon ;
       sh:class loc:Polygon ;
       sh:maxCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:sampleType ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -2165,7 +2160,7 @@ tern:Transect
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:hasValue <https://w3id.org/tern/vocabularies/sampleType/transect> ;
-      owl:onProperty tern:sampleType ;
+      owl:onProperty tern:featureType ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -2511,12 +2506,6 @@ tern:sampleStorageLocation
   rdfs:label "sample storage location" ;
   rdfs:subPropertyOf geosparql:hasGeometry ;
   skos:definition "A property that links a [PhysicalSpecimen](#PhysicalSpecimen) to the location [Point](https://w3id.org/tern/ontologies/loc/Point) of where it is stored." ;
-.
-tern:sampleType
-  a rdf:Property ;
-  rdfs:domain tern:Site ;
-  rdfs:label "sample or site type" ;
-  skos:definition "The sample or site type. The value is expected to be from a controlled vocabulary." ;
 .
 tern:scope
   a owl:DatatypeProperty ;
