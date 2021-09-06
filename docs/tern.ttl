@@ -1965,23 +1965,9 @@ tern:SiteVisit
   skos:definition "A Site Visit is a discrete time-bounded activity at a [Site](#Site), during which [Sampling](#Sampling) or [Observation](#Observation) activities occur. " ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path dcterms:hasPart ;
-      sh:class tern:SiteVisit ;
-      sh:name "has part" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path dcterms:identifier ;
       sh:datatype xsd:string ;
       sh:name "identifier" ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:isPartOf ;
-      sh:class tern:SiteVisit ;
-      sh:name "is part of" ;
-      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
       a sh:PropertyShape ;

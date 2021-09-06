@@ -8,19 +8,6 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >124</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >296</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >608</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >914</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >172</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >363</cd:width>
@@ -31,6 +18,59 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
       </cd:URINode>
     </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >76</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >289</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >301</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >122</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >60</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >260</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >410</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >528</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Quadrat"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >284</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >391</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >755</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1927</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >44</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >363</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >671</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >455</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Plot"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -60,44 +100,29 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >284</cd:height>
+        >124</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >391</cd:width>
+        >296</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >755</cd:y>
+        >608</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >1927</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
+        >914</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >36</cd:height>
+        >60</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >116</cd:width>
+        >260</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >35</cd:y>
+        >546</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >444</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Value"/>
+        >50</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/MaterialSample"/>
       </cd:URINode>
     </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >220</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >341</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >61</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >1918</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
-    <rdfs:label>uwe-diagram</rdfs:label>
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
@@ -114,69 +139,14 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >76</cd:height>
+        >220</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >289</cd:width>
+        >341</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >484</cd:y>
+        >61</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >177</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
-      </cd:URINode>
-    </cd:nodes>
-  </cd:Diagram>
-  <cd:Diagram>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >60</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >246</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >759</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >644</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/ManagedFeature"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >172</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >363</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >961</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >236</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >172</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >285</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >28</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >1053</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >60</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >260</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >410</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >528</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Quadrat"/>
+        >1918</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
       </cd:URINode>
     </cd:nodes>
     <rdfs:label>work-view</rdfs:label>
@@ -196,27 +166,14 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >220</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >341</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >61</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >1918</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >60</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >260</cd:width>
+        >246</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >546</cd:y>
+        >759</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >50</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/MaterialSample"/>
+        >644</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/ManagedFeature"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -224,12 +181,53 @@
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >124</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >296</cd:width>
+        >260</cd:width>
         <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >608</cd:y>
+        >498</cd:y>
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >914</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
+        >532</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Transect"/>
+      </cd:URINode>
+    </cd:nodes>
+  </cd:Diagram>
+  <cd:Diagram>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >76</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >289</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >484</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >177</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >172</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >285</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >28</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1053</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >36</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >116</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >35</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >444</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Value"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -248,6 +246,45 @@
     <cd:nodes>
       <cd:URINode>
         <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >172</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >363</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >961</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >236</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >124</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >296</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >608</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >914</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >220</cd:height>
+        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >341</cd:width>
+        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >61</cd:y>
+        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1918</cd:x>
+        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
+      </cd:URINode>
+    </cd:nodes>
+    <cd:nodes>
+      <cd:URINode>
+        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >252</cd:height>
         <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >340</cd:width>
@@ -256,32 +293,6 @@
         <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
         >962</cd:x>
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >124</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >260</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >498</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >532</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Transect"/>
-      </cd:URINode>
-    </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >44</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >363</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >671</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >455</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Plot"/>
       </cd:URINode>
     </cd:nodes>
     <cd:nodes>
@@ -297,18 +308,7 @@
         <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Result"/>
       </cd:URINode>
     </cd:nodes>
-    <cd:nodes>
-      <cd:URINode>
-        <cd:height rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >76</cd:height>
-        <cd:width rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >289</cd:width>
-        <cd:y rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >301</cd:y>
-        <cd:x rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-        >122</cd:x>
-        <cd:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
-      </cd:URINode>
-    </cd:nodes>
+    <rdfs:label>uwe-diagram</rdfs:label>
+    <cd:selectedResource rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
   </cd:Diagram>
 </rdf:RDF>
