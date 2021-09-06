@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - 2021-08-12
 ### Added
-- dcterms:hasPart and dcterms:isPartOf now express parent-child relationships for tern:SiteVisit.
+- sosa:isSampleOf is now a transitive property
+- ManagedFeature class
+### Removed
+- tern:siteType
+- references to Site directly on Sampling and Observation
+- duplicate properties in subclasses (they already exist in parent classes)
 
 
 ## [0.3.1] - 2021-07-29
