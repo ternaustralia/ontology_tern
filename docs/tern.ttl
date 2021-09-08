@@ -58,6 +58,9 @@ dwc:materialSampleID
   skos:example """IGSN:ASR000001 (Resulting URI: http://igsn.org/ASR000001) 
 is a globally unique and persistent identifier of a soil sample.""" ;
 .
+sosa:isSampleOf
+  a owl:TransitiveProperty ;
+.
 tern:
   a owl:Ontology ;
   dcterms:contributor [
@@ -489,13 +492,13 @@ tern:FeatureOfInterest
   rdfs:subClassOf sosa:FeatureOfInterest ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom geosparql:Geometry ;
-      owl:onProperty geosparql:hasGeometry ;
+      owl:allValuesFrom xsd:string ;
+      owl:onProperty dcterms:identifier ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty dcterms:identifier ;
+      owl:allValuesFrom loc:Geometry ;
+      owl:onProperty geosparql:hasGeometry ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -511,16 +514,6 @@ tern:FeatureOfInterest
       a owl:Restriction ;
       owl:allValuesFrom tern:Sample ;
       owl:onProperty sosa:hasSample ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Site ;
-      owl:onProperty tern:hasSite ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:SiteVisit ;
-      owl:onProperty tern:hasSiteVisit ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -574,7 +567,7 @@ tern:FeatureOfInterest
   sh:property [
       a sh:PropertyShape ;
       sh:path geosparql:hasGeometry ;
-      sh:class geosparql:Geometry ;
+      sh:class loc:Geometry ;
       sh:name "has geometry" ;
       sh:nodeKind sh:IRI ;
     ] ;
@@ -616,18 +609,6 @@ tern:FeatureOfInterest
       a sh:PropertyShape ;
       sh:path tern:hasAttribute ;
       sh:class tern:Attribute ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:hasSite ;
-      sh:class tern:Site ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:hasSiteVisit ;
-      sh:class tern:SiteVisit ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -820,6 +801,44 @@ tern:Instrument
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
+    ] ;
+.
+tern:ManagedFeature
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Feature which is managed for TERN purposes" ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:date ;
+      owl:onProperty tern:dateCommissioned ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:date ;
+      owl:onProperty tern:dateDecommissioned ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:dateCommissioned ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern:dateDecommissioned ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:dateCommissioned ;
+      sh:datatype xsd:date ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:dateDecommissioned ;
+      sh:datatype xsd:date ;
+      sh:maxCount 1 ;
     ] ;
 .
 tern:MaterialSample
@@ -1019,11 +1038,6 @@ tern:Observation
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern:Site ;
-      owl:onProperty tern:hasSite ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern:SiteVisit ;
       owl:onProperty tern:hasSiteVisit ;
     ] ;
@@ -1066,11 +1080,6 @@ tern:Observation
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty rdfs:comment ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:hasSite ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1201,14 +1210,6 @@ of the properties estimated by the sensor.""" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:hasSite ;
-      sh:class tern:Site ;
-      sh:description "An observation may have a relationship to a site." ;
-      sh:maxCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path tern:hasSiteVisit ;
       sh:class tern:SiteVisit ;
       sh:maxCount 1 ;
@@ -1281,10 +1282,10 @@ tern:Plot
   a rdfs:Class ;
   a sh:NodeShape ;
   rdfs:label "Plot" ;
-  rdfs:subClassOf tern:Site ;
+  rdfs:subClassOf tern:Sample ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:siteType ;
+      sh:path tern:featureType ;
       sh:hasValue <http://linked.data.gov.au/def/tern-cv/8cadf069-01d7-4420-b454-cae37740c2a2> ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
@@ -1330,14 +1331,14 @@ tern:Quadrat
   a rdfs:Class ;
   a sh:NodeShape ;
   rdfs:label "Quadrat" ;
-  rdfs:subClassOf tern:Site ;
+  rdfs:subClassOf tern:Sample ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:siteType ;
+      sh:path tern:featureType ;
       sh:hasValue <http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5> ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
-      sh:name "site type" ;
+      sh:name "feature type" ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -1527,32 +1528,13 @@ tern:Sample
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Sample" ;
+  rdfs:subClassOf sosa:Sample ;
   rdfs:subClassOf tern:FeatureOfInterest ;
   rdfs:subClassOf tern:Result ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty dcterms:identifier ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty rdfs:comment ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Attribute ;
-      owl:onProperty tern:hasAttribute ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern:FeatureOfInterest ;
       owl:onProperty sosa:isSampleOf ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Sample ;
-      owl:onProperty sosa:hasSample ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1574,55 +1556,11 @@ tern:Sample
 examples of samples of some feature of interest.""" ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path dcterms:identifier ;
-      sh:datatype xsd:string ;
-      sh:name "identifier" ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:type ;
-      sh:maxCount 1 ;
-      sh:name "type" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class tern:RDFDataset ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path rdfs:comment ;
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path sosa:hasSample ;
-      sh:class tern:Sample ;
-      sh:name "has sample" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path sosa:isResultOf ;
+      sh:class tern:Sampling ;
       sh:minCount 1 ;
       sh:name "is result of" ;
       sh:nodeKind sh:IRI ;
-      sh:or (
-          [
-            sh:class tern:Observation ;
-          ]
-          [
-            sh:class tern:Sampling ;
-          ]
-          [
-            sh:class tern:Attribute ;
-          ]
-        ) ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -1630,12 +1568,6 @@ examples of samples of some feature of interest.""" ;
       sh:class tern:FeatureOfInterest ;
       sh:minCount 1 ;
       sh:name "is sample of" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:hasAttribute ;
-      sh:class tern:Attribute ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -1692,8 +1624,8 @@ tern:Sampling
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern:Site ;
-      owl:onProperty tern:hasSite ;
+      owl:allValuesFrom tern:SiteVisit ;
+      owl:onProperty tern:hasSiteVisit ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1718,7 +1650,7 @@ tern:Sampling
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:hasSite ;
+      owl:onProperty tern:hasSiteVisit ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1748,6 +1680,13 @@ Taking a diamond-drill core from a rock outcrop.""" ;
       sh:path dcterms:type ;
       sh:maxCount 1 ;
       sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path geosparql:hasGeometry ;
+      sh:class loc:Geometry ;
+      sh:name "has geometry" ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -1798,22 +1737,8 @@ Taking a diamond-drill core from a rock outcrop.""" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path loc:hasGeometry ;
-      sh:class loc:Geometry ;
-      sh:name "has geometry" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path tern:hasAttribute ;
       sh:class tern:Attribute ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:hasSite ;
-      sh:class tern:Site ;
-      sh:maxCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -1862,8 +1787,8 @@ tern:Site
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Ecological Site" ;
-  rdfs:subClassOf tern:FeatureOfInterest ;
   rdfs:subClassOf tern:Platform ;
+  rdfs:subClassOf tern:Sample ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom geosparql:Feature ;
@@ -1871,23 +1796,8 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom geosparql:Geometry ;
-      owl:onProperty geosparql:hasGeometry ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:string ;
-      owl:onProperty dcterms:identifier ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
       owl:onProperty tern:dimension ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Attribute ;
-      owl:onProperty tern:hasAttribute ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1896,39 +1806,13 @@ tern:Site
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern:RDFDataset ;
-      owl:onProperty <http://rdfs.org/ns/void#inDataset> ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Site ;
-      owl:onProperty dcterms:hasPart ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Site ;
-      owl:onProperty dcterms:isPartOf ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern:SiteVisit ;
       owl:onProperty tern:hasSiteVisit ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty <http://rdfs.org/ns/void#inDataset> ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern:dimension ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass xsd:date ;
-      owl:onProperty tern:dateDecommissioned ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1945,67 +1829,12 @@ tern:Site
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass skos:Concept ;
-      owl:onProperty tern:siteType ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass loc:Polygon ;
       owl:onProperty tern:polygon ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onClass xsd:date ;
-      owl:onProperty tern:dateCommissioned ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
   skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
   skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#EcologicalSite) and [Subsite](#EcologicalSite) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha plots." ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:hasPart ;
-      sh:class tern:Site ;
-      sh:name "has part" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:identifier ;
-      sh:datatype xsd:string ;
-      sh:name "identifier" ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:isPartOf ;
-      sh:class tern:Site ;
-      sh:maxCount 1 ;
-      sh:name "is part of" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:type ;
-      sh:maxCount 1 ;
-      sh:name "type" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path <http://rdfs.org/ns/void#inDataset> ;
-      sh:class tern:RDFDataset ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path geosparql:hasGeometry ;
-      sh:class loc:Geometry ;
-      sh:name "has geometry" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path geosparql:sfWithin ;
@@ -2020,37 +1849,14 @@ tern:Site
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:dateCommissioned ;
-      sh:datatype xsd:date ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:dateDecommissioned ;
-      sh:datatype xsd:date ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path tern:dimension ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:hasAttribute ;
-      sh:class tern:Attribute ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path tern:hasSiteVisit ;
       sh:class tern:SiteVisit ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:isSiteOf ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -2077,13 +1883,6 @@ tern:Site
       sh:path tern:siteDescription ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:siteType ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
     ] ;
 .
 tern:SiteVisit
@@ -2166,23 +1965,9 @@ tern:SiteVisit
   skos:definition "A Site Visit is a discrete time-bounded activity at a [Site](#Site), during which [Sampling](#Sampling) or [Observation](#Observation) activities occur. " ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path dcterms:hasPart ;
-      sh:class tern:SiteVisit ;
-      sh:name "has part" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
       sh:path dcterms:identifier ;
       sh:datatype xsd:string ;
       sh:name "identifier" ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:isPartOf ;
-      sh:class tern:SiteVisit ;
-      sh:name "is part of" ;
-      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -2299,7 +2084,7 @@ tern:Transect
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Transect" ;
-  rdfs:subClassOf tern:Site ;
+  rdfs:subClassOf tern:Sample ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom loc:Point ;
@@ -2330,12 +2115,11 @@ tern:Transect
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path tern:siteType ;
-      sh:description "A transect must have the tern:siteType value of <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1>." ;
+      sh:path tern:featureType ;
       sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
-      sh:name "site type" ;
+      sh:name "feature type" ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -2668,12 +2452,6 @@ tern:siteDescription
   skos:definition "Contextual information is collected at each site. This includes measures of slope an aspect, surface strew and lithology, and information on the grazing and fire history of the site (Credit: TERN AusPlots)." ;
   skos:example <http://ozflux.org.au/monitoringsites/alicesprings/alicesprings_description.html> ;
   skos:scopeNote "Value is usually a summary sentence of the site." ;
-.
-tern:siteType
-  a rdf:Property ;
-  rdfs:domain tern:Site ;
-  rdfs:label "site type" ;
-  skos:definition "The site type. The value is expected to be from a controlled vocabulary." ;
 .
 tern:soilClassification
   a rdf:Property ;
