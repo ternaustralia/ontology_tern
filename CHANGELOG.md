@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] - 2021-08-12
 ### Added
 - sosa:isSampleOf is now a transitive property
-- ManagedFeature class
+- classes ManagedFeature, Plot, Quadrat, Transect, RDFDataset, Value
+- properties hasSimpleValue, hasValue
 ### Removed
 - tern:siteType
 - references to Site directly on Sampling and Observation
