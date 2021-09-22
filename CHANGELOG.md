@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [Unreleased] - 2021-08-12
+### Added
+- sosa:isSampleOf is now a transitive property
+- classes ManagedFeature, Plot, Quadrat, Transect, RDFDataset, Value
+- properties hasSimpleValue, hasValue
+### Removed
+- tern:siteType
+- references to Site directly on Sampling and Observation
+- duplicate properties in subclasses (they already exist in parent classes)
+
+
 ## [0.3.1] - 2021-07-29
 ### Added
 - sh:NodeShape and sh:PropertyShape are now directly on the owl:Class instead of in a separate file.
