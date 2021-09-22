@@ -119,7 +119,7 @@ tern:
       schema-https:name "Simon J.D.Cox" ;
     ] ;
   dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-  dcterms:modified "2021-07-29"^^xsd:date ;
+  dcterms:modified "2021-09-22"^^xsd:date ;
   dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   rdfs:comment """The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.
   
@@ -143,8 +143,8 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
-  owl:versionIRI <http://linked.data.gov.au/def/plot/0.3.1> ;
-  owl:versionInfo "0.3.1" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.3.2> ;
+  owl:versionInfo "0.3.2" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;
