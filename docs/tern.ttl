@@ -2062,6 +2062,187 @@ tern:SiteVisit
       sh:maxCount 1 ;
     ] ;
 .
+tern:Taxon
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Taxon" ;
+  rdfs:subClassOf dwc:Taxon ;
+  rdfs:subClassOf tern:Value ;
+  skos:definition "A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit." ;
+  skos:example "The genus Truncorotaloides as published by Bronnimann et al. in 1953 in the Journal of Paleontology Vol. 27(6) p. 817-820." ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:acceptedNameUsage ;
+      sh:name "accepted name usage" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:acceptedNameUsageID ;
+      sh:name "accepted name usage ID" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:class ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:cultivarEpithet ;
+      sh:name "cultivar epithet" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:family ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:genericName ;
+      sh:name "generic name" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:genus ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:higherClassification ;
+      sh:name "higher classification" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:infragenericEpithet ;
+      sh:name "infrageneric epithet" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:infraspecificEpithet ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:kingdom ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:nameAccordingTo ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:nameAccordingToID ;
+      sh:name "name according to ID" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:namePublishedIn ;
+      sh:name "name published in" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:namePublishedInID ;
+      sh:name "name published in ID" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:namePublishedInYear ;
+      sh:name "name published in year" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:nomenclaturalCode ;
+      sh:name "nomenclatural code" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:nomenclaturalStatus ;
+      sh:name "nomenclatural status" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:order ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:originalNameUsage ;
+      sh:name "original name usage" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:originalNameUsageID ;
+      sh:name "original name usage ID" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:parentNameUsage ;
+      sh:name "parent name usage" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:parentNameUsageID ;
+      sh:name "parent name usage ID" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:phylum ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:scientificName ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:scientificNameAuthorship ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:scientificNameID ;
+      sh:name "scientific name ID" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:specificEpithet ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:subfamily ;
+      sh:name "subfamily" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:subgenus ;
+      sh:name "subgenus" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:taxonConceptID ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:taxonID ;
+      sh:name "taxon ID" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:taxonRank ;
+      sh:name "taxon rank" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:taxonRemarks ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:taxonomicStatus ;
+      sh:name "taxonomic status" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:verbatimTaxonRank ;
+      sh:name "verbatim taxon rank" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dwc:vernacularName ;
+      sh:name "vernacular name" ;
+    ] ;
+.
 tern:Text
   a owl:Class ;
   a sh:NodeShape ;
