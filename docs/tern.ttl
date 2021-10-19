@@ -389,6 +389,35 @@ tern:DateTime
       sh:minCount 1 ;
     ] ;
 .
+tern:Deployment
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Deployment" ;
+  rdfs:subClassOf ssn:Deployment ;
+  skos:definition "Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform."@en ;
+  skos:example "For example, a temperature Sensor deployed on a wall, or a whole network of Sensors deployed for an Observation campaign." ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path ssn:deployedOnPlatform ;
+      sh:class tern:Platform ;
+      sh:maxCount 1 ;
+      sh:name "deployed on platform" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path ssn:deployedSystem ;
+      sh:class tern:System ;
+      sh:name "deployed system" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:hasAttribute ;
+      sh:class tern:Attribute ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
 tern:DigitalCamera
   a owl:Class ;
   rdfs:label "Digital Camera" ;
@@ -746,11 +775,7 @@ tern:Instrument
   a sh:NodeShape ;
   rdfs:label "Instrument" ;
   rdfs:subClassOf ssn:System ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Attribute ;
-      owl:onProperty tern:attribute ;
-    ] ;
+  rdfs:subClassOf tern:System ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom [
@@ -788,12 +813,6 @@ tern:Instrument
       sh:path rdfs:label ;
       sh:datatype xsd:string ;
       sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:hasAttribute ;
-      sh:class tern:Attribute ;
-      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -1577,6 +1596,7 @@ tern:Sampler
   rdfs:label "Sampler" ;
   rdfs:subClassOf sosa:Sampler ;
   rdfs:subClassOf tern:Instrument ;
+  rdfs:subClassOf tern:System ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom sosa:Sampling ;
@@ -1788,11 +1808,6 @@ tern:Sensor
       a owl:Restriction ;
       owl:allValuesFrom tern:Observation ;
       owl:onProperty sosa:madeObservation ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Platform ;
-      owl:onProperty sosa:isHostedBy ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -2062,6 +2077,36 @@ tern:SiteVisit
       sh:maxCount 1 ;
     ] ;
 .
+
+tern:System
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "System" ;
+  rdfs:subClassOf ssn:System ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:isHostedBy ;
+      sh:class tern:Platform ;
+      sh:maxCount 1 ;
+      sh:name "is hosted by" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path ssn:hasDeployment ;
+      sh:class tern:Deployment ;
+      sh:name "has deployment" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path ssn:implements ;
+      sh:class tern:Method ;
+      sh:name "implements" ;
+      sh:nodeKind sh:IRI ;
+  ]
+.
+
 tern:Taxon
   a owl:Class ;
   a sh:NodeShape ;
@@ -2243,6 +2288,7 @@ tern:Taxon
       sh:name "vernacular name" ;
     ] ;
 .
+
 tern:Text
   a owl:Class ;
   a sh:NodeShape ;
@@ -2469,6 +2515,12 @@ tern:hasEnvironmentalCharacteristic
   a owl:ObjectProperty ;
   rdfs:label "has environmental characteristic" ;
   skos:definition "The subject has some environmental characteristic. Points to a set of [Observations](#Observation) within an [EnvironmentalCharacteristic](#EnvironmentalCharacteristic)." ;
+.
+tern:hasFeatureType
+  a owl:ObjectProperty ;
+  rdfs:label "has feature type" ;
+  rdfs:subPropertyOf skos:relatedMatch ;
+  skos:definition "Links a concept to a feature type." ;
 .
 tern:hasMethod
   a rdf:Property ;
