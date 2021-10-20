@@ -2077,7 +2077,6 @@ tern:SiteVisit
       sh:maxCount 1 ;
     ] ;
 .
-
 tern:System
   a owl:Class ;
   a sh:NodeShape ;
@@ -2104,9 +2103,8 @@ tern:System
       sh:class tern:Method ;
       sh:name "implements" ;
       sh:nodeKind sh:IRI ;
-  ]
+    ] ;
 .
-
 tern:Taxon
   a owl:Class ;
   a sh:NodeShape ;
@@ -2288,7 +2286,6 @@ tern:Taxon
       sh:name "vernacular name" ;
     ] ;
 .
-
 tern:Text
   a owl:Class ;
   a sh:NodeShape ;
@@ -2772,6 +2769,12 @@ tern:usedInstrument
   a owl:ObjectProperty ;
   rdfs:label "used instrument" ;
   rdfs:range tern:Instrument ;
+.
+tern:valueType
+  a rdf:Property ;
+  rdfs:label "value type" ;
+  skos:definition "Relates a Property to a specialisation of tern:Value." ;
+  skos:example "Use it to describe an instance of sosa:ObservableProperty and its recommended tern:Value type such as tern:QuantitativeMeasure, tern:Boolean, etc." ;
 .
 tern:vocabulary
   a owl:ObjectProperty ;
