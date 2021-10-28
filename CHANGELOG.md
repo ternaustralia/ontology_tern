@@ -7,18 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 ### Added
-- tern:Taxon class
+- Import of ssn extension
+- tern:ObservationCollection
+- tern-org:Organization as one of the value types of prov:wasAttributedTo on tern:Sampling and tern:Observation
+- sosa:madeBySensor to tern:Observation
+- sosa:madeBySampler to tern:Sampling
+- tern:observationType to tern:Observation
+- tern:samplingType to tern:Sampling
+- tern:Distribution
+- tern:Dataset
+### Removed
+- Import of datatype vocabulary
 
 
 ## [0.3.2] - 2021-09-22
 ### Added
 - sosa:isSampleOf is now a transitive property
-- classes ManagedFeature, Plot, Quadrat, Transect, RDFDataset, Value
-- properties hasSimpleValue, hasValue
+- Classes ManagedFeature, Plot, Quadrat, Transect, RDFDataset, Value
+- Properties hasSimpleValue, hasValue
+- tern:Taxon class
 ### Removed
 - tern:siteType
-- references to Site directly on Sampling and Observation
-- duplicate properties in subclasses (they already exist in parent classes)
+- References to Site directly on Sampling and Observation
+- Duplicate properties in subclasses (they already exist in parent classes)
 
 
 ## [0.3.1] - 2021-07-29

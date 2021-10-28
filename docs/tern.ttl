@@ -9,7 +9,7 @@
 # imports: http://www.w3.org/ns/prov#
 # imports: http://www.w3.org/ns/sosa/
 # imports: http://www.w3.org/ns/ssn/
-# imports: https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
+# imports: https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl
 # imports: https://w3id.org/tern/ontologies/loc/
 # imports: https://w3id.org/tern/ontologies/org/
 # imports: https://w3id.org/tern/ontologies/sd/
@@ -128,7 +128,7 @@ tern:
   owl:imports prov: ;
   owl:imports sosa: ;
   owl:imports ssn: ;
-  owl:imports <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
+  owl:imports <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
@@ -343,6 +343,24 @@ tern:Count
       sh:maxCount 1 ;
     ] ;
 .
+tern:Dataset
+  a rdfs:Class ;
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Dataset" ;
+  rdfs:subClassOf <http://www.w3.org/ns/dcat#Dataset> ;
+  skos:definition "A collection of data, published or curated by a single agent, and available for access or download in one or more representations." ;
+  skos:scopeNote "This class describes the actual dataset as published by the dataset provider. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date might differ), the catalog record class can be used for the latter." ;
+  skos:scopeNote "This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations." ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path <http://www.w3.org/ns/dcat#distribution> ;
+      sh:class tern:Distribution ;
+      sh:description "An available distribution of the dataset." ;
+      sh:name "dataset distribution" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
 tern:Date
   a owl:Class ;
   a sh:NodeShape ;
@@ -500,6 +518,22 @@ tern:Dimension
     ] ;
   owl:deprecated true ;
   skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#EcologicalSite). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
+.
+tern:Distribution
+  a rdfs:Class ;
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Distribution" ;
+  rdfs:subClassOf <http://www.w3.org/ns/dcat#Distribution> ;
+  skos:definition "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above)." ;
+  skos:example """Examples of distributions include a CSV file, a [netCDF] file, a JSON document, or a data-cube, files made accessible according to different profiles, such as XML or JSON schemas or [ShEx] or [SHACL] expressions.
+
+In some cases all distributions of a dataset will be fully informationally equivalent, in the sense that lossless transformations between the representations are possible. An example would be different serializations of an RDF graph using RDF/XML [RDF-SYNTAX-GRAMMAR], [Turtle], [N3], [JSON-LD]. However, in other cases the distributions might have different levels of fidelity to the underlying data. For example, a graphical representation about the data on a CSV file may not contain the same total information recorded in the CSV file, but they could be considered as two distributions for the same dataset as they are about the same data.
+
+As a counter-example, budget data for different years would usually be modelled as different datasets, each with their own distributions, since all distributions of one dataset should broadly contain the same data.
+
+Nevertheless, the question of whether different representations can be understood to be distributions of the same dataset, or distributions of different datasets, is application specific. Judgement about how to describe them is the responsibility of the provider, taking into account their understanding of the expectations of users, and practices in the relevant community.""" ;
+  skos:scopeNote "This represents a general availability of a dataset. It implies no information about the actual access method of the data, i.e. whether by direct download, API, or through a Web page. The use of dcat:downloadURL property indicates directly downloadable distributions." ;
 .
 tern:EarthObservationSatellite
   a owl:Class ;
@@ -1161,6 +1195,14 @@ of the properties estimated by the sensor.""" ;
       sh:class tern-org:Person ;
       sh:name "was attributed to" ;
       sh:nodeKind sh:IRIOrLiteral ;
+      sh:or (
+          [
+            sh:class tern-org:Person ;
+          ]
+          [
+            sh:class tern-org:Organization ;
+          ]
+        ) ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -1187,6 +1229,14 @@ of the properties estimated by the sensor.""" ;
       sh:minCount 1 ;
       sh:name "has simple result" ;
       sh:nodeKing sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:madeBySensor ;
+      sh:class tern:Sensor ;
+      sh:maxCount 1 ;
+      sh:name "made by sensor" ;
+      sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -1236,8 +1286,96 @@ of the properties estimated by the sensor.""" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path tern:observationType ;
+      sh:description "The type of observation." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path tern:usedInstrument ;
       sh:class tern:Instrument ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
+tern:ObservationCollection
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Observation collection" ;
+  rdfs:subClassOf sosa:ObservationCollection ;
+  skos:definition "Collection of one or more observations, whose members share a common value for one or more property" ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:hasFeatureOfInterest ;
+      sh:class tern:FeatureOfInterest ;
+      sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
+      sh:maxCount 1 ;
+      sh:name "has feature of interest" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:hasMember ;
+      sh:description "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties." ;
+      sh:minCount 1 ;
+      sh:name "has member" ;
+      sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class tern:Observation ;
+          ]
+          [
+            sh:class tern:ObservationCollection ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:hasUltimateFeatureOfInterest ;
+      sh:class tern:FeatureOfInterest ;
+      sh:description "link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:madeBySensor ;
+      sh:class tern:Sensor ;
+      sh:description "Relation between an Observation and the Sensor which made the Observations." ;
+      sh:maxCount 1 ;
+      sh:name "made by sensor" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:observedProperty ;
+      sh:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." ;
+      sh:maxCount 1 ;
+      sh:name "observed property" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:phenomenonTime ;
+      sh:class tern:Instant ;
+      sh:description "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity." ;
+      sh:maxCount 1 ;
+      sh:name "phenomenon time" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:resultTime ;
+      sh:datatype xsd:dateTime ;
+      sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
+      sh:maxCount 1 ;
+      sh:name "result time" ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:usedProcedure ;
+      sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
+      sh:minCount 1 ;
+      sh:name "used procedure" ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -1486,32 +1624,64 @@ tern:RDFDataset
   rdfs:label "RDFDataset" ;
   rdfs:subClassOf <http://rdfs.org/ns/void#Dataset> ;
   rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf tern:Distribution ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dcterms:contributor ;
+      sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dcterms:creator ;
+      sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path dcterms:description ;
       sh:datatype xsd:string ;
+      sh:description "A textual description of the dataset." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
+      sh:name "description" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path dcterms:issued ;
       sh:datatype xsd:date ;
+      sh:description "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an xsd:date." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "issued" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path dcterms:publisher ;
+      sh:description "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal." ;
+      sh:name "publisher" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path dcterms:source ;
+      sh:description "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal." ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path dcterms:title ;
       sh:datatype xsd:string ;
+      sh:description "The name of the dataset." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
+      sh:name "title" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#vocabulary> ;
       sh:description "The controlled vocabularies used in this RDF dataset." ;
+      sh:name "vocabulary" ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -1737,9 +1907,16 @@ Taking a diamond-drill core from a rock outcrop.""" ;
   sh:property [
       a sh:PropertyShape ;
       sh:path prov:wasAttributedTo ;
-      sh:class tern-org:Person ;
       sh:name "was attributed to" ;
       sh:nodeKind sh:IRI ;
+      sh:or (
+          [
+            sh:class tern-org:Person ;
+          ]
+          [
+            sh:class tern-org:Organization ;
+          ]
+        ) ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
@@ -1756,6 +1933,14 @@ Taking a diamond-drill core from a rock outcrop.""" ;
       sh:class tern:Sample ;
       sh:minCount 1 ;
       sh:name "has result" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:madeBySampler ;
+      sh:class tern:Sampler ;
+      sh:description "Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it." ;
+      sh:name "made by sampler" ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -1784,6 +1969,13 @@ Taking a diamond-drill core from a rock outcrop.""" ;
       a sh:PropertyShape ;
       sh:path tern:hasSiteVisit ;
       sh:class tern:SiteVisit ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:samplingType ;
+      sh:description "The type of sampling act." ;
       sh:maxCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
@@ -2670,6 +2862,12 @@ tern:methodType
   rdfs:label "method type" ;
   skos:definition "A particular method type used to conduct some survey." ;
 .
+tern:observationType
+  a owl:ObjectProperty ;
+  rdfs:label "observation type" ;
+  skos:definition "The type of observation." ;
+  skos:example "human observation, machine observation." ;
+.
 tern:polygon
   a rdf:Property ;
   rdfs:label "polygon" ;
@@ -2688,6 +2886,11 @@ tern:sampleStorageLocation
   rdfs:label "sample storage location" ;
   rdfs:subPropertyOf geosparql:hasGeometry ;
   skos:definition "A property that links a [PhysicalSpecimen](#PhysicalSpecimen) to the location [Point](https://w3id.org/tern/ontologies/loc/Point) of where it is stored." ;
+.
+tern:samplingType
+  a owl:ObjectProperty ;
+  rdfs:label "sampling type" ;
+  skos:definition "The type of sampling act." ;
 .
 tern:scope
   a owl:DatatypeProperty ;
