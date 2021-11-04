@@ -1130,7 +1130,7 @@ of the properties estimated by the sensor.""" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path prov:wasAttributedTo ;
+      sh:path prov:wasAssociatedWith ;
       sh:class tern-org:Person ;
       sh:name "was attributed to" ;
       sh:nodeKind sh:IRIOrLiteral ;
@@ -1789,7 +1789,7 @@ Taking a diamond-drill core from a rock outcrop.""" ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path prov:wasAttributedTo ;
+      sh:path prov:wasAssociatedWith ;
       sh:name "was attributed to" ;
       sh:nodeKind sh:IRI ;
       sh:or (

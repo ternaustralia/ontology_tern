@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [unreleased]
 
 ### Added
-
 - Import of ssn extension
 - tern:ObservationCollection
 - tern-org:Organization as one of the value types of prov:wasAttributedTo on tern:Sampling and tern:Observation
@@ -19,8 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - tern:Distribution
 - tern:Dataset
 
-### Removed
+### Changed
+- prov:wasAttributedTo on activities (Observation, Sampling) change to prov:wasAssociatedWith
 
+### Removed
 - Import of datatype vocabulary
 - tern:isAttributeOf a sub-property of ssn:isPropertyOf because the TopBraid Composer diagram view is inferring that the range of values is sosa:FeatureOfInterest.
 - Some OWL restrictions as it doubles up in the diagram view in TopBraid Composer with the SHACL constraints.
