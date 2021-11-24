@@ -1,155 +1,175 @@
 @startuml
 title TERN Ontology
-":Value" <|-- ":Result"
 "time:Instant" <|-- ":Instant"
-":Value" <|-- ":DateTime"
-"ssn:System" <|-- ":Instrument"
-":Value" <|-- ":Text"
-"ssn:Property" <|-- ":Attribute"
-":Value" <|-- ":Count"
-"skos:Concept" <|-- ":Method"
-":Instrument" <|-- ":Sampler"
-"sosa:Sampler" <|-- ":Sampler"
-":Platform" <|-- ":FixedPlatform"
-":QuantitativeRange" <|-- ":PercentRange"
-"skos:Concept" <|-- ":CategoricalValue"
-":Site" <|-- ":EcosystemProcessesSite"
-":Value" <|-- ":QuantitativeMeasure"
-":Sample" <|-- ":Transect"
-":Value" <|-- ":Concept"
-"sosa:Procedure" <|-- ":Procedure"
-":Value" <|-- ":Date"
-"prov:Activity" <|-- ":SiteVisit"
-":Sample" <|-- ":Site"
-":Platform" <|-- ":Site"
-":FixedPlatform" <|-- ":FluxTower"
-"skos:Concept" <|-- ":DigitalCamera"
-":Value" <|-- ":IRI"
 ":Platform" <|-- ":MobilePlatform"
-"prov:Activity" <|-- ":Observation"
-"sosa:Observation" <|-- ":Observation"
-"prov:Activity" <|-- ":Sampling"
-"sosa:Sampling" <|-- ":Sampling"
-"sosa:FeatureOfInterest" <|-- ":FeatureOfInterest"
-"sosa:Sensor" <|-- ":Sensor"
-":Instrument" <|-- ":Sensor"
-":Value" <|-- ":QuantitativeRange"
+":Sample" <|-- ":Transect"
+":FeatureOfInterest" <|-- ":Sample"
 ":Result" <|-- ":Sample"
 "sosa:Sample" <|-- ":Sample"
-":FeatureOfInterest" <|-- ":Sample"
-"skos:Concept" <|-- ":Parameter"
+":Value" <|-- ":Concept"
+":Platform" <|-- ":Site"
+":Sample" <|-- ":Site"
 ":QuantitativeMeasure" <|-- ":Percent"
-":MobilePlatform" <|-- ":EarthObservationSatellite"
-"ssn:Input" <|-- ":Input"
-"sosa:Platform" <|-- ":Platform"
-"sosa:ObservableProperty" <|-- ":ObservableProperty"
 ":Value" <|-- ":Boolean"
-Class ":Result" [[https://w3id.org/tern/ontologies/tern/Result]] {
-}
+":Value" <|-- ":QuantitativeMeasure"
+"dwc:Taxon" <|-- ":Taxon"
+":Value" <|-- ":Taxon"
+"dcat:Distribution" <|-- ":Distribution"
+"dcat:Dataset" <|-- ":Dataset"
+"sosa:FeatureOfInterest" <|-- ":FeatureOfInterest"
+"ssn:Input" <|-- ":Input"
+"skos:Concept" <|-- ":DigitalCamera"
+"ssn:Deployment" <|-- ":Deployment"
+":Instrument" <|-- ":Sampler"
+"sosa:Sampler" <|-- ":Sampler"
+":System" <|-- ":Sampler"
+":Value" <|-- ":Text"
+":Value" <|-- ":DateTime"
+":QuantitativeRange" <|-- ":PercentRange"
+":Platform" <|-- ":FixedPlatform"
+"skos:Concept" <|-- ":CategoricalValue"
+"ssn:System" <|-- ":System"
+"sosa:Platform" <|-- ":Platform"
+":FixedPlatform" <|-- ":CosmOzStation"
+":System" <|-- ":Instrument"
+"ssn:System" <|-- ":Instrument"
+"ssn:Property" <|-- ":Attribute"
+":FixedPlatform" <|-- ":FluxTower"
+"sosa:ObservableProperty" <|-- ":ObservableProperty"
+"prov:Activity" <|-- ":Sampling"
+"sosa:Sampling" <|-- ":Sampling"
+"skos:Concept" <|-- ":Parameter"
+":Instrument" <|-- ":Sensor"
+"sosa:Sensor" <|-- ":Sensor"
+":Value" <|-- ":IRI"
+":Value" <|-- ":Count"
+":Value" <|-- ":QuantitativeRange"
+":Site" <|-- ":EcosystemProcessesSite"
+"skos:Concept" <|-- ":Method"
+":MobilePlatform" <|-- ":EarthObservationSatellite"
+"prov:Activity" <|-- ":Observation"
+"sosa:Observation" <|-- ":Observation"
+":Value" <|-- ":Date"
+"sosa:Procedure" <|-- ":Procedure"
+":Value" <|-- ":Result"
+"sosa:ObservationCollection" <|-- ":ObservationCollection"
+"prov:Activity" <|-- ":SiteVisit"
 Class ":Instant" [[https://w3id.org/tern/ontologies/tern/Instant]] {
-}
-Class ":ub1bL267C25" [[ub1bL267C25]] {
-}
-Class ":ub1bL524C25" [[ub1bL524C25]] {
-}
-Class ":DateTime" [[https://w3id.org/tern/ontologies/tern/DateTime]] {
-}
-Class ":Instrument" [[https://w3id.org/tern/ontologies/tern/Instrument]] {
-}
-Class ":Text" [[https://w3id.org/tern/ontologies/tern/Text]] {
-}
-Class ":Attribute" [[https://w3id.org/tern/ontologies/tern/Attribute]] {
-}
-Class ":Count" [[https://w3id.org/tern/ontologies/tern/Count]] {
-}
-Class ":Method" [[https://w3id.org/tern/ontologies/tern/Method]] {
-}
-Class ":ub1bL440C25" [[ub1bL440C25]] {
-}
-Class ":Sampler" [[https://w3id.org/tern/ontologies/tern/Sampler]] {
-}
-Class ":FixedPlatform" [[https://w3id.org/tern/ontologies/tern/FixedPlatform]] {
-}
-Class ":ub1bL2586C14" [[ub1bL2586C14]] {
-}
-Class ":ub1bL2614C1" [[ub1bL2614C1]] {
-}
-Class ":PercentRange" [[https://w3id.org/tern/ontologies/tern/PercentRange]] {
-}
-Class ":CategoricalValue" [[https://w3id.org/tern/ontologies/tern/CategoricalValue]] {
-}
-Class ":EcosystemProcessesSite" [[https://w3id.org/tern/ontologies/tern/EcosystemProcessesSite]] {
-}
-Class ":QuantitativeMeasure" [[https://w3id.org/tern/ontologies/tern/QuantitativeMeasure]] {
-}
-Class ":Transect" [[https://w3id.org/tern/ontologies/tern/Transect]] {
-}
-Class ":Concept" [[https://w3id.org/tern/ontologies/tern/Concept]] {
-}
-Class ":Procedure" [[https://w3id.org/tern/ontologies/tern/Procedure]] {
-}
-Class ":ub1bL970C25" [[ub1bL970C25]] {
-}
-Class ":Date" [[https://w3id.org/tern/ontologies/tern/Date]] {
-}
-Class ":ub1bL451C25" [[ub1bL451C25]] {
-}
-Class ":SiteVisit" [[https://w3id.org/tern/ontologies/tern/SiteVisit]] {
-}
-Class ":ub1bL2607C1" [[ub1bL2607C1]] {
-}
-Class ":Site" [[https://w3id.org/tern/ontologies/tern/Site]] {
-}
-Class ":FluxTower" [[https://w3id.org/tern/ontologies/tern/FluxTower]] {
-}
-Class ":DigitalCamera" [[https://w3id.org/tern/ontologies/tern/DigitalCamera]] {
-}
-Class ":Concept" [[http://linked.data.gov.au/def/datatype/Concept]] {
-}
-Class ":IRI" [[https://w3id.org/tern/ontologies/tern/IRI]] {
 }
 Class ":MobilePlatform" [[https://w3id.org/tern/ontologies/tern/MobilePlatform]] {
 }
-Class ":ub1bL891C25" [[ub1bL891C25]] {
+Class ":Transect" [[https://w3id.org/tern/ontologies/tern/Transect]] {
 }
-Class ":Observation" [[https://w3id.org/tern/ontologies/tern/Observation]] {
+Class ":Sample" [[https://w3id.org/tern/ontologies/tern/Sample]] {
 }
-Class ":Sampling" [[https://w3id.org/tern/ontologies/tern/Sampling]] {
+Class ":Concept" [[https://w3id.org/tern/ontologies/tern/Concept]] {
+}
+Class ":Site" [[https://w3id.org/tern/ontologies/tern/Site]] {
+}
+Class ":ub1bL912C25" [[ub1bL912C25]] {
+}
+Class ":Percent" [[https://w3id.org/tern/ontologies/tern/Percent]] {
+}
+Class ":ub1bL241C25" [[ub1bL241C25]] {
+}
+Class ":ub1bL483C25" [[ub1bL483C25]] {
+}
+Class ":Boolean" [[https://w3id.org/tern/ontologies/tern/Boolean]] {
+}
+Class ":ub1bL562C25" [[ub1bL562C25]] {
+}
+Class ":QuantitativeMeasure" [[https://w3id.org/tern/ontologies/tern/QuantitativeMeasure]] {
+}
+Class ":Taxon" [[https://w3id.org/tern/ontologies/tern/Taxon]] {
+}
+Class ":ub1bL2843C1" [[ub1bL2843C1]] {
+}
+Class ":Distribution" [[https://w3id.org/tern/ontologies/tern/Distribution]] {
+}
+Class ":Dataset" [[https://w3id.org/tern/ontologies/tern/Dataset]] {
+}
+Class ":ub1bL472C25" [[ub1bL472C25]] {
+}
+Class ":Dimension" [[https://w3id.org/tern/ontologies/tern/Dimension]] {
 }
 Class ":FeatureOfInterest" [[https://w3id.org/tern/ontologies/tern/FeatureOfInterest]] {
 [[https://w3id.org/tern/ontologies/tern/featureType :featureType]] : [[http://www.w3.org/2004/02/skos/core#Concept skos:Concept]]
 }
-Class ":ub1bL2102C25" [[ub1bL2102C25]] {
+Class ":ub1bL2815C14" [[ub1bL2815C14]] {
 }
-Class ":Sensor" [[https://w3id.org/tern/ontologies/tern/Sensor]] {
-}
-Class ":QuantitativeRange" [[https://w3id.org/tern/ontologies/tern/QuantitativeRange]] {
-}
-Class ":Sample" [[https://w3id.org/tern/ontologies/tern/Sample]] {
-}
-Class ":ManagedFeature" [[https://w3id.org/tern/ontologies/tern/ManagedFeature]] {
-}
-Class ":Parameter" [[https://w3id.org/tern/ontologies/tern/Parameter]] {
-}
-Class ":ub1bL2453C14" [[ub1bL2453C14]] {
-}
-Class ":Percent" [[https://w3id.org/tern/ontologies/tern/Percent]] {
-}
-Class ":EarthObservationSatellite" [[https://w3id.org/tern/ontologies/tern/EarthObservationSatellite]] {
+Class ":ub1bL2318C25" [[ub1bL2318C25]] {
 }
 Class ":Input" [[https://w3id.org/tern/ontologies/tern/Input]] {
 }
-Class "dwc:MaterialSample" [[http://rs.tdwg.org/dwc/terms/MaterialSample]] {
+Class ":DigitalCamera" [[https://w3id.org/tern/ontologies/tern/DigitalCamera]] {
 }
-Class ":Dimension" [[https://w3id.org/tern/ontologies/tern/Dimension]] {
+Class ":Deployment" [[https://w3id.org/tern/ontologies/tern/Deployment]] {
+}
+Class ":Sampler" [[https://w3id.org/tern/ontologies/tern/Sampler]] {
+}
+Class ":Text" [[https://w3id.org/tern/ontologies/tern/Text]] {
+}
+Class ":ManagedFeature" [[https://w3id.org/tern/ontologies/tern/ManagedFeature]] {
+}
+Class ":DateTime" [[https://w3id.org/tern/ontologies/tern/DateTime]] {
+}
+Class ":PercentRange" [[https://w3id.org/tern/ontologies/tern/PercentRange]] {
+}
+Class ":FixedPlatform" [[https://w3id.org/tern/ontologies/tern/FixedPlatform]] {
+}
+Class ":CategoricalValue" [[https://w3id.org/tern/ontologies/tern/CategoricalValue]] {
+}
+Class ":ub1bL2836C1" [[ub1bL2836C1]] {
+}
+Class ":System" [[https://w3id.org/tern/ontologies/tern/System]] {
+}
+Class ":ub1bL788C25" [[ub1bL788C25]] {
 }
 Class ":Platform" [[https://w3id.org/tern/ontologies/tern/Platform]] {
 }
+Class ":CosmOzStation" [[https://w3id.org/tern/ontologies/tern/CosmOzStation]] {
+}
+Class ":Instrument" [[https://w3id.org/tern/ontologies/tern/Instrument]] {
+}
+Class ":Attribute" [[https://w3id.org/tern/ontologies/tern/Attribute]] {
+}
+Class ":FluxTower" [[https://w3id.org/tern/ontologies/tern/FluxTower]] {
+}
 Class ":ObservableProperty" [[https://w3id.org/tern/ontologies/tern/ObservableProperty]] {
 }
-Class ":Boolean" [[https://w3id.org/tern/ontologies/tern/Boolean]] {
+Class ":Sampling" [[https://w3id.org/tern/ontologies/tern/Sampling]] {
 }
-Class ":ub1bL761C25" [[ub1bL761C25]] {
+Class ":Parameter" [[https://w3id.org/tern/ontologies/tern/Parameter]] {
+}
+Class ":Sensor" [[https://w3id.org/tern/ontologies/tern/Sensor]] {
+}
+Class ":IRI" [[https://w3id.org/tern/ontologies/tern/IRI]] {
+}
+Class ":Count" [[https://w3id.org/tern/ontologies/tern/Count]] {
+}
+Class ":QuantitativeRange" [[https://w3id.org/tern/ontologies/tern/QuantitativeRange]] {
+}
+Class ":EcosystemProcessesSite" [[https://w3id.org/tern/ontologies/tern/EcosystemProcessesSite]] {
+}
+Class ":Method" [[https://w3id.org/tern/ontologies/tern/Method]] {
+}
+Class ":ub1bL2667C14" [[ub1bL2667C14]] {
+}
+Class ":ub1bL989C25" [[ub1bL989C25]] {
+}
+Class ":EarthObservationSatellite" [[https://w3id.org/tern/ontologies/tern/EarthObservationSatellite]] {
+}
+Class ":Observation" [[https://w3id.org/tern/ontologies/tern/Observation]] {
+}
+Class ":Date" [[https://w3id.org/tern/ontologies/tern/Date]] {
+}
+Class ":Procedure" [[https://w3id.org/tern/ontologies/tern/Procedure]] {
+}
+Class ":Result" [[https://w3id.org/tern/ontologies/tern/Result]] {
+}
+Class ":ObservationCollection" [[https://w3id.org/tern/ontologies/tern/ObservationCollection]] {
+}
+Class ":SiteVisit" [[https://w3id.org/tern/ontologies/tern/SiteVisit]] {
 }
 center footer Generated by [[https://github.com/edmondchuc/ontogram https://github.com/edmondchuc/ontogram]]
 @enduml

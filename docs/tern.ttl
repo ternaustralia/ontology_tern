@@ -1040,11 +1040,6 @@ tern:Observation
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern-org:Person ;
-      owl:onProperty prov:wasAttributedTo ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern:Instrument ;
       owl:onProperty tern:usedInstrument ;
     ] ;
@@ -1713,11 +1708,6 @@ tern:Sampling
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
       owl:onProperty dcterms:identifier ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern-org:Person ;
-      owl:onProperty prov:wasAttributedTo ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -2477,7 +2467,8 @@ tern:dateDecommissioned
 tern:dimension
   a rdf:Property ;
   rdfs:label "dimension" ;
-  skos:definition "A property that links, e.g., a [Site](#EcologicalSite) to its [Dimension](#Dimension)." ;
+  skos:definition "Dimenion in metres." ;
+  skos:example "100x100" ;
 .
 tern:domain
   a rdf:Property ;
