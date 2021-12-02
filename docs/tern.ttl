@@ -145,11 +145,11 @@ tern:Attribute
   a sh:NodeShape ;
   rdfs:label "Attribute" ;
   rdfs:subClassOf ssn:Property ;
-  skos:definition "A key-value pair. Same design pattern as [schema:PropertyValue](https://schema.org/PropertyValue)." ;
+  skos:definition "A property-value pair. Same modelling pattern as [schema:PropertyValue](https://schema.org/PropertyValue)." ;
   sh:property [
       a sh:PropertyShape ;
       sh:path dcterms:type ;
-      sh:maxCount 1 ;
+      sh:description "Useful when rdfs:subClassOf entailment is enabled and the proximate class type is required to be recorded." ;
       sh:name "type" ;
       sh:nodeKind sh:IRI ;
     ] ;
@@ -157,13 +157,13 @@ tern:Attribute
       a sh:PropertyShape ;
       sh:path <http://rdfs.org/ns/void#inDataset> ;
       sh:class tern:RDFDataset ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
+      sh:description "A link to the RDF payload's metadata which this resource was a part of." ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path tern:attribute ;
+      sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS. TERN manages a list of attributes at http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
@@ -171,6 +171,7 @@ tern:Attribute
   sh:property [
       a sh:PropertyShape ;
       sh:path tern:hasSimpleValue ;
+      sh:description "The direct link to the value either as an IRI or an RDF literal. The simple value is always equivalent to the value captured in rdf:value of the tern:Value instance." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "has simple value" ;
@@ -180,6 +181,7 @@ tern:Attribute
       a sh:PropertyShape ;
       sh:path tern:hasValue ;
       sh:class tern:Value ;
+      sh:description "A link to a tern:Value instance which encapsulates the value of this Attribute." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "has value" ;
@@ -188,8 +190,7 @@ tern:Attribute
   sh:property [
       a sh:PropertyShape ;
       sh:path tern:isAttributeOf ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
+      sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of tern:hasAttribute." ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
