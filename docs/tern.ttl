@@ -2557,10 +2557,6 @@ tern:unit
   rdfs:label "unit" ;
   skos:definition "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
 .
-tern:usedInstrument
-  a owl:ObjectProperty ;
-  rdfs:label "used instrument" ;
-.
 tern:valueType
   a rdf:Property ;
   rdfs:label "value type" ;
