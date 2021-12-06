@@ -1356,7 +1356,6 @@ tern:Result
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Result" ;
-  rdfs:subClassOf tern:Value ;
   skos:definition "The result of an [Observation](https://w3id.org/tern/ontologies/tern/Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](https://w3id.org/tern/ontologies/tern/Sampling)." ;
   skos:example """The value 20 as the height of a certain 
 tree together with the unit, e.g., Meter.""" ;
