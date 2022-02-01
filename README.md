@@ -2,7 +2,7 @@
 
 The TERN Ontology is a [SHACL Ontology](https://www.topquadrant.com/shacl-blog/) designed to exchange ecological survey data between different systems. 
 
-Online Documentation: https://linkeddata-dev.tern.org.au/tern-ontology
+Online Documentation: https://linkeddata.tern.org.au/information-models/tern-ontology
 
 
 ## Building the documentation

@@ -132,8 +132,8 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.3.2> ;
-  owl:versionInfo "0.3.2" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.4.0> ;
+  owl:versionInfo "0.4.0" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;
@@ -149,7 +149,7 @@ tern:Attribute
   sh:property [
       a sh:PropertyShape ;
       sh:path dcterms:type ;
-      sh:description "Useful when rdfs:subClassOf entailment is enabled and the proximate class type is required to be recorded." ;
+      sh:description "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." ;
       sh:name "type" ;
       sh:nodeKind sh:IRI ;
     ] ;
@@ -163,7 +163,7 @@ tern:Attribute
   sh:property [
       a sh:PropertyShape ;
       sh:path tern:attribute ;
-      sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS. TERN manages a list of attributes at http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924." ;
+      sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of attributes at [http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924](http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924)." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:nodeKind sh:IRI ;
@@ -181,7 +181,7 @@ tern:Attribute
       a sh:PropertyShape ;
       sh:path tern:hasValue ;
       sh:class tern:Value ;
-      sh:description "A link to a tern:Value instance which encapsulates the value of this Attribute." ;
+      sh:description "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "has value" ;
@@ -190,7 +190,7 @@ tern:Attribute
   sh:property [
       a sh:PropertyShape ;
       sh:path tern:isAttributeOf ;
-      sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of tern:hasAttribute." ;
+      sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -223,71 +223,6 @@ tern:CategoricalValue
   rdfs:label "Categorical Value" ;
   rdfs:subClassOf skos:Concept ;
 .
-tern:Concept
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Concept" ;
-  rdfs:subClassOf tern:Value ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom skos:Concept ;
-      owl:onProperty rdf:value ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom skos:Concept ;
-      owl:onProperty tern:localValue ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom [
-          a owl:Class ;
-          owl:unionOf (
-              skos:Concept
-              skos:Collection
-              owl:Ontology
-            ) ;
-        ] ;
-      owl:onProperty tern:localVocabulary ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty rdf:value ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:vocabulary ;
-    ] ;
-  skos:definition "Class to encapsulate a classifier, usually a value from a controlled vocabulary." ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path rdf:value ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:localValue ;
-      sh:maxCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:localVocabulary ;
-      sh:maxCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:vocabulary ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-.
 tern:CosmOzStation
   a owl:Class ;
   rdfs:label "CosmOz Station" ;
@@ -298,41 +233,6 @@ Beginning in October 2010, CSIRO Land and Water installed cosmic-ray probes at a
 These novel probes use cosmic rays originating from outer space to measure average soil moisture over an area of about 30 hectares to depths in the soil of between 10 to 50 cm. This constitutes a quantum leap over conventional on-ground soil moisture sensing technology that can only measure soil moisture content within small volumes of soil.
 Each system is comprised of a data logger, neutron detector, satellite telemetry, tipping bucket rain gauge, temperature humidity and pressure sensors and three surface moisture (TDR) probes. The system requires minimal maintenance and is powered by a solar charging system. The entire system is installed on a single mast. Data is logged and transmitted every 60 minutes to the CosmOz database.""" ;
   skos:editorialNote "Currently used by the platforms index for SHaRED." ;
-.
-tern:Count
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Count" ;
-  rdfs:subClassOf tern:Value ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:integer ;
-      owl:onProperty rdf:value ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty rdf:value ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:uncertainty ;
-    ] ;
-  skos:definition "Class to encapsulate an integer value." ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path rdf:value ;
-      sh:datatype xsd:integer ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:uncertainty ;
-      sh:datatype xsd:double ;
-      sh:maxCount 1 ;
-    ] ;
 .
 tern:Dataset
   a rdfs:Class ;
@@ -656,6 +556,37 @@ tern:FixedPlatform
   rdfs:subClassOf tern:Platform ;
   skos:definition "A fixed platform based on land." ;
 .
+tern:Float
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Float" ;
+  rdfs:seeAlso schema-https:Float ;
+  rdfs:subClassOf tern:Value ;
+  skos:definition "Data type: Floating number." ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path rdf:value ;
+      sh:datatype xsd:double ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:uncertainty ;
+      sh:datatype xsd:double ;
+      sh:description "Error of measurement (±)." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:Literal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:unit ;
+      sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
 tern:FluxTower
   a owl:Class ;
   rdfs:label "Flux Tower" ;
@@ -779,55 +710,40 @@ tern:Instant
         ) ;
     ] ;
 .
-tern:Instrument
-  a owl:Class ;
+tern:Integer
+  a rdfs:Class ;
   a sh:NodeShape ;
-  rdfs:label "Instrument" ;
-  rdfs:subClassOf ssn:System ;
-  rdfs:subClassOf tern:System ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom [
-          a owl:Class ;
-          owl:unionOf (
-              skos:Concept
-              owl:Class
-              rdfs:Class
-              owl:NamedIndividual
-            ) ;
-        ] ;
-      owl:onProperty tern:instrumentType ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:instrumentType ;
-    ] ;
-  skos:definition "A device or instrument that is used for making measurements or observations." ;
+  rdfs:label "Integer" ;
+  rdfs:seeAlso schema-https:Integer ;
+  rdfs:subClassOf tern:Value ;
+  skos:definition "Data type: Integer." ;
   sh:property [
       a sh:PropertyShape ;
-      sh:path dcterms:type ;
-      sh:maxCount 1 ;
-      sh:name "type" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path rdfs:comment ;
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path rdfs:label ;
-      sh:datatype xsd:string ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:instrumentType ;
+      sh:path rdf:value ;
+      sh:datatype xsd:integer ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:uncertainty ;
+      sh:description "Error of measurement (±)." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:or (
+          [
+            sh:datatype xsd:integer ;
+          ]
+          [
+            sh:datatype xsd:double ;
+          ]
+        ) ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:unit ;
+      sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
+      sh:maxCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -1041,11 +957,6 @@ tern:Observation
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern:Instrument ;
-      owl:onProperty tern:usedInstrument ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern:RDFDataset ;
       owl:onProperty <http://rdfs.org/ns/void#inDataset> ;
     ] ;
@@ -1151,7 +1062,14 @@ of the properties estimated by the sensor.""" ;
   sh:property [
       a sh:PropertyShape ;
       sh:path sosa:hasResult ;
-      sh:class tern:Value ;
+      sh:and (
+          [
+            sh:class tern:Value ;
+          ]
+          [
+            sh:class tern:Result ;
+          ]
+        ) ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "has result" ;
@@ -1218,12 +1136,6 @@ of the properties estimated by the sensor.""" ;
       sh:path tern:observationType ;
       sh:description "The type of observation." ;
       sh:maxCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:usedInstrument ;
-      sh:class tern:Instrument ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -1314,46 +1226,6 @@ tern:Parameter
   rdfs:subClassOf skos:Concept ;
   skos:definition "A [FeatureOfInterest's](http://w3.org/ns/sosa/FeatureOfInterest) property or characteristic which an [Observation](#Observation) is measuring using some [Procedure](#Procedure)." ;
 .
-tern:Percent
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Percent" ;
-  rdfs:subClassOf tern:QuantitativeMeasure ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue <http://qudt.org/vocab/unit/PERCENT> ;
-      owl:onProperty tern:unit ;
-    ] ;
-  skos:definition "Class to encapsulate a quantitative measure expressed as a percent value." ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:unit ;
-      sh:hasValue <http://qudt.org/vocab/unit/PERCENT> ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-.
-tern:PercentRange
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Percent Range" ;
-  rdfs:subClassOf tern:QuantitativeRange ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:hasValue <http://qudt.org/vocab/unit/PERCENT> ;
-      owl:onProperty tern:unit ;
-    ] ;
-  skos:definition "Class to encapsulate a quantitative range expressed as in percent values." ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:unit ;
-      sh:hasValue <http://qudt.org/vocab/unit/PERCENT> ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-.
 tern:Platform
   a owl:Class ;
   rdfs:label "Platform" ;
@@ -1363,21 +1235,6 @@ tern:Platform
 an array of sensors such as GPS, current meters, atmospheric sensors and water 
 quality monitors. Sensors measuring weather variables are attached to 
 a weather station (a platform)""" ;
-.
-tern:Plot
-  a rdfs:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Plot" ;
-  rdfs:subClassOf tern:Sample ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:featureType ;
-      sh:hasValue <http://linked.data.gov.au/def/tern-cv/8cadf069-01d7-4420-b454-cae37740c2a2> ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:name "site type" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
 .
 tern:Procedure
   a owl:Class ;
@@ -1425,125 +1282,6 @@ tern:Quadrat
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "feature type" ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-.
-tern:QuantitativeMeasure
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Quantitative Measure" ;
-  rdfs:subClassOf tern:Value ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
-      owl:onProperty rdf:value ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
-      owl:onProperty tern:uncertainty ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty rdf:value ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:unit ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:uncertainty ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path rdf:value ;
-      sh:datatype xsd:double ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:uncertainty ;
-      sh:datatype xsd:double ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:unit ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:IRI ;
-    ] ;
-.
-tern:QuantitativeRange
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Quantitative range" ;
-  rdfs:subClassOf tern:Value ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
-      owl:onProperty qudt:maxInclusive ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
-      owl:onProperty qudt:minInclusive ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
-      owl:onProperty tern:uncertainty ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty qudt:maxInclusive ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty qudt:minInclusive ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:uncertainty ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern:unit ;
-    ] ;
-  skos:definition "Class to encapsulate a quantitative range." ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path qudt:maxInclusive ;
-      sh:datatype xsd:double ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path qudt:minInclusive ;
-      sh:datatype xsd:double ;
-      sh:maxCount 1 ;
-      sh:minCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:uncertainty ;
-      sh:datatype xsd:double ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:unit ;
-      sh:maxCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
 .
@@ -1618,8 +1356,7 @@ tern:Result
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Result" ;
-  rdfs:subClassOf tern:Value ;
-  skos:definition "The result of an [Observation](#Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](#Sampling). To store an observation's simple result value one can use the [hasSimpleResult](http://w3.org/ns/sosa/hasSimpleResult) property." ;
+  skos:definition "The result of an [Observation](https://w3id.org/tern/ontologies/tern/Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](https://w3id.org/tern/ontologies/tern/Sampling)." ;
   skos:example """The value 20 as the height of a certain 
 tree together with the unit, e.g., Meter.""" ;
   sh:property [
@@ -1635,9 +1372,6 @@ tree together with the unit, e.g., Meter.""" ;
           ]
           [
             sh:class tern:Sampling ;
-          ]
-          [
-            sh:class tern:Attribute ;
           ]
         ) ;
     ] ;
@@ -1674,7 +1408,6 @@ tern:Sampler
   a sh:NodeShape ;
   rdfs:label "Sampler" ;
   rdfs:subClassOf sosa:Sampler ;
-  rdfs:subClassOf tern:Instrument ;
   rdfs:subClassOf tern:System ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1688,6 +1421,20 @@ tern:Sampler
     ] ;
   skos:definition "Sampler - A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples. " ;
   skos:example "A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device." ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path sosa:madeSampling ;
+      sh:class tern:Sampling ;
+      sh:name "made sampling" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path ssn:implements ;
+      sh:minCount 1 ;
+      sh:name "implements" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
 .
 tern:Sampling
   a owl:Class ;
@@ -1709,11 +1456,6 @@ tern:Sampling
       a owl:Restriction ;
       owl:allValuesFrom xsd:string ;
       owl:onProperty dcterms:identifier ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:allValuesFrom tern:Instrument ;
-      owl:onProperty tern:usedInstrument ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -1847,18 +1589,11 @@ Taking a diamond-drill core from a rock outcrop.""" ;
       sh:maxCount 1 ;
       sh:nodeKind sh:IRI ;
     ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path tern:usedInstrument ;
-      sh:class tern:Instrument ;
-      sh:nodeKind sh:IRI ;
-    ] ;
 .
 tern:Sensor
   a owl:Class ;
   rdfs:label "Sensor" ;
   rdfs:subClassOf sosa:Sensor ;
-  rdfs:subClassOf tern:Instrument ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom tern:ObservableProperty ;
@@ -2108,6 +1843,12 @@ tern:System
   rdfs:subClassOf ssn:System ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path dcterms:type ;
+      sh:name "type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path sosa:isHostedBy ;
       sh:class tern:Platform ;
       sh:maxCount 1 ;
@@ -2128,12 +1869,16 @@ tern:System
       sh:name "implements" ;
       sh:nodeKind sh:IRI ;
     ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern:systemType ;
+      sh:nodeKind sh:IRI ;
+    ] ;
 .
 tern:Taxon
   a owl:Class ;
   a sh:NodeShape ;
   rdfs:label "Taxon" ;
-  rdfs:subClassOf dwc:Taxon ;
   rdfs:subClassOf tern:Value ;
   skos:definition "A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit." ;
   skos:example "The genus Truncorotaloides as published by Bronnimann et al. in 1953 in the Journal of Paleontology Vol. 27(6) p. 817-820." ;
@@ -2418,6 +2163,7 @@ tern:Value
   a sh:NodeShape ;
   rdfs:label "Value" ;
   rdfs:subClassOf rdfs:Resource ;
+  skos:definition "A value of an [Attribute](https://w3id.org/tern/ontologies/tern/Attribute) or an [Observation](https://w3id.org/tern/ontologies/tern/Observation). " ;
 .
 tern:area
   a rdf:Property ;
@@ -2583,6 +2329,8 @@ tern:hasSamplingPoint
 tern:hasSimpleValue
   a rdf:Property ;
   rdfs:label "has simple value" ;
+  skos:definition "The direct link to the value either as an IRI or an RDF literal. The simple value is always equivalent to the value captured in [rdf:value](http://www.w3.org/1999/02/22-rdf-syntax-ns#value) of the tern:Value instance." ;
+  skos:example "An IRI, true, false, 1, \"string\", or a \"string with language\"@en, etc." ;
 .
 tern:hasSite
   a owl:ObjectProperty ;
@@ -2605,6 +2353,7 @@ tern:hasValue
   a owl:ObjectProperty ;
   rdfs:label "has value" ;
   rdfs:range tern:Value ;
+  skos:definition "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) which encapulates the value of this thing." ;
 .
 tern:instructions
   a owl:ObjectProperty ;
@@ -2622,7 +2371,7 @@ tern:isAttributeOf
   rdfs:domain tern:Attribute ;
   rdfs:label "is attribute of" ;
   owl:inverseOf tern:hasAttribute ;
-  skos:definition "Link from an [Attribute](#Attribute)." ;
+  skos:definition "Link from an [Attribute](https://w3id.org/tern/ontologies/tern/Attribute) to some individual." ;
 .
 tern:isGlobalMatchOf
   a rdf:Property ;
@@ -2766,6 +2515,12 @@ tern:swPoint
   owl:deprecated true ;
   skos:definition "The south-west point of the subject." ;
 .
+tern:systemType
+  a owl:ObjectProperty ;
+  rdfs:label "system type" ;
+  rdfs:range skos:Concept ;
+  skos:definition "The type of system. Values are from some controlled vocabulary." ;
+.
 tern:taxon
   a rdf:Property ;
   rdfs:label "taxon" ;
@@ -2793,17 +2548,14 @@ tern:uncertainty
   a owl:DatatypeProperty ;
   rdfs:label "uncertainty" ;
   rdfs:range xsd:double ;
+  rdfs:seeAlso <https://www.webassign.net/question_assets/unccolphysmechl1/measurements/manual.html> ;
   skos:definition "Uncertainty for a quantitative value." ;
+  skos:scopeNote "measurement = (best estimate ± uncertainty) units " ;
 .
 tern:unit
   a owl:ObjectProperty ;
   rdfs:label "unit" ;
-  skos:definition "Unit of measure." ;
-.
-tern:usedInstrument
-  a owl:ObjectProperty ;
-  rdfs:label "used instrument" ;
-  rdfs:range tern:Instrument ;
+  skos:definition "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
 .
 tern:valueType
   a rdf:Property ;
