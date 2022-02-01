@@ -132,8 +132,8 @@ tern:
   owl:imports loc: ;
   owl:imports tern-org: ;
   owl:imports <https://w3id.org/tern/ontologies/sd/> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.3.2> ;
-  owl:versionInfo "0.3.2" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.4.0> ;
+  owl:versionInfo "0.4.0" ;
   prov:wasGeneratedBy [
       a doap:Project ;
       a prov:Activity ;

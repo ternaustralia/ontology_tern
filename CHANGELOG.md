@@ -5,9 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [unreleased]
+## [0.4.0] - 2022-02-01
 
 ### Added
+
 - Import of ssn extension
 - tern:ObservationCollection
 - tern-org:Organization as one of the value types of prov:wasAttributedTo on tern:Sampling and tern:Observation
@@ -17,15 +18,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - tern:samplingType to tern:Sampling
 - tern:Distribution
 - tern:Dataset
+- Add description
+  - void:inDataset
+  - tern:attribute
+  - tern:hasSimpleValue
+  - tern:hasValue
+  - tern:isAttributeOf
+- tern:Integer
+- tern:Float
+- tern:System
+  - Add new property called tern:systemType
+  - Added property tern:systemType and dcterms:type
+- tern:Sampler
+  - SHACL constraints added
 
 ### Changed
+
 - prov:wasAttributedTo on activities (Observation, Sampling) change to prov:wasAssociatedWith
+- All classes may have dcterms:type. There should be no cardinality here.
+- tern:Observation
+  - sosa:hasResult sh:class is an AND between tern:Value and tern:Result.
+- tern:Result no longer a subclass of tern:Value
 
 ### Removed
+
 - Import of datatype vocabulary
 - tern:isAttributeOf a sub-property of ssn:isPropertyOf because the TopBraid Composer diagram view is inferring that the range of values is sosa:FeatureOfInterest.
 - Some OWL restrictions as it doubles up in the diagram view in TopBraid Composer with the SHACL constraints.
 - Slowly remove OWL restrictions as they are unused besides expressing the OWL side of the model. More in favour of SHACL now.
+- void:inDataset
+  - Remove sh:minCount = 1 and sh:maxCount = 1
+- tern:Count
+- tern:QuantitativeRange
+- tern:Percent
+- tern:PercentRange
+- tern:QuantitativeMeasure
+- tern:Plot
+- tern:Instrument
+- tern:Concept
 
 ## [0.3.2] - 2021-09-22
 
