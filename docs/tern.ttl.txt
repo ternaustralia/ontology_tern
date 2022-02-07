@@ -1,145 +1,145 @@
 @startuml
 title TERN Ontology
-"sosa:Sample" <|-- ":Sample"
-":FeatureOfInterest" <|-- ":Sample"
-":Result" <|-- ":Sample"
-":Value" <|-- ":Taxon"
-":Value" <|-- ":Text"
-"prov:Activity" <|-- ":Sampling"
-"sosa:Sampling" <|-- ":Sampling"
-"skos:Concept" <|-- ":Method"
-"skos:Concept" <|-- ":CategoricalValue"
-":Value" <|-- ":Date"
-"sosa:Sensor" <|-- ":Sensor"
-":Platform" <|-- ":MobilePlatform"
-":Value" <|-- ":IRI"
-"prov:Activity" <|-- ":SiteVisit"
-":Value" <|-- ":DateTime"
-"sosa:Procedure" <|-- ":Procedure"
-"ssn:Property" <|-- ":Attribute"
-"sosa:ObservableProperty" <|-- ":ObservableProperty"
-"ssn:Deployment" <|-- ":Deployment"
-":Value" <|-- ":Boolean"
-"sosa:FeatureOfInterest" <|-- ":FeatureOfInterest"
-"sosa:ObservationCollection" <|-- ":ObservationCollection"
-":MobilePlatform" <|-- ":EarthObservationSatellite"
-"skos:Concept" <|-- ":Parameter"
-":FixedPlatform" <|-- ":FluxTower"
-":Sample" <|-- ":Transect"
-"dcat:Distribution" <|-- ":Distribution"
-":FixedPlatform" <|-- ":CosmOzStation"
-"skos:Concept" <|-- ":DigitalCamera"
-":Sample" <|-- ":Site"
-":Platform" <|-- ":Site"
-"ssn:Input" <|-- ":Input"
-"dcat:Dataset" <|-- ":Dataset"
 "sosa:Observation" <|-- ":Observation"
 "prov:Activity" <|-- ":Observation"
+"skos:Concept" <|-- ":DigitalCamera"
+":FeatureOfInterest" <|-- ":Sample"
+":Result" <|-- ":Sample"
+"sosa:Sample" <|-- ":Sample"
+":Value" <|-- ":Date"
+"sosa:FeatureOfInterest" <|-- ":FeatureOfInterest"
+"ssn:Input" <|-- ":Input"
+":Value" <|-- ":Boolean"
+"skos:Concept" <|-- ":Parameter"
+":Value" <|-- ":Text"
+":Platform" <|-- ":MobilePlatform"
+":FixedPlatform" <|-- ":FluxTower"
+"sosa:Platform" <|-- ":Platform"
+"prov:Activity" <|-- ":Sampling"
+"sosa:Sampling" <|-- ":Sampling"
+":Value" <|-- ":DateTime"
+":Sample" <|-- ":Transect"
+"sosa:ObservationCollection" <|-- ":ObservationCollection"
 "time:Instant" <|-- ":Instant"
-":Platform" <|-- ":FixedPlatform"
+"ssn:Deployment" <|-- ":Deployment"
+"skos:Concept" <|-- ":Method"
+":Sample" <|-- ":Site"
+":Platform" <|-- ":Site"
+":Site" <|-- ":EcosystemProcessesSite"
+"sosa:ObservableProperty" <|-- ":ObservableProperty"
+"dcat:Distribution" <|-- ":Distribution"
+":FixedPlatform" <|-- ":CosmOzStation"
 ":System" <|-- ":Sampler"
 "sosa:Sampler" <|-- ":Sampler"
-":Site" <|-- ":EcosystemProcessesSite"
 "ssn:System" <|-- ":System"
-"sosa:Platform" <|-- ":Platform"
-Class ":ub1bL996C16" [[ub1bL996C16]] {
+":MobilePlatform" <|-- ":EarthObservationSatellite"
+"skos:Concept" <|-- ":CategoricalValue"
+"ssn:Property" <|-- ":Attribute"
+"sosa:Sensor" <|-- ":Sensor"
+"sosa:Procedure" <|-- ":Procedure"
+":Value" <|-- ":IRI"
+"prov:Activity" <|-- ":SiteVisit"
+":Platform" <|-- ":FixedPlatform"
+":Value" <|-- ":Taxon"
+"dcat:Dataset" <|-- ":Dataset"
+Class ":Observation" [[https://w3id.org/tern/ontologies/tern/Observation]] {
+}
+Class ":DigitalCamera" [[https://w3id.org/tern/ontologies/tern/DigitalCamera]] {
+}
+Class ":Result" [[https://w3id.org/tern/ontologies/tern/Result]] {
 }
 Class ":Sample" [[https://w3id.org/tern/ontologies/tern/Sample]] {
 }
-Class ":ManagedFeature" [[https://w3id.org/tern/ontologies/tern/ManagedFeature]] {
+Class ":Date" [[https://w3id.org/tern/ontologies/tern/Date]] {
 }
-Class ":Taxon" [[https://w3id.org/tern/ontologies/tern/Taxon]] {
+Class ":FeatureOfInterest" [[https://w3id.org/tern/ontologies/tern/FeatureOfInterest]] {
+[[https://w3id.org/tern/ontologies/tern/featureType :featureType]] : [[http://www.w3.org/2004/02/skos/core#Concept skos:Concept]]
+}
+Class ":Input" [[https://w3id.org/tern/ontologies/tern/Input]] {
+}
+Class ":ub1bL1114C1" [[ub1bL1114C1]] {
+}
+Class ":ub1bL969C16" [[ub1bL969C16]] {
+}
+Class ":Boolean" [[https://w3id.org/tern/ontologies/tern/Boolean]] {
+}
+Class ":Parameter" [[https://w3id.org/tern/ontologies/tern/Parameter]] {
 }
 Class ":Text" [[https://w3id.org/tern/ontologies/tern/Text]] {
 }
+Class ":MobilePlatform" [[https://w3id.org/tern/ontologies/tern/MobilePlatform]] {
+}
+Class ":ub1bL656C31" [[ub1bL656C31]] {
+}
+Class ":FluxTower" [[https://w3id.org/tern/ontologies/tern/FluxTower]] {
+}
+Class ":Platform" [[https://w3id.org/tern/ontologies/tern/Platform]] {
+}
+Class ":ub1bL395C31" [[ub1bL395C31]] {
+}
 Class ":Sampling" [[https://w3id.org/tern/ontologies/tern/Sampling]] {
+}
+Class ":DateTime" [[https://w3id.org/tern/ontologies/tern/DateTime]] {
+}
+Class ":ub1bL254C31" [[ub1bL254C31]] {
+}
+Class ":Transect" [[https://w3id.org/tern/ontologies/tern/Transect]] {
+}
+Class ":ObservationCollection" [[https://w3id.org/tern/ontologies/tern/ObservationCollection]] {
+}
+Class ":Dimension" [[https://w3id.org/tern/ontologies/tern/Dimension]] {
+}
+Class ":Instant" [[https://w3id.org/tern/ontologies/tern/Instant]] {
+}
+Class ":Deployment" [[https://w3id.org/tern/ontologies/tern/Deployment]] {
+}
+Class ":ub1bL258C31" [[ub1bL258C31]] {
 }
 Class ":Method" [[https://w3id.org/tern/ontologies/tern/Method]] {
 }
+Class ":ub1bL1117C1" [[ub1bL1117C1]] {
+}
+Class ":Site" [[https://w3id.org/tern/ontologies/tern/Site]] {
+}
+Class ":EcosystemProcessesSite" [[https://w3id.org/tern/ontologies/tern/EcosystemProcessesSite]] {
+}
+Class ":ObservableProperty" [[https://w3id.org/tern/ontologies/tern/ObservableProperty]] {
+}
+Class ":Distribution" [[https://w3id.org/tern/ontologies/tern/Distribution]] {
+}
+Class ":CosmOzStation" [[https://w3id.org/tern/ontologies/tern/CosmOzStation]] {
+}
+Class ":ub1bL867C31" [[ub1bL867C31]] {
+}
+Class ":ub1bL996C16" [[ub1bL996C16]] {
+}
+Class ":Sampler" [[https://w3id.org/tern/ontologies/tern/Sampler]] {
+}
+Class ":System" [[https://w3id.org/tern/ontologies/tern/System]] {
+}
+Class ":EarthObservationSatellite" [[https://w3id.org/tern/ontologies/tern/EarthObservationSatellite]] {
+}
 Class ":CategoricalValue" [[https://w3id.org/tern/ontologies/tern/CategoricalValue]] {
 }
-Class ":Date" [[https://w3id.org/tern/ontologies/tern/Date]] {
+Class ":ManagedFeature" [[https://w3id.org/tern/ontologies/tern/ManagedFeature]] {
+}
+Class ":Attribute" [[https://w3id.org/tern/ontologies/tern/Attribute]] {
+}
+Class ":ub1bL606C31" [[ub1bL606C31]] {
 }
 Class ":Sensor" [[https://w3id.org/tern/ontologies/tern/Sensor]] {
 }
-Class ":MobilePlatform" [[https://w3id.org/tern/ontologies/tern/MobilePlatform]] {
+Class ":Procedure" [[https://w3id.org/tern/ontologies/tern/Procedure]] {
 }
 Class ":IRI" [[https://w3id.org/tern/ontologies/tern/IRI]] {
 }
 Class ":SiteVisit" [[https://w3id.org/tern/ontologies/tern/SiteVisit]] {
 }
-Class ":DateTime" [[https://w3id.org/tern/ontologies/tern/DateTime]] {
-}
-Class ":ub1bL606C31" [[ub1bL606C31]] {
-}
-Class ":Procedure" [[https://w3id.org/tern/ontologies/tern/Procedure]] {
-}
-Class ":ub1bL969C16" [[ub1bL969C16]] {
-}
-Class ":Dimension" [[https://w3id.org/tern/ontologies/tern/Dimension]] {
-}
-Class ":Attribute" [[https://w3id.org/tern/ontologies/tern/Attribute]] {
-}
-Class ":ObservableProperty" [[https://w3id.org/tern/ontologies/tern/ObservableProperty]] {
-}
-Class ":Deployment" [[https://w3id.org/tern/ontologies/tern/Deployment]] {
-}
-Class ":ub1bL656C31" [[ub1bL656C31]] {
-}
-Class ":ub1bL1117C1" [[ub1bL1117C1]] {
-}
-Class ":ub1bL258C31" [[ub1bL258C31]] {
-}
-Class ":Boolean" [[https://w3id.org/tern/ontologies/tern/Boolean]] {
-}
-Class ":FeatureOfInterest" [[https://w3id.org/tern/ontologies/tern/FeatureOfInterest]] {
-[[https://w3id.org/tern/ontologies/tern/featureType :featureType]] : [[http://www.w3.org/2004/02/skos/core#Concept skos:Concept]]
-}
-Class ":ObservationCollection" [[https://w3id.org/tern/ontologies/tern/ObservationCollection]] {
-}
-Class ":EarthObservationSatellite" [[https://w3id.org/tern/ontologies/tern/EarthObservationSatellite]] {
-}
-Class ":Parameter" [[https://w3id.org/tern/ontologies/tern/Parameter]] {
-}
-Class ":ub1bL395C31" [[ub1bL395C31]] {
-}
-Class ":FluxTower" [[https://w3id.org/tern/ontologies/tern/FluxTower]] {
-}
-Class ":Transect" [[https://w3id.org/tern/ontologies/tern/Transect]] {
-}
-Class ":Distribution" [[https://w3id.org/tern/ontologies/tern/Distribution]] {
-}
-Class ":Result" [[https://w3id.org/tern/ontologies/tern/Result]] {
-}
-Class ":CosmOzStation" [[https://w3id.org/tern/ontologies/tern/CosmOzStation]] {
-}
-Class ":DigitalCamera" [[https://w3id.org/tern/ontologies/tern/DigitalCamera]] {
-}
-Class ":ub1bL254C31" [[ub1bL254C31]] {
-}
-Class ":Site" [[https://w3id.org/tern/ontologies/tern/Site]] {
-}
-Class ":Input" [[https://w3id.org/tern/ontologies/tern/Input]] {
-}
-Class ":Dataset" [[https://w3id.org/tern/ontologies/tern/Dataset]] {
-}
-Class ":Observation" [[https://w3id.org/tern/ontologies/tern/Observation]] {
-}
-Class ":Instant" [[https://w3id.org/tern/ontologies/tern/Instant]] {
-}
 Class ":FixedPlatform" [[https://w3id.org/tern/ontologies/tern/FixedPlatform]] {
 }
-Class ":Sampler" [[https://w3id.org/tern/ontologies/tern/Sampler]] {
+Class ":Taxon" [[https://w3id.org/tern/ontologies/tern/Taxon]] {
 }
-Class ":EcosystemProcessesSite" [[https://w3id.org/tern/ontologies/tern/EcosystemProcessesSite]] {
-}
-Class ":ub1bL1114C1" [[ub1bL1114C1]] {
-}
-Class ":ub1bL867C31" [[ub1bL867C31]] {
-}
-Class ":System" [[https://w3id.org/tern/ontologies/tern/System]] {
-}
-Class ":Platform" [[https://w3id.org/tern/ontologies/tern/Platform]] {
+Class ":Dataset" [[https://w3id.org/tern/ontologies/tern/Dataset]] {
 }
 center footer Generated by [[https://github.com/edmondchuc/ontogram https://github.com/edmondchuc/ontogram]]
 @enduml
