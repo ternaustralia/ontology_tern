@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Get latest tag
+        id: latest-tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        with:
+          fallback: "0.1.0"
+
+      - name: Use Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Ensure the version number of the ontology is the same as the release
+        run: |
+          ontotools version compare ${{ steps.latest-tag.outputs.tag }} docs/tern.nt

@@ -1,0 +1,41 @@
+name: Run tests
+
+on:
+  # Make workflow callable from other workflows.
+  # See https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#creating-a-reusable-workflow
+  workflow_call:
+
+  push:
+    branches:
+      - "**"
+      # Tests run on all branches merged into master. No need to run tests on master again.
+      - "!master"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Use Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Ensure tern.nt is normalized.
+        run: |
+          ontotools file normalize docs/tern.nt --fail-if-changed
+
+      - name: Ensure tern.shacl.nt is normalized.
+        run: |
+          ontotools file normalize docs/tern.shacl.nt --fail-if-changed
