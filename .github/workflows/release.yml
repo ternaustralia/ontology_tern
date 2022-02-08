@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    - uses: ternaustralia/ontology_tern/./github/workflows/test.yml
+    - uses: ternaustralia/ontology_tern/./github/workflows/test.yml@master
 
   publish:
     runs-on: ubuntu-latest
