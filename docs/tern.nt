@@ -14,7 +14,6 @@
 # imports: https://w3id.org/tern/ontologies/org/
 # imports: https://w3id.org/tern/ontologies/sd/
 # prefix: tern
-
 <http://rs.tdwg.org/dwc/terms/materialSampleID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <http://rs.tdwg.org/dwc/terms/materialSampleID> <http://www.w3.org/2000/01/rdf-schema#comment> "An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique." .
 <http://rs.tdwg.org/dwc/terms/materialSampleID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://rs.tdwg.org/dwc/terms/> .
