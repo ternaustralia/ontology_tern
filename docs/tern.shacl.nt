@@ -1,0 +1,951 @@
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b1 .
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b2 .
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b3 .
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b4 .
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b5 .
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b6 .
+<https://w3id.org/tern/shacl/tern/Attribute> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Attribute> .
+<https://w3id.org/tern/shacl/tern/Boolean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Boolean> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b7 .
+<https://w3id.org/tern/shacl/tern/Boolean> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Boolean> .
+<https://w3id.org/tern/shacl/tern/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Dataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b8 .
+<https://w3id.org/tern/shacl/tern/Dataset> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Dataset> .
+<https://w3id.org/tern/shacl/tern/Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Date> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b9 .
+<https://w3id.org/tern/shacl/tern/Date> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Date> .
+<https://w3id.org/tern/shacl/tern/DateTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/DateTime> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b10 .
+<https://w3id.org/tern/shacl/tern/DateTime> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/DateTime> .
+<https://w3id.org/tern/shacl/tern/Deployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Deployment> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b11 .
+<https://w3id.org/tern/shacl/tern/Deployment> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b12 .
+<https://w3id.org/tern/shacl/tern/Deployment> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b13 .
+<https://w3id.org/tern/shacl/tern/Deployment> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Deployment> .
+<https://w3id.org/tern/shacl/tern/Distribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Distribution> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Distribution> .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b14 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b15 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b16 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b17 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b18 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b19 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b20 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b25 .
+<https://w3id.org/tern/shacl/tern/FeatureOfInterest> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> .
+<https://w3id.org/tern/shacl/tern/Float> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Float> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b26 .
+<https://w3id.org/tern/shacl/tern/Float> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b27 .
+<https://w3id.org/tern/shacl/tern/Float> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b28 .
+<https://w3id.org/tern/shacl/tern/Float> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Float> .
+<https://w3id.org/tern/shacl/tern/IRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/IRI> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b29 .
+<https://w3id.org/tern/shacl/tern/IRI> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/IRI> .
+<https://w3id.org/tern/shacl/tern/Instant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Instant> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b30 .
+<https://w3id.org/tern/shacl/tern/Instant> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Instant> .
+<https://w3id.org/tern/shacl/tern/Integer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Integer> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b35 .
+<https://w3id.org/tern/shacl/tern/Integer> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b36 .
+<https://w3id.org/tern/shacl/tern/Integer> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b41 .
+<https://w3id.org/tern/shacl/tern/Integer> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Integer> .
+<https://w3id.org/tern/shacl/tern/ManagedFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/ManagedFeature> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b42 .
+<https://w3id.org/tern/shacl/tern/ManagedFeature> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b43 .
+<https://w3id.org/tern/shacl/tern/ManagedFeature> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/ManagedFeature> .
+<https://w3id.org/tern/shacl/tern/MaterialSample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/MaterialSample> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b44 .
+<https://w3id.org/tern/shacl/tern/MaterialSample> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/MaterialSample> .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b45 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b46 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b47 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b48 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b49 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b50 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b55 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b56 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b61 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b62 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b63 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b64 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b65 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b66 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b67 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b68 .
+<https://w3id.org/tern/shacl/tern/Observation> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Observation> .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b69 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b70 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b75 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b76 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b77 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b78 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b79 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b80 .
+<https://w3id.org/tern/shacl/tern/ObservationCollection> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/ObservationCollection> .
+<https://w3id.org/tern/shacl/tern/Quadrat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Quadrat> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b81 .
+<https://w3id.org/tern/shacl/tern/Quadrat> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Quadrat> .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b82 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b83 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b84 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b85 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b86 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b87 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b88 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b89 .
+<https://w3id.org/tern/shacl/tern/RDFDataset> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/RDFDataset> .
+<https://w3id.org/tern/shacl/tern/Result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Result> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b90 .
+<https://w3id.org/tern/shacl/tern/Result> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Result> .
+<https://w3id.org/tern/shacl/tern/Sample> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Sample> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b95 .
+<https://w3id.org/tern/shacl/tern/Sample> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b96 .
+<https://w3id.org/tern/shacl/tern/Sample> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Sample> .
+<https://w3id.org/tern/shacl/tern/Sampler> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Sampler> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b97 .
+<https://w3id.org/tern/shacl/tern/Sampler> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b98 .
+<https://w3id.org/tern/shacl/tern/Sampler> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Sampler> .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b100 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b101 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b102 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b103 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b108 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b109 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b110 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b111 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b112 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b113 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b114 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b99 .
+<https://w3id.org/tern/shacl/tern/Sampling> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Sampling> .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b115 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b116 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b117 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b118 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b119 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b120 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b121 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b122 .
+<https://w3id.org/tern/shacl/tern/Site> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Site> .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b123 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b124 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b125 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b126 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b127 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b128 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b129 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b130 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b131 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b132 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b133 .
+<https://w3id.org/tern/shacl/tern/SiteVisit> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/SiteVisit> .
+<https://w3id.org/tern/shacl/tern/System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/System> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b134 .
+<https://w3id.org/tern/shacl/tern/System> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b135 .
+<https://w3id.org/tern/shacl/tern/System> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b136 .
+<https://w3id.org/tern/shacl/tern/System> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b137 .
+<https://w3id.org/tern/shacl/tern/System> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b138 .
+<https://w3id.org/tern/shacl/tern/System> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/System> .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b139 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b140 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b141 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b142 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b143 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b144 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b145 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b146 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b147 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b148 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b149 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b150 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b151 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b152 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b153 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b154 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b155 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b156 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b157 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b158 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b159 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b160 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b161 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b162 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b163 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b164 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b165 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b166 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b167 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b168 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b169 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b170 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b171 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b172 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b173 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b174 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b175 .
+<https://w3id.org/tern/shacl/tern/Taxon> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Taxon> .
+<https://w3id.org/tern/shacl/tern/Text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Text> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b176 .
+<https://w3id.org/tern/shacl/tern/Text> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Text> .
+<https://w3id.org/tern/shacl/tern/Transect> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Transect> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b181 .
+<https://w3id.org/tern/shacl/tern/Transect> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b182 .
+<https://w3id.org/tern/shacl/tern/Transect> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b183 .
+<https://w3id.org/tern/shacl/tern/Transect> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b184 .
+<https://w3id.org/tern/shacl/tern/Transect> <http://www.w3.org/ns/shacl#property> _:n8643ec2e54384c58bae3019df9dbb201b185 .
+<https://w3id.org/tern/shacl/tern/Transect> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Transect> .
+<https://w3id.org/tern/shacl/tern/Value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#NodeShape> .
+<https://w3id.org/tern/shacl/tern/Value> <http://www.w3.org/ns/shacl#targetClass> <https://w3id.org/tern/ontologies/tern/Value> .
+_:n8643ec2e54384c58bae3019df9dbb201b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b1 <http://www.w3.org/ns/shacl#description> "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." .
+_:n8643ec2e54384c58bae3019df9dbb201b1 <http://www.w3.org/ns/shacl#name> "type" .
+_:n8643ec2e54384c58bae3019df9dbb201b1 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b1 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n8643ec2e54384c58bae3019df9dbb201b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b10 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b10 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b10 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b10 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> .
+_:n8643ec2e54384c58bae3019df9dbb201b100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b100 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b100 <http://www.w3.org/ns/shacl#name> "type" .
+_:n8643ec2e54384c58bae3019df9dbb201b100 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b100 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n8643ec2e54384c58bae3019df9dbb201b101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b101 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/loc/Geometry> .
+_:n8643ec2e54384c58bae3019df9dbb201b101 <http://www.w3.org/ns/shacl#name> "has geometry" .
+_:n8643ec2e54384c58bae3019df9dbb201b101 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b101 <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:n8643ec2e54384c58bae3019df9dbb201b102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b102 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b102 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b102 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#comment> .
+_:n8643ec2e54384c58bae3019df9dbb201b103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b103 <http://www.w3.org/ns/shacl#name> "was attributed to" .
+_:n8643ec2e54384c58bae3019df9dbb201b103 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b103 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b106 .
+_:n8643ec2e54384c58bae3019df9dbb201b103 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#wasAssociatedWith> .
+_:n8643ec2e54384c58bae3019df9dbb201b104 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/org/Person> .
+_:n8643ec2e54384c58bae3019df9dbb201b105 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/org/Organization> .
+_:n8643ec2e54384c58bae3019df9dbb201b106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b104 .
+_:n8643ec2e54384c58bae3019df9dbb201b106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b107 .
+_:n8643ec2e54384c58bae3019df9dbb201b107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b105 .
+_:n8643ec2e54384c58bae3019df9dbb201b107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b108 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b108 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b108 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b108 <http://www.w3.org/ns/shacl#name> "has feature of interest" .
+_:n8643ec2e54384c58bae3019df9dbb201b108 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b108 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b109 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sample> .
+_:n8643ec2e54384c58bae3019df9dbb201b109 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b109 <http://www.w3.org/ns/shacl#name> "has result" .
+_:n8643ec2e54384c58bae3019df9dbb201b109 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b109 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasResult> .
+_:n8643ec2e54384c58bae3019df9dbb201b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b11 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Platform> .
+_:n8643ec2e54384c58bae3019df9dbb201b11 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b11 <http://www.w3.org/ns/shacl#name> "deployed on platform" .
+_:n8643ec2e54384c58bae3019df9dbb201b11 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b11 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/ssn/deployedOnPlatform> .
+_:n8643ec2e54384c58bae3019df9dbb201b110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b110 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sampler> .
+_:n8643ec2e54384c58bae3019df9dbb201b110 <http://www.w3.org/ns/shacl#description> "Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it." .
+_:n8643ec2e54384c58bae3019df9dbb201b110 <http://www.w3.org/ns/shacl#name> "made by sampler" .
+_:n8643ec2e54384c58bae3019df9dbb201b110 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b110 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/madeBySampler> .
+_:n8643ec2e54384c58bae3019df9dbb201b111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b111 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b111 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b111 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b111 <http://www.w3.org/ns/shacl#name> "result time" .
+_:n8643ec2e54384c58bae3019df9dbb201b111 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/resultTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b112 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b112 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b112 <http://www.w3.org/ns/shacl#name> "used procedure" .
+_:n8643ec2e54384c58bae3019df9dbb201b112 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b112 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/usedProcedure> .
+_:n8643ec2e54384c58bae3019df9dbb201b113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b113 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/SiteVisit> .
+_:n8643ec2e54384c58bae3019df9dbb201b113 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b113 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b113 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasSiteVisit> .
+_:n8643ec2e54384c58bae3019df9dbb201b114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b114 <http://www.w3.org/ns/shacl#description> "The type of sampling act." .
+_:n8643ec2e54384c58bae3019df9dbb201b114 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b114 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b114 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/samplingType> .
+_:n8643ec2e54384c58bae3019df9dbb201b115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b115 <http://www.w3.org/ns/shacl#name> "sf within" .
+_:n8643ec2e54384c58bae3019df9dbb201b115 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b115 <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#sfWithin> .
+_:n8643ec2e54384c58bae3019df9dbb201b116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b116 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b116 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b116 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#label> .
+_:n8643ec2e54384c58bae3019df9dbb201b117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b117 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b117 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b117 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/dimension> .
+_:n8643ec2e54384c58bae3019df9dbb201b118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b118 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/SiteVisit> .
+_:n8643ec2e54384c58bae3019df9dbb201b118 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b118 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasSiteVisit> .
+_:n8643ec2e54384c58bae3019df9dbb201b119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b119 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b119 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b119 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/locationDescription> .
+_:n8643ec2e54384c58bae3019df9dbb201b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b12 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/System> .
+_:n8643ec2e54384c58bae3019df9dbb201b12 <http://www.w3.org/ns/shacl#name> "deployed system" .
+_:n8643ec2e54384c58bae3019df9dbb201b12 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b12 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/ssn/deployedSystem> .
+_:n8643ec2e54384c58bae3019df9dbb201b120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b120 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b120 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b120 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/locationProcedure> .
+_:n8643ec2e54384c58bae3019df9dbb201b121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b121 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/loc/Polygon> .
+_:n8643ec2e54384c58bae3019df9dbb201b121 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b121 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b121 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/polygon> .
+_:n8643ec2e54384c58bae3019df9dbb201b122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b122 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b122 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b122 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/siteDescription> .
+_:n8643ec2e54384c58bae3019df9dbb201b123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b123 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b123 <http://www.w3.org/ns/shacl#name> "identifier" .
+_:n8643ec2e54384c58bae3019df9dbb201b123 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/identifier> .
+_:n8643ec2e54384c58bae3019df9dbb201b124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b124 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b124 <http://www.w3.org/ns/shacl#name> "type" .
+_:n8643ec2e54384c58bae3019df9dbb201b124 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b124 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n8643ec2e54384c58bae3019df9dbb201b125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b125 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/RDFDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b125 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b125 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b125 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b125 <http://www.w3.org/ns/shacl#path> <http://rdfs.org/ns/void#inDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b126 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b126 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b126 <http://www.w3.org/ns/shacl#name> "ended at time" .
+_:n8643ec2e54384c58bae3019df9dbb201b126 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#endedAtTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b127 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b127 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b127 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b127 <http://www.w3.org/ns/shacl#name> "started at time" .
+_:n8643ec2e54384c58bae3019df9dbb201b127 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#startedAtTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b128 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Observation> .
+_:n8643ec2e54384c58bae3019df9dbb201b128 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b128 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasObservation> .
+_:n8643ec2e54384c58bae3019df9dbb201b129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b129 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sampling> .
+_:n8643ec2e54384c58bae3019df9dbb201b129 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b129 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasSampling> .
+_:n8643ec2e54384c58bae3019df9dbb201b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b13 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Attribute> .
+_:n8643ec2e54384c58bae3019df9dbb201b13 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b13 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasAttribute> .
+_:n8643ec2e54384c58bae3019df9dbb201b130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b130 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Site> .
+_:n8643ec2e54384c58bae3019df9dbb201b130 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b130 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b130 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b130 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasSite> .
+_:n8643ec2e54384c58bae3019df9dbb201b131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b131 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b131 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/isSiteVisitOf> .
+_:n8643ec2e54384c58bae3019df9dbb201b132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b132 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b132 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b132 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/locationDescription> .
+_:n8643ec2e54384c58bae3019df9dbb201b133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b133 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b133 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b133 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/siteDescription> .
+_:n8643ec2e54384c58bae3019df9dbb201b134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b134 <http://www.w3.org/ns/shacl#name> "type" .
+_:n8643ec2e54384c58bae3019df9dbb201b134 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b134 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n8643ec2e54384c58bae3019df9dbb201b135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b135 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Platform> .
+_:n8643ec2e54384c58bae3019df9dbb201b135 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b135 <http://www.w3.org/ns/shacl#name> "is hosted by" .
+_:n8643ec2e54384c58bae3019df9dbb201b135 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b135 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/isHostedBy> .
+_:n8643ec2e54384c58bae3019df9dbb201b136 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b136 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Deployment> .
+_:n8643ec2e54384c58bae3019df9dbb201b136 <http://www.w3.org/ns/shacl#name> "has deployment" .
+_:n8643ec2e54384c58bae3019df9dbb201b136 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b136 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/ssn/hasDeployment> .
+_:n8643ec2e54384c58bae3019df9dbb201b137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b137 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Method> .
+_:n8643ec2e54384c58bae3019df9dbb201b137 <http://www.w3.org/ns/shacl#name> "implements" .
+_:n8643ec2e54384c58bae3019df9dbb201b137 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b137 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/ssn/implements> .
+_:n8643ec2e54384c58bae3019df9dbb201b138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b138 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b138 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/systemType> .
+_:n8643ec2e54384c58bae3019df9dbb201b139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b139 <http://www.w3.org/ns/shacl#name> "accepted name usage" .
+_:n8643ec2e54384c58bae3019df9dbb201b139 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/acceptedNameUsage> .
+_:n8643ec2e54384c58bae3019df9dbb201b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b14 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b14 <http://www.w3.org/ns/shacl#name> "identifier" .
+_:n8643ec2e54384c58bae3019df9dbb201b14 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/identifier> .
+_:n8643ec2e54384c58bae3019df9dbb201b140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b140 <http://www.w3.org/ns/shacl#name> "accepted name usage ID" .
+_:n8643ec2e54384c58bae3019df9dbb201b140 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/acceptedNameUsageID> .
+_:n8643ec2e54384c58bae3019df9dbb201b141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b141 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/class> .
+_:n8643ec2e54384c58bae3019df9dbb201b142 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b142 <http://www.w3.org/ns/shacl#name> "cultivar epithet" .
+_:n8643ec2e54384c58bae3019df9dbb201b142 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/cultivarEpithet> .
+_:n8643ec2e54384c58bae3019df9dbb201b143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b143 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/family> .
+_:n8643ec2e54384c58bae3019df9dbb201b144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b144 <http://www.w3.org/ns/shacl#name> "generic name" .
+_:n8643ec2e54384c58bae3019df9dbb201b144 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/genericName> .
+_:n8643ec2e54384c58bae3019df9dbb201b145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b145 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/genus> .
+_:n8643ec2e54384c58bae3019df9dbb201b146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b146 <http://www.w3.org/ns/shacl#name> "higher classification" .
+_:n8643ec2e54384c58bae3019df9dbb201b146 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/higherClassification> .
+_:n8643ec2e54384c58bae3019df9dbb201b147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b147 <http://www.w3.org/ns/shacl#name> "infrageneric epithet" .
+_:n8643ec2e54384c58bae3019df9dbb201b147 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/infragenericEpithet> .
+_:n8643ec2e54384c58bae3019df9dbb201b148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b148 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/infraspecificEpithet> .
+_:n8643ec2e54384c58bae3019df9dbb201b149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b149 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/kingdom> .
+_:n8643ec2e54384c58bae3019df9dbb201b15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b15 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b15 <http://www.w3.org/ns/shacl#name> "type" .
+_:n8643ec2e54384c58bae3019df9dbb201b15 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b15 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n8643ec2e54384c58bae3019df9dbb201b150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b150 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/nameAccordingTo> .
+_:n8643ec2e54384c58bae3019df9dbb201b151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b151 <http://www.w3.org/ns/shacl#name> "name according to ID" .
+_:n8643ec2e54384c58bae3019df9dbb201b151 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/nameAccordingToID> .
+_:n8643ec2e54384c58bae3019df9dbb201b152 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b152 <http://www.w3.org/ns/shacl#name> "name published in" .
+_:n8643ec2e54384c58bae3019df9dbb201b152 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/namePublishedIn> .
+_:n8643ec2e54384c58bae3019df9dbb201b153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b153 <http://www.w3.org/ns/shacl#name> "name published in ID" .
+_:n8643ec2e54384c58bae3019df9dbb201b153 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/namePublishedInID> .
+_:n8643ec2e54384c58bae3019df9dbb201b154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b154 <http://www.w3.org/ns/shacl#name> "name published in year" .
+_:n8643ec2e54384c58bae3019df9dbb201b154 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/namePublishedInYear> .
+_:n8643ec2e54384c58bae3019df9dbb201b155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b155 <http://www.w3.org/ns/shacl#name> "nomenclatural code" .
+_:n8643ec2e54384c58bae3019df9dbb201b155 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/nomenclaturalCode> .
+_:n8643ec2e54384c58bae3019df9dbb201b156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b156 <http://www.w3.org/ns/shacl#name> "nomenclatural status" .
+_:n8643ec2e54384c58bae3019df9dbb201b156 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/nomenclaturalStatus> .
+_:n8643ec2e54384c58bae3019df9dbb201b157 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b157 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/order> .
+_:n8643ec2e54384c58bae3019df9dbb201b158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b158 <http://www.w3.org/ns/shacl#name> "original name usage" .
+_:n8643ec2e54384c58bae3019df9dbb201b158 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/originalNameUsage> .
+_:n8643ec2e54384c58bae3019df9dbb201b159 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b159 <http://www.w3.org/ns/shacl#name> "original name usage ID" .
+_:n8643ec2e54384c58bae3019df9dbb201b159 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/originalNameUsageID> .
+_:n8643ec2e54384c58bae3019df9dbb201b16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b16 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/RDFDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b16 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b16 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b16 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b16 <http://www.w3.org/ns/shacl#path> <http://rdfs.org/ns/void#inDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b160 <http://www.w3.org/ns/shacl#name> "parent name usage" .
+_:n8643ec2e54384c58bae3019df9dbb201b160 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/parentNameUsage> .
+_:n8643ec2e54384c58bae3019df9dbb201b161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b161 <http://www.w3.org/ns/shacl#name> "parent name usage ID" .
+_:n8643ec2e54384c58bae3019df9dbb201b161 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/parentNameUsageID> .
+_:n8643ec2e54384c58bae3019df9dbb201b162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b162 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/phylum> .
+_:n8643ec2e54384c58bae3019df9dbb201b163 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b163 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/scientificName> .
+_:n8643ec2e54384c58bae3019df9dbb201b164 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b164 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/scientificNameAuthorship> .
+_:n8643ec2e54384c58bae3019df9dbb201b165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b165 <http://www.w3.org/ns/shacl#name> "scientific name ID" .
+_:n8643ec2e54384c58bae3019df9dbb201b165 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/scientificNameID> .
+_:n8643ec2e54384c58bae3019df9dbb201b166 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b166 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/specificEpithet> .
+_:n8643ec2e54384c58bae3019df9dbb201b167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b167 <http://www.w3.org/ns/shacl#name> "subfamily" .
+_:n8643ec2e54384c58bae3019df9dbb201b167 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/subfamily> .
+_:n8643ec2e54384c58bae3019df9dbb201b168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b168 <http://www.w3.org/ns/shacl#name> "subgenus" .
+_:n8643ec2e54384c58bae3019df9dbb201b168 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/subgenus> .
+_:n8643ec2e54384c58bae3019df9dbb201b169 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b169 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/taxonConceptID> .
+_:n8643ec2e54384c58bae3019df9dbb201b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b17 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/loc/Geometry> .
+_:n8643ec2e54384c58bae3019df9dbb201b17 <http://www.w3.org/ns/shacl#name> "has geometry" .
+_:n8643ec2e54384c58bae3019df9dbb201b17 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b17 <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:n8643ec2e54384c58bae3019df9dbb201b170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b170 <http://www.w3.org/ns/shacl#name> "taxon ID" .
+_:n8643ec2e54384c58bae3019df9dbb201b170 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/taxonID> .
+_:n8643ec2e54384c58bae3019df9dbb201b171 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b171 <http://www.w3.org/ns/shacl#name> "taxon rank" .
+_:n8643ec2e54384c58bae3019df9dbb201b171 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/taxonRank> .
+_:n8643ec2e54384c58bae3019df9dbb201b172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b172 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/taxonRemarks> .
+_:n8643ec2e54384c58bae3019df9dbb201b173 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b173 <http://www.w3.org/ns/shacl#name> "taxonomic status" .
+_:n8643ec2e54384c58bae3019df9dbb201b173 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/taxonomicStatus> .
+_:n8643ec2e54384c58bae3019df9dbb201b174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b174 <http://www.w3.org/ns/shacl#name> "verbatim taxon rank" .
+_:n8643ec2e54384c58bae3019df9dbb201b174 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/verbatimTaxonRank> .
+_:n8643ec2e54384c58bae3019df9dbb201b175 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b175 <http://www.w3.org/ns/shacl#name> "vernacular name" .
+_:n8643ec2e54384c58bae3019df9dbb201b175 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/vernacularName> .
+_:n8643ec2e54384c58bae3019df9dbb201b176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b176 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b176 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b176 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b179 .
+_:n8643ec2e54384c58bae3019df9dbb201b176 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> .
+_:n8643ec2e54384c58bae3019df9dbb201b177 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b178 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#langString> .
+_:n8643ec2e54384c58bae3019df9dbb201b179 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b177 .
+_:n8643ec2e54384c58bae3019df9dbb201b179 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b180 .
+_:n8643ec2e54384c58bae3019df9dbb201b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b18 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b18 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b18 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#comment> .
+_:n8643ec2e54384c58bae3019df9dbb201b180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b178 .
+_:n8643ec2e54384c58bae3019df9dbb201b180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b181 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b181 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/loc/LineString> .
+_:n8643ec2e54384c58bae3019df9dbb201b181 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b181 <http://www.w3.org/ns/shacl#name> "has geometry" .
+_:n8643ec2e54384c58bae3019df9dbb201b181 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b181 <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:n8643ec2e54384c58bae3019df9dbb201b182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b182 <http://www.w3.org/ns/shacl#hasValue> <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> .
+_:n8643ec2e54384c58bae3019df9dbb201b182 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b182 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b182 <http://www.w3.org/ns/shacl#name> "feature type" .
+_:n8643ec2e54384c58bae3019df9dbb201b182 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b182 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/featureType> .
+_:n8643ec2e54384c58bae3019df9dbb201b183 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b183 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b183 <http://www.w3.org/ns/shacl#name> "transect direction" .
+_:n8643ec2e54384c58bae3019df9dbb201b183 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRIOrLiteral> .
+_:n8643ec2e54384c58bae3019df9dbb201b183 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/transectDirection> .
+_:n8643ec2e54384c58bae3019df9dbb201b184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b184 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/loc/Point> .
+_:n8643ec2e54384c58bae3019df9dbb201b184 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b184 <http://www.w3.org/ns/shacl#name> "transect end point" .
+_:n8643ec2e54384c58bae3019df9dbb201b184 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b184 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/transectEndPoint> .
+_:n8643ec2e54384c58bae3019df9dbb201b185 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b185 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/loc/Point> .
+_:n8643ec2e54384c58bae3019df9dbb201b185 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b185 <http://www.w3.org/ns/shacl#name> "transect start point" .
+_:n8643ec2e54384c58bae3019df9dbb201b185 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b185 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/transectStartPoint> .
+_:n8643ec2e54384c58bae3019df9dbb201b19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b19 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sample> .
+_:n8643ec2e54384c58bae3019df9dbb201b19 <http://www.w3.org/ns/shacl#name> "has sample" .
+_:n8643ec2e54384c58bae3019df9dbb201b19 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b19 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasSample> .
+_:n8643ec2e54384c58bae3019df9dbb201b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b2 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/RDFDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b2 <http://www.w3.org/ns/shacl#description> "A link to the RDF payload's metadata which this resource was a part of." .
+_:n8643ec2e54384c58bae3019df9dbb201b2 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b2 <http://www.w3.org/ns/shacl#path> <http://rdfs.org/ns/void#inDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b20 <http://www.w3.org/ns/shacl#name> "is feature of interest of" .
+_:n8643ec2e54384c58bae3019df9dbb201b20 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b20 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b23 .
+_:n8643ec2e54384c58bae3019df9dbb201b20 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> .
+_:n8643ec2e54384c58bae3019df9dbb201b21 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Observation> .
+_:n8643ec2e54384c58bae3019df9dbb201b22 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sampling> .
+_:n8643ec2e54384c58bae3019df9dbb201b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b21 .
+_:n8643ec2e54384c58bae3019df9dbb201b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b24 .
+_:n8643ec2e54384c58bae3019df9dbb201b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b22 .
+_:n8643ec2e54384c58bae3019df9dbb201b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b25 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b25 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b25 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b25 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/featureType> .
+_:n8643ec2e54384c58bae3019df9dbb201b26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b26 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#double> .
+_:n8643ec2e54384c58bae3019df9dbb201b26 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b26 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b26 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#Literal> .
+_:n8643ec2e54384c58bae3019df9dbb201b26 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> .
+_:n8643ec2e54384c58bae3019df9dbb201b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b27 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#double> .
+_:n8643ec2e54384c58bae3019df9dbb201b27 <http://www.w3.org/ns/shacl#description> "Error of measurement (±)." .
+_:n8643ec2e54384c58bae3019df9dbb201b27 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b27 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#Literal> .
+_:n8643ec2e54384c58bae3019df9dbb201b27 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/uncertainty> .
+_:n8643ec2e54384c58bae3019df9dbb201b28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b28 <http://www.w3.org/ns/shacl#description> "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." .
+_:n8643ec2e54384c58bae3019df9dbb201b28 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b28 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b28 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/unit> .
+_:n8643ec2e54384c58bae3019df9dbb201b29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b29 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b29 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b29 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b29 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> .
+_:n8643ec2e54384c58bae3019df9dbb201b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b3 <http://www.w3.org/ns/shacl#description> "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of attributes at [http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924](http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924)." .
+_:n8643ec2e54384c58bae3019df9dbb201b3 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b3 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b3 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b3 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/attribute> .
+_:n8643ec2e54384c58bae3019df9dbb201b30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b30 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b30 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b30 <http://www.w3.org/ns/shacl#name> "in XSDDate time stamp" .
+_:n8643ec2e54384c58bae3019df9dbb201b30 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b33 .
+_:n8643ec2e54384c58bae3019df9dbb201b30 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2006/time#inXSDDateTimeStamp> .
+_:n8643ec2e54384c58bae3019df9dbb201b31 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+_:n8643ec2e54384c58bae3019df9dbb201b32 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b31 .
+_:n8643ec2e54384c58bae3019df9dbb201b33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b34 .
+_:n8643ec2e54384c58bae3019df9dbb201b34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b32 .
+_:n8643ec2e54384c58bae3019df9dbb201b34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b35 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b35 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b35 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b35 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> .
+_:n8643ec2e54384c58bae3019df9dbb201b36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b36 <http://www.w3.org/ns/shacl#description> "Error of measurement (±)." .
+_:n8643ec2e54384c58bae3019df9dbb201b36 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b36 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#Literal> .
+_:n8643ec2e54384c58bae3019df9dbb201b36 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b39 .
+_:n8643ec2e54384c58bae3019df9dbb201b36 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/uncertainty> .
+_:n8643ec2e54384c58bae3019df9dbb201b37 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b38 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#double> .
+_:n8643ec2e54384c58bae3019df9dbb201b39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b37 .
+_:n8643ec2e54384c58bae3019df9dbb201b39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b40 .
+_:n8643ec2e54384c58bae3019df9dbb201b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b4 <http://www.w3.org/ns/shacl#description> "The direct link to the value either as an IRI or an RDF literal. The simple value is always equivalent to the value captured in rdf:value of the tern:Value instance." .
+_:n8643ec2e54384c58bae3019df9dbb201b4 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b4 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b4 <http://www.w3.org/ns/shacl#name> "has simple value" .
+_:n8643ec2e54384c58bae3019df9dbb201b4 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRIOrLiteral> .
+_:n8643ec2e54384c58bae3019df9dbb201b4 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasSimpleValue> .
+_:n8643ec2e54384c58bae3019df9dbb201b40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b38 .
+_:n8643ec2e54384c58bae3019df9dbb201b40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b41 <http://www.w3.org/ns/shacl#description> "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." .
+_:n8643ec2e54384c58bae3019df9dbb201b41 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b41 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b41 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/unit> .
+_:n8643ec2e54384c58bae3019df9dbb201b42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b42 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date> .
+_:n8643ec2e54384c58bae3019df9dbb201b42 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b42 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b42 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/dateCommissioned> .
+_:n8643ec2e54384c58bae3019df9dbb201b43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b43 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date> .
+_:n8643ec2e54384c58bae3019df9dbb201b43 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b43 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/dateDecommissioned> .
+_:n8643ec2e54384c58bae3019df9dbb201b44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b44 <http://www.w3.org/ns/shacl#path> <http://rs.tdwg.org/dwc/terms/materialSampleID> .
+_:n8643ec2e54384c58bae3019df9dbb201b45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b45 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b45 <http://www.w3.org/ns/shacl#name> "identifier" .
+_:n8643ec2e54384c58bae3019df9dbb201b45 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/identifier> .
+_:n8643ec2e54384c58bae3019df9dbb201b46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b46 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b46 <http://www.w3.org/ns/shacl#name> "type" .
+_:n8643ec2e54384c58bae3019df9dbb201b46 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b46 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> .
+_:n8643ec2e54384c58bae3019df9dbb201b47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b47 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/RDFDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b47 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b47 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b47 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b47 <http://www.w3.org/ns/shacl#path> <http://rdfs.org/ns/void#inDataset> .
+_:n8643ec2e54384c58bae3019df9dbb201b48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b48 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/loc/Geometry> .
+_:n8643ec2e54384c58bae3019df9dbb201b48 <http://www.w3.org/ns/shacl#name> "has geometry" .
+_:n8643ec2e54384c58bae3019df9dbb201b48 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b48 <http://www.w3.org/ns/shacl#path> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:n8643ec2e54384c58bae3019df9dbb201b49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b49 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b49 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b49 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/2000/01/rdf-schema#comment> .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Value> .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/ns/shacl#description> "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute." .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/ns/shacl#name> "has value" .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b5 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasValue> .
+_:n8643ec2e54384c58bae3019df9dbb201b50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b50 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/org/Person> .
+_:n8643ec2e54384c58bae3019df9dbb201b50 <http://www.w3.org/ns/shacl#name> "was attributed to" .
+_:n8643ec2e54384c58bae3019df9dbb201b50 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRIOrLiteral> .
+_:n8643ec2e54384c58bae3019df9dbb201b50 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b53 .
+_:n8643ec2e54384c58bae3019df9dbb201b50 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/prov#wasAssociatedWith> .
+_:n8643ec2e54384c58bae3019df9dbb201b51 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/org/Person> .
+_:n8643ec2e54384c58bae3019df9dbb201b52 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/org/Organization> .
+_:n8643ec2e54384c58bae3019df9dbb201b53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b51 .
+_:n8643ec2e54384c58bae3019df9dbb201b53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b54 .
+_:n8643ec2e54384c58bae3019df9dbb201b54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b52 .
+_:n8643ec2e54384c58bae3019df9dbb201b54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b55 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b55 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b55 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b55 <http://www.w3.org/ns/shacl#name> "has feature of interest" .
+_:n8643ec2e54384c58bae3019df9dbb201b55 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b55 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b56 <http://www.w3.org/ns/shacl#and> _:n8643ec2e54384c58bae3019df9dbb201b59 .
+_:n8643ec2e54384c58bae3019df9dbb201b56 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b56 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b56 <http://www.w3.org/ns/shacl#name> "has result" .
+_:n8643ec2e54384c58bae3019df9dbb201b56 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b56 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasResult> .
+_:n8643ec2e54384c58bae3019df9dbb201b57 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Value> .
+_:n8643ec2e54384c58bae3019df9dbb201b58 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Result> .
+_:n8643ec2e54384c58bae3019df9dbb201b59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b57 .
+_:n8643ec2e54384c58bae3019df9dbb201b59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b60 .
+_:n8643ec2e54384c58bae3019df9dbb201b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b6 <http://www.w3.org/ns/shacl#description> "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." .
+_:n8643ec2e54384c58bae3019df9dbb201b6 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b6 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/isAttributeOf> .
+_:n8643ec2e54384c58bae3019df9dbb201b60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b58 .
+_:n8643ec2e54384c58bae3019df9dbb201b60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b61 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b61 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b61 <http://www.w3.org/ns/shacl#name> "has simple result" .
+_:n8643ec2e54384c58bae3019df9dbb201b61 <http://www.w3.org/ns/shacl#nodeKing> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b61 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasSimpleResult> .
+_:n8643ec2e54384c58bae3019df9dbb201b62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b62 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sensor> .
+_:n8643ec2e54384c58bae3019df9dbb201b62 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b62 <http://www.w3.org/ns/shacl#name> "made by sensor" .
+_:n8643ec2e54384c58bae3019df9dbb201b62 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b62 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/madeBySensor> .
+_:n8643ec2e54384c58bae3019df9dbb201b63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b63 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b63 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b63 <http://www.w3.org/ns/shacl#name> "observed property" .
+_:n8643ec2e54384c58bae3019df9dbb201b63 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b63 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/observedProperty> .
+_:n8643ec2e54384c58bae3019df9dbb201b64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b64 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Instant> .
+_:n8643ec2e54384c58bae3019df9dbb201b64 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b64 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b64 <http://www.w3.org/ns/shacl#name> "phenomenon time" .
+_:n8643ec2e54384c58bae3019df9dbb201b64 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b64 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/phenomenonTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b65 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b65 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b65 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b65 <http://www.w3.org/ns/shacl#name> "result time" .
+_:n8643ec2e54384c58bae3019df9dbb201b65 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/resultTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b66 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b66 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b66 <http://www.w3.org/ns/shacl#name> "used procedure" .
+_:n8643ec2e54384c58bae3019df9dbb201b66 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b66 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/usedProcedure> .
+_:n8643ec2e54384c58bae3019df9dbb201b67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b67 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/SiteVisit> .
+_:n8643ec2e54384c58bae3019df9dbb201b67 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b67 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b67 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/hasSiteVisit> .
+_:n8643ec2e54384c58bae3019df9dbb201b68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b68 <http://www.w3.org/ns/shacl#description> "The type of observation." .
+_:n8643ec2e54384c58bae3019df9dbb201b68 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b68 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b68 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/observationType> .
+_:n8643ec2e54384c58bae3019df9dbb201b69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b69 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b69 <http://www.w3.org/ns/shacl#description> "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." .
+_:n8643ec2e54384c58bae3019df9dbb201b69 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b69 <http://www.w3.org/ns/shacl#name> "has feature of interest" .
+_:n8643ec2e54384c58bae3019df9dbb201b69 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b69 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b7 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#boolean> .
+_:n8643ec2e54384c58bae3019df9dbb201b7 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b7 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b7 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> .
+_:n8643ec2e54384c58bae3019df9dbb201b70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b70 <http://www.w3.org/ns/shacl#description> "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties." .
+_:n8643ec2e54384c58bae3019df9dbb201b70 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b70 <http://www.w3.org/ns/shacl#name> "has member" .
+_:n8643ec2e54384c58bae3019df9dbb201b70 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b70 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b73 .
+_:n8643ec2e54384c58bae3019df9dbb201b70 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasMember> .
+_:n8643ec2e54384c58bae3019df9dbb201b71 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Observation> .
+_:n8643ec2e54384c58bae3019df9dbb201b72 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/ObservationCollection> .
+_:n8643ec2e54384c58bae3019df9dbb201b73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b71 .
+_:n8643ec2e54384c58bae3019df9dbb201b73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b74 .
+_:n8643ec2e54384c58bae3019df9dbb201b74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b72 .
+_:n8643ec2e54384c58bae3019df9dbb201b74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b75 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b75 <http://www.w3.org/ns/shacl#description> "link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively." .
+_:n8643ec2e54384c58bae3019df9dbb201b75 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b75 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b75 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b76 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sensor> .
+_:n8643ec2e54384c58bae3019df9dbb201b76 <http://www.w3.org/ns/shacl#description> "Relation between an Observation and the Sensor which made the Observations." .
+_:n8643ec2e54384c58bae3019df9dbb201b76 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b76 <http://www.w3.org/ns/shacl#name> "made by sensor" .
+_:n8643ec2e54384c58bae3019df9dbb201b76 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b76 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/madeBySensor> .
+_:n8643ec2e54384c58bae3019df9dbb201b77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b77 <http://www.w3.org/ns/shacl#description> "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." .
+_:n8643ec2e54384c58bae3019df9dbb201b77 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b77 <http://www.w3.org/ns/shacl#name> "observed property" .
+_:n8643ec2e54384c58bae3019df9dbb201b77 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b77 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/observedProperty> .
+_:n8643ec2e54384c58bae3019df9dbb201b78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b78 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Instant> .
+_:n8643ec2e54384c58bae3019df9dbb201b78 <http://www.w3.org/ns/shacl#description> "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity." .
+_:n8643ec2e54384c58bae3019df9dbb201b78 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b78 <http://www.w3.org/ns/shacl#name> "phenomenon time" .
+_:n8643ec2e54384c58bae3019df9dbb201b78 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/phenomenonTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b79 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b79 <http://www.w3.org/ns/shacl#description> "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." .
+_:n8643ec2e54384c58bae3019df9dbb201b79 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b79 <http://www.w3.org/ns/shacl#name> "result time" .
+_:n8643ec2e54384c58bae3019df9dbb201b79 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/resultTime> .
+_:n8643ec2e54384c58bae3019df9dbb201b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b8 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Distribution> .
+_:n8643ec2e54384c58bae3019df9dbb201b8 <http://www.w3.org/ns/shacl#description> "An available distribution of the dataset." .
+_:n8643ec2e54384c58bae3019df9dbb201b8 <http://www.w3.org/ns/shacl#name> "dataset distribution" .
+_:n8643ec2e54384c58bae3019df9dbb201b8 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b8 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/dcat#distribution> .
+_:n8643ec2e54384c58bae3019df9dbb201b80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b80 <http://www.w3.org/ns/shacl#description> "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." .
+_:n8643ec2e54384c58bae3019df9dbb201b80 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b80 <http://www.w3.org/ns/shacl#name> "used procedure" .
+_:n8643ec2e54384c58bae3019df9dbb201b80 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b80 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/usedProcedure> .
+_:n8643ec2e54384c58bae3019df9dbb201b81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b81 <http://www.w3.org/ns/shacl#hasValue> <http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5> .
+_:n8643ec2e54384c58bae3019df9dbb201b81 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b81 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b81 <http://www.w3.org/ns/shacl#name> "feature type" .
+_:n8643ec2e54384c58bae3019df9dbb201b81 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b81 <http://www.w3.org/ns/shacl#path> <https://w3id.org/tern/ontologies/tern/featureType> .
+_:n8643ec2e54384c58bae3019df9dbb201b82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b82 <http://www.w3.org/ns/shacl#description> "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." .
+_:n8643ec2e54384c58bae3019df9dbb201b82 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b82 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/contributor> .
+_:n8643ec2e54384c58bae3019df9dbb201b83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b83 <http://www.w3.org/ns/shacl#description> "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." .
+_:n8643ec2e54384c58bae3019df9dbb201b83 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b83 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/creator> .
+_:n8643ec2e54384c58bae3019df9dbb201b84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b84 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b84 <http://www.w3.org/ns/shacl#description> "A textual description of the dataset." .
+_:n8643ec2e54384c58bae3019df9dbb201b84 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b84 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b84 <http://www.w3.org/ns/shacl#name> "description" .
+_:n8643ec2e54384c58bae3019df9dbb201b84 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/description> .
+_:n8643ec2e54384c58bae3019df9dbb201b85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b85 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date> .
+_:n8643ec2e54384c58bae3019df9dbb201b85 <http://www.w3.org/ns/shacl#description> "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an xsd:date." .
+_:n8643ec2e54384c58bae3019df9dbb201b85 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b85 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b85 <http://www.w3.org/ns/shacl#name> "issued" .
+_:n8643ec2e54384c58bae3019df9dbb201b85 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/issued> .
+_:n8643ec2e54384c58bae3019df9dbb201b86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b86 <http://www.w3.org/ns/shacl#description> "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal." .
+_:n8643ec2e54384c58bae3019df9dbb201b86 <http://www.w3.org/ns/shacl#name> "publisher" .
+_:n8643ec2e54384c58bae3019df9dbb201b86 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b86 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/publisher> .
+_:n8643ec2e54384c58bae3019df9dbb201b87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b87 <http://www.w3.org/ns/shacl#description> "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal." .
+_:n8643ec2e54384c58bae3019df9dbb201b87 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b87 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/source> .
+_:n8643ec2e54384c58bae3019df9dbb201b88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b88 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b88 <http://www.w3.org/ns/shacl#description> "The name of the dataset." .
+_:n8643ec2e54384c58bae3019df9dbb201b88 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b88 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b88 <http://www.w3.org/ns/shacl#name> "title" .
+_:n8643ec2e54384c58bae3019df9dbb201b88 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/title> .
+_:n8643ec2e54384c58bae3019df9dbb201b89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b89 <http://www.w3.org/ns/shacl#description> "The controlled vocabularies used in this RDF dataset." .
+_:n8643ec2e54384c58bae3019df9dbb201b89 <http://www.w3.org/ns/shacl#name> "vocabulary" .
+_:n8643ec2e54384c58bae3019df9dbb201b89 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b89 <http://www.w3.org/ns/shacl#path> <http://rdfs.org/ns/void#vocabulary> .
+_:n8643ec2e54384c58bae3019df9dbb201b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b9 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#date> .
+_:n8643ec2e54384c58bae3019df9dbb201b9 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b9 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b9 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/1999/02/22-rdf-syntax-ns#value> .
+_:n8643ec2e54384c58bae3019df9dbb201b90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b90 <http://www.w3.org/ns/shacl#maxCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b90 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b90 <http://www.w3.org/ns/shacl#name> "is result of" .
+_:n8643ec2e54384c58bae3019df9dbb201b90 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b90 <http://www.w3.org/ns/shacl#or> _:n8643ec2e54384c58bae3019df9dbb201b93 .
+_:n8643ec2e54384c58bae3019df9dbb201b90 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/isResultOf> .
+_:n8643ec2e54384c58bae3019df9dbb201b91 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Observation> .
+_:n8643ec2e54384c58bae3019df9dbb201b92 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sampling> .
+_:n8643ec2e54384c58bae3019df9dbb201b93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b91 .
+_:n8643ec2e54384c58bae3019df9dbb201b93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n8643ec2e54384c58bae3019df9dbb201b94 .
+_:n8643ec2e54384c58bae3019df9dbb201b94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:n8643ec2e54384c58bae3019df9dbb201b92 .
+_:n8643ec2e54384c58bae3019df9dbb201b94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n8643ec2e54384c58bae3019df9dbb201b95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b95 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sampling> .
+_:n8643ec2e54384c58bae3019df9dbb201b95 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b95 <http://www.w3.org/ns/shacl#name> "is result of" .
+_:n8643ec2e54384c58bae3019df9dbb201b95 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b95 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/isResultOf> .
+_:n8643ec2e54384c58bae3019df9dbb201b96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b96 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> .
+_:n8643ec2e54384c58bae3019df9dbb201b96 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b96 <http://www.w3.org/ns/shacl#name> "is sample of" .
+_:n8643ec2e54384c58bae3019df9dbb201b96 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b96 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/isSampleOf> .
+_:n8643ec2e54384c58bae3019df9dbb201b97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b97 <http://www.w3.org/ns/shacl#class> <https://w3id.org/tern/ontologies/tern/Sampling> .
+_:n8643ec2e54384c58bae3019df9dbb201b97 <http://www.w3.org/ns/shacl#name> "made sampling" .
+_:n8643ec2e54384c58bae3019df9dbb201b97 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b97 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/sosa/madeSampling> .
+_:n8643ec2e54384c58bae3019df9dbb201b98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b98 <http://www.w3.org/ns/shacl#minCount> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n8643ec2e54384c58bae3019df9dbb201b98 <http://www.w3.org/ns/shacl#name> "implements" .
+_:n8643ec2e54384c58bae3019df9dbb201b98 <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> .
+_:n8643ec2e54384c58bae3019df9dbb201b98 <http://www.w3.org/ns/shacl#path> <http://www.w3.org/ns/ssn/implements> .
+_:n8643ec2e54384c58bae3019df9dbb201b99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shacl#PropertyShape> .
+_:n8643ec2e54384c58bae3019df9dbb201b99 <http://www.w3.org/ns/shacl#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:n8643ec2e54384c58bae3019df9dbb201b99 <http://www.w3.org/ns/shacl#name> "identifier" .
+_:n8643ec2e54384c58bae3019df9dbb201b99 <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/identifier> .
