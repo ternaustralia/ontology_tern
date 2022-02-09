@@ -1,45 +1,3082 @@
 [
   {
+    "@id": "https://w3id.org/tern/shacl/tern/Distribution",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Distribution"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/MaterialSample",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N4e035770e08148ffbbc3c5abb0f50b43"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/MaterialSample"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4e035770e08148ffbbc3c5abb0f50b43",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/materialSampleID"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Instant",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Nd6d9c1d326ba4803bb1e0bc0f615369f"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Instant"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd6d9c1d326ba4803bb1e0bc0f615369f",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "in XSDDate time stamp"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:N813fe64ef37d4d23acc0dea96129927b"
+          },
+          {
+            "@id": "_:N8e999482e0ff401096a509d96d0155b2"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2006/time#inXSDDateTimeStamp"
+      }
+    ]
+  },
+  {
+    "@id": "_:N813fe64ef37d4d23acc0dea96129927b",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8e999482e0ff401096a509d96d0155b2",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Deployment",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Na383bce89c1e49849643055eb49af997"
+      },
+      {
+        "@id": "_:N8dd9ecf267474e98b7835b6b98e17217"
+      },
+      {
+        "@id": "_:Nd208771b09534452b787a64e1b4a6543"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Deployment"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na383bce89c1e49849643055eb49af997",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Attribute"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/hasAttribute"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8dd9ecf267474e98b7835b6b98e17217",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Platform"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "deployed on platform"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/ssn/deployedOnPlatform"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd208771b09534452b787a64e1b4a6543",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/System"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "deployed system"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/ssn/deployedSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Sampler",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N2bec8db83d5840cba090238972ddbe92"
+      },
+      {
+        "@id": "_:Nb5c3a54a8ae54f2a9d0e501bcada98fb"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sampler"
+      }
+    ]
+  },
+  {
+    "@id": "_:N2bec8db83d5840cba090238972ddbe92",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "made sampling"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/madeSampling"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nb5c3a54a8ae54f2a9d0e501bcada98fb",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "implements"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/ssn/implements"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/DateTime",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N6e8f73e357134cf7af95a9c737e1575b"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/DateTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6e8f73e357134cf7af95a9c737e1575b",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Transect",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N02523d2afe9446359d77c31ffdc63e14"
+      },
+      {
+        "@id": "_:N7b9379cbbe854fa8898ac81d1bac9e85"
+      },
+      {
+        "@id": "_:N8a4686c54e4b41c8a753b84a5c3b7ef4"
+      },
+      {
+        "@id": "_:N567542c33d414b17a2e3f4f0bf6dc141"
+      },
+      {
+        "@id": "_:N744592a5c0bd4bdc9cb9831dc4c919c6"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Transect"
+      }
+    ]
+  },
+  {
+    "@id": "_:N02523d2afe9446359d77c31ffdc63e14",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/LineString"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "has geometry"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#BlankNodeOrIRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7b9379cbbe854fa8898ac81d1bac9e85",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#hasValue": [
+      {
+        "@id": "http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "feature type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/featureType"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8a4686c54e4b41c8a753b84a5c3b7ef4",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/Point"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "transect end point"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/transectEndPoint"
+      }
+    ]
+  },
+  {
+    "@id": "_:N567542c33d414b17a2e3f4f0bf6dc141",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/Point"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "transect start point"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/transectStartPoint"
+      }
+    ]
+  },
+  {
+    "@id": "_:N744592a5c0bd4bdc9cb9831dc4c919c6",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "transect direction"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRIOrLiteral"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/transectDirection"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Dataset",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Nabb156956d8145888a08194e4aa895a0"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Dataset"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nabb156956d8145888a08194e4aa895a0",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Distribution"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "An available distribution of the dataset."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "dataset distribution"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/dcat#distribution"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/SiteVisit",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Nfd478b9dfc8b46bc99bb6904f9592673"
+      },
+      {
+        "@id": "_:Nf69c7ac2264c42069ea86f567ba9a162"
+      },
+      {
+        "@id": "_:N6abb1313e9dd490ba1e192e2af5f21eb"
+      },
+      {
+        "@id": "_:N14543f07df084bcd8acef2d31e1589b5"
+      },
+      {
+        "@id": "_:N99aa21686a054d4889648005578b42ed"
+      },
+      {
+        "@id": "_:Nbd5b9b2cac824936baca6753a12f7b19"
+      },
+      {
+        "@id": "_:Nc79a4f0f466d433a8c73954858508454"
+      },
+      {
+        "@id": "_:N57f6c0dcf8a14f1bbb9f0fc94638877d"
+      },
+      {
+        "@id": "_:Na75927d3701e4a359a868914d3891a09"
+      },
+      {
+        "@id": "_:Na06a562da4f941da8479fb162e0a127a"
+      },
+      {
+        "@id": "_:Nea4ae502eee946f39f4e2918e960fb26"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nfd478b9dfc8b46bc99bb6904f9592673",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "started at time"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/prov#startedAtTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf69c7ac2264c42069ea86f567ba9a162",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "ended at time"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/prov#endedAtTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6abb1313e9dd490ba1e192e2af5f21eb",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/siteDescription"
+      }
+    ]
+  },
+  {
+    "@id": "_:N14543f07df084bcd8acef2d31e1589b5",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Site"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/hasSite"
+      }
+    ]
+  },
+  {
+    "@id": "_:N99aa21686a054d4889648005578b42ed",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/RDFDataset"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rdfs.org/ns/void#inDataset"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nbd5b9b2cac824936baca6753a12f7b19",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/hasSampling"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc79a4f0f466d433a8c73954858508454",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/isSiteVisitOf"
+      }
+    ]
+  },
+  {
+    "@id": "_:N57f6c0dcf8a14f1bbb9f0fc94638877d",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/locationDescription"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na75927d3701e4a359a868914d3891a09",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/hasObservation"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na06a562da4f941da8479fb162e0a127a",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/identifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nea4ae502eee946f39f4e2918e960fb26",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Integer",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Nbd3a3d38d55c41abaf89a2e399407bbe"
+      },
+      {
+        "@id": "_:N9cf72fee0a5f4f2aa6dd56096b7cc7d6"
+      },
+      {
+        "@id": "_:N360f65fd1f19417eb26fdefe54cd000e"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Integer"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nbd3a3d38d55c41abaf89a2e399407bbe",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Error of measurement (±)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Literal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:N0dff0aecf901479085e09a7ed1cb26ac"
+          },
+          {
+            "@id": "_:N21bf1df6e2ff455b8f17633a50386bc7"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/uncertainty"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0dff0aecf901479085e09a7ed1cb26ac",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "_:N21bf1df6e2ff455b8f17633a50386bc7",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ]
+  },
+  {
+    "@id": "_:N9cf72fee0a5f4f2aa6dd56096b7cc7d6",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      }
+    ]
+  },
+  {
+    "@id": "_:N360f65fd1f19417eb26fdefe54cd000e",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/unit"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/System",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Nfc7dd75fe8c34fc2829de39fcb5aeefb"
+      },
+      {
+        "@id": "_:N36158287348c4c5ca606acbfd1c37d7b"
+      },
+      {
+        "@id": "_:Nf6b1c77cbe3f43e89be241faae3143b0"
+      },
+      {
+        "@id": "_:N87c371fde3b140a0b6562f63cb404ecd"
+      },
+      {
+        "@id": "_:Nb02db0320de54121aa720cbed952774e"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/System"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nfc7dd75fe8c34fc2829de39fcb5aeefb",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Platform"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "is hosted by"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/isHostedBy"
+      }
+    ]
+  },
+  {
+    "@id": "_:N36158287348c4c5ca606acbfd1c37d7b",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/systemType"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf6b1c77cbe3f43e89be241faae3143b0",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Method"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "implements"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/ssn/implements"
+      }
+    ]
+  },
+  {
+    "@id": "_:N87c371fde3b140a0b6562f63cb404ecd",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Deployment"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "has deployment"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/ssn/hasDeployment"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nb02db0320de54121aa720cbed952774e",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Site",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N1b194d37997d45b3a5aeef9a72d73953"
+      },
+      {
+        "@id": "_:N58ca3c0243e149a9aa16f7db850e3480"
+      },
+      {
+        "@id": "_:N7193fbe90ea74acb9fd16927e3499e17"
+      },
+      {
+        "@id": "_:N5170ed0c03e547079593341b8ecb08f8"
+      },
+      {
+        "@id": "_:Nfdc1afeff94e469fbbdaccbe7e5198aa"
+      },
+      {
+        "@id": "_:N7f9eaa6d240b4d88a9784726d18c8a69"
+      },
+      {
+        "@id": "_:N0d94a10cf34f4b94850f86b7feb63ac0"
+      },
+      {
+        "@id": "_:Nff2de4f49515407aafc05cf7090d3b48"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Site"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1b194d37997d45b3a5aeef9a72d73953",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+      }
+    ]
+  },
+  {
+    "@id": "_:N58ca3c0243e149a9aa16f7db850e3480",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/Polygon"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/polygon"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7193fbe90ea74acb9fd16927e3499e17",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/dimension"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5170ed0c03e547079593341b8ecb08f8",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/locationDescription"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nfdc1afeff94e469fbbdaccbe7e5198aa",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/siteDescription"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7f9eaa6d240b4d88a9784726d18c8a69",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "sf within"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#sfWithin"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0d94a10cf34f4b94850f86b7feb63ac0",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/hasSiteVisit"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nff2de4f49515407aafc05cf7090d3b48",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/locationProcedure"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Result",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Nc49a3d07cc2e43e9928d6f60cb448ae2"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Result"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc49a3d07cc2e43e9928d6f60cb448ae2",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "is result of"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:N162a53a07d924638b151224b18256d4a"
+          },
+          {
+            "@id": "_:N953278c566e94579a519b0e331b85358"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/isResultOf"
+      }
+    ]
+  },
+  {
+    "@id": "_:N162a53a07d924638b151224b18256d4a",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
+      }
+    ]
+  },
+  {
+    "@id": "_:N953278c566e94579a519b0e331b85358",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "http://datashapes.org/dash"
+      },
+      {
+        "@id": "http://www.w3.org/ns/shacl#"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Date",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Nd4795f8f97f34780a29208cea3df0e96"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Date"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd4795f8f97f34780a29208cea3df0e96",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Boolean",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N993aafc488384f29aad09d506f5881b6"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Boolean"
+      }
+    ]
+  },
+  {
+    "@id": "_:N993aafc488384f29aad09d506f5881b6",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Float",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N6535b163a234454e93153c1acbfdfd1f"
+      },
+      {
+        "@id": "_:N7116d0f9b5a44b35a36cb799b15586df"
+      },
+      {
+        "@id": "_:N39b0794140ca4198aab8803816260e8a"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Float"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6535b163a234454e93153c1acbfdfd1f",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Literal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7116d0f9b5a44b35a36cb799b15586df",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/unit"
+      }
+    ]
+  },
+  {
+    "@id": "_:N39b0794140ca4198aab8803816260e8a",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#double"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Error of measurement (±)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#Literal"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/uncertainty"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Quadrat",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N3a39b72b192a4123a733ec34980e86b3"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Quadrat"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3a39b72b192a4123a733ec34980e86b3",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#hasValue": [
+      {
+        "@id": "http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "feature type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/featureType"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/FeatureOfInterest",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N82180fdaf75242009ce11cc4d34f9d4e"
+      },
+      {
+        "@id": "_:Nd0eb8b65c66d4a90b7d0d41bf16477a7"
+      },
+      {
+        "@id": "_:Ncdb32ff1cce44bd6a9ebfe7721e596dd"
+      },
+      {
+        "@id": "_:N79e4f48fabeb45ffbfab60580feece44"
+      },
+      {
+        "@id": "_:N5b75e6e9ca90481283238d670ba7f4dd"
+      },
+      {
+        "@id": "_:N4554444ca0354331b299f1eb2023149d"
+      },
+      {
+        "@id": "_:Nebd5876d55af4560b70fca2a3844b613"
+      },
+      {
+        "@id": "_:N8b13c8d05eeb4bf8bd2d60879e268d06"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
+      }
+    ]
+  },
+  {
+    "@id": "_:N82180fdaf75242009ce11cc4d34f9d4e",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sample"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "has sample"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/hasSample"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd0eb8b65c66d4a90b7d0d41bf16477a7",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ncdb32ff1cce44bd6a9ebfe7721e596dd",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/Geometry"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "has geometry"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#BlankNodeOrIRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ]
+  },
+  {
+    "@id": "_:N79e4f48fabeb45ffbfab60580feece44",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/identifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5b75e6e9ca90481283238d670ba7f4dd",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/featureType"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4554444ca0354331b299f1eb2023149d",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "is feature of interest of"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:N6194e4c06d77489aa53b25713025aa20"
+          },
+          {
+            "@id": "_:N031cfd27b9d649d496782a1607bf1179"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6194e4c06d77489aa53b25713025aa20",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
+      }
+    ]
+  },
+  {
+    "@id": "_:N031cfd27b9d649d496782a1607bf1179",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nebd5876d55af4560b70fca2a3844b613",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/RDFDataset"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rdfs.org/ns/void#inDataset"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8b13c8d05eeb4bf8bd2d60879e268d06",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Value",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Value"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Text",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N591ea644820d4653b50a79e5c4e2a4d3"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Text"
+      }
+    ]
+  },
+  {
+    "@id": "_:N591ea644820d4653b50a79e5c4e2a4d3",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:N5ed051226d5e421c8a96fc8f0bc21e49"
+          },
+          {
+            "@id": "_:N3f9fed165fb34d8b927cec53db78fdfd"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5ed051226d5e421c8a96fc8f0bc21e49",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3f9fed165fb34d8b927cec53db78fdfd",
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#langString"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/ManagedFeature",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Ndbf119e14e124b81bec3616c820df453"
+      },
+      {
+        "@id": "_:Nee3542dc1cbc44068012adbcdfcb4925"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/ManagedFeature"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ndbf119e14e124b81bec3616c820df453",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/dateDecommissioned"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nee3542dc1cbc44068012adbcdfcb4925",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/dateCommissioned"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/RDFDataset",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:Na91f2fc0b58147bf9bfc7d703d291cfc"
+      },
+      {
+        "@id": "_:Ne0dd5cc6da514fb698949114eb25ebb9"
+      },
+      {
+        "@id": "_:Nd3f2a763ba7544eaaa395dcf82634a41"
+      },
+      {
+        "@id": "_:N6460b0b3a30245ddbd3378630453d85a"
+      },
+      {
+        "@id": "_:N1c22ffb5250342ecb26bb5f80c6d0037"
+      },
+      {
+        "@id": "_:N9f1bdbdc3e8640a5b13c444b189ce173"
+      },
+      {
+        "@id": "_:Nca69d5de2d124c3fad29e833d4cef93a"
+      },
+      {
+        "@id": "_:Ne0aacd6f50b1495bb3e779b2bc59aaee"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/RDFDataset"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na91f2fc0b58147bf9bfc7d703d291cfc",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "The name of the dataset."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "title"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/title"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne0dd5cc6da514fb698949114eb25ebb9",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/creator"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd3f2a763ba7544eaaa395dcf82634a41",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "A textual description of the dataset."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "description"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/description"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6460b0b3a30245ddbd3378630453d85a",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "publisher"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/publisher"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1c22ffb5250342ecb26bb5f80c6d0037",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "The controlled vocabularies used in this RDF dataset."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "vocabulary"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rdfs.org/ns/void#vocabulary"
+      }
+    ]
+  },
+  {
+    "@id": "_:N9f1bdbdc3e8640a5b13c444b189ce173",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/source"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nca69d5de2d124c3fad29e833d4cef93a",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/contributor"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne0aacd6f50b1495bb3e779b2bc59aaee",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an xsd:date."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "issued"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/issued"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/Taxon",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N2b40ba01206e45c58896a1dd46c5bbca"
+      },
+      {
+        "@id": "_:N2c23c2dccb034b33b72faeb3b4a9ba33"
+      },
+      {
+        "@id": "_:N3f775828a1824868b5be9efadfd5e514"
+      },
+      {
+        "@id": "_:N832d4c34145043ea9e4b1e6e5f4f7725"
+      },
+      {
+        "@id": "_:N48f4e8a41da5404498716be0f40f4d45"
+      },
+      {
+        "@id": "_:N9971523b61c045a28b7817cb07878eb3"
+      },
+      {
+        "@id": "_:Nc68fd908ecf14f9c8e95c96d80a92cca"
+      },
+      {
+        "@id": "_:N651c81c15bf84102bdfd50285aeea237"
+      },
+      {
+        "@id": "_:N717c8994b7ec4301ae4c6b9e812014f2"
+      },
+      {
+        "@id": "_:N632ed836098e4af4822fb334c95e6a69"
+      },
+      {
+        "@id": "_:N42c312189ba74cf1b5a4831dbadd5c9c"
+      },
+      {
+        "@id": "_:N68f32991f536400b9b1b3a69f4243acc"
+      },
+      {
+        "@id": "_:N5de851275b904f4ea45ecd06cfa2748a"
+      },
+      {
+        "@id": "_:N185cc348a20a471b867cc8be3533dc98"
+      },
+      {
+        "@id": "_:N40ba8a38e72e464c9dda5632a15e5345"
+      },
+      {
+        "@id": "_:N294f260c235b477ab4c56e0822e472a6"
+      },
+      {
+        "@id": "_:Ne38fd52286dd41d1ac141bbd0deb4450"
+      },
+      {
+        "@id": "_:Naaa508ba60ca42a4a962569675d3dfb7"
+      },
+      {
+        "@id": "_:Ne251db4ca032461f9bc58f2b23a3fea8"
+      },
+      {
+        "@id": "_:N4c0ed4260e8244c59107f8326ad7c98c"
+      },
+      {
+        "@id": "_:N23cec34dc1ff4415b895d596d6dec52c"
+      },
+      {
+        "@id": "_:N0f1bc1af80a042edbe6dd9ef7ef44bbe"
+      },
+      {
+        "@id": "_:N3a61f14c8e7047d1a3ea2e2318719be4"
+      },
+      {
+        "@id": "_:Nd1b4ed0d5a1540c68a63ad57cb3036dd"
+      },
+      {
+        "@id": "_:N36f902146e6b471d8b3655010c671518"
+      },
+      {
+        "@id": "_:Nf77b995a388a4837885b18b7fbe40d69"
+      },
+      {
+        "@id": "_:N0c1644921c8f4b14bf42226c37f3083a"
+      },
+      {
+        "@id": "_:N3e462bdda6914f839ba535befa83ef9b"
+      },
+      {
+        "@id": "_:N8034ac1793db4d6086165d2e8575fb6c"
+      },
+      {
+        "@id": "_:N6c3faef33d9645dba5c92cde15443230"
+      },
+      {
+        "@id": "_:Nba3a1ad7fc3b4096a68a886abf07d4b4"
+      },
+      {
+        "@id": "_:Ncce919f5182040bf83556f691f0e07b8"
+      },
+      {
+        "@id": "_:N970de392b647459a859c31824c29d770"
+      },
+      {
+        "@id": "_:Nc235c1496c0e4007a5928725013b57e6"
+      },
+      {
+        "@id": "_:N333d9d9c565d4156b6daa7e09354acc7"
+      },
+      {
+        "@id": "_:N61a7b228c72a461fb8582dc6d5bb7546"
+      },
+      {
+        "@id": "_:N09e23badd36c4ac3b0c7db99ff420adc"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Taxon"
+      }
+    ]
+  },
+  {
+    "@id": "_:N2b40ba01206e45c58896a1dd46c5bbca",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/scientificName"
+      }
+    ]
+  },
+  {
+    "@id": "_:N2c23c2dccb034b33b72faeb3b4a9ba33",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "cultivar epithet"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/cultivarEpithet"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3f775828a1824868b5be9efadfd5e514",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "name according to ID"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/nameAccordingToID"
+      }
+    ]
+  },
+  {
+    "@id": "_:N832d4c34145043ea9e4b1e6e5f4f7725",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "vernacular name"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/vernacularName"
+      }
+    ]
+  },
+  {
+    "@id": "_:N48f4e8a41da5404498716be0f40f4d45",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/phylum"
+      }
+    ]
+  },
+  {
+    "@id": "_:N9971523b61c045a28b7817cb07878eb3",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "scientific name ID"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/scientificNameID"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc68fd908ecf14f9c8e95c96d80a92cca",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "verbatim taxon rank"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/verbatimTaxonRank"
+      }
+    ]
+  },
+  {
+    "@id": "_:N651c81c15bf84102bdfd50285aeea237",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/family"
+      }
+    ]
+  },
+  {
+    "@id": "_:N717c8994b7ec4301ae4c6b9e812014f2",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/specificEpithet"
+      }
+    ]
+  },
+  {
+    "@id": "_:N632ed836098e4af4822fb334c95e6a69",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "nomenclatural status"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/nomenclaturalStatus"
+      }
+    ]
+  },
+  {
+    "@id": "_:N42c312189ba74cf1b5a4831dbadd5c9c",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "taxon rank"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/taxonRank"
+      }
+    ]
+  },
+  {
+    "@id": "_:N68f32991f536400b9b1b3a69f4243acc",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "parent name usage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/parentNameUsage"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5de851275b904f4ea45ecd06cfa2748a",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "name published in"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/namePublishedIn"
+      }
+    ]
+  },
+  {
+    "@id": "_:N185cc348a20a471b867cc8be3533dc98",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "higher classification"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/higherClassification"
+      }
+    ]
+  },
+  {
+    "@id": "_:N40ba8a38e72e464c9dda5632a15e5345",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "taxonomic status"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/taxonomicStatus"
+      }
+    ]
+  },
+  {
+    "@id": "_:N294f260c235b477ab4c56e0822e472a6",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "original name usage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/originalNameUsage"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne38fd52286dd41d1ac141bbd0deb4450",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "subgenus"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/subgenus"
+      }
+    ]
+  },
+  {
+    "@id": "_:Naaa508ba60ca42a4a962569675d3dfb7",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/kingdom"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne251db4ca032461f9bc58f2b23a3fea8",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "nomenclatural code"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/nomenclaturalCode"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4c0ed4260e8244c59107f8326ad7c98c",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "generic name"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/genericName"
+      }
+    ]
+  },
+  {
+    "@id": "_:N23cec34dc1ff4415b895d596d6dec52c",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "accepted name usage"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/acceptedNameUsage"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0f1bc1af80a042edbe6dd9ef7ef44bbe",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/taxonConceptID"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3a61f14c8e7047d1a3ea2e2318719be4",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/nameAccordingTo"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd1b4ed0d5a1540c68a63ad57cb3036dd",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship"
+      }
+    ]
+  },
+  {
+    "@id": "_:N36f902146e6b471d8b3655010c671518",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "original name usage ID"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/originalNameUsageID"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf77b995a388a4837885b18b7fbe40d69",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/infraspecificEpithet"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0c1644921c8f4b14bf42226c37f3083a",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/genus"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3e462bdda6914f839ba535befa83ef9b",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "taxon ID"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/taxonID"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8034ac1793db4d6086165d2e8575fb6c",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/taxonRemarks"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6c3faef33d9645dba5c92cde15443230",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "parent name usage ID"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/parentNameUsageID"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nba3a1ad7fc3b4096a68a886abf07d4b4",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/class"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ncce919f5182040bf83556f691f0e07b8",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/order"
+      }
+    ]
+  },
+  {
+    "@id": "_:N970de392b647459a859c31824c29d770",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "subfamily"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/subfamily"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc235c1496c0e4007a5928725013b57e6",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "accepted name usage ID"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/acceptedNameUsageID"
+      }
+    ]
+  },
+  {
+    "@id": "_:N333d9d9c565d4156b6daa7e09354acc7",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "infrageneric epithet"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/infragenericEpithet"
+      }
+    ]
+  },
+  {
+    "@id": "_:N61a7b228c72a461fb8582dc6d5bb7546",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "name published in ID"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/namePublishedInID"
+      }
+    ]
+  },
+  {
+    "@id": "_:N09e23badd36c4ac3b0c7db99ff420adc",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "name published in year"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://rs.tdwg.org/dwc/terms/namePublishedInYear"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/IRI",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N8eb94438de5b4cffb0e9dc6237f44d19"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/IRI"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8eb94438de5b4cffb0e9dc6237f44d19",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/tern/shacl/tern/Sampling",
     "@type": [
       "http://www.w3.org/ns/shacl#NodeShape"
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:Ndc84205e319444898d62bfb0f7979914"
+        "@id": "_:Nd0284e065e8f495bbd34f5c051453ae0"
       },
       {
-        "@id": "_:N546ef660504843e68cf4c54101472271"
+        "@id": "_:N5242d90846de45f7894f4bcba87568e1"
       },
       {
-        "@id": "_:N4faa9e807f5a41bcbc40d5f1281ad7fd"
+        "@id": "_:N931056265424461185c8d6fafbc24318"
       },
       {
-        "@id": "_:N56193135168d4074a48632c04c6b255f"
+        "@id": "_:N310de6b00eb3451290c307788dd71125"
       },
       {
-        "@id": "_:N2f6f7c70c60a41fda84711e51064c2b7"
+        "@id": "_:Nd384fd96c2214c9a8bc77eab42fe07a3"
       },
       {
-        "@id": "_:N7ddb0be3d1324fa29dcb0aa4a4781262"
+        "@id": "_:N8145dd80fffb4777a54d296174d4943b"
       },
       {
-        "@id": "_:N45c888b1d3df49b695a02124b8324616"
+        "@id": "_:N3727b1ae2581415a982046d4fd743103"
       },
       {
-        "@id": "_:N6f2bb5690b1a4a4e8915298e3e946af5"
+        "@id": "_:N5e9f842ca50447d09641d4b5f32693a7"
       },
       {
-        "@id": "_:N3ffa387db1c34d2fa4a91be7d642f943"
+        "@id": "_:N94ccec37cd3943b8890405f96c378014"
       },
       {
-        "@id": "_:N9aeb3fc671a54517ad3d020e2ecd9005"
+        "@id": "_:N2f965150b3f04d05b28aff2686e03a74"
       },
       {
-        "@id": "_:N82539e54059c41569a8b0bf05a2cb952"
+        "@id": "_:N8e663a95eadf477ca3840d1ad4ffc945"
       },
       {
-        "@id": "_:Nac32c664c2a7404fa512b719eef75c11"
+        "@id": "_:N0acca29fe9b74289bc0511be3d9b91d6"
       }
     ],
     "http://www.w3.org/ns/shacl#targetClass": [
@@ -49,7 +3086,59 @@
     ]
   },
   {
-    "@id": "_:Ndc84205e319444898d62bfb0f7979914",
+    "@id": "_:Nd0284e065e8f495bbd34f5c051453ae0",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sample"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "has result"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/hasResult"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5242d90846de45f7894f4bcba87568e1",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
+      }
+    ]
+  },
+  {
+    "@id": "_:N931056265424461185c8d6fafbc24318",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -85,295 +3174,7 @@
     ]
   },
   {
-    "@id": "_:N546ef660504843e68cf4c54101472271",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4faa9e807f5a41bcbc40d5f1281ad7fd",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/Geometry"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has geometry"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "_:N56193135168d4074a48632c04c6b255f",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:N2f6f7c70c60a41fda84711e51064c2b7",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sampler"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "made by sampler"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/madeBySampler"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7ddb0be3d1324fa29dcb0aa4a4781262",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/hasSiteVisit"
-      }
-    ]
-  },
-  {
-    "@id": "_:N45c888b1d3df49b695a02124b8324616",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ]
-  },
-  {
-    "@id": "_:N6f2bb5690b1a4a4e8915298e3e946af5",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "used procedure"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/usedProcedure"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3ffa387db1c34d2fa4a91be7d642f943",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The type of sampling act."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/samplingType"
-      }
-    ]
-  },
-  {
-    "@id": "_:N9aeb3fc671a54517ad3d020e2ecd9005",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sample"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has result"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/hasResult"
-      }
-    ]
-  },
-  {
-    "@id": "_:N82539e54059c41569a8b0bf05a2cb952",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "was attributed to"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:N9ef88211a7d940888a07af0e4abd5472"
-          },
-          {
-            "@id": "_:Nda698abf56a144869b6b6e6ac84295c4"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
-      }
-    ]
-  },
-  {
-    "@id": "_:N9ef88211a7d940888a07af0e4abd5472",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/org/Person"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nda698abf56a144869b6b6e6ac84295c4",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/org/Organization"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nac32c664c2a7404fa512b719eef75c11",
+    "@id": "_:N310de6b00eb3451290c307788dd71125",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -404,84 +3205,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/tern/shacl/tern/System",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N3a9088df3fe44c14b0ac6486ed366c7a"
-      },
-      {
-        "@id": "_:Nd96b689f4946482b947a690fdaa1f1a1"
-      },
-      {
-        "@id": "_:N54d8c88ddfdb4a7ab79e72d3bfc4f31a"
-      },
-      {
-        "@id": "_:N49e5ca03db864353a70f859ddab69a73"
-      },
-      {
-        "@id": "_:N30ed0cc27fa44f629364332035fe5bd6"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/System"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3a9088df3fe44c14b0ac6486ed366c7a",
+    "@id": "_:Nd384fd96c2214c9a8bc77eab42fe07a3",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/systemType"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd96b689f4946482b947a690fdaa1f1a1",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Platform"
-      }
     ],
     "http://www.w3.org/ns/shacl#maxCount": [
       {
         "@value": 1
       }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "is hosted by"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/isHostedBy"
-      }
-    ]
-  },
-  {
-    "@id": "_:N54d8c88ddfdb4a7ab79e72d3bfc4f31a",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
@@ -500,18 +3231,18 @@
     ]
   },
   {
-    "@id": "_:N49e5ca03db864353a70f859ddab69a73",
+    "@id": "_:N8145dd80fffb4777a54d296174d4943b",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
-    "http://www.w3.org/ns/shacl#class": [
+    "http://www.w3.org/ns/shacl#description": [
       {
-        "@id": "https://w3id.org/tern/ontologies/tern/Method"
+        "@value": "The type of sampling act."
       }
     ],
-    "http://www.w3.org/ns/shacl#name": [
+    "http://www.w3.org/ns/shacl#maxCount": [
       {
-        "@value": "implements"
+        "@value": 1
       }
     ],
     "http://www.w3.org/ns/shacl#nodeKind": [
@@ -521,23 +3252,124 @@
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.w3.org/ns/ssn/implements"
+        "@id": "https://w3id.org/tern/ontologies/tern/samplingType"
       }
     ]
   },
   {
-    "@id": "_:N30ed0cc27fa44f629364332035fe5bd6",
+    "@id": "_:N3727b1ae2581415a982046d4fd743103",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "identifier"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/identifier"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5e9f842ca50447d09641d4b5f32693a7",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "https://w3id.org/tern/ontologies/tern/Deployment"
+        "@id": "https://w3id.org/tern/ontologies/loc/Geometry"
       }
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
-        "@value": "has deployment"
+        "@value": "has geometry"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#BlankNodeOrIRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ]
+  },
+  {
+    "@id": "_:N94ccec37cd3943b8890405f96c378014",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "was attributed to"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:Nd42701636507461e9db7927f7f233cb6"
+          },
+          {
+            "@id": "_:N15159500bef74f8c95b3740c0745de94"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd42701636507461e9db7927f7f233cb6",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/org/Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:N15159500bef74f8c95b3740c0745de94",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/org/Organization"
+      }
+    ]
+  },
+  {
+    "@id": "_:N2f965150b3f04d05b28aff2686e03a74",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sampler"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "made by sampler"
       }
     ],
     "http://www.w3.org/ns/shacl#nodeKind": [
@@ -547,28 +3379,12 @@
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.w3.org/ns/ssn/hasDeployment"
+        "@id": "http://www.w3.org/ns/sosa/madeBySampler"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/tern/shacl/tern/Instant",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N545c584f8be141fca37cbefc655d7667"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Instant"
-      }
-    ]
-  },
-  {
-    "@id": "_:N545c584f8be141fca37cbefc655d7667",
+    "@id": "_:N8e663a95eadf477ca3840d1ad4ffc945",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -584,40 +3400,366 @@
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
-        "@value": "in XSDDate time stamp"
+        "@value": "used procedure"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/usedProcedure"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0acca29fe9b74289bc0511be3d9b91d6",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/hasSiteVisit"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/shacl/tern/ObservationCollection",
+    "@type": [
+      "http://www.w3.org/ns/shacl#NodeShape"
+    ],
+    "http://www.w3.org/ns/shacl#property": [
+      {
+        "@id": "_:N9efabe3781174a93ab9e38c0e9c0818f"
+      },
+      {
+        "@id": "_:Ncab795304a13459ca8b55d19b6292257"
+      },
+      {
+        "@id": "_:Nb45980cfd5bd48338b10a33badd04b00"
+      },
+      {
+        "@id": "_:Nf7c9fac15a924b1cb127ed103fe244c7"
+      },
+      {
+        "@id": "_:N1e9789b4728e44e2bdea92a5f2600b28"
+      },
+      {
+        "@id": "_:N1ef279436e3b48249e006f8921e0cabf"
+      },
+      {
+        "@id": "_:N1a95dc690c4d4777a9fb0c4e30299640"
+      },
+      {
+        "@id": "_:Na1b59eaa431b4fa89fb01e1a066030d5"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#targetClass": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/ObservationCollection"
+      }
+    ]
+  },
+  {
+    "@id": "_:N9efabe3781174a93ab9e38c0e9c0818f",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "used procedure"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/usedProcedure"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ncab795304a13459ca8b55d19b6292257",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#datatype": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "result time"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/resultTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nb45980cfd5bd48338b10a33badd04b00",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "has feature of interest"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf7c9fac15a924b1cb127ed103fe244c7",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Sensor"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Relation between an Observation and the Sensor which made the Observations."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "made by sensor"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/madeBySensor"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1e9789b4728e44e2bdea92a5f2600b28",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Instant"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "phenomenon time"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/phenomenonTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1ef279436e3b48249e006f8921e0cabf",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "has member"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
       }
     ],
     "http://www.w3.org/ns/shacl#or": [
       {
         "@list": [
           {
-            "@id": "_:N6565d4f3a9714756a94fbd52d317c6e9"
+            "@id": "_:N8e30851be33b49298c3538fbb209352a"
           },
           {
-            "@id": "_:N6ccc78e4497946a78bebb0604530a978"
+            "@id": "_:N66691f0bb7d74015b6f0ed38ac3c10b6"
           }
         ]
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.w3.org/2006/time#inXSDDateTimeStamp"
+        "@id": "http://www.w3.org/ns/sosa/hasMember"
       }
     ]
   },
   {
-    "@id": "_:N6565d4f3a9714756a94fbd52d317c6e9",
-    "http://www.w3.org/ns/shacl#datatype": [
+    "@id": "_:N8e30851be33b49298c3538fbb209352a",
+    "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
       }
     ]
   },
   {
-    "@id": "_:N6ccc78e4497946a78bebb0604530a978",
-    "http://www.w3.org/ns/shacl#datatype": [
+    "@id": "_:N66691f0bb7d74015b6f0ed38ac3c10b6",
+    "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+        "@id": "https://w3id.org/tern/ontologies/tern/ObservationCollection"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1a95dc690c4d4777a9fb0c4e30299640",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "observed property"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/observedProperty"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na1b59eaa431b4fa89fb01e1a066030d5",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest"
       }
     ]
   },
@@ -628,22 +3770,22 @@
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:Nee1501870d53448882255b1cf2c06efb"
+        "@id": "_:Nc96f234082834419a8d6501afc1cb374"
       },
       {
-        "@id": "_:Ne1d05f6ed119485b88619d4f88425dbb"
+        "@id": "_:Nb7ab42f9429647ffa53c2b2ef3332fae"
       },
       {
-        "@id": "_:N9868c7ce3d254795866a06b7a3ea758d"
+        "@id": "_:N2a3e4eff0ad64d6ea5b55553b0b71f9e"
       },
       {
-        "@id": "_:N59b12529456d4539869200882c2c6441"
+        "@id": "_:Nb5599a727f00462abae12b43d8d1d464"
       },
       {
-        "@id": "_:N19d0ab8c459345da931d41be957fee0a"
+        "@id": "_:Na31d47e4770848b8a277592dd162ba66"
       },
       {
-        "@id": "_:Ne6af8bd6747143049f19606bfa861bac"
+        "@id": "_:N4967e6cd88144975a66c2a091bb9d944"
       }
     ],
     "http://www.w3.org/ns/shacl#targetClass": [
@@ -653,7 +3795,7 @@
     ]
   },
   {
-    "@id": "_:Nee1501870d53448882255b1cf2c06efb",
+    "@id": "_:Nc96f234082834419a8d6501afc1cb374",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -694,7 +3836,7 @@
     ]
   },
   {
-    "@id": "_:Ne1d05f6ed119485b88619d4f88425dbb",
+    "@id": "_:Nb7ab42f9429647ffa53c2b2ef3332fae",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -720,7 +3862,7 @@
     ]
   },
   {
-    "@id": "_:N9868c7ce3d254795866a06b7a3ea758d",
+    "@id": "_:N2a3e4eff0ad64d6ea5b55553b0b71f9e",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -756,7 +3898,54 @@
     ]
   },
   {
-    "@id": "_:N59b12529456d4539869200882c2c6441",
+    "@id": "_:Nb5599a727f00462abae12b43d8d1d464",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "type"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://purl.org/dc/terms/type"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na31d47e4770848b8a277592dd162ba66",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#description": [
+      {
+        "@value": "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)."
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/isAttributeOf"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4967e6cd88144975a66c2a091bb9d944",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -787,319 +3976,94 @@
     ]
   },
   {
-    "@id": "_:N19d0ab8c459345da931d41be957fee0a",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/isAttributeOf"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne6af8bd6747143049f19606bfa861bac",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/MaterialSample",
+    "@id": "https://w3id.org/tern/shacl/tern/Observation",
     "@type": [
       "http://www.w3.org/ns/shacl#NodeShape"
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:N59ee90e6c4c54e5d9019e09a6c11f7d5"
+        "@id": "_:Naedac889c2824e77a4844cef37b3648c"
+      },
+      {
+        "@id": "_:Na16fa9341b394401814d368b8d2d3c62"
+      },
+      {
+        "@id": "_:Nc28e717b57c34dd695ad6e0091082f32"
+      },
+      {
+        "@id": "_:N43bfa96da2964ccba4e4faa5a141e7e0"
+      },
+      {
+        "@id": "_:Na2f8b8b1a2334065a34985bde03a2b94"
+      },
+      {
+        "@id": "_:Nfd9fa21fc4b14985a79632da2b591155"
+      },
+      {
+        "@id": "_:N3c6e84f4f17e47b88e7e98d19ccb186c"
+      },
+      {
+        "@id": "_:N0a49568325ee421c8280ed0204566ca3"
+      },
+      {
+        "@id": "_:Nf4cf9bc8e19a42539426f3342f514b25"
+      },
+      {
+        "@id": "_:Ncfb72f79de864d7793877c696a462806"
+      },
+      {
+        "@id": "_:N8145664848c449a68960591a5386ef21"
+      },
+      {
+        "@id": "_:Nae91c13ccfa24781b37858f013b9c1e2"
+      },
+      {
+        "@id": "_:N102414d9003646998e12b791897d5b19"
+      },
+      {
+        "@id": "_:Nce8e1e8265c5439fa7ac705525be9c23"
+      },
+      {
+        "@id": "_:Nd9f88237de3344f1827cae1d74b7f6cf"
+      },
+      {
+        "@id": "_:N9818b2343bc84bf89a1473c66f38eed6"
       }
     ],
     "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/MaterialSample"
-      }
-    ]
-  },
-  {
-    "@id": "_:N59ee90e6c4c54e5d9019e09a6c11f7d5",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/materialSampleID"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Result",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Nc4eab0f89ee645b9a9db47c229fd0461"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Result"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nc4eab0f89ee645b9a9db47c229fd0461",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "is result of"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:Nb7833aecd3d64ffea47d234fd09f3cc4"
-          },
-          {
-            "@id": "_:Nf9156fb5577f418f92bae53fb8d3139b"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/isResultOf"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb7833aecd3d64ffea47d234fd09f3cc4",
-    "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "https://w3id.org/tern/ontologies/tern/Observation"
       }
     ]
   },
   {
-    "@id": "_:Nf9156fb5577f418f92bae53fb8d3139b",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Site",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N480ef6f513aa4c32a2cad8f11f933329"
-      },
-      {
-        "@id": "_:N5b2ae96f6d2046c58c9ed80f7e4f0b3d"
-      },
-      {
-        "@id": "_:Neb8baa883447428b86c417a3b2fc7087"
-      },
-      {
-        "@id": "_:N9f7737170e5b4cb1a925ddc56c239a9f"
-      },
-      {
-        "@id": "_:N7ea1a785a1aa4ee386b2a8ee04c59ab6"
-      },
-      {
-        "@id": "_:N7f346dd9d6ad47fb8e6173cc5c3cddea"
-      },
-      {
-        "@id": "_:Nac8856347a8b4af7b8c261b93ee0a782"
-      },
-      {
-        "@id": "_:Na7dd37f07e91472cb6a21d3be1bc8f93"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Site"
-      }
-    ]
-  },
-  {
-    "@id": "_:N480ef6f513aa4c32a2cad8f11f933329",
+    "@id": "_:Naedac889c2824e77a4844cef37b3648c",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "https://w3id.org/tern/ontologies/loc/Polygon"
+        "@id": "https://w3id.org/tern/ontologies/loc/Geometry"
       }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/polygon"
-      }
-    ]
-  },
-  {
-    "@id": "_:N5b2ae96f6d2046c58c9ed80f7e4f0b3d",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#label"
-      }
-    ]
-  },
-  {
-    "@id": "_:Neb8baa883447428b86c417a3b2fc7087",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/dimension"
-      }
-    ]
-  },
-  {
-    "@id": "_:N9f7737170e5b4cb1a925ddc56c239a9f",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/hasSiteVisit"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7ea1a785a1aa4ee386b2a8ee04c59ab6",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
-        "@value": "sf within"
+        "@value": "has geometry"
       }
     ],
     "http://www.w3.org/ns/shacl#nodeKind": [
       {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
+        "@id": "http://www.w3.org/ns/shacl#BlankNodeOrIRI"
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.opengis.net/ont/geosparql#sfWithin"
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
       }
     ]
   },
   {
-    "@id": "_:N7f346dd9d6ad47fb8e6173cc5c3cddea",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/locationProcedure"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nac8856347a8b4af7b8c261b93ee0a782",
+    "@id": "_:Na16fa9341b394401814d368b8d2d3c62",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -1108,63 +4072,21 @@
         "@id": "http://www.w3.org/2001/XMLSchema#string"
       }
     ],
-    "http://www.w3.org/ns/shacl#maxCount": [
+    "http://www.w3.org/ns/shacl#name": [
       {
-        "@value": 1
+        "@value": "identifier"
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "https://w3id.org/tern/ontologies/tern/siteDescription"
+        "@id": "http://purl.org/dc/terms/identifier"
       }
     ]
   },
   {
-    "@id": "_:Na7dd37f07e91472cb6a21d3be1bc8f93",
+    "@id": "_:Nc28e717b57c34dd695ad6e0091082f32",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/locationDescription"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Boolean",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N1d150da50d754934a802f69078ffad95"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1d150da50d754934a802f69078ffad95",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-      }
     ],
     "http://www.w3.org/ns/shacl#maxCount": [
       {
@@ -1176,62 +4098,30 @@
         "@value": 1
       }
     ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "observed property"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
+        "@id": "http://www.w3.org/ns/sosa/observedProperty"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/tern/shacl/tern/ObservationCollection",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N8c8bdcaa8e1940e19f0139fe6712e45d"
-      },
-      {
-        "@id": "_:N856a718caa7f468aac061d8f417a30c4"
-      },
-      {
-        "@id": "_:Na04ae38f0f04400ca442a8ec439a4768"
-      },
-      {
-        "@id": "_:Nfbcb2e1a028940dbaa1091b46629f7e2"
-      },
-      {
-        "@id": "_:N4cd666b36d5644cca9e7c2dea625f00e"
-      },
-      {
-        "@id": "_:N0a4a93e40e7f4a9d99007c15ab53b469"
-      },
-      {
-        "@id": "_:N51b7daca1fce444eac2faad859923ddc"
-      },
-      {
-        "@id": "_:N11836b0a5edb4e8f8dc48175aceb8ddf"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/ObservationCollection"
-      }
-    ]
-  },
-  {
-    "@id": "_:N8c8bdcaa8e1940e19f0139fe6712e45d",
+    "@id": "_:N43bfa96da2964ccba4e4faa5a141e7e0",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#datatype": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
       }
     ],
     "http://www.w3.org/ns/shacl#maxCount": [
@@ -1239,19 +4129,68 @@
         "@value": 1
       }
     ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "result time"
-      }
-    ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.w3.org/ns/sosa/resultTime"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
       }
     ]
   },
   {
-    "@id": "_:N856a718caa7f468aac061d8f417a30c4",
+    "@id": "_:Na2f8b8b1a2334065a34985bde03a2b94",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/org/Person"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "was attributed to"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRIOrLiteral"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#or": [
+      {
+        "@list": [
+          {
+            "@id": "_:Nc917c461044b42b7a01b3bd7c5701444"
+          },
+          {
+            "@id": "_:Nbfe3e63fb5be46da8dad44125dcfe2d8"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc917c461044b42b7a01b3bd7c5701444",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/org/Person"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nbfe3e63fb5be46da8dad44125dcfe2d8",
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/org/Organization"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nfd9fa21fc4b14985a79632da2b591155",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -1260,164 +4199,12 @@
         "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
       }
     ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively."
-      }
-    ],
     "http://www.w3.org/ns/shacl#maxCount": [
       {
         "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "_:Na04ae38f0f04400ca442a8ec439a4768",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."
       }
     ],
     "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "used procedure"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/usedProcedure"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nfbcb2e1a028940dbaa1091b46629f7e2",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has member"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:N518ec177a267491899a7c7e533f93ef0"
-          },
-          {
-            "@id": "_:N4e6715df77af4295a357bc0e4ddc68f3"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/hasMember"
-      }
-    ]
-  },
-  {
-    "@id": "_:N518ec177a267491899a7c7e533f93ef0",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4e6715df77af4295a357bc0e4ddc68f3",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/ObservationCollection"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4cd666b36d5644cca9e7c2dea625f00e",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Instant"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "phenomenon time"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/phenomenonTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0a4a93e40e7f4a9d99007c15ab53b469",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
       {
         "@value": 1
       }
@@ -1439,18 +4226,49 @@
     ]
   },
   {
-    "@id": "_:N51b7daca1fce444eac2faad859923ddc",
+    "@id": "_:N3c6e84f4f17e47b88e7e98d19ccb186c",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#class": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/tern/Instant"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "phenomenon time"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/phenomenonTime"
+      }
+    ]
+  },
+  {
+    "@id": "_:N0a49568325ee421c8280ed0204566ca3",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "https://w3id.org/tern/ontologies/tern/Sensor"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Relation between an Observation and the Sensor which made the Observations."
       }
     ],
     "http://www.w3.org/ns/shacl#maxCount": [
@@ -1475,54 +4293,7 @@
     ]
   },
   {
-    "@id": "_:N11836b0a5edb4e8f8dc48175aceb8ddf",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "observed property"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/observedProperty"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Text",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N56dac2984757469684a1f618bfb08255"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Text"
-      }
-    ]
-  },
-  {
-    "@id": "_:N56dac2984757469684a1f618bfb08255",
+    "@id": "_:Nf4cf9bc8e19a42539426f3342f514b25",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -1536,1506 +4307,24 @@
         "@value": 1
       }
     ],
-    "http://www.w3.org/ns/shacl#or": [
+    "http://www.w3.org/ns/shacl#name": [
       {
-        "@list": [
-          {
-            "@id": "_:N75b885634ebe4babb350b4b1efa6a8c6"
-          },
-          {
-            "@id": "_:N859787531e5a4e8fac62c07323748b4b"
-          }
-        ]
+        "@value": "has simple result"
       }
     ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
-      }
-    ]
-  },
-  {
-    "@id": "_:N75b885634ebe4babb350b4b1efa6a8c6",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N859787531e5a4e8fac62c07323748b4b",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#langString"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Integer",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N3c7495f6b1594d83969dbd9c760f0db0"
-      },
-      {
-        "@id": "_:N805ea99be8624b58b29589b637c52b75"
-      },
-      {
-        "@id": "_:Nf00481bb7c0f495aab65d442d92621d9"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Integer"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3c7495f6b1594d83969dbd9c760f0db0",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Error of measurement (±)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Literal"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:N0760ae93d068424392e8d9fd6d57f9b2"
-          },
-          {
-            "@id": "_:N88969745326d4b269314d0e4d8b24ab2"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/uncertainty"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0760ae93d068424392e8d9fd6d57f9b2",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ]
-  },
-  {
-    "@id": "_:N88969745326d4b269314d0e4d8b24ab2",
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#double"
-      }
-    ]
-  },
-  {
-    "@id": "_:N805ea99be8624b58b29589b637c52b75",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
+    "http://www.w3.org/ns/shacl#nodeKing": [
       {
         "@id": "http://www.w3.org/ns/shacl#IRI"
       }
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "https://w3id.org/tern/ontologies/tern/unit"
+        "@id": "http://www.w3.org/ns/sosa/hasSimpleResult"
       }
     ]
   },
   {
-    "@id": "_:Nf00481bb7c0f495aab65d442d92621d9",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Distribution",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Distribution"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://www.w3.org/2002/07/owl#imports": [
-      {
-        "@id": "http://datashapes.org/dash"
-      },
-      {
-        "@id": "http://www.w3.org/ns/shacl#"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Dataset",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N2aba70d4d1ef46ddb1e380ae91d9cb84"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Dataset"
-      }
-    ]
-  },
-  {
-    "@id": "_:N2aba70d4d1ef46ddb1e380ae91d9cb84",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Distribution"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "An available distribution of the dataset."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "dataset distribution"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/dcat#distribution"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Value",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Value"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Sampler",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Nea0b6080dded4c029abafafbada5ae9d"
-      },
-      {
-        "@id": "_:Nb1b0a3f016e34358bf13974065d55fa3"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sampler"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nea0b6080dded4c029abafafbada5ae9d",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "made sampling"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/madeSampling"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb1b0a3f016e34358bf13974065d55fa3",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "implements"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/ssn/implements"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Deployment",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Nd36a10c373c749dda8917a09f3f9b861"
-      },
-      {
-        "@id": "_:Ndd2f50c1d3e84b7eb585c0f1f7130d8c"
-      },
-      {
-        "@id": "_:Nb5c4cf1554204838a64d13fc74509069"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Deployment"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd36a10c373c749dda8917a09f3f9b861",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Attribute"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/hasAttribute"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ndd2f50c1d3e84b7eb585c0f1f7130d8c",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/System"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "deployed system"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/ssn/deployedSystem"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb5c4cf1554204838a64d13fc74509069",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Platform"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "deployed on platform"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/ssn/deployedOnPlatform"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Taxon",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Ndb1d02b56ceb4bf2a13d26e07ea34fee"
-      },
-      {
-        "@id": "_:N78360f4fc50046d69258a15fd16b1e95"
-      },
-      {
-        "@id": "_:Ncee684ce5d784e5786c9bfd1c6eee098"
-      },
-      {
-        "@id": "_:Nffc4dafd3e824ad6a5bebce14d600261"
-      },
-      {
-        "@id": "_:N223fe3a6ebaf4924b4a475e06915184d"
-      },
-      {
-        "@id": "_:N3f0d31e54e934415bc035299f1660915"
-      },
-      {
-        "@id": "_:Nf3f9fd3083f845229565f966548f8b86"
-      },
-      {
-        "@id": "_:N90726a6cd339475ba2297d2c82477599"
-      },
-      {
-        "@id": "_:N66137dba7fe24ea0bbf2e27fe3859712"
-      },
-      {
-        "@id": "_:N8ec656d7c3794dc8aca1d0a464d6cee8"
-      },
-      {
-        "@id": "_:N7473eef6b3a240cfbad07f2ea8d18645"
-      },
-      {
-        "@id": "_:N367d3d9e4b534ebcb65dd80bb5cefefb"
-      },
-      {
-        "@id": "_:N1a4f1e0915974985ad365f456000ce7c"
-      },
-      {
-        "@id": "_:Ne2c2607be8634dc4bfed2787c9d64a6b"
-      },
-      {
-        "@id": "_:Ncd0efa4a032840c1a83179c61cf6de24"
-      },
-      {
-        "@id": "_:N7bb50a806610428d9c3295b272be249e"
-      },
-      {
-        "@id": "_:N29df562fc4804a9d80386a3544a6708c"
-      },
-      {
-        "@id": "_:N50e21e05fcd84b4698ffaa4627824121"
-      },
-      {
-        "@id": "_:N66ff7e23d96a453ea977de2e569450a4"
-      },
-      {
-        "@id": "_:N18e26e1b15374cd6b8e9c125b00e7704"
-      },
-      {
-        "@id": "_:Ne6a0d3b46f15427792a2a41a6256f700"
-      },
-      {
-        "@id": "_:Nedf1d4d210ce4d8a9f8da7ecf869cc2b"
-      },
-      {
-        "@id": "_:Nb4a7991d14e344e39c55b2c92cecd610"
-      },
-      {
-        "@id": "_:N4f0c724291fd4ee890cd281f4ff9f9fc"
-      },
-      {
-        "@id": "_:N074d37b5f7784542a21136ee5b0ed003"
-      },
-      {
-        "@id": "_:N7746124bf09f45dab1df9446697a3ece"
-      },
-      {
-        "@id": "_:N15008be9796a4ec0a95bd87fc57d9e7b"
-      },
-      {
-        "@id": "_:N5c0df28cc3d14063a973b8cad500a924"
-      },
-      {
-        "@id": "_:Nd801936d69ca4912b8c79e0dc5a53edf"
-      },
-      {
-        "@id": "_:Ne8316f5979cd460d839cd00b7bb0d9f2"
-      },
-      {
-        "@id": "_:Nc4f2538575844687953773f1dc272fba"
-      },
-      {
-        "@id": "_:N62d14251b4784e53b6408a7f72afac5e"
-      },
-      {
-        "@id": "_:N3cf9b3f10ff843b9833cbad2055bb3c9"
-      },
-      {
-        "@id": "_:N1919ef19e95543a5bb229daa64f04962"
-      },
-      {
-        "@id": "_:N0e583468b20941f3a37689361e93cfc0"
-      },
-      {
-        "@id": "_:N725071c0d96a4c339d02efd753150893"
-      },
-      {
-        "@id": "_:N75ecdcc0201d43fba09f0311685da9a0"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Taxon"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ndb1d02b56ceb4bf2a13d26e07ea34fee",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "subfamily"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/subfamily"
-      }
-    ]
-  },
-  {
-    "@id": "_:N78360f4fc50046d69258a15fd16b1e95",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "name published in year"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/namePublishedInYear"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ncee684ce5d784e5786c9bfd1c6eee098",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "taxon rank"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/taxonRank"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nffc4dafd3e824ad6a5bebce14d600261",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/infraspecificEpithet"
-      }
-    ]
-  },
-  {
-    "@id": "_:N223fe3a6ebaf4924b4a475e06915184d",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/class"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3f0d31e54e934415bc035299f1660915",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "name according to ID"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/nameAccordingToID"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nf3f9fd3083f845229565f966548f8b86",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "original name usage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/originalNameUsage"
-      }
-    ]
-  },
-  {
-    "@id": "_:N90726a6cd339475ba2297d2c82477599",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "subgenus"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/subgenus"
-      }
-    ]
-  },
-  {
-    "@id": "_:N66137dba7fe24ea0bbf2e27fe3859712",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/family"
-      }
-    ]
-  },
-  {
-    "@id": "_:N8ec656d7c3794dc8aca1d0a464d6cee8",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "accepted name usage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/acceptedNameUsage"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7473eef6b3a240cfbad07f2ea8d18645",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "parent name usage"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/parentNameUsage"
-      }
-    ]
-  },
-  {
-    "@id": "_:N367d3d9e4b534ebcb65dd80bb5cefefb",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "nomenclatural code"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/nomenclaturalCode"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1a4f1e0915974985ad365f456000ce7c",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "taxon ID"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/taxonID"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne2c2607be8634dc4bfed2787c9d64a6b",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "name published in"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/namePublishedIn"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ncd0efa4a032840c1a83179c61cf6de24",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/nameAccordingTo"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7bb50a806610428d9c3295b272be249e",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/taxonRemarks"
-      }
-    ]
-  },
-  {
-    "@id": "_:N29df562fc4804a9d80386a3544a6708c",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/specificEpithet"
-      }
-    ]
-  },
-  {
-    "@id": "_:N50e21e05fcd84b4698ffaa4627824121",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "nomenclatural status"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/nomenclaturalStatus"
-      }
-    ]
-  },
-  {
-    "@id": "_:N66ff7e23d96a453ea977de2e569450a4",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "vernacular name"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/vernacularName"
-      }
-    ]
-  },
-  {
-    "@id": "_:N18e26e1b15374cd6b8e9c125b00e7704",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "cultivar epithet"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/cultivarEpithet"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne6a0d3b46f15427792a2a41a6256f700",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/taxonConceptID"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nedf1d4d210ce4d8a9f8da7ecf869cc2b",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/kingdom"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb4a7991d14e344e39c55b2c92cecd610",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "accepted name usage ID"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/acceptedNameUsageID"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4f0c724291fd4ee890cd281f4ff9f9fc",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "generic name"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/genericName"
-      }
-    ]
-  },
-  {
-    "@id": "_:N074d37b5f7784542a21136ee5b0ed003",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "taxonomic status"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/taxonomicStatus"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7746124bf09f45dab1df9446697a3ece",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "name published in ID"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/namePublishedInID"
-      }
-    ]
-  },
-  {
-    "@id": "_:N15008be9796a4ec0a95bd87fc57d9e7b",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/scientificNameAuthorship"
-      }
-    ]
-  },
-  {
-    "@id": "_:N5c0df28cc3d14063a973b8cad500a924",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "infrageneric epithet"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/infragenericEpithet"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd801936d69ca4912b8c79e0dc5a53edf",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "verbatim taxon rank"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/verbatimTaxonRank"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne8316f5979cd460d839cd00b7bb0d9f2",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "higher classification"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/higherClassification"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nc4f2538575844687953773f1dc272fba",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/order"
-      }
-    ]
-  },
-  {
-    "@id": "_:N62d14251b4784e53b6408a7f72afac5e",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/scientificName"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3cf9b3f10ff843b9833cbad2055bb3c9",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "parent name usage ID"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/parentNameUsageID"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1919ef19e95543a5bb229daa64f04962",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "scientific name ID"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/scientificNameID"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0e583468b20941f3a37689361e93cfc0",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/phylum"
-      }
-    ]
-  },
-  {
-    "@id": "_:N725071c0d96a4c339d02efd753150893",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "original name usage ID"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/originalNameUsageID"
-      }
-    ]
-  },
-  {
-    "@id": "_:N75ecdcc0201d43fba09f0311685da9a0",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rs.tdwg.org/dwc/terms/genus"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/ManagedFeature",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N66178fc0e93046b7bfc86ed8bbc940fa"
-      },
-      {
-        "@id": "_:N8f6fca25d04840f59e5100bdec987f9e"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/ManagedFeature"
-      }
-    ]
-  },
-  {
-    "@id": "_:N66178fc0e93046b7bfc86ed8bbc940fa",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/dateCommissioned"
-      }
-    ]
-  },
-  {
-    "@id": "_:N8f6fca25d04840f59e5100bdec987f9e",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/dateDecommissioned"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Float",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Nc9ff0cf588d9463a85647db37cb0237c"
-      },
-      {
-        "@id": "_:N932558cc1cbc4000831b55c27e3e096f"
-      },
-      {
-        "@id": "_:N219d79f55d6040e79987c75a746c3a3a"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Float"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nc9ff0cf588d9463a85647db37cb0237c",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/unit"
-      }
-    ]
-  },
-  {
-    "@id": "_:N932558cc1cbc4000831b55c27e3e096f",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#double"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Literal"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
-      }
-    ]
-  },
-  {
-    "@id": "_:N219d79f55d6040e79987c75a746c3a3a",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#double"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Error of measurement (±)."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#Literal"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/uncertainty"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/SiteVisit",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N646db317ee4f41aca65e44a39adaebc2"
-      },
-      {
-        "@id": "_:N97351086031e4501bc6230cf0db6a5b3"
-      },
-      {
-        "@id": "_:Na1db353f445844df8d919d6eeda3cbe0"
-      },
-      {
-        "@id": "_:Nb1313fc62ced425f92055fe070b3101c"
-      },
-      {
-        "@id": "_:N1f4ca284e28042978c6ef5e1196d43eb"
-      },
-      {
-        "@id": "_:N1d8bd33b5d7f48869313284d06602e15"
-      },
-      {
-        "@id": "_:N12fe4c7e0964466090cf96ac236f36a8"
-      },
-      {
-        "@id": "_:Naafcfe0b83d64d638cbc316d9d43d722"
-      },
-      {
-        "@id": "_:N2d5cabfa87b144deba82da8f545fb0bf"
-      },
-      {
-        "@id": "_:N91cda48381f44d48b3bd1f610d1192f4"
-      },
-      {
-        "@id": "_:N62572271ca504fcea8cfd9ea79899bbf"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
-      }
-    ]
-  },
-  {
-    "@id": "_:N646db317ee4f41aca65e44a39adaebc2",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/hasObservation"
-      }
-    ]
-  },
-  {
-    "@id": "_:N97351086031e4501bc6230cf0db6a5b3",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/hasSampling"
-      }
-    ]
-  },
-  {
-    "@id": "_:Na1db353f445844df8d919d6eeda3cbe0",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/locationDescription"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb1313fc62ced425f92055fe070b3101c",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/isSiteVisitOf"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1f4ca284e28042978c6ef5e1196d43eb",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "ended at time"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/prov#endedAtTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1d8bd33b5d7f48869313284d06602e15",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/siteDescription"
-      }
-    ]
-  },
-  {
-    "@id": "_:N12fe4c7e0964466090cf96ac236f36a8",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "started at time"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/prov#startedAtTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:Naafcfe0b83d64d638cbc316d9d43d722",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:N2d5cabfa87b144deba82da8f545fb0bf",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Site"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/hasSite"
-      }
-    ]
-  },
-  {
-    "@id": "_:N91cda48381f44d48b3bd1f610d1192f4",
+    "@id": "_:Ncfb72f79de864d7793877c696a462806",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -3061,666 +4350,7 @@
     ]
   },
   {
-    "@id": "_:N62572271ca504fcea8cfd9ea79899bbf",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/RDFDataset"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rdfs.org/ns/void#inDataset"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Date",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N334b2966b9484d27be0529e4317c0fb4"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Date"
-      }
-    ]
-  },
-  {
-    "@id": "_:N334b2966b9484d27be0529e4317c0fb4",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/IRI",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Nb47d384063014e0ebba8fb9b6ba1ee21"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/IRI"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb47d384063014e0ebba8fb9b6ba1ee21",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/FeatureOfInterest",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N9349e55036dc4d01ac97244ec8b9ec02"
-      },
-      {
-        "@id": "_:N17a4da17f8bd42199f6d2460dc08e692"
-      },
-      {
-        "@id": "_:N229e3af28c294ab59f3142b4d1d040e4"
-      },
-      {
-        "@id": "_:N1a859660cb6b49bbaa5a90af53fc5c63"
-      },
-      {
-        "@id": "_:N9578bc1294144984bad2682100f6881d"
-      },
-      {
-        "@id": "_:N26731d41d07f4a7eb63f41df26520482"
-      },
-      {
-        "@id": "_:Ncdb662efceb84cf1ad67364954a5d5bf"
-      },
-      {
-        "@id": "_:N718fd90c2d32484ca1f065725639b286"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "_:N9349e55036dc4d01ac97244ec8b9ec02",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "is feature of interest of"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:Nadce01039a4741ed958df0d318ad925b"
-          },
-          {
-            "@id": "_:N45414e385b3a4c0abaf4b92464914d50"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/isFeatureOfInterestOf"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nadce01039a4741ed958df0d318ad925b",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
-      }
-    ]
-  },
-  {
-    "@id": "_:N45414e385b3a4c0abaf4b92464914d50",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sampling"
-      }
-    ]
-  },
-  {
-    "@id": "_:N17a4da17f8bd42199f6d2460dc08e692",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ]
-  },
-  {
-    "@id": "_:N229e3af28c294ab59f3142b4d1d040e4",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/RDFDataset"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rdfs.org/ns/void#inDataset"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1a859660cb6b49bbaa5a90af53fc5c63",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:N9578bc1294144984bad2682100f6881d",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/featureType"
-      }
-    ]
-  },
-  {
-    "@id": "_:N26731d41d07f4a7eb63f41df26520482",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/Geometry"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has geometry"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ncdb662efceb84cf1ad67364954a5d5bf",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sample"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has sample"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/hasSample"
-      }
-    ]
-  },
-  {
-    "@id": "_:N718fd90c2d32484ca1f065725639b286",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Quadrat",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Neb37991efb564be097e6adb492e1f40c"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Quadrat"
-      }
-    ]
-  },
-  {
-    "@id": "_:Neb37991efb564be097e6adb492e1f40c",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#hasValue": [
-      {
-        "@id": "http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "feature type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/featureType"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Observation",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N2a71d558b23a4ff48f4bef910b57a1ca"
-      },
-      {
-        "@id": "_:Nb3f3326578a44ba381e737a6dc288ba0"
-      },
-      {
-        "@id": "_:Naf5b440d51fb4dd7950eb1c925fd7ee2"
-      },
-      {
-        "@id": "_:N74460b55f45c4050b867da97b2a9d5a8"
-      },
-      {
-        "@id": "_:Ned3681d678e94e68b011f38294e159e3"
-      },
-      {
-        "@id": "_:Nc6e41fdbb1864507952468bb1d76ab3e"
-      },
-      {
-        "@id": "_:Nc0936a4d4eca45668b26792436f6503a"
-      },
-      {
-        "@id": "_:N33c1a3a2f4454761a36a8dd322f33e19"
-      },
-      {
-        "@id": "_:Nabc1ebe18830464ab2bd1c36957a0683"
-      },
-      {
-        "@id": "_:N6b00ae9feac64747a0c850a33aee10e3"
-      },
-      {
-        "@id": "_:Nb68bab60a8e24927a61e51837247dad7"
-      },
-      {
-        "@id": "_:N72874294bbf947049ea144122e986a4c"
-      },
-      {
-        "@id": "_:N05d9dcb53d6c46c98670edb1ff395fa4"
-      },
-      {
-        "@id": "_:N84d2841bd11c4c09adcaaecfb7d658af"
-      },
-      {
-        "@id": "_:Nceb30e03259e4f4fa4259f8273e9a499"
-      },
-      {
-        "@id": "_:N846870fa65b24384b80506cafad38e46"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Observation"
-      }
-    ]
-  },
-  {
-    "@id": "_:N2a71d558b23a4ff48f4bef910b57a1ca",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The type of observation."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/observationType"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb3f3326578a44ba381e737a6dc288ba0",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has feature of interest"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/hasFeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "_:Naf5b440d51fb4dd7950eb1c925fd7ee2",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "type"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/type"
-      }
-    ]
-  },
-  {
-    "@id": "_:N74460b55f45c4050b867da97b2a9d5a8",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/hasSiteVisit"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ned3681d678e94e68b011f38294e159e3",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/org/Person"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "was attributed to"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRIOrLiteral"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#or": [
-      {
-        "@list": [
-          {
-            "@id": "_:N296c3ccbe3c94d939c83216408dd3a2f"
-          },
-          {
-            "@id": "_:N0fb2e397d4f949e9b3e1ba21155610c2"
-          }
-        ]
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
-      }
-    ]
-  },
-  {
-    "@id": "_:N296c3ccbe3c94d939c83216408dd3a2f",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/org/Person"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0fb2e397d4f949e9b3e1ba21155610c2",
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/org/Organization"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nc6e41fdbb1864507952468bb1d76ab3e",
+    "@id": "_:N8145664848c449a68960591a5386ef21",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -3728,10 +4358,10 @@
       {
         "@list": [
           {
-            "@id": "_:N8d59b8e8941744a6bf8b26bd7482f0cb"
+            "@id": "_:N62a1cf10152f40a698308677190bce04"
           },
           {
-            "@id": "_:N80137311e5454223b7ed46bd0c2c5eba"
+            "@id": "_:N7cc7aaa054e0451c8050a59eacbab6f9"
           }
         ]
       }
@@ -3763,7 +4393,7 @@
     ]
   },
   {
-    "@id": "_:N8d59b8e8941744a6bf8b26bd7482f0cb",
+    "@id": "_:N62a1cf10152f40a698308677190bce04",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "https://w3id.org/tern/ontologies/tern/Value"
@@ -3771,7 +4401,7 @@
     ]
   },
   {
-    "@id": "_:N80137311e5454223b7ed46bd0c2c5eba",
+    "@id": "_:N7cc7aaa054e0451c8050a59eacbab6f9",
     "http://www.w3.org/ns/shacl#class": [
       {
         "@id": "https://w3id.org/tern/ontologies/tern/Result"
@@ -3779,95 +4409,7 @@
     ]
   },
   {
-    "@id": "_:Nc0936a4d4eca45668b26792436f6503a",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "used procedure"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/usedProcedure"
-      }
-    ]
-  },
-  {
-    "@id": "_:N33c1a3a2f4454761a36a8dd322f33e19",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Instant"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "phenomenon time"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/phenomenonTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nabc1ebe18830464ab2bd1c36957a0683",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "identifier"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/identifier"
-      }
-    ]
-  },
-  {
-    "@id": "_:N6b00ae9feac64747a0c850a33aee10e3",
+    "@id": "_:Nae91c13ccfa24781b37858f013b9c1e2",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -3898,44 +4440,13 @@
     ]
   },
   {
-    "@id": "_:Nb68bab60a8e24927a61e51837247dad7",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has simple result"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKing": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/hasSimpleResult"
-      }
-    ]
-  },
-  {
-    "@id": "_:N72874294bbf947049ea144122e986a4c",
+    "@id": "_:N102414d9003646998e12b791897d5b19",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "https://w3id.org/tern/ontologies/tern/Sensor"
+        "@id": "https://w3id.org/tern/ontologies/tern/SiteVisit"
       }
     ],
     "http://www.w3.org/ns/shacl#maxCount": [
@@ -3943,11 +4454,6 @@
         "@value": 1
       }
     ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "made by sensor"
-      }
-    ],
     "http://www.w3.org/ns/shacl#nodeKind": [
       {
         "@id": "http://www.w3.org/ns/shacl#IRI"
@@ -3955,69 +4461,12 @@
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.w3.org/ns/sosa/madeBySensor"
+        "@id": "https://w3id.org/tern/ontologies/tern/hasSiteVisit"
       }
     ]
   },
   {
-    "@id": "_:N05d9dcb53d6c46c98670edb1ff395fa4",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "observed property"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/observedProperty"
-      }
-    ]
-  },
-  {
-    "@id": "_:N84d2841bd11c4c09adcaaecfb7d658af",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/Geometry"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has geometry"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nceb30e03259e4f4fa4259f8273e9a499",
+    "@id": "_:Nce8e1e8265c5439fa7ac705525be9c23",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -4048,13 +4497,13 @@
     ]
   },
   {
-    "@id": "_:N846870fa65b24384b80506cafad38e46",
+    "@id": "_:Nd9f88237de3344f1827cae1d74b7f6cf",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
-    "http://www.w3.org/ns/shacl#datatype": [
+    "http://www.w3.org/ns/shacl#description": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@value": "The type of observation."
       }
     ],
     "http://www.w3.org/ns/shacl#maxCount": [
@@ -4062,9 +4511,45 @@
         "@value": 1
       }
     ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
+        "@id": "https://w3id.org/tern/ontologies/tern/observationType"
+      }
+    ]
+  },
+  {
+    "@id": "_:N9818b2343bc84bf89a1473c66f38eed6",
+    "@type": [
+      "http://www.w3.org/ns/shacl#PropertyShape"
+    ],
+    "http://www.w3.org/ns/shacl#maxCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#minCount": [
+      {
+        "@value": 1
+      }
+    ],
+    "http://www.w3.org/ns/shacl#name": [
+      {
+        "@value": "used procedure"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#nodeKind": [
+      {
+        "@id": "http://www.w3.org/ns/shacl#IRI"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#path": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/usedProcedure"
       }
     ]
   },
@@ -4075,10 +4560,10 @@
     ],
     "http://www.w3.org/ns/shacl#property": [
       {
-        "@id": "_:N34c1f5d4f2754f189e3eb84bb714689b"
+        "@id": "_:Nb93ab72642d94efe9db102bd5b81b37d"
       },
       {
-        "@id": "_:Naeb0d4a239424dba8b0cbe2e80a54257"
+        "@id": "_:Nbed3dd241c8c4cd9a0d499e66b547915"
       }
     ],
     "http://www.w3.org/ns/shacl#targetClass": [
@@ -4088,38 +4573,7 @@
     ]
   },
   {
-    "@id": "_:N34c1f5d4f2754f189e3eb84bb714689b",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "is sample of"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/isSampleOf"
-      }
-    ]
-  },
-  {
-    "@id": "_:Naeb0d4a239424dba8b0cbe2e80a54257",
+    "@id": "_:Nb93ab72642d94efe9db102bd5b81b37d",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
@@ -4150,207 +4604,13 @@
     ]
   },
   {
-    "@id": "https://w3id.org/tern/shacl/tern/DateTime",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N7dee9ecf402d42da95766e21c6d3c1d3"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/DateTime"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7dee9ecf402d42da95766e21c6d3c1d3",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/Transect",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:Nd4dc8164b4fb40f787e76bb3cfdf8c6f"
-      },
-      {
-        "@id": "_:N8852a1bb46ba44beb0ef2e20b9130691"
-      },
-      {
-        "@id": "_:N27161064ff614849b8aa76924454c116"
-      },
-      {
-        "@id": "_:Nc084db0e870b4d12a09bb8154b1d5443"
-      },
-      {
-        "@id": "_:N5c75c04b174b4b00b4f6295aa80f20fd"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/Transect"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd4dc8164b4fb40f787e76bb3cfdf8c6f",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "transect direction"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRIOrLiteral"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/transectDirection"
-      }
-    ]
-  },
-  {
-    "@id": "_:N8852a1bb46ba44beb0ef2e20b9130691",
+    "@id": "_:Nbed3dd241c8c4cd9a0d499e66b547915",
     "@type": [
       "http://www.w3.org/ns/shacl#PropertyShape"
     ],
     "http://www.w3.org/ns/shacl#class": [
       {
-        "@id": "https://w3id.org/tern/ontologies/loc/Point"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "transect start point"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/transectStartPoint"
-      }
-    ]
-  },
-  {
-    "@id": "_:N27161064ff614849b8aa76924454c116",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/Point"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "transect end point"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/transectEndPoint"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nc084db0e870b4d12a09bb8154b1d5443",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#class": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/LineString"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "has geometry"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "_:N5c75c04b174b4b00b4f6295aa80f20fd",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#hasValue": [
-      {
-        "@id": "http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
+        "@id": "https://w3id.org/tern/ontologies/tern/FeatureOfInterest"
       }
     ],
     "http://www.w3.org/ns/shacl#minCount": [
@@ -4360,7 +4620,7 @@
     ],
     "http://www.w3.org/ns/shacl#name": [
       {
-        "@value": "feature type"
+        "@value": "is sample of"
       }
     ],
     "http://www.w3.org/ns/shacl#nodeKind": [
@@ -4370,267 +4630,7 @@
     ],
     "http://www.w3.org/ns/shacl#path": [
       {
-        "@id": "https://w3id.org/tern/ontologies/tern/featureType"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/shacl/tern/RDFDataset",
-    "@type": [
-      "http://www.w3.org/ns/shacl#NodeShape"
-    ],
-    "http://www.w3.org/ns/shacl#property": [
-      {
-        "@id": "_:N12107afa9c9b4609b71e7819fa414334"
-      },
-      {
-        "@id": "_:N52d70cc9f1004783ad3cb26cc081be94"
-      },
-      {
-        "@id": "_:N1c51da3f90834f79a541e0f615363414"
-      },
-      {
-        "@id": "_:N68b5324a66294b5bba6444461c3de7db"
-      },
-      {
-        "@id": "_:N8370e3ee9b314fc690b6616d75270c64"
-      },
-      {
-        "@id": "_:N974f927e710b4e6ea91f16e2faa6c7a8"
-      },
-      {
-        "@id": "_:N1bc63ade5e5a4f27913aaae463f87245"
-      },
-      {
-        "@id": "_:N84a46446f7034fb3a78d66cfbff77761"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#targetClass": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/tern/RDFDataset"
-      }
-    ]
-  },
-  {
-    "@id": "_:N12107afa9c9b4609b71e7819fa414334",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "A textual description of the dataset."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "description"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/description"
-      }
-    ]
-  },
-  {
-    "@id": "_:N52d70cc9f1004783ad3cb26cc081be94",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/creator"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1c51da3f90834f79a541e0f615363414",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The controlled vocabularies used in this RDF dataset."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "vocabulary"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://rdfs.org/ns/void#vocabulary"
-      }
-    ]
-  },
-  {
-    "@id": "_:N68b5324a66294b5bba6444461c3de7db",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "publisher"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/publisher"
-      }
-    ]
-  },
-  {
-    "@id": "_:N8370e3ee9b314fc690b6616d75270c64",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#date"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an xsd:date."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "issued"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/issued"
-      }
-    ]
-  },
-  {
-    "@id": "_:N974f927e710b4e6ea91f16e2faa6c7a8",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#datatype": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "The name of the dataset."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#maxCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#minCount": [
-      {
-        "@value": 1
-      }
-    ],
-    "http://www.w3.org/ns/shacl#name": [
-      {
-        "@value": "title"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/title"
-      }
-    ]
-  },
-  {
-    "@id": "_:N1bc63ade5e5a4f27913aaae463f87245",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/contributor"
-      }
-    ]
-  },
-  {
-    "@id": "_:N84a46446f7034fb3a78d66cfbff77761",
-    "@type": [
-      "http://www.w3.org/ns/shacl#PropertyShape"
-    ],
-    "http://www.w3.org/ns/shacl#description": [
-      {
-        "@value": "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal."
-      }
-    ],
-    "http://www.w3.org/ns/shacl#nodeKind": [
-      {
-        "@id": "http://www.w3.org/ns/shacl#IRI"
-      }
-    ],
-    "http://www.w3.org/ns/shacl#path": [
-      {
-        "@id": "http://purl.org/dc/terms/source"
+        "@id": "http://www.w3.org/ns/sosa/isSampleOf"
       }
     ]
   }
