@@ -1,6 +1,6 @@
 # TERN Ontology
 
-The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the exchange of ecological survey data between different systems.
+The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the representation of ecological survey data. The information model enable common structure to represent data and facilitate sharing of structured data across different systems.  
 
 Online Documentation: https://linkeddata.tern.org.au/information-models/tern-ontology
 
