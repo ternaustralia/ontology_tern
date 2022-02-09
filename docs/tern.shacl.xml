@@ -1,461 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:sh="http://www.w3.org/ns/shacl#"
 >
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/MaterialSample">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N5787efb3700247a18bb1b5cfbfe48149"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/MaterialSample"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Result">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N8bb3e3682250493393bc0ebf414d1151"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Result"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Naa5c6e2f1de84b27af9e07afdbede31f">
+  <rdf:Description rdf:nodeID="N82539e54059c41569a8b0bf05a2cb952">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>infrageneric epithet</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/infragenericEpithet"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N267ff6db91494b418ce86abcef82af95">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>taxon rank</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonRank"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf6c11367a7324b648a83b48d97b65405">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N403eaac3da4d4045b65e054d8fb42e40">
-    <rdf:first rdf:nodeID="Nfe5414a354ee4000b29e7d3ce8235fb6"/>
-    <rdf:rest rdf:nodeID="N7d2c6a06e37c43a082dd175f64cf740b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N99a883c2c4234ce195b94c30b5d7db68">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Method"/>
-    <sh:name>implements</sh:name>
+    <sh:name>was attributed to</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+    <sh:or rdf:nodeID="N794af40d14b845aca16693e62e23463e"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Taxon">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nf1304c0ec9fe4c5e9be6c815695f6369"/>
-    <sh:property rdf:nodeID="N58aed39972a64c1fab294b2126bea8e6"/>
-    <sh:property rdf:nodeID="N96cb9c9d987b4cbb93a804b9b9f256b9"/>
-    <sh:property rdf:nodeID="N0a4cea45c8614d66b2d5fb0a2a190a4f"/>
-    <sh:property rdf:nodeID="N2af893c909db460681adae0d1962b4da"/>
-    <sh:property rdf:nodeID="N77211e4a04794b0897c73e668207af14"/>
-    <sh:property rdf:nodeID="Nfbbe8e62c54343c6a93c99a24a9fa9d5"/>
-    <sh:property rdf:nodeID="Nc6428ccd9cf94253b6079dc7d7db062d"/>
-    <sh:property rdf:nodeID="Naa5c6e2f1de84b27af9e07afdbede31f"/>
-    <sh:property rdf:nodeID="N4977d6d6a895411ab71e4234dbdb5c46"/>
-    <sh:property rdf:nodeID="N27b4dc38f1344d11a8214c7cf91bc6ab"/>
-    <sh:property rdf:nodeID="N0de7eebf730541bf8b218c14d7d0fc08"/>
-    <sh:property rdf:nodeID="N7c3118a9b4b547e9bae2e4e6696e9cb5"/>
-    <sh:property rdf:nodeID="Naeb5d1ef6d024828a5471fa6476ce7c8"/>
-    <sh:property rdf:nodeID="N9dfb0f436bea4e61919e463ff86de09e"/>
-    <sh:property rdf:nodeID="N57aca906c7e04218acae2940d4084f4b"/>
-    <sh:property rdf:nodeID="N0519b236376449399ca2e57afff306a1"/>
-    <sh:property rdf:nodeID="Na478151c1e7148ff9c6f507792a52a43"/>
-    <sh:property rdf:nodeID="N3517f00dc5324a809fc5c31300e70d3e"/>
-    <sh:property rdf:nodeID="N9379b10c24544e6e9e09301ccdd42c46"/>
-    <sh:property rdf:nodeID="Ncb19eb19b0c7446fa2b85b766f91f5dd"/>
-    <sh:property rdf:nodeID="Ncb913ededeb24f3f8d08422df87a5477"/>
-    <sh:property rdf:nodeID="Ne8bdc2a9bdde4c648c9fd98754ff2a38"/>
-    <sh:property rdf:nodeID="Ncda15bbab0694dab8dba13e9ad00fa0e"/>
-    <sh:property rdf:nodeID="N4bc4ff73f9f34de8be3674d6932ecba1"/>
-    <sh:property rdf:nodeID="N51d6c71cadf249659ded746362f7ba61"/>
-    <sh:property rdf:nodeID="N8a49092f6db84bc1a29d54ce981d1d7a"/>
-    <sh:property rdf:nodeID="Nf1a0b271947344f48e404ae888dcc31b"/>
-    <sh:property rdf:nodeID="N5814b7ea22084cfb85e6d6dac0f45bf4"/>
-    <sh:property rdf:nodeID="N32cc27cfafdd4d8784c4a100e378e460"/>
-    <sh:property rdf:nodeID="N5984a91b03a44c23a620b65c0bf1f4ae"/>
-    <sh:property rdf:nodeID="Ne778e9f13cf544d38ff8611c9d089016"/>
-    <sh:property rdf:nodeID="N267ff6db91494b418ce86abcef82af95"/>
-    <sh:property rdf:nodeID="N9137d655197a470cb17452964fe8d910"/>
-    <sh:property rdf:nodeID="N4db65bae95ea47dd8521a0b2f9d53c95"/>
-    <sh:property rdf:nodeID="Nc1a9f3f7b47d4bffbcb7699588848f08"/>
-    <sh:property rdf:nodeID="N6643d1015f4c4ab39729c667b2485cec"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Taxon"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncbb6d71ca0474f688432ed712cb61582">
+  <rdf:Description rdf:nodeID="Nc4f2538575844687953773f1dc272fba">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>The type of observation.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N30ed0cc27fa44f629364332035fe5bd6">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Deployment"/>
+    <sh:name>has deployment</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/observationType"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N7bbbee5e39d248439f6f5e5d0584c3c9">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/featureType"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N62660921bb4041b28128b85bb8356482">
-    <rdf:first rdf:nodeID="Nd1baec0477e8445f998c6278f0d8f97d"/>
-    <rdf:rest rdf:nodeID="Nb70847fa3b1b4943862b9bad1c8035cb"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc6428ccd9cf94253b6079dc7d7db062d">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>higher classification</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/higherClassification"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3771ff4e1f1b4cbaacbf25261843cb1f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>result time</sh:name>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Observation">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N9abbf1ce98cf425d8a24a171cb053b7f"/>
-    <sh:property rdf:nodeID="Na0bf9b3881a14b59ac6803eb890876c5"/>
-    <sh:property rdf:nodeID="N62233f9c0b0f436badd0651fa464f360"/>
-    <sh:property rdf:nodeID="Nc2b1136db5bd4a938fe9054b2d049df3"/>
-    <sh:property rdf:nodeID="Na8eb555847c14ae88632b5d9d9243265"/>
-    <sh:property rdf:nodeID="Na292f212dddb47a4baffa8c7c76bad7d"/>
-    <sh:property rdf:nodeID="Nf50926b920a1496fa8fc5ea0bc817648"/>
-    <sh:property rdf:nodeID="Neba6cdf74f0741fbb7d6e385d559f33d"/>
-    <sh:property rdf:nodeID="N55b38b762b9a4437a2a706451eae664b"/>
-    <sh:property rdf:nodeID="N10eee181bc3946ebb8f527dfacdf2843"/>
-    <sh:property rdf:nodeID="N591729a4f3ac4656b7988314a411fc04"/>
-    <sh:property rdf:nodeID="N526156238b974558a5283df8c6aa2c20"/>
-    <sh:property rdf:nodeID="Na975c883349b4db3a3a326abcc496786"/>
-    <sh:property rdf:nodeID="N33e7f92e3bb14f04a060fbaed69646e5"/>
-    <sh:property rdf:nodeID="N2ea29cb22aa8439b904f6d2ad1c390c1"/>
-    <sh:property rdf:nodeID="Ncbb6d71ca0474f688432ed712cb61582"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Transect">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N3506ebf48ff041528c08ae5b2464441c"/>
-    <sh:property rdf:nodeID="Nf65278ca2ce54b968abbf50067d4f56a"/>
-    <sh:property rdf:nodeID="N23cd0d7752ab4225b2c3e54da8fe890a"/>
-    <sh:property rdf:nodeID="N396bd176aeca4416b78bbad6227ba64f"/>
-    <sh:property rdf:nodeID="Nf03eacc3f90d4e8397d71d13d6cfa403"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Transect"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0a8c1053f70146bdb0a9a61172fbc7b5">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/siteDescription"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N192e65a676ce461194e4026396adc37f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Geometry"/>
-    <sh:name>has geometry</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf8d25cab936f4918bd44cbf083073c1e">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/).</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/unit"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc44a9dc21ec24523a33945bf68c431e1">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
-    <sh:name>has sample</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasSample"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3e9d0271b9174d34b4d98182cc4d1eb1">
-    <rdf:first rdf:nodeID="N2ba6281f7c2845129c346fa40936495b"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N930f56330fb6410ca99f2c747a4a505a">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N10eee181bc3946ebb8f527dfacdf2843">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sensor"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>made by sensor</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N04066dfa07d942b1ba6a6b353c9c136c">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>The controlled vocabularies used in this RDF dataset.</sh:description>
-    <sh:name>vocabulary</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://rdfs.org/ns/void#vocabulary"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/System">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N8330694355294d259b723f30aaeca522"/>
-    <sh:property rdf:nodeID="N6ffdff3ed5a94c06aaede77556cda6b3"/>
-    <sh:property rdf:nodeID="Na1b34fa607634091914cacf54ff0fa4e"/>
-    <sh:property rdf:nodeID="N99a883c2c4234ce195b94c30b5d7db68"/>
-    <sh:property rdf:nodeID="N66bced5f38634e45a233912eb78119a9"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/System"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N16662db2a3764b888b57787029a154a1">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Value">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Value"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N591729a4f3ac4656b7988314a411fc04">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>observed property</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N396bd176aeca4416b78bbad6227ba64f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Point"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>transect end point</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/transectEndPoint"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2746b31180aa4e0f9a79c303042676b9">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:name>identifier</sh:name>
-    <sh:path rdf:resource="http://purl.org/dc/terms/identifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N19a8ec9905ee43f7afd948e393160faf">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>Error of measurement (±).</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
-    <sh:or rdf:nodeID="N62660921bb4041b28128b85bb8356482"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/uncertainty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0a4cea45c8614d66b2d5fb0a2a190a4f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>cultivar epithet</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/cultivarEpithet"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/RDFDataset">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nc3aa5ad868d04ebcae7940455f87fa11"/>
-    <sh:property rdf:nodeID="Nf462dc46f21540c99c1d732b2363a04f"/>
-    <sh:property rdf:nodeID="Nd1e4f8458054481a8cf103be59007e76"/>
-    <sh:property rdf:nodeID="N1ef17e84cb894389b7b622b91cc9a46a"/>
-    <sh:property rdf:nodeID="N26a405eb3cc44a6cbb6d84dfc14ea52e"/>
-    <sh:property rdf:nodeID="N4e2c33634bd6419a89e7d6d2a2e93897"/>
-    <sh:property rdf:nodeID="Nef84eca244c34f228daed166e0e2093a"/>
-    <sh:property rdf:nodeID="N04066dfa07d942b1ba6a6b353c9c136c"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6f51dd7557b543979bf64daf03650f4e">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>has result</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Site">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nfff72ffc56fc4b3ea4732143c6892c4b"/>
-    <sh:property rdf:nodeID="N4dd2e2e7e4a145f98fa02348326fc244"/>
-    <sh:property rdf:nodeID="N19174cb5cef74df38dfbff5fca02231c"/>
-    <sh:property rdf:nodeID="Nd6b7bd18fb8f4875a31f4b1490558644"/>
-    <sh:property rdf:nodeID="Ndf43d366260a421abc04873a82241f41"/>
-    <sh:property rdf:nodeID="N054f9e13e4d044b5b03fdec1b76026a4"/>
-    <sh:property rdf:nodeID="Nca1094de3bcc4a67ae64cb3bea79d628"/>
-    <sh:property rdf:nodeID="Na4a60b27f3664851aa69aa6a76b69672"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Instant">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N029e5e5022944b508f63a038f4b32299"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Instant"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/ObservationCollection">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N5155129467a34ecda88d8c32a87df49f"/>
-    <sh:property rdf:nodeID="N29b9172f11bf4599bd3d98d19280bcc9"/>
-    <sh:property rdf:nodeID="Nefd8da9368e240b9b6516af8ac481290"/>
-    <sh:property rdf:nodeID="N07233860299e4300a5073874e70304e6"/>
-    <sh:property rdf:nodeID="Nea14c1a761584d1e8609baada83fff32"/>
-    <sh:property rdf:nodeID="Nda01739ec0a645f6bdc50e0486356217"/>
-    <sh:property rdf:nodeID="N1ca2d659218446a89cf81eea398be80e"/>
-    <sh:property rdf:nodeID="Ndbce29c46ab64654ba4dc1368f5c3827"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/ObservationCollection"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8a49092f6db84bc1a29d54ce981d1d7a">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>scientific name ID</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/scientificNameID"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0054f21efcc44517b33819d043ce1002">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasObservation"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncb19eb19b0c7446fa2b85b766f91f5dd">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>original name usage ID</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/originalNameUsageID"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9f6383a47822424488d443d183427c2a">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
-    <sh:name>made sampling</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeSampling"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N12e1dc0c5f4b426698ea7586bb0e5ab6">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
-    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8bb3e3682250493393bc0ebf414d1151">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>is result of</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:or rdf:nodeID="N497dd9aecb744e3da3d097526577d872"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N79347748d0204620b47cdfcc0e21352b">
-    <rdf:first rdf:nodeID="Nefdac6e5c9c64660b255c6c773c02d3d"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5c8524ea77f4405ca6bb62b0730079a1">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:or rdf:nodeID="N408af2b7a75d4a6cb57c558b7aba0cca"/>
-    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N817f2a67435b480ab9b28c3a1b15ae14">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/).</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/unit"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nefd8da9368e240b9b6516af8ac481290">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
-    <sh:description>link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N706be0ac98b7490d8522d7fd8d0f9b73">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Person"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Float">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N12e1dc0c5f4b426698ea7586bb0e5ab6"/>
-    <sh:property rdf:nodeID="N85ec17a4aec64abbabb91d25647572e8"/>
-    <sh:property rdf:nodeID="Nf8d25cab936f4918bd44cbf083073c1e"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Float"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na975c883349b4db3a3a326abcc496786">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>result time</sh:name>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na0bf9b3881a14b59ac6803eb890876c5">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>type</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Neaf96550fce34d32b9bef1f3cef6eb3e">
-    <rdf:first rdf:nodeID="Nf7e18862745141999a2d33b06cee1fde"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Sampling">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N4f6f4562eb614648b9b64427b0200a65"/>
-    <sh:property rdf:nodeID="Nd84c2b6943344a9495ae62030c559590"/>
-    <sh:property rdf:nodeID="N060cbf0538dc48eebf3a16a1f870e386"/>
-    <sh:property rdf:nodeID="N8e155f823e0449b6a13ebd165eab7bb4"/>
-    <sh:property rdf:nodeID="Nf1b25a6f52594b3ea988c69b8f622ce6"/>
-    <sh:property rdf:nodeID="N6f51dd7557b543979bf64daf03650f4e"/>
-    <sh:property rdf:nodeID="Nd597a4e6fe6a40ac977dcba9ca63611b"/>
-    <sh:property rdf:nodeID="N3771ff4e1f1b4cbaacbf25261843cb1f"/>
-    <sh:property rdf:nodeID="Neabdd0db44f444aa9a44301c538303c4"/>
-    <sh:property rdf:nodeID="N395c15e02463443a9c0f2bd3c6f0e048"/>
-    <sh:property rdf:nodeID="N2c672555e5bb405486bd7738e3006948"/>
-    <sh:property rdf:nodeID="Ndd72c018bd6840fabad55eea125bdb0c"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/SiteVisit">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N2746b31180aa4e0f9a79c303042676b9"/>
-    <sh:property rdf:nodeID="N2b678f58679741b1b5cc58f95aa5179b"/>
-    <sh:property rdf:nodeID="N805500188b7f4c81b1f563260e0b58ed"/>
-    <sh:property rdf:nodeID="Nbc2b7d77ad7c43438dc38d8821d6ff34"/>
-    <sh:property rdf:nodeID="Nfe9f4fc948e74dfabfc545f735aece40"/>
-    <sh:property rdf:nodeID="N0054f21efcc44517b33819d043ce1002"/>
-    <sh:property rdf:nodeID="Necb8108e44b24ae38ad0ec509b34a9af"/>
-    <sh:property rdf:nodeID="Ncbb2d065b608427f8cb754a8f1ce261a"/>
-    <sh:property rdf:nodeID="Nc6c23285f25d426481a4ffbcd83f3faa"/>
-    <sh:property rdf:nodeID="N6b91661a54e245138dee177a2afc906c"/>
-    <sh:property rdf:nodeID="N0a8c1053f70146bdb0a9a61172fbc7b5"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4f6f4562eb614648b9b64427b0200a65">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>type</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na4a60b27f3664851aa69aa6a76b69672">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/siteDescription"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0de7eebf730541bf8b218c14d7d0fc08">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nameAccordingTo"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndf43d366260a421abc04873a82241f41">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/locationDescription"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Distribution">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Distribution"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2b678f58679741b1b5cc58f95aa5179b">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>type</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N805500188b7f4c81b1f563260e0b58ed">
+  <rdf:Description rdf:nodeID="N229e3af28c294ab59f3142b4d1d040e4">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -463,59 +30,117 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="http://rdfs.org/ns/void#inDataset"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4897109efaee4e5a84fbdeb386d3d1cc">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na292f212dddb47a4baffa8c7c76bad7d">
+  <rdf:Description rdf:nodeID="N546ef660504843e68cf4c54101472271">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Person"/>
-    <sh:name>was attributed to</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRIOrLiteral"/>
-    <sh:or rdf:nodeID="N3f833c03eb9e41089e781058a35a3775"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9137d655197a470cb17452964fe8d910">
+  <rdf:Description rdf:nodeID="N1a859660cb6b49bbaa5a90af53fc5c63">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonRemarks"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:name>identifier</sh:name>
+    <sh:path rdf:resource="http://purl.org/dc/terms/identifier"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/ManagedFeature">
+  <rdf:Description rdf:nodeID="Ncdb662efceb84cf1ad67364954a5d5bf">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
+    <sh:name>has sample</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasSample"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2f6f7c70c60a41fda84711e51064c2b7">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampler"/>
+    <sh:description>Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it.</sh:description>
+    <sh:name>made by sampler</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeBySampler"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N646db317ee4f41aca65e44a39adaebc2">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasObservation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/DateTime">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nd2c87e249925417fac1fa14503a0b0db"/>
-    <sh:property rdf:nodeID="Nf64b1aa791c74c54a5974c540453386b"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/ManagedFeature"/>
+    <sh:property rdf:nodeID="N7dee9ecf402d42da95766e21c6d3c1d3"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/DateTime"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncbb4fcaa88e345c4b8b7a8d61020a16f">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Sampling">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Ndc84205e319444898d62bfb0f7979914"/>
+    <sh:property rdf:nodeID="N546ef660504843e68cf4c54101472271"/>
+    <sh:property rdf:nodeID="N4faa9e807f5a41bcbc40d5f1281ad7fd"/>
+    <sh:property rdf:nodeID="N56193135168d4074a48632c04c6b255f"/>
+    <sh:property rdf:nodeID="N2f6f7c70c60a41fda84711e51064c2b7"/>
+    <sh:property rdf:nodeID="N7ddb0be3d1324fa29dcb0aa4a4781262"/>
+    <sh:property rdf:nodeID="N45c888b1d3df49b695a02124b8324616"/>
+    <sh:property rdf:nodeID="N6f2bb5690b1a4a4e8915298e3e946af5"/>
+    <sh:property rdf:nodeID="N3ffa387db1c34d2fa4a91be7d642f943"/>
+    <sh:property rdf:nodeID="N9aeb3fc671a54517ad3d020e2ecd9005"/>
+    <sh:property rdf:nodeID="N82539e54059c41569a8b0bf05a2cb952"/>
+    <sh:property rdf:nodeID="Nac32c664c2a7404fa512b719eef75c11"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf1b25a6f52594b3ea988c69b8f622ce6">
+  <rdf:Description rdf:nodeID="Nb4a7991d14e344e39c55b2c92cecd610">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+    <sh:name>accepted name usage ID</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/acceptedNameUsageID"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Sampler">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Nea0b6080dded4c029abafafbada5ae9d"/>
+    <sh:property rdf:nodeID="Nb1b0a3f016e34358bf13974065d55fa3"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Sampler"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c51da3f90834f79a541e0f615363414">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>The controlled vocabularies used in this RDF dataset.</sh:description>
+    <sh:name>vocabulary</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://rdfs.org/ns/void#vocabulary"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3f0d31e54e934415bc035299f1660915">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>name according to ID</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nameAccordingToID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N46ee04e43c4c4480b8823f072aa89ef2">
+    <rdf:first rdf:nodeID="N8d59b8e8941744a6bf8b26bd7482f0cb"/>
+    <rdf:rest rdf:nodeID="N4df2cd063cc14e2d8cd01f72790f4eff"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84a46446f7034fb3a78d66cfbff77761">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal.</sh:description>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/source"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2a71d558b23a4ff48f4bef910b57a1ca">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>The type of observation.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/observationType"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6b00ae9feac64747a0c850a33aee10e3">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>has feature of interest</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <sh:path rdf:resource="http://rdfs.org/ns/void#inDataset"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf1a0b271947344f48e404ae888dcc31b">
+  <rdf:Description rdf:nodeID="N27161064ff614849b8aa76924454c116">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/specificEpithet"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ned82dccc10b4451d846a32ecb9b39992">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>is feature of interest of</sh:name>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Point"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>transect end point</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:or rdf:nodeID="N18fa2113617243e58046e5fcf82d8149"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/transectEndPoint"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndbce29c46ab64654ba4dc1368f5c3827">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>used procedure</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nde930ebf36434b04acdce5c8a2e8ba4b">
+  <rdf:Description rdf:nodeID="N34c1f5d4f2754f189e3eb84bb714689b">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
@@ -523,160 +148,28 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="http://www.w3.org/ns/sosa/isSampleOf"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N5787efb3700247a18bb1b5cfbfe48149">
+  <rdf:Description rdf:nodeID="N72874294bbf947049ea144122e986a4c">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/materialSampleID"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5155129467a34ecda88d8c32a87df49f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
-    <sh:description>A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled.</sh:description>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sensor"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>has feature of interest</sh:name>
+    <sh:name>made by sensor</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N931f2010441240519cbe8ccb44e1cc49">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasAttribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1d3b64ede3174e8cae6a357234021f8a">
-    <rdf:first rdf:nodeID="Nfda439df0f184d41a934a15ca0ce9074"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N85ec17a4aec64abbabb91d25647572e8">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-    <sh:description>Error of measurement (±).</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/uncertainty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1ef17e84cb894389b7b622b91cc9a46a">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <sh:description>Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an xsd:date.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>issued</sh:name>
-    <sh:path rdf:resource="http://purl.org/dc/terms/issued"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Attribute">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nef12fc2a0f4741cd9a9e6cb2a3e7e659"/>
-    <sh:property rdf:nodeID="N12705eb44eae4aed95d526af5c55c1f8"/>
-    <sh:property rdf:nodeID="N1d0e9babe4a444cdb9ec48bc3043a71e"/>
-    <sh:property rdf:nodeID="Ncd055ac25fc347a3aa949a4f509a8605"/>
-    <sh:property rdf:nodeID="N6c03b5f7386647d3b0c1739ab1e6c357"/>
-    <sh:property rdf:nodeID="N02a444e194ae48d2950d4b7fc45454fb"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf65e80c663324f109a632dd12e04053d">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N19174cb5cef74df38dfbff5fca02231c">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/dimension"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Sample">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nebd51239745d41cdb2e24ad0fafef3b5"/>
-    <sh:property rdf:nodeID="Nde930ebf36434b04acdce5c8a2e8ba4b"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na1b34fa607634091914cacf54ff0fa4e">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Deployment"/>
-    <sh:name>has deployment</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nebd51239745d41cdb2e24ad0fafef3b5">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>is result of</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nea14c1a761584d1e8609baada83fff32">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>observed property</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf3a3ce7f1557465398e72dda331f4753">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:hasValue rdf:resource="http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>feature type</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/featureType"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7d2c6a06e37c43a082dd175f64cf740b">
-    <rdf:first rdf:nodeID="Nd51d62e41b614c1791744d7ac8604cd0"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nca1094de3bcc4a67ae64cb3bea79d628">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Polygon"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/polygon"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3e182cd56adc4aaf806607957ed3ff7f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Dataset">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Na9a9a001420e4e8bb558e51c669a4cb0"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Dataset"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndd72c018bd6840fabad55eea125bdb0c">
+  <rdf:Description rdf:nodeID="N56193135168d4074a48632c04c6b255f">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <sh:name>identifier</sh:name>
     <sh:path rdf:resource="http://purl.org/dc/terms/identifier"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc4aab922360044f48b6fca804c28b84a">
-    <rdf:first rdf:nodeID="N95ded9c4366f4f6a80451a07b8aca53e"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc2b1136db5bd4a938fe9054b2d049df3">
+  <rdf:Description rdf:nodeID="N68b5324a66294b5bba6444461c3de7db">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Geometry"/>
-    <sh:name>has geometry</sh:name>
+    <sh:description>An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal.</sh:description>
+    <sh:name>publisher</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/publisher"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N054f9e13e4d044b5b03fdec1b76026a4">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/locationProcedure"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd6b7bd18fb8f4875a31f4b1490558644">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSiteVisit"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd1e4f8458054481a8cf103be59007e76">
+  <rdf:Description rdf:nodeID="N12107afa9c9b4609b71e7819fa414334">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <sh:description>A textual description of the dataset.</sh:description>
@@ -685,15 +178,73 @@
     <sh:name>description</sh:name>
     <sh:path rdf:resource="http://purl.org/dc/terms/description"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nda01739ec0a645f6bdc50e0486356217">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Instant"/>
-    <sh:description>The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>phenomenon time</sh:name>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Sample">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N34c1f5d4f2754f189e3eb84bb714689b"/>
+    <sh:property rdf:nodeID="Naeb0d4a239424dba8b0cbe2e80a54257"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na9a9a001420e4e8bb558e51c669a4cb0">
+  <rdf:Description rdf:nodeID="Ned3681d678e94e68b011f38294e159e3">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Person"/>
+    <sh:name>was attributed to</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRIOrLiteral"/>
+    <sh:or rdf:nodeID="Ne7ab0f1f5f2f43b2b161a259bfe2cfc9"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66178fc0e93046b7bfc86ed8bbc940fa">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/dateCommissioned"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Observation">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N2a71d558b23a4ff48f4bef910b57a1ca"/>
+    <sh:property rdf:nodeID="Nb3f3326578a44ba381e737a6dc288ba0"/>
+    <sh:property rdf:nodeID="Naf5b440d51fb4dd7950eb1c925fd7ee2"/>
+    <sh:property rdf:nodeID="N74460b55f45c4050b867da97b2a9d5a8"/>
+    <sh:property rdf:nodeID="Ned3681d678e94e68b011f38294e159e3"/>
+    <sh:property rdf:nodeID="Nc6e41fdbb1864507952468bb1d76ab3e"/>
+    <sh:property rdf:nodeID="Nc0936a4d4eca45668b26792436f6503a"/>
+    <sh:property rdf:nodeID="N33c1a3a2f4454761a36a8dd322f33e19"/>
+    <sh:property rdf:nodeID="Nabc1ebe18830464ab2bd1c36957a0683"/>
+    <sh:property rdf:nodeID="N6b00ae9feac64747a0c850a33aee10e3"/>
+    <sh:property rdf:nodeID="Nb68bab60a8e24927a61e51837247dad7"/>
+    <sh:property rdf:nodeID="N72874294bbf947049ea144122e986a4c"/>
+    <sh:property rdf:nodeID="N05d9dcb53d6c46c98670edb1ff395fa4"/>
+    <sh:property rdf:nodeID="N84d2841bd11c4c09adcaaecfb7d658af"/>
+    <sh:property rdf:nodeID="Nceb30e03259e4f4fa4259f8273e9a499"/>
+    <sh:property rdf:nodeID="N846870fa65b24384b80506cafad38e46"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N545c584f8be141fca37cbefc655d7667">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>in XSDDate time stamp</sh:name>
+    <sh:or rdf:nodeID="N464e37da04d44c73b45fef1ec9173a60"/>
+    <sh:path rdf:resource="http://www.w3.org/2006/time#inXSDDateTimeStamp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1a4f1e0915974985ad365f456000ce7c">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>taxon ID</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N296c3ccbe3c94d939c83216408dd3a2f">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfbcb2e1a028940dbaa1091b46629f7e2">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>Link to a member of a collection of observations that share the same value for one or more of the characteristic properties.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>has member</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:or rdf:nodeID="N2a1837d7254545a8988c286e431b299b"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasMember"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2aba70d4d1ef46ddb1e380ae91d9cb84">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Distribution"/>
     <sh:description>An available distribution of the dataset.</sh:description>
@@ -701,46 +252,346 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="http://www.w3.org/ns/dcat#distribution"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na8eb555847c14ae88632b5d9d9243265">
+  <rdf:Description rdf:nodeID="Na04ae38f0f04400ca442a8ec439a4768">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    <sh:description>A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.</sh:description>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>used procedure</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf65278ca2ce54b968abbf50067d4f56a">
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Transect">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Nd4dc8164b4fb40f787e76bb3cfdf8c6f"/>
+    <sh:property rdf:nodeID="N8852a1bb46ba44beb0ef2e20b9130691"/>
+    <sh:property rdf:nodeID="N27161064ff614849b8aa76924454c116"/>
+    <sh:property rdf:nodeID="Nc084db0e870b4d12a09bb8154b1d5443"/>
+    <sh:property rdf:nodeID="N5c75c04b174b4b00b4f6295aa80f20fd"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Transect"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N49e5ca03db864353a70f859ddab69a73">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:hasValue rdf:resource="http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Method"/>
+    <sh:name>implements</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Taxon">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Ndb1d02b56ceb4bf2a13d26e07ea34fee"/>
+    <sh:property rdf:nodeID="N78360f4fc50046d69258a15fd16b1e95"/>
+    <sh:property rdf:nodeID="Ncee684ce5d784e5786c9bfd1c6eee098"/>
+    <sh:property rdf:nodeID="Nffc4dafd3e824ad6a5bebce14d600261"/>
+    <sh:property rdf:nodeID="N223fe3a6ebaf4924b4a475e06915184d"/>
+    <sh:property rdf:nodeID="N3f0d31e54e934415bc035299f1660915"/>
+    <sh:property rdf:nodeID="Nf3f9fd3083f845229565f966548f8b86"/>
+    <sh:property rdf:nodeID="N90726a6cd339475ba2297d2c82477599"/>
+    <sh:property rdf:nodeID="N66137dba7fe24ea0bbf2e27fe3859712"/>
+    <sh:property rdf:nodeID="N8ec656d7c3794dc8aca1d0a464d6cee8"/>
+    <sh:property rdf:nodeID="N7473eef6b3a240cfbad07f2ea8d18645"/>
+    <sh:property rdf:nodeID="N367d3d9e4b534ebcb65dd80bb5cefefb"/>
+    <sh:property rdf:nodeID="N1a4f1e0915974985ad365f456000ce7c"/>
+    <sh:property rdf:nodeID="Ne2c2607be8634dc4bfed2787c9d64a6b"/>
+    <sh:property rdf:nodeID="Ncd0efa4a032840c1a83179c61cf6de24"/>
+    <sh:property rdf:nodeID="N7bb50a806610428d9c3295b272be249e"/>
+    <sh:property rdf:nodeID="N29df562fc4804a9d80386a3544a6708c"/>
+    <sh:property rdf:nodeID="N50e21e05fcd84b4698ffaa4627824121"/>
+    <sh:property rdf:nodeID="N66ff7e23d96a453ea977de2e569450a4"/>
+    <sh:property rdf:nodeID="N18e26e1b15374cd6b8e9c125b00e7704"/>
+    <sh:property rdf:nodeID="Ne6a0d3b46f15427792a2a41a6256f700"/>
+    <sh:property rdf:nodeID="Nedf1d4d210ce4d8a9f8da7ecf869cc2b"/>
+    <sh:property rdf:nodeID="Nb4a7991d14e344e39c55b2c92cecd610"/>
+    <sh:property rdf:nodeID="N4f0c724291fd4ee890cd281f4ff9f9fc"/>
+    <sh:property rdf:nodeID="N074d37b5f7784542a21136ee5b0ed003"/>
+    <sh:property rdf:nodeID="N7746124bf09f45dab1df9446697a3ece"/>
+    <sh:property rdf:nodeID="N15008be9796a4ec0a95bd87fc57d9e7b"/>
+    <sh:property rdf:nodeID="N5c0df28cc3d14063a973b8cad500a924"/>
+    <sh:property rdf:nodeID="Nd801936d69ca4912b8c79e0dc5a53edf"/>
+    <sh:property rdf:nodeID="Ne8316f5979cd460d839cd00b7bb0d9f2"/>
+    <sh:property rdf:nodeID="Nc4f2538575844687953773f1dc272fba"/>
+    <sh:property rdf:nodeID="N62d14251b4784e53b6408a7f72afac5e"/>
+    <sh:property rdf:nodeID="N3cf9b3f10ff843b9833cbad2055bb3c9"/>
+    <sh:property rdf:nodeID="N1919ef19e95543a5bb229daa64f04962"/>
+    <sh:property rdf:nodeID="N0e583468b20941f3a37689361e93cfc0"/>
+    <sh:property rdf:nodeID="N725071c0d96a4c339d02efd753150893"/>
+    <sh:property rdf:nodeID="N75ecdcc0201d43fba09f0311685da9a0"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Taxon"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nde19d962360c4233bee8858c82352c62">
+    <rdf:first rdf:nodeID="N75b885634ebe4babb350b4b1efa6a8c6"/>
+    <rdf:rest rdf:nodeID="N5ba5a47ebf054d83ae1365601ee72eee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Neb37991efb564be097e6adb492e1f40c">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:hasValue rdf:resource="http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
     <sh:name>feature type</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/featureType"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf00481bb7c0f495aab65d442d92621d9">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9868c7ce3d254795866a06b7a3ea758d">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>The direct link to the value either as an IRI or an RDF literal. The simple value is always equivalent to the value captured in rdf:value of the tern:Value instance.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>has simple value</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRIOrLiteral"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSimpleValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N15008be9796a4ec0a95bd87fc57d9e7b">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/scientificNameAuthorship"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N59b12529456d4539869200882c2c6441">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of attributes at [http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924](http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924).</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc6e41fdbb1864507952468bb1d76ab3e">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:and rdf:nodeID="N46ee04e43c4c4480b8823f072aa89ef2"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>has result</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne6a0d3b46f15427792a2a41a6256f700">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonConceptID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nadce01039a4741ed958df0d318ad925b">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Integer">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N3e182cd56adc4aaf806607957ed3ff7f"/>
-    <sh:property rdf:nodeID="N19a8ec9905ee43f7afd948e393160faf"/>
-    <sh:property rdf:nodeID="N817f2a67435b480ab9b28c3a1b15ae14"/>
+    <sh:property rdf:nodeID="N3c7495f6b1594d83969dbd9c760f0db0"/>
+    <sh:property rdf:nodeID="N805ea99be8624b58b29589b637c52b75"/>
+    <sh:property rdf:nodeID="Nf00481bb7c0f495aab65d442d92621d9"/>
     <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Integer"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N395c15e02463443a9c0f2bd3c6f0e048">
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Instant">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N545c584f8be141fca37cbefc655d7667"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Instant"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N97351086031e4501bc6230cf0db6a5b3">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSampling"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N26731d41d07f4a7eb63f41df26520482">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Geometry"/>
+    <sh:name>has geometry</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ccc78e4497946a78bebb0604530a978">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/ObservationCollection">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N8c8bdcaa8e1940e19f0139fe6712e45d"/>
+    <sh:property rdf:nodeID="N856a718caa7f468aac061d8f417a30c4"/>
+    <sh:property rdf:nodeID="Na04ae38f0f04400ca442a8ec439a4768"/>
+    <sh:property rdf:nodeID="Nfbcb2e1a028940dbaa1091b46629f7e2"/>
+    <sh:property rdf:nodeID="N4cd666b36d5644cca9e7c2dea625f00e"/>
+    <sh:property rdf:nodeID="N0a4a93e40e7f4a9d99007c15ab53b469"/>
+    <sh:property rdf:nodeID="N51b7daca1fce444eac2faad859923ddc"/>
+    <sh:property rdf:nodeID="N11836b0a5edb4e8f8dc48175aceb8ddf"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/ObservationCollection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Value">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Value"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/System">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N3a9088df3fe44c14b0ac6486ed366c7a"/>
+    <sh:property rdf:nodeID="Nd96b689f4946482b947a690fdaa1f1a1"/>
+    <sh:property rdf:nodeID="N54d8c88ddfdb4a7ab79e72d3bfc4f31a"/>
+    <sh:property rdf:nodeID="N49e5ca03db864353a70f859ddab69a73"/>
+    <sh:property rdf:nodeID="N30ed0cc27fa44f629364332035fe5bd6"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/System"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5b2ae96f6d2046c58c9ed80f7e4f0b3d">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncee684ce5d784e5786c9bfd1c6eee098">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>taxon rank</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonRank"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N56dac2984757469684a1f618bfb08255">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:or rdf:nodeID="Nde19d962360c4233bee8858c82352c62"/>
+    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0936a4d4eca45668b26792436f6503a">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>used procedure</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0760ae93d068424392e8d9fd6d57f9b2">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3ffa387db1c34d2fa4a91be7d642f943">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>The type of sampling act.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSiteVisit"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/samplingType"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne8bdc2a9bdde4c648c9fd98754ff2a38">
+  <rdf:Description rdf:nodeID="N846870fa65b24384b80506cafad38e46">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>parent name usage ID</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/parentNameUsageID"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Boolean">
+  <rdf:Description rdf:nodeID="N45414e385b3a4c0abaf4b92464914d50">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Site">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N6409225769ce4249a44105ea670f1a90"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Boolean"/>
+    <sh:property rdf:nodeID="N480ef6f513aa4c32a2cad8f11f933329"/>
+    <sh:property rdf:nodeID="N5b2ae96f6d2046c58c9ed80f7e4f0b3d"/>
+    <sh:property rdf:nodeID="Neb8baa883447428b86c417a3b2fc7087"/>
+    <sh:property rdf:nodeID="N9f7737170e5b4cb1a925ddc56c239a9f"/>
+    <sh:property rdf:nodeID="N7ea1a785a1aa4ee386b2a8ee04c59ab6"/>
+    <sh:property rdf:nodeID="N7f346dd9d6ad47fb8e6173cc5c3cddea"/>
+    <sh:property rdf:nodeID="Nac8856347a8b4af7b8c261b93ee0a782"/>
+    <sh:property rdf:nodeID="Na7dd37f07e91472cb6a21d3be1bc8f93"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nef84eca244c34f228daed166e0e2093a">
+  <rdf:Description rdf:nodeID="Na7dd37f07e91472cb6a21d3be1bc8f93">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/locationDescription"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d150da50d754934a802f69078ffad95">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2a1837d7254545a8988c286e431b299b">
+    <rdf:first rdf:nodeID="N518ec177a267491899a7c7e533f93ef0"/>
+    <rdf:rest rdf:nodeID="Nd7a801f91e754f5ab7aa2d88eac0cdda"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1d8bd33b5d7f48869313284d06602e15">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/siteDescription"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N19d0ab8c459345da931d41be957fee0a">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute).</sh:description>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/isAttributeOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naeb0d4a239424dba8b0cbe2e80a54257">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>is result of</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N219d79f55d6040e79987c75a746c3a3a">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <sh:description>Error of measurement (±).</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/uncertainty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na1db353f445844df8d919d6eeda3cbe0">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/locationDescription"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N464e37da04d44c73b45fef1ec9173a60">
+    <rdf:first rdf:nodeID="N6565d4f3a9714756a94fbd52d317c6e9"/>
+    <rdf:rest rdf:nodeID="N2f08a71728144a3eb7b2353d66549ecb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N91cda48381f44d48b3bd1f610d1192f4">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>type</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Dataset">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N2aba70d4d1ef46ddb1e380ae91d9cb84"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/FeatureOfInterest">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N9349e55036dc4d01ac97244ec8b9ec02"/>
+    <sh:property rdf:nodeID="N17a4da17f8bd42199f6d2460dc08e692"/>
+    <sh:property rdf:nodeID="N229e3af28c294ab59f3142b4d1d040e4"/>
+    <sh:property rdf:nodeID="N1a859660cb6b49bbaa5a90af53fc5c63"/>
+    <sh:property rdf:nodeID="N9578bc1294144984bad2682100f6881d"/>
+    <sh:property rdf:nodeID="N26731d41d07f4a7eb63f41df26520482"/>
+    <sh:property rdf:nodeID="Ncdb662efceb84cf1ad67364954a5d5bf"/>
+    <sh:property rdf:nodeID="N718fd90c2d32484ca1f065725639b286"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0a4a93e40e7f4a9d99007c15ab53b469">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+    <sh:description>A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>has feature of interest</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd4dc8164b4fb40f787e76bb3cfdf8c6f">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>transect direction</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRIOrLiteral"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/transectDirection"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5ba5a47ebf054d83ae1365601ee72eee">
+    <rdf:first rdf:nodeID="N859787531e5a4e8fac62c07323748b4b"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6f2bb5690b1a4a4e8915298e3e946af5">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>used procedure</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N974f927e710b4e6ea91f16e2faa6c7a8">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <sh:description>The name of the dataset.</sh:description>
@@ -749,28 +600,114 @@
     <sh:name>title</sh:name>
     <sh:path rdf:resource="http://purl.org/dc/terms/title"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Neba6cdf74f0741fbb7d6e385d559f33d">
+  <rdf:Description rdf:nodeID="Ndd2f50c1d3e84b7eb585c0f1f7130d8c">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:and rdf:nodeID="Nbcacb7d8b88b44b2942a8193e5481588"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/System"/>
+    <sh:name>deployed system</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/ssn/deployedSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0e583468b20941f3a37689361e93cfc0">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/phylum"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb47d384063014e0ebba8fb9b6ba1ee21">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>has result</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfb5a64bf40a84644ac4d43678c393455">
+  <rdf:Description rdf:nodeID="N3c7495f6b1594d83969dbd9c760f0db0">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
+    <sh:description>Error of measurement (±).</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://rdfs.org/ns/void#inDataset"/>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+    <sh:or rdf:nodeID="Na161d55e134f4f32b7659bfbb2adf51c"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/uncertainty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N27b4dc38f1344d11a8214c7cf91bc6ab">
+  <rdf:Description rdf:nodeID="Nf3f9fd3083f845229565f966548f8b86">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/kingdom"/>
+    <sh:name>original name usage</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/originalNameUsage"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N159efd2b67c5466ab56e94efbd6c1357">
+  <rdf:Description rdf:nodeID="Nd96b689f4946482b947a690fdaa1f1a1">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Platform"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>is hosted by</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N51b7daca1fce444eac2faad859923ddc">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sensor"/>
+    <sh:description>Relation between an Observation and the Sensor which made the Observations.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>made by sensor</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne6af8bd6747143049f19606bfa861bac">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded.</sh:description>
+    <sh:name>type</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8f6fca25d04840f59e5100bdec987f9e">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/dateDecommissioned"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nffc4dafd3e824ad6a5bebce14d600261">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/infraspecificEpithet"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Deployment">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Nd36a10c373c749dda8917a09f3f9b861"/>
+    <sh:property rdf:nodeID="Ndd2f50c1d3e84b7eb585c0f1f7130d8c"/>
+    <sh:property rdf:nodeID="Nb5c4cf1554204838a64d13fc74509069"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Deployment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1919ef19e95543a5bb229daa64f04962">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>scientific name ID</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/scientificNameID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1bc63ade5e5a4f27913aaae463f87245">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal.</sh:description>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/contributor"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd36a10c373c749dda8917a09f3f9b861">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/ManagedFeature">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N66178fc0e93046b7bfc86ed8bbc940fa"/>
+    <sh:property rdf:nodeID="N8f6fca25d04840f59e5100bdec987f9e"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/ManagedFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f4ca284e28042978c6ef5e1196d43eb">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>ended at time</sh:name>
+    <sh:path rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Result">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Nc4eab0f89ee645b9a9db47c229fd0461"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Result"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb5c4cf1554204838a64d13fc74509069">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Platform"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -778,25 +715,144 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="http://www.w3.org/ns/ssn/deployedOnPlatform"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/FeatureOfInterest">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N9a6a70a818e842d0bd155c2a6e3a5359"/>
-    <sh:property rdf:nodeID="N0ff1e3d541ef4ac8b1e41d9515a15234"/>
-    <sh:property rdf:nodeID="Nfb5a64bf40a84644ac4d43678c393455"/>
-    <sh:property rdf:nodeID="N192e65a676ce461194e4026396adc37f"/>
-    <sh:property rdf:nodeID="N67aa1c0df8a84aefb04e14d39b066756"/>
-    <sh:property rdf:nodeID="Nc44a9dc21ec24523a33945bf68c431e1"/>
-    <sh:property rdf:nodeID="Ned82dccc10b4451d846a32ecb9b39992"/>
-    <sh:property rdf:nodeID="N7bbbee5e39d248439f6f5e5d0584c3c9"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+  <rdf:Description rdf:nodeID="N5c75c04b174b4b00b4f6295aa80f20fd">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:hasValue rdf:resource="http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>feature type</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/featureType"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N060cbf0538dc48eebf3a16a1f870e386">
+  <rdf:Description rdf:nodeID="N0fb2e397d4f949e9b3e1ba21155610c2">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N62572271ca504fcea8cfd9ea79899bbf">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://rdfs.org/ns/void#inDataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66ff7e23d96a453ea977de2e569450a4">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>vernacular name</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/vernacularName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N334b2966b9484d27be0529e4317c0fb4">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac32c664c2a7404fa512b719eef75c11">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>result time</sh:name>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N11836b0a5edb4e8f8dc48175aceb8ddf">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>observed property</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Float">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Nc9ff0cf588d9463a85647db37cb0237c"/>
+    <sh:property rdf:nodeID="N932558cc1cbc4000831b55c27e3e096f"/>
+    <sh:property rdf:nodeID="N219d79f55d6040e79987c75a746c3a3a"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N05d9dcb53d6c46c98670edb1ff395fa4">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>observed property</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N718fd90c2d32484ca1f065725639b286">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:path rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncbb2d065b608427f8cb754a8f1ce261a">
+  <rdf:Description rdf:nodeID="N74460b55f45c4050b867da97b2a9d5a8">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSiteVisit"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7ddb0be3d1324fa29dcb0aa4a4781262">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSiteVisit"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7ea1a785a1aa4ee386b2a8ee04c59ab6">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>sf within</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#sfWithin"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb1d02b56ceb4bf2a13d26e07ea34fee">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>subfamily</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/subfamily"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/RDFDataset">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N12107afa9c9b4609b71e7819fa414334"/>
+    <sh:property rdf:nodeID="N52d70cc9f1004783ad3cb26cc081be94"/>
+    <sh:property rdf:nodeID="N1c51da3f90834f79a541e0f615363414"/>
+    <sh:property rdf:nodeID="N68b5324a66294b5bba6444461c3de7db"/>
+    <sh:property rdf:nodeID="N8370e3ee9b314fc690b6616d75270c64"/>
+    <sh:property rdf:nodeID="N974f927e710b4e6ea91f16e2faa6c7a8"/>
+    <sh:property rdf:nodeID="N1bc63ade5e5a4f27913aaae463f87245"/>
+    <sh:property rdf:nodeID="N84a46446f7034fb3a78d66cfbff77761"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66137dba7fe24ea0bbf2e27fe3859712">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/family"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne1d05f6ed119485b88619d4f88425dbb">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
+    <sh:description>A link to the RDF payload's metadata which this resource was a part of.</sh:description>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://rdfs.org/ns/void#inDataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4faa9e807f5a41bcbc40d5f1281ad7fd">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Geometry"/>
+    <sh:name>has geometry</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N932558cc1cbc4000831b55c27e3e096f">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#Literal"/>
+    <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N367d3d9e4b534ebcb65dd80bb5cefefb">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>nomenclatural code</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nomenclaturalCode"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2d5cabfa87b144deba82da8f545fb0bf">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Site"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -804,25 +860,134 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSite"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Necb8108e44b24ae38ad0ec509b34a9af">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSampling"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N23cd0d7752ab4225b2c3e54da8fe890a">
+  <rdf:Description rdf:nodeID="Nb68bab60a8e24927a61e51837247dad7">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>transect direction</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRIOrLiteral"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/transectDirection"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>has simple result</sh:name>
+    <sh:nodeKing rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasSimpleResult"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N58aed39972a64c1fab294b2126bea8e6">
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Date">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N334b2966b9484d27be0529e4317c0fb4"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Date"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N52d70cc9f1004783ad3cb26cc081be94">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>accepted name usage ID</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/acceptedNameUsageID"/>
+    <sh:description>An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal.</sh:description>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/creator"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N6c03b5f7386647d3b0c1739ab1e6c357">
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Attribute">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Nee1501870d53448882255b1cf2c06efb"/>
+    <sh:property rdf:nodeID="Ne1d05f6ed119485b88619d4f88425dbb"/>
+    <sh:property rdf:nodeID="N9868c7ce3d254795866a06b7a3ea758d"/>
+    <sh:property rdf:nodeID="N59b12529456d4539869200882c2c6441"/>
+    <sh:property rdf:nodeID="N19d0ab8c459345da931d41be957fee0a"/>
+    <sh:property rdf:nodeID="Ne6af8bd6747143049f19606bfa861bac"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Attribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N54d8c88ddfdb4a7ab79e72d3bfc4f31a">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>type</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8852a1bb46ba44beb0ef2e20b9130691">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Point"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>transect start point</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/transectStartPoint"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naafcfe0b83d64d638cbc316d9d43d722">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:name>identifier</sh:name>
+    <sh:path rdf:resource="http://purl.org/dc/terms/identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N45c888b1d3df49b695a02124b8324616">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>type</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9aeb3fc671a54517ad3d020e2ecd9005">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sample"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>has result</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84d2841bd11c4c09adcaaecfb7d658af">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Geometry"/>
+    <sh:name>has geometry</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N18e26e1b15374cd6b8e9c125b00e7704">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>cultivar epithet</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/cultivarEpithet"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N856a718caa7f468aac061d8f417a30c4">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+    <sh:description>link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Boolean">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N1d150da50d754934a802f69078ffad95"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N480ef6f513aa4c32a2cad8f11f933329">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Polygon"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/polygon"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb3f3326578a44ba381e737a6dc288ba0">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>has feature of interest</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N12fe4c7e0964466090cf96ac236f36a8">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>started at time</sh:name>
+    <sh:path rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc084db0e870b4d12a09bb8154b1d5443">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/LineString"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>has geometry</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac8856347a8b4af7b8c261b93ee0a782">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/siteDescription"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nee1501870d53448882255b1cf2c06efb">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Value"/>
     <sh:description>A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute.</sh:description>
@@ -832,250 +997,172 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasValue"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N029e5e5022944b508f63a038f4b32299">
+  <rdf:Description rdf:nodeID="N7f346dd9d6ad47fb8e6173cc5c3cddea">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>in XSDDate time stamp</sh:name>
-    <sh:or rdf:nodeID="N1f4003145402485b90de8c9865e74fe6"/>
-    <sh:path rdf:resource="http://www.w3.org/2006/time#inXSDDateTimeStamp"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N33e7f92e3bb14f04a060fbaed69646e5">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>used procedure</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/locationProcedure"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd51d62e41b614c1791744d7ac8604cd0">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Organization"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N77211e4a04794b0897c73e668207af14">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>generic name</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/genericName"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncd055ac25fc347a3aa949a4f509a8605">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>The direct link to the value either as an IRI or an RDF literal. The simple value is always equivalent to the value captured in rdf:value of the tern:Value instance.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>has simple value</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRIOrLiteral"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSimpleValue"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Sampler">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N9f6383a47822424488d443d183427c2a"/>
-    <sh:property rdf:nodeID="N9868047256544fb78ab4d97608c6a18d"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Sampler"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N55b38b762b9a4437a2a706451eae664b">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>has simple result</sh:name>
-    <sh:nodeKing rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasSimpleResult"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N29b9172f11bf4599bd3d98d19280bcc9">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>Link to a member of a collection of observations that share the same value for one or more of the characteristic properties.</sh:description>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>has member</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:or rdf:nodeID="Nf981b80e62d449b487694038e4989801"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasMember"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N57aca906c7e04218acae2940d4084f4b">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>name published in year</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/namePublishedInYear"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd84c2b6943344a9495ae62030c559590">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Geometry"/>
-    <sh:name>has geometry</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N11f9898d99e94bdb8af74ccc01a4ca80">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0ff1e3d541ef4ac8b1e41d9515a15234">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>type</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4db65bae95ea47dd8521a0b2f9d53c95">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>taxonomic status</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonomicStatus"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N809198ceb40d48c788b8c9592d72d67a">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/System"/>
-    <sh:name>deployed system</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/ssn/deployedSystem"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N67aa1c0df8a84aefb04e14d39b066756">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf50926b920a1496fa8fc5ea0bc817648">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>has feature of interest</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/IRI">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nf65e80c663324f109a632dd12e04053d"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/IRI"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6643d1015f4c4ab39729c667b2485cec">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>vernacular name</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/vernacularName"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1d0e9babe4a444cdb9ec48bc3043a71e">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of attributes at [http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924](http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924).</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/attribute"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6ffdff3ed5a94c06aaede77556cda6b3">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Platform"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>is hosted by</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N62233f9c0b0f436badd0651fa464f360">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://rdfs.org/ns/void#inDataset"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1ca2d659218446a89cf81eea398be80e">
+  <rdf:Description rdf:nodeID="N7dee9ecf402d42da95766e21c6d3c1d3">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <sh:description>The result time is the instant of time when the Observation, Actuation or Sampling activity was completed.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>result time</sh:name>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6409225769ce4249a44105ea670f1a90">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
     <sh:path rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#value"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2c672555e5bb405486bd7738e3006948">
+  <rdf:Description rdf:nodeID="N7bb50a806610428d9c3295b272be249e">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>The type of sampling act.</sh:description>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonRemarks"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6565d4f3a9714756a94fbd52d317c6e9">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8370e3ee9b314fc690b6616d75270c64">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <sh:description>Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an xsd:date.</sh:description>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/samplingType"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>issued</sh:name>
+    <sh:path rdf:resource="http://purl.org/dc/terms/issued"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4bc4ff73f9f34de8be3674d6932ecba1">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/scientificName"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd597a4e6fe6a40ac977dcba9ca63611b">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampler"/>
-    <sh:description>Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it.</sh:description>
-    <sh:name>made by sampler</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeBySampler"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N95ded9c4366f4f6a80451a07b8aca53e">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#langString"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbc2b7d77ad7c43438dc38d8821d6ff34">
+  <rdf:Description rdf:nodeID="Nceb30e03259e4f4fa4259f8273e9a499">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>ended at time</sh:name>
-    <sh:path rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N02a444e194ae48d2950d4b7fc45454fb">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute).</sh:description>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/isAttributeOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N12705eb44eae4aed95d526af5c55c1f8">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/RDFDataset"/>
-    <sh:description>A link to the RDF payload's metadata which this resource was a part of.</sh:description>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://rdfs.org/ns/void#inDataset"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Naeb5d1ef6d024828a5471fa6476ce7c8">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>name published in</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/namePublishedIn"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N07233860299e4300a5073874e70304e6">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sensor"/>
-    <sh:description>Relation between an Observation and the Sensor which made the Observations.</sh:description>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>made by sensor</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Deployment">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N159efd2b67c5466ab56e94efbd6c1357"/>
-    <sh:property rdf:nodeID="N809198ceb40d48c788b8c9592d72d67a"/>
-    <sh:property rdf:nodeID="N931f2010441240519cbe8ccb44e1cc49"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Deployment"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf462dc46f21540c99c1d732b2363a04f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal.</sh:description>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/creator"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Neabdd0db44f444aa9a44301c538303c4">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>used procedure</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+    <sh:name>result time</sh:name>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nef12fc2a0f4741cd9a9e6cb2a3e7e659">
+  <rdf:Description rdf:nodeID="N29df562fc4804a9d80386a3544a6708c">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded.</sh:description>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/specificEpithet"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N518ec177a267491899a7c7e533f93ef0">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nabc1ebe18830464ab2bd1c36957a0683">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <sh:name>identifier</sh:name>
+    <sh:path rdf:resource="http://purl.org/dc/terms/identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne8316f5979cd460d839cd00b7bb0d9f2">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>higher classification</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/higherClassification"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N074d37b5f7784542a21136ee5b0ed003">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>taxonomic status</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonomicStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4cd666b36d5644cca9e7c2dea625f00e">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Instant"/>
+    <sh:description>The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>phenomenon time</sh:name>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N90726a6cd339475ba2297d2c82477599">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>subgenus</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/subgenus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N725071c0d96a4c339d02efd753150893">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>original name usage ID</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/originalNameUsageID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5c0df28cc3d14063a973b8cad500a924">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>infrageneric epithet</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/infragenericEpithet"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4f0c724291fd4ee890cd281f4ff9f9fc">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>generic name</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/genericName"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N17a4da17f8bd42199f6d2460dc08e692">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
     <sh:name>type</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9379b10c24544e6e9e09301ccdd42c46">
+  <rdf:Description rdf:nodeID="Nb1b0a3f016e34358bf13974065d55fa3">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>original name usage</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/originalNameUsage"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>implements</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/ssn/implements"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N526156238b974558a5283df8c6aa2c20">
+  <rdf:Description rdf:nodeID="N0f684a782ecc4200a0fca99c13220778">
+    <rdf:first rdf:nodeID="N0fb2e397d4f949e9b3e1ba21155610c2"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/SiteVisit">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N646db317ee4f41aca65e44a39adaebc2"/>
+    <sh:property rdf:nodeID="N97351086031e4501bc6230cf0db6a5b3"/>
+    <sh:property rdf:nodeID="Na1db353f445844df8d919d6eeda3cbe0"/>
+    <sh:property rdf:nodeID="Nb1313fc62ced425f92055fe070b3101c"/>
+    <sh:property rdf:nodeID="N1f4ca284e28042978c6ef5e1196d43eb"/>
+    <sh:property rdf:nodeID="N1d8bd33b5d7f48869313284d06602e15"/>
+    <sh:property rdf:nodeID="N12fe4c7e0964466090cf96ac236f36a8"/>
+    <sh:property rdf:nodeID="Naafcfe0b83d64d638cbc316d9d43d722"/>
+    <sh:property rdf:nodeID="N2d5cabfa87b144deba82da8f545fb0bf"/>
+    <sh:property rdf:nodeID="N91cda48381f44d48b3bd1f610d1192f4"/>
+    <sh:property rdf:nodeID="N62572271ca504fcea8cfd9ea79899bbf"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N794af40d14b845aca16693e62e23463e">
+    <rdf:first rdf:nodeID="N9ef88211a7d940888a07af0e4abd5472"/>
+    <rdf:rest rdf:nodeID="N18c3dd70ffd244eea1a20ca4d3c64b9f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7a801f91e754f5ab7aa2d88eac0cdda">
+    <rdf:first rdf:nodeID="N4e6715df77af4295a357bc0e4ddc68f3"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nda6a2936bc154b4b80e57059281091fa">
+    <rdf:first rdf:nodeID="Nf9156fb5577f418f92bae53fb8d3139b"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N805ea99be8624b58b29589b637c52b75">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/).</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/unit"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne7ab0f1f5f2f43b2b161a259bfe2cfc9">
+    <rdf:first rdf:nodeID="N296c3ccbe3c94d939c83216408dd3a2f"/>
+    <rdf:rest rdf:nodeID="N0f684a782ecc4200a0fca99c13220778"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N78360f4fc50046d69258a15fd16b1e95">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>name published in year</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/namePublishedInYear"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nea0b6080dded4c029abafafbada5ae9d">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
+    <sh:name>made sampling</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/madeSampling"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N50e21e05fcd84b4698ffaa4627824121">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>nomenclatural status</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nomenclaturalStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4df2cd063cc14e2d8cd01f72790f4eff">
+    <rdf:first rdf:nodeID="N80137311e5454223b7ed46bd0c2c5eba"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N33c1a3a2f4454761a36a8dd322f33e19">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Instant"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -1084,302 +1171,220 @@
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/DateTime">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N16662db2a3764b888b57787029a154a1"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/DateTime"/>
+  <rdf:Description rdf:nodeID="N8d59b8e8941744a6bf8b26bd7482f0cb">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Value"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc6c23285f25d426481a4ffbcd83f3faa">
+  <rdf:Description rdf:nodeID="Naf5b440d51fb4dd7950eb1c925fd7ee2">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/isSiteVisitOf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N76e647bec2e545a3bfa638803df32389">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N408af2b7a75d4a6cb57c558b7aba0cca">
-    <rdf:first rdf:nodeID="N896a487b5a8a48cc9881a104d0807c7d"/>
-    <rdf:rest rdf:nodeID="Nc4aab922360044f48b6fca804c28b84a"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7c3118a9b4b547e9bae2e4e6696e9cb5">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>name according to ID</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nameAccordingToID"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3517f00dc5324a809fc5c31300e70d3e">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/order"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfe9f4fc948e74dfabfc545f735aece40">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>started at time</sh:name>
-    <sh:path rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb70847fa3b1b4943862b9bad1c8035cb">
-    <rdf:first rdf:nodeID="N4897109efaee4e5a84fbdeb386d3d1cc"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N26a405eb3cc44a6cbb6d84dfc14ea52e">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal.</sh:description>
-    <sh:name>publisher</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/publisher"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5984a91b03a44c23a620b65c0bf1f4ae">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonConceptID"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3f833c03eb9e41089e781058a35a3775">
-    <rdf:first rdf:nodeID="N706be0ac98b7490d8522d7fd8d0f9b73"/>
-    <rdf:rest rdf:nodeID="N79347748d0204620b47cdfcc0e21352b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2a43c221207c4ad5bbc9b093eb3ed041">
-    <rdf:first rdf:nodeID="Nd84ee4fadf624b86ae7dd94c95268c94"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9dfb0f436bea4e61919e463ff86de09e">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>name published in ID</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/namePublishedInID"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc1a9f3f7b47d4bffbcb7699588848f08">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>verbatim taxon rank</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/verbatimTaxonRank"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf64b1aa791c74c54a5974c540453386b">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/dateDecommissioned"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5814b7ea22084cfb85e6d6dac0f45bf4">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>subfamily</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/subfamily"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1f4003145402485b90de8c9865e74fe6">
-    <rdf:first rdf:nodeID="Ncbb4fcaa88e345c4b8b7a8d61020a16f"/>
-    <rdf:rest rdf:nodeID="N3e9d0271b9174d34b4d98182cc4d1eb1"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd2c87e249925417fac1fa14503a0b0db">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/dateCommissioned"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N96cb9c9d987b4cbb93a804b9b9f256b9">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8330694355294d259b723f30aaeca522">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:name>type</sh:name>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="http://purl.org/dc/terms/type"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na478151c1e7148ff9c6f507792a52a43">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>nomenclatural status</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nomenclaturalStatus"/>
+  <rdf:Description rdf:nodeID="Nb7833aecd3d64ffea47d234fd09f3cc4">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Observation"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfff72ffc56fc4b3ea4732143c6892c4b">
+  <rdf:Description rdf:nodeID="N9f7737170e5b4cb1a925ddc56c239a9f">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>sf within</sh:name>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#sfWithin"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSiteVisit"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N32cc27cfafdd4d8784c4a100e378e460">
+  <rdf:Description rdf:nodeID="N9578bc1294144984bad2682100f6881d">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>subgenus</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/subgenus"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3506ebf48ff041528c08ae5b2464441c">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/LineString"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>has geometry</sh:name>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/featureType"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc3aa5ad868d04ebcae7940455f87fa11">
+  <rdf:Description rdf:nodeID="Nd801936d69ca4912b8c79e0dc5a53edf">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal.</sh:description>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/contributor"/>
+    <sh:name>verbatim taxon rank</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/verbatimTaxonRank"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4e2c33634bd6419a89e7d6d2a2e93897">
+  <rdf:Description rdf:nodeID="Nba1b0d71d6c0474b8421fd3d362f97b9">
+    <rdf:first rdf:nodeID="N45414e385b3a4c0abaf4b92464914d50"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne2c2607be8634dc4bfed2787c9d64a6b">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:description>A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal.</sh:description>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://purl.org/dc/terms/source"/>
+    <sh:name>name published in</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/namePublishedIn"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncb913ededeb24f3f8d08422df87a5477">
+  <rdf:Description rdf:nodeID="N75b885634ebe4babb350b4b1efa6a8c6">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndc84205e319444898d62bfb0f7979914">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/FeatureOfInterest"/>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>has feature of interest</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc4eab0f89ee645b9a9db47c229fd0461">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+    <sh:name>is result of</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:or rdf:nodeID="N6c3e4fae8f2c4e459763435ab0253977"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isResultOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Distribution">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Distribution"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2f08a71728144a3eb7b2353d66549ecb">
+    <rdf:first rdf:nodeID="N6ccc78e4497946a78bebb0604530a978"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N59ee90e6c4c54e5d9019e09a6c11f7d5">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/materialSampleID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8c8bdcaa8e1940e19f0139fe6712e45d">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <sh:description>The result time is the instant of time when the Observation, Actuation or Sampling activity was completed.</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:name>result time</sh:name>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c3e4fae8f2c4e459763435ab0253977">
+    <rdf:first rdf:nodeID="Nb7833aecd3d64ffea47d234fd09f3cc4"/>
+    <rdf:rest rdf:nodeID="Nda6a2936bc154b4b80e57059281091fa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3cf9b3f10ff843b9833cbad2055bb3c9">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>parent name usage ID</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/parentNameUsageID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N75ecdcc0201d43fba09f0311685da9a0">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/genus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Text">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N56dac2984757469684a1f618bfb08255"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Text"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd0efa4a032840c1a83179c61cf6de24">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nameAccordingTo"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf9156fb5577f418f92bae53fb8d3139b">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb1313fc62ced425f92055fe070b3101c">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/isSiteVisitOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na161d55e134f4f32b7659bfbb2adf51c">
+    <rdf:first rdf:nodeID="N0760ae93d068424392e8d9fd6d57f9b2"/>
+    <rdf:rest rdf:nodeID="N21052882ddef4cd39a34c62237ae6a2d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9349e55036dc4d01ac97244ec8b9ec02">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>is feature of interest of</sh:name>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:or rdf:nodeID="Ne5694fa17bbb4a2abde4b0d58808e5db"/>
+    <sh:path rdf:resource="http://www.w3.org/ns/sosa/isFeatureOfInterestOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Quadrat">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="Neb37991efb564be097e6adb492e1f40c"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Quadrat"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7746124bf09f45dab1df9446697a3ece">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:name>name published in ID</sh:name>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/namePublishedInID"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7473eef6b3a240cfbad07f2ea8d18645">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:name>parent name usage</sh:name>
     <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/parentNameUsage"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N0874862ac0374a7abe8ffba16826d2d4">
-    <rdf:first rdf:nodeID="N42c06201693f44c196b2b3221f7ca050"/>
+  <rdf:Description rdf:nodeID="N21052882ddef4cd39a34c62237ae6a2d">
+    <rdf:first rdf:nodeID="N88969745326d4b269314d0e4d8b24ab2"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N51d6c71cadf249659ded746362f7ba61">
+  <rdf:Description rdf:nodeID="Neb8baa883447428b86c417a3b2fc7087">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/scientificNameAuthorship"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfbbe8e62c54343c6a93c99a24a9fa9d5">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/genus"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf03eacc3f90d4e8397d71d13d6cfa403">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/loc/Point"/>
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:name>transect start point</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/transectStartPoint"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/dimension"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Date">
+  <rdf:Description rdf:nodeID="Nc9ff0cf588d9463a85647db37cb0237c">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:description>The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/).</sh:description>
+    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/unit"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N859787531e5a4e8fac62c07323748b4b">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#langString"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N62d14251b4784e53b6408a7f72afac5e">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/scientificName"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/IRI">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nf6c11367a7324b648a83b48d97b65405"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Date"/>
+    <sh:property rdf:nodeID="Nb47d384063014e0ebba8fb9b6ba1ee21"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/IRI"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfda439df0f184d41a934a15ca0ce9074">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
+  <rdf:Description rdf:nodeID="Nda698abf56a144869b6b6e6ac84295c4">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Organization"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8e155f823e0449b6a13ebd165eab7bb4">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>was attributed to</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:or rdf:nodeID="N403eaac3da4d4045b65e054d8fb42e40"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="http://datashapes.org/dash"/>
+    <owl:imports rdf:resource="http://www.w3.org/ns/shacl#"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2ea29cb22aa8439b904f6d2ad1c390c1">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/SiteVisit"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/hasSiteVisit"/>
+  <rdf:Description rdf:nodeID="Ne5694fa17bbb4a2abde4b0d58808e5db">
+    <rdf:first rdf:nodeID="Nadce01039a4741ed958df0d318ad925b"/>
+    <rdf:rest rdf:nodeID="Nba1b0d71d6c0474b8421fd3d362f97b9"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N6b91661a54e245138dee177a2afc906c">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/locationDescription"/>
+  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/MaterialSample">
+    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+    <sh:property rdf:nodeID="N59ee90e6c4c54e5d9019e09a6c11f7d5"/>
+    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/MaterialSample"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9868047256544fb78ab4d97608c6a18d">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
-    <sh:name>implements</sh:name>
-    <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-    <sh:path rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+  <rdf:Description rdf:nodeID="N18c3dd70ffd244eea1a20ca4d3c64b9f">
+    <rdf:first rdf:nodeID="Nda698abf56a144869b6b6e6ac84295c4"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne778e9f13cf544d38ff8611c9d089016">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>taxon ID</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/taxonID"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4dd2e2e7e4a145f98fa02348326fc244">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
-    <sh:path rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N18fa2113617243e58046e5fcf82d8149">
-    <rdf:first rdf:nodeID="N930f56330fb6410ca99f2c747a4a505a"/>
-    <rdf:rest rdf:nodeID="N1d3b64ede3174e8cae6a357234021f8a"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2af893c909db460681adae0d1962b4da">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/family"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4977d6d6a895411ab71e4234dbdb5c46">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/infraspecificEpithet"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N66bced5f38634e45a233912eb78119a9">
+  <rdf:Description rdf:nodeID="N3a9088df3fe44c14b0ac6486ed366c7a">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
     <sh:path rdf:resource="https://w3id.org/tern/ontologies/tern/systemType"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncda15bbab0694dab8dba13e9ad00fa0e">
+  <rdf:Description rdf:nodeID="N223fe3a6ebaf4924b4a475e06915184d">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/phylum"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9a6a70a818e842d0bd155c2a6e3a5359">
+  <rdf:Description rdf:nodeID="Nedf1d4d210ce4d8a9f8da7ecf869cc2b">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:name>identifier</sh:name>
-    <sh:path rdf:resource="http://purl.org/dc/terms/identifier"/>
+    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/kingdom"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N497dd9aecb744e3da3d097526577d872">
-    <rdf:first rdf:nodeID="N11f9898d99e94bdb8af74ccc01a4ca80"/>
-    <rdf:rest rdf:nodeID="Neaf96550fce34d32b9bef1f3cef6eb3e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd84ee4fadf624b86ae7dd94c95268c94">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/ObservationCollection"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbcacb7d8b88b44b2942a8193e5481588">
-    <rdf:first rdf:nodeID="N77ac475d4c5d43b1a3e34832e3cc0719"/>
-    <rdf:rest rdf:nodeID="N0874862ac0374a7abe8ffba16826d2d4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9abbf1ce98cf425d8a24a171cb053b7f">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <sh:name>identifier</sh:name>
-    <sh:path rdf:resource="http://purl.org/dc/terms/identifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Text">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="N5c8524ea77f4405ca6bb62b0730079a1"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Text"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf1304c0ec9fe4c5e9be6c815695f6369">
+  <rdf:Description rdf:nodeID="N8ec656d7c3794dc8aca1d0a464d6cee8">
     <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
     <sh:name>accepted name usage</sh:name>
     <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/acceptedNameUsage"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/shacl/tern/Quadrat">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
-    <sh:property rdf:nodeID="Nf3a3ce7f1557465398e72dda331f4753"/>
-    <sh:targetClass rdf:resource="https://w3id.org/tern/ontologies/tern/Quadrat"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd1baec0477e8445f998c6278f0d8f97d">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nefdac6e5c9c64660b255c6c773c02d3d">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Organization"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf981b80e62d449b487694038e4989801">
-    <rdf:first rdf:nodeID="N76e647bec2e545a3bfa638803df32389"/>
-    <rdf:rest rdf:nodeID="N2a43c221207c4ad5bbc9b093eb3ed041"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0519b236376449399ca2e57afff306a1">
-    <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
-    <sh:name>nomenclatural code</sh:name>
-    <sh:path rdf:resource="http://rs.tdwg.org/dwc/terms/nomenclaturalCode"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N42c06201693f44c196b2b3221f7ca050">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Result"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf7e18862745141999a2d33b06cee1fde">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Sampling"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N77ac475d4c5d43b1a3e34832e3cc0719">
-    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Value"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfe5414a354ee4000b29e7d3ce8235fb6">
+  <rdf:Description rdf:nodeID="N9ef88211a7d940888a07af0e4abd5472">
     <sh:class rdf:resource="https://w3id.org/tern/ontologies/org/Person"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N896a487b5a8a48cc9881a104d0807c7d">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:Description rdf:nodeID="N88969745326d4b269314d0e4d8b24ab2">
+    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2ba6281f7c2845129c346fa40936495b">
-    <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  <rdf:Description rdf:nodeID="N4e6715df77af4295a357bc0e4ddc68f3">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/ObservationCollection"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N80137311e5454223b7ed46bd0c2c5eba">
+    <sh:class rdf:resource="https://w3id.org/tern/ontologies/tern/Result"/>
   </rdf:Description>
 </rdf:RDF>
