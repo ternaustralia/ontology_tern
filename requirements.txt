@@ -1,1 +1,1 @@
-https://github.com/ternaustralia/ontotools/archive/refs/tags/0.2.3.zip
+https://github.com/ternaustralia/ontotools/archive/refs/tags/0.3.0.zip

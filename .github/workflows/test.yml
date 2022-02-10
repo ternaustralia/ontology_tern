@@ -32,10 +32,12 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Ensure tern.nt is normalized.
-        run: |
-          ontotools file normalize docs/tern.nt --fail-if-changed
+      # Comment below out. Due to blank nodes, the longturtle serializer changes the file even when no content has changed.
 
-      - name: Ensure tern.shacl.nt is normalized.
-        run: |
-          ontotools file normalize docs/tern.shacl.nt --fail-if-changed
+      # - name: Ensure tern.ttl is normalized.
+      #   run: |
+      #     ontotools file normalize docs/tern.ttl --fail-if-changed
+
+      # - name: Ensure tern.shacl.ttl is normalized.
+      #   run: |
+      #     ontotools file normalize docs/tern.shacl.ttl --fail-if-changed
