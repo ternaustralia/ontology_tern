@@ -1,5 +1,6 @@
 # baseURI: https://w3id.org/tern/shacl/tern/
 # imports: http://datashapes.org/dash
+# imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/ns/shacl#
 # prefix: tern-shacl
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
@@ -20,6 +21,7 @@ tern-shacl:
     a owl:Ontology ;
     owl:imports
         <http://datashapes.org/dash> ,
+        <http://www.opengis.net/ont/geosparql> ,
         sh: ;
 .
 
@@ -183,7 +185,7 @@ tern-shacl:FeatureOfInterest
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/loc/Geometry> ;
+            sh:class <http://www.opengis.net/ont/geosparql#Geometry> ;
             sh:name "has geometry" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
@@ -375,7 +377,7 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/loc/Geometry> ;
+            sh:class <http://www.opengis.net/ont/geosparql#Geometry> ;
             sh:name "has geometry" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
@@ -725,7 +727,7 @@ tern-shacl:Sampling
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/loc/Geometry> ;
+            sh:class <http://www.opengis.net/ont/geosparql#Geometry> ;
             sh:name "has geometry" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
@@ -852,13 +854,6 @@ tern-shacl:Site
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path <https://w3id.org/tern/ontologies/tern/locationProcedure>
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/loc/Polygon> ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/polygon>
         ] ,
         [
             a sh:PropertyShape ;
@@ -1189,10 +1184,17 @@ tern-shacl:Transect
     sh:property
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/loc/LineString> ;
             sh:maxCount 1 ;
             sh:name "has geometry" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:or (
+                    [
+                        sh:class <http://www.opengis.net/ont/sf#LineString>
+                    ]
+                    [
+                        sh:class <http://www.opengis.net/ont/geosparql#Geometry>
+                    ]
+                ) ;
             sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
         ] ,
         [
@@ -1213,7 +1215,7 @@ tern-shacl:Transect
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/loc/Point> ;
+            sh:class <http://www.opengis.net/ont/sf#Point> ;
             sh:maxCount 1 ;
             sh:name "transect end point" ;
             sh:nodeKind sh:IRI ;
@@ -1221,7 +1223,7 @@ tern-shacl:Transect
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/loc/Point> ;
+            sh:class <http://www.opengis.net/ont/sf#Point> ;
             sh:maxCount 1 ;
             sh:name "transect start point" ;
             sh:nodeKind sh:IRI ;
