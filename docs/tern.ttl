@@ -96,7 +96,6 @@ tern:RDFDataset
     rdfs:subClassOf
         void:Dataset ,
         rdfs:Resource ,
-        tern:Distribution ;
 .
 
 tern:Value
