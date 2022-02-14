@@ -1510,7 +1510,7 @@ Taking a diamond-drill core from a rock outcrop.""" ;
 
 tern:Site
     a owl:Class ;
-    rdfs:label "Ecological Site" ;
+    rdfs:label "Site" ;
     rdfs:subClassOf
         [
             a owl:Restriction ;
@@ -1546,9 +1546,8 @@ tern:Site
         ] ,
         tern:Platform ,
         tern:Sample ;
-    skos:definition "Location where observations may be made. This is a subclass of [Sample](#Sample) because a site should be designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
+    skos:definition "An ecological monitoring site where where observations and samplings occur. This Site class is a subclass of [Sample](#Sample) since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
     skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
-    skos:scopeNote "Use [dcterms:hasPart](http://purl.org/dc/terms/hasPart) and [dcterms:isPartOf](http://purl.org/dc/terms/isPartOf) to model [Site](#EcologicalSite) and [Subsite](#EcologicalSite) relationships. E.g. In TERN, there are SuperSites that contain multiple core 1 ha plots." ;
 .
 
 tern:dateCommissioned
