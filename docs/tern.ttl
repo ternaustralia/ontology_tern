@@ -95,7 +95,7 @@ tern:RDFDataset
     rdfs:label "RDFDataset" ;
     rdfs:subClassOf
         void:Dataset ,
-        rdfs:Resource ,
+        rdfs:Resource ;
 .
 
 tern:Value
@@ -203,8 +203,8 @@ tern:
         <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ,
         <https://w3id.org/tern/ontologies/org/> ,
         <https://w3id.org/tern/ontologies/sd/> ;
-    owl:versionIRI tern:0.4.0 ;
-    owl:versionInfo "0.4.0" ;
+    owl:versionIRI tern:0.4.1 ;
+    owl:versionInfo "0.4.1" ;
     prov:wasGeneratedBy [
             a
                 doap:Project ,
