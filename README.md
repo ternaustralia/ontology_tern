@@ -1,8 +1,12 @@
 # TERN Ontology
 
-The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the representation of ecological survey data. The TERN Ontology is used as a common information model to represent and facilitate the sharing of survey data across different systems.  
+The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the representation of ecological survey data. The TERN Ontology is used as a common information model to represent and facilitate the sharing of survey data across different systems.
 
 Online Documentation: https://linkeddata.tern.org.au/information-models/tern-ontology
+
+## Releases
+
+The TERN Ontology makes GitHub Releases for each version. See [TERN Ontology releases](https://github.com/ternaustralia/ontology_tern/releases) for a list of releases.
 
 ## Source files
 
@@ -20,10 +24,6 @@ Source files:
 The main branch (master) is the working branch of the TERN Ontology. Changes must be made in another branch along with a GitHub pull request to merge into the main branch.
 
 Each push to a branch will trigger GitHub Actions to run validations and tests. These validations and tests must pass before the branch can be merged into the main branch.
-
-## Releases
-
-The TERN Ontology makes GitHub Releases for each version. See [TERN Ontology releases](https://github.com/ternaustralia/ontology_tern/releases) for a list of releases.
 
 ## Editing the TERN Ontology
 
