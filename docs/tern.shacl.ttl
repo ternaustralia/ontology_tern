@@ -657,6 +657,7 @@ tern-shacl:Result
     sh:property [
             a sh:PropertyShape ;
             sh:minCount 1 ;
+            sh:maxCount 1 ;
             sh:name "is result of" ;
             sh:nodeKind sh:IRI ;
             sh:or (
