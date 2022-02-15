@@ -10,6 +10,8 @@ jobs:
     uses: ./.github/workflows/test.yml
 
   publish:
+    # Only run the 'publish' job if 'test' job succeeds.
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo

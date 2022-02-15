@@ -32,6 +32,14 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Ensure there are no syntax errors in docs/tern.ttl
+        run: |
+          ontotools file validate docs/tern.ttl
+
+      - name: Ensure there are no syntax errors in docs/tern.shacl.ttl
+        run: |
+          ontotools file validate docs/tern.shacl.ttl
+
       # Comment below out. Due to blank nodes, the longturtle serializer changes the file even when no content has changed.
 
       # - name: Ensure tern.ttl is normalized.
