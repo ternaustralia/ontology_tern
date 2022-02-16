@@ -468,12 +468,6 @@ tern:IRI
         tern:Value ;
 .
 
-tern:Instant
-    a owl:Class ;
-    rdfs:label "Instant" ;
-    rdfs:subClassOf time:Instant ;
-.
-
 tern:ManagedFeature
     a owl:Class ;
     rdfs:label "Feature which is managed for TERN purposes" ;
