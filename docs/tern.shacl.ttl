@@ -159,6 +159,51 @@ tern-shacl:Distribution
     sh:targetClass <https://w3id.org/tern/ontologies/tern/Distribution> ;
 .
 
+tern-shacl:Duration
+    a sh:NodeShape ;
+    sh:property
+        [
+            a sh:PropertyShape ;
+            sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "numeric duration" ;
+            sh:path time:numericDuration
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "unit type" ;
+            sh:nodeKind sh:IRI ;
+            sh:or (
+                    [
+                        sh:hasValue time:unitDay
+                    ]
+                    [
+                        sh:hasValue time:unitHour
+                    ]
+                    [
+                        sh:hasValue time:unitMinute
+                    ]
+                    [
+                        sh:hasValue time:unitMonth
+                    ]
+                    [
+                        sh:hasValue time:unitSecond
+                    ]
+                    [
+                        sh:hasValue time:unitWeek
+                    ]
+                    [
+                        sh:hasValue time:unitYear
+                    ]
+                ) ;
+            sh:path time:unitType
+        ] ;
+    sh:targetClass time:Duration ;
+.
+
 tern-shacl:FeatureOfInterest
     a sh:NodeShape ;
     sh:property
@@ -272,20 +317,41 @@ tern-shacl:Instant
     a sh:NodeShape ;
     sh:property [
             a sh:PropertyShape ;
-            sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "in XSDDate time stamp" ;
             sh:or (
                     [
-                        sh:datatype xsd:dateTimeStamp
+                        sh:datatype xsd:date ;
+                        sh:name "date" ;
+                        sh:path time:inXSDDate
                     ]
                     [
-                        sh:datatype xsd:dateTime
+                        sh:datatype xsd:dateTimeStamp ;
+                        sh:name "date timestamp" ;
+                        sh:path time:inXSDDateTimeStamp
                     ]
-                ) ;
-            sh:path time:inXSDDateTimeStamp
+                    [
+                        sh:datatype xsd:gYear ;
+                        sh:name "year" ;
+                        sh:path time:inXSDYear
+                    ]
+                    [
+                        sh:datatype xsd:gYearMonth ;
+                        sh:name "year month" ;
+                        sh:path time:inXSDYearMonth
+                    ]
+                    [
+                        sh:class time:TimePosition ;
+                        sh:name "in time position" ;
+                        sh:path time:inTimePosition
+                    ]
+                    [
+                        sh:class time:GeneralDateTimeDescription ;
+                        sh:name "in date time" ;
+                        sh:path time:inDateTime
+                    ]
+                )
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Instant> ;
+    sh:targetClass time:Instant ;
 .
 
 tern-shacl:Integer
@@ -321,6 +387,35 @@ tern-shacl:Integer
             sh:path <https://w3id.org/tern/ontologies/tern/unit>
         ] ;
     sh:targetClass <https://w3id.org/tern/ontologies/tern/Integer> ;
+.
+
+tern-shacl:Interval
+    a sh:NodeShape ;
+    sh:property
+        [
+            a sh:PropertyShape ;
+            sh:class time:Instant ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path time:hasBeginning
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:class time:Duration ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path time:hasDuration
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:class time:Instant ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path time:hasEnd
+        ] ;
+    sh:targetClass time:Interval ;
 .
 
 tern-shacl:ManagedFeature
