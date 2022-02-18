@@ -203,8 +203,8 @@ tern:
         <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ,
         <https://w3id.org/tern/ontologies/org/> ,
         <https://w3id.org/tern/ontologies/sd/> ;
-    owl:versionIRI tern:0.4.1 ;
-    owl:versionInfo "0.4.1" ;
+    owl:versionIRI tern:0.4.2 ;
+    owl:versionInfo "0.4.2" ;
     prov:wasGeneratedBy [
             a
                 doap:Project ,
