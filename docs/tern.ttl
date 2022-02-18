@@ -10,12 +10,11 @@
 # imports: http://www.w3.org/ns/sosa/
 # imports: http://www.w3.org/ns/ssn/
 # imports: https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl
-# imports: https://w3id.org/tern/ontologies/org/
-# imports: https://w3id.org/tern/ontologies/sd/
 # prefix: tern
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX doap: <http://usefulinc.com/ns/doap#>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -78,7 +77,7 @@ tern:MaterialSample
     a rdfs:Class ;
     rdfs:label "Material sample" ;
     rdfs:subClassOf
-        <http://rs.tdwg.org/dwc/terms/MaterialSample> ,
+        dwc:MaterialSample ,
         tern:Sample ;
     skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
     skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
@@ -105,11 +104,11 @@ tern:Value
     skos:definition "A value of an [Attribute](https://w3id.org/tern/ontologies/tern/Attribute) or an [Observation](https://w3id.org/tern/ontologies/tern/Observation). " ;
 .
 
-<http://rs.tdwg.org/dwc/terms/materialSampleID>
+dwc:materialSampleID
     a rdf:Property ;
     rdfs:label "material sample ID" ;
     rdfs:comment "An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique." ;
-    rdfs:isDefinedBy <http://rs.tdwg.org/dwc/terms/> ;
+    rdfs:isDefinedBy dwc: ;
     skos:example """IGSN:ASR000001 (Resulting URI: http://igsn.org/ASR000001) 
 is a globally unique and persistent identifier of a soil sample.""" ;
 .
@@ -200,9 +199,7 @@ tern:
         prov: ,
         sosa: ,
         ssn: ,
-        <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ,
-        <https://w3id.org/tern/ontologies/org/> ,
-        <https://w3id.org/tern/ontologies/sd/> ;
+        <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
     owl:versionIRI tern:0.4.2 ;
     owl:versionInfo "0.4.2" ;
     prov:wasGeneratedBy [
@@ -433,6 +430,12 @@ tern:FluxTower
         ] ,
         [
             a owl:Restriction ;
+            owl:onClass <http://www.opengis.net/ont/sf#Point> ;
+            owl:onProperty tern:centroidPoint ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+        ] ,
+        [
+            a owl:Restriction ;
             owl:onClass xsd:date ;
             owl:onProperty tern:dateCommissioned ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -441,12 +444,6 @@ tern:FluxTower
             a owl:Restriction ;
             owl:onClass xsd:string ;
             owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass <http://www.opengis.net/ont/sf#Point> ;
-            owl:onProperty tern:centroidPoint ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
         ] ,
         tern:FixedPlatform ;
@@ -1311,12 +1308,6 @@ tern:Procedure
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:onClass tern:Method ;
-            owl:onProperty rdf:value ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
             owl:allValuesFrom skos:Concept ;
             owl:onProperty tern:methodType
         ] ,
@@ -1330,6 +1321,12 @@ tern:Procedure
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass tern:Input ;
             owl:onProperty ssn:hasInput
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onClass tern:Method ;
+            owl:onProperty rdf:value ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
         ] ,
         sosa:Procedure ;
     skos:definition "A workflow, protocol, plan, algorithm, or computational method specifying how to make an [Observation](#Observation), create a [Sample](#Sample), or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A [Procedure](#Procedure) is re-usable, and might be involved in many [Observations](#Observation), [Samplings](#Sampling), or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at reproducible [Results](#Result)." ;

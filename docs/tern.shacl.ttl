@@ -2,16 +2,21 @@
 # imports: http://datashapes.org/dash
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/ns/shacl#
+# imports: https://w3id.org/tern/ontologies/tern/
 # prefix: tern-shacl
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sf: <http://www.opengis.net/ont/sf#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX tern-shacl: <https://w3id.org/tern/shacl/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
@@ -22,7 +27,8 @@ tern-shacl:
     owl:imports
         <http://datashapes.org/dash> ,
         <http://www.opengis.net/ont/geosparql> ,
-        sh: ;
+        sh: ,
+        tern: ;
 .
 
 tern-shacl:Attribute
@@ -37,7 +43,7 @@ tern-shacl:Attribute
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/RDFDataset> ;
+            sh:class tern:RDFDataset ;
             sh:description "A link to the RDF payload's metadata which this resource was a part of." ;
             sh:nodeKind sh:IRI ;
             sh:path void:inDataset
@@ -48,7 +54,7 @@ tern-shacl:Attribute
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/attribute>
+            sh:path tern:attribute
         ] ,
         [
             a sh:PropertyShape ;
@@ -57,25 +63,25 @@ tern-shacl:Attribute
             sh:minCount 1 ;
             sh:name "has simple value" ;
             sh:nodeKind sh:IRIOrLiteral ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasSimpleValue>
+            sh:path tern:hasSimpleValue
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Value> ;
+            sh:class tern:Value ;
             sh:description "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "has value" ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasValue>
+            sh:path tern:hasValue
         ] ,
         [
             a sh:PropertyShape ;
             sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/isAttributeOf>
+            sh:path tern:isAttributeOf
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Attribute> ;
+    sh:targetClass tern:Attribute ;
 .
 
 tern-shacl:Boolean
@@ -87,20 +93,20 @@ tern-shacl:Boolean
             sh:minCount 1 ;
             sh:path rdf:value
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Boolean> ;
+    sh:targetClass tern:Boolean ;
 .
 
 tern-shacl:Dataset
     a sh:NodeShape ;
     sh:property [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Distribution> ;
+            sh:class tern:Distribution ;
             sh:description "An available distribution of the dataset." ;
             sh:name "dataset distribution" ;
             sh:nodeKind sh:IRI ;
             sh:path dcat:distribution
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Dataset> ;
+    sh:targetClass tern:Dataset ;
 .
 
 tern-shacl:Date
@@ -112,7 +118,7 @@ tern-shacl:Date
             sh:minCount 1 ;
             sh:path rdf:value
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Date> ;
+    sh:targetClass tern:Date ;
 .
 
 tern-shacl:DateTime
@@ -124,7 +130,7 @@ tern-shacl:DateTime
             sh:minCount 1 ;
             sh:path rdf:value
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/DateTime> ;
+    sh:targetClass tern:DateTime ;
 .
 
 tern-shacl:Deployment
@@ -132,7 +138,7 @@ tern-shacl:Deployment
     sh:property
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Platform> ;
+            sh:class tern:Platform ;
             sh:maxCount 1 ;
             sh:name "deployed on platform" ;
             sh:nodeKind sh:IRI ;
@@ -140,23 +146,23 @@ tern-shacl:Deployment
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/System> ;
+            sh:class tern:System ;
             sh:name "deployed system" ;
             sh:nodeKind sh:IRI ;
             sh:path ssn:deployedSystem
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Attribute> ;
+            sh:class tern:Attribute ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasAttribute>
+            sh:path tern:hasAttribute
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Deployment> ;
+    sh:targetClass tern:Deployment ;
 .
 
 tern-shacl:Distribution
     a sh:NodeShape ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Distribution> ;
+    sh:targetClass tern:Distribution ;
 .
 
 tern-shacl:Duration
@@ -222,7 +228,7 @@ tern-shacl:FeatureOfInterest
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/RDFDataset> ;
+            sh:class tern:RDFDataset ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -230,10 +236,10 @@ tern-shacl:FeatureOfInterest
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <http://www.opengis.net/ont/geosparql#Geometry> ;
+            sh:class geo:Geometry ;
             sh:name "has geometry" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
+            sh:path geo:hasGeometry
         ] ,
         [
             a sh:PropertyShape ;
@@ -243,7 +249,7 @@ tern-shacl:FeatureOfInterest
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sample> ;
+            sh:class tern:Sample ;
             sh:name "has sample" ;
             sh:nodeKind sh:IRI ;
             sh:path sosa:hasSample
@@ -254,10 +260,10 @@ tern-shacl:FeatureOfInterest
             sh:nodeKind sh:IRI ;
             sh:or (
                     [
-                        sh:class <https://w3id.org/tern/ontologies/tern/Observation>
+                        sh:class tern:Observation
                     ]
                     [
-                        sh:class <https://w3id.org/tern/ontologies/tern/Sampling>
+                        sh:class tern:Sampling
                     ]
                 ) ;
             sh:path sosa:isFeatureOfInterestOf
@@ -267,9 +273,9 @@ tern-shacl:FeatureOfInterest
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/featureType>
+            sh:path tern:featureType
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+    sh:targetClass tern:FeatureOfInterest ;
 .
 
 tern-shacl:Float
@@ -289,16 +295,16 @@ tern-shacl:Float
             sh:description "Error of measurement (±)." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:path <https://w3id.org/tern/ontologies/tern/uncertainty>
+            sh:path tern:uncertainty
         ] ,
         [
             a sh:PropertyShape ;
             sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/unit>
+            sh:path tern:unit
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Float> ;
+    sh:targetClass tern:Float ;
 .
 
 tern-shacl:IRI
@@ -310,7 +316,7 @@ tern-shacl:IRI
             sh:nodeKind sh:IRI ;
             sh:path rdf:value
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/IRI> ;
+    sh:targetClass tern:IRI ;
 .
 
 tern-shacl:Instant
@@ -377,16 +383,16 @@ tern-shacl:Integer
                         sh:datatype xsd:double
                     ]
                 ) ;
-            sh:path <https://w3id.org/tern/ontologies/tern/uncertainty>
+            sh:path tern:uncertainty
         ] ,
         [
             a sh:PropertyShape ;
             sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/unit>
+            sh:path tern:unit
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Integer> ;
+    sh:targetClass tern:Integer ;
 .
 
 tern-shacl:Interval
@@ -426,24 +432,24 @@ tern-shacl:ManagedFeature
             sh:datatype xsd:date ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:path <https://w3id.org/tern/ontologies/tern/dateCommissioned>
+            sh:path tern:dateCommissioned
         ] ,
         [
             a sh:PropertyShape ;
             sh:datatype xsd:date ;
             sh:maxCount 1 ;
-            sh:path <https://w3id.org/tern/ontologies/tern/dateDecommissioned>
+            sh:path tern:dateDecommissioned
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/ManagedFeature> ;
+    sh:targetClass tern:ManagedFeature ;
 .
 
 tern-shacl:MaterialSample
     a sh:NodeShape ;
     sh:property [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/materialSampleID>
+            sh:path dwc:materialSampleID
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/MaterialSample> ;
+    sh:targetClass tern:MaterialSample ;
 .
 
 tern-shacl:Observation
@@ -464,7 +470,7 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/RDFDataset> ;
+            sh:class tern:RDFDataset ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -472,10 +478,10 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <http://www.opengis.net/ont/geosparql#Geometry> ;
+            sh:class geo:Geometry ;
             sh:name "has geometry" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
+            sh:path geo:hasGeometry
         ] ,
         [
             a sh:PropertyShape ;
@@ -485,21 +491,14 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
+            sh:class prov:Agent ;
             sh:name "was associated with" ;
             sh:nodeKind sh:IRI ;
-            sh:or (
-                    [
-                        sh:class <https://w3id.org/tern/ontologies/org/Person>
-                    ]
-                    [
-                        sh:class <https://w3id.org/tern/ontologies/org/Organization>
-                    ]
-                ) ;
             sh:path prov:wasAssociatedWith
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+            sh:class tern:FeatureOfInterest ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "has feature of interest" ;
@@ -510,10 +509,10 @@ tern-shacl:Observation
             a sh:PropertyShape ;
             sh:and (
                     [
-                        sh:class <https://w3id.org/tern/ontologies/tern/Value>
+                        sh:class tern:Value
                     ]
                     [
-                        sh:class <https://w3id.org/tern/ontologies/tern/Result>
+                        sh:class tern:Result
                     ]
                 ) ;
             sh:maxCount 1 ;
@@ -532,7 +531,7 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sensor> ;
+            sh:class tern:Sensor ;
             sh:maxCount 1 ;
             sh:name "made by sensor" ;
             sh:nodeKind sh:IRI ;
@@ -548,7 +547,7 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Instant> ;
+            sh:class tern:Instant ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "phenomenon time" ;
@@ -573,66 +572,24 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+            sh:class tern:SiteVisit ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasSiteVisit>
+            sh:path tern:hasSiteVisit
         ] ,
         [
             a sh:PropertyShape ;
             sh:description "The type of observation." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/observationType>
+            sh:path tern:observationType
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Observation> ;
+    sh:targetClass tern:Observation ;
 .
 
 tern-shacl:ObservationCollection
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
-            sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
-            sh:maxCount 1 ;
-            sh:name "has feature of interest" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:hasFeatureOfInterest
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties." ;
-            sh:minCount 1 ;
-            sh:name "has member" ;
-            sh:nodeKind sh:IRI ;
-            sh:or (
-                    [
-                        sh:class <https://w3id.org/tern/ontologies/tern/Observation>
-                    ]
-                    [
-                        sh:class <https://w3id.org/tern/ontologies/tern/ObservationCollection>
-                    ]
-                ) ;
-            sh:path sosa:hasMember
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
-            sh:description "link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:hasUltimateFeatureOfInterest
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sensor> ;
-            sh:description "Relation between an Observation and the Sensor which made the Observations." ;
-            sh:maxCount 1 ;
-            sh:name "made by sensor" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:madeBySensor
-        ] ,
         [
             a sh:PropertyShape ;
             sh:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." ;
@@ -643,7 +600,7 @@ tern-shacl:ObservationCollection
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Instant> ;
+            sh:class tern:Instant ;
             sh:description "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity." ;
             sh:maxCount 1 ;
             sh:name "phenomenon time" ;
@@ -664,8 +621,50 @@ tern-shacl:ObservationCollection
             sh:name "used procedure" ;
             sh:nodeKind sh:IRI ;
             sh:path sosa:usedProcedure
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:class tern:FeatureOfInterest ;
+            sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
+            sh:maxCount 1 ;
+            sh:name "has feature of interest" ;
+            sh:nodeKind sh:IRI ;
+            sh:path sosa:hasFeatureOfInterest
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:description "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties." ;
+            sh:minCount 1 ;
+            sh:name "has member" ;
+            sh:nodeKind sh:IRI ;
+            sh:or (
+                    [
+                        sh:class tern:Observation
+                    ]
+                    [
+                        sh:class tern:ObservationCollection
+                    ]
+                ) ;
+            sh:path sosa:hasMember
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:class tern:FeatureOfInterest ;
+            sh:description "link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or trasntitively." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path sosa:hasUltimateFeatureOfInterest
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:class tern:Sensor ;
+            sh:description "Relation between an Observation and the Sensor which made the Observations." ;
+            sh:maxCount 1 ;
+            sh:name "made by sensor" ;
+            sh:nodeKind sh:IRI ;
+            sh:path sosa:madeBySensor
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/ObservationCollection> ;
+    sh:targetClass tern:ObservationCollection ;
 .
 
 tern-shacl:Quadrat
@@ -677,9 +676,9 @@ tern-shacl:Quadrat
             sh:minCount 1 ;
             sh:name "feature type" ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/featureType>
+            sh:path tern:featureType
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Quadrat> ;
+    sh:targetClass tern:Quadrat ;
 .
 
 tern-shacl:RDFDataset
@@ -744,28 +743,28 @@ tern-shacl:RDFDataset
             sh:nodeKind sh:IRI ;
             sh:path void:vocabulary
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/RDFDataset> ;
+    sh:targetClass tern:RDFDataset ;
 .
 
 tern-shacl:Result
     a sh:NodeShape ;
     sh:property [
             a sh:PropertyShape ;
-            sh:minCount 1 ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:name "is result of" ;
             sh:nodeKind sh:IRI ;
             sh:or (
                     [
-                        sh:class <https://w3id.org/tern/ontologies/tern/Observation>
+                        sh:class tern:Observation
                     ]
                     [
-                        sh:class <https://w3id.org/tern/ontologies/tern/Sampling>
+                        sh:class tern:Sampling
                     ]
                 ) ;
             sh:path sosa:isResultOf
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Result> ;
+    sh:targetClass tern:Result ;
 .
 
 tern-shacl:Sample
@@ -773,7 +772,7 @@ tern-shacl:Sample
     sh:property
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+            sh:class tern:Sampling ;
             sh:minCount 1 ;
             sh:name "is result of" ;
             sh:nodeKind sh:IRI ;
@@ -781,13 +780,13 @@ tern-shacl:Sample
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+            sh:class tern:FeatureOfInterest ;
             sh:minCount 1 ;
             sh:name "is sample of" ;
             sh:nodeKind sh:IRI ;
             sh:path sosa:isSampleOf
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Sample> ;
+    sh:targetClass tern:Sample ;
 .
 
 tern-shacl:Sampler
@@ -795,7 +794,7 @@ tern-shacl:Sampler
     sh:property
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+            sh:class tern:Sampling ;
             sh:name "made sampling" ;
             sh:nodeKind sh:IRI ;
             sh:path sosa:madeSampling
@@ -807,12 +806,18 @@ tern-shacl:Sampler
             sh:nodeKind sh:IRI ;
             sh:path ssn:implements
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Sampler> ;
+    sh:targetClass tern:Sampler ;
 .
 
 tern-shacl:Sampling
     a sh:NodeShape ;
     sh:property
+        [
+            a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:name "identifier" ;
+            sh:path dcterms:identifier
+        ] ,
         [
             a sh:PropertyShape ;
             sh:maxCount 1 ;
@@ -822,10 +827,10 @@ tern-shacl:Sampling
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <http://www.opengis.net/ont/geosparql#Geometry> ;
+            sh:class geo:Geometry ;
             sh:name "has geometry" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
+            sh:path geo:hasGeometry
         ] ,
         [
             a sh:PropertyShape ;
@@ -835,21 +840,14 @@ tern-shacl:Sampling
         ] ,
         [
             a sh:PropertyShape ;
+            sh:class prov:Agent ;
             sh:name "was associated with" ;
             sh:nodeKind sh:IRI ;
-            sh:or (
-                    [
-                        sh:class <https://w3id.org/tern/ontologies/org/Person>
-                    ]
-                    [
-                        sh:class <https://w3id.org/tern/ontologies/org/Organization>
-                    ]
-                ) ;
             sh:path prov:wasAssociatedWith
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/FeatureOfInterest> ;
+            sh:class tern:FeatureOfInterest ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "has feature of interest" ;
@@ -858,7 +856,7 @@ tern-shacl:Sampling
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sample> ;
+            sh:class tern:Sample ;
             sh:minCount 1 ;
             sh:name "has result" ;
             sh:nodeKind sh:IRI ;
@@ -866,7 +864,7 @@ tern-shacl:Sampling
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sampler> ;
+            sh:class tern:Sampler ;
             sh:description "Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it." ;
             sh:name "made by sampler" ;
             sh:nodeKind sh:IRI ;
@@ -890,25 +888,19 @@ tern-shacl:Sampling
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+            sh:class tern:SiteVisit ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasSiteVisit>
+            sh:path tern:hasSiteVisit
         ] ,
         [
             a sh:PropertyShape ;
             sh:description "The type of sampling act." ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/samplingType>
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:name "identifier" ;
-            sh:path dcterms:identifier
+            sh:path tern:samplingType
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Sampling> ;
+    sh:targetClass tern:Sampling ;
 .
 
 tern-shacl:Site
@@ -918,7 +910,7 @@ tern-shacl:Site
             a sh:PropertyShape ;
             sh:name "sf within" ;
             sh:nodeKind sh:IRI ;
-            sh:path <http://www.opengis.net/ont/geosparql#sfWithin>
+            sh:path geo:sfWithin
         ] ,
         [
             a sh:PropertyShape ;
@@ -930,33 +922,33 @@ tern-shacl:Site
             a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:path <https://w3id.org/tern/ontologies/tern/dimension>
+            sh:path tern:dimension
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+            sh:class tern:SiteVisit ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasSiteVisit>
+            sh:path tern:hasSiteVisit
         ] ,
         [
             a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:path <https://w3id.org/tern/ontologies/tern/locationDescription>
+            sh:path tern:locationDescription
         ] ,
         [
             a sh:PropertyShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/locationProcedure>
+            sh:path tern:locationProcedure
         ] ,
         [
             a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:path <https://w3id.org/tern/ontologies/tern/siteDescription>
+            sh:path tern:siteDescription
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Site> ;
+    sh:targetClass tern:Site ;
 .
 
 tern-shacl:SiteVisit
@@ -977,7 +969,7 @@ tern-shacl:SiteVisit
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/RDFDataset> ;
+            sh:class tern:RDFDataset ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
@@ -1000,42 +992,42 @@ tern-shacl:SiteVisit
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Observation> ;
+            sh:class tern:Observation ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasObservation>
+            sh:path tern:hasObservation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Sampling> ;
+            sh:class tern:Sampling ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasSampling>
+            sh:path tern:hasSampling
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Site> ;
+            sh:class tern:Site ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/hasSite>
+            sh:path tern:hasSite
         ] ,
         [
             a sh:PropertyShape ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/isSiteVisitOf>
+            sh:path tern:isSiteVisitOf
         ] ,
         [
             a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:path <https://w3id.org/tern/ontologies/tern/locationDescription>
+            sh:path tern:locationDescription
         ] ,
         [
             a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:path <https://w3id.org/tern/ontologies/tern/siteDescription>
+            sh:path tern:siteDescription
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/SiteVisit> ;
+    sh:targetClass tern:SiteVisit ;
 .
 
 tern-shacl:System
@@ -1049,7 +1041,7 @@ tern-shacl:System
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Platform> ;
+            sh:class tern:Platform ;
             sh:maxCount 1 ;
             sh:name "is hosted by" ;
             sh:nodeKind sh:IRI ;
@@ -1057,14 +1049,14 @@ tern-shacl:System
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Deployment> ;
+            sh:class tern:Deployment ;
             sh:name "has deployment" ;
             sh:nodeKind sh:IRI ;
             sh:path ssn:hasDeployment
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <https://w3id.org/tern/ontologies/tern/Method> ;
+            sh:class tern:Method ;
             sh:name "implements" ;
             sh:nodeKind sh:IRI ;
             sh:path ssn:implements
@@ -1072,9 +1064,9 @@ tern-shacl:System
         [
             a sh:PropertyShape ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/systemType>
+            sh:path tern:systemType
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/System> ;
+    sh:targetClass tern:System ;
 .
 
 tern-shacl:Taxon
@@ -1083,176 +1075,176 @@ tern-shacl:Taxon
         [
             a sh:PropertyShape ;
             sh:name "accepted name usage" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/acceptedNameUsage>
+            sh:path dwc:acceptedNameUsage
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "accepted name usage ID" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/acceptedNameUsageID>
+            sh:path dwc:acceptedNameUsageID
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/class>
+            sh:path dwc:class
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "cultivar epithet" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/cultivarEpithet>
+            sh:path dwc:cultivarEpithet
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/family>
+            sh:path dwc:family
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "generic name" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/genericName>
+            sh:path dwc:genericName
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/genus>
+            sh:path dwc:genus
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "higher classification" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/higherClassification>
+            sh:path dwc:higherClassification
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "infrageneric epithet" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/infragenericEpithet>
+            sh:path dwc:infragenericEpithet
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/infraspecificEpithet>
+            sh:path dwc:infraspecificEpithet
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/kingdom>
+            sh:path dwc:kingdom
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/nameAccordingTo>
+            sh:path dwc:nameAccordingTo
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "name according to ID" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/nameAccordingToID>
+            sh:path dwc:nameAccordingToID
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "name published in" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/namePublishedIn>
+            sh:path dwc:namePublishedIn
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "name published in ID" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/namePublishedInID>
+            sh:path dwc:namePublishedInID
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "name published in year" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/namePublishedInYear>
+            sh:path dwc:namePublishedInYear
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "nomenclatural code" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/nomenclaturalCode>
+            sh:path dwc:nomenclaturalCode
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "nomenclatural status" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/nomenclaturalStatus>
+            sh:path dwc:nomenclaturalStatus
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/order>
+            sh:path dwc:order
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "original name usage" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/originalNameUsage>
+            sh:path dwc:originalNameUsage
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "original name usage ID" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/originalNameUsageID>
+            sh:path dwc:originalNameUsageID
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "parent name usage" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/parentNameUsage>
+            sh:path dwc:parentNameUsage
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "parent name usage ID" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/parentNameUsageID>
+            sh:path dwc:parentNameUsageID
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/phylum>
+            sh:path dwc:phylum
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/scientificName>
+            sh:path dwc:scientificName
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/scientificNameAuthorship>
+            sh:path dwc:scientificNameAuthorship
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "scientific name ID" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/scientificNameID>
+            sh:path dwc:scientificNameID
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/specificEpithet>
+            sh:path dwc:specificEpithet
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "subfamily" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/subfamily>
+            sh:path dwc:subfamily
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "subgenus" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/subgenus>
+            sh:path dwc:subgenus
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/taxonConceptID>
+            sh:path dwc:taxonConceptID
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "taxon ID" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/taxonID>
+            sh:path dwc:taxonID
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "taxon rank" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/taxonRank>
+            sh:path dwc:taxonRank
         ] ,
         [
             a sh:PropertyShape ;
-            sh:path <http://rs.tdwg.org/dwc/terms/taxonRemarks>
+            sh:path dwc:taxonRemarks
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "taxonomic status" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/taxonomicStatus>
+            sh:path dwc:taxonomicStatus
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "verbatim taxon rank" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/verbatimTaxonRank>
+            sh:path dwc:verbatimTaxonRank
         ] ,
         [
             a sh:PropertyShape ;
             sh:name "vernacular name" ;
-            sh:path <http://rs.tdwg.org/dwc/terms/vernacularName>
+            sh:path dwc:vernacularName
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Taxon> ;
+    sh:targetClass tern:Taxon ;
 .
 
 tern-shacl:Text
@@ -1271,7 +1263,7 @@ tern-shacl:Text
                 ) ;
             sh:path rdf:value
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Text> ;
+    sh:targetClass tern:Text ;
 .
 
 tern-shacl:Transect
@@ -1284,13 +1276,13 @@ tern-shacl:Transect
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:or (
                     [
-                        sh:class <http://www.opengis.net/ont/sf#LineString>
+                        sh:class sf:LineString
                     ]
                     [
-                        sh:class <http://www.opengis.net/ont/geosparql#Geometry>
+                        sh:class geo:Geometry
                     ]
                 ) ;
-            sh:path <http://www.opengis.net/ont/geosparql#hasGeometry>
+            sh:path geo:hasGeometry
         ] ,
         [
             a sh:PropertyShape ;
@@ -1299,36 +1291,36 @@ tern-shacl:Transect
             sh:minCount 1 ;
             sh:name "feature type" ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/featureType>
+            sh:path tern:featureType
         ] ,
         [
             a sh:PropertyShape ;
             sh:maxCount 1 ;
             sh:name "transect direction" ;
             sh:nodeKind sh:IRIOrLiteral ;
-            sh:path <https://w3id.org/tern/ontologies/tern/transectDirection>
+            sh:path tern:transectDirection
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <http://www.opengis.net/ont/sf#Point> ;
+            sh:class sf:Point ;
             sh:maxCount 1 ;
             sh:name "transect end point" ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/transectEndPoint>
+            sh:path tern:transectEndPoint
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class <http://www.opengis.net/ont/sf#Point> ;
+            sh:class sf:Point ;
             sh:maxCount 1 ;
             sh:name "transect start point" ;
             sh:nodeKind sh:IRI ;
-            sh:path <https://w3id.org/tern/ontologies/tern/transectStartPoint>
+            sh:path tern:transectStartPoint
         ] ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Transect> ;
+    sh:targetClass tern:Transect ;
 .
 
 tern-shacl:Value
     a sh:NodeShape ;
-    sh:targetClass <https://w3id.org/tern/ontologies/tern/Value> ;
+    sh:targetClass tern:Value ;
 .
 
