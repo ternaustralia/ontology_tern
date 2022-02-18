@@ -468,12 +468,6 @@ tern:IRI
         tern:Value ;
 .
 
-tern:Instant
-    a owl:Class ;
-    rdfs:label "Instant" ;
-    rdfs:subClassOf time:Instant ;
-.
-
 tern:ManagedFeature
     a owl:Class ;
     rdfs:label "Feature which is managed for TERN purposes" ;
@@ -742,6 +736,13 @@ tern:observationType
     rdfs:label "observation type" ;
     skos:definition "The type of observation." ;
     skos:example "human observation, machine observation." ;
+.
+
+tern:polygon
+    a rdf:Property ;
+    rdfs:label "polygon" ;
+    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+    skos:definition "The polygon of the subject." ;
 .
 
 tern:sampleStorageLocation
@@ -1220,13 +1221,6 @@ tern:methodType
     skos:definition "A particular method type used to conduct some survey." ;
 .
 
-tern:polygon
-    a rdf:Property ;
-    rdfs:label "polygon" ;
-    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
-    skos:definition "The polygon of the subject." ;
-.
-
 tern:scope
     a owl:DatatypeProperty ;
     rdfs:label "scope" ;
@@ -1614,7 +1608,13 @@ tern:Observation
         ] ,
         [
             a owl:Restriction ;
-            owl:onClass time:Instant ;
+            owl:onClass [
+                    a owl:Class ;
+                    owl:unionOf (
+                            time:Instant
+                            time:Interval
+                        )
+                ] ;
             owl:onProperty sosa:phenomenonTime ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
         ] ,
