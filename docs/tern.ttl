@@ -738,13 +738,6 @@ tern:observationType
     skos:example "human observation, machine observation." ;
 .
 
-tern:polygon
-    a rdf:Property ;
-    rdfs:label "polygon" ;
-    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
-    skos:definition "The polygon of the subject." ;
-.
-
 tern:sampleStorageLocation
     a rdf:Property ;
     rdfs:label "sample storage location" ;
