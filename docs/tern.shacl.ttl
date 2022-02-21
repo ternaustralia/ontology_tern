@@ -31,6 +31,13 @@ tern-shacl:
         tern: ;
 .
 
+tern-shacl:Association
+    a sh:NodeShape ;
+    sh:property
+        tern-shacl:prov-agent ,
+        tern-shacl:prov-hadRole ;
+.
+
 tern-shacl:Attribute
     a sh:NodeShape ;
     sh:property
@@ -82,6 +89,14 @@ tern-shacl:Attribute
             sh:path tern:isAttributeOf
         ] ;
     sh:targetClass tern:Attribute ;
+.
+
+tern-shacl:Attribution
+    a sh:NodeShape ;
+    rdfs:label "Attribution" ;
+    sh:property
+        tern-shacl:prov-agent ,
+        tern-shacl:prov-hadRole ;
 .
 
 tern-shacl:Boolean
@@ -274,7 +289,9 @@ tern-shacl:FeatureOfInterest
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path tern:featureType
-        ] ;
+        ] ,
+        tern-shacl:prov-qualifiedAttribution ,
+        tern-shacl:prov-wasAttributedTo ;
     sh:targetClass tern:FeatureOfInterest ;
 .
 
@@ -491,13 +508,6 @@ tern-shacl:Observation
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class prov:Agent ;
-            sh:name "was associated with" ;
-            sh:nodeKind sh:IRI ;
-            sh:path prov:wasAssociatedWith
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:class tern:FeatureOfInterest ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -583,21 +593,15 @@ tern-shacl:Observation
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path tern:observationType
-        ] ;
+        ] ,
+        tern-shacl:prov-qualifiedAssociation ,
+        tern-shacl:prov-wasAssociatedWith ;
     sh:targetClass tern:Observation ;
 .
 
 tern-shacl:ObservationCollection
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." ;
-            sh:maxCount 1 ;
-            sh:name "observed property" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:observedProperty
-        ] ,
         [
             a sh:PropertyShape ;
             sh:class tern:Instant ;
@@ -663,6 +667,14 @@ tern-shacl:ObservationCollection
             sh:name "made by sensor" ;
             sh:nodeKind sh:IRI ;
             sh:path sosa:madeBySensor
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." ;
+            sh:maxCount 1 ;
+            sh:name "observed property" ;
+            sh:nodeKind sh:IRI ;
+            sh:path sosa:observedProperty
         ] ;
     sh:targetClass tern:ObservationCollection ;
 .
@@ -840,13 +852,6 @@ tern-shacl:Sampling
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class prov:Agent ;
-            sh:name "was associated with" ;
-            sh:nodeKind sh:IRI ;
-            sh:path prov:wasAssociatedWith
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:class tern:FeatureOfInterest ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -899,7 +904,9 @@ tern-shacl:Sampling
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path tern:samplingType
-        ] ;
+        ] ,
+        tern-shacl:prov-qualifiedAssociation ,
+        tern-shacl:prov-wasAssociatedWith ;
     sh:targetClass tern:Sampling ;
 .
 
@@ -1026,7 +1033,9 @@ tern-shacl:SiteVisit
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path tern:siteDescription
-        ] ;
+        ] ,
+        tern-shacl:prov-qualifiedAssociation ,
+        tern-shacl:prov-wasAssociatedWith ;
     sh:targetClass tern:SiteVisit ;
 .
 
@@ -1322,5 +1331,53 @@ tern-shacl:Transect
 tern-shacl:Value
     a sh:NodeShape ;
     sh:targetClass tern:Value ;
+.
+
+tern-shacl:prov-qualifiedAttribution
+    a sh:PropertyShape ;
+    sh:class prov:Attribution ;
+    sh:name "qualified attribution" ;
+    sh:path prov:qualifiedAttribution ;
+.
+
+tern-shacl:prov-wasAttributedTo
+    a sh:PropertyShape ;
+    sh:class prov:Agent ;
+    sh:name "was attributed to" ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:wasAttributedTo ;
+.
+
+tern-shacl:prov-agent
+    a sh:PropertyShape ;
+    sh:class prov:Agent ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:agent ;
+.
+
+tern-shacl:prov-hadRole
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "had role" ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:hadRole ;
+.
+
+tern-shacl:prov-qualifiedAssociation
+    a sh:PropertyShape ;
+    sh:class prov:Association ;
+    sh:name "qualified association" ;
+    sh:path prov:qualifiedAssociation ;
+.
+
+tern-shacl:prov-wasAssociatedWith
+    a sh:PropertyShape ;
+    sh:class prov:Agent ;
+    sh:name "was associated with" ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:wasAssociatedWith ;
 .
 
