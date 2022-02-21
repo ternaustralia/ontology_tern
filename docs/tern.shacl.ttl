@@ -36,6 +36,7 @@ tern-shacl:Association
     sh:property
         tern-shacl:prov-agent ,
         tern-shacl:prov-hadRole ;
+    sh:targetClass prov:Association ;
 .
 
 tern-shacl:Attribute
@@ -56,6 +57,7 @@ tern-shacl:Attribution
     sh:property
         tern-shacl:prov-agent ,
         tern-shacl:prov-hadRole ;
+    sh:targetClass prov:Attribution ;
 .
 
 tern-shacl:Boolean
