@@ -113,12 +113,19 @@ dwc:materialSampleID
 is a globally unique and persistent identifier of a soil sample.""" ;
 .
 
+time:Duration
+    a owl:Class ;
+    rdfs:label "Duration" ;
+.
+
 prov:Association
     a owl:Class ;
+    rdfs:label "Association" ;
 .
 
 prov:Attribution
     a owl:Class ;
+    rdfs:label "Attribution" ;
 .
 
 sosa:isSampleOf
@@ -819,6 +826,16 @@ tern:valueType
     skos:example "Use it to describe an instance of sosa:ObservableProperty and its recommended tern:Value type such as tern:QuantitativeMeasure, tern:Boolean, etc." ;
 .
 
+time:Instant
+    a owl:Class ;
+    rdfs:label "Instant" ;
+.
+
+time:Interval
+    a owl:Class ;
+    rdfs:label "Interval" ;
+.
+
 tern:Input
     a owl:Class ;
     rdfs:label "Input" ;
@@ -1031,11 +1048,6 @@ tern:SiteVisit
         [
             a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty void:inDataset
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty prov:startedAtTime
         ] ,
         [
@@ -1073,6 +1085,11 @@ tern:SiteVisit
         [
             a owl:Restriction ;
             owl:allValuesFrom tern:RDFDataset ;
+            owl:onProperty void:inDataset
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty void:inDataset
         ] ,
         prov:Activity ;
