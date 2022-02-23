@@ -166,13 +166,7 @@ tern-shacl:Float
             sh:nodeKind sh:Literal ;
             sh:path tern:uncertainty
         ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:unit
-        ] ;
+        tern-shacl:tern-unit ;
     sh:targetClass tern:Float ;
 .
 
@@ -194,6 +188,12 @@ tern-shacl:Instant
     sh:and (
             [
                 sh:property
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:gYearMonth ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYearMonth
+                    ] ,
                     [
                         a sh:PropertyShape ;
                         sh:datatype xsd:dateTime ;
@@ -223,12 +223,6 @@ tern-shacl:Instant
                         sh:datatype xsd:gYear ;
                         sh:maxCount 1 ;
                         sh:path time:inXSDgYear
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:gYearMonth ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYearMonth
                     ]
             ]
             [
@@ -810,6 +804,18 @@ tern-shacl:Site
     sh:property
         [
             a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:locationProcedure
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path tern:siteDescription
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:name "sf within" ;
             sh:nodeKind sh:IRI ;
             sh:path geo:sfWithin
@@ -837,18 +843,6 @@ tern-shacl:Site
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path tern:locationDescription
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:locationProcedure
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path tern:siteDescription
         ] ;
     sh:targetClass tern:Site ;
 .
@@ -1363,6 +1357,14 @@ tern-shacl:tern-isAttributeOf
     sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:isAttributeOf ;
+.
+
+tern-shacl:tern-unit
+    a sh:PropertyShape ;
+    sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:unit ;
 .
 
 tern-shacl:time-numericDuration
