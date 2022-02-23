@@ -134,70 +134,16 @@ tern-shacl:Duration
 tern-shacl:FeatureOfInterest
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:featureType
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:name "identifier" ;
-            sh:path dcterms:identifier
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:name "type" ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:type
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:RDFDataset ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path void:inDataset
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class geo:Geometry ;
-            sh:name "has geometry" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path geo:hasGeometry
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path rdfs:comment
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Sample ;
-            sh:name "has sample" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:hasSample
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "is feature of interest of" ;
-            sh:nodeKind sh:IRI ;
-            sh:or (
-                    [
-                        sh:class tern:Observation
-                    ]
-                    [
-                        sh:class tern:Sampling
-                    ]
-                ) ;
-            sh:path sosa:isFeatureOfInterestOf
-        ] ,
+        tern-shacl:FeatureOfInterest-featureType ,
+        tern-shacl:dcterms-identifier ,
+        tern-shacl:dcterms-type ,
+        tern-shacl:geo-hasGeometry ,
         tern-shacl:prov-qualifiedAttribution ,
-        tern-shacl:prov-wasAttributedTo ;
+        tern-shacl:prov-wasAttributedTo ,
+        tern-shacl:rdfs-comment ,
+        tern-shacl:sosa-hasSample ,
+        tern-shacl:sosa-isFeatureOfInterestOf ,
+        tern-shacl:void-inDataset ;
     sh:targetClass tern:FeatureOfInterest ;
 .
 
@@ -1282,12 +1228,28 @@ tern-shacl:Value
     sh:targetClass tern:Value ;
 .
 
-tern-shacl:dcterms-type
+tern-shacl:FeatureOfInterest-featureType
     a sh:PropertyShape ;
-    sh:description "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." ;
-    sh:name "type" ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
-    sh:path dcterms:type ;
+    sh:path tern:featureType ;
+.
+
+tern-shacl:dcterms-identifier
+    a sh:PropertyShape ;
+    rdfs:label "dcterms:identifier" ;
+    sh:datatype xsd:string ;
+    sh:name "identifier" ;
+    sh:path dcterms:identifier ;
+.
+
+tern-shacl:geo-hasGeometry
+    a sh:PropertyShape ;
+    sh:class geo:Geometry ;
+    sh:name "has geometry" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path geo:hasGeometry ;
 .
 
 tern-shacl:prov-qualifiedAttribution
@@ -1303,6 +1265,35 @@ tern-shacl:prov-wasAttributedTo
     sh:name "was attributed to" ;
     sh:nodeKind sh:IRI ;
     sh:path prov:wasAttributedTo ;
+.
+
+tern-shacl:rdfs-comment
+    a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:path rdfs:comment ;
+.
+
+tern-shacl:sosa-hasSample
+    a sh:PropertyShape ;
+    sh:class tern:Sample ;
+    sh:name "has sample" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:hasSample ;
+.
+
+tern-shacl:sosa-isFeatureOfInterestOf
+    a sh:PropertyShape ;
+    sh:name "is feature of interest of" ;
+    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:Observation
+            ]
+            [
+                sh:class tern:Sampling
+            ]
+        ) ;
+    sh:path sosa:isFeatureOfInterestOf ;
 .
 
 tern-shacl:ssn-deployedOnPlatform
@@ -1413,6 +1404,24 @@ tern-shacl:time-unitType
             ]
         ) ;
     sh:path time:unitType ;
+.
+
+tern-shacl:void-inDataset
+    a sh:PropertyShape ;
+    sh:class tern:RDFDataset ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path void:inDataset ;
+.
+
+tern-shacl:dcterms-type
+    a sh:PropertyShape ;
+    rdfs:label "dcterms:type" ;
+    sh:description "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." ;
+    sh:name "type" ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:type ;
 .
 
 tern-shacl:prov-agent
