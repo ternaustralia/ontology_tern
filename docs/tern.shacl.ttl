@@ -126,51 +126,21 @@ tern-shacl:Distribution
 tern-shacl:Duration
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "numeric duration" ;
-            sh:path time:numericDuration
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "unit type" ;
-            sh:nodeKind sh:IRI ;
-            sh:or (
-                    [
-                        sh:hasValue time:unitDay
-                    ]
-                    [
-                        sh:hasValue time:unitHour
-                    ]
-                    [
-                        sh:hasValue time:unitMinute
-                    ]
-                    [
-                        sh:hasValue time:unitMonth
-                    ]
-                    [
-                        sh:hasValue time:unitSecond
-                    ]
-                    [
-                        sh:hasValue time:unitWeek
-                    ]
-                    [
-                        sh:hasValue time:unitYear
-                    ]
-                ) ;
-            sh:path time:unitType
-        ] ;
+        tern-shacl:time-numericDuration ,
+        tern-shacl:time-unitType ;
     sh:targetClass time:Duration ;
 .
 
 tern-shacl:FeatureOfInterest
     a sh:NodeShape ;
     sh:property
+        [
+            a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:featureType
+        ] ,
         [
             a sh:PropertyShape ;
             sh:datatype xsd:string ;
@@ -225,13 +195,6 @@ tern-shacl:FeatureOfInterest
                     ]
                 ) ;
             sh:path sosa:isFeatureOfInterestOf
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:featureType
         ] ,
         tern-shacl:prov-qualifiedAttribution ,
         tern-shacl:prov-wasAttributedTo ;
@@ -1409,6 +1372,47 @@ tern-shacl:tern-isAttributeOf
     sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:isAttributeOf ;
+.
+
+tern-shacl:time-numericDuration
+    a sh:PropertyShape ;
+    sh:datatype xsd:decimal ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "numeric duration" ;
+    sh:path time:numericDuration ;
+.
+
+tern-shacl:time-unitType
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "unit type" ;
+    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:hasValue time:unitDay
+            ]
+            [
+                sh:hasValue time:unitHour
+            ]
+            [
+                sh:hasValue time:unitMinute
+            ]
+            [
+                sh:hasValue time:unitMonth
+            ]
+            [
+                sh:hasValue time:unitSecond
+            ]
+            [
+                sh:hasValue time:unitWeek
+            ]
+            [
+                sh:hasValue time:unitYear
+            ]
+        ) ;
+    sh:path time:unitType ;
 .
 
 tern-shacl:prov-agent
