@@ -291,13 +291,7 @@ tern-shacl:Integer
                 ) ;
             sh:path tern:uncertainty
         ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:unit
-        ] ;
+        tern-shacl:tern-unit ;
     sh:targetClass tern:Integer ;
 .
 
@@ -804,6 +798,18 @@ tern-shacl:Site
     sh:property
         [
             a sh:PropertyShape ;
+            sh:class tern:SiteVisit ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:hasSiteVisit
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path tern:locationDescription
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path tern:locationProcedure
@@ -831,18 +837,6 @@ tern-shacl:Site
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path tern:dimension
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:SiteVisit ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:hasSiteVisit
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path tern:locationDescription
         ] ;
     sh:targetClass tern:Site ;
 .
@@ -1359,14 +1353,6 @@ tern-shacl:tern-isAttributeOf
     sh:path tern:isAttributeOf ;
 .
 
-tern-shacl:tern-unit
-    a sh:PropertyShape ;
-    sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
-    sh:maxCount 1 ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:unit ;
-.
-
 tern-shacl:time-numericDuration
     a sh:PropertyShape ;
     sh:datatype xsd:decimal ;
@@ -1442,6 +1428,14 @@ tern-shacl:prov-hadRole
     sh:name "had role" ;
     sh:nodeKind sh:IRI ;
     sh:path prov:hadRole ;
+.
+
+tern-shacl:tern-unit
+    a sh:PropertyShape ;
+    sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:unit ;
 .
 
 tern-shacl:prov-qualifiedAssociation
