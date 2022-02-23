@@ -299,42 +299,83 @@ tern-shacl:IRI
 
 tern-shacl:Instant
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:minCount 1 ;
+    rdfs:comment "One or more of (time:inXSDDate, time:inXSDDateTimeStamp, time:inXSDgYear, time:inXSDgYearMonth, time:inTimePosition, and time:inDateTime) must be present. Only one value for each property is allowed." ;
+    sh:and (
+        [
+            sh:property [
+                a sh:PropertyShape ;
+                sh:maxCount 1 ;
+                sh:path time:inXSDDate ;
+                sh:datatype xsd:date ; 
+            ] ;
+            sh:property [
+                a sh:PropertyShape ;
+                sh:maxCount 1 ;
+                sh:path time:inXSDDateTimeStamp ;
+                sh:datatype xsd:dateTimeStamp ;
+            ] ;
+            sh:property [
+                a sh:PropertyShape ;
+                sh:maxCount 1 ;
+                sh:path time:inXSDgYear ;
+                sh:datatype xsd:gYear ;
+            ] ;
+            sh:property [
+                a sh:PropertyShape ;
+                sh:maxCount 1 ;
+                sh:path time:inXSDgYearMonth ;
+                sh:datatype xsd:gYearMonth ;
+            ] ;
+            sh:property [
+                a sh:PropertyShape ;
+                sh:maxCount 1 ;
+                sh:path time:inTimePosition ;
+                sh:datatype xsd:time ;
+            ] ;
+            sh:property [
+                a sh:PropertyShape ;
+                sh:maxCount 1 ;
+                sh:path time:inDateTime ;
+                sh:datatype xsd:dateTime ;
+            ] ;
+        ]
+        [
             sh:or (
-                    [
-                        sh:datatype xsd:date ;
-                        sh:name "date" ;
-                        sh:path time:inXSDDate
-                    ]
-                    [
-                        sh:datatype xsd:dateTimeStamp ;
-                        sh:name "date timestamp" ;
-                        sh:path time:inXSDDateTimeStamp
-                    ]
-                    [
-                        sh:datatype xsd:gYear ;
-                        sh:name "year" ;
-                        sh:path time:inXSDYear
-                    ]
-                    [
-                        sh:datatype xsd:gYearMonth ;
-                        sh:name "year month" ;
-                        sh:path time:inXSDYearMonth
-                    ]
-                    [
-                        sh:class time:TimePosition ;
-                        sh:name "in time position" ;
-                        sh:path time:inTimePosition
-                    ]
-                    [
-                        sh:class time:GeneralDateTimeDescription ;
-                        sh:name "in date time" ;
-                        sh:path time:inDateTime
-                    ]
-                )
-        ] ;
+                [
+                    sh:property [
+                        a sh:PropertyShape ;
+                        sh:minCount 1 ;
+                        sh:path time:inXSDDate ;
+                    ] ;
+                    sh:property [
+                        a sh:PropertyShape ;
+                        sh:minCount 1 ;
+                        sh:path time:inXSDDateTimeStamp ;
+                    ] ;
+                    sh:property [
+                        a sh:PropertyShape ;
+                        sh:minCount 1 ;
+                        sh:path time:inXSDgYear ;
+                    ] ;
+                    sh:property [
+                        a sh:PropertyShape ;
+                        sh:minCount 1 ;
+                        sh:path time:inXSDgYearMonth ;
+                    ] ;
+                    sh:property [
+                        a sh:PropertyShape ;
+                        sh:minCount 1 ;
+                        sh:path time:inTimePosition ;
+                    ] ;
+                    sh:property [
+                        a sh:PropertyShape ;
+                        sh:minCount 1 ;
+                        sh:path time:inDateTime ;
+                    ] ;
+                ]
+            )
+        ]
+    ) ;
     sh:targetClass time:Instant ;
 .
 
