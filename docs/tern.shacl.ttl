@@ -112,27 +112,9 @@ tern-shacl:DateTime
 tern-shacl:Deployment
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Platform ;
-            sh:maxCount 1 ;
-            sh:name "deployed on platform" ;
-            sh:nodeKind sh:IRI ;
-            sh:path ssn:deployedOnPlatform
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:System ;
-            sh:name "deployed system" ;
-            sh:nodeKind sh:IRI ;
-            sh:path ssn:deployedSystem
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Attribute ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:hasAttribute
-        ] ;
+        tern-shacl:ssn-deployedOnPlatform ,
+        tern-shacl:ssn-deployedSystem ,
+        tern-shacl:tern-hasAttribute ;
     sh:targetClass tern:Deployment ;
 .
 
@@ -301,81 +283,83 @@ tern-shacl:Instant
     a sh:NodeShape ;
     rdfs:comment "One or more of (time:inXSDDate, time:inXSDDateTimeStamp, time:inXSDgYear, time:inXSDgYearMonth, time:inTimePosition, and time:inDateTime) must be present. Only one value for each property is allowed." ;
     sh:and (
-        [
-            sh:property [
-                a sh:PropertyShape ;
-                sh:maxCount 1 ;
-                sh:path time:inXSDDate ;
-                sh:datatype xsd:date ; 
-            ] ;
-            sh:property [
-                a sh:PropertyShape ;
-                sh:maxCount 1 ;
-                sh:path time:inXSDDateTimeStamp ;
-                sh:datatype xsd:dateTimeStamp ;
-            ] ;
-            sh:property [
-                a sh:PropertyShape ;
-                sh:maxCount 1 ;
-                sh:path time:inXSDgYear ;
-                sh:datatype xsd:gYear ;
-            ] ;
-            sh:property [
-                a sh:PropertyShape ;
-                sh:maxCount 1 ;
-                sh:path time:inXSDgYearMonth ;
-                sh:datatype xsd:gYearMonth ;
-            ] ;
-            sh:property [
-                a sh:PropertyShape ;
-                sh:maxCount 1 ;
-                sh:path time:inTimePosition ;
-                sh:datatype xsd:time ;
-            ] ;
-            sh:property [
-                a sh:PropertyShape ;
-                sh:maxCount 1 ;
-                sh:path time:inDateTime ;
-                sh:datatype xsd:dateTime ;
-            ] ;
-        ]
-        [
-            sh:or (
-                [
-                    sh:property [
+            [
+                sh:property
+                    [
                         a sh:PropertyShape ;
-                        sh:minCount 1 ;
-                        sh:path time:inXSDDate ;
-                    ] ;
-                    sh:property [
+                        sh:datatype xsd:dateTime ;
+                        sh:maxCount 1 ;
+                        sh:path time:inDateTime
+                    ] ,
+                    [
                         a sh:PropertyShape ;
-                        sh:minCount 1 ;
-                        sh:path time:inXSDDateTimeStamp ;
-                    ] ;
-                    sh:property [
+                        sh:datatype xsd:time ;
+                        sh:maxCount 1 ;
+                        sh:path time:inTimePosition
+                    ] ,
+                    [
                         a sh:PropertyShape ;
-                        sh:minCount 1 ;
-                        sh:path time:inXSDgYear ;
-                    ] ;
-                    sh:property [
+                        sh:datatype xsd:date ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDate
+                    ] ,
+                    [
                         a sh:PropertyShape ;
-                        sh:minCount 1 ;
-                        sh:path time:inXSDgYearMonth ;
-                    ] ;
-                    sh:property [
+                        sh:datatype xsd:dateTimeStamp ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDateTimeStamp
+                    ] ,
+                    [
                         a sh:PropertyShape ;
-                        sh:minCount 1 ;
-                        sh:path time:inTimePosition ;
-                    ] ;
-                    sh:property [
+                        sh:datatype xsd:gYear ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYear
+                    ] ,
+                    [
                         a sh:PropertyShape ;
-                        sh:minCount 1 ;
-                        sh:path time:inDateTime ;
-                    ] ;
-                ]
-            )
-        ]
-    ) ;
+                        sh:datatype xsd:gYearMonth ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYearMonth
+                    ]
+            ]
+            [
+                sh:or (
+                        [
+                            sh:property
+                                [
+                                    a sh:PropertyShape ;
+                                    sh:minCount 1 ;
+                                    sh:path time:inDateTime
+                                ] ,
+                                [
+                                    a sh:PropertyShape ;
+                                    sh:minCount 1 ;
+                                    sh:path time:inTimePosition
+                                ] ,
+                                [
+                                    a sh:PropertyShape ;
+                                    sh:minCount 1 ;
+                                    sh:path time:inXSDDate
+                                ] ,
+                                [
+                                    a sh:PropertyShape ;
+                                    sh:minCount 1 ;
+                                    sh:path time:inXSDDateTimeStamp
+                                ] ,
+                                [
+                                    a sh:PropertyShape ;
+                                    sh:minCount 1 ;
+                                    sh:path time:inXSDgYear
+                                ] ,
+                                [
+                                    a sh:PropertyShape ;
+                                    sh:minCount 1 ;
+                                    sh:path time:inXSDgYearMonth
+                                ]
+                        ]
+                    )
+            ]
+        ) ;
     sh:targetClass time:Instant ;
 .
 
@@ -700,6 +684,18 @@ tern-shacl:RDFDataset
     sh:property
         [
             a sh:PropertyShape ;
+            sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:contributor
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:creator
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:description "A textual description of the dataset." ;
             sh:maxCount 1 ;
@@ -744,18 +740,6 @@ tern-shacl:RDFDataset
             sh:name "vocabulary" ;
             sh:nodeKind sh:IRI ;
             sh:path void:vocabulary
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:contributor
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:creator
         ] ;
     sh:targetClass tern:RDFDataset ;
 .
@@ -1358,6 +1342,23 @@ tern-shacl:prov-wasAttributedTo
     sh:path prov:wasAttributedTo ;
 .
 
+tern-shacl:ssn-deployedOnPlatform
+    a sh:PropertyShape ;
+    sh:class tern:Platform ;
+    sh:maxCount 1 ;
+    sh:name "deployed on platform" ;
+    sh:nodeKind sh:IRI ;
+    sh:path ssn:deployedOnPlatform ;
+.
+
+tern-shacl:ssn-deployedSystem
+    a sh:PropertyShape ;
+    sh:class tern:System ;
+    sh:name "deployed system" ;
+    sh:nodeKind sh:IRI ;
+    sh:path ssn:deployedSystem ;
+.
+
 tern-shacl:tern-attribute
     a sh:PropertyShape ;
     sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of attributes at [http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924](http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924)." ;
@@ -1365,6 +1366,13 @@ tern-shacl:tern-attribute
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:path tern:attribute ;
+.
+
+tern-shacl:tern-hasAttribute
+    a sh:PropertyShape ;
+    sh:class tern:Attribute ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:hasAttribute ;
 .
 
 tern-shacl:tern-hasSimpleValue
