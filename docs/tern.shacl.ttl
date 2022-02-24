@@ -458,20 +458,7 @@ tern-shacl:Taxon
 
 tern-shacl:Text
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:datatype xsd:string
-                    ]
-                    [
-                        sh:datatype xsd:langString
-                    ]
-                ) ;
-            sh:path rdf:value
-        ] ;
+    sh:property tern-shacl:Text-value ;
     sh:targetClass tern:Text ;
 .
 
@@ -1159,6 +1146,21 @@ tern-shacl:Taxon-vernacularName
     a sh:PropertyShape ;
     sh:name "vernacular name" ;
     sh:path dwc:vernacularName ;
+.
+
+tern-shacl:Text-value
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:or (
+            [
+                sh:datatype xsd:string
+            ]
+            [
+                sh:datatype xsd:langString
+            ]
+        ) ;
+    sh:path rdf:value ;
 .
 
 tern-shacl:dwc-materialSampleID
