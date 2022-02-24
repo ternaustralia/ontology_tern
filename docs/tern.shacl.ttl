@@ -314,65 +314,20 @@ tern-shacl:Quadrat
 tern-shacl:RDFDataset
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:contributor
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:creator
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:description "A textual description of the dataset." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "description" ;
-            sh:path dcterms:description
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:date ;
-            sh:description "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an xsd:date." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "issued" ;
-            sh:path dcterms:issued
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal." ;
-            sh:name "publisher" ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:publisher
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:source
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:description "The name of the dataset." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "title" ;
-            sh:path dcterms:title
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "The controlled vocabularies used in this RDF dataset." ;
-            sh:name "vocabulary" ;
-            sh:nodeKind sh:IRI ;
-            sh:path void:vocabulary
-        ] ;
+        tern-shacl:RDFDataset-contributor ,
+        tern-shacl:RDFDataset-created ,
+        tern-shacl:RDFDataset-creator ,
+        tern-shacl:RDFDataset-date ,
+        tern-shacl:RDFDataset-description ,
+        tern-shacl:RDFDataset-issued ,
+        tern-shacl:RDFDataset-license ,
+        tern-shacl:RDFDataset-modified ,
+        tern-shacl:RDFDataset-publisher ,
+        tern-shacl:RDFDataset-rightsHolder ,
+        tern-shacl:RDFDataset-source ,
+        tern-shacl:RDFDataset-subject ,
+        tern-shacl:RDFDataset-title ,
+        tern-shacl:RDFDataset-vocabulary ;
     sh:targetClass tern:RDFDataset ;
 .
 
@@ -702,26 +657,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:name "original name usage" ;
-            sh:path dwc:originalNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "original name usage ID" ;
-            sh:path dwc:originalNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "parent name usage" ;
-            sh:path dwc:parentNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "parent name usage ID" ;
-            sh:path dwc:parentNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:path dwc:phylum
         ] ,
         [
@@ -871,6 +806,26 @@ tern-shacl:Taxon
         [
             a sh:PropertyShape ;
             sh:path dwc:order
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "original name usage" ;
+            sh:path dwc:originalNameUsage
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "original name usage ID" ;
+            sh:path dwc:originalNameUsageID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "parent name usage" ;
+            sh:path dwc:parentNameUsage
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "parent name usage ID" ;
+            sh:path dwc:parentNameUsageID
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1134,6 +1089,111 @@ tern-shacl:Quadrat-featureType
     sh:name "feature type" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:featureType ;
+.
+
+tern-shacl:RDFDataset-contributor
+    a sh:PropertyShape ;
+    sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:contributor ;
+.
+
+tern-shacl:RDFDataset-created
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "Date of creation of the dataset. The value should be formatted and data-typed as an `xsd:date`." ;
+    sh:path dcterms:created ;
+.
+
+tern-shacl:RDFDataset-creator
+    a sh:PropertyShape ;
+    sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:creator ;
+.
+
+tern-shacl:RDFDataset-date
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "A point or period of time associated with an event in the life-cycle of the resource. The value should be formatted and data-typed as an `xsd:date`." ;
+    sh:name "date" ;
+    sh:path dcterms:date ;
+.
+
+tern-shacl:RDFDataset-description
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "A textual description of the dataset." ;
+    sh:name "description" ;
+    sh:path dcterms:description ;
+.
+
+tern-shacl:RDFDataset-issued
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an `xsd:date`." ;
+    sh:name "issued" ;
+    sh:path dcterms:issued ;
+.
+
+tern-shacl:RDFDataset-license
+    a sh:PropertyShape ;
+    sh:description "A legal document giving official permission to do something with the resource." ;
+    sh:name "license" ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:license ;
+.
+
+tern-shacl:RDFDataset-modified
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "Date on which the dataset was changed. The value should be formatted and datatyped as an `xsd:date`." ;
+    sh:path dcterms:modified ;
+.
+
+tern-shacl:RDFDataset-publisher
+    a sh:PropertyShape ;
+    sh:description "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal." ;
+    sh:name "publisher" ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:publisher ;
+.
+
+tern-shacl:RDFDataset-rightsHolder
+    a sh:PropertyShape ;
+    sh:description "A person or organization owning or managing rights over the resource." ;
+    sh:name "rights holder" ;
+    sh:path dcterms:rightsHolder ;
+.
+
+tern-shacl:RDFDataset-source
+    a sh:PropertyShape ;
+    sh:description "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal." ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:source ;
+.
+
+tern-shacl:RDFDataset-subject
+    a sh:PropertyShape ;
+    sh:description "A topic of the resource. Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary." ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path dcterms:subject ;
+.
+
+tern-shacl:RDFDataset-title
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "The name of the dataset." ;
+    sh:name "title" ;
+    sh:path dcterms:title ;
+.
+
+tern-shacl:RDFDataset-vocabulary
+    a sh:PropertyShape ;
+    sh:description "A vocabulary or `owl:Ontology` whose classes or properties are used in a `void:Dataset`." ;
+    sh:name "vocabulary" ;
+    sh:nodeKind sh:IRI ;
+    sh:path void:vocabulary ;
 .
 
 tern-shacl:dwc-materialSampleID
