@@ -340,22 +340,8 @@ tern-shacl:Result
 tern-shacl:Sample
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Sampling ;
-            sh:minCount 1 ;
-            sh:name "is result of" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:isResultOf
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:FeatureOfInterest ;
-            sh:minCount 1 ;
-            sh:name "is sample of" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:isSampleOf
-        ] ;
+        tern-shacl:Sample-isResultOf ,
+        tern-shacl:Sample-isSampleOf ;
     sh:targetClass tern:Sample ;
 .
 
@@ -642,16 +628,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:name "subfamily" ;
-            sh:path dwc:subfamily
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "subgenus" ;
-            sh:path dwc:subgenus
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:path dwc:taxonConceptID
         ] ,
         [
@@ -811,6 +787,16 @@ tern-shacl:Taxon
         [
             a sh:PropertyShape ;
             sh:path dwc:specificEpithet
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "subfamily" ;
+            sh:path dwc:subfamily
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "subgenus" ;
+            sh:path dwc:subgenus
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1196,6 +1182,24 @@ tern-shacl:Result-isResultOf
             ]
         ) ;
     sh:path sosa:isResultOf ;
+.
+
+tern-shacl:Sample-isResultOf
+    a sh:PropertyShape ;
+    sh:class tern:Sampling ;
+    sh:minCount 1 ;
+    sh:name "is result of" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:isResultOf ;
+.
+
+tern-shacl:Sample-isSampleOf
+    a sh:PropertyShape ;
+    sh:class tern:FeatureOfInterest ;
+    sh:minCount 1 ;
+    sh:name "is sample of" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:isSampleOf ;
 .
 
 tern-shacl:dwc-materialSampleID
