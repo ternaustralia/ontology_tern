@@ -138,13 +138,7 @@ tern-shacl:Float
 
 tern-shacl:IRI
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path rdf:value
-        ] ;
+    sh:property tern-shacl:IRI-value ;
     sh:targetClass tern:IRI ;
 .
 
@@ -708,10 +702,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:path dwc:order
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:name "original name usage" ;
             sh:path dwc:originalNameUsage
         ] ,
@@ -877,6 +867,10 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "nomenclatural status" ;
             sh:path dwc:nomenclaturalStatus
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:order
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1005,6 +999,14 @@ tern-shacl:Float-value
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind sh:Literal ;
+    sh:path rdf:value ;
+.
+
+tern-shacl:IRI-value
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
     sh:path rdf:value ;
 .
 
