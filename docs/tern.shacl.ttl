@@ -46,8 +46,8 @@ tern-shacl:Attribute
         tern-shacl:tern-attribute ,
         tern-shacl:tern-hasSimpleValue ,
         tern-shacl:tern-hasValue ,
-        tern-shacl:tern-inDataset ,
-        tern-shacl:tern-isAttributeOf ;
+        tern-shacl:tern-isAttributeOf ,
+        tern-shacl:void-inDataset ;
     sh:targetClass tern:Attribute ;
 .
 
@@ -331,130 +331,23 @@ tern-shacl:MaterialSample
 tern-shacl:Observation
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:name "identifier" ;
-            sh:path dcterms:identifier
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:name "type" ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:type
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:RDFDataset ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path void:inDataset
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class geo:Geometry ;
-            sh:name "has geometry" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path geo:hasGeometry
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path rdfs:comment
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:FeatureOfInterest ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "has feature of interest" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:hasFeatureOfInterest
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:and (
-                    [
-                        sh:class tern:Value
-                    ]
-                    [
-                        sh:class tern:Result
-                    ]
-                ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "has result" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:hasResult
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "has simple result" ;
-            sh:nodeKing sh:IRI ;
-            sh:path sosa:hasSimpleResult
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Sensor ;
-            sh:maxCount 1 ;
-            sh:name "made by sensor" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:madeBySensor
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "observed property" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:observedProperty
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Instant ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "phenomenon time" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:phenomenonTime
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:dateTime ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "result time" ;
-            sh:path sosa:resultTime
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "used procedure" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:usedProcedure
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:SiteVisit ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:hasSiteVisit
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "The type of observation." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:observationType
-        ] ,
+        tern-shacl:Observation-hasResult ,
+        tern-shacl:dcterms-identifier ,
+        tern-shacl:dcterms-type ,
+        tern-shacl:geo-hasGeometry ,
         tern-shacl:prov-qualifiedAssociation ,
-        tern-shacl:prov-wasAssociatedWith ;
+        tern-shacl:prov-wasAssociatedWith ,
+        tern-shacl:rdfs-comment ,
+        tern-shacl:sosa-hasFeatureOfInterest ,
+        tern-shacl:sosa-hasSimpleResult ,
+        tern-shacl:sosa-madeBySensor ,
+        tern-shacl:sosa-observedProperty ,
+        tern-shacl:sosa-phenomenonTime ,
+        tern-shacl:sosa-resultTime ,
+        tern-shacl:sosa-usedProcedure ,
+        tern-shacl:tern-hasSiteVisit ,
+        tern-shacl:tern-observationType ,
+        tern-shacl:void-inDataset ;
     sh:targetClass tern:Observation ;
 .
 
@@ -513,7 +406,7 @@ tern-shacl:ObservationCollection
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class tern:Instant ;
+            sh:class time:Instant ;
             sh:description "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity." ;
             sh:maxCount 1 ;
             sh:name "phenomenon time" ;
@@ -527,14 +420,7 @@ tern-shacl:ObservationCollection
             sh:name "result time" ;
             sh:path sosa:resultTime
         ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
-            sh:minCount 1 ;
-            sh:name "used procedure" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:usedProcedure
-        ] ;
+        tern-shacl:sosa-usedProcedure ;
     sh:targetClass tern:ObservationCollection ;
 .
 
@@ -712,6 +598,7 @@ tern-shacl:Sampling
         [
             a sh:PropertyShape ;
             sh:class tern:FeatureOfInterest ;
+            sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "has feature of interest" ;
@@ -774,12 +661,6 @@ tern-shacl:Site
     sh:property
         [
             a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path tern:siteDescription
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:name "sf within" ;
             sh:nodeKind sh:IRI ;
             sh:path geo:sfWithin
@@ -813,6 +694,12 @@ tern-shacl:Site
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path tern:locationProcedure
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path tern:siteDescription
         ] ;
     sh:targetClass tern:Site ;
 .
@@ -940,16 +827,6 @@ tern-shacl:System
 tern-shacl:Taxon
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:name "accepted name usage" ;
-            sh:path dwc:acceptedNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "accepted name usage ID" ;
-            sh:path dwc:acceptedNameUsageID
-        ] ,
         [
             a sh:PropertyShape ;
             sh:path dwc:class
@@ -1111,6 +988,16 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "vernacular name" ;
             sh:path dwc:vernacularName
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "accepted name usage" ;
+            sh:path dwc:acceptedNameUsage
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "accepted name usage ID" ;
+            sh:path dwc:acceptedNameUsageID
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1200,12 +1087,14 @@ tern-shacl:FeatureOfInterest-featureType
     sh:path tern:featureType ;
 .
 
-tern-shacl:dcterms-identifier
+tern-shacl:Observation-hasResult
     a sh:PropertyShape ;
-    rdfs:label "dcterms:identifier" ;
-    sh:datatype xsd:string ;
-    sh:name "identifier" ;
-    sh:path dcterms:identifier ;
+    sh:class tern:Value ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "has result" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path sosa:hasResult ;
 .
 
 tern-shacl:dwc-materialSampleID
@@ -1213,14 +1102,6 @@ tern-shacl:dwc-materialSampleID
     sh:datatype xsd:string ;
     sh:nodeKind sh:Literal ;
     sh:path dwc:materialSampleID ;
-.
-
-tern-shacl:geo-hasGeometry
-    a sh:PropertyShape ;
-    sh:class geo:Geometry ;
-    sh:name "has geometry" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path geo:hasGeometry ;
 .
 
 tern-shacl:prov-qualifiedAttribution
@@ -1238,10 +1119,15 @@ tern-shacl:prov-wasAttributedTo
     sh:path prov:wasAttributedTo ;
 .
 
-tern-shacl:rdfs-comment
+tern-shacl:sosa-hasFeatureOfInterest
     a sh:PropertyShape ;
-    sh:nodeKind sh:Literal ;
-    sh:path rdfs:comment ;
+    sh:class tern:FeatureOfInterest ;
+    sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "has feature of interest" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:hasFeatureOfInterest ;
 .
 
 tern-shacl:sosa-hasSample
@@ -1250,6 +1136,15 @@ tern-shacl:sosa-hasSample
     sh:name "has sample" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:hasSample ;
+.
+
+tern-shacl:sosa-hasSimpleResult
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "has simple result" ;
+    sh:nodeKing sh:IRIOrLiteral ;
+    sh:path sosa:hasSimpleResult ;
 .
 
 tern-shacl:sosa-isFeatureOfInterestOf
@@ -1265,6 +1160,46 @@ tern-shacl:sosa-isFeatureOfInterestOf
             ]
         ) ;
     sh:path sosa:isFeatureOfInterestOf ;
+.
+
+tern-shacl:sosa-madeBySensor
+    a sh:PropertyShape ;
+    sh:class tern:Sensor ;
+    sh:description "Relation between an Observation and the Sensor which made the Observations." ;
+    sh:maxCount 1 ;
+    sh:name "made by sensor" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:madeBySensor ;
+.
+
+tern-shacl:sosa-observedProperty
+    a sh:PropertyShape ;
+    sh:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "observed property" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:observedProperty ;
+.
+
+tern-shacl:sosa-phenomenonTime
+    a sh:PropertyShape ;
+    sh:class time:Instant ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "phenomenon time" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path sosa:phenomenonTime ;
+.
+
+tern-shacl:sosa-resultTime
+    a sh:PropertyShape ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "result time" ;
+    sh:path sosa:resultTime ;
 .
 
 tern-shacl:ssn-deployedOnPlatform
@@ -1310,6 +1245,14 @@ tern-shacl:tern-hasSimpleValue
     sh:path tern:hasSimpleValue ;
 .
 
+tern-shacl:tern-hasSiteVisit
+    a sh:PropertyShape ;
+    sh:class tern:SiteVisit ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:hasSiteVisit ;
+.
+
 tern-shacl:tern-hasValue
     a sh:PropertyShape ;
     sh:class tern:Value ;
@@ -1321,19 +1264,19 @@ tern-shacl:tern-hasValue
     sh:path tern:hasValue ;
 .
 
-tern-shacl:tern-inDataset
-    a sh:PropertyShape ;
-    sh:class tern:RDFDataset ;
-    sh:description "A link to the RDF payload's metadata which this resource was a part of." ;
-    sh:nodeKind sh:IRI ;
-    sh:path void:inDataset ;
-.
-
 tern-shacl:tern-isAttributeOf
     a sh:PropertyShape ;
     sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:isAttributeOf ;
+.
+
+tern-shacl:tern-observationType
+    a sh:PropertyShape ;
+    sh:description "The type of observation." ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:observationType ;
 .
 
 tern-shacl:time-hasBeginning
@@ -1403,22 +1346,20 @@ tern-shacl:time-unitType
     sh:path time:unitType ;
 .
 
-tern-shacl:void-inDataset
+tern-shacl:dcterms-identifier
     a sh:PropertyShape ;
-    sh:class tern:RDFDataset ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:nodeKind sh:IRI ;
-    sh:path void:inDataset ;
+    rdfs:label "dcterms:identifier" ;
+    sh:datatype xsd:string ;
+    sh:name "identifier" ;
+    sh:path dcterms:identifier ;
 .
 
-tern-shacl:dcterms-type
+tern-shacl:geo-hasGeometry
     a sh:PropertyShape ;
-    rdfs:label "dcterms:type" ;
-    sh:description "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." ;
-    sh:name "type" ;
-    sh:nodeKind sh:IRI ;
-    sh:path dcterms:type ;
+    sh:class geo:Geometry ;
+    sh:name "has geometry" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path geo:hasGeometry ;
 .
 
 tern-shacl:prov-agent
@@ -1439,12 +1380,37 @@ tern-shacl:prov-hadRole
     sh:path prov:hadRole ;
 .
 
+tern-shacl:rdfs-comment
+    a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:path rdfs:comment ;
+.
+
+tern-shacl:sosa-usedProcedure
+    a sh:PropertyShape ;
+    sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "used procedure" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:usedProcedure ;
+.
+
 tern-shacl:tern-unit
     a sh:PropertyShape ;
     sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:path tern:unit ;
+.
+
+tern-shacl:dcterms-type
+    a sh:PropertyShape ;
+    rdfs:label "dcterms:type" ;
+    sh:description "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." ;
+    sh:name "type" ;
+    sh:nodeKind sh:IRI ;
+    sh:path dcterms:type ;
 .
 
 tern-shacl:prov-qualifiedAssociation
@@ -1460,5 +1426,15 @@ tern-shacl:prov-wasAssociatedWith
     sh:name "was associated with" ;
     sh:nodeKind sh:IRI ;
     sh:path prov:wasAssociatedWith ;
+.
+
+tern-shacl:void-inDataset
+    a sh:PropertyShape ;
+    sh:class tern:RDFDataset ;
+    sh:description "A link to the RDF payload's metadata which this resource was a part of." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path void:inDataset ;
 .
 
