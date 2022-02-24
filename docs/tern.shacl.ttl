@@ -333,22 +333,7 @@ tern-shacl:RDFDataset
 
 tern-shacl:Result
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "is result of" ;
-            sh:nodeKind sh:IRI ;
-            sh:or (
-                    [
-                        sh:class tern:Observation
-                    ]
-                    [
-                        sh:class tern:Sampling
-                    ]
-                ) ;
-            sh:path sosa:isResultOf
-        ] ;
+    sh:property tern-shacl:Result-isResultOf ;
     sh:targetClass tern:Result ;
 .
 
@@ -657,27 +642,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:path dwc:phylum
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:scientificName
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:scientificNameAuthorship
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "scientific name ID" ;
-            sh:path dwc:scientificNameID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:specificEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:name "subfamily" ;
             sh:path dwc:subfamily
         ] ,
@@ -826,6 +790,27 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "parent name usage ID" ;
             sh:path dwc:parentNameUsageID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:phylum
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:scientificName
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:scientificNameAuthorship
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "scientific name ID" ;
+            sh:path dwc:scientificNameID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:specificEpithet
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1194,6 +1179,23 @@ tern-shacl:RDFDataset-vocabulary
     sh:name "vocabulary" ;
     sh:nodeKind sh:IRI ;
     sh:path void:vocabulary ;
+.
+
+tern-shacl:Result-isResultOf
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "is result of" ;
+    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:Observation
+            ]
+            [
+                sh:class tern:Sampling
+            ]
+        ) ;
+    sh:path sosa:isResultOf ;
 .
 
 tern-shacl:dwc-materialSampleID
