@@ -465,53 +465,11 @@ tern-shacl:Text
 tern-shacl:Transect
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:name "has geometry" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:or (
-                    [
-                        sh:class sf:LineString
-                    ]
-                    [
-                        sh:class geo:Geometry
-                    ]
-                ) ;
-            sh:path geo:hasGeometry
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "feature type" ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:featureType
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:name "transect direction" ;
-            sh:nodeKind sh:IRIOrLiteral ;
-            sh:path tern:transectDirection
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class sf:Point ;
-            sh:maxCount 1 ;
-            sh:name "transect end point" ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:transectEndPoint
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class sf:Point ;
-            sh:maxCount 1 ;
-            sh:name "transect start point" ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:transectStartPoint
-        ] ;
+        tern-shacl:Transect-featureType ,
+        tern-shacl:Transect-hasGeometry ,
+        tern-shacl:Transect-transectDirection ,
+        tern-shacl:Transect-transectEndPoint ,
+        tern-shacl:Transect-transectStartPoint ;
     sh:targetClass tern:Transect ;
 .
 
@@ -1161,6 +1119,58 @@ tern-shacl:Text-value
             ]
         ) ;
     sh:path rdf:value ;
+.
+
+tern-shacl:Transect-featureType
+    a sh:PropertyShape ;
+    sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "feature type" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:featureType ;
+.
+
+tern-shacl:Transect-hasGeometry
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:name "has geometry" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or (
+            [
+                sh:class sf:LineString
+            ]
+            [
+                sh:class geo:Geometry
+            ]
+        ) ;
+    sh:path geo:hasGeometry ;
+.
+
+tern-shacl:Transect-transectDirection
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:name "transect direction" ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path tern:transectDirection ;
+.
+
+tern-shacl:Transect-transectEndPoint
+    a sh:PropertyShape ;
+    sh:class sf:Point ;
+    sh:maxCount 1 ;
+    sh:name "transect end point" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:transectEndPoint ;
+.
+
+tern-shacl:Transect-transectStartPoint
+    a sh:PropertyShape ;
+    sh:class sf:Point ;
+    sh:maxCount 1 ;
+    sh:name "transect start point" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:transectStartPoint ;
 .
 
 tern-shacl:dwc-materialSampleID
