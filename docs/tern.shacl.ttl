@@ -324,10 +324,7 @@ tern-shacl:ManagedFeature
 
 tern-shacl:MaterialSample
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:path dwc:materialSampleID
-        ] ;
+    sh:property tern-shacl:dwc-materialSampleID ;
     sh:targetClass tern:MaterialSample ;
 .
 
@@ -777,12 +774,6 @@ tern-shacl:Site
     sh:property
         [
             a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:locationProcedure
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path tern:siteDescription
@@ -816,6 +807,12 @@ tern-shacl:Site
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path tern:locationDescription
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:locationProcedure
         ] ;
     sh:targetClass tern:Site ;
 .
@@ -1209,6 +1206,13 @@ tern-shacl:dcterms-identifier
     sh:datatype xsd:string ;
     sh:name "identifier" ;
     sh:path dcterms:identifier ;
+.
+
+tern-shacl:dwc-materialSampleID
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:nodeKind sh:Literal ;
+    sh:path dwc:materialSampleID ;
 .
 
 tern-shacl:geo-hasGeometry
