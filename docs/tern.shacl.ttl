@@ -1,6 +1,7 @@
 # baseURI: https://w3id.org/tern/shacl/tern/
 # imports: http://datashapes.org/dash
 # imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/shacl#
 # imports: https://w3id.org/tern/ontologies/tern/
 # prefix: tern-shacl
@@ -27,6 +28,7 @@ tern-shacl:
     owl:imports
         <http://datashapes.org/dash> ,
         <http://www.opengis.net/ont/geosparql> ,
+        <http://www.w3.org/2004/02/skos/core> ,
         sh: ,
         tern: ;
 .
@@ -348,20 +350,8 @@ tern-shacl:Sample
 tern-shacl:Sampler
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Sampling ;
-            sh:name "made sampling" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:madeSampling
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:minCount 1 ;
-            sh:name "implements" ;
-            sh:nodeKind sh:IRI ;
-            sh:path ssn:implements
-        ] ;
+        tern-shacl:sosa-implements ,
+        tern-shacl:sosa-madeSampling ;
     sh:targetClass tern:Sampler ;
 .
 
@@ -628,15 +618,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:path dwc:taxonConceptID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "taxon ID" ;
-            sh:path dwc:taxonID
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:name "taxon rank" ;
             sh:path dwc:taxonRank
         ] ,
@@ -797,6 +778,15 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "subgenus" ;
             sh:path dwc:subgenus
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:taxonConceptID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "taxon ID" ;
+            sh:path dwc:taxonID
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1252,6 +1242,15 @@ tern-shacl:sosa-hasSimpleResult
     sh:path sosa:hasSimpleResult ;
 .
 
+tern-shacl:sosa-implements
+    a sh:PropertyShape ;
+    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
+    sh:minCount 1 ;
+    sh:name "implements" ;
+    sh:nodeKind sh:IRI ;
+    sh:path ssn:implements ;
+.
+
 tern-shacl:sosa-isFeatureOfInterestOf
     a sh:PropertyShape ;
     sh:name "is feature of interest of" ;
@@ -1275,6 +1274,14 @@ tern-shacl:sosa-madeBySensor
     sh:name "made by sensor" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:madeBySensor ;
+.
+
+tern-shacl:sosa-madeSampling
+    a sh:PropertyShape ;
+    sh:class tern:Sampling ;
+    sh:name "made sampling" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:madeSampling ;
 .
 
 tern-shacl:sosa-observedProperty
