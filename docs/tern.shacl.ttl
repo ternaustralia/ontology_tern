@@ -190,18 +190,6 @@ tern-shacl:Instant
                 sh:property
                     [
                         a sh:PropertyShape ;
-                        sh:datatype xsd:gYearMonth ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYearMonth
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:dateTime ;
-                        sh:maxCount 1 ;
-                        sh:path time:inDateTime
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
                         sh:datatype xsd:time ;
                         sh:maxCount 1 ;
                         sh:path time:inTimePosition
@@ -223,6 +211,18 @@ tern-shacl:Instant
                         sh:datatype xsd:gYear ;
                         sh:maxCount 1 ;
                         sh:path time:inXSDgYear
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:gYearMonth ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYearMonth
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:dateTime ;
+                        sh:maxCount 1 ;
+                        sh:path time:inDateTime
                     ]
             ]
             [
@@ -298,29 +298,9 @@ tern-shacl:Integer
 tern-shacl:Interval
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:class time:Instant ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path time:hasBeginning
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class time:Duration ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path time:hasDuration
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class time:Instant ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path time:hasEnd
-        ] ;
+        tern-shacl:time-hasBeginning ,
+        tern-shacl:time-hasDuration ,
+        tern-shacl:time-hasEnd ;
     sh:targetClass time:Interval ;
 .
 
@@ -340,7 +320,6 @@ tern-shacl:ManagedFeature
             sh:maxCount 1 ;
             sh:path tern:dateDecommissioned
         ] ;
-    sh:targetClass tern:ManagedFeature ;
 .
 
 tern-shacl:MaterialSample
@@ -798,18 +777,6 @@ tern-shacl:Site
     sh:property
         [
             a sh:PropertyShape ;
-            sh:class tern:SiteVisit ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:hasSiteVisit
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path tern:locationDescription
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:maxCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path tern:locationProcedure
@@ -837,6 +804,18 @@ tern-shacl:Site
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:path tern:dimension
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:class tern:SiteVisit ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:hasSiteVisit
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path tern:locationDescription
         ] ;
     sh:targetClass tern:Site ;
 .
@@ -1351,6 +1330,32 @@ tern-shacl:tern-isAttributeOf
     sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:isAttributeOf ;
+.
+
+tern-shacl:time-hasBeginning
+    a sh:PropertyShape ;
+    sh:class time:Instant ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path time:hasBeginning ;
+.
+
+tern-shacl:time-hasDuration
+    a sh:PropertyShape ;
+    sh:class time:Duration ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path time:hasDuration ;
+.
+
+tern-shacl:time-hasEnd
+    a sh:PropertyShape ;
+    sh:class time:Instant ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path time:hasEnd ;
 .
 
 tern-shacl:time-numericDuration
