@@ -101,7 +101,6 @@ tern-shacl:Deployment
 
 tern-shacl:Distribution
     a sh:NodeShape ;
-    sh:targetClass tern:Distribution ;
 .
 
 tern-shacl:Duration
@@ -171,18 +170,6 @@ tern-shacl:Instant
                 sh:property
                     [
                         a sh:PropertyShape ;
-                        sh:datatype xsd:date ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDate
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:dateTimeStamp ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDateTimeStamp
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
                         sh:datatype xsd:gYear ;
                         sh:maxCount 1 ;
                         sh:path time:inXSDgYear
@@ -204,6 +191,18 @@ tern-shacl:Instant
                         sh:datatype xsd:time ;
                         sh:maxCount 1 ;
                         sh:path time:inTimePosition
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:date ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDate
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:dateTimeStamp ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDateTimeStamp
                     ]
             ]
             [
@@ -743,6 +742,90 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
+            sh:name "name published in ID" ;
+            sh:path dwc:namePublishedInID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "name published in year" ;
+            sh:path dwc:namePublishedInYear
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "nomenclatural code" ;
+            sh:path dwc:nomenclaturalCode
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "nomenclatural status" ;
+            sh:path dwc:nomenclaturalStatus
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:order
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "original name usage" ;
+            sh:path dwc:originalNameUsage
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "original name usage ID" ;
+            sh:path dwc:originalNameUsageID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "parent name usage" ;
+            sh:path dwc:parentNameUsage
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "parent name usage ID" ;
+            sh:path dwc:parentNameUsageID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:phylum
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:scientificName
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:scientificNameAuthorship
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "scientific name ID" ;
+            sh:path dwc:scientificNameID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:specificEpithet
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "subfamily" ;
+            sh:path dwc:subfamily
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "subgenus" ;
+            sh:path dwc:subgenus
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:taxonConceptID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "taxon ID" ;
+            sh:path dwc:taxonID
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:name "taxon rank" ;
             sh:path dwc:taxonRank
         ] ,
@@ -828,90 +911,6 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "name published in" ;
             sh:path dwc:namePublishedIn
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "name published in ID" ;
-            sh:path dwc:namePublishedInID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "name published in year" ;
-            sh:path dwc:namePublishedInYear
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "nomenclatural code" ;
-            sh:path dwc:nomenclaturalCode
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "nomenclatural status" ;
-            sh:path dwc:nomenclaturalStatus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:order
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "original name usage" ;
-            sh:path dwc:originalNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "original name usage ID" ;
-            sh:path dwc:originalNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "parent name usage" ;
-            sh:path dwc:parentNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "parent name usage ID" ;
-            sh:path dwc:parentNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:phylum
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:scientificName
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:scientificNameAuthorship
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "scientific name ID" ;
-            sh:path dwc:scientificNameID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:specificEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "subfamily" ;
-            sh:path dwc:subfamily
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "subgenus" ;
-            sh:path dwc:subgenus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:taxonConceptID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "taxon ID" ;
-            sh:path dwc:taxonID
         ] ;
     sh:targetClass tern:Taxon ;
 .
