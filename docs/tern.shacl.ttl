@@ -86,13 +86,7 @@ tern-shacl:Date
 
 tern-shacl:DateTime
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:datatype xsd:dateTime ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path rdf:value
-        ] ;
+    sh:property tern-shacl:DateTime-value ;
     sh:targetClass tern:DateTime ;
 .
 
@@ -177,6 +171,12 @@ tern-shacl:Instant
                 sh:property
                     [
                         a sh:PropertyShape ;
+                        sh:datatype xsd:date ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDate
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
                         sh:datatype xsd:dateTimeStamp ;
                         sh:maxCount 1 ;
                         sh:path time:inXSDDateTimeStamp
@@ -204,12 +204,6 @@ tern-shacl:Instant
                         sh:datatype xsd:time ;
                         sh:maxCount 1 ;
                         sh:path time:inTimePosition
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:date ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDate
                     ]
             ]
             [
@@ -749,6 +743,62 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
+            sh:name "taxon rank" ;
+            sh:path dwc:taxonRank
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:taxonRemarks
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "taxonomic status" ;
+            sh:path dwc:taxonomicStatus
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "verbatim taxon rank" ;
+            sh:path dwc:verbatimTaxonRank
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "vernacular name" ;
+            sh:path dwc:vernacularName
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "accepted name usage" ;
+            sh:path dwc:acceptedNameUsage
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "accepted name usage ID" ;
+            sh:path dwc:acceptedNameUsageID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:class
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "cultivar epithet" ;
+            sh:path dwc:cultivarEpithet
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:family
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "generic name" ;
+            sh:path dwc:genericName
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:genus
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:name "higher classification" ;
             sh:path dwc:higherClassification
         ] ,
@@ -862,62 +912,6 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "taxon ID" ;
             sh:path dwc:taxonID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "taxon rank" ;
-            sh:path dwc:taxonRank
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:taxonRemarks
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "taxonomic status" ;
-            sh:path dwc:taxonomicStatus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "verbatim taxon rank" ;
-            sh:path dwc:verbatimTaxonRank
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "vernacular name" ;
-            sh:path dwc:vernacularName
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "accepted name usage" ;
-            sh:path dwc:acceptedNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "accepted name usage ID" ;
-            sh:path dwc:acceptedNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:class
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "cultivar epithet" ;
-            sh:path dwc:cultivarEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:family
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "generic name" ;
-            sh:path dwc:genericName
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:genus
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1010,6 +1004,14 @@ tern-shacl:Boolean-value
 tern-shacl:Date-value
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path rdf:value ;
+.
+
+tern-shacl:DateTime-value
+    a sh:PropertyShape ;
+    sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
