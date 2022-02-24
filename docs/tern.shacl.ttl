@@ -367,15 +367,7 @@ tern-shacl:ObservationCollection
 
 tern-shacl:Quadrat
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:hasValue <http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5> ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "feature type" ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:featureType
-        ] ;
+    sh:property tern-shacl:Quadrat-featureType ;
     sh:targetClass tern:Quadrat ;
 .
 
@@ -770,10 +762,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:path dwc:kingdom
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:path dwc:nameAccordingTo
         ] ,
         [
@@ -939,6 +927,10 @@ tern-shacl:Taxon
         [
             a sh:PropertyShape ;
             sh:path dwc:infraspecificEpithet
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:kingdom
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1118,6 +1110,16 @@ tern-shacl:ObservationCollection-usedProcedure
     sh:name "used procedure" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:usedProcedure ;
+.
+
+tern-shacl:Quadrat-featureType
+    a sh:PropertyShape ;
+    sh:hasValue <http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5> ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "feature type" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:featureType ;
 .
 
 tern-shacl:dwc-materialSampleID
