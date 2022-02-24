@@ -130,22 +130,8 @@ tern-shacl:FeatureOfInterest
 tern-shacl:Float
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:double ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path rdf:value
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:double ;
-            sh:description "Error of measurement (±)." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path tern:uncertainty
-        ] ,
+        tern-shacl:Float-uncertainty ,
+        tern-shacl:Float-value ,
         tern-shacl:tern-unit ;
     sh:targetClass tern:Float ;
 .
@@ -170,18 +156,6 @@ tern-shacl:Instant
                 sh:property
                     [
                         a sh:PropertyShape ;
-                        sh:datatype xsd:gYear ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYear
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:gYearMonth ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYearMonth
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
                         sh:datatype xsd:dateTime ;
                         sh:maxCount 1 ;
                         sh:path time:inDateTime
@@ -203,6 +177,18 @@ tern-shacl:Instant
                         sh:datatype xsd:dateTimeStamp ;
                         sh:maxCount 1 ;
                         sh:path time:inXSDDateTimeStamp
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:gYear ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYear
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:gYearMonth ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYearMonth
                     ]
             ]
             [
@@ -742,16 +728,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:name "name published in ID" ;
-            sh:path dwc:namePublishedInID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "name published in year" ;
-            sh:path dwc:namePublishedInYear
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:name "nomenclatural code" ;
             sh:path dwc:nomenclaturalCode
         ] ,
@@ -911,6 +887,16 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "name published in" ;
             sh:path dwc:namePublishedIn
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "name published in ID" ;
+            sh:path dwc:namePublishedInID
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "name published in year" ;
+            sh:path dwc:namePublishedInYear
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1022,6 +1008,24 @@ tern-shacl:FeatureOfInterest-featureType
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:path tern:featureType ;
+.
+
+tern-shacl:Float-uncertainty
+    a sh:PropertyShape ;
+    sh:datatype xsd:double ;
+    sh:description "Error of measurement (±)." ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:uncertainty ;
+.
+
+tern-shacl:Float-value
+    a sh:PropertyShape ;
+    sh:datatype xsd:double ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path rdf:value ;
 .
 
 tern-shacl:Observation-hasResult
