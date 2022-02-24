@@ -62,13 +62,7 @@ tern-shacl:Attribution
 
 tern-shacl:Boolean
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:datatype xsd:boolean ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path rdf:value
-        ] ;
+    sh:property tern-shacl:Boolean-value ;
     sh:targetClass tern:Boolean ;
 .
 
@@ -190,12 +184,6 @@ tern-shacl:Instant
                 sh:property
                     [
                         a sh:PropertyShape ;
-                        sh:datatype xsd:time ;
-                        sh:maxCount 1 ;
-                        sh:path time:inTimePosition
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
                         sh:datatype xsd:date ;
                         sh:maxCount 1 ;
                         sh:path time:inXSDDate
@@ -223,6 +211,12 @@ tern-shacl:Instant
                         sh:datatype xsd:dateTime ;
                         sh:maxCount 1 ;
                         sh:path time:inDateTime
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:time ;
+                        sh:maxCount 1 ;
+                        sh:path time:inTimePosition
                     ]
             ]
             [
@@ -762,10 +756,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:path dwc:nameAccordingTo
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:name "name according to ID" ;
             sh:path dwc:nameAccordingToID
         ] ,
@@ -931,6 +921,10 @@ tern-shacl:Taxon
         [
             a sh:PropertyShape ;
             sh:path dwc:kingdom
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:nameAccordingTo
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1010,6 +1004,14 @@ tern-shacl:Transect
 tern-shacl:Value
     a sh:NodeShape ;
     sh:targetClass tern:Value ;
+.
+
+tern-shacl:Boolean-value
+    a sh:PropertyShape ;
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path rdf:value ;
 .
 
 tern-shacl:FeatureOfInterest-featureType
