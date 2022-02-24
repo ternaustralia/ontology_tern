@@ -377,48 +377,13 @@ tern-shacl:Sampling
 tern-shacl:Site
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:name "sf within" ;
-            sh:nodeKind sh:IRI ;
-            sh:path geo:sfWithin
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path rdfs:label
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path tern:dimension
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:SiteVisit ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:hasSiteVisit
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path tern:locationDescription
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:locationProcedure
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:path tern:siteDescription
-        ] ;
+        tern-shacl:Site-dimension ,
+        tern-shacl:Site-hasSiteVisit ,
+        tern-shacl:Site-label ,
+        tern-shacl:Site-locationProcedure ,
+        tern-shacl:Site-siteDescription ,
+        tern-shacl:geo-sfWithin ,
+        tern-shacl:tern-locationDescription ;
     sh:targetClass tern:Site ;
 .
 
@@ -744,6 +709,29 @@ tern-shacl:Transect
     sh:property
         [
             a sh:PropertyShape ;
+            sh:class sf:Point ;
+            sh:maxCount 1 ;
+            sh:name "transect start point" ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:transectStartPoint
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:maxCount 1 ;
+            sh:name "has geometry" ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:or (
+                    [
+                        sh:class sf:LineString
+                    ]
+                    [
+                        sh:class geo:Geometry
+                    ]
+                ) ;
+            sh:path geo:hasGeometry
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -765,29 +753,6 @@ tern-shacl:Transect
             sh:name "transect end point" ;
             sh:nodeKind sh:IRI ;
             sh:path tern:transectEndPoint
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class sf:Point ;
-            sh:maxCount 1 ;
-            sh:name "transect start point" ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:transectStartPoint
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:maxCount 1 ;
-            sh:name "has geometry" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:or (
-                    [
-                        sh:class sf:LineString
-                    ]
-                    [
-                        sh:class geo:Geometry
-                    ]
-                ) ;
-            sh:path geo:hasGeometry
         ] ;
     sh:targetClass tern:Transect ;
 .
@@ -1139,11 +1104,57 @@ tern-shacl:Sampling-madeBySampler
     sh:path sosa:madeBySampler ;
 .
 
+tern-shacl:Site-dimension
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:path tern:dimension ;
+.
+
+tern-shacl:Site-hasSiteVisit
+    a sh:PropertyShape ;
+    sh:class tern:SiteVisit ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:hasSiteVisit ;
+.
+
+tern-shacl:Site-label
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:path rdfs:label ;
+.
+
+tern-shacl:Site-locationProcedure
+    a sh:PropertyShape ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:locationProcedure ;
+.
+
+tern-shacl:Site-siteDescription
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description """The description of the site. 
+
+Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sand fan into western edge. Very few, 3, plants regenerating after recent moderate rains. Silt, sand with scattered iron conglomerate stones on surface.""" ;
+    sh:maxCount 1 ;
+    sh:name "site description" ;
+    sh:path tern:siteDescription ;
+.
+
 tern-shacl:dwc-materialSampleID
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:nodeKind sh:Literal ;
     sh:path dwc:materialSampleID ;
+.
+
+tern-shacl:geo-sfWithin
+    a sh:PropertyShape ;
+    sh:name "sf within" ;
+    sh:nodeKind sh:IRI ;
+    sh:path geo:sfWithin ;
 .
 
 tern-shacl:prov-qualifiedAttribution
@@ -1299,6 +1310,17 @@ tern-shacl:tern-isAttributeOf
     sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:isAttributeOf ;
+.
+
+tern-shacl:tern-locationDescription
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description """The description of the site's location. 
+
+Example: 10km west of Fletcherview Tropical Rangeland SuperSite.""" ;
+    sh:maxCount 1 ;
+    sh:name "location description" ;
+    sh:path tern:locationDescription ;
 .
 
 tern-shacl:tern-observationType
