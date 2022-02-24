@@ -350,7 +350,7 @@ tern-shacl:Sample
 tern-shacl:Sampler
     a sh:NodeShape ;
     sh:property
-        tern-shacl:sosa-implements ,
+        tern-shacl:Sampler-implements ,
         tern-shacl:sosa-madeSampling ;
     sh:targetClass tern:Sampler ;
 .
@@ -405,217 +405,54 @@ tern-shacl:SiteVisit
 tern-shacl:System
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:name "type" ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:type
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Platform ;
-            sh:maxCount 1 ;
-            sh:name "is hosted by" ;
-            sh:nodeKind sh:IRI ;
-            sh:path sosa:isHostedBy
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Deployment ;
-            sh:name "has deployment" ;
-            sh:nodeKind sh:IRI ;
-            sh:path ssn:hasDeployment
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:class tern:Method ;
-            sh:name "implements" ;
-            sh:nodeKind sh:IRI ;
-            sh:path ssn:implements
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:systemType
-        ] ;
+        tern-shacl:System-hasDeployment ,
+        tern-shacl:System-isHostedBy ,
+        tern-shacl:System-systemType ,
+        tern-shacl:dcterms-type ,
+        tern-shacl:sosa-implements ;
     sh:targetClass tern:System ;
 .
 
 tern-shacl:Taxon
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:name "accepted name usage" ;
-            sh:path dwc:acceptedNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "accepted name usage ID" ;
-            sh:path dwc:acceptedNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:class
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "cultivar epithet" ;
-            sh:path dwc:cultivarEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:family
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "generic name" ;
-            sh:path dwc:genericName
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:genus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "higher classification" ;
-            sh:path dwc:higherClassification
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "infrageneric epithet" ;
-            sh:path dwc:infragenericEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:infraspecificEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:kingdom
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:nameAccordingTo
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "name according to ID" ;
-            sh:path dwc:nameAccordingToID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "name published in" ;
-            sh:path dwc:namePublishedIn
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "name published in ID" ;
-            sh:path dwc:namePublishedInID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "name published in year" ;
-            sh:path dwc:namePublishedInYear
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "nomenclatural code" ;
-            sh:path dwc:nomenclaturalCode
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "nomenclatural status" ;
-            sh:path dwc:nomenclaturalStatus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:order
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "original name usage" ;
-            sh:path dwc:originalNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "original name usage ID" ;
-            sh:path dwc:originalNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "parent name usage" ;
-            sh:path dwc:parentNameUsage
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "parent name usage ID" ;
-            sh:path dwc:parentNameUsageID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:phylum
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:scientificName
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:scientificNameAuthorship
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "scientific name ID" ;
-            sh:path dwc:scientificNameID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:specificEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "subfamily" ;
-            sh:path dwc:subfamily
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "subgenus" ;
-            sh:path dwc:subgenus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:taxonConceptID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "taxon ID" ;
-            sh:path dwc:taxonID
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "taxon rank" ;
-            sh:path dwc:taxonRank
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:taxonRemarks
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "taxonomic status" ;
-            sh:path dwc:taxonomicStatus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "verbatim taxon rank" ;
-            sh:path dwc:verbatimTaxonRank
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "vernacular name" ;
-            sh:path dwc:vernacularName
-        ] ;
+        tern-shacl:Taxon-acceptedNameUsage ,
+        tern-shacl:Taxon-acceptedNameUsageID ,
+        tern-shacl:Taxon-class ,
+        tern-shacl:Taxon-cultivarEpithet ,
+        tern-shacl:Taxon-family ,
+        tern-shacl:Taxon-genericName ,
+        tern-shacl:Taxon-genus ,
+        tern-shacl:Taxon-higherClassification ,
+        tern-shacl:Taxon-infragenericEpithet ,
+        tern-shacl:Taxon-infraspecificEpithet ,
+        tern-shacl:Taxon-kingdom ,
+        tern-shacl:Taxon-nameAccordingTo ,
+        tern-shacl:Taxon-nameAccordingToID ,
+        tern-shacl:Taxon-namePublishedIn ,
+        tern-shacl:Taxon-namePublishedInID ,
+        tern-shacl:Taxon-namePublishedInYear ,
+        tern-shacl:Taxon-nomenclaturalCode ,
+        tern-shacl:Taxon-nomenclaturalStatus ,
+        tern-shacl:Taxon-order ,
+        tern-shacl:Taxon-originalNameUsage ,
+        tern-shacl:Taxon-originalNameUsageID ,
+        tern-shacl:Taxon-parentNameUsage ,
+        tern-shacl:Taxon-parentNameUsageID ,
+        tern-shacl:Taxon-phylum ,
+        tern-shacl:Taxon-scientificName ,
+        tern-shacl:Taxon-scientificNameAuthorship ,
+        tern-shacl:Taxon-scientificNameID ,
+        tern-shacl:Taxon-specificEpithet ,
+        tern-shacl:Taxon-subfamily ,
+        tern-shacl:Taxon-subgenus ,
+        tern-shacl:Taxon-taxonConceptID ,
+        tern-shacl:Taxon-taxonID ,
+        tern-shacl:Taxon-taxonRank ,
+        tern-shacl:Taxon-taxonRemarks ,
+        tern-shacl:Taxon-taxonomicStatus ,
+        tern-shacl:Taxon-verbatimTaxonRank ,
+        tern-shacl:Taxon-vernacularName ;
     sh:targetClass tern:Taxon ;
 .
 
@@ -1020,6 +857,15 @@ tern-shacl:Sample-isSampleOf
     sh:path sosa:isSampleOf ;
 .
 
+tern-shacl:Sampler-implements
+    a sh:PropertyShape ;
+    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
+    sh:minCount 1 ;
+    sh:name "implements" ;
+    sh:nodeKind sh:IRI ;
+    sh:path ssn:implements ;
+.
+
 tern-shacl:Sampling-hasResult
     a sh:PropertyShape ;
     sh:class tern:Sample ;
@@ -1083,6 +929,238 @@ tern-shacl:SiteVisit-startedAtTime
     sh:path prov:startedAtTime ;
 .
 
+tern-shacl:System-hasDeployment
+    a sh:PropertyShape ;
+    sh:class tern:Deployment ;
+    sh:name "has deployment" ;
+    sh:nodeKind sh:IRI ;
+    sh:path ssn:hasDeployment ;
+.
+
+tern-shacl:System-isHostedBy
+    a sh:PropertyShape ;
+    sh:class tern:Platform ;
+    sh:maxCount 1 ;
+    sh:name "is hosted by" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:isHostedBy ;
+.
+
+tern-shacl:System-systemType
+    a sh:PropertyShape ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:systemType ;
+.
+
+tern-shacl:Taxon-acceptedNameUsage
+    a sh:PropertyShape ;
+    sh:name "accepted name usage" ;
+    sh:path dwc:acceptedNameUsage ;
+.
+
+tern-shacl:Taxon-acceptedNameUsageID
+    a sh:PropertyShape ;
+    sh:name "accepted name usage ID" ;
+    sh:path dwc:acceptedNameUsageID ;
+.
+
+tern-shacl:Taxon-class
+    a sh:PropertyShape ;
+    sh:path dwc:class ;
+.
+
+tern-shacl:Taxon-cultivarEpithet
+    a sh:PropertyShape ;
+    sh:name "cultivar epithet" ;
+    sh:path dwc:cultivarEpithet ;
+.
+
+tern-shacl:Taxon-family
+    a sh:PropertyShape ;
+    sh:path dwc:family ;
+.
+
+tern-shacl:Taxon-genericName
+    a sh:PropertyShape ;
+    sh:name "generic name" ;
+    sh:path dwc:genericName ;
+.
+
+tern-shacl:Taxon-genus
+    a sh:PropertyShape ;
+    sh:path dwc:genus ;
+.
+
+tern-shacl:Taxon-higherClassification
+    a sh:PropertyShape ;
+    sh:name "higher classification" ;
+    sh:path dwc:higherClassification ;
+.
+
+tern-shacl:Taxon-infragenericEpithet
+    a sh:PropertyShape ;
+    sh:name "infrageneric epithet" ;
+    sh:path dwc:infragenericEpithet ;
+.
+
+tern-shacl:Taxon-infraspecificEpithet
+    a sh:PropertyShape ;
+    sh:path dwc:infraspecificEpithet ;
+.
+
+tern-shacl:Taxon-kingdom
+    a sh:PropertyShape ;
+    sh:path dwc:kingdom ;
+.
+
+tern-shacl:Taxon-nameAccordingTo
+    a sh:PropertyShape ;
+    sh:path dwc:nameAccordingTo ;
+.
+
+tern-shacl:Taxon-nameAccordingToID
+    a sh:PropertyShape ;
+    sh:name "name according to ID" ;
+    sh:path dwc:nameAccordingToID ;
+.
+
+tern-shacl:Taxon-namePublishedIn
+    a sh:PropertyShape ;
+    sh:name "name published in" ;
+    sh:path dwc:namePublishedIn ;
+.
+
+tern-shacl:Taxon-namePublishedInID
+    a sh:PropertyShape ;
+    sh:name "name published in ID" ;
+    sh:path dwc:namePublishedInID ;
+.
+
+tern-shacl:Taxon-namePublishedInYear
+    a sh:PropertyShape ;
+    sh:name "name published in year" ;
+    sh:path dwc:namePublishedInYear ;
+.
+
+tern-shacl:Taxon-nomenclaturalCode
+    a sh:PropertyShape ;
+    sh:name "nomenclatural code" ;
+    sh:path dwc:nomenclaturalCode ;
+.
+
+tern-shacl:Taxon-nomenclaturalStatus
+    a sh:PropertyShape ;
+    sh:name "nomenclatural status" ;
+    sh:path dwc:nomenclaturalStatus ;
+.
+
+tern-shacl:Taxon-order
+    a sh:PropertyShape ;
+    sh:path dwc:order ;
+.
+
+tern-shacl:Taxon-originalNameUsage
+    a sh:PropertyShape ;
+    sh:name "original name usage" ;
+    sh:path dwc:originalNameUsage ;
+.
+
+tern-shacl:Taxon-originalNameUsageID
+    a sh:PropertyShape ;
+    sh:name "original name usage ID" ;
+    sh:path dwc:originalNameUsageID ;
+.
+
+tern-shacl:Taxon-parentNameUsage
+    a sh:PropertyShape ;
+    sh:name "parent name usage" ;
+    sh:path dwc:parentNameUsage ;
+.
+
+tern-shacl:Taxon-parentNameUsageID
+    a sh:PropertyShape ;
+    sh:name "parent name usage ID" ;
+    sh:path dwc:parentNameUsageID ;
+.
+
+tern-shacl:Taxon-phylum
+    a sh:PropertyShape ;
+    sh:path dwc:phylum ;
+.
+
+tern-shacl:Taxon-scientificName
+    a sh:PropertyShape ;
+    sh:path dwc:scientificName ;
+.
+
+tern-shacl:Taxon-scientificNameAuthorship
+    a sh:PropertyShape ;
+    sh:path dwc:scientificNameAuthorship ;
+.
+
+tern-shacl:Taxon-scientificNameID
+    a sh:PropertyShape ;
+    sh:name "scientific name ID" ;
+    sh:path dwc:scientificNameID ;
+.
+
+tern-shacl:Taxon-specificEpithet
+    a sh:PropertyShape ;
+    sh:path dwc:specificEpithet ;
+.
+
+tern-shacl:Taxon-subfamily
+    a sh:PropertyShape ;
+    sh:name "subfamily" ;
+    sh:path dwc:subfamily ;
+.
+
+tern-shacl:Taxon-subgenus
+    a sh:PropertyShape ;
+    sh:name "subgenus" ;
+    sh:path dwc:subgenus ;
+.
+
+tern-shacl:Taxon-taxonConceptID
+    a sh:PropertyShape ;
+    sh:path dwc:taxonConceptID ;
+.
+
+tern-shacl:Taxon-taxonID
+    a sh:PropertyShape ;
+    sh:name "taxon ID" ;
+    sh:path dwc:taxonID ;
+.
+
+tern-shacl:Taxon-taxonRank
+    a sh:PropertyShape ;
+    sh:name "taxon rank" ;
+    sh:path dwc:taxonRank ;
+.
+
+tern-shacl:Taxon-taxonRemarks
+    a sh:PropertyShape ;
+    sh:path dwc:taxonRemarks ;
+.
+
+tern-shacl:Taxon-taxonomicStatus
+    a sh:PropertyShape ;
+    sh:name "taxonomic status" ;
+    sh:path dwc:taxonomicStatus ;
+.
+
+tern-shacl:Taxon-verbatimTaxonRank
+    a sh:PropertyShape ;
+    sh:name "verbatim taxon rank" ;
+    sh:path dwc:verbatimTaxonRank ;
+.
+
+tern-shacl:Taxon-vernacularName
+    a sh:PropertyShape ;
+    sh:name "vernacular name" ;
+    sh:path dwc:vernacularName ;
+.
+
 tern-shacl:dwc-materialSampleID
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
@@ -1131,8 +1209,6 @@ tern-shacl:sosa-hasSimpleResult
 
 tern-shacl:sosa-implements
     a sh:PropertyShape ;
-    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
-    sh:minCount 1 ;
     sh:name "implements" ;
     sh:nodeKind sh:IRI ;
     sh:path ssn:implements ;
