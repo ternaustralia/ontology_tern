@@ -235,28 +235,8 @@ tern-shacl:Instant
 tern-shacl:Integer
     a sh:NodeShape ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:integer ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path rdf:value
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "Error of measurement (±)." ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:or (
-                    [
-                        sh:datatype xsd:integer
-                    ]
-                    [
-                        sh:datatype xsd:double
-                    ]
-                ) ;
-            sh:path tern:uncertainty
-        ] ,
+        tern-shacl:Integer-uncertainty ,
+        tern-shacl:Integer-value ,
         tern-shacl:tern-unit ;
     sh:targetClass tern:Integer ;
 .
@@ -728,16 +708,6 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
-            sh:name "nomenclatural code" ;
-            sh:path dwc:nomenclaturalCode
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "nomenclatural status" ;
-            sh:path dwc:nomenclaturalStatus
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:path dwc:order
         ] ,
         [
@@ -897,6 +867,16 @@ tern-shacl:Taxon
             a sh:PropertyShape ;
             sh:name "name published in year" ;
             sh:path dwc:namePublishedInYear
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "nomenclatural code" ;
+            sh:path dwc:nomenclaturalCode
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "nomenclatural status" ;
+            sh:path dwc:nomenclaturalStatus
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1025,6 +1005,30 @@ tern-shacl:Float-value
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind sh:Literal ;
+    sh:path rdf:value ;
+.
+
+tern-shacl:Integer-uncertainty
+    a sh:PropertyShape ;
+    sh:description "Error of measurement (±)." ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:integer
+            ]
+            [
+                sh:datatype xsd:double
+            ]
+        ) ;
+    sh:path tern:uncertainty ;
+.
+
+tern-shacl:Integer-value
+    a sh:PropertyShape ;
+    sh:datatype xsd:integer ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
     sh:path rdf:value ;
 .
 
