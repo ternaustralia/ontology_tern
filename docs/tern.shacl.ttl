@@ -80,13 +80,7 @@ tern-shacl:Dataset
 
 tern-shacl:Date
     a sh:NodeShape ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:datatype xsd:date ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path rdf:value
-        ] ;
+    sh:property tern-shacl:Date-value ;
     sh:targetClass tern:Date ;
 .
 
@@ -183,12 +177,6 @@ tern-shacl:Instant
                 sh:property
                     [
                         a sh:PropertyShape ;
-                        sh:datatype xsd:date ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDate
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
                         sh:datatype xsd:dateTimeStamp ;
                         sh:maxCount 1 ;
                         sh:path time:inXSDDateTimeStamp
@@ -216,6 +204,12 @@ tern-shacl:Instant
                         sh:datatype xsd:time ;
                         sh:maxCount 1 ;
                         sh:path time:inTimePosition
+                    ] ,
+                    [
+                        a sh:PropertyShape ;
+                        sh:datatype xsd:date ;
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDate
                     ]
             ]
             [
@@ -755,6 +749,28 @@ tern-shacl:Taxon
     sh:property
         [
             a sh:PropertyShape ;
+            sh:name "higher classification" ;
+            sh:path dwc:higherClassification
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:name "infrageneric epithet" ;
+            sh:path dwc:infragenericEpithet
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:infraspecificEpithet
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:kingdom
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dwc:nameAccordingTo
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:name "name according to ID" ;
             sh:path dwc:nameAccordingToID
         ] ,
@@ -902,28 +918,6 @@ tern-shacl:Taxon
         [
             a sh:PropertyShape ;
             sh:path dwc:genus
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "higher classification" ;
-            sh:path dwc:higherClassification
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:name "infrageneric epithet" ;
-            sh:path dwc:infragenericEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:infraspecificEpithet
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:kingdom
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:path dwc:nameAccordingTo
         ] ;
     sh:targetClass tern:Taxon ;
 .
@@ -1008,6 +1002,14 @@ tern-shacl:Value
 tern-shacl:Boolean-value
     a sh:PropertyShape ;
     sh:datatype xsd:boolean ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path rdf:value ;
+.
+
+tern-shacl:Date-value
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
