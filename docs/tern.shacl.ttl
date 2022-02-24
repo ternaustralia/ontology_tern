@@ -76,7 +76,6 @@ tern-shacl:Dataset
             sh:nodeKind sh:IRI ;
             sh:path dcat:distribution
         ] ;
-    sh:targetClass tern:Dataset ;
 .
 
 tern-shacl:Date
