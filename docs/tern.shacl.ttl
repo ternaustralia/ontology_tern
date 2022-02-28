@@ -146,85 +146,107 @@ tern-shacl:IRI
 
 tern-shacl:Instant
     a sh:NodeShape ;
-    rdfs:comment "One or more of (time:inXSDDate, time:inXSDDateTimeStamp, time:inXSDgYear, time:inXSDgYearMonth, time:inTimePosition, and time:inDateTime) must be present. Only one value for each property is allowed." ;
+    sh:message "One or more of (time:inXSDDate, time:inXSDDateTimeStamp, time:inXSDgYear, time:inXSDgYearMonth, time:inTimePosition, and time:inDateTime) must be present. Only one value for each property is allowed." ;
+    sh:property [
+        sh:datatype xsd:dateTime ;
+        sh:path time:inDateTime ;
+    ] ;
+    sh:property [
+        sh:class time:TimePosition ;
+        sh:path time:inTimePosition ;
+    ] ;
+    sh:property [
+        sh:datatype xsd:date ;
+        sh:path time:inXSDDate ;
+    ] ;
+    sh:property [
+        sh:datatype xsd:dateTimeStamp ;
+        sh:path time:inXSDDateTimeStamp ;
+    ] ;
+    sh:property [
+        sh:datatype xsd:gYear ;
+        sh:path time:inXSDgYear ;
+    ] ;
+    sh:property [
+        sh:datatype xsd:gYearMonth ;
+        sh:path time:inXSDgYearMonth ;
+    ] ;
     sh:and (
-            [
-                sh:property
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:dateTime ;
-                        sh:maxCount 1 ;
-                        sh:path time:inDateTime
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:time ;
-                        sh:maxCount 1 ;
-                        sh:path time:inTimePosition
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:date ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDate
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:dateTimeStamp ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDateTimeStamp
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:gYear ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYear
-                    ] ,
-                    [
-                        a sh:PropertyShape ;
-                        sh:datatype xsd:gYearMonth ;
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYearMonth
-                    ]
+        [
+            sh:property [
+                sh:maxCount 1 ;
+                sh:path time:inDateTime ;
             ]
-            [
-                sh:or (
-                        [
-                            sh:property
-                                [
-                                    a sh:PropertyShape ;
-                                    sh:minCount 1 ;
-                                    sh:path time:inDateTime
-                                ] ,
-                                [
-                                    a sh:PropertyShape ;
-                                    sh:minCount 1 ;
-                                    sh:path time:inTimePosition
-                                ] ,
-                                [
-                                    a sh:PropertyShape ;
-                                    sh:minCount 1 ;
-                                    sh:path time:inXSDDate
-                                ] ,
-                                [
-                                    a sh:PropertyShape ;
-                                    sh:minCount 1 ;
-                                    sh:path time:inXSDDateTimeStamp
-                                ] ,
-                                [
-                                    a sh:PropertyShape ;
-                                    sh:minCount 1 ;
-                                    sh:path time:inXSDgYear
-                                ] ,
-                                [
-                                    a sh:PropertyShape ;
-                                    sh:minCount 1 ;
-                                    sh:path time:inXSDgYearMonth
-                                ]
-                        ]
-                    )
+        ]
+        [
+            sh:property [
+                sh:maxCount 1 ;
+                sh:path time:inTimePosition ;
             ]
-        ) ;
+        ]
+        [
+            sh:property [
+                sh:maxCount 1 ;
+                sh:path time:inXSDDate ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:maxCount 1 ;
+                sh:path time:inXSDDateTimeStamp ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:maxCount 1 ;
+                sh:path time:inXSDgYear ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:maxCount 1 ;
+                sh:path time:inXSDgYearMonth ;
+            ]
+        ]
+    ) ;
+    sh:or (
+        [
+            sh:property [
+                sh:minCount 1 ;
+                sh:path time:inDateTime ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:minCount 1 ;
+                sh:path time:inTimePosition ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:minCount 1 ;
+                sh:path time:inXSDDate ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:minCount 1 ;
+                sh:path time:inXSDDateTimeStamp ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:minCount 1 ;
+                sh:path time:inXSDgYear ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:minCount 1 ;
+                sh:path time:inXSDgYearMonth ;
+            ]
+        ]
+    ) ;
     sh:targetClass time:Instant ;
 .
 
