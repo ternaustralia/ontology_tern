@@ -1564,7 +1564,6 @@ tern-shacl:rdfs-comment
 tern-shacl:dcterms-identifier
     a sh:PropertyShape ;
     rdfs:label "dcterms:identifier" ;
-    sh:datatype xsd:string ;
     sh:name "identifier" ;
     sh:path dcterms:identifier ;
 .
