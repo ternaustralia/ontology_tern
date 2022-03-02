@@ -67,3 +67,51 @@
     prof:hasArtifact "https://ternaustralia.github.io/ontology_tern/tern.shacl.ttl"^^xsd:anyURI ;
     prof:hasRole role:validator ;
 .
+
+<https://w3id.org/tern/profiles/tern/vocabularies/feature-types> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology vocabulary - feature types" ;
+    dcterms:description "Feature types controlled vocabulary to describe SOSA-based features of interest.";
+    dcterms:format "text/html" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/observable-properties> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology vocabulary - observable properties" ;
+    dcterms:description "Observable properties controlled vocabulary to describe SOSA-based observations." ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/attributes> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology vocabulary - attributes" ;
+    dcterms:description "Attributes controlled vocabulary to describe facts about any entity." ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/units-of-measure> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology vocabulary - units of measure" ;
+    dcterms:description "Unit of measure controlled vocabulary by QUDT" ;
+    dcterms:format "text/turtle" ;
+    prof:hasArtifact "http://qudt.org/vocab/unit/"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/instrument-types> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology vocabulary - instrument types" ;
+    dcterms:description "Instrument types controlled vocabulary to describe the types of instruments used in observations and sampling acts." ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/site-types> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology vocabulary - site types" ;
+    dcterms:description "Site types controlled vocabulary to describe the types of ecological survey sites." ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
