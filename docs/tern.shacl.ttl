@@ -146,107 +146,108 @@ tern-shacl:IRI
 
 tern-shacl:Instant
     a sh:NodeShape ;
-    sh:message "One or more of (time:inXSDDate, time:inXSDDateTimeStamp, time:inXSDgYear, time:inXSDgYearMonth, time:inTimePosition, and time:inDateTime) must be present. Only one value for each property is allowed." ;
-    sh:property [
-        sh:datatype xsd:dateTime ;
-        sh:path time:inDateTime ;
-    ] ;
-    sh:property [
-        sh:class time:TimePosition ;
-        sh:path time:inTimePosition ;
-    ] ;
-    sh:property [
-        sh:datatype xsd:date ;
-        sh:path time:inXSDDate ;
-    ] ;
-    sh:property [
-        sh:datatype xsd:dateTimeStamp ;
-        sh:path time:inXSDDateTimeStamp ;
-    ] ;
-    sh:property [
-        sh:datatype xsd:gYear ;
-        sh:path time:inXSDgYear ;
-    ] ;
-    sh:property [
-        sh:datatype xsd:gYearMonth ;
-        sh:path time:inXSDgYearMonth ;
-    ] ;
     sh:and (
-        [
-            sh:property [
-                sh:maxCount 1 ;
-                sh:path time:inDateTime ;
+            [
+                sh:property [
+                        sh:maxCount 1 ;
+                        sh:path time:inDateTime
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:maxCount 1 ;
-                sh:path time:inTimePosition ;
+            [
+                sh:property [
+                        sh:maxCount 1 ;
+                        sh:path time:inTimePosition
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:maxCount 1 ;
-                sh:path time:inXSDDate ;
+            [
+                sh:property [
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDate
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:maxCount 1 ;
-                sh:path time:inXSDDateTimeStamp ;
+            [
+                sh:property [
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDDateTimeStamp
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:maxCount 1 ;
-                sh:path time:inXSDgYear ;
+            [
+                sh:property [
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYear
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:maxCount 1 ;
-                sh:path time:inXSDgYearMonth ;
+            [
+                sh:property [
+                        sh:maxCount 1 ;
+                        sh:path time:inXSDgYearMonth
+                    ]
             ]
-        ]
-    ) ;
+        ) ;
+    sh:message "One or more of (time:inXSDDate, time:inXSDDateTimeStamp, time:inXSDgYear, time:inXSDgYearMonth, time:inTimePosition, and time:inDateTime) must be present. Only one value for each property is allowed." ;
     sh:or (
-        [
-            sh:property [
-                sh:minCount 1 ;
-                sh:path time:inDateTime ;
+            [
+                sh:property [
+                        sh:minCount 1 ;
+                        sh:path time:inDateTime
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:minCount 1 ;
-                sh:path time:inTimePosition ;
+            [
+                sh:property [
+                        sh:minCount 1 ;
+                        sh:path time:inTimePosition
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:minCount 1 ;
-                sh:path time:inXSDDate ;
+            [
+                sh:property [
+                        sh:minCount 1 ;
+                        sh:path time:inXSDDate
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:minCount 1 ;
-                sh:path time:inXSDDateTimeStamp ;
+            [
+                sh:property [
+                        sh:minCount 1 ;
+                        sh:path time:inXSDDateTimeStamp
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:minCount 1 ;
-                sh:path time:inXSDgYear ;
+            [
+                sh:property [
+                        sh:minCount 1 ;
+                        sh:path time:inXSDgYear
+                    ]
             ]
-        ]
-        [
-            sh:property [
-                sh:minCount 1 ;
-                sh:path time:inXSDgYearMonth ;
+            [
+                sh:property [
+                        sh:minCount 1 ;
+                        sh:path time:inXSDgYearMonth
+                    ]
             ]
-        ]
-    ) ;
+        ) ;
+    sh:property
+        [
+            sh:datatype xsd:dateTime ;
+            sh:path time:inDateTime
+        ] ,
+        [
+            sh:class time:TimePosition ;
+            sh:path time:inTimePosition
+        ] ,
+        [
+            sh:datatype xsd:date ;
+            sh:path time:inXSDDate
+        ] ,
+        [
+            sh:datatype xsd:dateTimeStamp ;
+            sh:path time:inXSDDateTimeStamp
+        ] ,
+        [
+            sh:datatype xsd:gYear ;
+            sh:path time:inXSDgYear
+        ] ,
+        [
+            sh:datatype xsd:gYearMonth ;
+            sh:path time:inXSDgYearMonth
+        ] ;
     sh:targetClass time:Instant ;
 .
 
@@ -658,11 +659,22 @@ tern-shacl:ObservationCollection-phenomenonTime
 
 tern-shacl:ObservationCollection-resultTime
     a sh:PropertyShape ;
-    sh:datatype xsd:dateTime ;
     sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
     sh:maxCount 1 ;
+    sh:message "The datatype of result time must be an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
     sh:name "result time" ;
-    sh:path sosa:resultTime ;
+    sh:or (
+            [
+                sh:datatype xsd:dateTime
+            ]
+            [
+                sh:datatype xsd:date
+            ]
+            [
+                sh:datatype xsd:dateTimeStamp
+            ]
+        ) ;
+    sh:path tern:resultDateTime ;
 .
 
 tern-shacl:ObservationCollection-usedProcedure
@@ -1476,12 +1488,23 @@ tern-shacl:sosa-hasFeatureOfInterest
 
 tern-shacl:sosa-resultTime
     a sh:PropertyShape ;
-    sh:datatype xsd:dateTime ;
     sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
     sh:maxCount 1 ;
+    sh:message "The datatype of result time must be an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
     sh:minCount 1 ;
     sh:name "result time" ;
-    sh:path sosa:resultTime ;
+    sh:or (
+            [
+                sh:datatype xsd:dateTime
+            ]
+            [
+                sh:datatype xsd:date
+            ]
+            [
+                sh:datatype xsd:dateTimeStamp
+            ]
+        ) ;
+    sh:path tern:resultDateTime ;
 .
 
 tern-shacl:sosa-usedProcedure
