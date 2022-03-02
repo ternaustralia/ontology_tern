@@ -1047,28 +1047,6 @@ tern:SiteVisit
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty prov:startedAtTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty prov:endedAtTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:locationDescription
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:siteDescription
-        ] ,
-        [
-            a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty prov:endedAtTime
         ] ,
@@ -1091,6 +1069,28 @@ tern:SiteVisit
             a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty void:inDataset
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty prov:startedAtTime
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty prov:endedAtTime
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:string ;
+            owl:onProperty tern:locationDescription
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:string ;
+            owl:onProperty tern:siteDescription
         ] ,
         prov:Activity ;
     skos:definition "A Site Visit is a discrete time-bounded activity at a [Site](#Site), during which [Sampling](#Sampling) or [Observation](#Observation) activities occur. " ;
@@ -1411,6 +1411,15 @@ tern:purpose
     skos:definition "Describe the purpose of something." ;
 .
 
+tern:resultDateTime
+    a owl:DatatypeProperty ;
+    rdfs:label "result date time" ;
+    skos:definition "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
+    skos:note
+        "A change request has been submitted to SOSA at https://github.com/w3c/sdw/issues/1338. Once the change request is submitted, this property `tern:resultDateTime` should be deprecated in favour of `sosa:resultTime`." ,
+        "At the time of writing (2022-03-02), SOSA specifies `sosa:resultTime` with an `rdfs:range` of `xsd:dateTime`. This means that all values of `sosa:resultTime` must have the datatype `xsd:dateTime`. This is problematic for the BDR because most ecological surveys only have a precision of day and not date time. Ingestion of data may fail due to internal validators from TopQuadrant's EDG." ;
+.
+
 tern:siteDescription
     a rdf:Property ;
     rdfs:label "site description" ;
@@ -1468,11 +1477,6 @@ tern:Sampling
         ] ,
         [
             a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty sosa:resultTime
-        ] ,
-        [
-            a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dcterms:identifier
         ] ,
@@ -1484,12 +1488,12 @@ tern:Sampling
         [
             a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:resultTime
+            owl:onProperty sosa:usedProcedure
         ] ,
         [
             a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:usedProcedure
+            owl:onProperty tern:resultDateTime
         ] ,
         [
             a owl:Restriction ;
@@ -1618,6 +1622,11 @@ tern:Observation
         ] ,
         [
             a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:resultDateTime
+        ] ,
+        [
+            a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty rdfs:comment
         ] ,
@@ -1631,12 +1640,6 @@ tern:Observation
                         )
                 ] ;
             owl:onProperty sosa:phenomenonTime ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onDataRange xsd:dateTime ;
-            owl:onProperty sosa:resultTime ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
         ] ,
         prov:Activity ,
