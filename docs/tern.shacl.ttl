@@ -275,6 +275,8 @@ tern-shacl:ManagedFeature
         [
             a sh:PropertyShape ;
             sh:datatype xsd:date ;
+            sh:name "date commissioned" ;
+            sh:description "The date when, e.g., a [Site](#EcologicalSite) is ready to commence its operations, after it is successfully installed and tested." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path tern:dateCommissioned
@@ -282,6 +284,8 @@ tern-shacl:ManagedFeature
         [
             a sh:PropertyShape ;
             sh:datatype xsd:date ;
+            sh:name "date decommissioned" ;
+            sh:description "The date when, e.g., a [Site](#EcologicalSite) is decommissioned or stopped operating." ;
             sh:maxCount 1 ;
             sh:path tern:dateDecommissioned
         ] ;
@@ -504,6 +508,8 @@ tern-shacl:Value
 tern-shacl:Boolean-value
     a sh:PropertyShape ;
     sh:datatype xsd:boolean ;
+    sh:name "Boolean" ;
+    sh:description "Class to encapsulate a true-or-false value" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
@@ -512,6 +518,7 @@ tern-shacl:Boolean-value
 tern-shacl:Date-value
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
+    sh:name "Date" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
@@ -520,6 +527,7 @@ tern-shacl:Date-value
 tern-shacl:DateTime-value
     a sh:PropertyShape ;
     sh:datatype xsd:dateTime ;
+    sh:name "Date time" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
@@ -527,6 +535,8 @@ tern-shacl:DateTime-value
 
 tern-shacl:FeatureOfInterest-featureType
     a sh:PropertyShape ;
+    sh:name "Feature of Interest" ;
+    sh:description "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -536,6 +546,7 @@ tern-shacl:FeatureOfInterest-featureType
 tern-shacl:Float-uncertainty
     a sh:PropertyShape ;
     sh:datatype xsd:double ;
+    sh:name "Float-uncertainty" ;
     sh:description "Error of measurement (±)." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:Literal ;
@@ -545,6 +556,8 @@ tern-shacl:Float-uncertainty
 tern-shacl:Float-value
     a sh:PropertyShape ;
     sh:datatype xsd:double ;
+    sh:name "Float" ;
+    sh:description "Data type: Floating number." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind sh:Literal ;
@@ -553,6 +566,7 @@ tern-shacl:Float-value
 
 tern-shacl:IRI-value
     a sh:PropertyShape ;
+    sh:name "IRI" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -561,6 +575,7 @@ tern-shacl:IRI-value
 
 tern-shacl:Integer-uncertainty
     a sh:PropertyShape ;
+    sh:name "Integer uncertainty" ;
     sh:description "Error of measurement (±)." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:Literal ;
@@ -578,6 +593,8 @@ tern-shacl:Integer-uncertainty
 tern-shacl:Integer-value
     a sh:PropertyShape ;
     sh:datatype xsd:integer ;
+    sh:name "Integer" ;
+    sh:description "Data type: Integer." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
@@ -589,6 +606,7 @@ tern-shacl:Observation-hasResult
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "has result" ;
+    sh:description "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample." ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path sosa:hasResult ;
 .
@@ -623,6 +641,7 @@ tern-shacl:ObservationCollection-hasMember
 tern-shacl:ObservationCollection-hasUltimateFeatureOfInterest
     a sh:PropertyShape ;
     sh:class tern:FeatureOfInterest ;
+    sh:name "has ultimate feature of interest" ;
     sh:description "Link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or transitively." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -692,12 +711,14 @@ tern-shacl:Quadrat-featureType
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "feature type" ;
+    sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:featureType ;
 .
 
 tern-shacl:RDFDataset-contributor
     a sh:PropertyShape ;
+    sh:name "contributor" ;
     sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:contributor ;
@@ -706,12 +727,14 @@ tern-shacl:RDFDataset-contributor
 tern-shacl:RDFDataset-created
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
+    sh:name "created" ;
     sh:description "Date of creation of the dataset. The value should be formatted and data-typed as an `xsd:date`." ;
     sh:path dcterms:created ;
 .
 
 tern-shacl:RDFDataset-creator
     a sh:PropertyShape ;
+    sh:name "creator" ;
     sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:creator ;
@@ -752,6 +775,7 @@ tern-shacl:RDFDataset-license
 tern-shacl:RDFDataset-modified
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
+    sh:name "modified" ;
     sh:description "Date on which the dataset was changed. The value should be formatted and datatyped as an `xsd:date`." ;
     sh:path dcterms:modified ;
 .
@@ -773,6 +797,7 @@ tern-shacl:RDFDataset-rightsHolder
 
 tern-shacl:RDFDataset-source
     a sh:PropertyShape ;
+    sh:name "source" ;
     sh:description "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal." ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:source ;
@@ -780,6 +805,7 @@ tern-shacl:RDFDataset-source
 
 tern-shacl:RDFDataset-subject
     a sh:PropertyShape ;
+    sh:name "subject" ;
     sh:description "A topic of the resource. Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary." ;
     sh:nodeKind sh:IRIOrLiteral ;
     sh:path dcterms:subject ;
@@ -806,6 +832,7 @@ tern-shacl:Result-isResultOf
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "is result of" ;
+    sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
     sh:nodeKind sh:IRI ;
     sh:or (
             [
@@ -823,6 +850,7 @@ tern-shacl:Sample-isResultOf
     sh:class tern:Sampling ;
     sh:minCount 1 ;
     sh:name "is result of" ;
+    sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:isResultOf ;
 .
@@ -832,6 +860,7 @@ tern-shacl:Sample-isSampleOf
     sh:class tern:FeatureOfInterest ;
     sh:minCount 1 ;
     sh:name "is sample of" ;
+    sh:description "Relation from a Sample to the FeatureOfInterest that it is intended to be representative of." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:isSampleOf ;
 .
@@ -850,6 +879,7 @@ tern-shacl:Sampling-hasResult
     sh:class tern:Sample ;
     sh:minCount 1 ;
     sh:name "has result" ;
+    sh:description "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:hasResult ;
 .
@@ -866,6 +896,8 @@ tern-shacl:Sampling-madeBySampler
 tern-shacl:Site-dimension
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
+    sh:name "dimension" ;
+    sh:description "Dimenion in metres." ;
     sh:maxCount 1 ;
     sh:path tern:dimension ;
 .
@@ -873,6 +905,8 @@ tern-shacl:Site-dimension
 tern-shacl:Site-hasSiteVisit
     a sh:PropertyShape ;
     sh:class tern:SiteVisit ;
+    sh:name "has site visit" ;
+    sh:description "A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:hasSiteVisit ;
 .
@@ -880,12 +914,16 @@ tern-shacl:Site-hasSiteVisit
 tern-shacl:Site-label
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
+    sh:name "label" ;
+    sh:description "A human-readable name for the subject." ;
     sh:maxCount 1 ;
     sh:path rdfs:label ;
 .
 
 tern-shacl:Site-locationProcedure
     a sh:PropertyShape ;
+    sh:name "location procedure" ;
+    sh:description "Link to a procedure used to obtain the location." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
     sh:path tern:locationProcedure ;
@@ -896,6 +934,7 @@ tern-shacl:SiteVisit-endedAtTime
     sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
     sh:name "ended at time" ;
+    sh:description "The time at which an activity ended." ;
     sh:path prov:endedAtTime ;
 .
 
