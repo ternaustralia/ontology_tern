@@ -1190,46 +1190,57 @@ tern-shacl:Taxon-subgenus
 
 tern-shacl:Taxon-taxonConceptID
     a sh:PropertyShape ;
+    sh:name "dwc:taxonConceptID" ;
+    sh:description "An identifier for the taxonomic concept to which the record refers - not for the nomenclatural details of a taxon." ;
     sh:path dwc:taxonConceptID ;
 .
 
 tern-shacl:Taxon-taxonID
     a sh:PropertyShape ;
-    sh:name "taxon ID" ;
+    sh:name "dwc:taxonID" ;
+    sh:description "A global unique identifier for the taxon (name in a classification)." ;
     sh:path dwc:taxonID ;
 .
 
 tern-shacl:Taxon-taxonRank
     a sh:PropertyShape ;
-    sh:name "taxon rank" ;
+    sh:name "dwc:taxonRank" ;
+    sh:description "The taxonomic rank of the most specific name in the scientificName." ;
     sh:path dwc:taxonRank ;
 .
 
 tern-shacl:Taxon-taxonRemarks
     a sh:PropertyShape ;
+    sh:name "dwc:taxonRemarks" ;
+    sh:description "Comments or notes about the taxon or name." ;
     sh:path dwc:taxonRemarks ;
 .
 
 tern-shacl:Taxon-taxonomicStatus
     a sh:PropertyShape ;
-    sh:name "taxonomic status" ;
+    sh:name "dwc:taxonomicStatus" ;
+    sh:description "The status of the use of the scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a taxon. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept." ;
     sh:path dwc:taxonomicStatus ;
 .
 
 tern-shacl:Taxon-verbatimTaxonRank
     a sh:PropertyShape ;
-    sh:name "verbatim taxon rank" ;
+    sh:name "dwc:verbatimTaxonRank" ;
+    sh:description "The taxonomic rank of the most specific name in the scientificName as it appears in the original record." ;
     sh:path dwc:verbatimTaxonRank ;
 .
 
 tern-shacl:Taxon-vernacularName
     a sh:PropertyShape ;
-    sh:name "vernacular name" ;
+    sh:name "dwc:vernacularName" ;
+    sh:description "A common or vernacular name." ;
     sh:path dwc:vernacularName ;
 .
 
 tern-shacl:Text-value
     a sh:PropertyShape ;
+    sh:name "rdf:value" ;
+    sh:description "Data type: text." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:or (
@@ -1248,7 +1259,8 @@ tern-shacl:Transect-featureType
     sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
-    sh:name "feature type" ;
+    sh:name "tern:featureType" ;
+    sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:featureType ;
 .
@@ -1256,7 +1268,8 @@ tern-shacl:Transect-featureType
 tern-shacl:Transect-hasGeometry
     a sh:PropertyShape ;
     sh:maxCount 1 ;
-    sh:name "has geometry" ;
+    sh:name "geo:hasGeometry" ;
+    sh:description "A spatial representation for a given feature." ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:or (
             [
@@ -1272,7 +1285,8 @@ tern-shacl:Transect-hasGeometry
 tern-shacl:Transect-transectDirection
     a sh:PropertyShape ;
     sh:maxCount 1 ;
-    sh:name "transect direction" ;
+    sh:name "tern:transectDirection" ;
+    sh:description "Describes the direction of the transect." ;
     sh:nodeKind sh:IRIOrLiteral ;
     sh:path tern:transectDirection ;
 .
@@ -1281,7 +1295,8 @@ tern-shacl:Transect-transectEndPoint
     a sh:PropertyShape ;
     sh:class sf:Point ;
     sh:maxCount 1 ;
-    sh:name "transect end point" ;
+    sh:name "tern:transectEndPoint" ;
+    sh:description "Refers to the [sf:Point](http://www.opengis.net/ont/sf#Point) representing the end of a transect." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:transectEndPoint ;
 .
@@ -1290,7 +1305,8 @@ tern-shacl:Transect-transectStartPoint
     a sh:PropertyShape ;
     sh:class sf:Point ;
     sh:maxCount 1 ;
-    sh:name "transect start point" ;
+    sh:name "tern:transectStartPoint" ;
+    sh:description "Refers to the [sf:Point](http://www.opengis.net/ont/sf#Point) representing the start of a transect." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:transectStartPoint ;
 .
@@ -1298,13 +1314,16 @@ tern-shacl:Transect-transectStartPoint
 tern-shacl:dwc-materialSampleID
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
+    sh:name "dwc:materialSampleID" ;
+    sh:description "An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique." ;
     sh:nodeKind sh:Literal ;
     sh:path dwc:materialSampleID ;
 .
 
 tern-shacl:geo-sfWithin
     a sh:PropertyShape ;
-    sh:name "sf within" ;
+    sh:name "geo:sfWithin" ;
+    sh:description "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***" ;
     sh:nodeKind sh:IRI ;
     sh:path geo:sfWithin ;
 .
@@ -1312,14 +1331,16 @@ tern-shacl:geo-sfWithin
 tern-shacl:prov-qualifiedAttribution
     a sh:PropertyShape ;
     sh:class prov:Attribution ;
-    sh:name "qualified attribution" ;
+    sh:name "prov:qualifiedAttribution" ;
+    sh:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution; prov:agent :ag; :foo :bar ]." ;
     sh:path prov:qualifiedAttribution ;
 .
 
 tern-shacl:prov-wasAttributedTo
     a sh:PropertyShape ;
     sh:class prov:Agent ;
-    sh:name "was attributed to" ;
+    sh:name "prov:wasAttributedTo" ;
+    sh:description "Attribution is the ascribing of an entity to an agent." ;
     sh:nodeKind sh:IRI ;
     sh:path prov:wasAttributedTo ;
 .
@@ -1327,7 +1348,8 @@ tern-shacl:prov-wasAttributedTo
 tern-shacl:sosa-hasSample
     a sh:PropertyShape ;
     sh:class tern:Sample ;
-    sh:name "has sample" ;
+    sh:name "sosa:hasSample" ;
+    sh:description "Relation between a FeatureOfInterest and the Sample used to represent it." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:hasSample ;
 .
@@ -1336,7 +1358,8 @@ tern-shacl:sosa-hasSimpleResult
     a sh:PropertyShape ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
-    sh:name "has simple result" ;
+    sh:name "sosa:hasSimpleResult" ;
+    sh:description "The simple value of an Observation or Actuation or act of Sampling." ;
     sh:nodeKing sh:IRIOrLiteral ;
     sh:path sosa:hasSimpleResult ;
 .
