@@ -74,7 +74,7 @@ tern-shacl:Dataset
             a sh:PropertyShape ;
             sh:class tern:Distribution ;
             sh:description "An available distribution of the dataset." ;
-            sh:name "dataset distribution" ;
+            sh:name "dcat:distribution" ;
             sh:nodeKind sh:IRI ;
             sh:path dcat:distribution
         ] ;
@@ -275,7 +275,7 @@ tern-shacl:ManagedFeature
         [
             a sh:PropertyShape ;
             sh:datatype xsd:date ;
-            sh:name "date commissioned" ;
+            sh:name "tern:dateCommissioned" ;
             sh:description "The date when, e.g., a [Site](#EcologicalSite) is ready to commence its operations, after it is successfully installed and tested." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -284,7 +284,7 @@ tern-shacl:ManagedFeature
         [
             a sh:PropertyShape ;
             sh:datatype xsd:date ;
-            sh:name "date decommissioned" ;
+            sh:name "tern:dateDecommissioned" ;
             sh:description "The date when, e.g., a [Site](#EcologicalSite) is decommissioned or stopped operating." ;
             sh:maxCount 1 ;
             sh:path tern:dateDecommissioned
@@ -508,7 +508,7 @@ tern-shacl:Value
 tern-shacl:Boolean-value
     a sh:PropertyShape ;
     sh:datatype xsd:boolean ;
-    sh:name "Boolean" ;
+    sh:name "rdf:value" ;
     sh:description "Class to encapsulate a true-or-false value" ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -518,7 +518,8 @@ tern-shacl:Boolean-value
 tern-shacl:Date-value
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
-    sh:name "Date" ;
+    sh:name "rdf:value" ;
+    sh:description "Data type: Date." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
@@ -527,7 +528,8 @@ tern-shacl:Date-value
 tern-shacl:DateTime-value
     a sh:PropertyShape ;
     sh:datatype xsd:dateTime ;
-    sh:name "Date time" ;
+    sh:name "rdf:value" ;
+    sh:description "Data type: Date time." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:path rdf:value ;
@@ -535,8 +537,8 @@ tern-shacl:DateTime-value
 
 tern-shacl:FeatureOfInterest-featureType
     a sh:PropertyShape ;
-    sh:name "Feature of Interest" ;
-    sh:description "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling." ;
+    sh:name "tern:featureType" ;
+    sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -546,7 +548,7 @@ tern-shacl:FeatureOfInterest-featureType
 tern-shacl:Float-uncertainty
     a sh:PropertyShape ;
     sh:datatype xsd:double ;
-    sh:name "Float-uncertainty" ;
+    sh:name "tern:uncertainty" ;
     sh:description "Error of measurement (±)." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:Literal ;
@@ -556,7 +558,7 @@ tern-shacl:Float-uncertainty
 tern-shacl:Float-value
     a sh:PropertyShape ;
     sh:datatype xsd:double ;
-    sh:name "Float" ;
+    sh:name "rdf:value" ;
     sh:description "Data type: Floating number." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -566,7 +568,8 @@ tern-shacl:Float-value
 
 tern-shacl:IRI-value
     a sh:PropertyShape ;
-    sh:name "IRI" ;
+    sh:name "rdf:value" ;
+    sh:description "Data type: IRI." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -575,7 +578,7 @@ tern-shacl:IRI-value
 
 tern-shacl:Integer-uncertainty
     a sh:PropertyShape ;
-    sh:name "Integer uncertainty" ;
+    sh:name "tern:uncertainty" ;
     sh:description "Error of measurement (±)." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:Literal ;
@@ -593,7 +596,7 @@ tern-shacl:Integer-uncertainty
 tern-shacl:Integer-value
     a sh:PropertyShape ;
     sh:datatype xsd:integer ;
-    sh:name "Integer" ;
+    sh:name "rdf:value" ;
     sh:description "Data type: Integer." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -605,7 +608,7 @@ tern-shacl:Observation-hasResult
     sh:class tern:Value ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
-    sh:name "has result" ;
+    sh:name "sosa:hasResult" ;
     sh:description "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample." ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path sosa:hasResult ;
@@ -616,7 +619,7 @@ tern-shacl:ObservationCollection-hasFeatureOfInterest
     sh:class tern:FeatureOfInterest ;
     sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
     sh:maxCount 1 ;
-    sh:name "has feature of interest" ;
+    sh:name "sosa:hasFeatureOfInterest" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:hasFeatureOfInterest ;
 .
@@ -625,7 +628,7 @@ tern-shacl:ObservationCollection-hasMember
     a sh:PropertyShape ;
     sh:description "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties." ;
     sh:minCount 1 ;
-    sh:name "has member" ;
+    sh:name "sosa:hasMember" ;
     sh:nodeKind sh:IRI ;
     sh:or (
             [
@@ -641,7 +644,7 @@ tern-shacl:ObservationCollection-hasMember
 tern-shacl:ObservationCollection-hasUltimateFeatureOfInterest
     a sh:PropertyShape ;
     sh:class tern:FeatureOfInterest ;
-    sh:name "has ultimate feature of interest" ;
+    sh:name "sosa:hasUltimateFeatureOfInterest" ;
     sh:description "Link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or transitively." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -653,7 +656,7 @@ tern-shacl:ObservationCollection-madeBySensor
     sh:class tern:Sensor ;
     sh:description "Relation between an Observation and the Sensor which made the Observations." ;
     sh:maxCount 1 ;
-    sh:name "made by sensor" ;
+    sh:name "sosa:madeBySensor" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:madeBySensor ;
 .
@@ -662,7 +665,7 @@ tern-shacl:ObservationCollection-observedProperty
     a sh:PropertyShape ;
     sh:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." ;
     sh:maxCount 1 ;
-    sh:name "observed property" ;
+    sh:name "sosa:observedProperty" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:observedProperty ;
 .
@@ -672,7 +675,7 @@ tern-shacl:ObservationCollection-phenomenonTime
     sh:class time:Instant ;
     sh:description "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity." ;
     sh:maxCount 1 ;
-    sh:name "phenomenon time" ;
+    sh:name "sosa:phenomenonTime" ;
     sh:path sosa:phenomenonTime ;
 .
 
@@ -681,7 +684,7 @@ tern-shacl:ObservationCollection-resultTime
     sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
     sh:maxCount 1 ;
     sh:message "The datatype of result time must be an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
-    sh:name "result time" ;
+    sh:name "tern:resultDateTime" ;
     sh:or (
             [
                 sh:datatype xsd:dateTime
@@ -700,7 +703,7 @@ tern-shacl:ObservationCollection-usedProcedure
     a sh:PropertyShape ;
     sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
     sh:maxCount 1 ;
-    sh:name "used procedure" ;
+    sh:name "sosa:usedProcedure" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:usedProcedure ;
 .
@@ -710,7 +713,7 @@ tern-shacl:Quadrat-featureType
     sh:hasValue <http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5> ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
-    sh:name "feature type" ;
+    sh:name "tern:featureType" ;
     sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:featureType ;
@@ -718,7 +721,7 @@ tern-shacl:Quadrat-featureType
 
 tern-shacl:RDFDataset-contributor
     a sh:PropertyShape ;
-    sh:name "contributor" ;
+    sh:name "dcterms:contributor" ;
     sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:contributor ;
@@ -727,14 +730,14 @@ tern-shacl:RDFDataset-contributor
 tern-shacl:RDFDataset-created
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
-    sh:name "created" ;
+    sh:name "dcterms:created" ;
     sh:description "Date of creation of the dataset. The value should be formatted and data-typed as an `xsd:date`." ;
     sh:path dcterms:created ;
 .
 
 tern-shacl:RDFDataset-creator
     a sh:PropertyShape ;
-    sh:name "creator" ;
+    sh:name "dcterms:creator" ;
     sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:creator ;
@@ -744,7 +747,7 @@ tern-shacl:RDFDataset-date
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
     sh:description "A point or period of time associated with an event in the life-cycle of the resource. The value should be formatted and data-typed as an `xsd:date`." ;
-    sh:name "date" ;
+    sh:name "dcterms:date" ;
     sh:path dcterms:date ;
 .
 
@@ -752,7 +755,7 @@ tern-shacl:RDFDataset-description
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:description "A textual description of the dataset." ;
-    sh:name "description" ;
+    sh:name "dcterms:description" ;
     sh:path dcterms:description ;
 .
 
@@ -760,14 +763,14 @@ tern-shacl:RDFDataset-issued
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
     sh:description "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an `xsd:date`." ;
-    sh:name "issued" ;
+    sh:name "dcterms:issued" ;
     sh:path dcterms:issued ;
 .
 
 tern-shacl:RDFDataset-license
     a sh:PropertyShape ;
     sh:description "A legal document giving official permission to do something with the resource." ;
-    sh:name "license" ;
+    sh:name "dcterms:license" ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:license ;
 .
@@ -775,7 +778,7 @@ tern-shacl:RDFDataset-license
 tern-shacl:RDFDataset-modified
     a sh:PropertyShape ;
     sh:datatype xsd:date ;
-    sh:name "modified" ;
+    sh:name "dcterms:modified" ;
     sh:description "Date on which the dataset was changed. The value should be formatted and datatyped as an `xsd:date`." ;
     sh:path dcterms:modified ;
 .
@@ -783,7 +786,7 @@ tern-shacl:RDFDataset-modified
 tern-shacl:RDFDataset-publisher
     a sh:PropertyShape ;
     sh:description "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal." ;
-    sh:name "publisher" ;
+    sh:name "dcterms:publisher" ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:publisher ;
 .
@@ -791,13 +794,13 @@ tern-shacl:RDFDataset-publisher
 tern-shacl:RDFDataset-rightsHolder
     a sh:PropertyShape ;
     sh:description "A person or organization owning or managing rights over the resource." ;
-    sh:name "rights holder" ;
+    sh:name "dcterms:rightsHolder" ;
     sh:path dcterms:rightsHolder ;
 .
 
 tern-shacl:RDFDataset-source
     a sh:PropertyShape ;
-    sh:name "source" ;
+    sh:name "dcterms:source" ;
     sh:description "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal." ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:source ;
@@ -805,7 +808,7 @@ tern-shacl:RDFDataset-source
 
 tern-shacl:RDFDataset-subject
     a sh:PropertyShape ;
-    sh:name "subject" ;
+    sh:name "dcterms:subject" ;
     sh:description "A topic of the resource. Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary." ;
     sh:nodeKind sh:IRIOrLiteral ;
     sh:path dcterms:subject ;
@@ -815,14 +818,14 @@ tern-shacl:RDFDataset-title
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:description "The name of the dataset." ;
-    sh:name "title" ;
+    sh:name "dcterms:title" ;
     sh:path dcterms:title ;
 .
 
 tern-shacl:RDFDataset-vocabulary
     a sh:PropertyShape ;
     sh:description "A vocabulary or `owl:Ontology` whose classes or properties are used in a `void:Dataset`." ;
-    sh:name "vocabulary" ;
+    sh:name "void:vocabulary" ;
     sh:nodeKind sh:IRI ;
     sh:path void:vocabulary ;
 .
@@ -831,7 +834,7 @@ tern-shacl:Result-isResultOf
     a sh:PropertyShape ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
-    sh:name "is result of" ;
+    sh:name "sosa:isResultOf" ;
     sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
     sh:nodeKind sh:IRI ;
     sh:or (
@@ -849,7 +852,7 @@ tern-shacl:Sample-isResultOf
     a sh:PropertyShape ;
     sh:class tern:Sampling ;
     sh:minCount 1 ;
-    sh:name "is result of" ;
+    sh:name "sosa:isResultOf" ;
     sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:isResultOf ;
@@ -859,7 +862,7 @@ tern-shacl:Sample-isSampleOf
     a sh:PropertyShape ;
     sh:class tern:FeatureOfInterest ;
     sh:minCount 1 ;
-    sh:name "is sample of" ;
+    sh:name "sosa:isSampleOf" ;
     sh:description "Relation from a Sample to the FeatureOfInterest that it is intended to be representative of." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:isSampleOf ;
@@ -869,7 +872,7 @@ tern-shacl:Sampler-implements
     a sh:PropertyShape ;
     sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
     sh:minCount 1 ;
-    sh:name "implements" ;
+    sh:name "ssn:implements" ;
     sh:nodeKind sh:IRI ;
     sh:path ssn:implements ;
 .
@@ -878,7 +881,7 @@ tern-shacl:Sampling-hasResult
     a sh:PropertyShape ;
     sh:class tern:Sample ;
     sh:minCount 1 ;
-    sh:name "has result" ;
+    sh:name "sosa:hasResult" ;
     sh:description "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:hasResult ;
@@ -888,7 +891,7 @@ tern-shacl:Sampling-madeBySampler
     a sh:PropertyShape ;
     sh:class tern:Sampler ;
     sh:description "Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it." ;
-    sh:name "made by sampler" ;
+    sh:name "sosa:madeBySampler" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:madeBySampler ;
 .
@@ -896,7 +899,7 @@ tern-shacl:Sampling-madeBySampler
 tern-shacl:Site-dimension
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
-    sh:name "dimension" ;
+    sh:name "tern:dimension" ;
     sh:description "Dimenion in metres." ;
     sh:maxCount 1 ;
     sh:path tern:dimension ;
@@ -905,7 +908,7 @@ tern-shacl:Site-dimension
 tern-shacl:Site-hasSiteVisit
     a sh:PropertyShape ;
     sh:class tern:SiteVisit ;
-    sh:name "has site visit" ;
+    sh:name "tern:hasSiteVisit" ;
     sh:description "A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit)." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:hasSiteVisit ;
@@ -914,7 +917,7 @@ tern-shacl:Site-hasSiteVisit
 tern-shacl:Site-label
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
-    sh:name "label" ;
+    sh:name "rdfs:label" ;
     sh:description "A human-readable name for the subject." ;
     sh:maxCount 1 ;
     sh:path rdfs:label ;
@@ -922,7 +925,7 @@ tern-shacl:Site-label
 
 tern-shacl:Site-locationProcedure
     a sh:PropertyShape ;
-    sh:name "location procedure" ;
+    sh:name "tern:locationProcedure" ;
     sh:description "Link to a procedure used to obtain the location." ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -933,7 +936,7 @@ tern-shacl:SiteVisit-endedAtTime
     a sh:PropertyShape ;
     sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
-    sh:name "ended at time" ;
+    sh:name "prov:endedAtTime" ;
     sh:description "The time at which an activity ended." ;
     sh:path prov:endedAtTime ;
 .
@@ -943,7 +946,7 @@ tern-shacl:SiteVisit-startedAtTime
     sh:datatype xsd:dateTime ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
-    sh:name "started at time" ;
+    sh:name "prov:startedAtTime" ;
     sh:description "The time at which an activity started." ;
     sh:path prov:startedAtTime ;
 .
@@ -951,7 +954,7 @@ tern-shacl:SiteVisit-startedAtTime
 tern-shacl:System-hasDeployment
     a sh:PropertyShape ;
     sh:class tern:Deployment ;
-    sh:name "has deployment" ;
+    sh:name "ssn:hasDeployment" ;
     sh:description "Relation between a System and a Deployment, recording that the System is deployed in that Deployment." ;
     sh:nodeKind sh:IRI ;
     sh:path ssn:hasDeployment ;
@@ -961,7 +964,7 @@ tern-shacl:System-isHostedBy
     a sh:PropertyShape ;
     sh:class tern:Platform ;
     sh:maxCount 1 ;
-    sh:name "is hosted by" ;
+    sh:name "sosa:isHostedBy" ;
     sh:description "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:isHostedBy ;
@@ -969,7 +972,7 @@ tern-shacl:System-isHostedBy
 
 tern-shacl:System-systemType
     a sh:PropertyShape ;
-    sh:name "system type" ;
+    sh:name "tern:systemType" ;
     sh:description "The type of system. Values are from some controlled vocabulary." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:systemType ;
@@ -977,210 +980,210 @@ tern-shacl:System-systemType
 
 tern-shacl:Taxon-acceptedNameUsage
     a sh:PropertyShape ;
-    sh:name "accepted name usage" ;
+    sh:name "dwc:acceptedNameUsage" ;
     sh:description "The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) taxon." ;
     sh:path dwc:acceptedNameUsage ;
 .
 
 tern-shacl:Taxon-acceptedNameUsageID
     a sh:PropertyShape ;
-    sh:name "accepted name usage ID" ;
+    sh:name "dwc:acceptedNameUsageID" ;
     sh:description "An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon." ;
     sh:path dwc:acceptedNameUsageID ;
 .
 
 tern-shacl:Taxon-class
     a sh:PropertyShape ;
-    sh:name "Class" ;
+    sh:name "dwc:class" ;
     sh:description "The full scientific name of the class in which the taxon is classified." ;
     sh:path dwc:class ;
 .
 
 tern-shacl:Taxon-cultivarEpithet
     a sh:PropertyShape ;
-    sh:name "cultivar epithet" ;
+    sh:name "dwc:cultivarEpithet" ;
     sh:description "Part of the name of a cultivar, cultivar group or grex that follows the scientific name." ;
     sh:path dwc:cultivarEpithet ;
 .
 
 tern-shacl:Taxon-family
     a sh:PropertyShape ;
-    sh:name "Family" ;
+    sh:name "dwc:family" ;
     sh:description "The full scientific name of the family in which the taxon is classified." ;
     sh:path dwc:family ;
 .
 
 tern-shacl:Taxon-genericName
     a sh:PropertyShape ;
-    sh:name "generic name" ;
+    sh:name "dwc:genericName" ;
     sh:description "The genus part of the scientificName without authorship." ;
     sh:path dwc:genericName ;
 .
 
 tern-shacl:Taxon-genus
     a sh:PropertyShape ;
-    sh:name "Genus" ;
+    sh:name "dwc:genus" ;
     sh:description "The full scientific name of the genus in which the taxon is classified." ;
     sh:path dwc:genus ;
 .
 
 tern-shacl:Taxon-higherClassification
     a sh:PropertyShape ;
-    sh:name "higher classification" ;
+    sh:name "dwc:higherClassification" ;
     sh:description "A list (concatenated and separated) of taxa names terminating at the rank immediately superior to the taxon referenced in the taxon record." ;
     sh:path dwc:higherClassification ;
 .
 
 tern-shacl:Taxon-infragenericEpithet
     a sh:PropertyShape ;
-    sh:name "infrageneric epithet" ;
+    sh:name "dwc:infragenericEpithet" ;
     sh:description "The infrageneric part of a binomial name at ranks above species but below genus." ;
     sh:path dwc:infragenericEpithet ;
 .
 
 tern-shacl:Taxon-infraspecificEpithet
     a sh:PropertyShape ;
-    sh:name "Infraspecific Epithet" ;
+    sh:name "dwc:infraspecificEpithet" ;
     sh:description "The name of the lowest or terminal infraspecific epithet of the scientificName, excluding any rank designation." ;
     sh:path dwc:infraspecificEpithet ;
 .
 
 tern-shacl:Taxon-kingdom
     a sh:PropertyShape ;
-    sh:name "Kingdom" ;
+    sh:name "dwc:kingdom" ;
     sh:description "The full scientific name of the kingdom in which the taxon is classified." ;
     sh:path dwc:kingdom ;
 .
 
 tern-shacl:Taxon-nameAccordingTo
     a sh:PropertyShape ;
-    sh:name "Name According To" ;
+    sh:name "dwc:nameAccordingTo" ;
     sh:description "The reference to the source in which the specific taxon concept circumscription is defined or implied - traditionally signified by the Latin "sensu" or "sec." (from secundum, meaning "according to"). For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given." ;
     sh:path dwc:nameAccordingTo ;
 .
 
 tern-shacl:Taxon-nameAccordingToID
     a sh:PropertyShape ;
-    sh:name "name according to ID" ;
+    sh:name "dwc:nameAccordingToID" ;
     sh:description "An identifier for the source in which the specific taxon concept circumscription is defined or implied. See nameAccordingTo." ;
     sh:path dwc:nameAccordingToID ;
 .
 
 tern-shacl:Taxon-namePublishedIn
     a sh:PropertyShape ;
-    sh:name "name published in" ;
+    sh:name "dwc:namePublishedIn" ;
     sh:description "A reference for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:path dwc:namePublishedIn ;
 .
 
 tern-shacl:Taxon-namePublishedInID
     a sh:PropertyShape ;
-    sh:name "name published in ID" ;
+    sh:name "dwc:namePublishedInID" ;
     sh:description "An identifier for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:path dwc:namePublishedInID ;
 .
 
 tern-shacl:Taxon-namePublishedInYear
     a sh:PropertyShape ;
-    sh:name "name published in year" ;
+    sh:name "dwc:namePublishedInYear" ;
     sh:description "The four-digit year in which the scientificName was published." ;
     sh:path dwc:namePublishedInYear ;
 .
 
 tern-shacl:Taxon-nomenclaturalCode
     a sh:PropertyShape ;
-    sh:name "nomenclatural code" ;
+    sh:name "dwc:nomenclaturalCode" ;
     sh:description "The nomenclatural code (or codes in the case of an ambiregnal name) under which the scientificName is constructed." ;
     sh:path dwc:nomenclaturalCode ;
 .
 
 tern-shacl:Taxon-nomenclaturalStatus
     a sh:PropertyShape ;
-    sh:name "nomenclatural status" ;
+    sh:name "dwc:nomenclaturalStatus" ;
     sh:description "The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion." ;
     sh:path dwc:nomenclaturalStatus ;
 .
 
 tern-shacl:Taxon-order
     a sh:PropertyShape ;
-    sh:name "Order" ;
+    sh:name "dwc:order" ;
     sh:description "The full scientific name of the order in which the taxon is classified." ;
     sh:path dwc:order ;
 .
 
 tern-shacl:Taxon-originalNameUsage
     a sh:PropertyShape ;
-    sh:name "original name usage" ;
+    sh:name "dwc:originalNameUsage" ;
     sh:description "The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the scientificName or the senior/earlier homonym for replaced names." ;
     sh:path dwc:originalNameUsage ;
 .
 
 tern-shacl:Taxon-originalNameUsageID
     a sh:PropertyShape ;
-    sh:name "original name usage ID" ;
+    sh:name "dwc:originalNameUsageID" ;
     sh:description "An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:path dwc:originalNameUsageID ;
 .
 
 tern-shacl:Taxon-parentNameUsage
     a sh:PropertyShape ;
-    sh:name "parent name usage" ;
+    sh:name "dwc:parentNameUsage" ;
     sh:description "The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." ;
     sh:path dwc:parentNameUsage ;
 .
 
 tern-shacl:Taxon-parentNameUsageID
     a sh:PropertyShape ;
-    sh:name "parent name usage ID" ;
+    sh:name "dwc:parentNameUsageID" ;
     sh:description "An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." ;
     sh:path dwc:parentNameUsageID ;
 .
 
 tern-shacl:Taxon-phylum
     a sh:PropertyShape ;
-    sh:name "phylum" ;
+    sh:name "dwc:phylum" ;
     sh:description "The full scientific name of the phylum or division in which the taxon is classified." ;
     sh:path dwc:phylum ;
 .
 
 tern-shacl:Taxon-scientificName
     a sh:PropertyShape ;
-    sh:name "scientific name" ;
+    sh:name "dwc:scientificName" ;
     sh:description "The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term." ;
     sh:path dwc:scientificName ;
 .
 
 tern-shacl:Taxon-scientificNameAuthorship
     a sh:PropertyShape ;
-    sh:name "scientific name authorship" ;
+    sh:name "dwc:scientificNameAuthorship" ;
     sh:description "The authorship information for the scientificName formatted according to the conventions of the applicable nomenclaturalCode." ;
     sh:path dwc:scientificNameAuthorship ;
 .
 
 tern-shacl:Taxon-scientificNameID
     a sh:PropertyShape ;
-    sh:name "scientific name ID" ;
+    sh:name "dwc:scientificNameID" ;
     sh:description "An identifier for the nomenclatural (not taxonomic) details of a scientific name." ;
     sh:path dwc:scientificNameID ;
 .
 
 tern-shacl:Taxon-specificEpithet
     a sh:PropertyShape ;
-    sh:name "specific epithet" ;
+    sh:name "dwc:specificEpithet" ;
     sh:description "The name of the first or species epithet of the scientificName." ;
     sh:path dwc:specificEpithet ;
 .
 
 tern-shacl:Taxon-subfamily
     a sh:PropertyShape ;
-    sh:name "subfamily" ;
+    sh:name "dwc:subfamily" ;
     sh:description "The full scientific name of the subfamily in which the taxon is classified." ;
     sh:path dwc:subfamily ;
 .
 
 tern-shacl:Taxon-subgenus
     a sh:PropertyShape ;
-    sh:name "subgenus" ;
+    sh:name "dwc:subgenus" ;
     sh:description "The full scientific name of the subgenus in which the taxon is classified. Values should include the genus to avoid homonym confusion." ;
     sh:path dwc:subgenus ;
 .
