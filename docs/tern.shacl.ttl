@@ -351,6 +351,7 @@ tern-shacl:RDFDataset
         tern-shacl:RDFDataset-rightsHolder ,
         tern-shacl:RDFDataset-source ,
         tern-shacl:RDFDataset-subject ,
+        tern-shacl:RDFDataset-subset ,
         tern-shacl:RDFDataset-title ,
         tern-shacl:RDFDataset-vocabulary ;
     sh:targetClass tern:RDFDataset ;
@@ -783,6 +784,21 @@ tern-shacl:RDFDataset-subject
     sh:description "A topic of the resource. Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary." ;
     sh:nodeKind sh:IRIOrLiteral ;
     sh:path dcterms:subject ;
+.
+
+tern-shacl:RDFDataset-subset
+    a sh:PropertyShape ;
+    sh:class void:Dataset ;
+    sh:description """The `void:subset` property can be used to provide descriptions of parts of a dataset. A part of a dataset is itself a `void:Dataset`, and any of the annotations for datasets listed in this guide can be applied to the subset. Reasons for subdividing a dataset might include:
+
+- Parts have different provenance (different `dcterms:source`)
+- Parts have different publication dates (different `dcterms:date`)
+- Parts are accesible through different SPARQL endpoints (different `void:sparqlEndpoint`)
+- Parts are about different topics (different `dcterms:subject`)
+- Parts can be downloaded separately in different RDF dumps (different `void:dataDump`)""" ;
+    sh:name "void:subset" ;
+    sh:nodeKind sh:IRI ;
+    sh:path void:subset ;
 .
 
 tern-shacl:RDFDataset-title
