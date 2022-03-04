@@ -944,6 +944,7 @@ tern-shacl:SiteVisit-startedAtTime
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "started at time" ;
+    sh:description "The time at which an activity started." ;
     sh:path prov:startedAtTime ;
 .
 
@@ -951,6 +952,7 @@ tern-shacl:System-hasDeployment
     a sh:PropertyShape ;
     sh:class tern:Deployment ;
     sh:name "has deployment" ;
+    sh:description "Relation between a System and a Deployment, recording that the System is deployed in that Deployment." ;
     sh:nodeKind sh:IRI ;
     sh:path ssn:hasDeployment ;
 .
@@ -960,12 +962,15 @@ tern-shacl:System-isHostedBy
     sh:class tern:Platform ;
     sh:maxCount 1 ;
     sh:name "is hosted by" ;
+    sh:description "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by." ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:isHostedBy ;
 .
 
 tern-shacl:System-systemType
     a sh:PropertyShape ;
+    sh:name "system type" ;
+    sh:description "The type of system. Values are from some controlled vocabulary." ;
     sh:nodeKind sh:IRI ;
     sh:path tern:systemType ;
 .
@@ -973,169 +978,210 @@ tern-shacl:System-systemType
 tern-shacl:Taxon-acceptedNameUsage
     a sh:PropertyShape ;
     sh:name "accepted name usage" ;
+    sh:description "The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) taxon." ;
     sh:path dwc:acceptedNameUsage ;
 .
 
 tern-shacl:Taxon-acceptedNameUsageID
     a sh:PropertyShape ;
     sh:name "accepted name usage ID" ;
+    sh:description "An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon." ;
     sh:path dwc:acceptedNameUsageID ;
 .
 
 tern-shacl:Taxon-class
     a sh:PropertyShape ;
+    sh:name "Class" ;
+    sh:description "The full scientific name of the class in which the taxon is classified." ;
     sh:path dwc:class ;
 .
 
 tern-shacl:Taxon-cultivarEpithet
     a sh:PropertyShape ;
     sh:name "cultivar epithet" ;
+    sh:description "Part of the name of a cultivar, cultivar group or grex that follows the scientific name." ;
     sh:path dwc:cultivarEpithet ;
 .
 
 tern-shacl:Taxon-family
     a sh:PropertyShape ;
+    sh:name "Family" ;
+    sh:description "The full scientific name of the family in which the taxon is classified." ;
     sh:path dwc:family ;
 .
 
 tern-shacl:Taxon-genericName
     a sh:PropertyShape ;
     sh:name "generic name" ;
+    sh:description "The genus part of the scientificName without authorship." ;
     sh:path dwc:genericName ;
 .
 
 tern-shacl:Taxon-genus
     a sh:PropertyShape ;
+    sh:name "Genus" ;
+    sh:description "The full scientific name of the genus in which the taxon is classified." ;
     sh:path dwc:genus ;
 .
 
 tern-shacl:Taxon-higherClassification
     a sh:PropertyShape ;
     sh:name "higher classification" ;
+    sh:description "A list (concatenated and separated) of taxa names terminating at the rank immediately superior to the taxon referenced in the taxon record." ;
     sh:path dwc:higherClassification ;
 .
 
 tern-shacl:Taxon-infragenericEpithet
     a sh:PropertyShape ;
     sh:name "infrageneric epithet" ;
+    sh:description "The infrageneric part of a binomial name at ranks above species but below genus." ;
     sh:path dwc:infragenericEpithet ;
 .
 
 tern-shacl:Taxon-infraspecificEpithet
     a sh:PropertyShape ;
+    sh:name "Infraspecific Epithet" ;
+    sh:description "The name of the lowest or terminal infraspecific epithet of the scientificName, excluding any rank designation." ;
     sh:path dwc:infraspecificEpithet ;
 .
 
 tern-shacl:Taxon-kingdom
     a sh:PropertyShape ;
+    sh:name "Kingdom" ;
+    sh:description "The full scientific name of the kingdom in which the taxon is classified." ;
     sh:path dwc:kingdom ;
 .
 
 tern-shacl:Taxon-nameAccordingTo
     a sh:PropertyShape ;
+    sh:name "Name According To" ;
+    sh:description "The reference to the source in which the specific taxon concept circumscription is defined or implied - traditionally signified by the Latin "sensu" or "sec." (from secundum, meaning "according to"). For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given." ;
     sh:path dwc:nameAccordingTo ;
 .
 
 tern-shacl:Taxon-nameAccordingToID
     a sh:PropertyShape ;
     sh:name "name according to ID" ;
+    sh:description "An identifier for the source in which the specific taxon concept circumscription is defined or implied. See nameAccordingTo." ;
     sh:path dwc:nameAccordingToID ;
 .
 
 tern-shacl:Taxon-namePublishedIn
     a sh:PropertyShape ;
     sh:name "name published in" ;
+    sh:description "A reference for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:path dwc:namePublishedIn ;
 .
 
 tern-shacl:Taxon-namePublishedInID
     a sh:PropertyShape ;
     sh:name "name published in ID" ;
+    sh:description "An identifier for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:path dwc:namePublishedInID ;
 .
 
 tern-shacl:Taxon-namePublishedInYear
     a sh:PropertyShape ;
     sh:name "name published in year" ;
+    sh:description "The four-digit year in which the scientificName was published." ;
     sh:path dwc:namePublishedInYear ;
 .
 
 tern-shacl:Taxon-nomenclaturalCode
     a sh:PropertyShape ;
     sh:name "nomenclatural code" ;
+    sh:description "The nomenclatural code (or codes in the case of an ambiregnal name) under which the scientificName is constructed." ;
     sh:path dwc:nomenclaturalCode ;
 .
 
 tern-shacl:Taxon-nomenclaturalStatus
     a sh:PropertyShape ;
     sh:name "nomenclatural status" ;
+    sh:description "The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion." ;
     sh:path dwc:nomenclaturalStatus ;
 .
 
 tern-shacl:Taxon-order
     a sh:PropertyShape ;
+    sh:name "Order" ;
+    sh:description "The full scientific name of the order in which the taxon is classified." ;
     sh:path dwc:order ;
 .
 
 tern-shacl:Taxon-originalNameUsage
     a sh:PropertyShape ;
     sh:name "original name usage" ;
+    sh:description "The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the scientificName or the senior/earlier homonym for replaced names." ;
     sh:path dwc:originalNameUsage ;
 .
 
 tern-shacl:Taxon-originalNameUsageID
     a sh:PropertyShape ;
     sh:name "original name usage ID" ;
+    sh:description "An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:path dwc:originalNameUsageID ;
 .
 
 tern-shacl:Taxon-parentNameUsage
     a sh:PropertyShape ;
     sh:name "parent name usage" ;
+    sh:description "The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." ;
     sh:path dwc:parentNameUsage ;
 .
 
 tern-shacl:Taxon-parentNameUsageID
     a sh:PropertyShape ;
     sh:name "parent name usage ID" ;
+    sh:description "An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." ;
     sh:path dwc:parentNameUsageID ;
 .
 
 tern-shacl:Taxon-phylum
     a sh:PropertyShape ;
+    sh:name "phylum" ;
+    sh:description "The full scientific name of the phylum or division in which the taxon is classified." ;
     sh:path dwc:phylum ;
 .
 
 tern-shacl:Taxon-scientificName
     a sh:PropertyShape ;
+    sh:name "scientific name" ;
+    sh:description "The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term." ;
     sh:path dwc:scientificName ;
 .
 
 tern-shacl:Taxon-scientificNameAuthorship
     a sh:PropertyShape ;
+    sh:name "scientific name authorship" ;
+    sh:description "The authorship information for the scientificName formatted according to the conventions of the applicable nomenclaturalCode." ;
     sh:path dwc:scientificNameAuthorship ;
 .
 
 tern-shacl:Taxon-scientificNameID
     a sh:PropertyShape ;
     sh:name "scientific name ID" ;
+    sh:description "An identifier for the nomenclatural (not taxonomic) details of a scientific name." ;
     sh:path dwc:scientificNameID ;
 .
 
 tern-shacl:Taxon-specificEpithet
     a sh:PropertyShape ;
+    sh:name "specific epithet" ;
+    sh:description "The name of the first or species epithet of the scientificName." ;
     sh:path dwc:specificEpithet ;
 .
 
 tern-shacl:Taxon-subfamily
     a sh:PropertyShape ;
     sh:name "subfamily" ;
+    sh:description "The full scientific name of the subfamily in which the taxon is classified." ;
     sh:path dwc:subfamily ;
 .
 
 tern-shacl:Taxon-subgenus
     a sh:PropertyShape ;
     sh:name "subgenus" ;
+    sh:description "The full scientific name of the subgenus in which the taxon is classified. Values should include the genus to avoid homonym confusion." ;
     sh:path dwc:subgenus ;
 .
 
