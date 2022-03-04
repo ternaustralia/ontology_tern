@@ -1728,7 +1728,6 @@ tern-shacl:rdfs-comment
 
 tern-shacl:dcterms-identifier
     a sh:PropertyShape ;
-    rdfs:label "dcterms:identifier" ;
     sh:description "An unambiguous reference to the resource within a given context." ;
     sh:name "dcterms:identifier" ;
     sh:path dcterms:identifier ;
@@ -1747,7 +1746,6 @@ tern-shacl:void-inDataset
 
 tern-shacl:dcterms-type
     a sh:PropertyShape ;
-    rdfs:label "dcterms:type" ;
     sh:description "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." ;
     sh:name "dcterms:type" ;
     sh:nodeKind sh:IRI ;
