@@ -1,20 +1,10 @@
 name: Run tests
 
 on:
-  # Make workflow callable from other workflows.
-  # See https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#creating-a-reusable-workflow
+  # Make workflow callable.
   workflow_call:
-
   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-    branches:
-      # Run on all branches.
-      - "**"
-      # But not on master.
-      - "!master"
+    types: [opened, synchronize, reopened]
 
 jobs:
   test:
