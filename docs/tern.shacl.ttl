@@ -35,6 +35,7 @@ tern-shacl:
 
 tern-shacl:Association
     a sh:NodeShape ;
+    rdfs:label "Association" ;
     sh:property
         tern-shacl:prov-agent ,
         tern-shacl:prov-hadRole ;
@@ -43,6 +44,7 @@ tern-shacl:Association
 
 tern-shacl:Attribute
     a sh:NodeShape ;
+    rdfs:label "Attribute" ;
     sh:property
         tern-shacl:dcterms-type ,
         tern-shacl:tern-attribute ,
@@ -64,12 +66,14 @@ tern-shacl:Attribution
 
 tern-shacl:Boolean
     a sh:NodeShape ;
+    rdfs:label "Boolean" ;
     sh:property tern-shacl:Boolean-value ;
     sh:targetClass tern:Boolean ;
 .
 
 tern-shacl:Dataset
     a sh:NodeShape ;
+    rdfs:label "Dataset" ;
     sh:property [
             a sh:PropertyShape ;
             sh:class tern:Distribution ;
@@ -82,18 +86,21 @@ tern-shacl:Dataset
 
 tern-shacl:Date
     a sh:NodeShape ;
+    rdfs:label "Date" ;
     sh:property tern-shacl:Date-value ;
     sh:targetClass tern:Date ;
 .
 
 tern-shacl:DateTime
     a sh:NodeShape ;
+    rdfs:label "Date time" ;
     sh:property tern-shacl:DateTime-value ;
     sh:targetClass tern:DateTime ;
 .
 
 tern-shacl:Deployment
     a sh:NodeShape ;
+    rdfs:label "Deployment" ;
     sh:property
         tern-shacl:ssn-deployedOnPlatform ,
         tern-shacl:ssn-deployedSystem ,
@@ -103,10 +110,12 @@ tern-shacl:Deployment
 
 tern-shacl:Distribution
     a sh:NodeShape ;
+    rdfs:label "Distribution" ;
 .
 
 tern-shacl:Duration
     a sh:NodeShape ;
+    rdfs:label "Duration" ;
     sh:property
         tern-shacl:time-numericDuration ,
         tern-shacl:time-unitType ;
@@ -115,6 +124,7 @@ tern-shacl:Duration
 
 tern-shacl:FeatureOfInterest
     a sh:NodeShape ;
+    rdfs:label "Feature of Interest" ;
     sh:property
         tern-shacl:FeatureOfInterest-featureType ,
         tern-shacl:dcterms-identifier ,
@@ -131,6 +141,7 @@ tern-shacl:FeatureOfInterest
 
 tern-shacl:Float
     a sh:NodeShape ;
+    rdfs:label "Float" ;
     sh:property
         tern-shacl:Float-uncertainty ,
         tern-shacl:Float-value ,
@@ -140,12 +151,14 @@ tern-shacl:Float
 
 tern-shacl:IRI
     a sh:NodeShape ;
+    rdfs:label "IRI" ;
     sh:property tern-shacl:IRI-value ;
     sh:targetClass tern:IRI ;
 .
 
 tern-shacl:Instant
     a sh:NodeShape ;
+    rdfs:label "Instant" ;
     sh:and (
             [
                 sh:property [
@@ -253,6 +266,7 @@ tern-shacl:Instant
 
 tern-shacl:Integer
     a sh:NodeShape ;
+    rdfs:label "Integer" ;
     sh:property
         tern-shacl:Integer-uncertainty ,
         tern-shacl:Integer-value ,
@@ -262,6 +276,7 @@ tern-shacl:Integer
 
 tern-shacl:Interval
     a sh:NodeShape ;
+    rdfs:label "Interval" ;
     sh:property
         tern-shacl:time-hasBeginning ,
         tern-shacl:time-hasDuration ,
@@ -271,6 +286,7 @@ tern-shacl:Interval
 
 tern-shacl:ManagedFeature
     a sh:NodeShape ;
+    rdfs:label "Feature which is managed for TERN purposes" ;
     sh:property
         [
             a sh:PropertyShape ;
@@ -293,12 +309,14 @@ tern-shacl:ManagedFeature
 
 tern-shacl:MaterialSample
     a sh:NodeShape ;
+    rdfs:label "Material sample" ;
     sh:property tern-shacl:dwc-materialSampleID ;
     sh:targetClass tern:MaterialSample ;
 .
 
 tern-shacl:Observation
     a sh:NodeShape ;
+    rdfs:label "Observation" ;
     sh:property
         tern-shacl:Observation-hasResult ,
         tern-shacl:dcterms-identifier ,
@@ -322,6 +340,7 @@ tern-shacl:Observation
 
 tern-shacl:ObservationCollection
     a sh:NodeShape ;
+    rdfs:label "Observation collection" ;
     sh:property
         tern-shacl:ObservationCollection-hasFeatureOfInterest ,
         tern-shacl:ObservationCollection-hasMember ,
@@ -336,12 +355,14 @@ tern-shacl:ObservationCollection
 
 tern-shacl:Quadrat
     a sh:NodeShape ;
+    rdfs:label "Quadrat" ;
     sh:property tern-shacl:Quadrat-featureType ;
     sh:targetClass tern:Quadrat ;
 .
 
 tern-shacl:RDFDataset
     a sh:NodeShape ;
+    rdfs:label "RDFDataset" ;
     sh:property
         tern-shacl:RDFDataset-contributor ,
         tern-shacl:RDFDataset-created ,
@@ -355,6 +376,7 @@ tern-shacl:RDFDataset
         tern-shacl:RDFDataset-rightsHolder ,
         tern-shacl:RDFDataset-source ,
         tern-shacl:RDFDataset-subject ,
+        tern-shacl:RDFDataset-subset ,
         tern-shacl:RDFDataset-title ,
         tern-shacl:RDFDataset-vocabulary ;
     sh:targetClass tern:RDFDataset ;
@@ -362,12 +384,14 @@ tern-shacl:RDFDataset
 
 tern-shacl:Result
     a sh:NodeShape ;
+    rdfs:label "Result" ;
     sh:property tern-shacl:Result-isResultOf ;
     sh:targetClass tern:Result ;
 .
 
 tern-shacl:Sample
     a sh:NodeShape ;
+    rdfs:label "Sample" ;
     sh:property
         tern-shacl:Sample-isResultOf ,
         tern-shacl:Sample-isSampleOf ;
@@ -376,6 +400,7 @@ tern-shacl:Sample
 
 tern-shacl:Sampler
     a sh:NodeShape ;
+    rdfs:label "Sampler" ;
     sh:property
         tern-shacl:Sampler-implements ,
         tern-shacl:sosa-madeSampling ;
@@ -384,6 +409,7 @@ tern-shacl:Sampler
 
 tern-shacl:Sampling
     a sh:NodeShape ;
+    rdfs:label "Sampling" ;
     sh:property
         tern-shacl:Sampling-hasResult ,
         tern-shacl:Sampling-madeBySampler ,
@@ -403,6 +429,7 @@ tern-shacl:Sampling
 
 tern-shacl:Site
     a sh:NodeShape ;
+    rdfs:label "Site" ;
     sh:property
         tern-shacl:Site-dimension ,
         tern-shacl:Site-hasSiteVisit ,
@@ -416,6 +443,7 @@ tern-shacl:Site
 
 tern-shacl:SiteVisit
     a sh:NodeShape ;
+    rdfs:label "Site Visit" ;
     sh:property
         tern-shacl:SiteVisit-endedAtTime ,
         tern-shacl:SiteVisit-startedAtTime ,
@@ -431,6 +459,7 @@ tern-shacl:SiteVisit
 
 tern-shacl:System
     a sh:NodeShape ;
+    rdfs:label "System" ;
     sh:property
         tern-shacl:System-hasDeployment ,
         tern-shacl:System-isHostedBy ,
@@ -442,6 +471,7 @@ tern-shacl:System
 
 tern-shacl:Taxon
     a sh:NodeShape ;
+    rdfs:label "Taxon" ;
     sh:property
         tern-shacl:Taxon-acceptedNameUsage ,
         tern-shacl:Taxon-acceptedNameUsageID ,
@@ -485,12 +515,14 @@ tern-shacl:Taxon
 
 tern-shacl:Text
     a sh:NodeShape ;
+    rdfs:label "Text" ;
     sh:property tern-shacl:Text-value ;
     sh:targetClass tern:Text ;
 .
 
 tern-shacl:Transect
     a sh:NodeShape ;
+    rdfs:label "Transect" ;
     sh:property
         tern-shacl:Transect-featureType ,
         tern-shacl:Transect-hasGeometry ,
@@ -502,6 +534,7 @@ tern-shacl:Transect
 
 tern-shacl:Value
     a sh:NodeShape ;
+    rdfs:label "Value" ;
     sh:targetClass tern:Value ;
 .
 
@@ -812,6 +845,21 @@ tern-shacl:RDFDataset-subject
     sh:name "dcterms:subject" ;
     sh:nodeKind sh:IRIOrLiteral ;
     sh:path dcterms:subject ;
+.
+
+tern-shacl:RDFDataset-subset
+    a sh:PropertyShape ;
+    sh:class void:Dataset ;
+    sh:description """The `void:subset` property can be used to provide descriptions of parts of a dataset. A part of a dataset is itself a `void:Dataset`, and any of the annotations for datasets listed in this guide can be applied to the subset. Reasons for subdividing a dataset might include:
+
+- Parts have different provenance (different `dcterms:source`)
+- Parts have different publication dates (different `dcterms:date`)
+- Parts are accesible through different SPARQL endpoints (different `void:sparqlEndpoint`)
+- Parts are about different topics (different `dcterms:subject`)
+- Parts can be downloaded separately in different RDF dumps (different `void:dataDump`)""" ;
+    sh:name "void:subset" ;
+    sh:nodeKind sh:IRI ;
+    sh:path void:subset ;
 .
 
 tern-shacl:RDFDataset-title
