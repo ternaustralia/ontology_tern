@@ -1047,26 +1047,6 @@ tern:SiteVisit
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:endedAtTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:startedAtTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:identifier
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:RDFDataset ;
-            owl:onProperty void:inDataset
-        ] ,
-        [
-            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty void:inDataset
         ] ,
@@ -1091,6 +1071,26 @@ tern:SiteVisit
             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass xsd:string ;
             owl:onProperty tern:siteDescription
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:endedAtTime
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:startedAtTime
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty dcterms:identifier
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom tern:RDFDataset ;
+            owl:onProperty void:inDataset
         ] ,
         prov:Activity ;
     skos:definition "A Site Visit is a discrete time-bounded activity at a [Site](#Site), during which [Sampling](#Sampling) or [Observation](#Observation) activities occur. " ;
