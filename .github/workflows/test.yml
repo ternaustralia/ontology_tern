@@ -13,6 +13,17 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.10"]
+        
+        turtle-files: 
+          - "docs/tern.ttl"
+          - "docs/tern.shacl.ttl"
+          - "docs/tern.ecoplots.shacl.ttl"
+          - "docs/meta.shacl.ttl"
+
+        validate-files: 
+          - "docs/tern.ttl"
+          - "docs/tern.shacl.ttl"
+          - "docs/tern.ecoplots.shacl.ttl"
 
     steps:
       - name: Checkout the repo
@@ -27,14 +38,14 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Ensure there are no syntax errors in docs/tern.ttl
+      - name: Ensure there are no syntax errors in Turtle files
         run: |
-          ontotools file validate docs/tern.ttl
+          ontotools file validate ${{ matrix.turtle-files }}
 
-      - name: Ensure there are no syntax errors in docs/tern.shacl.ttl
+      - name: To validate files ${{ matrix.validate-files }}
         run: |
-          ontotools file validate docs/tern.shacl.ttl
-
+          pyshacl -s docs/meta.shacl.ttl -f human ${{ matrix.validate-files }}
+          
       # Comment below out. Due to blank nodes, the longturtle serializer changes the file even when no content has changed.
 
       # - name: Ensure tern.ttl is normalized.
