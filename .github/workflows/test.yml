@@ -13,17 +13,22 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.10"]
-        
-        turtle-files: 
-          - "docs/tern.ttl"
-          - "docs/tern.shacl.ttl"
-          - "docs/tern.ecoplots.shacl.ttl"
-          - "docs/meta.shacl.ttl"
+        test-case:
+          - name: Check Turtle syntax - docs/tern.ttl
+            command: ontotools file validate docs/tern.ttl
+          - name: Check Turtle syntax - docs/tern.shacl.ttl
+            command: ontotools file validate docs/tern.shacl.ttl
+          - name: Check Turtle syntax - docs/tern.ecoplots.shacl.ttl
+            command: ontotools file validate docs/tern.ecoplots.shacl.ttl
+          - name: Check Turtle syntax - docs/meta.shacl.ttl
+            command: ontotools file validate docs/meta.shacl.ttl
 
-        validate-files: 
-          - "docs/tern.ttl"
-          - "docs/tern.shacl.ttl"
-          - "docs/tern.ecoplots.shacl.ttl"
+          - name: Validate shapes with meta shapes - docs/tern.ttl
+            command: pyshacl -s docs/meta.shacl.ttl docs/tern.ttl
+          - name: Validate shapes with meta shapes - docs/tern.shacl.ttl
+            command: pyshacl -s docs/meta.shacl.ttl docs/tern.shacl.ttl
+          - name: Validate shapes with meta shapes - docs/tern.ecoplots.shacl.ttl
+            command: pyshacl -s docs/meta.shacl.ttl docs/tern.ecoplots.shacl.ttl
 
     steps:
       - name: Checkout the repo
@@ -38,13 +43,9 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Ensure there are no syntax errors in Turtle files
+      - name: ${{ matrix.test-case.name }}
         run: |
-          ontotools file validate ${{ matrix.turtle-files }}
-
-      - name: To validate files ${{ matrix.validate-files }}
-        run: |
-          pyshacl -s docs/meta.shacl.ttl -f human ${{ matrix.validate-files }}
+          ${{ matrix.test-case.command }}
           
       # Comment below out. Due to blank nodes, the longturtle serializer changes the file even when no content has changed.
 
