@@ -115,3 +115,11 @@
     prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159"^^xsd:anyURI ;
     prof:hasRole role:vocabulary ;
 .
+
+<https://w3id.org/tern/profiles/tern/vocabularies/CI-Role-Code> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology vocabulary - CI Role Code" ;
+    dcterms:description "CI Role Code controlled vocabulary to describe the roles available to the TERN Ontology concepts." ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
