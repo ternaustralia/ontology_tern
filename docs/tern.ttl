@@ -28,7 +28,7 @@ PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-_:nfa46e58448ae42f3ba0cd45a72d5634ab1
+_:n396ff1f76b30458ab5d6584a10319889b1
     a
         rdfs:Class ,
         owl:Class ;
@@ -38,7 +38,99 @@ _:nfa46e58448ae42f3ba0cd45a72d5634ab1
         ) ;
 .
 
-_:nfa46e58448ae42f3ba0cd45a72d5634ab12
+[]    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            xsd:string
+            xsd:int
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b13
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            xsd:double
+            xsd:integer
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b16
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            xsd:double
+            xsd:integer
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b19
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            xsd:string
+            rdf:langString
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b22
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            xsd:string
+            xsd:anyURI
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b25
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            skos:ConceptScheme
+            skos:Collection
+            owl:Ontology
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b29
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            tern:Observation
+            tern:Sampling
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b32
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            skos:ConceptScheme
+            skos:Collection
+            owl:Ontology
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b36
+    a
+        rdfs:Class ,
+        owl:Class ;
+    owl:unionOf (
+            skos:ConceptScheme
+            skos:Collection
+            owl:Ontology
+        ) ;
+.
+
+_:n396ff1f76b30458ab5d6584a10319889b4
     a
         rdfs:Class ,
         owl:Class ;
@@ -54,98 +146,6 @@ _:nfa46e58448ae42f3ba0cd45a72d5634ab12
     owl:unionOf (
             xsd:string
             xsd:int
-        ) ;
-.
-
-[]    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            xsd:string
-            xsd:int
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab21
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            xsd:double
-            xsd:integer
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab24
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            xsd:double
-            xsd:integer
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab27
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            xsd:string
-            rdf:langString
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab30
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            xsd:string
-            xsd:anyURI
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab33
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            skos:ConceptScheme
-            skos:Collection
-            owl:Ontology
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab37
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            tern:Observation
-            tern:Sampling
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab4
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            skos:ConceptScheme
-            skos:Collection
-            owl:Ontology
-        ) ;
-.
-
-_:nfa46e58448ae42f3ba0cd45a72d5634ab8
-    a
-        rdfs:Class ,
-        owl:Class ;
-    owl:unionOf (
-            skos:ConceptScheme
-            skos:Collection
-            owl:Ontology
         ) ;
 .
 
@@ -346,12 +346,12 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom _:nfa46e58448ae42f3ba0cd45a72d5634ab21 ;
+            owl:allValuesFrom _:n396ff1f76b30458ab5d6584a10319889b13 ;
             owl:onProperty tern:length
         ] ,
         [
             a owl:Restriction ;
-            owl:allValuesFrom _:nfa46e58448ae42f3ba0cd45a72d5634ab24 ;
+            owl:allValuesFrom _:n396ff1f76b30458ab5d6584a10319889b16 ;
             owl:onProperty tern:width
         ] ,
         [
@@ -433,7 +433,7 @@ tern:FeatureOfInterest
         ] ,
         [
             a owl:Restriction ;
-            owl:allValuesFrom _:nfa46e58448ae42f3ba0cd45a72d5634ab1 ;
+            owl:allValuesFrom _:n396ff1f76b30458ab5d6584a10319889b1 ;
             owl:onProperty sosa:isFeatureOfInterestOf
         ] ,
         [
@@ -664,7 +664,7 @@ tern:Method
         ] ,
         [
             a owl:Restriction ;
-            owl:allValuesFrom _:nfa46e58448ae42f3ba0cd45a72d5634ab30 ;
+            owl:allValuesFrom _:n396ff1f76b30458ab5d6584a10319889b22 ;
             owl:onProperty dcterms:source
         ] ,
         [
@@ -742,7 +742,7 @@ tern:ObservableProperty
         ] ,
         [
             a owl:Restriction ;
-            owl:allValuesFrom _:nfa46e58448ae42f3ba0cd45a72d5634ab33 ;
+            owl:allValuesFrom _:n396ff1f76b30458ab5d6584a10319889b25 ;
             owl:onProperty tern:localVocabulary
         ] ,
         [
@@ -825,7 +825,7 @@ tern:Observation
         ] ,
         [
             a owl:Restriction ;
-            owl:onClass _:nfa46e58448ae42f3ba0cd45a72d5634ab12 ;
+            owl:onClass _:n396ff1f76b30458ab5d6584a10319889b4 ;
             owl:onProperty sosa:phenomenonTime ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
         ] ,
@@ -932,7 +932,7 @@ tern:Result
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom _:nfa46e58448ae42f3ba0cd45a72d5634ab37 ;
+            owl:allValuesFrom _:n396ff1f76b30458ab5d6584a10319889b29 ;
             owl:onProperty sosa:isResultOf
         ] ,
         [
@@ -1201,7 +1201,7 @@ tern:Text
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom _:nfa46e58448ae42f3ba0cd45a72d5634ab27 ;
+            owl:allValuesFrom _:n396ff1f76b30458ab5d6584a10319889b19 ;
             owl:onProperty rdf:value
         ] ,
         [
@@ -1750,7 +1750,7 @@ tern:localValue
 tern:localVocabulary
     a rdf:Property ;
     rdfs:label "local vocabulary" ;
-    rdfs:range _:nfa46e58448ae42f3ba0cd45a72d5634ab4 ;
+    rdfs:range _:n396ff1f76b30458ab5d6584a10319889b32 ;
 .
 
 tern:locationDescription
@@ -1795,7 +1795,7 @@ tern:transectStartPoint
 tern:vocabulary
     a owl:ObjectProperty ;
     rdfs:label "vocabulary" ;
-    rdfs:range _:nfa46e58448ae42f3ba0cd45a72d5634ab8 ;
+    rdfs:range _:n396ff1f76b30458ab5d6584a10319889b36 ;
     skos:definition "Controlled vocabulary, taxonomy etc." ;
 .
 
