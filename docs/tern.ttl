@@ -1,4 +1,16 @@
-
+# baseURI: https://w3id.org/tern/ontologies/tern/
+# imports: http://datashapes.org/dash
+# imports: http://qudt.org/schema/qudt/
+# imports: http://rdfs.org/ns/void
+# imports: http://www.w3.org/2002/07/owl#
+# imports: http://www.w3.org/2004/02/skos/core#
+# imports: http://www.w3.org/2006/time#
+# imports: http://www.w3.org/ns/dcat#
+# imports: http://www.w3.org/ns/prov#
+# imports: http://www.w3.org/ns/sosa/
+# imports: http://www.w3.org/ns/ssn/
+# imports: https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl
+# prefix: tern
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX doap: <http://usefulinc.com/ns/doap#>
