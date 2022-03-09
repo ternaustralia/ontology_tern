@@ -10,6 +10,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 
 meta-shacl:
     a owl:Ontology ;
@@ -28,21 +29,23 @@ meta-shacl:NodeShape
 .
 
 meta-shacl:OWLClass
-    a sh:PropertyShape ;
+    a sh:NodeShape ;
     rdfs:label "OWL Class" ;
-    sh:path rdfs:label ;
-    sh:severity sh:Warning ;
-    sh:sparql [
-            sh:message "No rdfs:label for node {$this}" ;
-            sh:select """
-                  select $this where {
-	                  $this $path ?label 
-	                  { filter (!isBlank($this) )
-	                    . filter (STRLEN(?label) != 0) }
-                  }
-                  """
-        ] ;
-    sh:targetClass owl:Class ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            select ?this {
+                ?this a owl:Class .
+                filter(!isBlank(?this))
+            }
+        """
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ]
 .
 
 meta-shacl:PropertyShape
