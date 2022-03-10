@@ -27,6 +27,6 @@
 <https://w3id.org/tern/profiles/tern/ecoplots/validator> a prof:ResourceDescriptor ;
     dcterms:title "EcoPlots - validator" ;
     dcterms:format "text/turtle" ;
-    prof:hasArtifact "https://ternaustralia.github.io/ontology_tern/tern.ecoplots.shacl.ttl"^^xsd:anyURI ;
+    prof:hasArtifact "https://w3id.org/tern/shapes/tern/ecoplots.ttl"^^xsd:anyURI ;
     prof:hasRole role:validator ;
 .

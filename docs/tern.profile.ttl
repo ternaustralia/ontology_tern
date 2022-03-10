@@ -64,7 +64,7 @@
     dcterms:title "TERN Ontology - validator" ;
     dcterms:description "SHACL shapes for the TERN Ontology." ;
     dcterms:format "text/turtle" ;
-    prof:hasArtifact "https://ternaustralia.github.io/ontology_tern/tern.shacl.ttl"^^xsd:anyURI ;
+    prof:hasArtifact "https://w3id.org/tern/shapes/tern.ttl"^^xsd:anyURI ;
     prof:hasRole role:validator ;
 .
 
