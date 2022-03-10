@@ -31,9 +31,9 @@ jobs:
         run: |
           ontotools file validate docs/tern.ttl
 
-      - name: Ensure there are no syntax errors in docs/tern.shacl.ttl
+      - name: Ensure there are no syntax errors in docs/tern.shapes.ttl
         run: |
-          ontotools file validate docs/tern.shacl.ttl
+          ontotools file validate docs/tern.shapes.ttl
 
       # Comment below out. Due to blank nodes, the longturtle serializer changes the file even when no content has changed.
 
