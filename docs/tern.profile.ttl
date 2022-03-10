@@ -44,6 +44,14 @@
     prof:hasRole role:guidance ;
 .
 
+<https://w3id.org/tern/profiles/tern/cookbook> a prof:ResourceDescriptor ;
+    dcterms:title "TERN Ontology - cookbook" ;
+    dcterms:description "A cookbook of patterns on representing ecological things with the TERN Ontology." ;
+    dcterms:format "text/html" ;
+    prof:hasArtifact "https://linkeddata.tern.org.au/information-models/tern-ontology/cookbook"^^xsd:anyURI ;
+    prof:hasRole role:guidance ;
+.
+
 <https://w3id.org/tern/profiles/tern/class-and-property-shape-constraints> a prof:ResourceDescriptor ;
     dcterms:title "TERN Ontology - classes, properties and shape constraints" ;
     dcterms:description "A web-based viewer of the TERN Ontology classes, properties and their shape constraints." ;
