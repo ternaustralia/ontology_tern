@@ -1,21 +1,21 @@
-# baseURI: https://w3id.org/tern/shacl/meta/
+# baseURI: https://w3id.org/tern/shapes/meta/
 # imports: http://datashapes.org/dash
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/shacl#
 # imports: https://w3id.org/tern/ontologies/tern/
-# prefix: meta-shacl
-PREFIX meta-shacl: <https://w3id.org/tern/shacl/meta/>
+# prefix: meta-shapes
+PREFIX meta-shapes: <https://w3id.org/tern/shapes/meta/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-meta-shacl:
+meta-shapes:
     a owl:Ontology ;
 .
 
-meta-shacl:NodeShape
+meta-shapes:NodeShape
     a sh:NodeShape ;
     rdfs:label "Node Shape" ;
     sh:property [
@@ -27,7 +27,7 @@ meta-shacl:NodeShape
     sh:targetClass sh:NodeShape ;
 .
 
-meta-shacl:OWLClass
+meta-shapes:OWLClass
     a sh:NodeShape ;
     rdfs:label "OWL Class" ;
     sh:property [
@@ -47,7 +47,7 @@ meta-shacl:OWLClass
         ] ;
 .
 
-meta-shacl:PropertyShape
+meta-shapes:PropertyShape
     a sh:NodeShape ;
     rdfs:label "Property Shape" ;
     sh:property

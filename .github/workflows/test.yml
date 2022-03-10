@@ -16,19 +16,23 @@ jobs:
         test-case:
           - name: Check Turtle syntax - docs/tern.ttl
             command: ontotools file validate docs/tern.ttl
-          - name: Check Turtle syntax - docs/tern.shacl.ttl
-            command: ontotools file validate docs/tern.shacl.ttl
-          - name: Check Turtle syntax - docs/tern.ecoplots.shacl.ttl
-            command: ontotools file validate docs/tern.ecoplots.shacl.ttl
-          - name: Check Turtle syntax - docs/meta.shacl.ttl
-            command: ontotools file validate docs/meta.shacl.ttl
+          - name: Check Turtle syntax - docs/tern.shapes.ttl
+            command: ontotools file validate docs/tern.shapes.ttl
+          - name: Check Turtle syntax - docs/tern.ecoplots.shapes.ttl
+            command: ontotools file validate docs/tern.ecoplots.shapes.ttl
+          - name: Check Turtle syntax - docs/meta.shapes.ttl
+            command: ontotools file validate docs/meta.shapes.ttl
+          - name: Check Turtle syntax - docs/tern.profile.ttl
+            command: ontotools file validate docs/tern.profile.ttl
+          - name: Check Turtle syntax - docs/ecoplots.profile.ttl
+            command: ontotools file validate docs/ecoplots.profile.ttl
 
           - name: Validate shapes with meta shapes - docs/tern.ttl
-            command: pyshacl -s docs/meta.shacl.ttl docs/tern.ttl
-          - name: Validate shapes with meta shapes - docs/tern.shacl.ttl
-            command: pyshacl -s docs/meta.shacl.ttl docs/tern.shacl.ttl
-          - name: Validate shapes with meta shapes - docs/tern.ecoplots.shacl.ttl
-            command: pyshacl -s docs/meta.shacl.ttl docs/tern.ecoplots.shacl.ttl
+            command: pyshacl -s docs/meta.shapes.ttl docs/tern.ttl
+          - name: Validate shapes with meta shapes - docs/tern.shapes.ttl
+            command: pyshacl -s docs/meta.shapes.ttl docs/tern.shapes.ttl
+          - name: Validate shapes with meta shapes - docs/tern.ecoplots.shapes.ttl
+            command: pyshacl -s docs/meta.shapes.ttl docs/tern.ecoplots.shapes.ttl
 
     steps:
       - name: Checkout the repo
@@ -53,6 +57,6 @@ jobs:
       #   run: |
       #     ontotools file normalize docs/tern.ttl --fail-if-changed
 
-      # - name: Ensure tern.shacl.ttl is normalized.
+      # - name: Ensure tern.shapes.ttl is normalized.
       #   run: |
-      #     ontotools file normalize docs/tern.shacl.ttl --fail-if-changed
+      #     ontotools file normalize docs/tern.shapes.ttl --fail-if-changed
