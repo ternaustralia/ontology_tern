@@ -20,6 +20,8 @@ meta-shapes:NodeShape
     rdfs:label "Node Shape" ;
     sh:property [
             a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path rdfs:label
@@ -53,12 +55,16 @@ meta-shapes:PropertyShape
     sh:property
         [
             a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path sh:name
         ] ,
         [
             a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path sh:description
