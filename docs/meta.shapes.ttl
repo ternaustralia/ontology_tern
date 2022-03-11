@@ -33,6 +33,9 @@ meta-shapes:OWLClass
     a sh:NodeShape ;
     rdfs:label "OWL Class" ;
     sh:property [
+            a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
