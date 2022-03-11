@@ -1,26 +1,27 @@
-# baseURI: https://w3id.org/tern/shacl/meta/
+# baseURI: https://w3id.org/tern/shapes/meta/
 # imports: http://datashapes.org/dash
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/shacl#
 # imports: https://w3id.org/tern/ontologies/tern/
-# prefix: meta-shacl
-PREFIX meta-shacl: <https://w3id.org/tern/shacl/meta/>
+# prefix: meta-shapes
+PREFIX meta-shapes: <https://w3id.org/tern/shapes/meta/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-meta-shacl:
+meta-shapes:
     a owl:Ontology ;
 .
 
-meta-shacl:NodeShape
+meta-shapes:NodeShape
     a sh:NodeShape ;
     rdfs:label "Node Shape" ;
     sh:property [
             a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path rdfs:label
@@ -28,55 +29,49 @@ meta-shacl:NodeShape
     sh:targetClass sh:NodeShape ;
 .
 
-meta-shacl:OWLClass
+meta-shapes:OWLClass
     a sh:NodeShape ;
     rdfs:label "OWL Class" ;
-    sh:property
-        [
+    sh:property [
             a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
+            sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path rdfs:label
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:hasValue rdfs:Class ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path rdf:type
         ] ;
-    sh:targetClass owl:Class ;
+    sh:target [
+            a sh:SPARQLTarget ;
+            sh:select """
+            select ?this {
+                ?this a owl:Class .
+                filter(!isBlank(?this))
+            }
+        """
+        ] ;
 .
 
-meta-shacl:PropertyShape
+meta-shapes:PropertyShape
     a sh:NodeShape ;
     rdfs:label "Property Shape" ;
     sh:property
         [
             a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path sh:name
         ] ,
         [
             a sh:PropertyShape ;
+            sh:name "rdfs:label" ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path sh:description
         ] ;
     sh:targetClass sh:PropertyShape ;
-.
-
-meta-shacl:RDFSClass
-    a sh:NodeShape ;
-    rdfs:label "RDFS Class" ;
-    sh:property [
-            a sh:PropertyShape ;
-            sh:hasValue owl:Class ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path rdf:type
-        ] ;
-    sh:targetClass rdfs:Class ;
 .
 
