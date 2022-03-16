@@ -1,16 +1,8 @@
 # TERN Ontology
 
-The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the representation of ecological survey data. The TERN Ontology is used as a common information model to represent and facilitate the sharing of survey data across different systems. 
+The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the representation of ecological survey data. The TERN Ontology is used as a common information model to represent and facilitate the sharing of survey data across different systems.
 
 Online documentation: https://linkeddata.tern.org.au/information-models/tern-ontology
-
-Ontology URI: https://w3id.org/tern/ontologies/tern  
-SHACL URI: https://w3id.org/tern/shacl/tern/profiles/base
-
-Additional SHACL profiles:
-
-- EcoPlots: https://w3id.org/tern/shacl/tern/profiles/ecoplots
-  - Shape constraints for TERN's EcoPlots application.
 
 ## Releases
 
@@ -24,9 +16,11 @@ Source files are maintained as RDF Turtle files and they are located in the [doc
 
 Source files:
 
+- [docs/tern.profile.ttl](docs/tern.profile.ttl) TERN Ontology Profiles declaration
 - [docs/tern.ttl](docs/tern.ttl) TERN Ontology in OWL
-- [docs/tern.shacl.ttl](docs/tern.shacl.ttl) TERN Ontology's base SHACL shapes
-- [docs/tern.ecoplots.shacl.ttl](docs/tern.ecoplots.shacl.ttl) TERN Ontology's EcoPlots SHACL shapes
+- [docs/tern.shacl.ttl](docs/tern.shapes.ttl) TERN Ontology's SHACL shapes
+- [docs/tern.ecoplots.shacl.ttl](docs/tern.ecoplots.shapes.ttl) TERN Ontology's EcoPlots' SHACL shapes
+- [docs/meta.shapes.ttl](docs/meta.shapes.ttl) TERN Ontology's meta SHACL shapes
 
 ## Version control
 
