@@ -33,7 +33,7 @@ tern-shapes:
         <http://www.w3.org/2004/02/skos/core> ,
         sh: ,
         tern: ;
-    owl:versionIRI tern-shapes:0.5.0 ;
+    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.5.0> ;
     owl:versionInfo "0.5.0" ;        
 .
 
