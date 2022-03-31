@@ -145,8 +145,8 @@ tern:
         sosa: ,
         ssn: ,
         <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
-    owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.5.0> ;
-    owl:versionInfo "0.5.0" ;
+    owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.5.1> ;
+    owl:versionInfo "0.5.1" ;
     prov:wasGeneratedBy [
             a
                 doap:Project ,
