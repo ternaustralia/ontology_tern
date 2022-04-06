@@ -26,14 +26,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 tern-shapes:
     a owl:Ontology ;
     rdfs:label "TERN Ontology Shapes" ;
-    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kep in sync with the main TERN Ontology" ;  
+    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kep in sync with the main TERN Ontology" ;
     owl:imports
         <http://datashapes.org/dash> ,
         <http://www.opengis.net/ont/geosparql> ,
         <http://www.w3.org/2004/02/skos/core> ,
         sh: ,
         tern: ;
-    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.5.1> ;
+    owl:versionIRI tern-shapes:0.5.1 ;
     owl:versionInfo "0.5.1" ;
 .
 
@@ -70,8 +70,8 @@ tern-shapes:Attribution
 
 tern-shapes:Boolean
     a sh:NodeShape ;
-    sh:property tern-shapes:Boolean-value ;
     rdfs:label "Boolean" ;
+    sh:property tern-shapes:Boolean-value ;
     sh:targetClass tern:Boolean ;
 .
 
@@ -90,15 +90,15 @@ tern-shapes:Dataset
 
 tern-shapes:Date
     a sh:NodeShape ;
-    sh:property tern-shapes:Date-value ;
     rdfs:label "Date" ;
+    sh:property tern-shapes:Date-value ;
     sh:targetClass tern:Date ;
 .
 
 tern-shapes:DateTime
     a sh:NodeShape ;
-    sh:property tern-shapes:DateTime-value ;
     rdfs:label "Date time" ;
+    sh:property tern-shapes:DateTime-value ;
     sh:targetClass tern:DateTime ;
 .
 
@@ -155,8 +155,8 @@ tern-shapes:Float
 
 tern-shapes:IRI
     a sh:NodeShape ;
-    sh:property tern-shapes:IRI-value ;
     rdfs:label "IRI" ;
+    sh:property tern-shapes:IRI-value ;
     sh:targetClass tern:IRI ;
 .
 
@@ -313,8 +313,8 @@ tern-shapes:ManagedFeature
 
 tern-shapes:MaterialSample
     a sh:NodeShape ;
-    sh:property tern-shapes:dwc-materialSampleID ;
     rdfs:label "Material sample" ;
+    sh:property tern-shapes:dwc-materialSampleID ;
     sh:targetClass tern:MaterialSample ;
 .
 
@@ -359,8 +359,8 @@ tern-shapes:ObservationCollection
 
 tern-shapes:Quadrat
     a sh:NodeShape ;
-    sh:property tern-shapes:Quadrat-featureType ;
     rdfs:label "Quadrat" ;
+    sh:property tern-shapes:Quadrat-featureType ;
     sh:targetClass tern:Quadrat ;
 .
 
@@ -388,8 +388,8 @@ tern-shapes:RDFDataset
 
 tern-shapes:Result
     a sh:NodeShape ;
-    sh:property tern-shapes:Result-isResultOf ;
     rdfs:label "Result" ;
+    sh:property tern-shapes:Result-isResultOf ;
     sh:targetClass tern:Result ;
 .
 
@@ -519,8 +519,8 @@ tern-shapes:Taxon
 
 tern-shapes:Text
     a sh:NodeShape ;
-    sh:property tern-shapes:Text-value ;
     rdfs:label "Text" ;
+    sh:property tern-shapes:Text-value ;
     sh:targetClass tern:Text ;
 .
 
@@ -540,6 +540,20 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:targetClass tern:Value ;
+.
+
+<urn:shape:Activity>
+    a sh:NodeShape ;
+    rdfs:label "Observation shape" ;
+    sh:message "At least one (geo:hasGeoemtry, geo:sfWithin) must exist on itself or on a sample in the chain of samples)" ;
+    sh:or (
+            <urn:shape:geo-hasGeometry-min-1>
+            <urn:shape:geo-sfWithin-min-1>
+            <urn:shape:Observation-hasFeatureOfInterest>
+        ) ;
+    sh:targetClass
+        tern:Observation ,
+        tern:Sampling ;
 .
 
 tern-shapes:Boolean-value
@@ -1640,6 +1654,49 @@ tern-shapes:time-unitType
     sh:path time:unitType ;
 .
 
+<urn:shape:Observation-hasFeatureOfInterest>
+    a sh:PropertyShape ;
+    sh:description "Has at least 1 spatial indicator alongs its chain of samples" ;
+    sh:name "Observation's sosa:hasFeatureOfInterest" ;
+    sh:node <urn:shape:Observation-hasFeatureOfInterest-Sample> ;
+    sh:path sosa:hasFeatureOfInterest ;
+.
+
+<urn:shape:Observation-hasFeatureOfInterest-Sample>
+    a sh:NodeShape ;
+    rdfs:label "Sample node shape of sosa:hasFeatureOfInterest" ;
+    sh:or (
+            <urn:shape:Sample-isSampleOf-hasGeometry>
+            <urn:shape:Sample-isSampleOf-sfWithin>
+        ) ;
+.
+
+<urn:shape:Sample-isSampleOf-hasGeometry>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:hasGeometry exists along the chain of sosa:isSampleOf paths." ;
+    sh:name "Sample's sosa:isSampleOf" ;
+    sh:path [
+            sh:zeroOrMorePath sosa:isSampleOf
+        ] ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [
+            sh:property <urn:shape:geo-hasGeometry-min-1>
+        ] ;
+.
+
+<urn:shape:Sample-isSampleOf-sfWithin>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:sfWithin exists along the chain of sosa:isSampleOf paths." ;
+    sh:name "Sample's sosa:isSampleOf" ;
+    sh:path [
+            sh:zeroOrMorePath sosa:isSampleOf
+        ] ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [
+            sh:property <urn:shape:geo-sfWithin-min-1>
+        ] ;
+.
+
 tern-shapes:prov-agent
     a sh:PropertyShape ;
     sh:class prov:Agent ;
@@ -1742,6 +1799,20 @@ tern-shapes:tern-unit
     sh:name "tern:unit" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:unit ;
+.
+
+<urn:shape:geo-hasGeometry-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:hasGeometry must exist." ;
+    sh:minCount 1 ;
+    sh:path geo:hasGeometry ;
+.
+
+<urn:shape:geo-sfWithin-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:sfWithin must exist." ;
+    sh:minCount 1 ;
+    sh:path geo:sfWithin ;
 .
 
 tern-shapes:geo-hasGeometry
