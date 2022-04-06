@@ -1805,6 +1805,7 @@ tern-shapes:tern-unit
     a sh:PropertyShape ;
     sh:description "At least one geo:hasGeometry must exist." ;
     sh:minCount 1 ;
+    sh:name "geo:hasGeometry" ;
     sh:path geo:hasGeometry ;
 .
 
@@ -1812,6 +1813,7 @@ tern-shapes:tern-unit
     a sh:PropertyShape ;
     sh:description "At least one geo:sfWithin must exist." ;
     sh:minCount 1 ;
+    sh:name "geo:sfWithin" ;
     sh:path geo:sfWithin ;
 .
 
