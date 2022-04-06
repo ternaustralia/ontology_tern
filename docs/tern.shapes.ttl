@@ -26,7 +26,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 tern-shapes:
     a owl:Ontology ;
     rdfs:label "TERN Ontology Shapes" ;
-    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kep in sync with the main TERN Ontology" ;
+    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kept in sync with the main TERN Ontology" ;
     owl:imports
         <http://datashapes.org/dash> ,
         <http://www.opengis.net/ont/geosparql> ,
