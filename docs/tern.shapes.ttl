@@ -26,7 +26,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 tern-shapes:
     a owl:Ontology ;
     rdfs:label "TERN Ontology Shapes" ;
-    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kep in sync with the main TERN Ontology" ;  
+    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kep in sync with the main TERN Ontology" ;
     owl:imports
         <http://datashapes.org/dash> ,
         <http://www.opengis.net/ont/geosparql> ,
@@ -70,8 +70,8 @@ tern-shapes:Attribution
 
 tern-shapes:Boolean
     a sh:NodeShape ;
-    sh:property tern-shapes:Boolean-value ;
     rdfs:label "Boolean" ;
+    sh:property tern-shapes:Boolean-value ;
     sh:targetClass tern:Boolean ;
 .
 
@@ -90,15 +90,15 @@ tern-shapes:Dataset
 
 tern-shapes:Date
     a sh:NodeShape ;
-    sh:property tern-shapes:Date-value ;
     rdfs:label "Date" ;
+    sh:property tern-shapes:Date-value ;
     sh:targetClass tern:Date ;
 .
 
 tern-shapes:DateTime
     a sh:NodeShape ;
-    sh:property tern-shapes:DateTime-value ;
     rdfs:label "Date time" ;
+    sh:property tern-shapes:DateTime-value ;
     sh:targetClass tern:DateTime ;
 .
 
@@ -155,8 +155,8 @@ tern-shapes:Float
 
 tern-shapes:IRI
     a sh:NodeShape ;
-    sh:property tern-shapes:IRI-value ;
     rdfs:label "IRI" ;
+    sh:property tern-shapes:IRI-value ;
     sh:targetClass tern:IRI ;
 .
 
@@ -313,8 +313,8 @@ tern-shapes:ManagedFeature
 
 tern-shapes:MaterialSample
     a sh:NodeShape ;
-    sh:property tern-shapes:dwc-materialSampleID ;
     rdfs:label "Material sample" ;
+    sh:property tern-shapes:dwc-materialSampleID ;
     sh:targetClass tern:MaterialSample ;
 .
 
@@ -359,8 +359,8 @@ tern-shapes:ObservationCollection
 
 tern-shapes:Quadrat
     a sh:NodeShape ;
-    sh:property tern-shapes:Quadrat-featureType ;
     rdfs:label "Quadrat" ;
+    sh:property tern-shapes:Quadrat-featureType ;
     sh:targetClass tern:Quadrat ;
 .
 
@@ -388,8 +388,8 @@ tern-shapes:RDFDataset
 
 tern-shapes:Result
     a sh:NodeShape ;
-    sh:property tern-shapes:Result-isResultOf ;
     rdfs:label "Result" ;
+    sh:property tern-shapes:Result-isResultOf ;
     sh:targetClass tern:Result ;
 .
 
@@ -519,8 +519,8 @@ tern-shapes:Taxon
 
 tern-shapes:Text
     a sh:NodeShape ;
-    sh:property tern-shapes:Text-value ;
     rdfs:label "Text" ;
+    sh:property tern-shapes:Text-value ;
     sh:targetClass tern:Text ;
 .
 
@@ -903,10 +903,8 @@ tern-shapes:Result-isResultOf
 tern-shapes:Sample-isResultOf
     a sh:PropertyShape ;
     sh:class tern:Sampling ;
-    sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
-    sh:minCount 1 ;
+    sh:description "Relation linking a Result to the Sampling that created or caused it." ;
     sh:name "sosa:isResultOf" ;
-    sh:nodeKind sh:IRI ;
     sh:path sosa:isResultOf ;
 .
 
