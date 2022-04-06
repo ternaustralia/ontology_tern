@@ -1353,7 +1353,7 @@ for establishing quadrats for vegetation sampling.""" ;
 tern:dimension
     a rdf:Property ;
     rdfs:label "dimension" ;
-    skos:definition "Dimenion in metres." ;
+    skos:definition "Dimension in metres." ;
     skos:example "100x100" ;
 .
 
