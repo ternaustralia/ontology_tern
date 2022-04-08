@@ -30,14 +30,51 @@ NOTE: *Status: Draft* - while the document is in draft, sections of the document
 
 === Abstract
 
-The TERN Ontology Specification addresses the data exchange and data representation problems with ecological field survey data to facilitate data interoperability and data integration. The specification uses the PROF vocabulary to express itself as a profile of multiple well-established Semantic Web standards and establishes links to resources and controlled vocabularies necessary to use the specification effectively.
+The TERN Ontology Specification addresses the data exchange and data representation problems with ecological field survey data to facilitate data interoperability and data integration. The specification uses the PROF vocabulary to express itself as a profile of multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification.
 
-TERN Ecosystem Surveillance have developed 19 modules to standardise ecological monitoring protocols for data collection. The working title for the monitoring protocols is _TERN Ecosystem Surveillance Ecological Monitoring Protocols_.
+For many years, the scientific ecological community and industry partners collected rich and insightful data about the land and ecosystems using field survey protocols. The state of the collected data was often unusable for prompt nationwide reporting and data analysis due to incompatible data storage solutions between non-standardised relational databases, spreadsheets and PDF documents. Without spending further time and money to extract, transform and integrate the data, much of the data's richness and usefulness is lost.
 
-TERN Data Services and Analytics is developing a standardised data exchange specification to support the exchange of data collected using TERN Ecosystem Surveillance Ecological Monitoring Protocols. The working title for the data exchange specification is _Ecological Data Exchange Specification_.
+The solution to this problem of an ever-growing set of heterogeneous data is to use existing standards defined by the W3C and follow a so-called Linked Data set of principles. By building a specification based on existing international standards, the richness of the ecological field survey data can now serve as insights for researchers and government policy-makers. 
 
-The Ecological Data Exchange Specification is a profile of the ecological data model known as the link:https://linkeddata.tern.org.au/information-models/tern-ontology[TERN Ontology]. Data that is conformant to the Ecological Data Exchange Specification is also conformant to the TERN Ontology.
+The TERN Ontology Specification is a profile of W3C's SOSA, SSN and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and associates these activities with persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC's GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT's Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit to represent survey trips to ad-hoc or permanent plots and Attribute to represent auxiliary information.
 
 === Normative Status
 
 This specification is normative for the TERN Ontology Specification.
+
+=== Standard Parts
+
+This specification document is one of many resources that make up the TERN Ontology Standard and expresses its structure using the Profiles Vocabulary <<PROF>>.
+
+Other parts of this standard include:
+
+* `TBA`.
+
+=== Namespaces
+
+`TBD`.
+
+== Introduction
+
+This specification document defines the classes and properties of the TERN Ontology and the set of requirements that data validators will use to ensure conformance. This specification document also details how data providers should use related ontologies and controlled vocabularies to represent their ecological field survey data. Annex A lists these parts in more detail.
+
+== References
+
+[none]
+* [[PROF]] <<PROF>> +
+[none]
+** https://www.w3.org/TR/dx-prof/[_The Profiles Vocabulary_], Nicholas J Car; Rob Atkinson. 18 December 2019. W3C Working Group Note. URL: <https://www.w3.org/TR/dx-prof/>
+
+[none]
+* [[vocab-ssn]] <<vocab-ssn>> +
+[none]
+** https://www.w3.org/TR/vocab-ssn/[_Semantic Sensor Network Ontology_]. Armin Haller; Krzysztof Janowicz; Simon Cox; Danh Le Phuoc; Kerry Taylor; Maxime Lefrançois. 19 October 2017. W3C Recommendation. URL: <https://www.w3.org/TR/vocab-ssn/>
+
+:sectnums!:
+
+== Annex A: Specification Parts
+
+[NOTE]
+This Annex is normative.
+
+`TBD`.
