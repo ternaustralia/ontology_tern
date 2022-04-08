@@ -1,0 +1,30 @@
+name: 🔂 Surge PR Preview
+
+# This workflow creates a preview build of a PR on surge.sh.
+# It requires a surge.sh token generated from the surge CLI.
+# This workflow is triggered when a PR is opened, updated, reopened, and closed.
+# On PR close, this workflow will run and remove the build from surge.sh.
+
+on:
+  pull_request:
+    # when using teardown: 'true', add default event types + closed event type
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Install asciidoctor
+        run: sudo apt-get update && sudo apt-get install -y asciidoctor
+
+      - uses: afc163/surge-preview@v1
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dist: build
+          teardown: "true"
+          build: |
+            asciidoctor --trace -a stylesheet=./static/styles.css -o ./build/index.html ./spec/source/index.adoc

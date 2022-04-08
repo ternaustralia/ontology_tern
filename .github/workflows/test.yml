@@ -52,13 +52,3 @@ jobs:
       - name: ${{ matrix.test-case.name }}
         run: |
           ${{ matrix.test-case.command }}
-          
-      # Comment below out. Due to blank nodes, the longturtle serializer changes the file even when no content has changed.
-
-      # - name: Ensure tern.ttl is normalized.
-      #   run: |
-      #     ontotools file normalize docs/tern.ttl --fail-if-changed
-
-      # - name: Ensure tern.shapes.ttl is normalized.
-      #   run: |
-      #     ontotools file normalize docs/tern.shapes.ttl --fail-if-changed
