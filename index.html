@@ -93,8 +93,13 @@ h6 > a.link:hover,
 <ul class="sectlevel2">
 <li><a href="#abstract">2.1. Abstract</a></li>
 <li><a href="#normative_status">2.2. Normative Status</a></li>
+<li><a href="#standard_parts">2.3. Standard Parts</a></li>
+<li><a href="#namespaces">2.4. Namespaces</a></li>
 </ul>
 </li>
+<li><a href="#introduction">3. Introduction</a></li>
+<li><a href="#references">4. References</a></li>
+<li><a href="#annex_a_specification_parts">Annex A: Specification Parts</a></li>
 </ul>
 </div>
 </div>
@@ -170,16 +175,16 @@ h6 > a.link:hover,
 <div class="sect2">
 <h3 id="abstract"><a class="link" href="#abstract">2.1. Abstract</a></h3>
 <div class="paragraph">
-<p>The TERN Ontology Specification addresses the data exchange and data representation problems with ecological field survey data to facilitate data interoperability and data integration. The specification uses the PROF vocabulary to express itself as a profile of multiple well-established Semantic Web standards and establishes links to resources and controlled vocabularies necessary to use the specification effectively.</p>
+<p>The TERN Ontology Specification addresses the data exchange and data representation problems with ecological field survey data to facilitate data interoperability and data integration. The specification uses the PROF vocabulary to express itself as a profile of multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification.</p>
 </div>
 <div class="paragraph">
-<p>TERN Ecosystem Surveillance have developed 19 modules to standardise ecological monitoring protocols for data collection. The working title for the monitoring protocols is <em>TERN Ecosystem Surveillance Ecological Monitoring Protocols</em>.</p>
+<p>For many years, the scientific ecological community and industry partners collected rich and insightful data about the land and ecosystems using field survey protocols. The state of the collected data was often unusable for prompt nationwide reporting and data analysis due to incompatible data storage solutions between non-standardised relational databases, spreadsheets and PDF documents. Without spending further time and money to extract, transform and integrate the data, much of the data&#8217;s richness and usefulness is lost.</p>
 </div>
 <div class="paragraph">
-<p>TERN Data Services and Analytics is developing a standardised data exchange specification to support the exchange of data collected using TERN Ecosystem Surveillance Ecological Monitoring Protocols. The working title for the data exchange specification is <em>Ecological Data Exchange Specification</em>.</p>
+<p>The solution to this problem of an ever-growing set of heterogeneous data is to use existing standards defined by the W3C and follow a so-called Linked Data set of principles. By building a specification based on existing international standards, the richness of the ecological field survey data can now serve as insights for researchers and government policy-makers.</p>
 </div>
 <div class="paragraph">
-<p>The Ecological Data Exchange Specification is a profile of the ecological data model known as the <a href="https://linkeddata.tern.org.au/information-models/tern-ontology">TERN Ontology</a>. Data that is conformant to the Ecological Data Exchange Specification is also conformant to the TERN Ontology.</p>
+<p>The TERN Ontology Specification is a profile of W3C&#8217;s SOSA, SSN and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and associates these activities with persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC&#8217;s GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT&#8217;s Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit to represent survey trips to ad-hoc or permanent plots and Attribute to represent auxiliary information.</p>
 </div>
 </div>
 <div class="sect2">
@@ -188,12 +193,95 @@ h6 > a.link:hover,
 <p>This specification is normative for the TERN Ontology Specification.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="standard_parts"><a class="link" href="#standard_parts">2.3. Standard Parts</a></h3>
+<div class="paragraph">
+<p>This specification document is one of many resources that make up the TERN Ontology Standard and expresses its structure using the Profiles Vocabulary <a href="#PROF">[PROF]</a>.</p>
+</div>
+<div class="paragraph">
+<p>Other parts of this standard include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>TBA</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="namespaces"><a class="link" href="#namespaces">2.4. Namespaces</a></h3>
+<div class="paragraph">
+<p><code>TBD</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">3. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This specification document defines the classes and properties of the TERN Ontology and the set of requirements that data validators will use to ensure conformance. This specification document also details how data providers should use related ontologies and controlled vocabularies to represent their ecological field survey data. Annex A lists these parts in more detail.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="references"><a class="link" href="#references">4. References</a></h2>
+<div class="sectionbody">
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><a id="PROF"></a> <a href="#PROF">[PROF]</a><br></p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><a href="https://www.w3.org/TR/dx-prof/"><em>The Profiles Vocabulary</em></a>, Nicholas J Car; Rob Atkinson. 18 December 2019. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><a id="vocab-ssn"></a> <a href="#vocab-ssn">[vocab-ssn]</a><br></p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><a href="https://www.w3.org/TR/vocab-ssn/"><em>Semantic Sensor Network Ontology</em></a>. Armin Haller; Krzysztof Janowicz; Simon Cox; Danh Le Phuoc; Kerry Taylor; Maxime Lefrançois. 19 October 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/vocab-ssn/" class="bare">https://www.w3.org/TR/vocab-ssn/</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="annex_a_specification_parts"><a class="link" href="#annex_a_specification_parts">Annex A: Specification Parts</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This Annex is normative.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>TBD</code>.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-08 01:43:08 UTC
+Last updated 2022-04-08 04:03:53 UTC
 </div>
 </div>
 </body>
