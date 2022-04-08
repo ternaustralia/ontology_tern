@@ -3,7 +3,7 @@ name: Build and deploy specification document to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   PDF_FILENAME: spec.pdf
