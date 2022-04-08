@@ -1,0 +1,36 @@
+name: Build and deploy specification document to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  PDF_FILENAME: spec.pdf
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1.1"
+
+      - name: Install asciidoctor and asciidoctor-pdf
+        run: gem install asciidoctor asciidoctor-pdf
+
+      - name: Build asciidoc files - HTML
+        run: asciidoctor --trace -a stylesheet=./static/styles.css -o ./build/index.html ./docs/source/index.adoc
+
+      - name: Build asciidoc files - PDF
+        run: asciidoctor --trace -a stylesheet=./static/styles.css -r asciidoctor-pdf -b pdf -o ./build/${{ env.PDF_FILENAME }} ./docs/source/index.adoc
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build

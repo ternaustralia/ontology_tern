@@ -1,2 +1,3 @@
 https://github.com/ternaustralia/ontotools/archive/refs/tags/0.3.1.zip
 pyshacl
+watchdog[watchmedo]
