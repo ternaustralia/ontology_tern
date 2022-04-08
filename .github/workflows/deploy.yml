@@ -24,10 +24,10 @@ jobs:
         run: gem install asciidoctor asciidoctor-pdf
 
       - name: Build asciidoc files - HTML
-        run: asciidoctor --trace -a stylesheet=./static/styles.css -o ./build/index.html ./docs/source/index.adoc
+        run: asciidoctor --trace -a stylesheet=./static/styles.css -o ./build/index.html ./spec/source/index.adoc
 
       - name: Build asciidoc files - PDF
-        run: asciidoctor --trace -a stylesheet=./static/styles.css -r asciidoctor-pdf -b pdf -o ./build/${{ env.PDF_FILENAME }} ./docs/source/index.adoc
+        run: asciidoctor --trace -a stylesheet=./static/styles.css -r asciidoctor-pdf -b pdf -o ./build/${{ env.PDF_FILENAME }} ./spec/source/index.adoc
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

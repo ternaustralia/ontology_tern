@@ -27,4 +27,4 @@ jobs:
           dist: build
           teardown: "true"
           build: |
-            asciidoctor --trace -a stylesheet=./static/styles.css -o ./build/index.html ./docs/source/index.adoc
+            asciidoctor --trace -a stylesheet=./static/styles.css -o ./build/index.html ./spec/source/index.adoc
