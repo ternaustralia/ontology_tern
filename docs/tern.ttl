@@ -56,104 +56,141 @@ sosa:isSampleOf
     a owl:TransitiveProperty ;
 .
 
-tern:
-    a owl:Ontology ;
-    rdfs:label "TERN Ontology" ;
-    dcterms:contributor
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "a.devaraju@uq.edu.au" ;
-            schema:name "Anusuriya Devaraju"
-        ] ,
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "h.floresmoreno@uq.edu.au" ;
-            schema:name "Habacuc Flores Moreno"
-        ] ,
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "j.sanchezgonzalez@uq.edu.au" ;
-            schema:name "Javier Sanchez Gonzalez"
-        ] ,
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "mosheh.eliyahu@adelaide.edu.au" ;
-            schema:name "Mosheh Eliyahu"
-        ] ,
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "t.parkhurst@uq.edu.au" ;
-            schema:name "Tina Parkhurst"
-        ] ,
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "junrong.yu@uq.edu.au" ;
-            schema:name "Junrong Yu"
-        ] ;
-    dcterms:creator
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "e.chuc@uq.edu.au" ;
-            schema:identifier <https://orcid.org/0000-0002-6047-9864> ;
-            schema:name "Edmond Chuc"
-        ] ,
-        [
-            a schema:Person ;
-            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-            schema:email "s.guru@uq.edu.au" ;
-            schema:identifier <https://orcid.org/0000-0002-3903-254X> ;
-            schema:name "Siddeswara Guru"
-        ] ,
-        [
-            a schema:Person ;
-            schema:email "simon.cox@csiro.au" ;
-            schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
-            schema:memberOf [
-                    a schema:Organization ;
-                    schema:identifier <https://w3id.org/tern/resources/276dd611-5d74-4555-b20f-12f0f0b618a1> ;
-                    schema:name "CSIRO"
-                ] ;
-            schema:name "Simon J.D.Cox"
-        ] ;
-    dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
-    dcterms:modified "2021-09-22"^^xsd:date ;
-    dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-    rdfs:comment """The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.
+<https://linked.data.gov.au/org/tern> a sdo:Organization;
+    sdo:name "TERN";
+    sdo:url "https://www.tern.org.au"^^xsd:anyURI.
+<https://orcid.org/0000-0002-3884-3420> a sdo:Person;
+    sdo:email "simon.cox@csiro.au"^^xsd:anyURI;
+    sdo:name "Simon Cox".
+<https://orcid.org/0000-0002-3903-254X> a sdo:Person;
+    sdo:email "s.guru@uq.edu.au"^^xsd:anyURI;
+    sdo:name "Siddeswara Guru".
+<https://orcid.org/0000-0002-6047-9864> a sdo:Person;
+    sdo:email "e.chuc@uq.edu.au"^^xsd:anyURI;
+    sdo:name "Edmond Chuc".
+<https://w3id.org/tern/ontologies/tern> <http://purl.org/dc/terms/provenance> "A domain model for exchanging and representing ecological field survey data. A profile of SSN/SOSA, PROV and schema.org.";
+    a owl:Ontology;
+    owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.5.1>;
+    skos:definition "The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.";
+    skos:prefLabel "TERN Ontology";
+    sdo:codeRepository "https://github.com/ternaustralia/ontology_tern"^^xsd:anyURI;
+    sdo:contributor <https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb>, <https://w3id.org/tern/resources/1c1b4f10-23a9-474d-8f45-2d4c27db863e>, <https://w3id.org/tern/resources/cbd72114-5fa0-410a-b6c1-73a3fd8f111e>;
+    sdo:copyrightHolder <https://linked.data.gov.au/org/tern>;
+    sdo:creator <https://orcid.org/0000-0002-3884-3420>, <https://orcid.org/0000-0002-3903-254X>, <https://orcid.org/0000-0002-6047-9864>;
+    sdo:dateCreated "2020-09-07"^^xsd:date;
+    sdo:dateIssued "2020-09-07"^^xsd:date;
+    sdo:dateModified "2022-04-12"^^xsd:date;
+    sdo:license "http://creativecommons.org/publicdomain/zero/1.0/"^^xsd:anyURI;
+    sdo:publisher <https://linked.data.gov.au/org/tern>.
+<https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb> a sdo:Person;
+    sdo:email "j.sanchezgonzalez@uq.edu.au"^^xsd:anyURI;
+    sdo:name "Javier Sanchez Gonalez".
+<https://w3id.org/tern/resources/1c1b4f10-23a9-474d-8f45-2d4c27db863e> a sdo:Person;
+    sdo:email "mosheh.eliyahu@adelaide.edu.au"^^xsd:anyURI;
+    sdo:name "Mosheh Eliyahu".
+<https://w3id.org/tern/resources/cbd72114-5fa0-410a-b6c1-73a3fd8f111e> a sdo:Person;
+    sdo:email "junrong.yu@uq.edu.au"^^xsd:anyURI;
+    sdo:name "Junrong Yu".
+
+
+# tern:
+#     a owl:Ontology ;
+#     rdfs:label "TERN Ontology" ;
+#     dcterms:contributor
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "a.devaraju@uq.edu.au" ;
+#             schema:name "Anusuriya Devaraju"
+#         ] ,
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "h.floresmoreno@uq.edu.au" ;
+#             schema:name "Habacuc Flores Moreno"
+#         ] ,
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "j.sanchezgonzalez@uq.edu.au" ;
+#             schema:name "Javier Sanchez Gonzalez"
+#         ] ,
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "mosheh.eliyahu@adelaide.edu.au" ;
+#             schema:name "Mosheh Eliyahu"
+#         ] ,
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "t.parkhurst@uq.edu.au" ;
+#             schema:name "Tina Parkhurst"
+#         ] ,
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "junrong.yu@uq.edu.au" ;
+#             schema:name "Junrong Yu"
+#         ] ;
+#     dcterms:creator
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "e.chuc@uq.edu.au" ;
+#             schema:identifier <https://orcid.org/0000-0002-6047-9864> ;
+#             schema:name "Edmond Chuc"
+#         ] ,
+#         [
+#             a schema:Person ;
+#             schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#             schema:email "s.guru@uq.edu.au" ;
+#             schema:identifier <https://orcid.org/0000-0002-3903-254X> ;
+#             schema:name "Siddeswara Guru"
+#         ] ,
+#         [
+#             a schema:Person ;
+#             schema:email "simon.cox@csiro.au" ;
+#             schema:identifier <https://orcid.org/0000-0002-3884-3420> ;
+#             schema:memberOf [
+#                     a schema:Organization ;
+#                     schema:identifier <https://w3id.org/tern/resources/276dd611-5d74-4555-b20f-12f0f0b618a1> ;
+#                     schema:name "CSIRO"
+#                 ] ;
+#             schema:name "Simon J.D.Cox"
+#         ] ;
+#     dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+#     dcterms:modified "2021-09-22"^^xsd:date ;
+#     dcterms:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+#     rdfs:comment """The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.
   
   
-  """ ;
-    rdfs:seeAlso
-        <https://www.publish.csiro.au/book/5230/> ,
-        <https://www.w3.org/TR/vocab-ssn-ext/> ,
-        <https://www.w3.org/ns/ssn/> ;
-    owl:imports
-        <http://datashapes.org/dash> ,
-        <http://qudt.org/schema/qudt/> ,
-        <http://rdfs.org/ns/void> ,
-        owl: ,
-        skos: ,
-        time: ,
-        dcat: ,
-        prov: ,
-        sosa: ,
-        ssn: ,
-        <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
-    owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.5.1> ;
-    owl:versionInfo "0.5.1" ;
-    prov:wasGeneratedBy [
-            a
-                doap:Project ,
-                prov:Activity ;
-            doap:repository <https://github.com/ternaustralia/ontology_tern>
-        ] ;
-.
+#   """ ;
+#     rdfs:seeAlso
+#         <https://www.publish.csiro.au/book/5230/> ,
+#         <https://www.w3.org/TR/vocab-ssn-ext/> ,
+#         <https://www.w3.org/ns/ssn/> ;
+#     owl:imports
+#         <http://datashapes.org/dash> ,
+#         <http://qudt.org/schema/qudt/> ,
+#         <http://rdfs.org/ns/void> ,
+#         owl: ,
+#         skos: ,
+#         time: ,
+#         dcat: ,
+#         prov: ,
+#         sosa: ,
+#         ssn: ,
+#         <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
+#     owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.5.1> ;
+#     owl:versionInfo "0.5.1" ;
+#     prov:wasGeneratedBy [
+#             a
+#                 doap:Project ,
+#                 prov:Activity ;
+#             doap:repository <https://github.com/ternaustralia/ontology_tern>
+#         ] ;
+# .
 
 tern:Boolean
     a owl:Class ;
@@ -1252,9 +1289,10 @@ tern:unit
 
 tern:Attribute
     a owl:Class ;
-    rdfs:label "Attribute" ;
+    skos:prefLabel "Attribute" ;
     rdfs:subClassOf ssn:Property ;
-    skos:definition "A property-value pair. Same modelling pattern as [schema:PropertyValue](https://schema.org/PropertyValue)." ;
+    skos:definition "A property-value pair to capture attributes of an individual where observations are not suitable." ;
+    skos:scopeNote "Follows the same modelling pattern as schema:PropertyValue." ;
 .
 
 tern:FeatureOfInterest

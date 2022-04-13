@@ -1,0 +1,113 @@
+=== Standard Parts
+
+This specification is one of many resources that make up the TERN Ontology Profile Standard and expresses its structure using the Profiles Vocabulary <<PROF>>. Each resource in the profile is assigned a role from the link:http://www.w3.org/ns/dx/prof/role/[Resource Roles vocabulary].
+
+Other resources in the TERN Ontology profile include:
+
+[cols="h,5"]
+|===
+||TERN Ontology - conceptual information model
+
+|Description | An overview of the core concepts of the TERN Ontology.
+|Artifcat | https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model
+|Role | link:http://www.w3.org/ns/dx/prof/role/guidance[role:guidance]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology - cookbook
+
+|Description | A cookbook of patterns on representing ecological things with the TERN Ontology.
+|Artifcat | https://linkeddata.tern.org.au/information-models/tern-ontology/cookbook
+|Role | link:http://www.w3.org/ns/dx/prof/role/guidance[role:guidance]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology - classes, properties and shape constraints
+
+|Description | A web-based viewer of the TERN Ontology classes, properties and their shape constraints.
+|Artifcat | https://linkeddata.tern.org.au/viewers/tern-ontology
+|Role | link:http://www.w3.org/ns/dx/prof/role/constraints[role:constraints]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology - specification
+
+|Description | TERN Ontology specification (_this document_)
+|Artifcat | https://linkeddata.tern.org.au/information-models/tern-ontology/specification
+|Role | link:http://www.w3.org/ns/dx/prof/role/specification[role:specification]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology - validator
+
+|Description | SHACL shapes for the TERN Ontology.
+|Artifcat | https://w3id.org/tern/shapes/tern.ttl
+|Role | link:http://www.w3.org/ns/dx/prof/role/validator[role:validator]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology vocabulary - feature types
+
+|Description | Feature types controlled vocabulary to describe SOSA-based features of interest.
+|Artifcat | http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d
+|Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology vocabulary - observable properties
+
+|Description | Observable properties controlled vocabulary to describe SOSA-based observations.
+|Artifcat | http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e
+|Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology vocabulary - attributes
+
+|Description | Attributes controlled vocabulary to describe facts about any entity.
+|Artifcat | http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924
+|Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology vocabulary - units of measure
+
+|Description | Unit of measure controlled vocabulary by QUDT
+|Artifcat | http://qudt.org/vocab/unit/
+|Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology vocabulary - instrument types
+
+|Description | Instrument types controlled vocabulary to describe the types of instruments used in observations and sampling acts.
+|Artifcat | http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8
+|Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology vocabulary - site types
+
+|Description | Site types controlled vocabulary to describe the types of ecological survey sites.
+|Artifcat | http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159
+|Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
+|===
+
+[cols="h,5"]
+|===
+||TERN Ontology vocabulary - CI Role Code
+
+|Description | CI Role Code controlled vocabulary to describe the roles available to the TERN Ontology concepts.
+|Artifcat | http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode
+|Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
+|===

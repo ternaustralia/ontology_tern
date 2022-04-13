@@ -1,0 +1,119 @@
+=== Classes
+
+==== Class: tern:Attribute
+
+The class `tern:Attribute` is defined by the following:
+
+[source, turtle]
+----
+tern:Attribute
+    a owl:Class ;
+    skos:prefLabel "Attribute" ;
+    rdfs:subClassOf ssn:Property ;
+    skos:definition "A property-value pair to capture attributes of an individual where observations are not suitable." ;
+    skos:scopeNote "Follows the same modelling pattern as schema:PropertyValue." ;
+.
+----
+
+*Example:*
+
+[source, turtle]
+----
+<urn:example:soil-ring> a tern:Sampler ;
+    rdfs:label "soil ring" ;
+    ssn:implements <urn:example:method:soil-ring> ;
+    tern:systemType <http://linked.data.gov.au/def/tern-cv/24c81cc3-4d68-45a0-91a2-051af25dfb94> ;
+    tern:hasAttribute <urn:example:Attribute:1>
+.
+
+<urn:example:Attribute:1> a tern:Attribute ;
+    rdfs:label "volume of soil ring" ;
+    tern:attribute <https://linked.data.gov.au/def/tern-cv/039f87e5-ffd9-4676-b126-c74844d2e095> ;
+    tern:hasSimpleValue 209.35 ;
+    tern:hasValue [
+        a tern:Float ;
+        rdf:value 209.35 ;
+        tern:unit <http://qudt.org/vocab/unit/CentiM3> ;
+    ] ;
+.
+----
+
+=== External Classes
+
+==== Class: prov:Association
+
+An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+
+===== Property: prov:agent
+
+[cols="1,1"]
+|===
+| Property | Value
+
+| Identifier | `http://www.w3.org/ns/prov#agent`
+| Label | agent
+| Definition | An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.
+| Implementation | A prov:Association _MUST_ have exactly 1 prov:agent predicate where the value node is an IRI of type prov:Agent.
+include::statuses/stable.adoc[]
+|===
+
+[cols="1,4,1,1,1,1"]
+|===
+| Property | Description | Cardinality | Expected value datatypes | Expected value class types | Expected values 
+
+| prov:agent | An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. | Exactly 1 | sh:IRI | prov:Agent | 
+| prov:hadRole | prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end. | Exactly 1 | sh:IRI | | 
+|===
+
+*Example:*
+
+[source%linenums, turtle]
+----
+<org-1>
+    a schema:Organization ;
+    schema:name "Org 1" ;
+.
+
+<person-1> 
+    a schema:Person ;
+    schema:name "Person 1" ;
+    schema:affiliation <org-1> ;
+.
+
+<site-visit>
+    a tern:SiteVisit ;
+    prov:startedAtTime "2015-03-22T13:00:00+00:00"^^xsd:dateTime ;
+    tern:hasSite <...> ;
+    prov:wasAssociatedWith <person-1> ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <person-1> ;
+        prov:hadRole <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator> ;
+    ] ;
+.
+
+<sampling-1> 
+    a tern:Sampling ;
+    ... ;
+    tern:hasSiteVisit <site-visit> ;
+    prov:wasAssociatedWith <person-1> ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <person-1> ;
+        prov:hadRole <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider> ;
+    ] ;
+    sosa:hasResult <soil-sample-1> ;
+.
+
+<soil-sample-1>
+    a tern:MaterialSample ;
+    ... ;
+    sosa:isResultOf <sampling-1> ;
+    prov:wasAttributedTo <org-1> ;
+    prov:qualifiedAttribution [
+        a prov:Attribution ;
+        prov:agent <org-1> ;
+        prov:hadRole <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian> ;
+    ]
+.
+----

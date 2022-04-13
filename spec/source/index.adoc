@@ -30,33 +30,63 @@ NOTE: *Status: Draft* - while the document is in draft, sections of the document
 
 === Abstract
 
-The TERN Ontology Specification addresses the data exchange and data representation problems with ecological field survey data to facilitate data interoperability and data integration. The specification uses the PROF vocabulary to express itself as a profile of multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification.
+The TERN Ontology Specification addresses the data exchange and data representation problems with integrating or exchanging heterogeneous ecological field survey data. The specification uses the PROF vocabulary to express itself as a profile of multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification.
 
-For many years, the scientific ecological community and industry partners collected rich and insightful data about the land and ecosystems using field survey protocols. The state of the collected data was often unusable for prompt nationwide reporting and data analysis due to incompatible data storage solutions between non-standardised relational databases, spreadsheets and PDF documents. Without spending further time and money to extract, transform and integrate the data, much of the data's richness and usefulness is lost.
+For many years, the scientific ecological community and industry partners collected rich and insightful data about the land and ecosystems by performing field surveys. Unfortunately, the state of the collected data was often unusable for prompt nationwide reporting and data analysis due to incompatible data storage solutions between non-standardised relational databases, spreadsheets and PDF documents. Without spending further time and money to extract, transform and integrate the data, much of the data's richness and usefulness is lost.
 
-The solution to this problem of an ever-growing set of heterogeneous data is to use existing standards defined by the W3C and follow a so-called Linked Data set of principles. By building a specification based on existing international standards, the richness of the ecological field survey data can now serve as insights for researchers and government policy-makers. 
+The solution to this problem of an ever-growing set of heterogeneous data is to use existing standards defined by the W3C and follow the Linked Data set of principles. By building a specification based on existing web standards, the richness of the ecological field survey data can now be integrated and queried as one large graph of data on the World Wide Web.
 
-The TERN Ontology Specification is a profile of W3C's SOSA, SSN and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and associates these activities with persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC's GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT's Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit to represent survey trips to ad-hoc or permanent plots and Attribute to represent auxiliary information.
+The TERN Ontology Specification is a profile of W3C's SOSA, SSN and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and provides associations of these activities to persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC's GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT's Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit classes to represent survey trips performed on ad-hoc or permanent plots and uses the Attribute class to represent auxiliary information.
 
 === Normative Status
 
-This specification is normative for the TERN Ontology Specification.
+This specification is normative for the TERN Ontology. 
 
-=== Standard Parts
+=== Normative references
 
-This specification document is one of many resources that make up the TERN Ontology Standard and expresses its structure using the Profiles Vocabulary <<PROF>>.
+=== Terms and definitions
 
-Other parts of this standard include:
+=== Conventions
 
-* `TBA`.
+==== Symbols and abbreviated terms
 
-=== Namespaces
+==== Namespaces
 
-`TBD`.
+==== Placeholder IRIs
 
-== Introduction
+==== RDF serializations
 
-This specification document defines the classes and properties of the TERN Ontology and the set of requirements that data validators will use to ensure conformance. This specification document also details how data providers should use related ontologies and controlled vocabularies to represent their ecological field survey data. Annex A lists these parts in more detail.
+== TERN Ontology Specification
+
+This specification defines the classes and properties of the TERN Ontology and the set of requirements that data validators will use to ensure conformance. This specification also details how data providers should use related ontologies and controlled vocabularies to represent their ecological field survey data. Annex A lists these parts in more detail.
+
+=== Scope
+
+The TERN Ontology Specification provides a standardised way to exchange and represent ecological field survey data by providing classes, properties and controlled vocabularies that characterise terrestrial data. Although the upper ontologies such as SOSA and SSN can theoretically apply to any domain, the TERN Ontology Specification focuses on representing data collected during opportunistic and plot-based field surveys and provides mechanisms for doing so. 
+
+Lastly, the TERN Ontology Specification is not concerned with validating data according to specific field survey collection protocols and instead is concerned with validating the structure of the data. Data custodians can create a profile of the TERN Ontology Specification and extend it by providing validation and requirements according to their field survey protocol's data collection methodologies.
+
+include::standard-parts.adoc[]
+
+=== Conformance
+
+Requirements define the rules and constraints that validators will use to validate data for conformance.
+
+Each requirement will be assigned a subset of the status types defined by the link:http://purl.org/linked-data/registry[Registry ontology]. 
+
+[cols="2,1,10"]
+|===
+|Status type | Icon | Definition
+
+|`experimental` | icon:circle-o[] | An entry that has been accepted into the register temporarily and may be subject to change or withdrawal.
+|`stable` | icon:check-circle[] | An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.
+|===
+
+== Core
+
+This section establishes the core requirements class and provides definitions and usage examples.
+
+include::classes.adoc[]
 
 == References
 
