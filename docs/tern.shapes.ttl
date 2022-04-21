@@ -1547,7 +1547,7 @@ tern-shapes:tern-hasValue
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "tern:hasValue" ;
-    sh:nodeKind sh:IRI ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path tern:hasValue ;
 .
 
