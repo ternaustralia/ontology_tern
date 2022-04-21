@@ -917,10 +917,8 @@ tern-shapes:Result-isResultOf
 tern-shapes:Sample-isResultOf
     a sh:PropertyShape ;
     sh:class tern:Sampling ;
-    sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
-    sh:minCount 1 ;
+    sh:description "Relation linking a Result to the Sampling that created or caused it." ;
     sh:name "sosa:isResultOf" ;
-    sh:nodeKind sh:IRI ;
     sh:path sosa:isResultOf ;
 .
 
