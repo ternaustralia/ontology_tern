@@ -86,6 +86,10 @@ Each version should:
 - `Fixed` for any bug fixes.
 - `Security` to invite users to upgrade in case of vulnerabilities.
 
+## License
+
+The contents of this repository is made available for use under the [Creative Common Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). See the [LICENSE](LICENSE) file for the deed.
+
 ## Contact
 
 **Edmond Chuc**  
