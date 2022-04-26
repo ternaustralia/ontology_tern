@@ -20,10 +20,10 @@ meta-shapes:NodeShape
     rdfs:label "Node Shape" ;
     sh:property [
             a sh:PropertyShape ;
-            sh:name "rdfs:label" ;
             sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
+            sh:name "rdfs:label" ;
             sh:path rdfs:label
         ] ;
     sh:targetClass sh:NodeShape ;
@@ -34,11 +34,11 @@ meta-shapes:OWLClass
     rdfs:label "OWL Class" ;
     sh:property [
             a sh:PropertyShape ;
-            sh:name "rdfs:label" ;
-            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:datatype xsd:string ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
+            sh:name "rdfs:label" ;
             sh:path rdfs:label
         ] ;
     sh:target [
@@ -58,18 +58,18 @@ meta-shapes:PropertyShape
     sh:property
         [
             a sh:PropertyShape ;
-            sh:name "rdfs:label" ;
             sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
+            sh:name "rdfs:label" ;
             sh:path sh:name
         ] ,
         [
             a sh:PropertyShape ;
-            sh:name "rdfs:label" ;
             sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
+            sh:name "rdfs:label" ;
             sh:path sh:description
         ] ;
     sh:targetClass sh:PropertyShape ;

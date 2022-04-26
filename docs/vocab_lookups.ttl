@@ -1,0 +1,22 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author> skos:prefLabel "author" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor> skos:prefLabel "co author" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/collaborator> skos:prefLabel "collaborator" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/contributor> skos:prefLabel "contributor" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian> skos:prefLabel "custodian" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/distributor> skos:prefLabel "distributor" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/editor> skos:prefLabel "editor" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/funder> skos:prefLabel "funder" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/mediator> skos:prefLabel "mediator" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/originator> skos:prefLabel "originator" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/owner> skos:prefLabel "owner" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/pointOfContact> skos:prefLabel "point of contact" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator> skos:prefLabel "principal investigator" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/processor> skos:prefLabel "processor" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/publisher> skos:prefLabel "publisher" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider> skos:prefLabel "resource provider" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/rightsHolder> skos:prefLabel "rights holder" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor> skos:prefLabel "sponsor" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder> skos:prefLabel "stakeholder" .
+<http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user> skos:prefLabel "user" .

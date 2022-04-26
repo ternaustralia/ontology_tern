@@ -1,0 +1,130 @@
+
+[#class-tern:Attribute]
+==== Class: tern:Attribute
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Status | `stable` icon:check-circle[]
+| Label | Attribute
+| Definition | A property-value pair to capture attributes of an individual where observations are not suitable.
+
+| Scope note | Follows a similar modelling pattern to link:https://schema.org/PropertyValue[`schema:PropertyValue`].
+|===
+
+
+[#class-tern:Attribute-dcterms:type]
+===== Property: dcterms:type
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/type[`dcterms:type`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-type
+| Status | `stable` icon:check-circle[]
+| Label | type
+| Definition | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
+| Scope note | 
+| Implementation | The value of `dcterms:type` _MUST_ be an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Attribute-tern:attribute]
+===== Property: tern:attribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/attribute[`tern:attribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-attribute
+| Status | `stable` icon:check-circle[]
+| Label | attribute
+| Definition | The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of link:http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[attributes].
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `tern:attribute` property with an IRI value.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Attribute-tern:hasSimpleValue]
+===== Property: tern:hasSimpleValue
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSimpleValue[`tern:hasSimpleValue`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSimpleValue
+| Status | `stable` icon:check-circle[]
+| Label | has simple value
+| Definition | The direct link to the IRI or RDF literal value. The simple value _MUST_ be the same value captured in `rdf:value` of the `tern:Value` instance.
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `tern:hasSimpleValue` with an IRI or literal value.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRIOrLiteral[`sh:IRIOrLiteral`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Attribute-tern:hasValue]
+===== Property: tern:hasValue
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasValue[`tern:hasValue`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasValue
+| Status | `stable` icon:check-circle[]
+| Label | has value
+| Definition | A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute.
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `tern:hasValue` with an IRI value.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
+| Expected values | 
+|===
+
+[#class-tern:Attribute-tern:isAttributeOf]
+===== Property: tern:isAttributeOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/isAttributeOf[`tern:isAttributeOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-isAttributeOf
+| Status | `stable` icon:check-circle[]
+| Label | is attribute of
+| Definition | A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute).
+| Scope note | 
+| Implementation | The value of `tern:isAttributeOf` _MUST_ be an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Attribute-void:inDataset]
+===== Property: void:inDataset
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rdfs.org/ns/void#inDataset[`void:inDataset`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/void-inDataset
+| Status | `stable` icon:check-circle[]
+| Label | in dataset
+| Definition | A link to the RDF payload's metadata which this resource was a part of.
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
+| Expected values | 
+|===

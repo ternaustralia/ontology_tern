@@ -1,0 +1,130 @@
+
+[#class-time:Instant]
+==== Class: time:Instant
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:http://www.w3.org/2006/time#Instant[`time:Instant`]
+| Status | `stable` icon:check-circle[]
+| Label | Instant
+| Definition | A temporal entity with zero extent or duration.
+| Implementation | One or more of [`time:inXSDDate`, `time:inXSDDateTimeStamp`, `time:inXSDgYear`, `time:inXSDgYearMonth`, `time:inTimePosition`, and `time:inDateTime`] _MUST_ be present.
+| Scope note | 
+|===
+
+
+[#class-time:Instant-time:inDateTime]
+===== Property: time:inDateTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#inDateTime[`time:inDateTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-Instant-inDateTime
+| Status | `stable` icon:check-circle[]
+| Label | in date-time
+| Definition | Position of an instant, expressed using a structured description.
+| Scope note | 
+| Implementation | Value _MUST_ be a literal with the datatype `xsd:dateTime`. Maximum of one value is allowed for this property.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`]
+| Expected values | 
+|===
+
+[#class-time:Instant-time:inTimePosition]
+===== Property: time:inTimePosition
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#inTimePosition[`time:inTimePosition`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-inTimePosition
+| Status | `stable` icon:check-circle[]
+| Label | in time position
+| Definition | Position of a time instant expressed as a `TimePosition`.
+| Scope note | 
+| Implementation | Value _MUST_ be an instance of `time:TimePosition`. Maximum of one value is allowed for this property. The value node _MUST_ be a blank node or IRI.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.w3.org/2006/time#TimePosition[`time:TimePosition`]
+| Expected values | 
+|===
+
+[#class-time:Instant-time:inXSDDate]
+===== Property: time:inXSDDate
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#inXSDDate[`time:inXSDDate`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-inXSDDate
+| Status | `stable` icon:check-circle[]
+| Label | in XSD date
+| Definition | Position of an instant, expressed using `xsd:date`.
+| Scope note | 
+| Implementation | Value _MUST_ be a literal with the datatype `xsd:date`. Maximum of one value is allowed for this property.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Expected values | 
+|===
+
+[#class-time:Instant-time:inXSDDateTimeStamp]
+===== Property: time:inXSDDateTimeStamp
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#inXSDDateTimeStamp[`time:inXSDDateTimeStamp`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-inXSDDateTimeStamp
+| Status | `stable` icon:check-circle[]
+| Label | in XSD date-time-stamp
+| Definition | Position of an instant, expressed using `xsd:dateTimeStamp`.
+| Scope note | 
+| Implementation | Value _MUST_ be a literal with the datatype `xsd:dateTimeStamp`. Maximum of one value is allowed for this property.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
+| Expected values | 
+|===
+
+[#class-time:Instant-time:inXSDgYear]
+===== Property: time:inXSDgYear
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#inXSDgYear[`time:inXSDgYear`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-inXSDgYear
+| Status | `stable` icon:check-circle[]
+| Label | in XSD g-year
+| Definition | Position of an instant, expressed using `xsd:gYear`.
+| Scope note | 
+| Implementation | Value _MUST_ be a literal with the datatype `xsd:gYear`. Maximum of one value is allowed for this property.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#gYear[`xsd:gYear`]
+| Expected values | 
+|===
+
+[#class-time:Instant-time:inXSDgYearMonth]
+===== Property: time:inXSDgYearMonth
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#inXSDgYearMonth[`time:inXSDgYearMonth`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-inXSDgYearMonth
+| Status | `stable` icon:check-circle[]
+| Label | in XSD g-year-month
+| Definition | Position of an instant, expressed using `xsd:gYearMonth`.
+| Scope note | 
+| Implementation | Value _MUST_ be a literal with the datatype `xsd:gYearMonth`. Maximum of one value is allowed for this property.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#gYearMonth[`xsd:gYearMonth`]
+| Expected values | 
+|===

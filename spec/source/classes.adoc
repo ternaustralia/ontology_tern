@@ -1,0 +1,92 @@
+=== Classes
+
+include::core/class-tern:Attribute.adoc[]
+
+===== tern:Attribute example
+
+Annotate the volume of the soil ring using `tern:Attribute`.
+
+[source, turtle]
+----
+<urn:example:soil-ring> a tern:Sampler ;
+    rdfs:label "soil ring" ;
+    ssn:implements <urn:example:method:soil-ring> ;
+    tern:systemType <http://linked.data.gov.au/def/tern-cv/24c81cc3-4d68-45a0-91a2-051af25dfb94> ;
+    tern:hasAttribute <urn:example:Attribute:1>
+.
+
+<urn:example:Attribute:1> a tern:Attribute ;
+    rdfs:label "volume of soil ring" ;
+    tern:attribute <http://linked.data.gov.au/def/tern-cv/039f87e5-ffd9-4676-b126-c74844d2e095> ;
+    tern:hasSimpleValue 209.35 ;
+    tern:hasValue [
+        a tern:Float ;
+        rdf:value 209.35 ;
+        tern:unit <http://qudt.org/vocab/unit/CentiM3> ;
+    ] ;
+.
+----
+
+=== External Classes
+
+include::core/class-prov:Association.adoc[]
+
+===== prov:Association example
+
+The RDF example below illustrates how to:
+
+* associate a `schema:Person` to an instance of `tern:Sampling` activity with the role _principal investigator_
+* associate an `schema:Organization` to a `tern:MaterialSample` with the role _custodian_.
+
+[source%linenums, turtle]
+----
+<org-1>
+    a schema:Organization ;
+    schema:name "Org 1" ;
+.
+
+<person-1> 
+    a schema:Person ;
+    schema:name "Person 1" ;
+    schema:affiliation <org-1> ;
+.
+
+<site-visit>
+    a tern:SiteVisit ;
+    prov:startedAtTime "2015-03-22T13:00:00+00:00"^^xsd:dateTime ;
+    tern:hasSite <...> ;
+    prov:wasAssociatedWith <person-1> ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <person-1> ;
+        prov:hadRole <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator> ;
+    ] ;
+.
+
+<sampling-1> 
+    a tern:Sampling ;
+    ... ;
+    tern:hasSiteVisit <site-visit> ;
+    prov:wasAssociatedWith <person-1> ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <person-1> ;
+        prov:hadRole <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider> ;
+    ] ;
+    sosa:hasResult <soil-sample-1> ;
+.
+
+<soil-sample-1>
+    a tern:MaterialSample ;
+    ... ;
+    sosa:isResultOf <sampling-1> ;
+    prov:wasAttributedTo <org-1> ;
+    prov:qualifiedAttribution [
+        a prov:Attribution ;
+        prov:agent <org-1> ;
+        prov:hadRole <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian> ;
+    ]
+.
+----
+
+include::core/class-time:Instant.adoc[]
