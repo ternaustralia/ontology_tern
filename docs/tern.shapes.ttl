@@ -263,7 +263,7 @@ tern-shapes:time-inXSDDate
     sh:message "Value _MUST_ be a literal with the datatype `xsd:date`. Maximum of one value is allowed for this property."
 .
 
-tern-shapes:time-inTimePosition ;
+tern-shapes:time-inTimePosition
     reg:status reg:statusStable ;
     skos:prefLabel "in time position" ;
     sh:name "time:inTimePosition" ;
@@ -1709,6 +1709,8 @@ tern-shapes:Association-agent
     skos:prefLabel "agent" ;
     sh:nodeKind sh:IRI ;
     sh:path prov:agent ;
+.
+
 <urn:shape:Observation-hasFeatureOfInterest>
     a sh:PropertyShape ;
     sh:description "Has at least 1 spatial indicator alongs its chain of samples" ;
