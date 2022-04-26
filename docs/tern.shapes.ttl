@@ -28,7 +28,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 tern-shapes:
     a owl:Ontology ;
     rdfs:label "TERN Ontology Shapes" ;
-    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kep in sync with the main TERN Ontology" ;
+    rdfs:comment "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kept in sync with the main TERN Ontology" ;
     owl:imports
         <http://datashapes.org/dash> ,
         <http://www.opengis.net/ont/geosparql> ,
@@ -561,6 +561,20 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:targetClass tern:Value ;
+.
+
+<urn:shape:Activity>
+    a sh:NodeShape ;
+    rdfs:label "Observation shape" ;
+    sh:message "At least one (geo:hasGeoemtry, geo:sfWithin) must exist on itself or on a sample in the chain of samples)" ;
+    sh:or (
+            <urn:shape:geo-hasGeometry-min-1>
+            <urn:shape:geo-sfWithin-min-1>
+            <urn:shape:Observation-hasFeatureOfInterest>
+        ) ;
+    sh:targetClass
+        tern:Observation ,
+        tern:Sampling ;
 .
 
 tern-shapes:Boolean-value
@@ -1563,7 +1577,7 @@ tern-shapes:tern-hasValue
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "tern:hasValue" ;
-    sh:nodeKind sh:IRI ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path tern:hasValue ;
 .
 
@@ -1695,6 +1709,47 @@ tern-shapes:Association-agent
     skos:prefLabel "agent" ;
     sh:nodeKind sh:IRI ;
     sh:path prov:agent ;
+<urn:shape:Observation-hasFeatureOfInterest>
+    a sh:PropertyShape ;
+    sh:description "Has at least 1 spatial indicator alongs its chain of samples" ;
+    sh:name "Observation's sosa:hasFeatureOfInterest" ;
+    sh:node <urn:shape:Observation-hasFeatureOfInterest-Sample> ;
+    sh:path sosa:hasFeatureOfInterest ;
+.
+
+<urn:shape:Observation-hasFeatureOfInterest-Sample>
+    a sh:NodeShape ;
+    rdfs:label "Sample node shape of sosa:hasFeatureOfInterest" ;
+    sh:or (
+            <urn:shape:Sample-isSampleOf-hasGeometry>
+            <urn:shape:Sample-isSampleOf-sfWithin>
+        ) ;
+.
+
+<urn:shape:Sample-isSampleOf-hasGeometry>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:hasGeometry exists along the chain of sosa:isSampleOf paths." ;
+    sh:name "Sample's sosa:isSampleOf" ;
+    sh:path [
+            sh:zeroOrMorePath sosa:isSampleOf
+        ] ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [
+            sh:property <urn:shape:geo-hasGeometry-min-1>
+        ] ;
+.
+
+<urn:shape:Sample-isSampleOf-sfWithin>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:sfWithin exists along the chain of sosa:isSampleOf paths." ;
+    sh:name "Sample's sosa:isSampleOf" ;
+    sh:path [
+            sh:zeroOrMorePath sosa:isSampleOf
+        ] ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [
+            sh:property <urn:shape:geo-sfWithin-min-1>
+        ] ;
 .
 
 tern-shapes:prov-agent
@@ -1834,6 +1889,22 @@ tern-shapes:tern-unit
     sh:name "tern:unit" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:unit ;
+.
+
+<urn:shape:geo-hasGeometry-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:hasGeometry must exist." ;
+    sh:minCount 1 ;
+    sh:name "geo:hasGeometry" ;
+    sh:path geo:hasGeometry ;
+.
+
+<urn:shape:geo-sfWithin-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:sfWithin must exist." ;
+    sh:minCount 1 ;
+    sh:name "geo:sfWithin" ;
+    sh:path geo:sfWithin ;
 .
 
 tern-shapes:geo-hasGeometry
