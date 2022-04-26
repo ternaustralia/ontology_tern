@@ -13,13 +13,13 @@
 # prefix: tern
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX doap: <http://usefulinc.com/ns/doap#>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX schema: <https://schema.org/>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX sdo: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX ssn: <http://www.w3.org/ns/ssn/>
@@ -27,8 +27,6 @@ PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX reg: <http://purl.org/linked-data/registry#>
-PREFIX sdo: <https://schema.org/>
 
 dwc:materialSampleID
     a rdf:Property ;
@@ -46,9 +44,9 @@ time:Duration
 
 prov:Association
     a owl:Class ;
-    skos:prefLabel "Association" ;
-    skos:definition "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity." ;
     reg:status reg:statusStable ;
+    skos:definition "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity." ;
+    skos:prefLabel "Association" ;
     skos:scopeNote "Associate an agent to an activity (`tern:Sampling`, `tern:Observation`) with a role from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code]." ;
 .
 
@@ -61,42 +59,9 @@ sosa:isSampleOf
     a owl:TransitiveProperty ;
 .
 
-<https://linked.data.gov.au/org/tern> a sdo:Organization;
-    sdo:sameAs <https://ror.org/03wxseg04>, <https://grid.ac/institutes/grid.507696.b>, <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>;
-    sdo:name "TERN";
-    sdo:url "https://www.tern.org.au"^^xsd:anyURI.
-<https://linked.data.gov.au/org/csiro> a sdo:Organization ;
-    sdo:name "CSIRO" ;
-    sdo:sameAs <https://w3id.org/tern/resources/276dd611-5d74-4555-b20f-12f0f0b618a1>, <https://ror.org/03qn8fb07>, <https://grid.ac/institutes/grid.1016.6>;
-    sdo:identifier "O-000886"^^<urn:identifier:agor>;
-    sdo:identifier "CA-641"^^<urn:identifier:crs>;
-    sdo:url "https://www.csiro.au"^^xsd:anyURI .
-<https://orcid.org/0000-0002-3884-3420> a sdo:Person;
-    sdo:email "simon.cox@csiro.au"^^xsd:anyURI;
-    sdo:affiliation <https://linked.data.gov.au/org/csiro>;
-    sdo:name "Simon Cox".
-<https://orcid.org/0000-0002-3903-254X> a sdo:Person;
-    sdo:email "s.guru@uq.edu.au"^^xsd:anyURI;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Siddeswara Guru".
-<https://orcid.org/0000-0002-6047-9864> a sdo:Person;
-    sdo:email "e.chuc@uq.edu.au"^^xsd:anyURI;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Edmond Chuc".
-<https://w3id.org/tern/ontologies/tern> <http://purl.org/dc/terms/provenance> "A domain model for exchanging and representing ecological field survey data. A profile of SSN/SOSA, PROV and schema.org.";
-    a owl:Ontology;
-    owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.6.1>;
-    owl:versionInfo "0.6.1";
-    skos:definition "The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook.";
-    skos:prefLabel "TERN Ontology";
-    sdo:codeRepository "https://github.com/ternaustralia/ontology_tern"^^xsd:anyURI;
-    sdo:contributor <https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb>, <https://w3id.org/tern/resources/1c1b4f10-23a9-474d-8f45-2d4c27db863e>, <https://w3id.org/tern/resources/cbd72114-5fa0-410a-b6c1-73a3fd8f111e>, <https://orcid.org/0000-0003-0870-3192>, <https://orcid.org/0000-0002-7083-0005>, <https://orcid.org/0000-0002-8481-9069>;
-    sdo:copyrightHolder <https://linked.data.gov.au/org/tern>;
-    sdo:creator <https://orcid.org/0000-0002-3884-3420>, <https://orcid.org/0000-0002-3903-254X>, <https://orcid.org/0000-0002-6047-9864>;
-    sdo:dateCreated "2020-09-07"^^xsd:date;
-    sdo:dateIssued "2020-09-07"^^xsd:date;
-    sdo:dateModified "2022-04-26"^^xsd:date;
-    sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI;
+<https://w3id.org/tern/ontologies/tern>
+    a owl:Ontology ;
+    dcterms:provenance "A domain model for exchanging and representing ecological field survey data. A profile of SSN/SOSA, PROV and schema.org." ;
     owl:imports
         <http://datashapes.org/dash> ,
         <http://qudt.org/schema/qudt/> ,
@@ -109,32 +74,29 @@ sosa:isSampleOf
         sosa: ,
         ssn: ,
         <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
-    sdo:publisher <https://linked.data.gov.au/org/tern>.
-<https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb> a sdo:Person;
-    sdo:email "j.sanchezgonzalez@uq.edu.au"^^xsd:anyURI;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Javier Sanchez Gonalez".
-<https://w3id.org/tern/resources/1c1b4f10-23a9-474d-8f45-2d4c27db863e> a sdo:Person;
-    sdo:email "mosheh.eliyahu@adelaide.edu.au"^^xsd:anyURI;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Mosheh Eliyahu".
-<https://w3id.org/tern/resources/cbd72114-5fa0-410a-b6c1-73a3fd8f111e> a sdo:Person;
-    sdo:email "junrong.yu@uq.edu.au"^^xsd:anyURI;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Junrong Yu".
-<https://orcid.org/0000-0003-0870-3192> a sdo:Person ;
-    sdo:email "a.devaraju@uq.edu.au"^^xsd:anyURI ;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Anusuriya Devaraju".
-<https://orcid.org/0000-0002-7083-0005> a sdo:Person ;
-    sdo:email "h.floresmoreno@uq.edu.au"^^xsd:anyURI ;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Habacuc Flores-Moreno" .
-<https://orcid.org/0000-0002-8481-9069> a sdo:Person ;
-    sdo:email "t.parkhurst@uq.edu.au"^^xsd:anyURI ;
-    sdo:affiliation <https://linked.data.gov.au/org/tern>;
-    sdo:name "Tina Parkhurst" .
-
+    owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.6.1> ;
+    owl:versionInfo "0.6.1" ;
+    skos:definition "The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
+    skos:prefLabel "TERN Ontology" ;
+    sdo:codeRepository "https://github.com/ternaustralia/ontology_tern"^^xsd:anyURI ;
+    sdo:contributor
+        <https://orcid.org/0000-0002-7083-0005> ,
+        <https://orcid.org/0000-0002-8481-9069> ,
+        <https://orcid.org/0000-0003-0870-3192> ,
+        <https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb> ,
+        <https://w3id.org/tern/resources/1c1b4f10-23a9-474d-8f45-2d4c27db863e> ,
+        <https://w3id.org/tern/resources/cbd72114-5fa0-410a-b6c1-73a3fd8f111e> ;
+    sdo:copyrightHolder <https://linked.data.gov.au/org/tern> ;
+    sdo:creator
+        <https://orcid.org/0000-0002-3884-3420> ,
+        <https://orcid.org/0000-0002-3903-254X> ,
+        <https://orcid.org/0000-0002-6047-9864> ;
+    sdo:dateCreated "2020-09-07"^^xsd:date ;
+    sdo:dateIssued "2020-09-07"^^xsd:date ;
+    sdo:dateModified "2022-04-26"^^xsd:date ;
+    sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sdo:publisher <https://linked.data.gov.au/org/tern> ;
+.
 
 tern:Boolean
     a owl:Class ;
@@ -230,21 +192,6 @@ tern:DigitalCamera
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty skos:altLabel
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty skos:definition
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://schema.org/model>
-        ] ,
-        [
-            a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty skos:prefLabel
         ] ,
@@ -259,6 +206,21 @@ tern:DigitalCamera
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass xsd:string ;
             owl:onProperty <http://schema.org/manufacturer>
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty skos:altLabel
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty skos:definition
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty <http://schema.org/model>
         ] ,
         skos:Concept ;
     skos:definition "The model as defined by the manufacturer." ;
@@ -344,7 +306,7 @@ tern:EcosystemProcessesSite
 tern:Float
     a owl:Class ;
     rdfs:label "Float" ;
-    rdfs:seeAlso schema:Float ;
+    rdfs:seeAlso sdo:Float ;
     rdfs:subClassOf tern:Value ;
     skos:definition "Data type: Floating number." ;
 .
@@ -427,7 +389,7 @@ tern:IRI
 tern:Integer
     a owl:Class ;
     rdfs:label "Integer" ;
-    rdfs:seeAlso schema:Integer ;
+    rdfs:seeAlso sdo:Integer ;
     rdfs:subClassOf tern:Value ;
     skos:definition "Data type: Integer." ;
 .
@@ -796,14 +758,69 @@ tern:valueType
 
 time:Instant
     a owl:Class ;
-    skos:prefLabel "Instant" ;
-    skos:definition "A temporal entity with zero extent or duration." ;
     reg:status reg:statusStable ;
+    skos:definition "A temporal entity with zero extent or duration." ;
+    skos:prefLabel "Instant" ;
 .
 
 time:Interval
     a owl:Class ;
     rdfs:label "Interval" ;
+.
+
+<https://linked.data.gov.au/org/csiro>
+    a sdo:Organization ;
+    sdo:identifier
+        "O-000886"^^<urn:identifier:agor> ,
+        "CA-641"^^<urn:identifier:crs> ;
+    sdo:name "CSIRO" ;
+    sdo:sameAs
+        <https://grid.ac/institutes/grid.1016.6> ,
+        <https://ror.org/03qn8fb07> ,
+        <https://w3id.org/tern/resources/276dd611-5d74-4555-b20f-12f0f0b618a1> ;
+    sdo:url "https://www.csiro.au"^^xsd:anyURI ;
+.
+
+<https://orcid.org/0000-0002-3884-3420>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/csiro> ;
+    sdo:email "simon.cox@csiro.au"^^xsd:anyURI ;
+    sdo:name "Simon Cox" ;
+.
+
+<https://orcid.org/0000-0002-3903-254X>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "s.guru@uq.edu.au"^^xsd:anyURI ;
+    sdo:name "Siddeswara Guru" ;
+.
+
+<https://orcid.org/0000-0002-6047-9864>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "e.chuc@uq.edu.au"^^xsd:anyURI ;
+    sdo:name "Edmond Chuc" ;
+.
+
+<https://orcid.org/0000-0002-7083-0005>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "h.floresmoreno@uq.edu.au"^^xsd:anyURI ;
+    sdo:name "Habacuc Flores-Moreno" ;
+.
+
+<https://orcid.org/0000-0002-8481-9069>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "t.parkhurst@uq.edu.au"^^xsd:anyURI ;
+    sdo:name "Tina Parkhurst" ;
+.
+
+<https://orcid.org/0000-0003-0870-3192>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "a.devaraju@uq.edu.au"^^xsd:anyURI ;
+    sdo:name "Anusuriya Devaraju" ;
 .
 
 tern:Input
@@ -1233,12 +1250,33 @@ tern:unit
     skos:definition "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
 .
 
+<https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "j.sanchezgonzalez@uq.edu.au"^^xsd:anyURI ;
+    sdo:name "Javier Sanchez Gonalez" ;
+.
+
+<https://w3id.org/tern/resources/1c1b4f10-23a9-474d-8f45-2d4c27db863e>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "mosheh.eliyahu@adelaide.edu.au"^^xsd:anyURI ;
+    sdo:name "Mosheh Eliyahu" ;
+.
+
+<https://w3id.org/tern/resources/cbd72114-5fa0-410a-b6c1-73a3fd8f111e>
+    a sdo:Person ;
+    sdo:affiliation <https://linked.data.gov.au/org/tern> ;
+    sdo:email "junrong.yu@uq.edu.au"^^xsd:anyURI ;
+    sdo:name "Junrong Yu" ;
+.
+
 tern:Attribute
     a owl:Class ;
-    skos:prefLabel "Attribute" ;
     reg:status reg:statusStable ;
     rdfs:subClassOf ssn:Property ;
     skos:definition "A property-value pair to capture attributes of an individual where observations are not suitable." ;
+    skos:prefLabel "Attribute" ;
     skos:scopeNote "Follows a similar modelling pattern to link:https://schema.org/PropertyValue[`schema:PropertyValue`]." ;
 .
 
@@ -1246,6 +1284,21 @@ tern:FeatureOfInterest
     a owl:Class ;
     rdfs:label "Feature of Interest" ;
     rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty void:inDataset
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:featureType
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty rdfs:comment
+        ] ,
         [
             a owl:Restriction ;
             owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Geometry> ;
@@ -1271,21 +1324,6 @@ tern:FeatureOfInterest
                         )
                 ] ;
             owl:onProperty sosa:isFeatureOfInterestOf
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty void:inDataset
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:featureType
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:comment
         ] ,
         sosa:FeatureOfInterest ;
     skos:definition "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
@@ -1425,6 +1463,12 @@ tern:width
     rdfs:label "width" ;
     rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Width> ;
     skos:definition "The measurement or extent of something from side to side." ;
+.
+
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
+    a sdo:Organization ;
+    sdo:identifier <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+    sdo:name "TERN" ;
 .
 
 tern:Platform
@@ -1659,10 +1703,14 @@ tern:Value
     skos:definition "A value of an [Attribute](https://w3id.org/tern/ontologies/tern/Attribute) or an [Observation](https://w3id.org/tern/ontologies/tern/Observation). " ;
 .
 
-<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
-    a schema:Organization ;
-    schema:identifier <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
-    schema:name "TERN" ;
+<https://linked.data.gov.au/org/tern>
+    a sdo:Organization ;
+    sdo:name "TERN" ;
+    sdo:sameAs
+        <https://grid.ac/institutes/grid.507696.b> ,
+        <https://ror.org/03wxseg04> ,
+        <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+    sdo:url "https://www.tern.org.au"^^xsd:anyURI ;
 .
 
 []    a owl:Class ;
