@@ -22,6 +22,8 @@ PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 tern-shapes:
     a owl:Ontology ;
@@ -33,16 +35,17 @@ tern-shapes:
         <http://www.w3.org/2004/02/skos/core> ,
         sh: ,
         tern: ;
-    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.5.1> ;
-    owl:versionInfo "0.5.1" ;
+    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.6.1> ;
+    owl:versionInfo "0.6.1" ;
 .
 
 tern-shapes:Association
     a sh:NodeShape ;
-    rdfs:label "Association" ;
+    skos:label "Association" ;
     sh:property
-        tern-shapes:prov-agent ,
-        tern-shapes:prov-hadRole ;
+        tern-shapes:Association-agent ,
+        tern-shapes:Association-hadPlan,
+        tern-shapes:Association-hadRole ;
     sh:targetClass prov:Association ;
 .
 
@@ -163,45 +166,7 @@ tern-shapes:IRI
 tern-shapes:Instant
     a sh:NodeShape ;
     rdfs:label "Instant" ;
-    sh:and (
-            [
-                sh:property [
-                        sh:maxCount 1 ;
-                        sh:path time:inDateTime
-                    ]
-            ]
-            [
-                sh:property [
-                        sh:maxCount 1 ;
-                        sh:path time:inTimePosition
-                    ]
-            ]
-            [
-                sh:property [
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDate
-                    ]
-            ]
-            [
-                sh:property [
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDDateTimeStamp
-                    ]
-            ]
-            [
-                sh:property [
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYear
-                    ]
-            ]
-            [
-                sh:property [
-                        sh:maxCount 1 ;
-                        sh:path time:inXSDgYearMonth
-                    ]
-            ]
-        ) ;
-    sh:message "One or more of (time:inXSDDate, time:inXSDDateTimeStamp, time:inXSDgYear, time:inXSDgYearMonth, time:inTimePosition, and time:inDateTime) must be present. Only one value for each property is allowed." ;
+    sh:message "One or more of [`time:inXSDDate`, `time:inXSDDateTimeStamp`, `time:inXSDgYear`, `time:inXSDgYearMonth`, `time:inTimePosition`, and `time:inDateTime`] _MUST_ be present." ;
     sh:or (
             [
                 sh:property [
@@ -241,32 +206,88 @@ tern-shapes:Instant
             ]
         ) ;
     sh:property
-        [
-            sh:datatype xsd:dateTime ;
-            sh:path time:inDateTime
-        ] ,
-        [
-            sh:class time:TimePosition ;
-            sh:path time:inTimePosition
-        ] ,
-        [
-            sh:datatype xsd:date ;
-            sh:path time:inXSDDate
-        ] ,
-        [
-            sh:datatype xsd:dateTimeStamp ;
-            sh:path time:inXSDDateTimeStamp
-        ] ,
-        [
-            sh:datatype xsd:gYear ;
-            sh:path time:inXSDgYear
-        ] ,
-        [
-            sh:datatype xsd:gYearMonth ;
-            sh:path time:inXSDgYearMonth
-        ] ;
+        tern-shapes:time-Instant-inDateTime ,
+        tern-shapes:time-inTimePosition ,
+        tern-shapes:time-inXSDDate ,
+        tern-shapes:time-inXSDDateTimeStamp ,
+        tern-shapes:time-inXSDgYear ,
+        tern-shapes:time-inXSDgYearMonth ;
     sh:targetClass time:Instant ;
 .
+
+tern-shapes:time-inXSDgYearMonth
+    reg:status reg:statusStable ;
+    skos:prefLabel "in XSD g-year-month" ;
+    sh:name "time:inXSDgYearMonth" ;
+    sh:datatype xsd:gYearMonth ;
+    sh:nodeKind sh:Literal ;
+    sh:path time:inXSDgYearMonth ; 
+    sh:maxCount 1 ;
+    sh:description "Position of an instant, expressed using `xsd:gYearMonth`." ;
+    sh:message "Value _MUST_ be a literal with the datatype `xsd:gYearMonth`. Maximum of one value is allowed for this property."
+.
+
+tern-shapes:time-inXSDgYear
+    reg:status reg:statusStable ;
+    skos:prefLabel "in XSD g-year" ;
+    sh:name "time:inXSDgYear" ;
+    sh:datatype xsd:gYear ;
+    sh:nodeKind sh:Literal ;
+    sh:path time:inXSDgYear ;
+    sh:maxCount 1 ;
+    sh:description "Position of an instant, expressed using `xsd:gYear`." ;
+    sh:message "Value _MUST_ be a literal with the datatype `xsd:gYear`. Maximum of one value is allowed for this property."
+.
+
+tern-shapes:time-inXSDDateTimeStamp
+    reg:status reg:statusStable ;
+    skos:prefLabel "in XSD date-time-stamp" ;
+    sh:name "time:inXSDDateTimeStamp" ;
+    sh:datatype xsd:dateTimeStamp ;
+    sh:nodeKind sh:Literal ;
+    sh:path time:inXSDDateTimeStamp ;
+    sh:maxCount 1 ;
+    sh:description "Position of an instant, expressed using `xsd:dateTimeStamp`." ;
+    sh:message "Value _MUST_ be a literal with the datatype `xsd:dateTimeStamp`. Maximum of one value is allowed for this property."
+.
+
+tern-shapes:time-inXSDDate
+    reg:status reg:statusStable ;
+    skos:prefLabel "in XSD date" ;
+    sh:name "time:inXSDDate" ;
+    sh:datatype xsd:date ;
+    sh:nodeKind sh:Literal ;
+    sh:path time:inXSDDate ;
+    sh:maxCount 1 ;
+    sh:description "Position of an instant, expressed using `xsd:date`." ;
+    sh:message "Value _MUST_ be a literal with the datatype `xsd:date`. Maximum of one value is allowed for this property."
+.
+
+tern-shapes:time-inTimePosition ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "in time position" ;
+    sh:name "time:inTimePosition" ;
+    sh:class time:TimePosition ;
+    sh:path time:inTimePosition ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:description "Position of a time instant expressed as a `TimePosition`." ;
+    sh:message "Value _MUST_ be an instance of `time:TimePosition`. Maximum of one value is allowed for this property. The value node _MUST_ be a blank node or IRI." ;
+.
+
+tern-shapes:time-Instant-inDateTime
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "in date-time" ;
+    sh:name "time:inDateTime" ;
+    sh:datatype xsd:dateTime ;
+    sh:nodeKind sh:Literal ;
+    sh:path time:inDateTime ;
+    sh:maxCount 1 ;
+    sh:description "Position of an instant, expressed using a structured description." ;
+    sh:message "Value _MUST_ be a literal with the datatype `xsd:dateTime`. Maximum of one value is allowed for this property." ;
+.
+
 
 tern-shapes:Integer
     a sh:NodeShape ;
@@ -1499,7 +1520,10 @@ tern-shapes:ssn-deployedSystem
 
 tern-shapes:tern-attribute
     a sh:PropertyShape ;
-    sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of attributes at [http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924](http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924)." ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "attribute" ;
+    sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of link:http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[attributes]." ;
+    sh:message "There _MUST_ exist exactly 1 `tern:attribute` property with an IRI value." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "tern:attribute" ;
@@ -1518,7 +1542,10 @@ tern-shapes:tern-hasAttribute
 
 tern-shapes:tern-hasSimpleValue
     a sh:PropertyShape ;
-    sh:description "The direct link to the value either as an IRI or an RDF literal. The simple value is always equivalent to the value captured in rdf:value of the tern:Value instance." ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has simple value" ;
+    sh:message "There _MUST_ exist exactly 1 `tern:hasSimpleValue` with an IRI or literal value." ;
+    sh:description "The direct link to the IRI or RDF literal value. The simple value _MUST_ be the same value captured in `rdf:value` of the `tern:Value` instance." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "tern:hasSimpleValue" ;
@@ -1529,6 +1556,9 @@ tern-shapes:tern-hasSimpleValue
 tern-shapes:tern-hasValue
     a sh:PropertyShape ;
     sh:class tern:Value ;
+    skos:prefLabel "has value" ;
+    sh:message "There _MUST_ exist exactly 1 `tern:hasValue` with an IRI value." ;
+    reg:status reg:statusStable ;
     sh:description "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -1539,6 +1569,9 @@ tern-shapes:tern-hasValue
 
 tern-shapes:tern-isAttributeOf
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "is attribute of" ;
+    sh:message "The value of `tern:isAttributeOf` _MUST_ be an IRI value." ;
     sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
     sh:name "tern:isAttributeOf" ;
     sh:nodeKind sh:IRI ;
@@ -1638,15 +1671,76 @@ tern-shapes:time-unitType
     sh:path time:unitType ;
 .
 
+tern-shapes:Association-hadPlan
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "had plan" ;
+    sh:name "prov:hadPlan" ;
+    sh:description "A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals." ;
+    skos:scopeNote "Associate a plan to the agent which they use for their role in some activity. This may or may not be the same as the procedure of a `tern:Sampling` or a `tern:Observation` depending on the role of the agent." ;
+    sh:message "A `prov:Association` _MAY_ have some `prov:hadPlan` predicate where the value node is an IRI." ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:hadPlan ;
+.
+
+tern-shapes:Association-agent
+    a sh:PropertyShape ;
+    sh:class prov:Agent ;
+    reg:status reg:statusStable ;
+    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity." ;
+    sh:message "A `prov:Association` _MUST_ have exactly 1 `prov:agent` predicate where the value node is an IRI of an individual with the type `prov:Agent`." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "prov:agent" ;
+    skos:prefLabel "agent" ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:agent ;
+.
+
 tern-shapes:prov-agent
     a sh:PropertyShape ;
     sh:class prov:Agent ;
-    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity." ;
+    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "prov:agent" ;
     sh:nodeKind sh:IRI ;
     sh:path prov:agent ;
+.
+
+tern-shapes:Association-hadRole
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "had role" ;
+    sh:description "prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
+    sh:message "A `prov:Association` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code]." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "prov:hadRole" ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:hadRole ;
+    sh:in (
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/collaborator>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/contributor>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/distributor>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/editor>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/funder>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/mediator>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/originator>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/owner>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/pointOfContact>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/processor>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/publisher>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/rightsHolder>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder>
+        <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user>
+    )
 .
 
 tern-shapes:prov-hadRole
@@ -1786,6 +1880,9 @@ tern-shapes:dcterms-identifier
 tern-shapes:void-inDataset
     a sh:PropertyShape ;
     sh:class tern:RDFDataset ;
+    skos:prefLabel "in dataset" ;
+    reg:status reg:statusStable ;
+    sh:message "There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`." ;
     sh:description "A link to the RDF payload's metadata which this resource was a part of." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -1796,8 +1893,11 @@ tern-shapes:void-inDataset
 
 tern-shapes:dcterms-type
     a sh:PropertyShape ;
-    sh:description "Useful when [rdfs:subClassOf](http://www.w3.org/2000/01/rdf-schema#subClassOf) entailment is enabled and the proximate class type is required to be recorded." ;
+    skos:prefLabel "type" ;
+    sh:description "Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable." ;
+    sh:message "The value of `dcterms:type` _MUST_ be an IRI." ;
     sh:name "dcterms:type" ;
+    reg:status reg:statusStable ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:type ;
 .

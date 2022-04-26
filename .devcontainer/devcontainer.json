@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.231.0/containers/python-3
 {
-  "name": "Python 3",
+  "name": "Python 3 with Node.js & TypeScript",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "..",
@@ -11,7 +11,7 @@
       // Use -bullseye variants on local on arm64/Apple Silicon.
       "VARIANT": "3.10-bullseye",
       // Options
-      "NODE_VERSION": "none"
+      "NODE_VERSION": "16.14.2"
     }
   },
 
@@ -39,7 +39,8 @@
     "ms-vscode.live-server",
     "stardog-union.stardog-rdf-grammars",
     "esbenp.prettier-vscode",
-    "asciidoctor.asciidoctor-vscode"
+    "asciidoctor.asciidoctor-vscode",
+    "dbaeumer.vscode-eslint"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.

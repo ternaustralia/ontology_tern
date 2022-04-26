@@ -8,6 +8,7 @@
 :icons: font
 :favicon: https://www.tern.org.au/wp-content/uploads/2019/10/favicon.png
 :idprefix:
+:docdir: .
 
 NOTE: *Status: Draft* - while the document is in draft, sections of the document may contain placheholders such as `TBA` and `TBD`.
 
@@ -78,8 +79,8 @@ Each requirement will be assigned a subset of the status types defined by the li
 |===
 |Status type | Icon | Definition
 
-|`experimental` | icon:circle-o[] | An entry that has been accepted into the register temporarily and may be subject to change or withdrawal.
-|`stable` | icon:check-circle[] | An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.
+|link:http://purl.org/linked-data/registry#statusExperimental[`experimental`] | icon:circle-o[] | An entry that has been accepted into the register temporarily and may be subject to change or withdrawal.
+|link:http://purl.org/linked-data/registry#statusStable[`stable`] | icon:check-circle[] | An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.
 |===
 
 == Core
