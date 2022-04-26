@@ -41,7 +41,7 @@ tern-shapes:
 
 tern-shapes:Association
     a sh:NodeShape ;
-    skos:label "Association" ;
+    rdfs:label "Association" ;
     sh:property
         tern-shapes:Association-agent ,
         tern-shapes:Association-hadPlan ,
