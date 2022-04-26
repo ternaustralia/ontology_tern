@@ -93,12 +93,67 @@ h6 > a.link:hover,
 <ul class="sectlevel2">
 <li><a href="#abstract">2.1. Abstract</a></li>
 <li><a href="#normative_status">2.2. Normative Status</a></li>
-<li><a href="#standard_parts">2.3. Standard Parts</a></li>
-<li><a href="#namespaces">2.4. Namespaces</a></li>
+<li><a href="#normative_references">2.3. Normative references</a></li>
+<li><a href="#terms_and_definitions">2.4. Terms and definitions</a></li>
+<li><a href="#conventions">2.5. Conventions</a>
+<ul class="sectlevel3">
+<li><a href="#symbols_and_abbreviated_terms">2.5.1. Symbols and abbreviated terms</a></li>
+<li><a href="#namespaces">2.5.2. Namespaces</a></li>
+<li><a href="#placeholder_iris">2.5.3. Placeholder IRIs</a></li>
+<li><a href="#rdf_serializations">2.5.4. RDF serializations</a></li>
 </ul>
 </li>
-<li><a href="#introduction">3. Introduction</a></li>
-<li><a href="#references">4. References</a></li>
+</ul>
+</li>
+<li><a href="#tern_ontology_specification">3. TERN Ontology Specification</a>
+<ul class="sectlevel2">
+<li><a href="#scope">3.1. Scope</a></li>
+<li><a href="#standard_parts">3.2. Standard Parts</a></li>
+<li><a href="#conformance">3.3. Conformance</a></li>
+</ul>
+</li>
+<li><a href="#core">4. Core</a>
+<ul class="sectlevel2">
+<li><a href="#classes">4.1. Classes</a>
+<ul class="sectlevel3">
+<li><a href="#class-tern:Attribute">4.1.1. Class: tern:Attribute</a>
+<ul class="sectlevel4">
+<li><a href="#class-tern:Attribute-dcterms:type">4.1.1.1. Property: dcterms:type</a></li>
+<li><a href="#class-tern:Attribute-tern:attribute">4.1.1.2. Property: tern:attribute</a></li>
+<li><a href="#class-tern:Attribute-tern:hasSimpleValue">4.1.1.3. Property: tern:hasSimpleValue</a></li>
+<li><a href="#class-tern:Attribute-tern:hasValue">4.1.1.4. Property: tern:hasValue</a></li>
+<li><a href="#class-tern:Attribute-tern:isAttributeOf">4.1.1.5. Property: tern:isAttributeOf</a></li>
+<li><a href="#class-tern:Attribute-void:inDataset">4.1.1.6. Property: void:inDataset</a></li>
+<li><a href="#ternattribute_example">4.1.1.7. tern:Attribute example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#external_classes">4.2. External Classes</a>
+<ul class="sectlevel3">
+<li><a href="#class-prov:Association">4.2.1. Class: prov:Association</a>
+<ul class="sectlevel4">
+<li><a href="#class-prov:Association-prov:agent">4.2.1.1. Property: prov:agent</a></li>
+<li><a href="#class-prov:Association-prov:hadPlan">4.2.1.2. Property: prov:hadPlan</a></li>
+<li><a href="#class-prov:Association-prov:hadRole">4.2.1.3. Property: prov:hadRole</a></li>
+<li><a href="#provassociation_example">4.2.1.4. prov:Association example</a></li>
+</ul>
+</li>
+<li><a href="#class-time:Instant">4.2.2. Class: time:Instant</a>
+<ul class="sectlevel4">
+<li><a href="#class-time:Instant-time:inDateTime">4.2.2.1. Property: time:inDateTime</a></li>
+<li><a href="#class-time:Instant-time:inTimePosition">4.2.2.2. Property: time:inTimePosition</a></li>
+<li><a href="#class-time:Instant-time:inXSDDate">4.2.2.3. Property: time:inXSDDate</a></li>
+<li><a href="#class-time:Instant-time:inXSDDateTimeStamp">4.2.2.4. Property: time:inXSDDateTimeStamp</a></li>
+<li><a href="#class-time:Instant-time:inXSDgYear">4.2.2.5. Property: time:inXSDgYear</a></li>
+<li><a href="#class-time:Instant-time:inXSDgYearMonth">4.2.2.6. Property: time:inXSDgYearMonth</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#references">5. References</a></li>
 <li><a href="#annex_a_specification_parts">Annex A: Specification Parts</a></li>
 </ul>
 </div>
@@ -175,58 +230,1585 @@ h6 > a.link:hover,
 <div class="sect2">
 <h3 id="abstract"><a class="link" href="#abstract">2.1. Abstract</a></h3>
 <div class="paragraph">
-<p>The TERN Ontology Specification addresses the data exchange and data representation problems with ecological field survey data to facilitate data interoperability and data integration. The specification uses the PROF vocabulary to express itself as a profile of multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification.</p>
+<p>The TERN Ontology Specification addresses the data exchange and data representation problems with integrating or exchanging heterogeneous ecological field survey data. The specification uses the PROF vocabulary to express itself as a profile of multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification.</p>
 </div>
 <div class="paragraph">
-<p>For many years, the scientific ecological community and industry partners collected rich and insightful data about the land and ecosystems using field survey protocols. The state of the collected data was often unusable for prompt nationwide reporting and data analysis due to incompatible data storage solutions between non-standardised relational databases, spreadsheets and PDF documents. Without spending further time and money to extract, transform and integrate the data, much of the data&#8217;s richness and usefulness is lost.</p>
+<p>For many years, the scientific ecological community and industry partners collected rich and insightful data about the land and ecosystems by performing field surveys. Unfortunately, the state of the collected data was often unusable for prompt nationwide reporting and data analysis due to incompatible data storage solutions between non-standardised relational databases, spreadsheets and PDF documents. Without spending further time and money to extract, transform and integrate the data, much of the data&#8217;s richness and usefulness is lost.</p>
 </div>
 <div class="paragraph">
-<p>The solution to this problem of an ever-growing set of heterogeneous data is to use existing standards defined by the W3C and follow a so-called Linked Data set of principles. By building a specification based on existing international standards, the richness of the ecological field survey data can now serve as insights for researchers and government policy-makers.</p>
+<p>The solution to this problem of an ever-growing set of heterogeneous data is to use existing standards defined by the W3C and follow the Linked Data set of principles. By building a specification based on existing web standards, the richness of the ecological field survey data can now be integrated and queried as one large graph of data on the World Wide Web.</p>
 </div>
 <div class="paragraph">
-<p>The TERN Ontology Specification is a profile of W3C&#8217;s SOSA, SSN and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and associates these activities with persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC&#8217;s GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT&#8217;s Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit to represent survey trips to ad-hoc or permanent plots and Attribute to represent auxiliary information.</p>
+<p>The TERN Ontology Specification is a profile of W3C&#8217;s SOSA, SSN and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and provides associations of these activities to persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC&#8217;s GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT&#8217;s Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit classes to represent survey trips performed on ad-hoc or permanent plots and uses the Attribute class to represent auxiliary information.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="normative_status"><a class="link" href="#normative_status">2.2. Normative Status</a></h3>
 <div class="paragraph">
-<p>This specification is normative for the TERN Ontology Specification.</p>
+<p>This specification is normative for the TERN Ontology.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="standard_parts"><a class="link" href="#standard_parts">2.3. Standard Parts</a></h3>
+<h3 id="normative_references"><a class="link" href="#normative_references">2.3. Normative references</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="terms_and_definitions"><a class="link" href="#terms_and_definitions">2.4. Terms and definitions</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="conventions"><a class="link" href="#conventions">2.5. Conventions</a></h3>
+<div class="sect3">
+<h4 id="symbols_and_abbreviated_terms"><a class="link" href="#symbols_and_abbreviated_terms">2.5.1. Symbols and abbreviated terms</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="namespaces"><a class="link" href="#namespaces">2.5.2. Namespaces</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="placeholder_iris"><a class="link" href="#placeholder_iris">2.5.3. Placeholder IRIs</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="rdf_serializations"><a class="link" href="#rdf_serializations">2.5.4. RDF serializations</a></h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tern_ontology_specification"><a class="link" href="#tern_ontology_specification">3. TERN Ontology Specification</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This specification document is one of many resources that make up the TERN Ontology Standard and expresses its structure using the Profiles Vocabulary <a href="#PROF">[PROF]</a>.</p>
+<p>This specification defines the classes and properties of the TERN Ontology and the set of requirements that data validators will use to ensure conformance. This specification also details how data providers should use related ontologies and controlled vocabularies to represent their ecological field survey data. Annex A lists these parts in more detail.</p>
+</div>
+<div class="sect2">
+<h3 id="scope"><a class="link" href="#scope">3.1. Scope</a></h3>
+<div class="paragraph">
+<p>The TERN Ontology Specification provides a standardised way to exchange and represent ecological field survey data by providing classes, properties and controlled vocabularies that characterise terrestrial data. Although the upper ontologies such as SOSA and SSN can theoretically apply to any domain, the TERN Ontology Specification focuses on representing data collected during opportunistic and plot-based field surveys and provides mechanisms for doing so.</p>
 </div>
 <div class="paragraph">
-<p>Other parts of this standard include:</p>
+<p>Lastly, the TERN Ontology Specification is not concerned with validating data according to specific field survey collection protocols and instead is concerned with validating the structure of the data. Data custodians can create a profile of the TERN Ontology Specification and extend it by providing validation and requirements according to their field survey protocol&#8217;s data collection methodologies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="standard_parts"><a class="link" href="#standard_parts">3.2. Standard Parts</a></h3>
+<div class="paragraph">
+<p>This specification is one of many resources that make up the TERN Ontology Profile Standard and expresses its structure using the Profiles Vocabulary <a href="#PROF">[PROF]</a>. Each resource in the profile is assigned a role from the <a href="http://www.w3.org/ns/dx/prof/role/">Resource Roles vocabulary</a>.</p>
+</div>
+<div class="paragraph">
+<p>Other resources in the TERN Ontology profile include:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology - conceptual information model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An overview of the core concepts of the TERN Ontology.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model" class="bare">https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/guidance">role:guidance</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology - cookbook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A cookbook of patterns on representing ecological things with the TERN Ontology.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/information-models/tern-ontology/cookbook" class="bare">https://linkeddata.tern.org.au/information-models/tern-ontology/cookbook</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/guidance">role:guidance</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology - classes, properties and shape constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A web-based viewer of the TERN Ontology classes, properties and their shape constraints.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/viewers/tern-ontology" class="bare">https://linkeddata.tern.org.au/viewers/tern-ontology</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/constraints">role:constraints</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology - specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TERN Ontology specification (<em>this document</em>)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linkeddata.tern.org.au/information-models/tern-ontology/specification" class="bare">https://linkeddata.tern.org.au/information-models/tern-ontology/specification</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/specification">role:specification</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology - validator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SHACL shapes for the TERN Ontology.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern.ttl" class="bare">https://w3id.org/tern/shapes/tern.ttl</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/validator">role:validator</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology vocabulary - feature types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature types controlled vocabulary to describe SOSA-based features of interest.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d" class="bare">http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology vocabulary - observable properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Observable properties controlled vocabulary to describe SOSA-based observations.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e" class="bare">http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology vocabulary - attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attributes controlled vocabulary to describe facts about any entity.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924" class="bare">http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology vocabulary - units of measure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit of measure controlled vocabulary by QUDT</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://qudt.org/vocab/unit/" class="bare">http://qudt.org/vocab/unit/</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology vocabulary - instrument types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instrument types controlled vocabulary to describe the types of instruments used in observations and sampling acts.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8" class="bare">http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology vocabulary - site types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Site types controlled vocabulary to describe the types of ecological survey sites.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159" class="bare">http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">TERN Ontology vocabulary - CI Role Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Description</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CI Role Code controlled vocabulary to describe the roles available to the TERN Ontology concepts.</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Artifcat</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode" class="bare">http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode</a></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Role</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="conformance"><a class="link" href="#conformance">3.3. Conformance</a></h3>
+<div class="paragraph">
+<p>Requirements define the rules and constraints that validators will use to validate data for conformance.</p>
+</div>
+<div class="paragraph">
+<p>Each requirement will be assigned a subset of the status types defined by the <a href="http://purl.org/linked-data/registry">Registry ontology</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 15.3846%;">
+<col style="width: 7.6923%;">
+<col style="width: 76.9231%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Status type</th>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/linked-data/registry#statusExperimental"><code>experimental</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An entry that has been accepted into the register temporarily and may be subject to change or withdrawal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/linked-data/registry#statusStable"><code>stable</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="core"><a class="link" href="#core">4. Core</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section establishes the core requirements class and provides definitions and usage examples.</p>
+</div>
+<div class="sect2">
+<h3 id="classes"><a class="link" href="#classes">4.1. Classes</a></h3>
+<div class="sect3">
+<h4 id="class-tern:Attribute"><a class="link" href="#class-tern:Attribute">4.1.1. Class: tern:Attribute</a></h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Attribute"><code>tern:Attribute</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A property-value pair to capture attributes of an individual where observations are not suitable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Follows a similar modelling pattern to <a href="https://schema.org/PropertyValue"><code>schema:PropertyValue</code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="class-tern:Attribute-dcterms:type"><a class="link" href="#class-tern:Attribute-dcterms:type">4.1.1.1. Property: dcterms:type</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/dcterms-type" class="bare">https://w3id.org/tern/shapes/tern/dcterms-type</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Useful to capture the proximate class type in situations when <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf"><code>rdfs:subClassOf</code></a> entailment is enabled and <code>rdf:type</code> is not suitable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The value of <code>dcterms:type</code> <em>MUST</em> be an IRI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Attribute-tern:attribute"><a class="link" href="#class-tern:Attribute-tern:attribute">4.1.1.2. Property: tern:attribute</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/attribute"><code>tern:attribute</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-attribute" class="bare">https://w3id.org/tern/shapes/tern/tern-attribute</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attribute</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of <a href="http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924">attributes</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There <em>MUST</em> exist exactly 1 <code>tern:attribute</code> property with an IRI value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Attribute-tern:hasSimpleValue"><a class="link" href="#class-tern:Attribute-tern:hasSimpleValue">4.1.1.3. Property: tern:hasSimpleValue</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/hasSimpleValue"><code>tern:hasSimpleValue</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-hasSimpleValue" class="bare">https://w3id.org/tern/shapes/tern/tern-hasSimpleValue</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has simple value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The direct link to the IRI or RDF literal value. The simple value <em>MUST</em> be the same value captured in <code>rdf:value</code> of the <code>tern:Value</code> instance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There <em>MUST</em> exist exactly 1 <code>tern:hasSimpleValue</code> with an IRI or literal value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRIOrLiteral"><code>sh:IRIOrLiteral</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Attribute-tern:hasValue"><a class="link" href="#class-tern:Attribute-tern:hasValue">4.1.1.4. Property: tern:hasValue</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/hasValue"><code>tern:hasValue</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-hasValue" class="bare">https://w3id.org/tern/shapes/tern/tern-hasValue</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A link to a [tern:Value](<a href="https://w3id.org/tern/ontologies/tern/Value" class="bare">https://w3id.org/tern/ontologies/tern/Value</a>) instance which encapsulates the value of this Attribute.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There <em>MUST</em> exist exactly 1 <code>tern:hasValue</code> with an IRI value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Value"><code>tern:Value</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Attribute-tern:isAttributeOf"><a class="link" href="#class-tern:Attribute-tern:isAttributeOf">4.1.1.5. Property: tern:isAttributeOf</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/isAttributeOf"><code>tern:isAttributeOf</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-isAttributeOf" class="bare">https://w3id.org/tern/shapes/tern/tern-isAttributeOf</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is attribute of</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](<a href="https://w3id.org/tern/ontologies/tern/hasAttribute" class="bare">https://w3id.org/tern/ontologies/tern/hasAttribute</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The value of <code>tern:isAttributeOf</code> <em>MUST</em> be an IRI value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Attribute-void:inDataset"><a class="link" href="#class-tern:Attribute-void:inDataset">4.1.1.6. Property: void:inDataset</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rdfs.org/ns/void#inDataset"><code>void:inDataset</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/void-inDataset" class="bare">https://w3id.org/tern/shapes/tern/void-inDataset</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A link to the RDF payload&#8217;s metadata which this resource was a part of.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There <em>MUST</em> exist exactly 1 <code>void:inDataset</code> property with an IRI value to a <code>tern:RDFDataset</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="ternattribute_example"><a class="link" href="#ternattribute_example">4.1.1.7. tern:Attribute example</a></h5>
+<div class="paragraph">
+<p>Annotate the volume of the soil ring using <code>tern:Attribute</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;urn:example:soil-ring&gt; a tern:Sampler ;
+    rdfs:label "soil ring" ;
+    ssn:implements &lt;urn:example:method:soil-ring&gt; ;
+    tern:systemType &lt;http://linked.data.gov.au/def/tern-cv/24c81cc3-4d68-45a0-91a2-051af25dfb94&gt; ;
+    tern:hasAttribute &lt;urn:example:Attribute:1&gt;
+.
+
+&lt;urn:example:Attribute:1&gt; a tern:Attribute ;
+    rdfs:label "volume of soil ring" ;
+    tern:attribute &lt;http://linked.data.gov.au/def/tern-cv/039f87e5-ffd9-4676-b126-c74844d2e095&gt; ;
+    tern:hasSimpleValue 209.35 ;
+    tern:hasValue [
+        a tern:Float ;
+        rdf:value 209.35 ;
+        tern:unit &lt;http://qudt.org/vocab/unit/CentiM3&gt; ;
+    ] ;
+.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="external_classes"><a class="link" href="#external_classes">4.2. External Classes</a></h3>
+<div class="sect3">
+<h4 id="class-prov:Association"><a class="link" href="#class-prov:Association">4.2.1. Class: prov:Association</a></h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Association"><code>prov:Association</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Association</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Associate an agent to an activity (<code>tern:Sampling</code>, <code>tern:Observation</code>) with a role from <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode">ISO 19115-1&#8217;s CI Role Code</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="class-prov:Association-prov:agent"><a class="link" href="#class-prov:Association-prov:agent">4.2.1.1. Property: prov:agent</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#agent"><code>prov:agent</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Association-agent" class="bare">https://w3id.org/tern/shapes/tern/Association-agent</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">agent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:Association</code> <em>MUST</em> have exactly 1 <code>prov:agent</code> predicate where the value node is an IRI of an individual with the type <code>prov:Agent</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Agent"><code>prov:Agent</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-prov:Association-prov:hadPlan"><a class="link" href="#class-prov:Association-prov:hadPlan">4.2.1.2. Property: prov:hadPlan</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#hadPlan"><code>prov:hadPlan</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Association-hadPlan" class="bare">https://w3id.org/tern/shapes/tern/Association-hadPlan</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">had plan</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Associate a plan to the agent which they use for their role in some activity. This may or may not be the same as the procedure of a <code>tern:Sampling</code> or a <code>tern:Observation</code> depending on the role of the agent.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:Association</code> <em>MAY</em> have some <code>prov:hadPlan</code> predicate where the value node is an IRI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-prov:Association-prov:hadRole"><a class="link" href="#class-prov:Association-prov:hadRole">4.2.1.3. Property: prov:hadRole</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#hadRole"><code>prov:hadRole</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Association-hadRole" class="bare">https://w3id.org/tern/shapes/tern/Association-hadRole</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">had role</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:Association</code> <em>MUST</em> have exactly 1 <code>prov:hadRole</code> predicate where the value node is an IRI of a controlled concept from <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode">ISO 19115-1&#8217;s CI Role Code</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author">author</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor">co author</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/collaborator">collaborator</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/contributor">contributor</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian">custodian</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/distributor">distributor</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/editor">editor</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/funder">funder</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/mediator">mediator</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/originator">originator</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/owner">owner</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/pointOfContact">point of contact</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator">principal investigator</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/processor">processor</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/publisher">publisher</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider">resource provider</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/rightsHolder">rights holder</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor">sponsor</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder">stakeholder</a><br>
+- <a href="http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user">user</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="provassociation_example"><a class="link" href="#provassociation_example">4.2.1.4. prov:Association example</a></h5>
+<div class="paragraph">
+<p>The RDF example below illustrates how to:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>TBA</code>.</p>
+<p>associate a <code>schema:Person</code> to an instance of <code>tern:Sampling</code> activity with the role <em>principal investigator</em></p>
+</li>
+<li>
+<p>associate an <code>schema:Organization</code> to a <code>tern:MaterialSample</code> with the role <em>custodian</em>.</p>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;org-1&gt;
+    a schema:Organization ;
+    schema:name "Org 1" ;
+.
+
+&lt;person-1&gt;
+    a schema:Person ;
+    schema:name "Person 1" ;
+    schema:affiliation &lt;org-1&gt; ;
+.
+
+&lt;site-visit&gt;
+    a tern:SiteVisit ;
+    prov:startedAtTime "2015-03-22T13:00:00+00:00"^^xsd:dateTime ;
+    tern:hasSite &lt;...&gt; ;
+    prov:wasAssociatedWith &lt;person-1&gt; ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent &lt;person-1&gt; ;
+        prov:hadRole &lt;http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator&gt; ;
+    ] ;
+.
+
+&lt;sampling-1&gt;
+    a tern:Sampling ;
+    ... ;
+    tern:hasSiteVisit &lt;site-visit&gt; ;
+    prov:wasAssociatedWith &lt;person-1&gt; ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent &lt;person-1&gt; ;
+        prov:hadRole &lt;http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider&gt; ;
+    ] ;
+    sosa:hasResult &lt;soil-sample-1&gt; ;
+.
+
+&lt;soil-sample-1&gt;
+    a tern:MaterialSample ;
+    ... ;
+    sosa:isResultOf &lt;sampling-1&gt; ;
+    prov:wasAttributedTo &lt;org-1&gt; ;
+    prov:qualifiedAttribution [
+        a prov:Attribution ;
+        prov:agent &lt;org-1&gt; ;
+        prov:hadRole &lt;http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian&gt; ;
+    ]
+.</code></pre>
 </div>
-<div class="sect2">
-<h3 id="namespaces"><a class="link" href="#namespaces">2.4. Namespaces</a></h3>
-<div class="paragraph">
-<p><code>TBD</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="class-time:Instant"><a class="link" href="#class-time:Instant">4.2.2. Class: time:Instant</a></h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#Instant"><code>time:Instant</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A temporal entity with zero extent or duration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">One or more of [<code>time:inXSDDate</code>, <code>time:inXSDDateTimeStamp</code>, <code>time:inXSDgYear</code>, <code>time:inXSDgYearMonth</code>, <code>time:inTimePosition</code>, and <code>time:inDateTime</code>] <em>MUST</em> be present.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="class-time:Instant-time:inDateTime"><a class="link" href="#class-time:Instant-time:inDateTime">4.2.2.1. Property: time:inDateTime</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#inDateTime"><code>time:inDateTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/time-Instant-inDateTime" class="bare">https://w3id.org/tern/shapes/tern/time-Instant-inDateTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in date-time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of an instant, expressed using a structured description.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value <em>MUST</em> be a literal with the datatype <code>xsd:dateTime</code>. Maximum of one value is allowed for this property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-time:Instant-time:inTimePosition"><a class="link" href="#class-time:Instant-time:inTimePosition">4.2.2.2. Property: time:inTimePosition</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#inTimePosition"><code>time:inTimePosition</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/time-inTimePosition" class="bare">https://w3id.org/tern/shapes/tern/time-inTimePosition</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in time position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of a time instant expressed as a <code>TimePosition</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value <em>MUST</em> be an instance of <code>time:TimePosition</code>. Maximum of one value is allowed for this property. The value node <em>MUST</em> be a blank node or IRI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#BlankNodeOrIRI"><code>sh:BlankNodeOrIRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#TimePosition"><code>time:TimePosition</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-time:Instant-time:inXSDDate"><a class="link" href="#class-time:Instant-time:inXSDDate">4.2.2.3. Property: time:inXSDDate</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#inXSDDate"><code>time:inXSDDate</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/time-inXSDDate" class="bare">https://w3id.org/tern/shapes/tern/time-inXSDDate</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in XSD date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of an instant, expressed using <code>xsd:date</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value <em>MUST</em> be a literal with the datatype <code>xsd:date</code>. Maximum of one value is allowed for this property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#date"><code>xsd:date</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-time:Instant-time:inXSDDateTimeStamp"><a class="link" href="#class-time:Instant-time:inXSDDateTimeStamp">4.2.2.4. Property: time:inXSDDateTimeStamp</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#inXSDDateTimeStamp"><code>time:inXSDDateTimeStamp</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/time-inXSDDateTimeStamp" class="bare">https://w3id.org/tern/shapes/tern/time-inXSDDateTimeStamp</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in XSD date-time-stamp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of an instant, expressed using <code>xsd:dateTimeStamp</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value <em>MUST</em> be a literal with the datatype <code>xsd:dateTimeStamp</code>. Maximum of one value is allowed for this property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTimeStamp"><code>xsd:dateTimeStamp</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-time:Instant-time:inXSDgYear"><a class="link" href="#class-time:Instant-time:inXSDgYear">4.2.2.5. Property: time:inXSDgYear</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#inXSDgYear"><code>time:inXSDgYear</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/time-inXSDgYear" class="bare">https://w3id.org/tern/shapes/tern/time-inXSDgYear</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in XSD g-year</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of an instant, expressed using <code>xsd:gYear</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value <em>MUST</em> be a literal with the datatype <code>xsd:gYear</code>. Maximum of one value is allowed for this property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#gYear"><code>xsd:gYear</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-time:Instant-time:inXSDgYearMonth"><a class="link" href="#class-time:Instant-time:inXSDgYearMonth">4.2.2.6. Property: time:inXSDgYearMonth</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2006/time#inXSDgYearMonth"><code>time:inXSDgYearMonth</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/time-inXSDgYearMonth" class="bare">https://w3id.org/tern/shapes/tern/time-inXSDgYearMonth</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in XSD g-year-month</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of an instant, expressed using <code>xsd:gYearMonth</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value <em>MUST</em> be a literal with the datatype <code>xsd:gYearMonth</code>. Maximum of one value is allowed for this property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#gYearMonth"><code>xsd:gYearMonth</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">3. Introduction</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This specification document defines the classes and properties of the TERN Ontology and the set of requirements that data validators will use to ensure conformance. This specification document also details how data providers should use related ontologies and controlled vocabularies to represent their ecological field survey data. Annex A lists these parts in more detail.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="references"><a class="link" href="#references">4. References</a></h2>
+<h2 id="references"><a class="link" href="#references">5. References</a></h2>
 <div class="sectionbody">
 <div class="ulist none">
 <ul class="none">
@@ -281,7 +1863,7 @@ This Annex is normative.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-04-26 04:04:50 UTC
+Last updated 2022-04-26 04:58:45 UTC
 </div>
 </div>
 </body>
