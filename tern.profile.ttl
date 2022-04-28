@@ -1,0 +1,153 @@
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX role: <http://www.w3.org/ns/dx/prof/role/>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://w3id.org/tern/profiles/tern>
+    a prof:Profile ;
+    dcterms:created "2022-03-02"^^xsd:date ;
+    dcterms:creator [
+            a sdo:Person ;
+            sdo:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+            sdo:email "e.chuc@uq.edu.au" ;
+            sdo:identifier <https://orcid.org/0000-0002-6047-9864> ;
+            sdo:name "Edmond Chuc"
+        ] ;
+    dcterms:description "This is a profile declaration for the TERN Ontology. It describes the multiple parts of the specification and how the standard relates to other standards. It is formulated according to the Profiles Vocabulary." ;
+    dcterms:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    dcterms:modified "2022-03-02"^^xsd:date ;
+    dcterms:title "TERN Ontology Profile" ;
+    skos:scopeNote "Profile declarations are used to allow data to identify specifications in a way that allows data to make conformance claims to them - a broader conformance claim than that made to individual 'conformance classes' that are commonly found in recent OGC specifications. Profile declarations are also used to describe and relate the often multiple parts of specifications: ontologies, specification 'documents', vocabularies, validators and so on. This declaration describes where those parts are, what form (format) they take, what information models they implement and what roles they play." ;
+    prof:hasResource
+        <https://w3id.org/tern/profiles/tern/class-and-property-shape-constraints> ,
+        <https://w3id.org/tern/profiles/tern/conceptual-information-model> ,
+        <https://w3id.org/tern/profiles/tern/specification> ,
+        <https://w3id.org/tern/profiles/tern/validator> ;
+    prof:isProfileOf
+        <http://rs.tdwg.org/dwc/terms/> ,
+        prov: ,
+        sosa: ,
+        ssn: ;
+.
+
+<https://w3id.org/tern/profiles/tern/cookbook>
+    a prof:ResourceDescriptor ;
+    dcterms:description "A cookbook of patterns on representing ecological things with the TERN Ontology." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology - cookbook" ;
+    prof:hasArtifact "https://linkeddata.tern.org.au/information-models/tern-ontology/cookbook"^^xsd:anyURI ;
+    prof:hasRole role:guidance ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/CI-Role-Code>
+    a prof:ResourceDescriptor ;
+    dcterms:description "CI Role Code controlled vocabulary to describe the roles available to the TERN Ontology concepts." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology vocabulary - CI Role Code" ;
+    prof:hasArtifact "http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/attributes>
+    a prof:ResourceDescriptor ;
+    dcterms:description "Attributes controlled vocabulary to describe facts about any entity." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology vocabulary - attributes" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/feature-types>
+    a prof:ResourceDescriptor ;
+    dcterms:description "Feature types controlled vocabulary to describe SOSA-based features of interest." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology vocabulary - feature types" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/68af3d25-c801-4089-afff-cf701e2bd61d"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/instrument-types>
+    a prof:ResourceDescriptor ;
+    dcterms:description "Instrument types controlled vocabulary to describe the types of instruments used in observations and sampling acts." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology vocabulary - instrument types" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/observable-properties>
+    a prof:ResourceDescriptor ;
+    dcterms:description "Observable properties controlled vocabulary to describe SOSA-based observations." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology vocabulary - observable properties" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/site-types>
+    a prof:ResourceDescriptor ;
+    dcterms:description "Site types controlled vocabulary to describe the types of ecological survey sites." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology vocabulary - site types" ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/vocabularies/units-of-measure>
+    a prof:ResourceDescriptor ;
+    dcterms:description "Unit of measure controlled vocabulary by QUDT" ;
+    dcterms:format "text/turtle" ;
+    dcterms:title "TERN Ontology vocabulary - units of measure" ;
+    prof:hasArtifact "http://qudt.org/vocab/unit/"^^xsd:anyURI ;
+    prof:hasRole role:vocabulary ;
+.
+
+<https://w3id.org/tern/profiles/tern/class-and-property-shape-constraints>
+    a prof:ResourceDescriptor ;
+    dcterms:description "A web-based viewer of the TERN Ontology classes, properties and their shape constraints." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology - classes, properties and shape constraints" ;
+    prof:hasArtifact "https://linkeddata.tern.org.au/viewers/tern-ontology"^^xsd:anyURI ;
+    prof:hasRole role:constraints ;
+.
+
+<https://w3id.org/tern/profiles/tern/conceptual-information-model>
+    a prof:ResourceDescriptor ;
+    dcterms:description "An overview of the core concepts of the TERN Ontology." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology - conceptual information model" ;
+    prof:hasArtifact "https://linkeddata.tern.org.au/information-models/tern-ontology/conceptual-information-model"^^xsd:anyURI ;
+    prof:hasRole role:guidance ;
+.
+
+<https://w3id.org/tern/profiles/tern/specification>
+    a prof:ResourceDescriptor ;
+    dcterms:description "OGC-style specification of the TERN Ontology." ;
+    dcterms:format "text/html" ;
+    dcterms:title "TERN Ontology - specification" ;
+    prof:hasArtifact "https://linkeddata.tern.org.au/information-models/tern-ontology/specification"^^xsd:anyURI ;
+    prof:hasRole role:specification ;
+.
+
+<https://w3id.org/tern/profiles/tern/validator>
+    a prof:ResourceDescriptor ;
+    dcterms:description "SHACL shapes for the TERN Ontology." ;
+    dcterms:format "text/turtle" ;
+    dcterms:title "TERN Ontology - validator" ;
+    prof:hasArtifact "https://w3id.org/tern/shapes/tern.ttl"^^xsd:anyURI ;
+    prof:hasRole role:validator ;
+.
+
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
+    a sdo:Organization ;
+    sdo:name "TERN" ;
+    sdo:sameAs <https://ror.org/03wxseg04> ;
+    sdo:url <https://www.tern.org.au> ;
+.
+
