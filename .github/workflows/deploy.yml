@@ -29,6 +29,9 @@ jobs:
       - name: Build asciidoc files - PDF
         run: asciidoctor --trace -a stylesheet=./static/styles.css -r asciidoctor-pdf -b pdf -o ./build/${{ env.PDF_FILENAME }} ./spec/source/index.adoc
 
+      - name: Copy RDF Turtle files to build directory to make them available in GitHub Pages.
+        run: cp *.ttl ./build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
