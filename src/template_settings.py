@@ -26,19 +26,6 @@ template_settings = [
     ),
     ClassTemplateSettings(
         template=class_template,
-        target_path="spec/source/core/class-time:Instant.adoc",
-        options=ClassTemplateOptions(
-            uri=TERN_SHAPES.Instant,
-            adoc_identifier="class-time:Instant",
-            curie="time:Instant",
-            ontology_file="docs/tern.ttl",
-            shapes_file="docs/tern.shapes.ttl",
-        ),
-        callable=create_file,
-        lookups=lookups,
-    ),
-    ClassTemplateSettings(
-        template=class_template,
         target_path="spec/source/core/class-tern:Attribute.adoc",
         options=ClassTemplateOptions(
             uri=TERN_SHAPES.Attribute,
@@ -70,6 +57,19 @@ template_settings = [
             uri=TERN_SHAPES.Boolean,
             adoc_identifier="class-tern:Boolean",
             curie="tern:Boolean",
+            ontology_file="docs/tern.ttl",
+            shapes_file="docs/tern.shapes.ttl",
+        ),
+        callable=create_file,
+        lookups=lookups,
+    ),
+    ClassTemplateSettings(
+        template=class_template,
+        target_path="spec/source/core/class-time:Instant.adoc",
+        options=ClassTemplateOptions(
+            uri=TERN_SHAPES.Instant,
+            adoc_identifier="class-time:Instant",
+            curie="time:Instant",
             ontology_file="docs/tern.ttl",
             shapes_file="docs/tern.shapes.ttl",
         ),
