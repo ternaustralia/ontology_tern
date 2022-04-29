@@ -50,4 +50,30 @@ template_settings = [
         callable=create_file,
         lookups=lookups,
     ),
+    ClassTemplateSettings(
+        template=class_template,
+        target_path="spec/source/core/class-prov:Attribution.adoc",
+        options=ClassTemplateOptions(
+            uri=TERN_SHAPES.Attribution,
+            adoc_identifier="class-prov:Attribution",
+            curie="prov:Attribution",
+            ontology_file="docs/tern.ttl",
+            shapes_file="docs/tern.shapes.ttl",
+        ),
+        callable=create_file,
+        lookups=lookups,
+    ),
+    ClassTemplateSettings(
+        template=class_template,
+        target_path="spec/source/core/class-tern:Boolean.adoc",
+        options=ClassTemplateOptions(
+            uri=TERN_SHAPES.Boolean,
+            adoc_identifier="class-tern:Boolean",
+            curie="tern:Boolean",
+            ontology_file="docs/tern.ttl",
+            shapes_file="docs/tern.shapes.ttl",
+        ),
+        callable=create_file,
+        lookups=lookups,
+    ),
 ]

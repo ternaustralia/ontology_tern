@@ -2,6 +2,8 @@
 
 include::core/class-tern:Attribute.adoc[]
 
+include::core/class-tern:Boolean.adoc[]
+
 ===== tern:Attribute example
 
 Annotate the volume of the soil ring using `tern:Attribute`.
@@ -30,6 +32,8 @@ Annotate the volume of the soil ring using `tern:Attribute`.
 === External Classes
 
 include::core/class-prov:Association.adoc[]
+
+include::core/class-prov:Attribution.adoc[]
 
 ===== prov:Association example
 

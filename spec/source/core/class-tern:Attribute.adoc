@@ -82,11 +82,11 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasValue
 | Status | `stable` icon:check-circle[]
 | Label | has value
-| Definition | A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute.
+| Definition | A link to a link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`] instance which encapsulates the value of this Attribute.
 | Scope note | 
 | Implementation | There _MUST_ exist exactly 1 `tern:hasValue` with an IRI value.
 | Cardinality | Exactly 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
 | Expected values | 
 |===
@@ -101,7 +101,7 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/tern-isAttributeOf
 | Status | `stable` icon:check-circle[]
 | Label | is attribute of
-| Definition | A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute).
+| Definition | A link to the individual which this attribute and its value is applied to. Inverse property of link:https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`].
 | Scope note | 
 | Implementation | The value of `tern:isAttributeOf` _MUST_ be an IRI value.
 | Cardinality | 

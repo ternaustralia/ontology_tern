@@ -66,14 +66,15 @@ tern-shapes:Attribution
     a sh:NodeShape ;
     rdfs:label "Attribution" ;
     sh:property
-        tern-shapes:prov-agent ,
-        tern-shapes:prov-hadRole ;
+        tern-shapes:Attribution-agent ,
+        tern-shapes:Attribution-hadRole ;
     sh:targetClass prov:Attribution ;
 .
 
 tern-shapes:Boolean
     a sh:NodeShape ;
     rdfs:label "Boolean" ;
+    reg:status reg:statusStable ;
     sh:property tern-shapes:Boolean-value ;
     sh:targetClass tern:Boolean ;
 .
@@ -533,7 +534,7 @@ tern-shapes:Association-hadRole
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "had role" ;
-    sh:description "prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
+    sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
     sh:in (
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author>
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor>
@@ -564,14 +565,70 @@ tern-shapes:Association-hadRole
     sh:path prov:hadRole ;
 .
 
+tern-shapes:Attribution-agent
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "agent" ;
+    sh:class prov:Agent ;
+    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity." ;
+    sh:maxCount 1 ;
+    sh:message "A `prov:Attribution` _MUST_ have exactly 1 `prov:agent` predicate where the value node is an IRI of an individual with the type `prov:Agent`." ;
+    sh:minCount 1 ;
+    sh:name "prov:agent" ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:agent ;
+.
+
+tern-shapes:Attribution-hadRole
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "had role" ;
+    sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
+    sh:in (
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/collaborator>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/contributor>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/custodian>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/distributor>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/editor>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/funder>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/mediator>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/originator>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/owner>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/pointOfContact>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/principalInvestigator>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/processor>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/publisher>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/resourceProvider>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/rightsHolder>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder>
+            <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user>
+        ) ;
+    sh:maxCount 1 ;
+    sh:message "A `prov:Attribution` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code]." ;
+    sh:minCount 1 ;
+    sh:name "prov:hadRole" ;
+    sh:nodeKind sh:IRI ;
+    sh:path prov:hadRole ;
+.
+
 tern-shapes:Boolean-value
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
     sh:datatype xsd:boolean ;
-    sh:description "Class to encapsulate a true-or-false value" ;
+    skos:prefLabel "value" ;
+    sh:description "The boolean value." ;
+    sh:message "`tern:Boolean` _MUST_ have exactly 1 `rdf:value` predicate where the value is a literal with a datatype of `xsd:boolean`." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
     sh:path rdf:value ;
+    sh:in (
+        true
+        false
+    ) ;
 .
 
 tern-shapes:Date-value
@@ -1398,27 +1455,6 @@ tern-shapes:geo-sfWithin
     sh:name "geo:sfWithin" ;
     sh:nodeKind sh:IRI ;
     sh:path geo:sfWithin ;
-.
-
-tern-shapes:prov-agent
-    a sh:PropertyShape ;
-    sh:class prov:Agent ;
-    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity." ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "prov:agent" ;
-    sh:nodeKind sh:IRI ;
-    sh:path prov:agent ;
-.
-
-tern-shapes:prov-hadRole
-    a sh:PropertyShape ;
-    sh:description "prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "prov:hadRole" ;
-    sh:nodeKind sh:IRI ;
-    sh:path prov:hadRole ;
 .
 
 tern-shapes:prov-qualifiedAttribution
