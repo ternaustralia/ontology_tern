@@ -1580,7 +1580,7 @@ tern-shapes:tern-hasValue
     reg:status reg:statusStable ;
     skos:prefLabel "has value" ;
     sh:class tern:Value ;
-    sh:description "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) instance which encapsulates the value of this Attribute." ;
+    sh:description "A link to a link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`] instance which encapsulates the value of this Attribute." ;
     sh:maxCount 1 ;
     sh:message "There _MUST_ exist exactly 1 `tern:hasValue` with an IRI value." ;
     sh:minCount 1 ;
@@ -1593,7 +1593,7 @@ tern-shapes:tern-isAttributeOf
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "is attribute of" ;
-    sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of [tern:hasAttribute](https://w3id.org/tern/ontologies/tern/hasAttribute)." ;
+    sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of link:https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]." ;
     sh:message "The value of `tern:isAttributeOf` _MUST_ be an IRI value." ;
     sh:name "tern:isAttributeOf" ;
     sh:nodeKind sh:IRI ;
