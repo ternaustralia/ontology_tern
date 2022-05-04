@@ -139,19 +139,10 @@ tern:Dataset
 
 tern:Date
     a owl:Class ;
-    rdfs:label "Date" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty rdf:value
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdf:value
-        ] ,
-        tern:Value ;
+    reg:status reg:statusStable ;
+    rdfs:subClassOf tern:Value ;
+    skos:definition "A class to encapsulate an `xsd:date` value." ;
+    skos:prefLabel "Date" ;
 .
 
 tern:DateTime
@@ -233,17 +224,6 @@ tern:Dimension
                             xsd:integer
                         )
                 ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
             owl:onProperty tern:width
         ] ,
         [
@@ -261,6 +241,17 @@ tern:Dimension
             owl:onClass <http://qudt.org/schema/qudt/Unit> ;
             owl:onProperty tern:unit ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:length
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#EcologicalSite). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;

@@ -617,25 +617,28 @@ tern-shapes:Attribution-hadRole
 tern-shapes:Boolean-value
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
-    sh:datatype xsd:boolean ;
     skos:prefLabel "value" ;
+    sh:datatype xsd:boolean ;
     sh:description "The boolean value." ;
-    sh:message "`tern:Boolean` _MUST_ have exactly 1 `rdf:value` predicate where the value is a literal with a datatype of `xsd:boolean`." ;
+    sh:in (
+            true
+            false
+        ) ;
     sh:maxCount 1 ;
+    sh:message "`tern:Boolean` _MUST_ have exactly 1 `rdf:value` predicate where the value is a literal with a datatype of `xsd:boolean`." ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
     sh:path rdf:value ;
-    sh:in (
-        true
-        false
-    ) ;
 .
 
 tern-shapes:Date-value
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "value" ;
     sh:datatype xsd:date ;
-    sh:description "Data type: Date." ;
+    sh:description "The value of the date object." ;
     sh:maxCount 1 ;
+    sh:message "A `tern:Date` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with the datatype `xsd:date`." ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
     sh:path rdf:value ;
