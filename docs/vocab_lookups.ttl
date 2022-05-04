@@ -1,4 +1,5 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 
 <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author> skos:prefLabel "author" .
 <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor> skos:prefLabel "co author" .
@@ -20,3 +21,11 @@
 <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor> skos:prefLabel "sponsor" .
 <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder> skos:prefLabel "stakeholder" .
 <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user> skos:prefLabel "user" .
+
+time:unitDay skos:prefLabel "day" .
+time:unitHour skos:prefLabel "hour" .
+time:unitMinute skos:prefLabel "minute" .
+time:unitMonth skos:prefLabel "month" .
+time:unitSecond skos:prefLabel "second" .
+time:unitWeek skos:prefLabel "week" .
+time:unitYear skos:prefLabel "year" .

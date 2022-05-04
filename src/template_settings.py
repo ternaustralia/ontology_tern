@@ -104,6 +104,19 @@ template_settings = [
     ),
     ClassTemplateSettings(
         template=class_template,
+        target_path="spec/source/core/class-time:Duration.adoc",
+        options=ClassTemplateOptions(
+            uri=TERN_SHAPES.Duration,
+            adoc_identifier="class-time:Duration",
+            curie="time:Duration",
+            ontology_file="docs/tern.ttl",
+            shapes_file="docs/tern.shapes.ttl",
+        ),
+        callable=create_file,
+        lookups=lookups,
+    ),
+    ClassTemplateSettings(
+        template=class_template,
         target_path="spec/source/core/class-time:Instant.adoc",
         options=ClassTemplateOptions(
             uri=TERN_SHAPES.Instant,

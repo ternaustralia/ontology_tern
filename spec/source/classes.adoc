@@ -41,6 +41,8 @@ include::core/class-prov:Association.adoc[]
 
 include::core/class-prov:Attribution.adoc[]
 
+include::core/class-time:Duration.adoc[]
+
 ===== prov:Association example
 
 The RDF example below illustrates how to:
