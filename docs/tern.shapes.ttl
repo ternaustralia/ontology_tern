@@ -646,9 +646,12 @@ tern-shapes:Date-value
 
 tern-shapes:DateTime-value
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "value" ;
     sh:datatype xsd:dateTime ;
-    sh:description "Data type: Date time." ;
+    sh:description "The value of the datetime object." ;
     sh:maxCount 1 ;
+    sh:message "A `tern:DateTime` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
     sh:path rdf:value ;

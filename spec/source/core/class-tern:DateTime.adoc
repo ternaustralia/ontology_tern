@@ -1,0 +1,35 @@
+
+[#class-tern:DateTime]
+==== Class: tern:DateTime
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/DateTime[`tern:DateTime`]
+| Status | `stable` icon:check-circle[]
+| Label | Date time
+| Definition | A class to encapsulate an `xsd:dateTime` value.
+
+| Scope note | 
+|===
+
+
+[#class-tern:DateTime-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/DateTime-value
+| Status | `stable` icon:check-circle[]
+| Label | value
+| Definition | The value of the datetime object.
+| Scope note | 
+| Implementation | A `tern:DateTime` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with the datatype `xsd:dateTime`.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`]
+| Expected values | 
+|===

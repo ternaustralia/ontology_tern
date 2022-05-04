@@ -6,6 +6,8 @@ include::core/class-tern:Boolean.adoc[]
 
 include::core/class-tern:Date.adoc[]
 
+include::core/class-tern:DateTime.adoc[]
+
 ===== tern:Attribute example
 
 Annotate the volume of the soil ring using `tern:Attribute`.
