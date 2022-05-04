@@ -492,7 +492,6 @@ tern-shapes:Value
 
 <urn:shape:Activity>
     a sh:NodeShape ;
-    rdfs:label "Observation shape" ;
     sh:message "At least one (geo:hasGeoemtry, geo:sfWithin) must exist on itself or on a sample in the chain of samples)" ;
     sh:or (
             <urn:shape:geo-hasGeometry-min-1>
