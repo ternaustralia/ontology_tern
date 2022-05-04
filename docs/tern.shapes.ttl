@@ -111,8 +111,7 @@ tern-shapes:Deployment
     rdfs:label "Deployment" ;
     sh:property
         tern-shapes:ssn-deployedOnPlatform ,
-        tern-shapes:ssn-deployedSystem ,
-        tern-shapes:tern-hasAttribute ;
+        tern-shapes:ssn-deployedSystem ;
     sh:targetClass tern:Deployment ;
 .
 
@@ -488,6 +487,15 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:targetClass tern:Value ;
+.
+
+tern-shapes:tern-hasAttribute
+    a sh:PropertyShape ;
+    sh:class tern:Attribute ;
+    sh:description "Link to an [Attribute](#Attribute)." ;
+    sh:name "tern:hasAttribute" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:hasAttribute ;
 .
 
 <urn:shape:Activity>
@@ -1565,9 +1573,12 @@ tern-shapes:sosa-phenomenonTime
 
 tern-shapes:ssn-deployedOnPlatform
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "deployed on platform" ;
     sh:class tern:Platform ;
     sh:description "Relation between a Deployment and the Platform on which the Systems are deployed." ;
     sh:maxCount 1 ;
+    sh:message "A `tern:Deployment` _MAY_ have 1 `ssh:deployedOnPlatform` predicate where the value node is an IRI of type `tern:Platform`." ;
     sh:name "ssn:deployedOnPlatform" ;
     sh:nodeKind sh:IRI ;
     sh:path ssn:deployedOnPlatform ;
@@ -1575,8 +1586,11 @@ tern-shapes:ssn-deployedOnPlatform
 
 tern-shapes:ssn-deployedSystem
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "deployed system" ;
     sh:class tern:System ;
     sh:description "Relation between a Deployment and a deployed System." ;
+    sh:message "A `tern:Deployment` _MAY_ have one or many `ssn:deployedSystem` predicate where the value node is an IRI of type `tern:System`." ;
     sh:name "ssn:deployedSystem" ;
     sh:nodeKind sh:IRI ;
     sh:path ssn:deployedSystem ;
@@ -1593,15 +1607,6 @@ tern-shapes:tern-attribute
     sh:name "tern:attribute" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:attribute ;
-.
-
-tern-shapes:tern-hasAttribute
-    a sh:PropertyShape ;
-    sh:class tern:Attribute ;
-    sh:description "Link to an [Attribute](#Attribute)." ;
-    sh:name "tern:hasAttribute" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path tern:hasAttribute ;
 .
 
 tern-shapes:tern-hasSimpleValue

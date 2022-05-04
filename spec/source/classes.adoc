@@ -2,12 +2,6 @@
 
 include::core/class-tern:Attribute.adoc[]
 
-include::core/class-tern:Boolean.adoc[]
-
-include::core/class-tern:Date.adoc[]
-
-include::core/class-tern:DateTime.adoc[]
-
 ===== tern:Attribute example
 
 Annotate the volume of the soil ring using `tern:Attribute`.
@@ -32,6 +26,14 @@ Annotate the volume of the soil ring using `tern:Attribute`.
     ] ;
 .
 ----
+
+include::core/class-tern:Boolean.adoc[]
+
+include::core/class-tern:Date.adoc[]
+
+include::core/class-tern:DateTime.adoc[]
+
+include::core/class-tern:Deployment.adoc[]
 
 === External Classes
 

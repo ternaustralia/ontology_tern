@@ -91,6 +91,19 @@ template_settings = [
     ),
     ClassTemplateSettings(
         template=class_template,
+        target_path="spec/source/core/class-tern:Deployment.adoc",
+        options=ClassTemplateOptions(
+            uri=TERN_SHAPES.Deployment,
+            adoc_identifier="class-tern:Deployment",
+            curie="tern:Deployment",
+            ontology_file="docs/tern.ttl",
+            shapes_file="docs/tern.shapes.ttl",
+        ),
+        callable=create_file,
+        lookups=lookups,
+    ),
+    ClassTemplateSettings(
+        template=class_template,
         target_path="spec/source/core/class-time:Instant.adoc",
         options=ClassTemplateOptions(
             uri=TERN_SHAPES.Instant,
