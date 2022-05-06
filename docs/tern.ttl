@@ -211,17 +211,6 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
-        ] ,
-        [
-            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern:length
         ] ,
@@ -246,6 +235,17 @@ tern:Dimension
                         )
                 ] ;
             owl:onProperty tern:length
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:width
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#EcologicalSite). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -283,10 +283,11 @@ tern:EcosystemProcessesSite
 
 tern:Float
     a owl:Class ;
-    rdfs:label "Float" ;
+    reg:status reg:statusStable ;
     rdfs:seeAlso sdo:Float ;
     rdfs:subClassOf tern:Value ;
-    skos:definition "Data type: Floating number." ;
+    skos:definition "A class to encapsulate a float." ;
+    skos:prefLabel "Float" ;
 .
 
 tern:FluxTower

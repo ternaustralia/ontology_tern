@@ -27,7 +27,7 @@
 | Label | type
 | Definition | Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary link:http://dublincore.org/documents/dcmi-type-vocabulary/[DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format.
 | Scope note | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
-| Implementation | The value of `dcterms:type` _MUST_ be an IRI.
+| Implementation | A `dcterms:type` predicate _MUST_ have an IRI value.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | 
@@ -46,7 +46,7 @@
 | Label | attribute
 | Definition | The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of link:http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[attributes].
 | Scope note | 
-| Implementation | There _MUST_ exist exactly 1 `tern:attribute` property with an IRI value.
+| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:attribute` predicate where the value is an IRI.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | 
@@ -65,7 +65,7 @@
 | Label | has simple value
 | Definition | The direct link to the IRI or RDF literal value. The simple value _MUST_ be the same value captured in `rdf:value` of the `tern:Value` instance.
 | Scope note | 
-| Implementation | There _MUST_ exist exactly 1 `tern:hasSimpleValue` with an IRI or literal value.
+| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:hasSimpleValue` predicate where the value is an IRI or literal.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRIOrLiteral[`sh:IRIOrLiteral`]
 | Class type | 
@@ -84,7 +84,7 @@
 | Label | has value
 | Definition | A link to a link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`] instance which encapsulates the value of this Attribute.
 | Scope note | 
-| Implementation | There _MUST_ exist exactly 1 `tern:hasValue` with an IRI value.
+| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:hasValue` predicate where the value is an IRI.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
@@ -103,7 +103,7 @@
 | Label | is attribute of
 | Definition | A link to the individual which this attribute and its value is applied to. Inverse property of link:https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`].
 | Scope note | 
-| Implementation | The value of `tern:isAttributeOf` _MUST_ be an IRI value.
+| Implementation | A `tern:isAttributeOf` _MUST_ have an IRI value.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | 

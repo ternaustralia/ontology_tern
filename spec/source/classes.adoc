@@ -37,6 +37,8 @@ include::core/class-tern:Deployment.adoc[]
 
 include::core/class-tern:FeatureOfInterest.adoc[]
 
+include::core/class-tern:Float.adoc[]
+
 === External Classes
 
 include::core/class-prov:Association.adoc[]

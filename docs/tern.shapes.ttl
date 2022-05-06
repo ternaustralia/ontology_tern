@@ -680,9 +680,12 @@ tern-shapes:FeatureOfInterest-featureType
 
 tern-shapes:Float-uncertainty
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "uncertainty" ;
     sh:datatype xsd:double ;
-    sh:description "Error of measurement (±)." ;
+    sh:description "Measurement error (±)." ;
     sh:maxCount 1 ;
+    sh:message "A `tern:Float` _MAY_ have 1 `tern:uncertainty` predicate where the value is a literal with the datatype `xsd:double`." ;
     sh:name "tern:uncertainty" ;
     sh:nodeKind sh:Literal ;
     sh:path tern:uncertainty ;
@@ -690,9 +693,12 @@ tern-shapes:Float-uncertainty
 
 tern-shapes:Float-value
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "value" ;
     sh:datatype xsd:double ;
-    sh:description "Data type: Floating number." ;
+    sh:description "Float value." ;
     sh:maxCount 1 ;
+    sh:message "A `tern:Float` _MUST_ have exactly 1 `rdf:value` where the value is a literal with the datatype `xsd:double`." ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
     sh:nodeKind sh:Literal ;
@@ -816,7 +822,7 @@ tern-shapes:ObservationCollection-resultTime
     a sh:PropertyShape ;
     sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
     sh:maxCount 1 ;
-    sh:message "The datatype of result time must be an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
+    sh:message "A `tern:resultDateTime` predicate _MUST_ have a literal value with a datatype of `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
     sh:name "tern:resultDateTime" ;
     sh:or (
             [
@@ -1491,7 +1497,7 @@ tern-shapes:prov-wasAttributedTo
     skos:prefLabel "was attributed to" ;
     sh:class prov:Agent ;
     sh:description "Attribution is the ascribing of an entity to an agent." ;
-    sh:message "The value of `prov:wasAttributedTo` _MUST_ be an IRI of type `prov:Agent`." ;
+    sh:message "A `prov:wasAttributedTo` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
     sh:name "prov:wasAttributedTo" ;
     sh:nodeKind sh:IRI ;
     sh:path prov:wasAttributedTo ;
@@ -1617,7 +1623,7 @@ tern-shapes:tern-attribute
     skos:prefLabel "attribute" ;
     sh:description "The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of link:http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[attributes]." ;
     sh:maxCount 1 ;
-    sh:message "There _MUST_ exist exactly 1 `tern:attribute` property with an IRI value." ;
+    sh:message "A `tern:Attribute` _MUST_ have exactly 1 `tern:attribute` predicate where the value is an IRI." ;
     sh:minCount 1 ;
     sh:name "tern:attribute" ;
     sh:nodeKind sh:IRI ;
@@ -1630,7 +1636,7 @@ tern-shapes:tern-hasSimpleValue
     skos:prefLabel "has simple value" ;
     sh:description "The direct link to the IRI or RDF literal value. The simple value _MUST_ be the same value captured in `rdf:value` of the `tern:Value` instance." ;
     sh:maxCount 1 ;
-    sh:message "There _MUST_ exist exactly 1 `tern:hasSimpleValue` with an IRI or literal value." ;
+    sh:message "A `tern:Attribute` _MUST_ have exactly 1 `tern:hasSimpleValue` predicate where the value is an IRI or literal." ;
     sh:minCount 1 ;
     sh:name "tern:hasSimpleValue" ;
     sh:nodeKind sh:IRIOrLiteral ;
@@ -1644,7 +1650,7 @@ tern-shapes:tern-hasValue
     sh:class tern:Value ;
     sh:description "A link to a link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`] instance which encapsulates the value of this Attribute." ;
     sh:maxCount 1 ;
-    sh:message "There _MUST_ exist exactly 1 `tern:hasValue` with an IRI value." ;
+    sh:message "A `tern:Attribute` _MUST_ have exactly 1 `tern:hasValue` predicate where the value is an IRI." ;
     sh:minCount 1 ;
     sh:name "tern:hasValue" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
@@ -1656,7 +1662,7 @@ tern-shapes:tern-isAttributeOf
     reg:status reg:statusStable ;
     skos:prefLabel "is attribute of" ;
     sh:description "A link to the individual which this attribute and its value is applied to. Inverse property of link:https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]." ;
-    sh:message "The value of `tern:isAttributeOf` _MUST_ be an IRI value." ;
+    sh:message "A `tern:isAttributeOf` _MUST_ have an IRI value." ;
     sh:name "tern:isAttributeOf" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:isAttributeOf ;
@@ -1878,9 +1884,10 @@ tern-shapes:sosa-resultTime
     a sh:PropertyShape ;
     sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
     sh:maxCount 1 ;
-    sh:message "The datatype of result time must be an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
+    sh:message "A `tern:resultDateTime` predicate _MUST_ have a literal value where the datatype is an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
     sh:minCount 1 ;
     sh:name "tern:resultDateTime" ;
+    sh:nodeKind sh:Literal ;
     sh:or (
             [
                 sh:datatype xsd:dateTime
@@ -1939,8 +1946,11 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
 
 tern-shapes:tern-unit
     a sh:PropertyShape ;
-    sh:description "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "unit of measure" ;
+    sh:description "The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary]." ;
     sh:maxCount 1 ;
+    sh:message "A `tern:unit` predicate _MUST_ have an IRI value." ;
     sh:name "tern:unit" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:unit ;
@@ -1968,7 +1978,7 @@ tern-shapes:geo-hasGeometry
     skos:prefLabel "has geometry" ;
     sh:class geo:Geometry ;
     sh:description "A spatial representation for a given feature." ;
-    sh:message "The value of `geo:hasGeometry` _MUST_ be a blank node or an IRI." ;
+    sh:message "A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value." ;
     sh:name "geo:hasGeometry" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path geo:hasGeometry ;
@@ -1996,7 +2006,7 @@ tern-shapes:rdfs-comment
     reg:status reg:statusStable ;
     skos:prefLabel "comment" ;
     sh:description "A description of the subject resource." ;
-    sh:message "The value for `rdfs:comment` _MUST_ be a literal." ;
+    sh:message "An `rdfs:comment` _MUST_ have a literal value." ;
     sh:name "rdfs:comment" ;
     sh:nodeKind sh:Literal ;
     sh:path rdfs:comment ;
@@ -2032,7 +2042,7 @@ tern-shapes:dcterms-type
     skos:prefLabel "type" ;
     skos:scopeNote "Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable." ;
     sh:description "Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary link:http://dublincore.org/documents/dcmi-type-vocabulary/[DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format." ;
-    sh:message "The value of `dcterms:type` _MUST_ be an IRI." ;
+    sh:message "A `dcterms:type` predicate _MUST_ have an IRI value." ;
     sh:name "dcterms:type" ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:type ;

@@ -1,0 +1,73 @@
+
+[#class-tern:Float]
+==== Class: tern:Float
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Float[`tern:Float`]
+| Status | `stable` icon:check-circle[]
+| Label | Float
+| Definition | A class to encapsulate a float.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Float-tern:uncertainty]
+===== Property: tern:uncertainty
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/uncertainty[`tern:uncertainty`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Float-uncertainty
+| Status | `stable` icon:check-circle[]
+| Label | uncertainty
+| Definition | Measurement error (±).
+| Scope note | 
+| Implementation | A `tern:Float` _MAY_ have 1 `tern:uncertainty` predicate where the value is a literal with the datatype `xsd:double`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`]
+| Expected values | 
+|===
+
+[#class-tern:Float-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Float-value
+| Status | `stable` icon:check-circle[]
+| Label | value
+| Definition | Float value.
+| Scope note | 
+| Implementation | A `tern:Float` _MUST_ have exactly 1 `rdf:value` where the value is a literal with the datatype `xsd:double`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`]
+| Expected values | 
+|===
+
+[#class-tern:Float-tern:unit]
+===== Property: tern:unit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/unit[`tern:unit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-unit
+| Status | `stable` icon:check-circle[]
+| Label | unit of measure
+| Definition | The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary].
+| Scope note | 
+| Implementation | A `tern:unit` predicate _MUST_ have an IRI value.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

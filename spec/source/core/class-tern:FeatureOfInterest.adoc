@@ -65,7 +65,7 @@
 | Label | type
 | Definition | Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary link:http://dublincore.org/documents/dcmi-type-vocabulary/[DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format.
 | Scope note | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
-| Implementation | The value of `dcterms:type` _MUST_ be an IRI.
+| Implementation | A `dcterms:type` predicate _MUST_ have an IRI value.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | 
@@ -84,7 +84,7 @@
 | Label | has geometry
 | Definition | A spatial representation for a given feature.
 | Scope note | 
-| Implementation | The value of `geo:hasGeometry` _MUST_ be a blank node or an IRI.
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
@@ -107,18 +107,18 @@
 | Cardinality | 
 | Node kind | 
 | Class type | link:http://www.w3.org/ns/prov#Attribution[`prov:Attribution`] +
-link:https://w3id.org/tern/ontologies/tern/ObservationCollection[`tern:ObservationCollection`] +
-link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`] +
-link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`] +
-link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`] +
-link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`] +
-link:http://www.w3.org/2001/XMLSchema#integer[`xsd:integer`] +
-link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`] +
-link:http://www.opengis.net/ont/sf#LineString[`sf:LineString`] +
 link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`] +
-link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`] +
+link:https://w3id.org/tern/ontologies/tern/ObservationCollection[`tern:ObservationCollection`] +
 link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`] +
-link:http://www.w3.org/2001/XMLSchema#langString[`xsd:langString`]
+link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`] +
+link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`] +
+link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`] +
+link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`] +
+link:http://www.w3.org/2001/XMLSchema#langString[`xsd:langString`] +
+link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`] +
+link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`] +
+link:http://www.w3.org/2001/XMLSchema#integer[`xsd:integer`] +
+link:http://www.opengis.net/ont/sf#LineString[`sf:LineString`]
 | Expected values | 
 |===
 
@@ -134,7 +134,7 @@ link:http://www.w3.org/2001/XMLSchema#langString[`xsd:langString`]
 | Label | was attributed to
 | Definition | Attribution is the ascribing of an entity to an agent.
 | Scope note | 
-| Implementation | The value of `prov:wasAttributedTo` _MUST_ be an IRI of type `prov:Agent`.
+| Implementation | A `prov:wasAttributedTo` predicate _MUST_ have an IRI value of type `prov:Agent`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | link:http://www.w3.org/ns/prov#Agent[`prov:Agent`]
@@ -153,7 +153,7 @@ link:http://www.w3.org/2001/XMLSchema#langString[`xsd:langString`]
 | Label | comment
 | Definition | A description of the subject resource.
 | Scope note | 
-| Implementation | The value for `rdfs:comment` _MUST_ be a literal.
+| Implementation | An `rdfs:comment` _MUST_ have a literal value.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | 
