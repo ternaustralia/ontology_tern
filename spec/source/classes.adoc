@@ -35,6 +35,8 @@ include::core/class-tern:DateTime.adoc[]
 
 include::core/class-tern:Deployment.adoc[]
 
+include::core/class-tern:FeatureOfInterest.adoc[]
+
 === External Classes
 
 include::core/class-prov:Association.adoc[]

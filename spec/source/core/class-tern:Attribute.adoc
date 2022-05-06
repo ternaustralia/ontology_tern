@@ -25,8 +25,8 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-type
 | Status | `stable` icon:check-circle[]
 | Label | type
-| Definition | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
-| Scope note | 
+| Definition | Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary link:http://dublincore.org/documents/dcmi-type-vocabulary/[DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format.
+| Scope note | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
 | Implementation | The value of `dcterms:type` _MUST_ be an IRI.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
