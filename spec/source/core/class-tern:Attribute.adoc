@@ -46,7 +46,7 @@
 | Label | attribute
 | Definition | The identifier of the attribute concept. Attribute concepts are usually described with SKOS controlled vocabularies. TERN manages a list of link:http://linked.data.gov.au/def/tern-cv/dd085299-ae86-4371-ae15-61dfa432f924[attributes].
 | Scope note | 
-| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:attribute` predicate where the value is an IRI.
+| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:attribute` predicate where the value node is an IRI.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | 
@@ -65,7 +65,7 @@
 | Label | has simple value
 | Definition | The direct link to the IRI or RDF literal value. The simple value _MUST_ be the same value captured in `rdf:value` of the `tern:Value` instance.
 | Scope note | 
-| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:hasSimpleValue` predicate where the value is an IRI or literal.
+| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:hasSimpleValue` predicate where the value node is an IRI or literal.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRIOrLiteral[`sh:IRIOrLiteral`]
 | Class type | 
@@ -84,7 +84,7 @@
 | Label | has value
 | Definition | A link to a link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`] instance which encapsulates the value of this Attribute.
 | Scope note | 
-| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:hasValue` predicate where the value is an IRI.
+| Implementation | A `tern:Attribute` _MUST_ have exactly 1 `tern:hasValue` predicate where the value node is an IRI.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]

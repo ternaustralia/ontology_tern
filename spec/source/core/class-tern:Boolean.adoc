@@ -27,7 +27,7 @@
 | Label | value
 | Definition | The boolean value.
 | Scope note | 
-| Implementation | `tern:Boolean` _MUST_ have exactly 1 `rdf:value` predicate where the value is a literal with a datatype of `xsd:boolean`.
+| Implementation | `tern:Boolean` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with a datatype of `xsd:boolean`.
 | Cardinality | Exactly 1
 | Node kind | 
 | Class type | link:http://www.w3.org/2001/XMLSchema#boolean[`xsd:boolean`]

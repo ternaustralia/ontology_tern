@@ -39,13 +39,19 @@ include::core/class-tern:FeatureOfInterest.adoc[]
 
 include::core/class-tern:Float.adoc[]
 
+include::core/class-tern:IRI.adoc[]
+
+include::core/class-tern:Integer.adoc[]
+
+include::core/class-tern:MaterialSample.adoc[]
+
+include::core/class-tern:Observation.adoc[]
+
+include::core/class-tern:ObservationCollection.adoc[]
+
 === External Classes
 
 include::core/class-prov:Association.adoc[]
-
-include::core/class-prov:Attribution.adoc[]
-
-include::core/class-time:Duration.adoc[]
 
 ===== prov:Association example
 
@@ -105,4 +111,10 @@ The RDF example below illustrates how to:
 .
 ----
 
+include::core/class-prov:Attribution.adoc[]
+
+include::core/class-time:Duration.adoc[]
+
 include::core/class-time:Instant.adoc[]
+
+include::core/class-time:Interval.adoc[]

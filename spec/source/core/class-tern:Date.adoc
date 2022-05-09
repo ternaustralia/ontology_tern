@@ -27,7 +27,7 @@
 | Label | value
 | Definition | The value of the date object.
 | Scope note | 
-| Implementation | A `tern:Date` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with the datatype `xsd:date`.
+| Implementation | A `tern:Date` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with a datatype of `xsd:date`.
 | Cardinality | Exactly 1
 | Node kind | 
 | Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]

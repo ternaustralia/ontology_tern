@@ -27,7 +27,7 @@
 | Label | in date-time
 | Definition | Position of an instant, expressed using a structured description.
 | Scope note | 
-| Implementation | Value _MUST_ be a literal with the datatype `xsd:dateTime`. Maximum of one value is allowed for this property.
+| Implementation | Value _MUST_ be a literal with a datatype of `xsd:dateTime`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`]
@@ -65,7 +65,7 @@
 | Label | in XSD date
 | Definition | Position of an instant, expressed using `xsd:date`.
 | Scope note | 
-| Implementation | Value _MUST_ be a literal with the datatype `xsd:date`. Maximum of one value is allowed for this property.
+| Implementation | Value _MUST_ be a literal with a datatype of `xsd:date`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
@@ -84,7 +84,7 @@
 | Label | in XSD date-time-stamp
 | Definition | Position of an instant, expressed using `xsd:dateTimeStamp`.
 | Scope note | 
-| Implementation | Value _MUST_ be a literal with the datatype `xsd:dateTimeStamp`. Maximum of one value is allowed for this property.
+| Implementation | Value _MUST_ be a literal with a datatype of `xsd:dateTimeStamp`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
@@ -103,7 +103,7 @@
 | Label | in XSD g-year
 | Definition | Position of an instant, expressed using `xsd:gYear`.
 | Scope note | 
-| Implementation | Value _MUST_ be a literal with the datatype `xsd:gYear`. Maximum of one value is allowed for this property.
+| Implementation | Value _MUST_ be a literal with a datatype of `xsd:gYear`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | link:http://www.w3.org/2001/XMLSchema#gYear[`xsd:gYear`]
@@ -122,7 +122,7 @@
 | Label | in XSD g-year-month
 | Definition | Position of an instant, expressed using `xsd:gYearMonth`.
 | Scope note | 
-| Implementation | Value _MUST_ be a literal with the datatype `xsd:gYearMonth`. Maximum of one value is allowed for this property.
+| Implementation | Value _MUST_ be a literal with a datatype of `xsd:gYearMonth`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | link:http://www.w3.org/2001/XMLSchema#gYearMonth[`xsd:gYearMonth`]

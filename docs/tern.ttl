@@ -355,22 +355,19 @@ tern:FluxTower
 
 tern:IRI
     a owl:Class ;
-    rdfs:label "IRI" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdf:value
-        ] ,
-        tern:Value ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "IRI" ;
+    skos:definition "A class to encapsulate an IRI value." ;
+    rdfs:subClassOf tern:Value ;
 .
 
 tern:Integer
     a owl:Class ;
-    rdfs:label "Integer" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Integer" ;
     rdfs:seeAlso sdo:Integer ;
     rdfs:subClassOf tern:Value ;
-    skos:definition "Data type: Integer." ;
+    skos:definition "A class to encapsulate an integer value." ;
 .
 
 tern:ManagedFeature
@@ -401,7 +398,8 @@ tern:ManagedFeature
 
 tern:MaterialSample
     a owl:Class ;
-    rdfs:label "Material sample" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Material sample" ;
     rdfs:subClassOf
         dwc:MaterialSample ,
         tern:Sample ;
@@ -411,14 +409,15 @@ tern:MaterialSample
 
 tern:ObservationCollection
     a owl:Class ;
-    rdfs:label "Observation collection" ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "Observation collection" ;
     rdfs:subClassOf sosa:ObservationCollection ;
     skos:definition "Collection of one or more observations, whose members share a common value for one or more property" ;
 .
 
 tern:Quadrat
     a owl:Class ;
-    rdfs:label "Quadrat" ;
+    skos:prefLabel "Quadrat" ;
     rdfs:subClassOf tern:Sample ;
 .
 
@@ -752,7 +751,9 @@ time:Instant
 
 time:Interval
     a owl:Class ;
-    rdfs:label "Interval" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Interval" ;
+    skos:definition "A temporal entity with an extent or duration." ;
 .
 
 <https://linked.data.gov.au/org/csiro>
@@ -1474,68 +1475,12 @@ tern:width
 
 tern:Observation
     a owl:Class ;
-    rdfs:label "Observation" ;
+    skos:prefLabel "Observation" ;
+    reg:status reg:statusStable ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Geometry> ;
-            owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry>
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:identifier
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:RDFDataset ;
-            owl:onProperty void:inDataset
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty void:inDataset
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:hasSimpleResult
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:observedProperty
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:usedProcedure
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:resultDateTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:comment
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass [
-                    a owl:Class ;
-                    owl:unionOf (
-                            time:Instant
-                            time:Interval
-                        )
-                ] ;
-            owl:onProperty sosa:phenomenonTime ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
         prov:Activity ,
         sosa:Observation ;
-    skos:definition "Act of carrying out an (Observation) [Procedure](#Procedure) to estimate or calculate a value of a property of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). Links to a [Sensor](http://w3.org/ns/sosa/Sensor) to describe what made the [Observation](#Observation) and how; links to an [ObservableProperty](#ObservableProperty) to describe what the result is an estimate of, and to a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) to detail what that property was associated with." ;
+    skos:definition "Act of carrying out an (`Observation`) `Procedure` to estimate or calculate a value of a property of a `FeatureOfInterest`. Links to a `Sensor` to describe what made the `Observation` and how; links to an `ObservableProperty` to describe what the result is an estimate of, and to a `FeatureOfInterest` to detail what that property was associated with." ;
     skos:example """The activity of measuring properties such as wind speed and direction by 
 an anemometer sensor. The results of the observation are the measurement values 
 of the properties estimated by the sensor.""" ;

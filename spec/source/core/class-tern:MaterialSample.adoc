@@ -1,0 +1,35 @@
+
+[#class-tern:MaterialSample]
+==== Class: tern:MaterialSample
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`]
+| Status | `stable` icon:check-circle[]
+| Label | Material sample
+| Definition | A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed.
+
+| Scope note | 
+|===
+
+
+[#class-tern:MaterialSample-dwc:materialSampleID]
+===== Property: dwc:materialSampleID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/materialSampleID[`dwc:materialSampleID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dwc-materialSampleID
+| Status | `stable` icon:check-circle[]
+| Label | material sample ID
+| Definition | An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique.
+| Scope note | 
+| Implementation | A `dwc:materialSampleID` predicate _MUST_ have a literal value with a datatype of `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
