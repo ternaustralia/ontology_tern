@@ -415,12 +415,6 @@ tern:ObservationCollection
     skos:definition "Collection of one or more observations, whose members share a common value for one or more property" ;
 .
 
-tern:Quadrat
-    a owl:Class ;
-    skos:prefLabel "Quadrat" ;
-    rdfs:subClassOf tern:Sample ;
-.
-
 tern:Sampler
     a owl:Class ;
     rdfs:label "Sampler" ;

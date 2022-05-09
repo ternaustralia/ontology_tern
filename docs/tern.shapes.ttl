@@ -304,13 +304,6 @@ tern-shapes:ObservationCollection
     sh:targetClass tern:ObservationCollection ;
 .
 
-tern-shapes:Quadrat
-    a sh:NodeShape ;
-    rdfs:label "Quadrat" ;
-    sh:property tern-shapes:Quadrat-featureType ;
-    sh:targetClass tern:Quadrat ;
-.
-
 tern-shapes:RDFDataset
     a sh:NodeShape ;
     rdfs:label "RDFDataset" ;
@@ -882,17 +875,6 @@ tern-shapes:ObservationCollection-usedProcedure
     sh:name "sosa:usedProcedure" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:usedProcedure ;
-.
-
-tern-shapes:Quadrat-featureType
-    a sh:PropertyShape ;
-    sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
-    sh:hasValue <http://linked.data.gov.au/def/tern-cv/4362c8f2-b3cc-4816-b5a2-fb7bb4c0cff5> ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:name "tern:featureType" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:featureType ;
 .
 
 tern-shapes:RDFDataset-contributor
