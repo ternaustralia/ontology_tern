@@ -1,0 +1,307 @@
+
+[#class-tern:RDFDataset]
+==== Class: tern:RDFDataset
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
+| Status | `stable` icon:check-circle[]
+| Label | RDFDataset
+| Definition | A set of RDF triples that are published, maintained or aggregated by a single provider.
+
+| Scope note | This is a specialised version of the `void:Dataset` class where it may be constrained by additional property shapes in the future.
+|===
+
+
+[#class-tern:RDFDataset-dcterms:contributor]
+===== Property: dcterms:contributor
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/contributor[`dcterms:contributor`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-contributor
+| Status | `stable` icon:check-circle[]
+| Label | contributor
+| Definition | An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:contributor` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:created]
+===== Property: dcterms:created
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/created[`dcterms:created`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-created
+| Status | `stable` icon:check-circle[]
+| Label | created
+| Definition | Date of creation of the dataset. The value should be formatted and data-typed as an `xsd:date`.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:creator]
+===== Property: dcterms:creator
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/creator[`dcterms:creator`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-creator
+| Status | `stable` icon:check-circle[]
+| Label | creator
+| Definition | An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:creator` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:date]
+===== Property: dcterms:date
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/date[`dcterms:date`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-date
+| Status | `stable` icon:check-circle[]
+| Label | date
+| Definition | A point or period of time associated with an event in the life-cycle of the resource. The value should be formatted and data-typed as an `xsd:date`.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:date` predicate where the value node is a literal with the datatype `xsd:date`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:description]
+===== Property: dcterms:description
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/description[`dcterms:description`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-description
+| Status | `stable` icon:check-circle[]
+| Label | description
+| Definition | A textual description of the dataset.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:description` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:issued]
+===== Property: dcterms:issued
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/issued[`dcterms:issued`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-issued
+| Status | `stable` icon:check-circle[]
+| Label | issued
+| Definition | Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an `xsd:date`.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:license]
+===== Property: dcterms:license
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/license[`dcterms:license`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-license
+| Status | `stable` icon:check-circle[]
+| Label | license
+| Definition | A legal document giving official permission to do something with the resource.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:license` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:modified]
+===== Property: dcterms:modified
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/modified[`dcterms:modified`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-modified
+| Status | `stable` icon:check-circle[]
+| Label | modified
+| Definition | Date on which the dataset was changed. The value should be formatted and datatyped as an `xsd:date`.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:publisher]
+===== Property: dcterms:publisher
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/publisher[`dcterms:publisher`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-publisher
+| Status | `stable` icon:check-circle[]
+| Label | publisher
+| Definition | An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:publisher` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:rightsHolder]
+===== Property: dcterms:rightsHolder
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/rightsHolder[`dcterms:rightsHolder`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-rightsHolder
+| Status | `stable` icon:check-circle[]
+| Label | rights holder
+| Definition | A person or organization owning or managing rights over the resource.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:rightsHolder` predicate where the value node is an IRI or literal.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRIOrLiteral[`sh:IRIOrLiteral`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:source]
+===== Property: dcterms:source
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/source[`dcterms:source`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-source
+| Status | `stable` icon:check-circle[]
+| Label | source
+| Definition | A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:source` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:subject]
+===== Property: dcterms:subject
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/subject[`dcterms:subject`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-subject
+| Status | `stable` icon:check-circle[]
+| Label | subject
+| Definition | A topic of the resource. Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:subject` predicate where the value node is an IRI or literal.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRIOrLiteral[`sh:IRIOrLiteral`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-void:subset]
+===== Property: void:subset
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rdfs.org/ns/void#subset[`void:subset`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-subset
+| Status | `stable` icon:check-circle[]
+| Label | subset
+| Definition | The `void:subset` property can be used to provide descriptions of parts of a dataset. A part of a dataset is itself a `void:Dataset`, and any of the annotations for datasets listed in this guide can be applied to the subset. Reasons for subdividing a dataset might include:
+
+- Parts have different provenance (different `dcterms:source`)
+- Parts have different publication dates (different `dcterms:date`)
+- Parts are accesible through different SPARQL endpoints (different `void:sparqlEndpoint`)
+- Parts are about different topics (different `dcterms:subject`)
+- Parts can be downloaded separately in different RDF dumps (different `void:dataDump`)
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `void:subset` predicate where the value node is an IRI of type `void:Dataset`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:http://rdfs.org/ns/void#Dataset[`void:Dataset`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:title]
+===== Property: dcterms:title
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/title[`dcterms:title`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-title
+| Status | `stable` icon:check-circle[]
+| Label | title
+| Definition | The name of the dataset.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:title` predicate where the value node is a literal with a datatype `xsd:string`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-void:vocabulary]
+===== Property: void:vocabulary
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rdfs.org/ns/void#vocabulary[`void:vocabulary`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-vocabulary
+| Status | `stable` icon:check-circle[]
+| Label | vocabulary
+| Definition | A vocabulary or `owl:Ontology` whose classes or properties are used in a `void:Dataset`.
+| Scope note | 
+| Implementation | A `tern:RDFDataset` _MAY_ have a `void:vocabulary` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

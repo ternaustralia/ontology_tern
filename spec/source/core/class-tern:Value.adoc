@@ -1,0 +1,16 @@
+
+[#class-tern:Value]
+==== Class: tern:Value
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
+| Status | `stable` icon:check-circle[]
+| Label | Value
+| Definition | A value of an `Attribute` or an `Observation`. 
+
+| Scope note | This is an 'abstract' class and is not intended to be used directly to create individuals.
+|===
+

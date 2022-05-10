@@ -1,0 +1,134 @@
+
+[#class-tern:Site]
+==== Class: tern:Site
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Site[`tern:Site`]
+| Status | `stable` icon:check-circle[]
+| Label | Site
+| Definition | An ecological monitoring site where observations and samplings occur. This `Site` class is a subclass of `Sample` since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract).
+
+| Scope note | Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)
+|===
+
+
+[#class-tern:Site-tern:dimension]
+===== Property: tern:dimension
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/dimension[`tern:dimension`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Site-dimension
+| Status | `experimental` icon:circle-o[]
+| Label | dimension
+| Definition | Dimenion in metres.
+| Scope note | 
+| Implementation | A `tern:Site` _MAY_ have a maximum of 1 `tern:dimension` predicate where the value node is a literal with the datatype `xsd:string.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Site-tern:hasSiteVisit]
+===== Property: tern:hasSiteVisit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSiteVisit[`tern:hasSiteVisit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Site-hasSiteVisit
+| Status | `stable` icon:check-circle[]
+| Label | has site visit
+| Definition | A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit).
+| Scope note | 
+| Implementation | A `tern:Site` _MAY_ have a `tern:hasSiteVisit` predicate where the value node is an IRI of type `tern:SiteVisit`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
+| Expected values | 
+|===
+
+[#class-tern:Site-tern:locationProcedure]
+===== Property: tern:locationProcedure
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/locationProcedure[`tern:locationProcedure`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Site-locationProcedure
+| Status | `experimental` icon:circle-o[]
+| Label | location procedure
+| Definition | Link to a procedure used to obtain the location.
+| Scope note | 
+| Implementation | A `tern:Site` _MAY_ have a maximum of 1 `tern:locationProcedure` predicate where the value node is an IRI.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Site-geo:sfWithin]
+===== Property: geo:sfWithin
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#sfWithin[`geo:sfWithin`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-sfWithin
+| Status | `experimental` icon:circle-o[]
+| Label | SF within
+| Definition | Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***
+| Scope note | 
+| Implementation | A `geo:sfWithin` _MUST_ have an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Site-tern:locationDescription]
+===== Property: tern:locationDescription
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/locationDescription[`tern:locationDescription`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-locationDescription
+| Status | `experimental` icon:circle-o[]
+| Label | location description
+| Definition | The description of the site's location. 
+
+Example: 10km west of Fletcherview Tropical Rangeland SuperSite.
+| Scope note | 
+| Implementation | A `tern:locationDescription` _MUST_ have a literal value with the datatype `xsd:string`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Site-tern:siteDescription]
+===== Property: tern:siteDescription
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/siteDescription[`tern:siteDescription`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-siteDescription
+| Status | `experimental` icon:circle-o[]
+| Label | site description
+| Definition | The description of the site. 
+
+Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sand fan into western edge. Very few, 3, plants regenerating after recent moderate rains. Silt, sand with scattered iron conglomerate stones on surface.
+| Scope note | 
+| Implementation | A `tern:siteDescription` _MUST_ have a literal value with the datatype `xsd:string`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===

@@ -27,6 +27,50 @@ Annotate the volume of the soil ring using `tern:Attribute`.
 .
 ----
 
+include::core/class-tern:Boolean.adoc[]
+
+include::core/class-tern:Date.adoc[]
+
+include::core/class-tern:DateTime.adoc[]
+
+include::core/class-tern:Deployment.adoc[]
+
+include::core/class-tern:FeatureOfInterest.adoc[]
+
+include::core/class-tern:Float.adoc[]
+
+include::core/class-tern:IRI.adoc[]
+
+include::core/class-tern:Integer.adoc[]
+
+include::core/class-tern:MaterialSample.adoc[]
+
+include::core/class-tern:Observation.adoc[]
+
+include::core/class-tern:ObservationCollection.adoc[]
+
+include::core/class-tern:RDFDataset.adoc[]
+
+include::core/class-tern:Result.adoc[]
+
+include::core/class-tern:Sample.adoc[]
+
+include::core/class-tern:Sampler.adoc[]
+
+include::core/class-tern:Sampling.adoc[]
+
+include::core/class-tern:SiteVisit.adoc[]
+
+include::core/class-tern:System.adoc[]
+
+include::core/class-tern:Taxon.adoc[]
+
+include::core/class-tern:Text.adoc[]
+
+include::core/class-tern:Transect.adoc[]
+
+include::core/class-tern:Value.adoc[]
+
 === External Classes
 
 include::core/class-prov:Association.adoc[]
@@ -89,4 +133,10 @@ The RDF example below illustrates how to:
 .
 ----
 
+include::core/class-prov:Attribution.adoc[]
+
+include::core/class-time:Duration.adoc[]
+
 include::core/class-time:Instant.adoc[]
+
+include::core/class-time:Interval.adoc[]

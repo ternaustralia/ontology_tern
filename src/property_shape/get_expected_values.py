@@ -1,4 +1,4 @@
-from rdflib import SH, SKOS, Graph, URIRef
+from rdflib import SH, SKOS, Graph, Literal, URIRef
 from rdflib.collection import Collection
 
 
@@ -21,13 +21,24 @@ def get_expected_values_str(uri: URIRef, g: Graph, lookups: Graph) -> str:
             str_value += f"link:{item}[{label}]"
         else:
             for i, item in enumerate(c):
-                label = _get_label(item, lookups)
+                uri = None
+                if isinstance(item, URIRef):
+                    label = _get_label(item, lookups)
+                    uri = str(item)
+                elif isinstance(item, Literal):
+                    label = item.n3()
                 if label is None:
                     raise ValueError(f"Could not find label for {item}.")
 
                 if i + 1 == len(c):
-                    str_value += f"- link:{item}[{label}]"
+                    if uri:
+                        str_value += f"- link:{uri}[{label}]"
+                    else:
+                        str_value += f"- `{label}`"
                 else:
-                    str_value += f"- link:{item}[{label}] +\n"
+                    if uri:
+                        str_value += f"- link:{uri}[{label}] +\n"
+                    else:
+                        str_value += f"- `{label}` +\n"
 
     return str_value

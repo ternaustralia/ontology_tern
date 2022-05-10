@@ -1,0 +1,35 @@
+
+[#class-tern:IRI]
+==== Class: tern:IRI
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/IRI[`tern:IRI`]
+| Status | `stable` icon:check-circle[]
+| Label | IRI
+| Definition | A class to encapsulate an IRI value.
+
+| Scope note | 
+|===
+
+
+[#class-tern:IRI-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/IRI-value
+| Status | `stable` icon:check-circle[]
+| Label | value
+| Definition | An IRI value.
+| Scope note | 
+| Implementation | A `tern:IRI` _MUST_ have exactly 1 `rdf:value` predicate where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

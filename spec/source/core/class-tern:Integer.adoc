@@ -1,0 +1,74 @@
+
+[#class-tern:Integer]
+==== Class: tern:Integer
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Integer[`tern:Integer`]
+| Status | `stable` icon:check-circle[]
+| Label | Integer
+| Definition | A class to encapsulate an integer value.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Integer-tern:uncertainty]
+===== Property: tern:uncertainty
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/uncertainty[`tern:uncertainty`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Integer-uncertainty
+| Status | `stable` icon:check-circle[]
+| Label | uncertainty
+| Definition | Measurement error (±).
+| Scope note | 
+| Implementation | A `tern:Integer` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:integer` or `xsd:double`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xsd:integer`] +
+link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`]
+| Expected values | 
+|===
+
+[#class-tern:Integer-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Integer-value
+| Status | `stable` icon:check-circle[]
+| Label | value
+| Definition | Integer value.
+| Scope note | 
+| Implementation | A `tern:Integer` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with a datatype of `xsd:integer`
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xsd:integer`]
+| Expected values | 
+|===
+
+[#class-tern:Integer-tern:unit]
+===== Property: tern:unit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/unit[`tern:unit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-unit
+| Status | `stable` icon:check-circle[]
+| Label | unit of measure
+| Definition | The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary].
+| Scope note | 
+| Implementation | A `tern:unit` predicate _MUST_ have an IRI value.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

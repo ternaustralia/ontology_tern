@@ -1,0 +1,73 @@
+
+[#class-time:Interval]
+==== Class: time:Interval
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:http://www.w3.org/2006/time#Interval[`time:Interval`]
+| Status | `stable` icon:check-circle[]
+| Label | Interval
+| Definition | A temporal entity with an extent or duration.
+
+| Scope note | 
+|===
+
+
+[#class-time:Interval-time:hasBeginning]
+===== Property: time:hasBeginning
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#hasBeginning[`time:hasBeginning`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-hasBeginning
+| Status | `stable` icon:check-circle[]
+| Label | has beginning
+| Definition | Beginning of a temporal entity.
+| Scope note | 
+| Implementation | A `time:hasBeginning` predicate _MUST_ exist where the value node is a blank node or IRI of type `time:Instant`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.w3.org/2006/time#Instant[`time:Instant`]
+| Expected values | 
+|===
+
+[#class-time:Interval-time:hasDuration]
+===== Property: time:hasDuration
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#hasDuration[`time:hasDuration`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-hasDuration
+| Status | `stable` icon:check-circle[]
+| Label | has duration
+| Definition | Duration of a temporal entity, event or activity, or thing, expressed as a scaled value.
+| Scope note | 
+| Implementation | A `time:hasDuration` _MAY_ exist where the value node is a blank node or IRI of type `time:Duration`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.w3.org/2006/time#Duration[`time:Duration`]
+| Expected values | 
+|===
+
+[#class-time:Interval-time:hasEnd]
+===== Property: time:hasEnd
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2006/time#hasEnd[`time:hasEnd`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/time-hasEnd
+| Status | `stable` icon:check-circle[]
+| Label | has end
+| Definition | End of a temporal entity.
+| Scope note | 
+| Implementation | A `time:hasEnd` predicate _MUST_ exist where the value node is a blank node or IRI of type `time:Instant`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.w3.org/2006/time#Instant[`time:Instant`]
+| Expected values | 
+|===

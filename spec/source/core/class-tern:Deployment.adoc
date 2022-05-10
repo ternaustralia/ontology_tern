@@ -1,0 +1,54 @@
+
+[#class-tern:Deployment]
+==== Class: tern:Deployment
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Deployment[`tern:Deployment`]
+| Status | `experimental` icon:circle-o[]
+| Label | Deployment
+| Definition | Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Deployment-ssn:deployedOnPlatform]
+===== Property: ssn:deployedOnPlatform
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/deployedOnPlatform[`ssn:deployedOnPlatform`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/ssn-deployedOnPlatform
+| Status | `experimental` icon:circle-o[]
+| Label | deployed on platform
+| Definition | Relation between a Deployment and the Platform on which the Systems are deployed.
+| Scope note | 
+| Implementation | A `tern:Deployment` _MAY_ have 1 `ssh:deployedOnPlatform` predicate where the value node is an IRI of type `tern:Platform`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Platform[`tern:Platform`]
+| Expected values | 
+|===
+
+[#class-tern:Deployment-ssn:deployedSystem]
+===== Property: ssn:deployedSystem
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/deployedSystem[`ssn:deployedSystem`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/ssn-deployedSystem
+| Status | `experimental` icon:circle-o[]
+| Label | deployed system
+| Definition | Relation between a Deployment and a deployed System.
+| Scope note | 
+| Implementation | A `tern:Deployment` _MAY_ have one or many `ssn:deployedSystem` predicate where the value node is an IRI of type `tern:System`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/System[`tern:System`]
+| Expected values | 
+|===

@@ -1,0 +1,275 @@
+
+[#class-tern:Sampling]
+==== Class: tern:Sampling
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
+| Status | `stable` icon:check-circle[]
+| Label | Sampling
+| Definition | An activity of `Sampling` carries out a (`Sampling`) `Procedure` to create or transform one or more `Samples`.
+
+| Scope note | Crushing a rock sample in a ball mill to create sub-samples of the rock.
+Digging a pit through a soil sequence.
+Dividing a field site into quadrants.
+Drawing blood from a patient.
+Drilling an observation well.
+Establishing a station for environmental monitoring.
+Registering an image of the landscape.
+Sieving a powder to separate the subset finer than 100-mesh.
+Selecting a subset of a population.
+Splitting a piece of drill-core to create two new samples.
+Taking a diamond-drill core from a rock outcrop.
+|===
+
+
+[#class-tern:Sampling-sosa:hasResult]
+===== Property: sosa:hasResult
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/hasResult[`sosa:hasResult`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sampling-hasResult
+| Status | `stable` icon:check-circle[]
+| Label | has result
+| Definition | Relation linking an Observation or Actuation or act of Sampling and a Result or Sample.
+| Scope note | 
+| Implementation | A `tern:Sampling` _MUST_ have at least 1 `sosa:hasResult` predicate where the value node is an IRI of type `tern:Sample`.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-sosa:madeBySampler]
+===== Property: sosa:madeBySampler
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/madeBySampler[`sosa:madeBySampler`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sampling-madeBySampler
+| Status | `stable` icon:check-circle[]
+| Label | made by sampler
+| Definition | Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it.
+| Scope note | 
+| Implementation | A `tern:Sampling` _MAY_ have a `sosa:madeBySampler` predicate where the value node is an IRI of type `tern:Sampler`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sampler[`tern:Sampler`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-dcterms:identifier]
+===== Property: dcterms:identifier
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/identifier[`dcterms:identifier`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-identifier
+| Status | `stable` icon:check-circle[]
+| Label | identifier
+| Definition | An unambiguous reference to the resource within a given context.
+| Scope note | 
+| Implementation | N/A
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sampling-dcterms:type]
+===== Property: dcterms:type
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/type[`dcterms:type`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-type
+| Status | `stable` icon:check-circle[]
+| Label | type
+| Definition | Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary link:http://dublincore.org/documents/dcmi-type-vocabulary/[DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format.
+| Scope note | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
+| Implementation | A `dcterms:type` predicate _MUST_ have an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sampling-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-prov:qualifiedAssociation]
+===== Property: prov:qualifiedAssociation
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#qualifiedAssociation[`prov:qualifiedAssociation`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation
+| Status | `stable` icon:check-circle[]
+| Label | qualified association
+| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Scope note | 
+| Implementation | A `prov:qualifiedAssociation` _MUST_ have a blank node or IRI value of type `prov:Association`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.w3.org/ns/prov#Association[`prov:Association`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-prov:wasAssociatedWith]
+===== Property: prov:wasAssociatedWith
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#wasAssociatedWith[`prov:wasAssociatedWith`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith
+| Status | `stable` icon:check-circle[]
+| Label | was associated with
+| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Scope note | 
+| Implementation | A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov:Agent`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-rdfs:comment]
+===== Property: rdfs:comment
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2000/01/rdf-schema#comment[`rdfs:comment`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/rdfs-comment
+| Status | `stable` icon:check-circle[]
+| Label | comment
+| Definition | A description of the subject resource.
+| Scope note | 
+| Implementation | An `rdfs:comment` _MUST_ have a literal value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sampling-sosa:hasFeatureOfInterest]
+===== Property: sosa:hasFeatureOfInterest
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/hasFeatureOfInterest[`sosa:hasFeatureOfInterest`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-hasFeatureOfInterest
+| Status | `stable` icon:check-circle[]
+| Label | has feature of interest
+| Definition | A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled.
+| Scope note | 
+| Implementation | Exactly 1 `sosa:hasFeatureOfInterest` predicate _MUST_ exist_ with an IRI value.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/FeatureOfInterest[`tern:FeatureOfInterest`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-tern:resultDateTime]
+===== Property: tern:resultDateTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/resultDateTime[`tern:resultDateTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-resultTime
+| Status | `stable` icon:check-circle[]
+| Label | result date time
+| Definition | The result time is the instant of time when the Observation, Actuation or Sampling activity was completed.
+| Scope note | 
+| Implementation | Exactly 1 ``tern:resultDateTime` _MUST_ exist where the value node is a literal of datatype `xsd:date`, `xsd:dateTime`, or `xsd:dateTimeStamp`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`] +
+link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`] +
+link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-sosa:usedProcedure]
+===== Property: sosa:usedProcedure
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/usedProcedure[`sosa:usedProcedure`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-usedProcedure
+| Status | `stable` icon:check-circle[]
+| Label | used procedure
+| Definition | A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.
+| Scope note | 
+| Implementation | Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sampling-tern:hasSiteVisit]
+===== Property: tern:hasSiteVisit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSiteVisit[`tern:hasSiteVisit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSiteVisit
+| Status | `stable` icon:check-circle[]
+| Label | has site visit
+| Definition | A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit).
+| Scope note | 
+| Implementation | A maximum of 1 `tern:hasSiteVisit` _MAY_ exist where the value node is an IRI of type `tern:SiteVisit`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-tern:samplingType]
+===== Property: tern:samplingType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/samplingType[`tern:samplingType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-samplingType
+| Status | `stable` icon:check-circle[]
+| Label | sampling type
+| Definition | The type of sampling act.
+| Scope note | 
+| Implementation | A `tern:Sampling` _MAY_ have a maximum of 1 `tern:samplingType` predicate where the value node is an IRI.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

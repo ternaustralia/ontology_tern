@@ -1,0 +1,719 @@
+
+[#class-tern:Taxon]
+==== Class: tern:Taxon
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Taxon[`tern:Taxon`]
+| Status | `stable` icon:check-circle[]
+| Label | Taxon
+| Definition | A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit.
+
+| Scope note | The genus Truncorotaloides as published by Bronnimann et al. in 1953 in the Journal of Paleontology Vol. 27(6) p. 817-820.
+|===
+
+
+[#class-tern:Taxon-dwc:acceptedNameUsage]
+===== Property: dwc:acceptedNameUsage
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/acceptedNameUsage[`dwc:acceptedNameUsage`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-acceptedNameUsage
+| Status | `stable` icon:check-circle[]
+| Label | accepted name usage
+| Definition | The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) taxon.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:acceptedNameUsage` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:acceptedNameUsageID]
+===== Property: dwc:acceptedNameUsageID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/acceptedNameUsageID[`dwc:acceptedNameUsageID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-acceptedNameUsageID
+| Status | `stable` icon:check-circle[]
+| Label | accepted name usage ID
+| Definition | An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:acceptedNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:class]
+===== Property: dwc:class
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/class[`dwc:class`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-class
+| Status | `stable` icon:check-circle[]
+| Label | class
+| Definition | The full scientific name of the class in which the taxon is classified.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:class` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:cultivarEpithet]
+===== Property: dwc:cultivarEpithet
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/cultivarEpithet[`dwc:cultivarEpithet`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-cultivarEpithet
+| Status | `stable` icon:check-circle[]
+| Label | cultivarEpithet
+| Definition | Part of the name of a cultivar, cultivar group or grex that follows the scientific name.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:cultivarEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:family]
+===== Property: dwc:family
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/family[`dwc:family`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-family
+| Status | `stable` icon:check-circle[]
+| Label | family
+| Definition | The full scientific name of the family in which the taxon is classified.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:family` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:genericName]
+===== Property: dwc:genericName
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/genericName[`dwc:genericName`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-genericName
+| Status | `stable` icon:check-circle[]
+| Label | generic name
+| Definition | The genus part of the scientificName without authorship.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:genericName` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:genus]
+===== Property: dwc:genus
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/genus[`dwc:genus`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-genus
+| Status | `stable` icon:check-circle[]
+| Label | genus
+| Definition | The full scientific name of the genus in which the taxon is classified.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:genus` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:higherClassification]
+===== Property: dwc:higherClassification
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/higherClassification[`dwc:higherClassification`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-higherClassification
+| Status | `stable` icon:check-circle[]
+| Label | higher classification
+| Definition | A list (concatenated and separated) of taxa names terminating at the rank immediately superior to the taxon referenced in the taxon record.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:higherClassification` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:infragenericEpithet]
+===== Property: dwc:infragenericEpithet
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/infragenericEpithet[`dwc:infragenericEpithet`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-infragenericEpithet
+| Status | `stable` icon:check-circle[]
+| Label | infrageneric epithet
+| Definition | The infrageneric part of a binomial name at ranks above species but below genus.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:infragenericEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:infraspecificEpithet]
+===== Property: dwc:infraspecificEpithet
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/infraspecificEpithet[`dwc:infraspecificEpithet`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-infraspecificEpithet
+| Status | `stable` icon:check-circle[]
+| Label | infraspecific epithet
+| Definition | The name of the lowest or terminal infraspecific epithet of the scientificName, excluding any rank designation.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:infraspecificEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:kingdom]
+===== Property: dwc:kingdom
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/kingdom[`dwc:kingdom`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-kingdom
+| Status | `stable` icon:check-circle[]
+| Label | kingdom
+| Definition | The full scientific name of the kingdom in which the taxon is classified.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:kingdom` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:nameAccordingTo]
+===== Property: dwc:nameAccordingTo
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/nameAccordingTo[`dwc:nameAccordingTo`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-nameAccordingTo
+| Status | `stable` icon:check-circle[]
+| Label | name according to
+| Definition | The reference to the source in which the specific taxon concept circumscription is defined or implied. For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:nameAccordingTo` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:nameAccordingToID]
+===== Property: dwc:nameAccordingToID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/nameAccordingToID[`dwc:nameAccordingToID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-nameAccordingToID
+| Status | `stable` icon:check-circle[]
+| Label | name according to ID
+| Definition | An identifier for the source in which the specific taxon concept circumscription is defined or implied. See nameAccordingTo.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:nameAccordingToID` predicate where the value node is a literal with a datatype of `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:namePublishedIn]
+===== Property: dwc:namePublishedIn
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/namePublishedIn[`dwc:namePublishedIn`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-namePublishedIn
+| Status | `stable` icon:check-circle[]
+| Label | name published in
+| Definition | A reference for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:namePublishedIn` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:namePublishedInID]
+===== Property: dwc:namePublishedInID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/namePublishedInID[`dwc:namePublishedInID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-namePublishedInID
+| Status | `stable` icon:check-circle[]
+| Label | name published in ID
+| Definition | An identifier for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:namePublishedInID` where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:namePublishedInYear]
+===== Property: dwc:namePublishedInYear
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/namePublishedInYear[`dwc:namePublishedInYear`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-namePublishedInYear
+| Status | `stable` icon:check-circle[]
+| Label | name published in year
+| Definition | The four-digit year in which the scientificName was published.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:namePublishedInYear` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:nomenclaturalCode]
+===== Property: dwc:nomenclaturalCode
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/nomenclaturalCode[`dwc:nomenclaturalCode`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-nomenclaturalCode
+| Status | `stable` icon:check-circle[]
+| Label | nomenclatural code
+| Definition | The nomenclatural code (or codes in the case of an ambiregnal name) under which the scientificName is constructed.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:nomenclaturalCode` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:nomenclaturalStatus]
+===== Property: dwc:nomenclaturalStatus
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/nomenclaturalStatus[`dwc:nomenclaturalStatus`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-nomenclaturalStatus
+| Status | `stable` icon:check-circle[]
+| Label | nomenclatural status
+| Definition | The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:nomenclaturalStatus` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:order]
+===== Property: dwc:order
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/order[`dwc:order`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-order
+| Status | `stable` icon:check-circle[]
+| Label | order
+| Definition | The full scientific name of the order in which the taxon is classified.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:order` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:originalNameUsage]
+===== Property: dwc:originalNameUsage
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/originalNameUsage[`dwc:originalNameUsage`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-originalNameUsage
+| Status | `stable` icon:check-circle[]
+| Label | original name usage
+| Definition | The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the scientificName or the senior/earlier homonym for replaced names.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:originalNameUsage` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:originalNameUsageID]
+===== Property: dwc:originalNameUsageID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/originalNameUsageID[`dwc:originalNameUsageID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-originalNameUsageID
+| Status | `stable` icon:check-circle[]
+| Label | original name usage ID
+| Definition | An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the scientificName was originally established under the rules of the associated nomenclaturalCode.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:originalNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:parentNameUsage]
+===== Property: dwc:parentNameUsage
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/parentNameUsage[`dwc:parentNameUsage`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-parentNameUsage
+| Status | `stable` icon:check-circle[]
+| Label | parent name usage
+| Definition | The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:parentNameUsage` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:parentNameUsageID]
+===== Property: dwc:parentNameUsageID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/parentNameUsageID[`dwc:parentNameUsageID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-parentNameUsageID
+| Status | `stable` icon:check-circle[]
+| Label | parent name usage ID
+| Definition | An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:parentNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:phylum]
+===== Property: dwc:phylum
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/phylum[`dwc:phylum`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-phylum
+| Status | `stable` icon:check-circle[]
+| Label | phylum
+| Definition | The full scientific name of the phylum or division in which the taxon is classified.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:phylum` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:scientificName]
+===== Property: dwc:scientificName
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/scientificName[`dwc:scientificName`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-scientificName
+| Status | `stable` icon:check-circle[]
+| Label | scientific name
+| Definition | The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:scientificName` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:scientificNameAuthorship]
+===== Property: dwc:scientificNameAuthorship
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/scientificNameAuthorship[`dwc:scientificNameAuthorship`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-scientificNameAuthorship
+| Status | `stable` icon:check-circle[]
+| Label | scientific name authorship
+| Definition | The authorship information for the scientificName formatted according to the conventions of the applicable nomenclaturalCode.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:scientificNameAuthorship` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:scientificNameID]
+===== Property: dwc:scientificNameID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/scientificNameID[`dwc:scientificNameID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-scientificNameID
+| Status | `stable` icon:check-circle[]
+| Label | scientific name ID
+| Definition | An identifier for the nomenclatural (not taxonomic) details of a scientific name.
+| Scope note | 
+| Implementation | A `tern:Taxon _MAY_ have a `dwc:scientificNameID` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:specificEpithet]
+===== Property: dwc:specificEpithet
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/specificEpithet[`dwc:specificEpithet`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-specificEpithet
+| Status | `stable` icon:check-circle[]
+| Label | specific epithet
+| Definition | The name of the first or species epithet of the scientificName.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:specificEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:subfamily]
+===== Property: dwc:subfamily
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/subfamily[`dwc:subfamily`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-subfamily
+| Status | `stable` icon:check-circle[]
+| Label | subfamily
+| Definition | The full scientific name of the subfamily in which the taxon is classified.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:subfamily` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:subgenus]
+===== Property: dwc:subgenus
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/subgenus[`dwc:subgenus`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-subgenus
+| Status | `stable` icon:check-circle[]
+| Label | subgenus
+| Definition | The full scientific name of the subgenus in which the taxon is classified. Values should include the genus to avoid homonym confusion.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:subgenus` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:taxonConceptID]
+===== Property: dwc:taxonConceptID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/taxonConceptID[`dwc:taxonConceptID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-taxonConceptID
+| Status | `stable` icon:check-circle[]
+| Label | taxon concept ID
+| Definition | An identifier for the taxonomic concept to which the record refers - not for the nomenclatural details of a taxon.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonConceptID` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:taxonID]
+===== Property: dwc:taxonID
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/taxonID[`dwc:taxonID`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-taxonID
+| Status | `stable` icon:check-circle[]
+| Label | taxon ID
+| Definition | A global unique identifier for the taxon (name in a classification).
+| Scope note | 
+| Implementation | A `ternTaxon` _MAY_ have a `dwc:taxonID` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:taxonRank]
+===== Property: dwc:taxonRank
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/taxonRank[`dwc:taxonRank`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-taxonRank
+| Status | `stable` icon:check-circle[]
+| Label | taxon rank
+| Definition | The taxonomic rank of the most specific name in the scientificName.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonRank` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:taxonRemarks]
+===== Property: dwc:taxonRemarks
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/taxonRemarks[`dwc:taxonRemarks`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-taxonRemarks
+| Status | `stable` icon:check-circle[]
+| Label | taxon remarks
+| Definition | Comments or notes about the taxon or name.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonRemarks` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:taxonomicStatus]
+===== Property: dwc:taxonomicStatus
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/taxonomicStatus[`dwc:taxonomicStatus`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-taxonomicStatus
+| Status | `stable` icon:check-circle[]
+| Label | taxonomic status
+| Definition | The status of the use of the scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a taxon. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonomicStatus` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:verbatimTaxonRank]
+===== Property: dwc:verbatimTaxonRank
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/verbatimTaxonRank[`dwc:verbatimTaxonRank`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-verbatimTaxonRank
+| Status | `stable` icon:check-circle[]
+| Label | verbatim taxon rank
+| Definition | The taxonomic rank of the most specific name in the scientificName as it appears in the original record.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:verbatimTaxonRank` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===
+
+[#class-tern:Taxon-dwc:vernacularName]
+===== Property: dwc:vernacularName
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rs.tdwg.org/dwc/terms/vernacularName[`dwc:vernacularName`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Taxon-vernacularName
+| Status | `stable` icon:check-circle[]
+| Label | vernacular name
+| Definition | A common or vernacular name.
+| Scope note | 
+| Implementation | A `tern:Taxon` _MAY_ have a `dwc:vernacularName` predicate where the value node is a literal with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Expected values | 
+|===

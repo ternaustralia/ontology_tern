@@ -1,0 +1,111 @@
+
+[#class-tern:System]
+==== Class: tern:System
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/System[`tern:System`]
+| Status | `stable` icon:check-circle[]
+| Label | System
+| Definition | System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems.
+
+| Scope note | 
+|===
+
+
+[#class-tern:System-ssn:hasDeployment]
+===== Property: ssn:hasDeployment
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/hasDeployment[`ssn:hasDeployment`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/System-hasDeployment
+| Status | `experimental` icon:circle-o[]
+| Label | has deployment
+| Definition | Relation between a System and a Deployment, recording that the System is deployed in that Deployment.
+| Scope note | 
+| Implementation | A `tern:System` _MAY_ have an `ssn:hasDeployment` predicate where the value node is an IRI of type `tern:Deployment`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Deployment[`tern:Deployment`]
+| Expected values | 
+|===
+
+[#class-tern:System-sosa:isHostedBy]
+===== Property: sosa:isHostedBy
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/isHostedBy[`sosa:isHostedBy`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/System-isHostedBy
+| Status | `experimental` icon:circle-o[]
+| Label | is hosted by
+| Definition | Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by.
+| Scope note | 
+| Implementation | A `tern:System` _MAY_ have a maximum of 1 `sosa:isHostedBy` predicate where the value node is an IRI of type `tern:Platform`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Platform[`tern:Platform`]
+| Expected values | 
+|===
+
+[#class-tern:System-tern:systemType]
+===== Property: tern:systemType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/systemType[`tern:systemType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/System-systemType
+| Status | `experimental` icon:circle-o[]
+| Label | system type
+| Definition | The type of system. Values are from some controlled vocabulary.
+| Scope note | 
+| Implementation | A `tern:System` _MAY_ have a `tern:systemType` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:System-dcterms:type]
+===== Property: dcterms:type
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/type[`dcterms:type`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-type
+| Status | `stable` icon:check-circle[]
+| Label | type
+| Definition | Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary link:http://dublincore.org/documents/dcmi-type-vocabulary/[DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format.
+| Scope note | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
+| Implementation | A `dcterms:type` predicate _MUST_ have an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:System-ssn:implements]
+===== Property: ssn:implements
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/implements[`ssn:implements`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-implements
+| Status | `experimental` icon:circle-o[]
+| Label | implements
+| Definition | Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).
+| Scope note | 
+| Implementation | An `ssn:implements` _MUST_ have an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

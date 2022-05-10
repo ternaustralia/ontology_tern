@@ -1,0 +1,341 @@
+
+[#class-tern:Observation]
+==== Class: tern:Observation
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`]
+| Status | `stable` icon:check-circle[]
+| Label | Observation
+| Definition | Act of carrying out an (`Observation`) `Procedure` to estimate or calculate a value of a property of a `FeatureOfInterest`. Links to a `Sensor` to describe what made the `Observation` and how; links to an `ObservableProperty` to describe what the result is an estimate of, and to a `FeatureOfInterest` to detail what that property was associated with.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Observation-sosa:hasResult]
+===== Property: sosa:hasResult
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/hasResult[`sosa:hasResult`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Observation-hasResult
+| Status | `stable` icon:check-circle[]
+| Label | has result
+| Definition | Relation linking an Observation or Actuation or act of Sampling and a Result or Sample.
+| Scope note | 
+| Implementation | A `tern:Observation` _MUST_ have exactly 1 `sosa:hasResult` where the value node is a blank node or IRI of type `tern:Value`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-dcterms:identifier]
+===== Property: dcterms:identifier
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/identifier[`dcterms:identifier`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-identifier
+| Status | `stable` icon:check-circle[]
+| Label | identifier
+| Definition | An unambiguous reference to the resource within a given context.
+| Scope note | 
+| Implementation | N/A
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Observation-dcterms:type]
+===== Property: dcterms:type
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/type[`dcterms:type`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-type
+| Status | `stable` icon:check-circle[]
+| Label | type
+| Definition | Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary link:http://dublincore.org/documents/dcmi-type-vocabulary/[DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format.
+| Scope note | Useful to capture the proximate class type in situations when link:http://www.w3.org/2000/01/rdf-schema#subClassOf[`rdfs:subClassOf`] entailment is enabled and `rdf:type` is not suitable.
+| Implementation | A `dcterms:type` predicate _MUST_ have an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Observation-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-prov:qualifiedAssociation]
+===== Property: prov:qualifiedAssociation
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#qualifiedAssociation[`prov:qualifiedAssociation`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation
+| Status | `stable` icon:check-circle[]
+| Label | qualified association
+| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Scope note | 
+| Implementation | A `prov:qualifiedAssociation` _MUST_ have a blank node or IRI value of type `prov:Association`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.w3.org/ns/prov#Association[`prov:Association`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-prov:wasAssociatedWith]
+===== Property: prov:wasAssociatedWith
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#wasAssociatedWith[`prov:wasAssociatedWith`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith
+| Status | `stable` icon:check-circle[]
+| Label | was associated with
+| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Scope note | 
+| Implementation | A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov:Agent`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-rdfs:comment]
+===== Property: rdfs:comment
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2000/01/rdf-schema#comment[`rdfs:comment`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/rdfs-comment
+| Status | `stable` icon:check-circle[]
+| Label | comment
+| Definition | A description of the subject resource.
+| Scope note | 
+| Implementation | An `rdfs:comment` _MUST_ have a literal value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Observation-sosa:hasFeatureOfInterest]
+===== Property: sosa:hasFeatureOfInterest
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/hasFeatureOfInterest[`sosa:hasFeatureOfInterest`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-hasFeatureOfInterest
+| Status | `stable` icon:check-circle[]
+| Label | has feature of interest
+| Definition | A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled.
+| Scope note | 
+| Implementation | Exactly 1 `sosa:hasFeatureOfInterest` predicate _MUST_ exist_ with an IRI value.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/FeatureOfInterest[`tern:FeatureOfInterest`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-sosa:hasSimpleResult]
+===== Property: sosa:hasSimpleResult
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/hasSimpleResult[`sosa:hasSimpleResult`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-hasSimpleResult
+| Status | `stable` icon:check-circle[]
+| Label | has simple result
+| Definition | The simple value of an Observation or Actuation or act of Sampling.
+| Scope note | 
+| Implementation | Exactly 1 `sosa:hasSimpleResult` predicate _MUST_ exist where the value node is an IRI or literal.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Observation-sosa:madeBySensor]
+===== Property: sosa:madeBySensor
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/madeBySensor[`sosa:madeBySensor`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-madeBySensor
+| Status | `stable` icon:check-circle[]
+| Label | made by sensor
+| Definition | Relation between an Observation and the Sensor which made the Observations.
+| Scope note | 
+| Implementation | A `sosa:madeBySensor` predicate _MAY_ exist where the value node is an IRI.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sensor[`tern:Sensor`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-sosa:observedProperty]
+===== Property: sosa:observedProperty
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/observedProperty[`sosa:observedProperty`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-observedProperty
+| Status | `stable` icon:check-circle[]
+| Label | observed property
+| Definition | Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation.
+| Scope note | 
+| Implementation | A `tern:Observation` _MUST_ have exactly 1 `sosa:observedProperty` where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Observation-sosa:phenomenonTime]
+===== Property: sosa:phenomenonTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/phenomenonTime[`sosa:phenomenonTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-phenomenonTime
+| Status | `stable` icon:check-circle[]
+| Label | phenomenon time
+| Definition | The time that the Result of an Observation, Actuation or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an Interval or an Instant, or some other compound TemporalEntity.
+| Scope note | 
+| Implementation | Exactly 1 `sosa:phenomenonTime` predicate _MUST_ exist where the value node is a blank node or IRI of type `time:Instant`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.w3.org/2006/time#Instant[`time:Instant`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-tern:resultDateTime]
+===== Property: tern:resultDateTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/resultDateTime[`tern:resultDateTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-resultTime
+| Status | `stable` icon:check-circle[]
+| Label | result date time
+| Definition | The result time is the instant of time when the Observation, Actuation or Sampling activity was completed.
+| Scope note | 
+| Implementation | Exactly 1 ``tern:resultDateTime` _MUST_ exist where the value node is a literal of datatype `xsd:date`, `xsd:dateTime`, or `xsd:dateTimeStamp`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`] +
+link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`] +
+link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-sosa:usedProcedure]
+===== Property: sosa:usedProcedure
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/usedProcedure[`sosa:usedProcedure`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-usedProcedure
+| Status | `stable` icon:check-circle[]
+| Label | used procedure
+| Definition | A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.
+| Scope note | 
+| Implementation | Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Observation-tern:hasSiteVisit]
+===== Property: tern:hasSiteVisit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSiteVisit[`tern:hasSiteVisit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSiteVisit
+| Status | `stable` icon:check-circle[]
+| Label | has site visit
+| Definition | A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit).
+| Scope note | 
+| Implementation | A maximum of 1 `tern:hasSiteVisit` _MAY_ exist where the value node is an IRI of type `tern:SiteVisit`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-tern:observationType]
+===== Property: tern:observationType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/observationType[`tern:observationType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-observationType
+| Status | `stable` icon:check-circle[]
+| Label | observation type
+| Definition | The type of observation.
+| Scope note | 
+| Implementation | A maximum of 1 `tern:observationType` _MAY_ exist with an IRI value.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Observation-void:inDataset]
+===== Property: void:inDataset
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rdfs.org/ns/void#inDataset[`void:inDataset`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/void-inDataset
+| Status | `stable` icon:check-circle[]
+| Label | in dataset
+| Definition | A link to the RDF payload's metadata which this resource was a part of.
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
+| Expected values | 
+|===

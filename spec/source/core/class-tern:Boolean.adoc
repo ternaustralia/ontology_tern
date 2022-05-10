@@ -1,0 +1,36 @@
+
+[#class-tern:Boolean]
+==== Class: tern:Boolean
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Boolean[`tern:Boolean`]
+| Status | `stable` icon:check-circle[]
+| Label | Boolean
+| Definition | Class to encapsulate a true-or-false value.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Boolean-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Boolean-value
+| Status | `stable` icon:check-circle[]
+| Label | value
+| Definition | The boolean value.
+| Scope note | 
+| Implementation | `tern:Boolean` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with a datatype of `xsd:boolean`.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#boolean[`xsd:boolean`]
+| Expected values | - `"true"^^<http://www.w3.org/2001/XMLSchema#boolean>` +
+- `"false"^^<http://www.w3.org/2001/XMLSchema#boolean>`
+|===
