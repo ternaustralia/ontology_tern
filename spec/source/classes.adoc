@@ -49,6 +49,28 @@ include::core/class-tern:Observation.adoc[]
 
 include::core/class-tern:ObservationCollection.adoc[]
 
+include::core/class-tern:RDFDataset.adoc[]
+
+include::core/class-tern:Result.adoc[]
+
+include::core/class-tern:Sample.adoc[]
+
+include::core/class-tern:Sampler.adoc[]
+
+include::core/class-tern:Sampling.adoc[]
+
+include::core/class-tern:SiteVisit.adoc[]
+
+include::core/class-tern:System.adoc[]
+
+include::core/class-tern:Taxon.adoc[]
+
+include::core/class-tern:Text.adoc[]
+
+include::core/class-tern:Transect.adoc[]
+
+include::core/class-tern:Value.adoc[]
+
 === External Classes
 
 include::core/class-prov:Association.adoc[]

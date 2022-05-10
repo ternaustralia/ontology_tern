@@ -1,0 +1,54 @@
+
+[#class-tern:Sampler]
+==== Class: tern:Sampler
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Sampler[`tern:Sampler`]
+| Status | `stable` icon:check-circle[]
+| Label | Sampler
+| Definition | A device that is used by, or implements, a (`Sampling`) `Procedure` to create or transform one or more samples.
+
+| Scope note | A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device.
+|===
+
+
+[#class-tern:Sampler-ssn:implements]
+===== Property: ssn:implements
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/implements[`ssn:implements`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sampler-implements
+| Status | `stable` icon:check-circle[]
+| Label | implements
+| Definition | Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).
+| Scope note | 
+| Implementation | A `tern:Sampler` _MUST_ have at least 1 `ssn:implements` predicate where the value node is an IRI.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sampler-sosa:madeSampling]
+===== Property: sosa:madeSampling
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/madeSampling[`sosa:madeSampling`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-madeSampling
+| Status | `stable` icon:check-circle[]
+| Label | made sampling
+| Definition | Relation between a Sampler (sampling device or entity) and the Sampling act it performed.
+| Scope note | 
+| Implementation | A `sosa:madeSampling` predicate _MAY_ exist where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
+| Expected values | 
+|===

@@ -1,0 +1,54 @@
+
+[#class-tern:Sample]
+==== Class: tern:Sample
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`]
+| Status | `stable` icon:check-circle[]
+| Label | Sample
+| Definition | A feature which is intended to be representative of a `FeatureOfInterest` on which `Observations` may be made.
+
+| Scope note | A sample may be a physical sample or a sub-divided section of some larger feature of interest. For example, land surface, plant population, ground cover are all common sub-samples of a site (feature of interest) in ecological surveys.
+|===
+
+
+[#class-tern:Sample-sosa:isResultOf]
+===== Property: sosa:isResultOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/isResultOf[`sosa:isResultOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sample-isResultOf
+| Status | `stable` icon:check-circle[]
+| Label | is result of
+| Definition | Relation linking a Result to the Sampling that created or caused it.
+| Scope note | 
+| Implementation | A `tern:Sample` _MAY_ have a `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Sampling`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
+| Expected values | 
+|===
+
+[#class-tern:Sample-sosa:isSampleOf]
+===== Property: sosa:isSampleOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/isSampleOf[`sosa:isSampleOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sample-isSampleOf
+| Status | `stable` icon:check-circle[]
+| Label | is sample of
+| Definition | Relation from a Sample to the FeatureOfInterest that it is intended to be representative of.
+| Scope note | 
+| Implementation | A `tern:Sample` _MUST_ have at least 1 `sosa:isSampleOf` predicate where the value node is an IRI of type `tern:FeatureOfInterest`.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/FeatureOfInterest[`tern:FeatureOfInterest`]
+| Expected values | 
+|===

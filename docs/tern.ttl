@@ -417,22 +417,13 @@ tern:ObservationCollection
 
 tern:Sampler
     a owl:Class ;
-    rdfs:label "Sampler" ;
+    skos:prefLabel "Sampler" ;
+    reg:status reg:statusStable ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom sosa:Sampling ;
-            owl:onProperty sosa:madeSampling
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty ssn:implements
-        ] ,
         sosa:Sampler ,
         tern:System ;
-    skos:definition "Sampler - A device that is used by, or implements, a (Sampling) [Procedure](#Procedure) to create or transform one or more samples. " ;
-    skos:example "A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device." ;
+    skos:definition "A device that is used by, or implements, a (`Sampling`) `Procedure` to create or transform one or more samples." ;
+    skos:scopeNote "A ball mill, diamond drill, hammer, hypodermic syringe and needle, image Sensor or a soil auger can all act as sampling devices (i.e., be Samplers). However, sometimes the distinction between the Sampler and the Sensor is not evident, as they are packaged as a unit. A Sampler need not be a physical device." ;
 .
 
 tern:Sensor
@@ -461,60 +452,29 @@ tern:Sensor
 
 tern:Taxon
     a owl:Class ;
-    rdfs:label "Taxon" ;
+    skos:prefLabel "Taxon" ;
+    reg:status reg:statusStable ;
     rdfs:subClassOf tern:Value ;
     skos:definition "A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit." ;
-    skos:example "The genus Truncorotaloides as published by Bronnimann et al. in 1953 in the Journal of Paleontology Vol. 27(6) p. 817-820." ;
+    skos:scopeNote "The genus Truncorotaloides as published by Bronnimann et al. in 1953 in the Journal of Paleontology Vol. 27(6) p. 817-820." ;
 .
 
 tern:Text
     a owl:Class ;
-    rdfs:label "Text" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Text" ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:string
-                            rdf:langString
-                        )
-                ] ;
-            owl:onProperty rdf:value
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdf:value
-        ] ,
         tern:Value ;
     skos:definition "Class to encapsulate a textual value." ;
 .
 
 tern:Transect
     a owl:Class ;
-    rdfs:label "Transect" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Transect" ;
+    skos:definition "A transect is a path where observations and samplings may occur." ;
+    skos:scopeNote "There are several types of transects in ecology such as strip transects, line transects, belt transects, point transects and curved line transects." ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom <http://www.opengis.net/ont/sf#Point> ;
-            owl:onProperty tern:transectEndPoint
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom <http://www.opengis.net/ont/sf#Point> ;
-            owl:onProperty tern:transectStartPoint
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:transectDirection
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:transectStartPoint
-        ] ,
         tern:Sample ;
 .
 
@@ -987,87 +947,28 @@ tern:Parameter
 
 tern:Result
     a owl:Class ;
-    rdfs:label "Result" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            tern:Observation
-                            tern:Sampling
-                        )
-                ] ;
-            owl:onProperty sosa:isResultOf
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:isResultOf
-        ] ;
-    skos:definition "The result of an [Observation](https://w3id.org/tern/ontologies/tern/Observation), [Actuation](http://w3.org/ns/sosa/Actuation), or act of [Sampling](https://w3id.org/tern/ontologies/tern/Sampling)." ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Result" ;
+    rdfs:subClassOf sosa:Result ;
+    skos:definition "The result of an `Observation`, `Actuation`, or act of `Sampling`. To store an observation's simple result value one can use the `hasSimpleResult` property." ;
     skos:example """The value 20 as the height of a certain 
 tree together with the unit, e.g., Meter.""" ;
 .
 
 tern:SiteVisit
     a owl:Class ;
-    rdfs:label "Site Visit" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Site Visit" ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:identifier
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:RDFDataset ;
-            owl:onProperty void:inDataset
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty void:inDataset
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty prov:startedAtTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty prov:endedAtTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:locationDescription
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:siteDescription
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:endedAtTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty prov:startedAtTime
-        ] ,
         prov:Activity ;
-    skos:definition "A Site Visit is a discrete time-bounded activity at a [Site](#Site), during which [Sampling](#Sampling) or [Observation](#Observation) activities occur. " ;
+    skos:definition "A Site Visit is a discrete time-bounded activity at a `Site`, during which `Sampling` or `Observation` activities occur." ;
 .
 
 tern:System
     a owl:Class ;
-    rdfs:label "System" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "System" ;
+    skos:definition "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems." ;
     rdfs:subClassOf ssn:System ;
 .
 
@@ -1308,7 +1209,10 @@ for establishing quadrats for vegetation sampling.""" ;
 
 tern:RDFDataset
     a owl:Class ;
-    rdfs:label "RDFDataset" ;
+    skos:prefLabel "RDFDataset" ;
+    skos:definition "A set of RDF triples that are published, maintained or aggregated by a single provider." ;
+    skos:scopeNote "This is a specialised version of the `void:Dataset` class where it may be constrained by additional property shapes in the future." ;
+    reg:status reg:statusStable ;
     rdfs:subClassOf
         void:Dataset ,
         rdfs:Resource ;
@@ -1316,47 +1220,13 @@ tern:RDFDataset
 
 tern:Sampling
     a owl:Class ;
-    rdfs:label "Sampling" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Sampling" ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Geometry> ;
-            owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry>
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:identifier
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:Procedure ;
-            owl:onProperty sosa:usedProcedure
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:usedProcedure
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:resultDateTime
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:comment
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:hasResult
-        ] ,
         prov:Activity ,
         sosa:Sampling ;
-    skos:definition "An activity of [Sampling](#Sampling) carries out a (Sampling) [Procedure](#Procedure) to create or transform one or more [Samples](#Sample)." ;
-    skos:example """Crushing a rock sample in a ball mill to create sub-samples of the rock.
+    skos:definition "An activity of `Sampling` carries out a (`Sampling`) `Procedure` to create or transform one or more `Samples`." ;
+    skos:scopeNote """Crushing a rock sample in a ball mill to create sub-samples of the rock.
 Digging a pit through a soil sequence.
 Dividing a field site into quadrants.
 Drawing blood from a patient.
@@ -1493,44 +1363,13 @@ a weather station (a platform)""" ;
 
 tern:Site
     a owl:Class ;
-    rdfs:label "Site" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Site" ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature> ;
-            owl:onProperty <http://www.opengis.net/ont/geosparql#sfWithin>
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty tern:dimension
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:Procedure ;
-            owl:onProperty tern:locationProcedure
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:dimension
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:locationDescription
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:siteDescription
-        ] ,
         tern:Platform ,
         tern:Sample ;
-    skos:definition "An ecological monitoring site where where observations and samplings occur. This Site class is a subclass of [Sample](#Sample) since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
-    skos:example "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
+    skos:definition "An ecological monitoring site where observations and samplings occur. This `Site` class is a subclass of `Sample` since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
+    skos:scopeNote "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
 .
 
 tern:dateCommissioned
@@ -1553,31 +1392,23 @@ tern:dateDecommissioned
 
 tern:Sample
     a owl:Class ;
-    rdfs:label "Sample" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Sample" ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom sosa:Sampling ;
-            owl:onProperty sosa:isResultOf
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty sosa:isResultOf
-        ] ,
         sosa:Sample ,
         tern:FeatureOfInterest ,
         tern:Result ;
-    skos:definition "*A feature which is intended to be representative of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest) on which [Observations](#Observation) may be made. Physical samples are sometimes known as physical specimens." ;
-    skos:example """Plant, animal, soil and water are all 
-examples of samples of some feature of interest.""" ;
+    skos:definition "A feature which is intended to be representative of a `FeatureOfInterest` on which `Observations` may be made." ;
+    skos:scopeNote "A sample may be a physical sample or a sub-divided section of some larger feature of interest. For example, land surface, plant population, ground cover are all common sub-samples of a site (feature of interest) in ecological surveys." ;
 .
 
 tern:Value
     a owl:Class ;
-    rdfs:label "Value" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Value" ;
     rdfs:subClassOf rdfs:Resource ;
-    skos:definition "A value of an [Attribute](https://w3id.org/tern/ontologies/tern/Attribute) or an [Observation](https://w3id.org/tern/ontologies/tern/Observation). " ;
+    skos:definition "A value of an `Attribute` or an `Observation`. " ;
+    skos:scopeNote "This is an 'abstract' class and is not intended to be used directly to create individuals." ;
 .
 
 <https://linked.data.gov.au/org/tern>

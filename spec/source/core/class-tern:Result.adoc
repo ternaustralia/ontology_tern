@@ -1,0 +1,36 @@
+
+[#class-tern:Result]
+==== Class: tern:Result
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Result[`tern:Result`]
+| Status | `stable` icon:check-circle[]
+| Label | Result
+| Definition | The result of an `Observation`, `Actuation`, or act of `Sampling`. To store an observation's simple result value one can use the `hasSimpleResult` property.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Result-sosa:isResultOf]
+===== Property: sosa:isResultOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/isResultOf[`sosa:isResultOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Result-isResultOf
+| Status | `stable` icon:check-circle[]
+| Label | is result of
+| Definition | Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it.
+| Scope note | 
+| Implementation | A `tern:Result` _MUST_ have exactly 1 `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`] +
+link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
+| Expected values | 
+|===

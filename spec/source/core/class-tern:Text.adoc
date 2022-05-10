@@ -1,0 +1,36 @@
+
+[#class-tern:Text]
+==== Class: tern:Text
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Text[`tern:Text`]
+| Status | `stable` icon:check-circle[]
+| Label | Text
+| Definition | Class to encapsulate a textual value.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Text-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Text-value
+| Status | `stable` icon:check-circle[]
+| Label | value
+| Definition | The text value.
+| Scope note | 
+| Implementation | A `tern:Text` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with the datatype `xsd:string` or `rdf:langString`.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`] +
+link:http://www.w3.org/1999/02/22-rdf-syntax-ns#langString[`rdf:langString`]
+| Expected values | 
+|===

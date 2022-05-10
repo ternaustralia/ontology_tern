@@ -377,7 +377,6 @@ tern-shapes:Site
     sh:property
         tern-shapes:Site-dimension ,
         tern-shapes:Site-hasSiteVisit ,
-        tern-shapes:Site-label ,
         tern-shapes:Site-locationProcedure ,
         tern-shapes:geo-sfWithin ,
         tern-shapes:tern-locationDescription ,
@@ -879,6 +878,9 @@ tern-shapes:ObservationCollection-usedProcedure
 
 tern-shapes:RDFDataset-contributor
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "contributor" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:contributor` predicate where the value node is an IRI." ;
     sh:description "An entity, such as a person, organisation, or service, that is responsible for making contributions to the dataset. The contributor should be described as an RDF resource, rather than just providing the name as a literal." ;
     sh:name "dcterms:contributor" ;
     sh:nodeKind sh:IRI ;
@@ -887,6 +889,9 @@ tern-shapes:RDFDataset-contributor
 
 tern-shapes:RDFDataset-created
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "created" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`." ;
     sh:datatype xsd:date ;
     sh:description "Date of creation of the dataset. The value should be formatted and data-typed as an `xsd:date`." ;
     sh:name "dcterms:created" ;
@@ -895,6 +900,9 @@ tern-shapes:RDFDataset-created
 
 tern-shapes:RDFDataset-creator
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "creator" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:creator` predicate where the value node is an IRI." ;
     sh:description "An entity, such as a person, organisation, or service, that is primarily responsible for creating the dataset. The creator should be described as an RDF resource, rather than just providing the name as a literal." ;
     sh:name "dcterms:creator" ;
     sh:nodeKind sh:IRI ;
@@ -903,6 +911,9 @@ tern-shapes:RDFDataset-creator
 
 tern-shapes:RDFDataset-date
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "date" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:date` predicate where the value node is a literal with the datatype `xsd:date`." ;
     sh:datatype xsd:date ;
     sh:description "A point or period of time associated with an event in the life-cycle of the resource. The value should be formatted and data-typed as an `xsd:date`." ;
     sh:name "dcterms:date" ;
@@ -911,6 +922,9 @@ tern-shapes:RDFDataset-date
 
 tern-shapes:RDFDataset-description
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "description" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:description` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:datatype xsd:string ;
     sh:description "A textual description of the dataset." ;
     sh:name "dcterms:description" ;
@@ -919,6 +933,9 @@ tern-shapes:RDFDataset-description
 
 tern-shapes:RDFDataset-issued
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "issued" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`." ;
     sh:datatype xsd:date ;
     sh:description "Date of formal issuance (e.g., publication) of the dataset. The value should be formatted and datatyped as an `xsd:date`." ;
     sh:name "dcterms:issued" ;
@@ -927,6 +944,9 @@ tern-shapes:RDFDataset-issued
 
 tern-shapes:RDFDataset-license
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "license" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:license` predicate where the value node is an IRI." ;
     sh:description "A legal document giving official permission to do something with the resource." ;
     sh:name "dcterms:license" ;
     sh:nodeKind sh:IRI ;
@@ -935,6 +955,9 @@ tern-shapes:RDFDataset-license
 
 tern-shapes:RDFDataset-modified
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "modified" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`." ;
     sh:datatype xsd:date ;
     sh:description "Date on which the dataset was changed. The value should be formatted and datatyped as an `xsd:date`." ;
     sh:name "dcterms:modified" ;
@@ -943,6 +966,9 @@ tern-shapes:RDFDataset-modified
 
 tern-shapes:RDFDataset-publisher
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "publisher" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:publisher` predicate where the value node is an IRI." ;
     sh:description "An entity, such as a person, organisation, or service, that is responsible for making the dataset available. The publisher should be described as an RDF resource, rather than just providing the name as a literal." ;
     sh:name "dcterms:publisher" ;
     sh:nodeKind sh:IRI ;
@@ -951,13 +977,20 @@ tern-shapes:RDFDataset-publisher
 
 tern-shapes:RDFDataset-rightsHolder
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "rights holder" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:rightsHolder` predicate where the value node is an IRI or literal." ;
     sh:description "A person or organization owning or managing rights over the resource." ;
     sh:name "dcterms:rightsHolder" ;
+    sh:nodeKind sh:IRIOrLiteral ;
     sh:path dcterms:rightsHolder ;
 .
 
 tern-shapes:RDFDataset-source
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "source" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:source` predicate where the value node is an IRI." ;
     sh:description "A related resource from which the dataset is derived. The source should be described as an RDF resource, rather than as a literal." ;
     sh:name "dcterms:source" ;
     sh:nodeKind sh:IRI ;
@@ -966,6 +999,9 @@ tern-shapes:RDFDataset-source
 
 tern-shapes:RDFDataset-subject
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "subject" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:subject` predicate where the value node is an IRI or literal." ;
     sh:description "A topic of the resource. Recommended practice is to refer to the subject with a URI. If this is not possible or feasible, a literal value that identifies the subject may be provided. Both should preferably refer to a subject in a controlled vocabulary." ;
     sh:name "dcterms:subject" ;
     sh:nodeKind sh:IRIOrLiteral ;
@@ -974,6 +1010,9 @@ tern-shapes:RDFDataset-subject
 
 tern-shapes:RDFDataset-subset
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "subset" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `void:subset` predicate where the value node is an IRI of type `void:Dataset`." ;
     sh:class void:Dataset ;
     sh:description """The `void:subset` property can be used to provide descriptions of parts of a dataset. A part of a dataset is itself a `void:Dataset`, and any of the annotations for datasets listed in this guide can be applied to the subset. Reasons for subdividing a dataset might include:
 
@@ -989,6 +1028,9 @@ tern-shapes:RDFDataset-subset
 
 tern-shapes:RDFDataset-title
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "title" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:title` predicate where the value node is a literal with a datatype `xsd:string`." ;
     sh:datatype xsd:string ;
     sh:description "The name of the dataset." ;
     sh:name "dcterms:title" ;
@@ -997,6 +1039,9 @@ tern-shapes:RDFDataset-title
 
 tern-shapes:RDFDataset-vocabulary
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "vocabulary" ;
+    sh:message "A `tern:RDFDataset` _MAY_ have a `void:vocabulary` predicate where the value node is an IRI." ;
     sh:description "A vocabulary or `owl:Ontology` whose classes or properties are used in a `void:Dataset`." ;
     sh:name "void:vocabulary" ;
     sh:nodeKind sh:IRI ;
@@ -1005,6 +1050,9 @@ tern-shapes:RDFDataset-vocabulary
 
 tern-shapes:Result-isResultOf
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "is result of" ;
+    sh:message "A `tern:Result` _MUST_ have exactly 1 `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`." ;
     sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -1023,14 +1071,21 @@ tern-shapes:Result-isResultOf
 
 tern-shapes:Sample-isResultOf
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "is result of" ;
+    sh:message "A `tern:Sample` _MAY_ have a `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Sampling`." ;
     sh:class tern:Sampling ;
     sh:description "Relation linking a Result to the Sampling that created or caused it." ;
     sh:name "sosa:isResultOf" ;
+    sh:nodeKind sh:IRI ;
     sh:path sosa:isResultOf ;
 .
 
 tern-shapes:Sample-isSampleOf
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "is sample of" ;
+    sh:message "A `tern:Sample` _MUST_ have at least 1 `sosa:isSampleOf` predicate where the value node is an IRI of type `tern:FeatureOfInterest`." ;
     sh:class tern:FeatureOfInterest ;
     sh:description "Relation from a Sample to the FeatureOfInterest that it is intended to be representative of." ;
     sh:minCount 1 ;
@@ -1041,6 +1096,9 @@ tern-shapes:Sample-isSampleOf
 
 tern-shapes:Sampler-implements
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "implements" ;
+    sh:message "A `tern:Sampler` _MUST_ have at least 1 `ssn:implements` predicate where the value node is an IRI." ;
     sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
     sh:minCount 1 ;
     sh:name "ssn:implements" ;
@@ -1050,6 +1108,9 @@ tern-shapes:Sampler-implements
 
 tern-shapes:Sampling-hasResult
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has result" ;
+    sh:message "A `tern:Sampling` _MUST_ have at least 1 `sosa:hasResult` predicate where the value node is an IRI of type `tern:Sample`." ;
     sh:class tern:Sample ;
     sh:description "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample." ;
     sh:minCount 1 ;
@@ -1060,6 +1121,9 @@ tern-shapes:Sampling-hasResult
 
 tern-shapes:Sampling-madeBySampler
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "made by sampler" ;
+    sh:message "A `tern:Sampling` _MAY_ have a `sosa:madeBySampler` predicate where the value node is an IRI of type `tern:Sampler`." ;
     sh:class tern:Sampler ;
     sh:description "Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it." ;
     sh:name "sosa:madeBySampler" ;
@@ -1069,15 +1133,22 @@ tern-shapes:Sampling-madeBySampler
 
 tern-shapes:Site-dimension
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "dimension" ;
+    sh:message "A `tern:Site` _MAY_ have a maximum of 1 `tern:dimension` predicate where the value node is a literal with the datatype `xsd:string." ;
     sh:datatype xsd:string ;
     sh:description "Dimenion in metres." ;
     sh:maxCount 1 ;
     sh:name "tern:dimension" ;
+    sh:nodeKind sh:Literal ;
     sh:path tern:dimension ;
 .
 
 tern-shapes:Site-hasSiteVisit
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has site visit" ;
+    sh:message "A `tern:Site` _MAY_ have a `tern:hasSiteVisit` predicate where the value node is an IRI of type `tern:SiteVisit`." ;
     sh:class tern:SiteVisit ;
     sh:description "A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit)." ;
     sh:name "tern:hasSiteVisit" ;
@@ -1085,17 +1156,11 @@ tern-shapes:Site-hasSiteVisit
     sh:path tern:hasSiteVisit ;
 .
 
-tern-shapes:Site-label
-    a sh:PropertyShape ;
-    sh:datatype xsd:string ;
-    sh:description "A human-readable name for the subject." ;
-    sh:maxCount 1 ;
-    sh:name "rdfs:label" ;
-    sh:path rdfs:label ;
-.
-
 tern-shapes:Site-locationProcedure
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "location procedure" ;
+    sh:message "A `tern:Site` _MAY_ have a maximum of 1 `tern:locationProcedure` predicate where the value node is an IRI." ;
     sh:description "Link to a procedure used to obtain the location." ;
     sh:maxCount 1 ;
     sh:name "tern:locationProcedure" ;
@@ -1105,25 +1170,36 @@ tern-shapes:Site-locationProcedure
 
 tern-shapes:SiteVisit-endedAtTime
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "ended at time" ;
+    sh:message "A `tern:SiteVisit` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
     sh:datatype xsd:dateTime ;
     sh:description "The time at which an activity ended." ;
     sh:maxCount 1 ;
     sh:name "prov:endedAtTime" ;
+    sh:nodeKind sh:Literal ;
     sh:path prov:endedAtTime ;
 .
 
 tern-shapes:SiteVisit-startedAtTime
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "started at time" ;
+    sh:message "A `tern:SiteVisit` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
     sh:datatype xsd:dateTime ;
     sh:description "The time at which an activity started." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
     sh:name "prov:startedAtTime" ;
     sh:path prov:startedAtTime ;
 .
 
 tern-shapes:System-hasDeployment
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has deployment" ;
+    sh:message "A `tern:System` _MAY_ have an `ssn:hasDeployment` predicate where the value node is an IRI of type `tern:Deployment`." ;
     sh:class tern:Deployment ;
     sh:description "Relation between a System and a Deployment, recording that the System is deployed in that Deployment." ;
     sh:name "ssn:hasDeployment" ;
@@ -1133,6 +1209,9 @@ tern-shapes:System-hasDeployment
 
 tern-shapes:System-isHostedBy
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is hosted by" ;
+    sh:message "A `tern:System` _MAY_ have a maximum of 1 `sosa:isHostedBy` predicate where the value node is an IRI of type `tern:Platform`." ;
     sh:class tern:Platform ;
     sh:description "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by." ;
     sh:maxCount 1 ;
@@ -1143,6 +1222,9 @@ tern-shapes:System-isHostedBy
 
 tern-shapes:System-systemType
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "system type" ;
+    sh:message "A `tern:System` _MAY_ have a `tern:systemType` predicate where the value node is an IRI." ;
     sh:description "The type of system. Values are from some controlled vocabulary." ;
     sh:name "tern:systemType" ;
     sh:nodeKind sh:IRI ;
@@ -1151,48 +1233,83 @@ tern-shapes:System-systemType
 
 tern-shapes:Taxon-acceptedNameUsage
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "accepted name usage" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:acceptedNameUsage` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) taxon." ;
     sh:name "dwc:acceptedNameUsage" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:acceptedNameUsage ;
 .
 
 tern-shapes:Taxon-acceptedNameUsageID
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "accepted name usage ID" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:acceptedNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon." ;
     sh:name "dwc:acceptedNameUsageID" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:acceptedNameUsageID ;
 .
 
 tern-shapes:Taxon-class
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "class" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:class` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name of the class in which the taxon is classified." ;
     sh:name "dwc:class" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:class ;
 .
 
 tern-shapes:Taxon-cultivarEpithet
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "cultivarEpithet" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:cultivarEpithet` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "Part of the name of a cultivar, cultivar group or grex that follows the scientific name." ;
     sh:name "dwc:cultivarEpithet" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:cultivarEpithet ;
 .
 
 tern-shapes:Taxon-family
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "family" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:family` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name of the family in which the taxon is classified." ;
     sh:name "dwc:family" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:family ;
 .
 
 tern-shapes:Taxon-genericName
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "generic name" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:genericName` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The genus part of the scientificName without authorship." ;
     sh:name "dwc:genericName" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:genericName ;
 .
 
 tern-shapes:Taxon-genus
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "genus" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:genus` predicate where the value node is a literal with the datatype `xsd:string`." ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:description "The full scientific name of the genus in which the taxon is classified." ;
     sh:name "dwc:genus" ;
     sh:path dwc:genus ;
@@ -1200,132 +1317,227 @@ tern-shapes:Taxon-genus
 
 tern-shapes:Taxon-higherClassification
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "higher classification" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:higherClassification` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "A list (concatenated and separated) of taxa names terminating at the rank immediately superior to the taxon referenced in the taxon record." ;
     sh:name "dwc:higherClassification" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:higherClassification ;
 .
 
 tern-shapes:Taxon-infragenericEpithet
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "infrageneric epithet" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:infragenericEpithet` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The infrageneric part of a binomial name at ranks above species but below genus." ;
     sh:name "dwc:infragenericEpithet" ;
     sh:path dwc:infragenericEpithet ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
 .
 
 tern-shapes:Taxon-infraspecificEpithet
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "infraspecific epithet" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:infraspecificEpithet` predicate where the value node is a literal with the datatype `xsd:string`." ; 
     sh:description "The name of the lowest or terminal infraspecific epithet of the scientificName, excluding any rank designation." ;
     sh:name "dwc:infraspecificEpithet" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:infraspecificEpithet ;
 .
 
 tern-shapes:Taxon-kingdom
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "kingdom" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:kingdom` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name of the kingdom in which the taxon is classified." ;
     sh:name "dwc:kingdom" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:kingdom ;
 .
 
 tern-shapes:Taxon-nameAccordingTo
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "name according to" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:nameAccordingTo` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The reference to the source in which the specific taxon concept circumscription is defined or implied. For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given." ;
     sh:name "dwc:nameAccordingTo" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:nameAccordingTo ;
 .
 
 tern-shapes:Taxon-nameAccordingToID
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "name according to ID" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:nameAccordingToID` predicate where the value node is a literal with a datatype of `xsd:string`." ;
     sh:description "An identifier for the source in which the specific taxon concept circumscription is defined or implied. See nameAccordingTo." ;
     sh:name "dwc:nameAccordingToID" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:nameAccordingToID ;
 .
 
 tern-shapes:Taxon-namePublishedIn
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "name published in" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:namePublishedIn` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "A reference for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:name "dwc:namePublishedIn" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:namePublishedIn ;
 .
 
 tern-shapes:Taxon-namePublishedInID
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "name published in ID" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:namePublishedInID` where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "An identifier for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:name "dwc:namePublishedInID" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:namePublishedInID ;
 .
 
 tern-shapes:Taxon-namePublishedInYear
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "name published in year" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:namePublishedInYear` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The four-digit year in which the scientificName was published." ;
     sh:name "dwc:namePublishedInYear" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:namePublishedInYear ;
 .
 
 tern-shapes:Taxon-nomenclaturalCode
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "nomenclatural code" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:nomenclaturalCode` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The nomenclatural code (or codes in the case of an ambiregnal name) under which the scientificName is constructed." ;
     sh:name "dwc:nomenclaturalCode" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:nomenclaturalCode ;
 .
 
 tern-shapes:Taxon-nomenclaturalStatus
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "nomenclatural status" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:nomenclaturalStatus` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion." ;
     sh:name "dwc:nomenclaturalStatus" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:nomenclaturalStatus ;
 .
 
 tern-shapes:Taxon-order
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "order" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:order` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name of the order in which the taxon is classified." ;
     sh:name "dwc:order" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:order ;
 .
 
 tern-shapes:Taxon-originalNameUsage
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "original name usage" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:originalNameUsage` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the scientificName or the senior/earlier homonym for replaced names." ;
     sh:name "dwc:originalNameUsage" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:originalNameUsage ;
 .
 
 tern-shapes:Taxon-originalNameUsageID
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "original name usage ID" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:originalNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the scientificName was originally established under the rules of the associated nomenclaturalCode." ;
     sh:name "dwc:originalNameUsageID" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:originalNameUsageID ;
 .
 
 tern-shapes:Taxon-parentNameUsage
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "parent name usage" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:parentNameUsage` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." ;
     sh:name "dwc:parentNameUsage" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:parentNameUsage ;
 .
 
 tern-shapes:Taxon-parentNameUsageID
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "parent name usage ID" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:parentNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName." ;
     sh:name "dwc:parentNameUsageID" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:parentNameUsageID ;
 .
 
 tern-shapes:Taxon-phylum
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "phylum" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:phylum` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name of the phylum or division in which the taxon is classified." ;
     sh:name "dwc:phylum" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:phylum ;
 .
 
 tern-shapes:Taxon-scientificName
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "scientific name" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:scientificName` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term." ;
     sh:name "dwc:scientificName" ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:path dwc:scientificName ;
 .
 
 tern-shapes:Taxon-scientificNameAuthorship
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "scientific name authorship" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:scientificNameAuthorship` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The authorship information for the scientificName formatted according to the conventions of the applicable nomenclaturalCode." ;
     sh:name "dwc:scientificNameAuthorship" ;
     sh:path dwc:scientificNameAuthorship ;
@@ -1333,6 +1545,11 @@ tern-shapes:Taxon-scientificNameAuthorship
 
 tern-shapes:Taxon-scientificNameID
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "scientific name ID" ;
+    sh:message "A `tern:Taxon _MAY_ have a `dwc:scientificNameID` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "An identifier for the nomenclatural (not taxonomic) details of a scientific name." ;
     sh:name "dwc:scientificNameID" ;
     sh:path dwc:scientificNameID ;
@@ -1340,6 +1557,11 @@ tern-shapes:Taxon-scientificNameID
 
 tern-shapes:Taxon-specificEpithet
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "specific epithet" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:specificEpithet` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The name of the first or species epithet of the scientificName." ;
     sh:name "dwc:specificEpithet" ;
     sh:path dwc:specificEpithet ;
@@ -1347,6 +1569,11 @@ tern-shapes:Taxon-specificEpithet
 
 tern-shapes:Taxon-subfamily
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "subfamily" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:subfamily` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name of the subfamily in which the taxon is classified." ;
     sh:name "dwc:subfamily" ;
     sh:path dwc:subfamily ;
@@ -1354,6 +1581,11 @@ tern-shapes:Taxon-subfamily
 
 tern-shapes:Taxon-subgenus
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "subgenus" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:subgenus` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The full scientific name of the subgenus in which the taxon is classified. Values should include the genus to avoid homonym confusion." ;
     sh:name "dwc:subgenus" ;
     sh:path dwc:subgenus ;
@@ -1361,6 +1593,11 @@ tern-shapes:Taxon-subgenus
 
 tern-shapes:Taxon-taxonConceptID
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "taxon concept ID" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:taxonConceptID` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "An identifier for the taxonomic concept to which the record refers - not for the nomenclatural details of a taxon." ;
     sh:name "dwc:taxonConceptID" ;
     sh:path dwc:taxonConceptID ;
@@ -1368,6 +1605,11 @@ tern-shapes:Taxon-taxonConceptID
 
 tern-shapes:Taxon-taxonID
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "taxon ID" ;
+    sh:message "A `ternTaxon` _MAY_ have a `dwc:taxonID` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "A global unique identifier for the taxon (name in a classification)." ;
     sh:name "dwc:taxonID" ;
     sh:path dwc:taxonID ;
@@ -1375,6 +1617,11 @@ tern-shapes:Taxon-taxonID
 
 tern-shapes:Taxon-taxonRank
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "taxon rank" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:taxonRank` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The taxonomic rank of the most specific name in the scientificName." ;
     sh:name "dwc:taxonRank" ;
     sh:path dwc:taxonRank ;
@@ -1382,6 +1629,11 @@ tern-shapes:Taxon-taxonRank
 
 tern-shapes:Taxon-taxonRemarks
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "taxon remarks" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:taxonRemarks` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "Comments or notes about the taxon or name." ;
     sh:name "dwc:taxonRemarks" ;
     sh:path dwc:taxonRemarks ;
@@ -1389,6 +1641,11 @@ tern-shapes:Taxon-taxonRemarks
 
 tern-shapes:Taxon-taxonomicStatus
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "taxonomic status" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:taxonomicStatus` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The status of the use of the scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a taxon. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept." ;
     sh:name "dwc:taxonomicStatus" ;
     sh:path dwc:taxonomicStatus ;
@@ -1396,6 +1653,11 @@ tern-shapes:Taxon-taxonomicStatus
 
 tern-shapes:Taxon-verbatimTaxonRank
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "verbatim taxon rank" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:verbatimTaxonRank` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "The taxonomic rank of the most specific name in the scientificName as it appears in the original record." ;
     sh:name "dwc:verbatimTaxonRank" ;
     sh:path dwc:verbatimTaxonRank ;
@@ -1403,6 +1665,11 @@ tern-shapes:Taxon-verbatimTaxonRank
 
 tern-shapes:Taxon-vernacularName
     a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "vernacular name" ;
+    sh:message "A `tern:Taxon` _MAY_ have a `dwc:vernacularName` predicate where the value node is a literal with the datatype `xsd:string`." ;
     sh:description "A common or vernacular name." ;
     sh:name "dwc:vernacularName" ;
     sh:path dwc:vernacularName ;
@@ -1410,7 +1677,10 @@ tern-shapes:Taxon-vernacularName
 
 tern-shapes:Text-value
     a sh:PropertyShape ;
-    sh:description "Data type: text." ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "value" ;
+    sh:message "A `tern:Text` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with the datatype `xsd:string` or `rdf:langString`." ;
+    sh:description "The text value." ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
@@ -1419,7 +1689,7 @@ tern-shapes:Text-value
                 sh:datatype xsd:string
             ]
             [
-                sh:datatype xsd:langString
+                sh:datatype rdf:langString
             ]
         ) ;
     sh:path rdf:value ;
@@ -1427,6 +1697,9 @@ tern-shapes:Text-value
 
 tern-shapes:Transect-featureType
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "feature type" ;
+    sh:message "A `tern:Transect` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI with the value `http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1`." ;
     sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
     sh:hasValue <http://linked.data.gov.au/def/tern-cv/de46fa49-d1c9-4bef-8462-d7ee5174e1e1> ;
     sh:maxCount 1 ;
@@ -1438,6 +1711,9 @@ tern-shapes:Transect-featureType
 
 tern-shapes:Transect-hasGeometry
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has geometry" ;
+    sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `geo:hasGeometry` predicate where the value node is a blank node or IRI of type `sf:LineString` or `geo:Geometry`." ;
     sh:description "A spatial representation for a given feature." ;
     sh:maxCount 1 ;
     sh:name "geo:hasGeometry" ;
@@ -1455,6 +1731,9 @@ tern-shapes:Transect-hasGeometry
 
 tern-shapes:Transect-transectDirection
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "transect direction" ;
+    sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectDirection` where the value node is an IRI or literal." ;
     sh:description "Describes the direction of the transect." ;
     sh:maxCount 1 ;
     sh:name "tern:transectDirection" ;
@@ -1464,8 +1743,11 @@ tern-shapes:Transect-transectDirection
 
 tern-shapes:Transect-transectEndPoint
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "transect end point" ;
+    sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectEndPoint` predicate where the value node is an IRI of type `sf:Point`." ;
     sh:class sf:Point ;
-    sh:description "Refers to the [sf:Point](http://www.opengis.net/ont/sf#Point) representing the end of a transect." ;
+    sh:description "Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] representing the end of a transect." ;
     sh:maxCount 1 ;
     sh:name "tern:transectEndPoint" ;
     sh:nodeKind sh:IRI ;
@@ -1474,8 +1756,11 @@ tern-shapes:Transect-transectEndPoint
 
 tern-shapes:Transect-transectStartPoint
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "transect start point" ;
+    sh:message "A `tern:Transect` _MAY_ have a `tern:transectStartPoint` predicate where the value node is an IRI of type `sf:Point`." ;
     sh:class sf:Point ;
-    sh:description "Refers to the [sf:Point](http://www.opengis.net/ont/sf#Point) representing the start of a transect." ;
+    sh:description "Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] representing the start of a transect." ;
     sh:maxCount 1 ;
     sh:name "tern:transectStartPoint" ;
     sh:nodeKind sh:IRI ;
@@ -1496,6 +1781,9 @@ tern-shapes:dwc-materialSampleID
 
 tern-shapes:geo-sfWithin
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "SF within" ;
+    sh:message "A `geo:sfWithin` _MUST_ have an IRI value." ;
     sh:description "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***" ;
     sh:name "geo:sfWithin" ;
     sh:nodeKind sh:IRI ;
@@ -1553,6 +1841,9 @@ tern-shapes:sosa-hasSimpleResult
 
 tern-shapes:sosa-implements
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "implements" ;
+    sh:message "An `ssn:implements` _MUST_ have an IRI value." ;
     sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
     sh:name "ssn:implements" ;
     sh:nodeKind sh:IRI ;
@@ -1582,7 +1873,7 @@ tern-shapes:sosa-madeBySensor
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "made by sensor" ;
-    sh:message "A `sosa:madeBySensor` predicate _MAY_ exist with an IRI value." ;
+    sh:message "A `sosa:madeBySensor` predicate _MAY_ exist where the value node is an IRI." ;
     sh:class tern:Sensor ;
     sh:description "Relation between an Observation and the Sensor which made the Observations." ;
     sh:maxCount 1 ;
@@ -1593,6 +1884,9 @@ tern-shapes:sosa-madeBySensor
 
 tern-shapes:sosa-madeSampling
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "made sampling" ;
+    sh:message "A `sosa:madeSampling` predicate _MAY_ exist where the value node is an IRI." ;
     sh:class tern:Sampling ;
     sh:description "Relation between a Sampler (sampling device or entity) and the Sampling act it performed." ;
     sh:name "sosa:madeSampling" ;
@@ -1717,6 +2011,9 @@ tern-shapes:tern-observationType
 
 tern-shapes:tern-samplingType
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "sampling type" ;
+    sh:message "A `tern:Sampling` _MAY_ have a maximum of 1 `tern:samplingType` predicate where the value node is an IRI." ;
     sh:description "The type of sampling act." ;
     sh:maxCount 1 ;
     sh:name "tern:samplingType" ;
@@ -1983,6 +2280,10 @@ tern-shapes:tern-hasSiteVisit
 
 tern-shapes:tern-locationDescription
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "location description" ;
+    sh:message "A `tern:locationDescription` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
     sh:description """The description of the site's location. 
 
@@ -1994,6 +2295,10 @@ Example: 10km west of Fletcherview Tropical Rangeland SuperSite.""" ;
 
 tern-shapes:tern-siteDescription
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "site description" ;
+    sh:message "A `tern:siteDescription` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
     sh:description """The description of the site. 
 
