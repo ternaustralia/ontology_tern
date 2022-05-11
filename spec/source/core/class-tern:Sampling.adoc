@@ -208,7 +208,7 @@ Taking a diamond-drill core from a rock outcrop.
 | Label | result date time
 | Definition | The result time is the instant of time when the Observation, Actuation or Sampling activity was completed.
 | Scope note | 
-| Implementation | Exactly 1 ``tern:resultDateTime` _MUST_ exist where the value node is a literal of datatype `xsd:date`, `xsd:dateTime`, or `xsd:dateTimeStamp`.
+| Implementation | A `tern:resultDateTime` predicate _MUST_ have a literal value where the datatype is an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`] +

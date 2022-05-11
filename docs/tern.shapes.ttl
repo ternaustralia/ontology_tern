@@ -371,6 +371,16 @@ tern-shapes:Sampling
     sh:targetClass tern:Sampling ;
 .
 
+tern-shapes:Sensor
+    a sh:NodeShape ;
+    rdfs:label "Sensor" ;
+    sh:property
+        tern-shapes:Sensor-implements ,
+        tern-shapes:Sensor-madeObservation ,
+        tern-shapes:Sensor-observes ;
+    sh:targetClass tern:Sensor ;
+.
+
 tern-shapes:Site
     a sh:NodeShape ;
     rdfs:label "Site" ;
@@ -1130,6 +1140,41 @@ tern-shapes:Sampling-madeBySampler
     sh:name "sosa:madeBySampler" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:madeBySampler ;
+.
+
+tern-shapes:Sensor-implements
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "implements" ;
+    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
+    sh:message "A `tern:Sensor` _MUST_ have at least 1 `ssn:implements` predicate where the value node is an IRI." ;
+    sh:minCount 1 ;
+    sh:name "ssn:implements" ;
+    sh:nodeKind sh:IRI ;
+    sh:path ssn:implements ;
+.
+
+tern-shapes:Sensor-madeObservation
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "made observation" ;
+    sh:class tern:Observation ;
+    sh:description "Relation between a `Sensor` and an `Observation` made by the `Sensor`." ;
+    sh:message "A `tern:Sensor` _MAY_ have an `sosa:madeObservation` predicate where the value node is an IRI of type `tern:Observation`." ;
+    sh:name "sosa:madeObservation" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:madeObservation ;
+.
+
+tern-shapes:Sensor-observes
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "observes" ;
+    sh:description "Relation between a `Sensor` and an `ObservableProperty` that it is capable of sensing." ;
+    sh:message "A `tern:Sensor` _MAY_ have an `sosa:observes` predicate where the value node is an IRI." ;
+    sh:name "sosa:observes" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:observes ;
 .
 
 tern-shapes:Site-dimension
