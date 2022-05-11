@@ -299,6 +299,19 @@ template_settings = [
     ),
     ClassTemplateSettings(
         template=class_template,
+        target_path="spec/source/core/class-tern:Sensor.adoc",
+        options=ClassTemplateOptions(
+            uri=TERN_SHAPES.Sensor,
+            adoc_identifier="class-tern:Sensor",
+            curie="tern:Sensor",
+            ontology_file="docs/tern.ttl",
+            shapes_file="docs/tern.shapes.ttl",
+        ),
+        callable=create_file,
+        lookups=lookups,
+    ),
+    ClassTemplateSettings(
+        template=class_template,
         target_path="spec/source/core/class-tern:Site.adoc",
         options=ClassTemplateOptions(
             uri=TERN_SHAPES.Site,

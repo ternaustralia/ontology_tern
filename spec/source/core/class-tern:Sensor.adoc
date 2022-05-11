@@ -1,0 +1,73 @@
+
+[#class-tern:Sensor]
+==== Class: tern:Sensor
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Sensor[`tern:Sensor`]
+| Status | `stable` icon:check-circle[]
+| Label | Sensor
+| Definition | Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Sensor-ssn:implements]
+===== Property: ssn:implements
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/implements[`ssn:implements`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sensor-implements
+| Status | `stable` icon:check-circle[]
+| Label | implements
+| Definition | Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).
+| Scope note | 
+| Implementation | A `tern:Sensor` _MUST_ have at least 1 `ssn:implements` predicate where the value node is an IRI.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sensor-sosa:madeObservation]
+===== Property: sosa:madeObservation
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/madeObservation[`sosa:madeObservation`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sensor-madeObservation
+| Status | `stable` icon:check-circle[]
+| Label | made observation
+| Definition | Relation between a `Sensor` and an `Observation` made by the `Sensor`.
+| Scope note | 
+| Implementation | A `tern:Sensor` _MAY_ have an `sosa:madeObservation` predicate where the value node is an IRI of type `tern:Observation`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`]
+| Expected values | 
+|===
+
+[#class-tern:Sensor-sosa:observes]
+===== Property: sosa:observes
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/observes[`sosa:observes`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sensor-observes
+| Status | `stable` icon:check-circle[]
+| Label | observes
+| Definition | Relation between a `Sensor` and an `ObservableProperty` that it is capable of sensing.
+| Scope note | 
+| Implementation | A `tern:Sensor` _MAY_ have an `sosa:observes` predicate where the value node is an IRI.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

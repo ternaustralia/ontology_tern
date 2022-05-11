@@ -59,6 +59,8 @@ include::core/class-tern:Sampler.adoc[]
 
 include::core/class-tern:Sampling.adoc[]
 
+include::core/class-tern:Sensor.adoc[]
+
 include::core/class-tern:SiteVisit.adoc[]
 
 include::core/class-tern:System.adoc[]
