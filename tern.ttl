@@ -232,17 +232,6 @@ tern:Dimension
                             xsd:integer
                         )
                 ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
             owl:onProperty tern:width
         ] ,
         [
@@ -260,6 +249,17 @@ tern:Dimension
             owl:onClass <http://qudt.org/schema/qudt/Unit> ;
             owl:onProperty tern:unit ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:length
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot [Site](#EcologicalSite). This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -421,6 +421,59 @@ tern:MaterialSample
     skos:prefLabel "Material sample" ;
 .
 
+tern:ObservableProperty
+    a owl:Class ;
+    rdfs:label "Observable Property" ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom skos:Concept ;
+            owl:onProperty tern:localValue
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom tern:Parameter ;
+            owl:onProperty rdf:value
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            skos:ConceptScheme
+                            skos:Collection
+                            owl:Ontology
+                        )
+                ] ;
+            owl:onProperty tern:localVocabulary
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty rdf:value
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:vocabulary
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:localValue
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern:localVocabulary
+        ] ,
+        sosa:ObservableProperty ;
+    skos:definition "An observable quality (property, characteristic) of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). A feature-of-interest refers to a feature whose properties are measured or observed. " ;
+    skos:example """Sampling depth, bulk density, pH are examples of properties of a 
+soil sample, and the soil sample is the feature-of-interest, 
+representative of the area from which it is collected.""" ;
+.
+
 tern:ObservationCollection
     a owl:Class ;
     reg:status reg:statusExperimental ;
@@ -489,26 +542,10 @@ tern:Sampler
 
 tern:Sensor
     a owl:Class ;
-    rdfs:label "Sensor" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:ObservableProperty ;
-            owl:onProperty sosa:observes
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:Observation ;
-            owl:onProperty sosa:madeObservation
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty <http://schema.org/serialNumber>
-        ] ,
-        sosa:Sensor ;
+    reg:status reg:statusStable ;
+    rdfs:subClassOf sosa:Sensor ;
     skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms." ;
+    skos:prefLabel "Sensor" ;
 .
 
 tern:Taxon
@@ -990,57 +1027,17 @@ tern:MobilePlatform
     skos:definition "A moving mobile platform on land, in water or in space." ;
 .
 
-tern:ObservableProperty
+tern:Observation
     a owl:Class ;
-    rdfs:label "Observable Property" ;
+    reg:status reg:statusStable ;
     rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
-            owl:onProperty tern:localValue
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:Parameter ;
-            owl:onProperty rdf:value
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            skos:ConceptScheme
-                            skos:Collection
-                            owl:Ontology
-                        )
-                ] ;
-            owl:onProperty tern:localVocabulary
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdf:value
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:vocabulary
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:localValue
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:localVocabulary
-        ] ,
-        sosa:ObservableProperty ;
-    skos:definition "An observable quality (property, characteristic) of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). A feature-of-interest refers to a feature whose properties are measured or observed. " ;
-    skos:example """Sampling depth, bulk density, pH are examples of properties of a 
-soil sample, and the soil sample is the feature-of-interest, 
-representative of the area from which it is collected.""" ;
+        prov:Activity ,
+        sosa:Observation ;
+    skos:definition "Act of carrying out an (`Observation`) `Procedure` to estimate or calculate a value of a property of a `FeatureOfInterest`. Links to a `Sensor` to describe what made the `Observation` and how; links to an `ObservableProperty` to describe what the result is an estimate of, and to a `FeatureOfInterest` to detail what that property was associated with." ;
+    skos:example """The activity of measuring properties such as wind speed and direction by 
+an anemometer sensor. The results of the observation are the measurement values 
+of the properties estimated by the sensor.""" ;
+    skos:prefLabel "Observation" ;
 .
 
 tern:Parameter
@@ -1273,19 +1270,6 @@ tern:FixedPlatform
     rdfs:label "Fixed Platform" ;
     rdfs:subClassOf tern:Platform ;
     skos:definition "A fixed platform based on land." ;
-.
-
-tern:Observation
-    a owl:Class ;
-    reg:status reg:statusStable ;
-    rdfs:subClassOf
-        prov:Activity ,
-        sosa:Observation ;
-    skos:definition "Act of carrying out an (`Observation`) `Procedure` to estimate or calculate a value of a property of a `FeatureOfInterest`. Links to a `Sensor` to describe what made the `Observation` and how; links to an `ObservableProperty` to describe what the result is an estimate of, and to a `FeatureOfInterest` to detail what that property was associated with." ;
-    skos:example """The activity of measuring properties such as wind speed and direction by 
-an anemometer sensor. The results of the observation are the measurement values 
-of the properties estimated by the sensor.""" ;
-    skos:prefLabel "Observation" ;
 .
 
 tern:length
