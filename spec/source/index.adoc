@@ -31,13 +31,13 @@ NOTE: *Status: Draft* - while the document is in draft, sections of the document
 
 === Abstract
 
-The TERN Ontology Specification addresses the data exchange and data representation problems with integrating or exchanging heterogeneous ecological field survey data. The specification uses the PROF vocabulary to express itself as a profile of multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification.
+The TERN Ontology Specification addresses the data exchange and data representation problems with integrating or exchanging heterogeneous ecological field survey data. The specification combines and profiles multiple internationally-recognised Semantic Web standards and establishes links to informative resources and controlled vocabularies necessary to use the specification. 
 
 For many years, the scientific ecological community and industry partners collected rich and insightful data about the land and ecosystems by performing field surveys. Unfortunately, the state of the collected data was often unusable for prompt nationwide reporting and data analysis due to incompatible data storage solutions between non-standardised relational databases, spreadsheets and PDF documents. Without spending further time and money to extract, transform and integrate the data, much of the data's richness and usefulness is lost.
 
 The solution to this problem of an ever-growing set of heterogeneous data is to use existing standards defined by the W3C and follow the Linked Data set of principles. By building a specification based on existing web standards, the richness of the ecological field survey data can now be integrated and queried as one large graph of data on the World Wide Web.
 
-The TERN Ontology Specification is a profile of W3C's SOSA, SSN and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and provides associations of these activities to persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC's GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT's Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit classes to represent survey trips performed on ad-hoc or permanent plots and uses the Attribute class to represent auxiliary information.
+The TERN Ontology Specification is a profile of W3C's SOSA, SSN, SSN-ext and PROV ontologies. It uses these ontologies to describe observations and samplings as kinds of activities on a field survey trip and provides associations of these activities to persons and organisations. The TERN Ontology Specification also uses community-based standards such as OGC's GeoSPARQL to associate spatial features or geometries to things within a field survey trip and QUDT's Units vocabulary for associating units of measure to results of observations. The TERN Ontology Specification also provides a vast set of TERN-created ecology-based and ecology-related controlled vocabularies to describe observable properties, feature types, instruments and protocol methods. Lastly, the TERN Ontology introduces Site and Site Visit classes to represent survey trips performed on ad-hoc or permanent plots and uses the Attribute class to represent auxiliary information. 
 
 === Normative Status
 
@@ -63,9 +63,9 @@ This specification defines the classes and properties of the TERN Ontology and t
 
 === Scope
 
-The TERN Ontology Specification provides a standardised way to exchange and represent ecological field survey data by providing classes, properties and controlled vocabularies that characterise terrestrial data. Although the upper ontologies such as SOSA and SSN can theoretically apply to any domain, the TERN Ontology Specification focuses on representing data collected during opportunistic and plot-based field surveys and provides mechanisms for doing so. 
+The TERN Ontology Specification provides a standardised way to exchange and represent ecological field survey data by defining classes, properties and controlled vocabularies that characterise terrestrial environmental and ecology data. Although the upper ontologies such as SOSA and SSN can theoretically apply to any domain, the TERN Ontology Specification focuses on representing data collected during opportunistic and plot-based field surveys. 
 
-Lastly, the TERN Ontology Specification is not concerned with validating data according to specific field survey collection protocols and instead is concerned with validating the structure of the data. Data custodians can create a profile of the TERN Ontology Specification and extend it by providing validation and requirements according to their field survey protocol's data collection methodologies.
+Lastly, the TERN Ontology Specification is not concerned with validating data according to specific field survey collection protocols and instead is concerned with validating the structure and coding of the data. Individual data custodians can create a profile of the TERN Ontology Specification and extend it according to their field survey protocol's data collection methodologies by providing more specialised validation and requirements.
 
 include::standard-parts.adoc[]
 
@@ -97,9 +97,20 @@ include::classes.adoc[]
 ** https://www.w3.org/TR/dx-prof/[_The Profiles Vocabulary_], Nicholas J Car; Rob Atkinson. 18 December 2019. W3C Working Group Note. URL: <https://www.w3.org/TR/dx-prof/>
 
 [none]
+* [[prov-o]] <<prov-o>> +
+[none]
+** https://www.w3.org/TR/prov-o/[_SPROV-O: The PROV Ontology_]. Timothy Lebo; Satya Sahoo; Deborah McGuiness. 30 April 2013. W3C Recommendation. URL: <https://www.w3.org/TR/prov-o/>
+
+
+[none]
 * [[vocab-ssn]] <<vocab-ssn>> +
 [none]
 ** https://www.w3.org/TR/vocab-ssn/[_Semantic Sensor Network Ontology_]. Armin Haller; Krzysztof Janowicz; Simon Cox; Danh Le Phuoc; Kerry Taylor; Maxime Lefrançois. 19 October 2017. W3C Recommendation. URL: <https://www.w3.org/TR/vocab-ssn/>
+
+[none]
+* [[vocab-ssn-ext]] <<vocab-ssn-ext>> +
+[none]
+** https://www.w3.org/TR/vocab-ssn-ext/[_Extensions to the Semantic Sensor Network Ontology_]. Simon Cox. 16 January 2020. W3C Working Draft. URL: <https://www.w3.org/TR/vocab-ssn-ext/>
 
 :sectnums!:
 
