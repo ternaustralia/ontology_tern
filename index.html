@@ -270,6 +270,7 @@ h6 > a.link:hover,
 <li><a href="#class-tern:Sampling-sosa:usedProcedure">4.1.17.11. Property: sosa:usedProcedure</a></li>
 <li><a href="#class-tern:Sampling-tern:hasSiteVisit">4.1.17.12. Property: tern:hasSiteVisit</a></li>
 <li><a href="#class-tern:Sampling-tern:samplingType">4.1.17.13. Property: tern:samplingType</a></li>
+<li><a href="#class-tern:Sampling-void:inDataset">4.1.17.14. Property: void:inDataset</a></li>
 </ul>
 </li>
 <li><a href="#class-tern:Sensor">4.1.18. Class: tern:Sensor</a>
@@ -451,7 +452,7 @@ h6 > a.link:hover,
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-31</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
@@ -6895,6 +6896,67 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tbody>
 </table>
 </div>
+<div class="sect4">
+<h5 id="class-tern:Sampling-void:inDataset"><a class="link" href="#class-tern:Sampling-void:inDataset">4.1.17.14. Property: void:inDataset</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rdfs.org/ns/void#inDataset"><code>void:inDataset</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/void-inDataset" class="bare">https://w3id.org/tern/shapes/tern/void-inDataset</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A link to the RDF payload&#8217;s metadata which this resource was a part of.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There <em>MUST</em> exist exactly 1 <code>void:inDataset</code> property with an IRI value to a <code>tern:RDFDataset</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="class-tern:Sensor"><a class="link" href="#class-tern:Sensor">4.1.18. Class: tern:Sensor</a></h4>
@@ -12157,7 +12219,7 @@ This Annex is normative.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-11 04:55:49 UTC
+Last updated 2022-05-31 02:06:04 UTC
 </div>
 </div>
 </body>

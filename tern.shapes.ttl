@@ -35,8 +35,8 @@ tern-shapes:
         <http://www.w3.org/2004/02/skos/core> ,
         sh: ,
         tern: ;
-    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.6.1> ;
-    owl:versionInfo "0.6.1" ;
+    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.6.2> ;
+    owl:versionInfo "0.6.2" ;
 .
 
 tern-shapes:Association
@@ -367,7 +367,8 @@ tern-shapes:Sampling
         tern-shapes:sosa-resultTime ,
         tern-shapes:sosa-usedProcedure ,
         tern-shapes:tern-hasSiteVisit ,
-        tern-shapes:tern-samplingType ;
+        tern-shapes:tern-samplingType ,
+        tern-shapes:void-inDataset ;
     sh:targetClass tern:Sampling ;
 .
 
