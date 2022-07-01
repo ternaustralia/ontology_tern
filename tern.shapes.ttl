@@ -35,8 +35,8 @@ tern-shapes:
         <http://www.w3.org/2004/02/skos/core> ,
         sh: ,
         tern: ;
-    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.6.2> ;
-    owl:versionInfo "0.6.2" ;
+    owl:versionIRI <https://w3id.org/tern/shapes/tern/0.6.3> ;
+    owl:versionInfo "0.6.3" ;
 .
 
 tern-shapes:Association
@@ -1067,7 +1067,6 @@ tern-shapes:Result-isResultOf
     sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
     sh:maxCount 1 ;
     sh:message "A `tern:Result` _MUST_ have exactly 1 `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`." ;
-    sh:minCount 1 ;
     sh:name "sosa:isResultOf" ;
     sh:nodeKind sh:IRI ;
     sh:or (
