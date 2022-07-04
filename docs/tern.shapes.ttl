@@ -1066,7 +1066,7 @@ tern-shapes:Result-isResultOf
     skos:prefLabel "is result of" ;
     sh:description "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Result` _MUST_ have exactly 1 `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`." ;
+    sh:message "A `tern:Result` _MAY_ have at most 1 `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`." ;
     sh:name "sosa:isResultOf" ;
     sh:nodeKind sh:IRI ;
     sh:or (
