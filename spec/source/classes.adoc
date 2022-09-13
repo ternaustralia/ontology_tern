@@ -43,6 +43,39 @@ include::core/class-tern:IRI.adoc[]
 
 include::core/class-tern:Integer.adoc[]
 
+include::core/class-tern:Intervention.adoc[]
+
+===== tern:Intervention example
+
+The following example is based on the https://www.directory.gov.au/portfolios/climate-change-energy-environment-and-water/department-climate-change-energy-environment-and-water[DCCEEW's] https://www.dcceew.gov.au/environment/land/landcare/current-programs/regional-land-partnerships[RLP protocols] for intervention. 
+
+Definition of intervention within the field survey protocol context:
+
+[quote, Interventions Module, "McCallum K, Laws M, Bignall J, O'Neill S, Sparrow B. (unpublished draft) 'Interventions module' in ….. (eds) Ecological Field Monitoring Protocols Manual: Standardising environmental monitoring and data systems for improved decision making. Draft v 0.1 Report to DAWE. TERN, Adelaide."]
+An intervention is a management process to maintain, restore or improve an ecosystem within a spatial area. 
+Interventions can take a range of forms, including fencing to protect remnant vegetation (Spooner et al. 2002), weed and pest animal control (Martin and van Klinken 2006; Reddiex et al. 2006), restoration and revegetation, re-introductions or translocations (Silcock et al. 2019), removal of watering points, controlled burns, nest box installation and community or landholder workshops (Capon et al. 2020).
+
+====== Debris removal
+
+The RLP field survey protocols define a number of interventions in a table. Below shows one example taken from the field survey protocols for _debris removal_.
+
+All RLP field survey interventions have _inputs_ and _outputs_. Inputs are modelled as `tern:Attribute` class instances and outputs are modelled as `tern:Observation` class instances. The `tern:interventionType` property links to a _global_ concept within TERN's controlled vocabularies for _debris removal_ and the `sosa:usedProcedure` links to the _local_ protocol-specific version of _debris removal_. The spatial extent is recorded digitally as a polygon feature in the data input app and is captured here with the `geo:hasGeometry` property pointing to a description of the polygon as an instance of `geo:Geometry`. The actual coordinates of the polygon are recorded on the geometry object with the property `geo:asWKT`. Each one of the input fields are recorded as a `tern:Attribute` linked to the intervention activity via the property `tern:hasAttribute`. Each individual outcome is recorded as a `tern:Observation` linked from the intervention object via the property `prov:wasInformedBy`.
+
+*RLP interventions table headers_*
+|===
+|Project Service|Field Collection|App Group|Output Measure|Mapping Requirements|Mapping Area (ha)|Reporting Fields|Data Field Class|Schema|Comment RLP|Comment TERN
+|===
+
+[#image-debris-removal-table]
+.Debris removal table
+[link=https://w3id.org/tern/static/tern-ontology/spec/debris-removal-table.png]
+image:https://w3id.org/tern/static/tern-ontology/spec/debris-removal-table.png[]
+
+[#image-intervention-example]
+.Diagram modelling debris removal with the Intervention class
+[link=https://w3id.org/tern/static/tern-ontology/spec/intervention-example-debris-removal.png]
+image:https://w3id.org/tern/static/tern-ontology/spec/intervention-example-debris-removal.png[]
+
 include::core/class-tern:MaterialSample.adoc[]
 
 include::core/class-tern:Observation.adoc[]
@@ -60,6 +93,8 @@ include::core/class-tern:Sampler.adoc[]
 include::core/class-tern:Sampling.adoc[]
 
 include::core/class-tern:Sensor.adoc[]
+
+include::core/class-tern:Site.adoc[]
 
 include::core/class-tern:SiteVisit.adoc[]
 

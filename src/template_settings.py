@@ -195,6 +195,19 @@ template_settings = [
     ),
     ClassTemplateSettings(
         template=class_template,
+        target_path="spec/source/core/class-tern:Intervention.adoc",
+        options=ClassTemplateOptions(
+            uri=TERN_SHAPES.Intervention,
+            adoc_identifier="class-tern:Intervention",
+            curie="tern:Intervention",
+            ontology_file="docs/tern.ttl",
+            shapes_file="docs/tern.shapes.ttl",
+        ),
+        callable=create_file,
+        lookups=lookups,
+    ),
+    ClassTemplateSettings(
+        template=class_template,
         target_path="spec/source/core/class-tern:MaterialSample.adoc",
         options=ClassTemplateOptions(
             uri=TERN_SHAPES.MaterialSample,
