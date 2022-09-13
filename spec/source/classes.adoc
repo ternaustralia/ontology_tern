@@ -76,6 +76,8 @@ image:https://w3id.org/tern/static/tern-ontology/spec/debris-removal-table.png[]
 [link=https://w3id.org/tern/static/tern-ontology/spec/intervention-example-debris-removal.png]
 image:https://w3id.org/tern/static/tern-ontology/spec/intervention-example-debris-removal.png[]
 
+Other interventions are described in the original document at https://www.dcceew.gov.au/sites/default/files/documents/merit-ready-reckoner-rlp-project-services.pdf[MERIT Ready Reckoner V3 Regional Land Partnerships – Project Services].
+
 include::core/class-tern:MaterialSample.adoc[]
 
 include::core/class-tern:Observation.adoc[]
