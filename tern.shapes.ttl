@@ -35,8 +35,8 @@ tern-shapes:
         <http://www.w3.org/2004/02/skos/core> ,
         sh: ,
         tern: ;
-    owl:versionIRI tern-shapes:0.7.0 ;
-    owl:versionInfo "0.6.3" ;
+    owl:versionIRI tern-shapes:0.8.0 ;
+    owl:versionInfo "0.8.0" ;
 .
 
 tern-shapes:Association
