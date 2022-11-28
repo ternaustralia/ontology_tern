@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <link rel="icon" type="image/png" href="https://www.tern.org.au/wp-content/uploads/2019/10/favicon.png">
 <title>TERN Ontology Specification</title>
 <style>
@@ -181,183 +181,208 @@ h6 > a.link:hover,
 <li><a href="#class-tern:Integer-tern:unit">4.1.9.3. Property: tern:unit</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:MaterialSample">4.1.10. Class: tern:MaterialSample</a>
+<li><a href="#class-tern:Intervention">4.1.10. Class: tern:Intervention</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:MaterialSample-dwc:materialSampleID">4.1.10.1. Property: dwc:materialSampleID</a></li>
+<li><a href="#class-tern:Intervention-prov:endedAtTime">4.1.10.1. Property: prov:endedAtTime</a></li>
+<li><a href="#class-tern:Intervention-prov:startedAtTime">4.1.10.2. Property: prov:startedAtTime</a></li>
+<li><a href="#class-tern:Intervention-dcterms:identifier">4.1.10.3. Property: dcterms:identifier</a></li>
+<li><a href="#class-tern:Intervention-dcterms:type">4.1.10.4. Property: dcterms:type</a></li>
+<li><a href="#class-tern:Intervention-geo:hasGeometry">4.1.10.5. Property: geo:hasGeometry</a></li>
+<li><a href="#class-tern:Intervention-prov:qualifiedAssociation">4.1.10.6. Property: prov:qualifiedAssociation</a></li>
+<li><a href="#class-tern:Intervention-prov:wasAssociatedWith">4.1.10.7. Property: prov:wasAssociatedWith</a></li>
+<li><a href="#class-tern:Intervention-tern:hasAttribute">4.1.10.8. Property: tern:hasAttribute</a></li>
+<li><a href="#class-tern:Intervention-tern:interventionType">4.1.10.9. Property: tern:interventionType</a></li>
+<li><a href="#class-tern:Intervention-void:inDataset">4.1.10.10. Property: void:inDataset</a></li>
+<li><a href="#ternintervention_example">4.1.10.11. tern:Intervention example</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Observation">4.1.11. Class: tern:Observation</a>
+<li><a href="#class-tern:MaterialSample">4.1.11. Class: tern:MaterialSample</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Observation-sosa:hasResult">4.1.11.1. Property: sosa:hasResult</a></li>
-<li><a href="#class-tern:Observation-dcterms:identifier">4.1.11.2. Property: dcterms:identifier</a></li>
-<li><a href="#class-tern:Observation-dcterms:type">4.1.11.3. Property: dcterms:type</a></li>
-<li><a href="#class-tern:Observation-geo:hasGeometry">4.1.11.4. Property: geo:hasGeometry</a></li>
-<li><a href="#class-tern:Observation-prov:qualifiedAssociation">4.1.11.5. Property: prov:qualifiedAssociation</a></li>
-<li><a href="#class-tern:Observation-prov:wasAssociatedWith">4.1.11.6. Property: prov:wasAssociatedWith</a></li>
-<li><a href="#class-tern:Observation-rdfs:comment">4.1.11.7. Property: rdfs:comment</a></li>
-<li><a href="#class-tern:Observation-sosa:hasFeatureOfInterest">4.1.11.8. Property: sosa:hasFeatureOfInterest</a></li>
-<li><a href="#class-tern:Observation-sosa:hasSimpleResult">4.1.11.9. Property: sosa:hasSimpleResult</a></li>
-<li><a href="#class-tern:Observation-sosa:madeBySensor">4.1.11.10. Property: sosa:madeBySensor</a></li>
-<li><a href="#class-tern:Observation-sosa:observedProperty">4.1.11.11. Property: sosa:observedProperty</a></li>
-<li><a href="#class-tern:Observation-sosa:phenomenonTime">4.1.11.12. Property: sosa:phenomenonTime</a></li>
-<li><a href="#class-tern:Observation-tern:resultDateTime">4.1.11.13. Property: tern:resultDateTime</a></li>
-<li><a href="#class-tern:Observation-sosa:usedProcedure">4.1.11.14. Property: sosa:usedProcedure</a></li>
-<li><a href="#class-tern:Observation-tern:hasSiteVisit">4.1.11.15. Property: tern:hasSiteVisit</a></li>
-<li><a href="#class-tern:Observation-tern:observationType">4.1.11.16. Property: tern:observationType</a></li>
-<li><a href="#class-tern:Observation-void:inDataset">4.1.11.17. Property: void:inDataset</a></li>
+<li><a href="#class-tern:MaterialSample-dwc:materialSampleID">4.1.11.1. Property: dwc:materialSampleID</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:ObservationCollection">4.1.12. Class: tern:ObservationCollection</a>
+<li><a href="#class-tern:Observation">4.1.12. Class: tern:Observation</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:ObservationCollection-sosa:hasFeatureOfInterest">4.1.12.1. Property: sosa:hasFeatureOfInterest</a></li>
-<li><a href="#class-tern:ObservationCollection-sosa:hasMember">4.1.12.2. Property: sosa:hasMember</a></li>
-<li><a href="#class-tern:ObservationCollection-sosa:hasUltimateFeatureOfInterest">4.1.12.3. Property: sosa:hasUltimateFeatureOfInterest</a></li>
-<li><a href="#class-tern:ObservationCollection-sosa:madeBySensor">4.1.12.4. Property: sosa:madeBySensor</a></li>
-<li><a href="#class-tern:ObservationCollection-sosa:observedProperty">4.1.12.5. Property: sosa:observedProperty</a></li>
-<li><a href="#class-tern:ObservationCollection-sosa:phenomenonTime">4.1.12.6. Property: sosa:phenomenonTime</a></li>
-<li><a href="#class-tern:ObservationCollection-tern:resultDateTime">4.1.12.7. Property: tern:resultDateTime</a></li>
-<li><a href="#class-tern:ObservationCollection-sosa:usedProcedure">4.1.12.8. Property: sosa:usedProcedure</a></li>
+<li><a href="#class-tern:Observation-sosa:hasResult">4.1.12.1. Property: sosa:hasResult</a></li>
+<li><a href="#class-tern:Observation-dcterms:identifier">4.1.12.2. Property: dcterms:identifier</a></li>
+<li><a href="#class-tern:Observation-dcterms:type">4.1.12.3. Property: dcterms:type</a></li>
+<li><a href="#class-tern:Observation-geo:hasGeometry">4.1.12.4. Property: geo:hasGeometry</a></li>
+<li><a href="#class-tern:Observation-prov:qualifiedAssociation">4.1.12.5. Property: prov:qualifiedAssociation</a></li>
+<li><a href="#class-tern:Observation-prov:wasAssociatedWith">4.1.12.6. Property: prov:wasAssociatedWith</a></li>
+<li><a href="#class-tern:Observation-rdfs:comment">4.1.12.7. Property: rdfs:comment</a></li>
+<li><a href="#class-tern:Observation-sosa:hasFeatureOfInterest">4.1.12.8. Property: sosa:hasFeatureOfInterest</a></li>
+<li><a href="#class-tern:Observation-sosa:hasSimpleResult">4.1.12.9. Property: sosa:hasSimpleResult</a></li>
+<li><a href="#class-tern:Observation-sosa:madeBySensor">4.1.12.10. Property: sosa:madeBySensor</a></li>
+<li><a href="#class-tern:Observation-sosa:observedProperty">4.1.12.11. Property: sosa:observedProperty</a></li>
+<li><a href="#class-tern:Observation-sosa:phenomenonTime">4.1.12.12. Property: sosa:phenomenonTime</a></li>
+<li><a href="#class-tern:Observation-tern:resultDateTime">4.1.12.13. Property: tern:resultDateTime</a></li>
+<li><a href="#class-tern:Observation-sosa:usedProcedure">4.1.12.14. Property: sosa:usedProcedure</a></li>
+<li><a href="#class-tern:Observation-tern:hasSiteVisit">4.1.12.15. Property: tern:hasSiteVisit</a></li>
+<li><a href="#class-tern:Observation-tern:observationType">4.1.12.16. Property: tern:observationType</a></li>
+<li><a href="#class-tern:Observation-void:inDataset">4.1.12.17. Property: void:inDataset</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:RDFDataset">4.1.13. Class: tern:RDFDataset</a>
+<li><a href="#class-tern:ObservationCollection">4.1.13. Class: tern:ObservationCollection</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:RDFDataset-dcterms:contributor">4.1.13.1. Property: dcterms:contributor</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:created">4.1.13.2. Property: dcterms:created</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:creator">4.1.13.3. Property: dcterms:creator</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:date">4.1.13.4. Property: dcterms:date</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:description">4.1.13.5. Property: dcterms:description</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:issued">4.1.13.6. Property: dcterms:issued</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:license">4.1.13.7. Property: dcterms:license</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:modified">4.1.13.8. Property: dcterms:modified</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:publisher">4.1.13.9. Property: dcterms:publisher</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:rightsHolder">4.1.13.10. Property: dcterms:rightsHolder</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:source">4.1.13.11. Property: dcterms:source</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:subject">4.1.13.12. Property: dcterms:subject</a></li>
-<li><a href="#class-tern:RDFDataset-void:subset">4.1.13.13. Property: void:subset</a></li>
-<li><a href="#class-tern:RDFDataset-dcterms:title">4.1.13.14. Property: dcterms:title</a></li>
-<li><a href="#class-tern:RDFDataset-void:vocabulary">4.1.13.15. Property: void:vocabulary</a></li>
+<li><a href="#class-tern:ObservationCollection-sosa:hasFeatureOfInterest">4.1.13.1. Property: sosa:hasFeatureOfInterest</a></li>
+<li><a href="#class-tern:ObservationCollection-sosa:hasMember">4.1.13.2. Property: sosa:hasMember</a></li>
+<li><a href="#class-tern:ObservationCollection-sosa:hasUltimateFeatureOfInterest">4.1.13.3. Property: sosa:hasUltimateFeatureOfInterest</a></li>
+<li><a href="#class-tern:ObservationCollection-sosa:madeBySensor">4.1.13.4. Property: sosa:madeBySensor</a></li>
+<li><a href="#class-tern:ObservationCollection-sosa:observedProperty">4.1.13.5. Property: sosa:observedProperty</a></li>
+<li><a href="#class-tern:ObservationCollection-sosa:phenomenonTime">4.1.13.6. Property: sosa:phenomenonTime</a></li>
+<li><a href="#class-tern:ObservationCollection-tern:resultDateTime">4.1.13.7. Property: tern:resultDateTime</a></li>
+<li><a href="#class-tern:ObservationCollection-sosa:usedProcedure">4.1.13.8. Property: sosa:usedProcedure</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Result">4.1.14. Class: tern:Result</a>
+<li><a href="#class-tern:RDFDataset">4.1.14. Class: tern:RDFDataset</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Result-sosa:isResultOf">4.1.14.1. Property: sosa:isResultOf</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:contributor">4.1.14.1. Property: dcterms:contributor</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:created">4.1.14.2. Property: dcterms:created</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:creator">4.1.14.3. Property: dcterms:creator</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:date">4.1.14.4. Property: dcterms:date</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:description">4.1.14.5. Property: dcterms:description</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:issued">4.1.14.6. Property: dcterms:issued</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:license">4.1.14.7. Property: dcterms:license</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:modified">4.1.14.8. Property: dcterms:modified</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:publisher">4.1.14.9. Property: dcterms:publisher</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:rightsHolder">4.1.14.10. Property: dcterms:rightsHolder</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:source">4.1.14.11. Property: dcterms:source</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:subject">4.1.14.12. Property: dcterms:subject</a></li>
+<li><a href="#class-tern:RDFDataset-void:subset">4.1.14.13. Property: void:subset</a></li>
+<li><a href="#class-tern:RDFDataset-dcterms:title">4.1.14.14. Property: dcterms:title</a></li>
+<li><a href="#class-tern:RDFDataset-void:vocabulary">4.1.14.15. Property: void:vocabulary</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Sample">4.1.15. Class: tern:Sample</a>
+<li><a href="#class-tern:Result">4.1.15. Class: tern:Result</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Sample-sosa:isResultOf">4.1.15.1. Property: sosa:isResultOf</a></li>
-<li><a href="#class-tern:Sample-sosa:isSampleOf">4.1.15.2. Property: sosa:isSampleOf</a></li>
+<li><a href="#class-tern:Result-sosa:isResultOf">4.1.15.1. Property: sosa:isResultOf</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Sampler">4.1.16. Class: tern:Sampler</a>
+<li><a href="#class-tern:Sample">4.1.16. Class: tern:Sample</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Sampler-ssn:implements">4.1.16.1. Property: ssn:implements</a></li>
-<li><a href="#class-tern:Sampler-sosa:madeSampling">4.1.16.2. Property: sosa:madeSampling</a></li>
+<li><a href="#class-tern:Sample-sosa:isResultOf">4.1.16.1. Property: sosa:isResultOf</a></li>
+<li><a href="#class-tern:Sample-sosa:isSampleOf">4.1.16.2. Property: sosa:isSampleOf</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Sampling">4.1.17. Class: tern:Sampling</a>
+<li><a href="#class-tern:Sampler">4.1.17. Class: tern:Sampler</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Sampling-sosa:hasResult">4.1.17.1. Property: sosa:hasResult</a></li>
-<li><a href="#class-tern:Sampling-sosa:madeBySampler">4.1.17.2. Property: sosa:madeBySampler</a></li>
-<li><a href="#class-tern:Sampling-dcterms:identifier">4.1.17.3. Property: dcterms:identifier</a></li>
-<li><a href="#class-tern:Sampling-dcterms:type">4.1.17.4. Property: dcterms:type</a></li>
-<li><a href="#class-tern:Sampling-geo:hasGeometry">4.1.17.5. Property: geo:hasGeometry</a></li>
-<li><a href="#class-tern:Sampling-prov:qualifiedAssociation">4.1.17.6. Property: prov:qualifiedAssociation</a></li>
-<li><a href="#class-tern:Sampling-prov:wasAssociatedWith">4.1.17.7. Property: prov:wasAssociatedWith</a></li>
-<li><a href="#class-tern:Sampling-rdfs:comment">4.1.17.8. Property: rdfs:comment</a></li>
-<li><a href="#class-tern:Sampling-sosa:hasFeatureOfInterest">4.1.17.9. Property: sosa:hasFeatureOfInterest</a></li>
-<li><a href="#class-tern:Sampling-tern:resultDateTime">4.1.17.10. Property: tern:resultDateTime</a></li>
-<li><a href="#class-tern:Sampling-sosa:usedProcedure">4.1.17.11. Property: sosa:usedProcedure</a></li>
-<li><a href="#class-tern:Sampling-tern:hasSiteVisit">4.1.17.12. Property: tern:hasSiteVisit</a></li>
-<li><a href="#class-tern:Sampling-tern:samplingType">4.1.17.13. Property: tern:samplingType</a></li>
-<li><a href="#class-tern:Sampling-void:inDataset">4.1.17.14. Property: void:inDataset</a></li>
+<li><a href="#class-tern:Sampler-ssn:implements">4.1.17.1. Property: ssn:implements</a></li>
+<li><a href="#class-tern:Sampler-sosa:madeSampling">4.1.17.2. Property: sosa:madeSampling</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Sensor">4.1.18. Class: tern:Sensor</a>
+<li><a href="#class-tern:Sampling">4.1.18. Class: tern:Sampling</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Sensor-ssn:implements">4.1.18.1. Property: ssn:implements</a></li>
-<li><a href="#class-tern:Sensor-sosa:madeObservation">4.1.18.2. Property: sosa:madeObservation</a></li>
-<li><a href="#class-tern:Sensor-sosa:observes">4.1.18.3. Property: sosa:observes</a></li>
+<li><a href="#class-tern:Sampling-sosa:hasResult">4.1.18.1. Property: sosa:hasResult</a></li>
+<li><a href="#class-tern:Sampling-sosa:madeBySampler">4.1.18.2. Property: sosa:madeBySampler</a></li>
+<li><a href="#class-tern:Sampling-dcterms:identifier">4.1.18.3. Property: dcterms:identifier</a></li>
+<li><a href="#class-tern:Sampling-dcterms:type">4.1.18.4. Property: dcterms:type</a></li>
+<li><a href="#class-tern:Sampling-geo:hasGeometry">4.1.18.5. Property: geo:hasGeometry</a></li>
+<li><a href="#class-tern:Sampling-prov:qualifiedAssociation">4.1.18.6. Property: prov:qualifiedAssociation</a></li>
+<li><a href="#class-tern:Sampling-prov:wasAssociatedWith">4.1.18.7. Property: prov:wasAssociatedWith</a></li>
+<li><a href="#class-tern:Sampling-rdfs:comment">4.1.18.8. Property: rdfs:comment</a></li>
+<li><a href="#class-tern:Sampling-sosa:hasFeatureOfInterest">4.1.18.9. Property: sosa:hasFeatureOfInterest</a></li>
+<li><a href="#class-tern:Sampling-tern:resultDateTime">4.1.18.10. Property: tern:resultDateTime</a></li>
+<li><a href="#class-tern:Sampling-sosa:usedProcedure">4.1.18.11. Property: sosa:usedProcedure</a></li>
+<li><a href="#class-tern:Sampling-tern:hasSiteVisit">4.1.18.12. Property: tern:hasSiteVisit</a></li>
+<li><a href="#class-tern:Sampling-tern:samplingType">4.1.18.13. Property: tern:samplingType</a></li>
+<li><a href="#class-tern:Sampling-void:inDataset">4.1.18.14. Property: void:inDataset</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:SiteVisit">4.1.19. Class: tern:SiteVisit</a>
+<li><a href="#class-tern:Sensor">4.1.19. Class: tern:Sensor</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:SiteVisit-prov:endedAtTime">4.1.19.1. Property: prov:endedAtTime</a></li>
-<li><a href="#class-tern:SiteVisit-prov:startedAtTime">4.1.19.2. Property: prov:startedAtTime</a></li>
-<li><a href="#class-tern:SiteVisit-dcterms:identifier">4.1.19.3. Property: dcterms:identifier</a></li>
-<li><a href="#class-tern:SiteVisit-dcterms:type">4.1.19.4. Property: dcterms:type</a></li>
-<li><a href="#class-tern:SiteVisit-prov:qualifiedAssociation">4.1.19.5. Property: prov:qualifiedAssociation</a></li>
-<li><a href="#class-tern:SiteVisit-prov:wasAssociatedWith">4.1.19.6. Property: prov:wasAssociatedWith</a></li>
-<li><a href="#class-tern:SiteVisit-tern:locationDescription">4.1.19.7. Property: tern:locationDescription</a></li>
-<li><a href="#class-tern:SiteVisit-tern:siteDescription">4.1.19.8. Property: tern:siteDescription</a></li>
-<li><a href="#class-tern:SiteVisit-void:inDataset">4.1.19.9. Property: void:inDataset</a></li>
+<li><a href="#class-tern:Sensor-ssn:implements">4.1.19.1. Property: ssn:implements</a></li>
+<li><a href="#class-tern:Sensor-sosa:madeObservation">4.1.19.2. Property: sosa:madeObservation</a></li>
+<li><a href="#class-tern:Sensor-sosa:observes">4.1.19.3. Property: sosa:observes</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:System">4.1.20. Class: tern:System</a>
+<li><a href="#class-tern:Site">4.1.20. Class: tern:Site</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:System-ssn:hasDeployment">4.1.20.1. Property: ssn:hasDeployment</a></li>
-<li><a href="#class-tern:System-sosa:isHostedBy">4.1.20.2. Property: sosa:isHostedBy</a></li>
-<li><a href="#class-tern:System-tern:systemType">4.1.20.3. Property: tern:systemType</a></li>
-<li><a href="#class-tern:System-dcterms:type">4.1.20.4. Property: dcterms:type</a></li>
-<li><a href="#class-tern:System-ssn:implements">4.1.20.5. Property: ssn:implements</a></li>
+<li><a href="#class-tern:Site-tern:dimension">4.1.20.1. Property: tern:dimension</a></li>
+<li><a href="#class-tern:Site-tern:hasSiteVisit">4.1.20.2. Property: tern:hasSiteVisit</a></li>
+<li><a href="#class-tern:Site-tern:locationProcedure">4.1.20.3. Property: tern:locationProcedure</a></li>
+<li><a href="#class-tern:Site-geo:sfWithin">4.1.20.4. Property: geo:sfWithin</a></li>
+<li><a href="#class-tern:Site-tern:locationDescription">4.1.20.5. Property: tern:locationDescription</a></li>
+<li><a href="#class-tern:Site-tern:siteDescription">4.1.20.6. Property: tern:siteDescription</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Taxon">4.1.21. Class: tern:Taxon</a>
+<li><a href="#class-tern:SiteVisit">4.1.21. Class: tern:SiteVisit</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Taxon-dwc:acceptedNameUsage">4.1.21.1. Property: dwc:acceptedNameUsage</a></li>
-<li><a href="#class-tern:Taxon-dwc:acceptedNameUsageID">4.1.21.2. Property: dwc:acceptedNameUsageID</a></li>
-<li><a href="#class-tern:Taxon-dwc:class">4.1.21.3. Property: dwc:class</a></li>
-<li><a href="#class-tern:Taxon-dwc:cultivarEpithet">4.1.21.4. Property: dwc:cultivarEpithet</a></li>
-<li><a href="#class-tern:Taxon-dwc:family">4.1.21.5. Property: dwc:family</a></li>
-<li><a href="#class-tern:Taxon-dwc:genericName">4.1.21.6. Property: dwc:genericName</a></li>
-<li><a href="#class-tern:Taxon-dwc:genus">4.1.21.7. Property: dwc:genus</a></li>
-<li><a href="#class-tern:Taxon-dwc:higherClassification">4.1.21.8. Property: dwc:higherClassification</a></li>
-<li><a href="#class-tern:Taxon-dwc:infragenericEpithet">4.1.21.9. Property: dwc:infragenericEpithet</a></li>
-<li><a href="#class-tern:Taxon-dwc:infraspecificEpithet">4.1.21.10. Property: dwc:infraspecificEpithet</a></li>
-<li><a href="#class-tern:Taxon-dwc:kingdom">4.1.21.11. Property: dwc:kingdom</a></li>
-<li><a href="#class-tern:Taxon-dwc:nameAccordingTo">4.1.21.12. Property: dwc:nameAccordingTo</a></li>
-<li><a href="#class-tern:Taxon-dwc:nameAccordingToID">4.1.21.13. Property: dwc:nameAccordingToID</a></li>
-<li><a href="#class-tern:Taxon-dwc:namePublishedIn">4.1.21.14. Property: dwc:namePublishedIn</a></li>
-<li><a href="#class-tern:Taxon-dwc:namePublishedInID">4.1.21.15. Property: dwc:namePublishedInID</a></li>
-<li><a href="#class-tern:Taxon-dwc:namePublishedInYear">4.1.21.16. Property: dwc:namePublishedInYear</a></li>
-<li><a href="#class-tern:Taxon-dwc:nomenclaturalCode">4.1.21.17. Property: dwc:nomenclaturalCode</a></li>
-<li><a href="#class-tern:Taxon-dwc:nomenclaturalStatus">4.1.21.18. Property: dwc:nomenclaturalStatus</a></li>
-<li><a href="#class-tern:Taxon-dwc:order">4.1.21.19. Property: dwc:order</a></li>
-<li><a href="#class-tern:Taxon-dwc:originalNameUsage">4.1.21.20. Property: dwc:originalNameUsage</a></li>
-<li><a href="#class-tern:Taxon-dwc:originalNameUsageID">4.1.21.21. Property: dwc:originalNameUsageID</a></li>
-<li><a href="#class-tern:Taxon-dwc:parentNameUsage">4.1.21.22. Property: dwc:parentNameUsage</a></li>
-<li><a href="#class-tern:Taxon-dwc:parentNameUsageID">4.1.21.23. Property: dwc:parentNameUsageID</a></li>
-<li><a href="#class-tern:Taxon-dwc:phylum">4.1.21.24. Property: dwc:phylum</a></li>
-<li><a href="#class-tern:Taxon-dwc:scientificName">4.1.21.25. Property: dwc:scientificName</a></li>
-<li><a href="#class-tern:Taxon-dwc:scientificNameAuthorship">4.1.21.26. Property: dwc:scientificNameAuthorship</a></li>
-<li><a href="#class-tern:Taxon-dwc:scientificNameID">4.1.21.27. Property: dwc:scientificNameID</a></li>
-<li><a href="#class-tern:Taxon-dwc:specificEpithet">4.1.21.28. Property: dwc:specificEpithet</a></li>
-<li><a href="#class-tern:Taxon-dwc:subfamily">4.1.21.29. Property: dwc:subfamily</a></li>
-<li><a href="#class-tern:Taxon-dwc:subgenus">4.1.21.30. Property: dwc:subgenus</a></li>
-<li><a href="#class-tern:Taxon-dwc:taxonConceptID">4.1.21.31. Property: dwc:taxonConceptID</a></li>
-<li><a href="#class-tern:Taxon-dwc:taxonID">4.1.21.32. Property: dwc:taxonID</a></li>
-<li><a href="#class-tern:Taxon-dwc:taxonRank">4.1.21.33. Property: dwc:taxonRank</a></li>
-<li><a href="#class-tern:Taxon-dwc:taxonRemarks">4.1.21.34. Property: dwc:taxonRemarks</a></li>
-<li><a href="#class-tern:Taxon-dwc:taxonomicStatus">4.1.21.35. Property: dwc:taxonomicStatus</a></li>
-<li><a href="#class-tern:Taxon-dwc:verbatimTaxonRank">4.1.21.36. Property: dwc:verbatimTaxonRank</a></li>
-<li><a href="#class-tern:Taxon-dwc:vernacularName">4.1.21.37. Property: dwc:vernacularName</a></li>
+<li><a href="#class-tern:SiteVisit-prov:endedAtTime">4.1.21.1. Property: prov:endedAtTime</a></li>
+<li><a href="#class-tern:SiteVisit-prov:startedAtTime">4.1.21.2. Property: prov:startedAtTime</a></li>
+<li><a href="#class-tern:SiteVisit-dcterms:identifier">4.1.21.3. Property: dcterms:identifier</a></li>
+<li><a href="#class-tern:SiteVisit-dcterms:type">4.1.21.4. Property: dcterms:type</a></li>
+<li><a href="#class-tern:SiteVisit-prov:qualifiedAssociation">4.1.21.5. Property: prov:qualifiedAssociation</a></li>
+<li><a href="#class-tern:SiteVisit-prov:wasAssociatedWith">4.1.21.6. Property: prov:wasAssociatedWith</a></li>
+<li><a href="#class-tern:SiteVisit-tern:locationDescription">4.1.21.7. Property: tern:locationDescription</a></li>
+<li><a href="#class-tern:SiteVisit-tern:siteDescription">4.1.21.8. Property: tern:siteDescription</a></li>
+<li><a href="#class-tern:SiteVisit-void:inDataset">4.1.21.9. Property: void:inDataset</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Text">4.1.22. Class: tern:Text</a>
+<li><a href="#class-tern:System">4.1.22. Class: tern:System</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Text-rdf:value">4.1.22.1. Property: rdf:value</a></li>
+<li><a href="#class-tern:System-ssn:hasDeployment">4.1.22.1. Property: ssn:hasDeployment</a></li>
+<li><a href="#class-tern:System-sosa:isHostedBy">4.1.22.2. Property: sosa:isHostedBy</a></li>
+<li><a href="#class-tern:System-tern:systemType">4.1.22.3. Property: tern:systemType</a></li>
+<li><a href="#class-tern:System-dcterms:type">4.1.22.4. Property: dcterms:type</a></li>
+<li><a href="#class-tern:System-ssn:implements">4.1.22.5. Property: ssn:implements</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Transect">4.1.23. Class: tern:Transect</a>
+<li><a href="#class-tern:Taxon">4.1.23. Class: tern:Taxon</a>
 <ul class="sectlevel4">
-<li><a href="#class-tern:Transect-tern:featureType">4.1.23.1. Property: tern:featureType</a></li>
-<li><a href="#class-tern:Transect-geo:hasGeometry">4.1.23.2. Property: geo:hasGeometry</a></li>
-<li><a href="#class-tern:Transect-tern:transectDirection">4.1.23.3. Property: tern:transectDirection</a></li>
-<li><a href="#class-tern:Transect-tern:transectEndPoint">4.1.23.4. Property: tern:transectEndPoint</a></li>
-<li><a href="#class-tern:Transect-tern:transectStartPoint">4.1.23.5. Property: tern:transectStartPoint</a></li>
+<li><a href="#class-tern:Taxon-dwc:acceptedNameUsage">4.1.23.1. Property: dwc:acceptedNameUsage</a></li>
+<li><a href="#class-tern:Taxon-dwc:acceptedNameUsageID">4.1.23.2. Property: dwc:acceptedNameUsageID</a></li>
+<li><a href="#class-tern:Taxon-dwc:class">4.1.23.3. Property: dwc:class</a></li>
+<li><a href="#class-tern:Taxon-dwc:cultivarEpithet">4.1.23.4. Property: dwc:cultivarEpithet</a></li>
+<li><a href="#class-tern:Taxon-dwc:family">4.1.23.5. Property: dwc:family</a></li>
+<li><a href="#class-tern:Taxon-dwc:genericName">4.1.23.6. Property: dwc:genericName</a></li>
+<li><a href="#class-tern:Taxon-dwc:genus">4.1.23.7. Property: dwc:genus</a></li>
+<li><a href="#class-tern:Taxon-dwc:higherClassification">4.1.23.8. Property: dwc:higherClassification</a></li>
+<li><a href="#class-tern:Taxon-dwc:infragenericEpithet">4.1.23.9. Property: dwc:infragenericEpithet</a></li>
+<li><a href="#class-tern:Taxon-dwc:infraspecificEpithet">4.1.23.10. Property: dwc:infraspecificEpithet</a></li>
+<li><a href="#class-tern:Taxon-dwc:kingdom">4.1.23.11. Property: dwc:kingdom</a></li>
+<li><a href="#class-tern:Taxon-dwc:nameAccordingTo">4.1.23.12. Property: dwc:nameAccordingTo</a></li>
+<li><a href="#class-tern:Taxon-dwc:nameAccordingToID">4.1.23.13. Property: dwc:nameAccordingToID</a></li>
+<li><a href="#class-tern:Taxon-dwc:namePublishedIn">4.1.23.14. Property: dwc:namePublishedIn</a></li>
+<li><a href="#class-tern:Taxon-dwc:namePublishedInID">4.1.23.15. Property: dwc:namePublishedInID</a></li>
+<li><a href="#class-tern:Taxon-dwc:namePublishedInYear">4.1.23.16. Property: dwc:namePublishedInYear</a></li>
+<li><a href="#class-tern:Taxon-dwc:nomenclaturalCode">4.1.23.17. Property: dwc:nomenclaturalCode</a></li>
+<li><a href="#class-tern:Taxon-dwc:nomenclaturalStatus">4.1.23.18. Property: dwc:nomenclaturalStatus</a></li>
+<li><a href="#class-tern:Taxon-dwc:order">4.1.23.19. Property: dwc:order</a></li>
+<li><a href="#class-tern:Taxon-dwc:originalNameUsage">4.1.23.20. Property: dwc:originalNameUsage</a></li>
+<li><a href="#class-tern:Taxon-dwc:originalNameUsageID">4.1.23.21. Property: dwc:originalNameUsageID</a></li>
+<li><a href="#class-tern:Taxon-dwc:parentNameUsage">4.1.23.22. Property: dwc:parentNameUsage</a></li>
+<li><a href="#class-tern:Taxon-dwc:parentNameUsageID">4.1.23.23. Property: dwc:parentNameUsageID</a></li>
+<li><a href="#class-tern:Taxon-dwc:phylum">4.1.23.24. Property: dwc:phylum</a></li>
+<li><a href="#class-tern:Taxon-dwc:scientificName">4.1.23.25. Property: dwc:scientificName</a></li>
+<li><a href="#class-tern:Taxon-dwc:scientificNameAuthorship">4.1.23.26. Property: dwc:scientificNameAuthorship</a></li>
+<li><a href="#class-tern:Taxon-dwc:scientificNameID">4.1.23.27. Property: dwc:scientificNameID</a></li>
+<li><a href="#class-tern:Taxon-dwc:specificEpithet">4.1.23.28. Property: dwc:specificEpithet</a></li>
+<li><a href="#class-tern:Taxon-dwc:subfamily">4.1.23.29. Property: dwc:subfamily</a></li>
+<li><a href="#class-tern:Taxon-dwc:subgenus">4.1.23.30. Property: dwc:subgenus</a></li>
+<li><a href="#class-tern:Taxon-dwc:taxonConceptID">4.1.23.31. Property: dwc:taxonConceptID</a></li>
+<li><a href="#class-tern:Taxon-dwc:taxonID">4.1.23.32. Property: dwc:taxonID</a></li>
+<li><a href="#class-tern:Taxon-dwc:taxonRank">4.1.23.33. Property: dwc:taxonRank</a></li>
+<li><a href="#class-tern:Taxon-dwc:taxonRemarks">4.1.23.34. Property: dwc:taxonRemarks</a></li>
+<li><a href="#class-tern:Taxon-dwc:taxonomicStatus">4.1.23.35. Property: dwc:taxonomicStatus</a></li>
+<li><a href="#class-tern:Taxon-dwc:verbatimTaxonRank">4.1.23.36. Property: dwc:verbatimTaxonRank</a></li>
+<li><a href="#class-tern:Taxon-dwc:vernacularName">4.1.23.37. Property: dwc:vernacularName</a></li>
 </ul>
 </li>
-<li><a href="#class-tern:Value">4.1.24. Class: tern:Value</a></li>
+<li><a href="#class-tern:Text">4.1.24. Class: tern:Text</a>
+<ul class="sectlevel4">
+<li><a href="#class-tern:Text-rdf:value">4.1.24.1. Property: rdf:value</a></li>
+</ul>
+</li>
+<li><a href="#class-tern:Transect">4.1.25. Class: tern:Transect</a>
+<ul class="sectlevel4">
+<li><a href="#class-tern:Transect-tern:featureType">4.1.25.1. Property: tern:featureType</a></li>
+<li><a href="#class-tern:Transect-geo:hasGeometry">4.1.25.2. Property: geo:hasGeometry</a></li>
+<li><a href="#class-tern:Transect-tern:transectDirection">4.1.25.3. Property: tern:transectDirection</a></li>
+<li><a href="#class-tern:Transect-tern:transectEndPoint">4.1.25.4. Property: tern:transectEndPoint</a></li>
+<li><a href="#class-tern:Transect-tern:transectStartPoint">4.1.25.5. Property: tern:transectStartPoint</a></li>
+</ul>
+</li>
+<li><a href="#class-tern:Value">4.1.26. Class: tern:Value</a></li>
 </ul>
 </li>
 <li><a href="#external_classes">4.2. External Classes</a>
@@ -452,7 +477,7 @@ h6 > a.link:hover,
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-07-04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-11-28</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
@@ -2980,7 +3005,726 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:MaterialSample"><a class="link" href="#class-tern:MaterialSample">4.1.10. Class: tern:MaterialSample</a></h4>
+<h4 id="class-tern:Intervention"><a class="link" href="#class-tern:Intervention">4.1.10. Class: tern:Intervention</a></h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Intervention"><code>tern:Intervention</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intervention</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An <code>Intervention</code> is a human-induced activity that carries out a <code>Procedure</code> to observe or change the properties of a <code>Feature Of Interest</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An intervention is a management process to maintain, restore or improve an ecosystem within a spatial area.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="class-tern:Intervention-prov:endedAtTime"><a class="link" href="#class-tern:Intervention-prov:endedAtTime">4.1.10.1. Property: prov:endedAtTime</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#endedAtTime"><code>prov:endedAtTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Intervention-endedAtTime" class="bare">https://w3id.org/tern/shapes/tern/Intervention-endedAtTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ended at time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which an activity ended.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:Intervention</code> <em>MAY</em> have a maximum of 1 <code>prov:endedAtTime</code> predicate where the value node is a literal with the datatype <code>xsd:dateTime</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-prov:startedAtTime"><a class="link" href="#class-tern:Intervention-prov:startedAtTime">4.1.10.2. Property: prov:startedAtTime</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#startedAtTime"><code>prov:startedAtTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Intervention-startedAtTime" class="bare">https://w3id.org/tern/shapes/tern/Intervention-startedAtTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">started at time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which an activity started.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:Intervention</code> <em>MUST</em> have exactly 1 <code>prov:startedAtTime</code> predicate where the value node is a literal with the datatype <code>xsd:dateTime</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-dcterms:identifier"><a class="link" href="#class-tern:Intervention-dcterms:identifier">4.1.10.3. Property: dcterms:identifier</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/dcterms-identifier" class="bare">https://w3id.org/tern/shapes/tern/dcterms-identifier</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An unambiguous reference to the resource within a given context.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-dcterms:type"><a class="link" href="#class-tern:Intervention-dcterms:type">4.1.10.4. Property: dcterms:type</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/dcterms-type" class="bare">https://w3id.org/tern/shapes/tern/dcterms-type</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary <a href="http://dublincore.org/documents/dcmi-type-vocabulary/">DCMI-TYPE</a>. To describe the file format, physical medium, or dimensions of the resource, use the property Format.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Useful to capture the proximate class type in situations when <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf"><code>rdfs:subClassOf</code></a> entailment is enabled and <code>rdf:type</code> is not suitable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>dcterms:type</code> predicate <em>MUST</em> have an IRI value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-geo:hasGeometry"><a class="link" href="#class-tern:Intervention-geo:hasGeometry">4.1.10.5. Property: geo:hasGeometry</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/ont/geosparql#hasGeometry"><code>geo:hasGeometry</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/geo-hasGeometry" class="bare">https://w3id.org/tern/shapes/tern/geo-hasGeometry</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has geometry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A spatial representation for a given feature.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>geo:hasGeometry</code> predicate <em>MUST</em> have a blank node or IRI value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#BlankNodeOrIRI"><code>sh:BlankNodeOrIRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/ont/geosparql#Geometry"><code>geo:Geometry</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-prov:qualifiedAssociation"><a class="link" href="#class-tern:Intervention-prov:qualifiedAssociation">4.1.10.6. Property: prov:qualifiedAssociation</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#qualifiedAssociation"><code>prov:qualifiedAssociation</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation" class="bare">https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">qualified association</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:qualifiedAssociation</code> <em>MUST</em> have a blank node or IRI value of type <code>prov:Association</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#BlankNodeOrIRI"><code>sh:BlankNodeOrIRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Association"><code>prov:Association</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-prov:wasAssociatedWith"><a class="link" href="#class-tern:Intervention-prov:wasAssociatedWith">4.1.10.7. Property: prov:wasAssociatedWith</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#wasAssociatedWith"><code>prov:wasAssociatedWith</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith" class="bare">https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">was associated with</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:wasAssociatedWith</code> predicate <em>MUST</em> an IRI value of type <code>prov:Agent</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Agent"><code>prov:Agent</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-tern:hasAttribute"><a class="link" href="#class-tern:Intervention-tern:hasAttribute">4.1.10.8. Property: tern:hasAttribute</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/hasAttribute"><code>tern:hasAttribute</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-hasAttribute" class="bare">https://w3id.org/tern/shapes/tern/tern-hasAttribute</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has attribute</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to an [Attribute](#Attribute).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:hasAttribute</code> predicate <em>MUST</em> have a blank node or an IRI value of type <code>tern:Attribute</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#BlankNodeOrIRI"><code>sh:BlankNodeOrIRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Attribute"><code>tern:Attribute</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-tern:interventionType"><a class="link" href="#class-tern:Intervention-tern:interventionType">4.1.10.9. Property: tern:interventionType</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/interventionType"><code>tern:interventionType</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-interventionType" class="bare">https://w3id.org/tern/shapes/tern/tern-interventionType</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">intervention type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of intervention.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:Intervention</code> <em>MAY</em> have a maximum of 1 <code>tern:interventionType</code> predicate where the value node is an IRI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Intervention-void:inDataset"><a class="link" href="#class-tern:Intervention-void:inDataset">4.1.10.10. Property: void:inDataset</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://rdfs.org/ns/void#inDataset"><code>void:inDataset</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/void-inDataset" class="bare">https://w3id.org/tern/shapes/tern/void-inDataset</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in dataset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A link to the RDF payload&#8217;s metadata which this resource was a part of.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There <em>MUST</em> exist exactly 1 <code>void:inDataset</code> property with an IRI value to a <code>tern:RDFDataset</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/RDFDataset"><code>tern:RDFDataset</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="ternintervention_example"><a class="link" href="#ternintervention_example">4.1.10.11. tern:Intervention example</a></h5>
+<div class="paragraph">
+<p>The following example is based on the <a href="https://www.directory.gov.au/portfolios/climate-change-energy-environment-and-water/department-climate-change-energy-environment-and-water">DCCEEW&#8217;s</a> <a href="https://www.dcceew.gov.au/environment/land/landcare/current-programs/regional-land-partnerships">RLP protocols</a> for intervention.</p>
+</div>
+<div class="paragraph">
+<p>Definition of intervention within the field survey protocol context:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+An intervention is a management process to maintain, restore or improve an ecosystem within a spatial area.
+Interventions can take a range of forms, including fencing to protect remnant vegetation (Spooner et al. 2002), weed and pest animal control (Martin and van Klinken 2006; Reddiex et al. 2006), restoration and revegetation, re-introductions or translocations (Silcock et al. 2019), removal of watering points, controlled burns, nest box installation and community or landholder workshops (Capon et al. 2020).
+</blockquote>
+<div class="attribution">
+&#8212; Interventions Module<br>
+<cite>McCallum K, Laws M, Bignall J, O'Neill S, Sparrow B. (unpublished draft) 'Interventions module' in ….. (eds) Ecological Field Monitoring Protocols Manual: Standardising environmental monitoring and data systems for improved decision making. Draft v 0.1 Report to DAWE. TERN, Adelaide.</cite>
+</div>
+</div>
+<div class="sect5">
+<h6 id="debris_removal"><a class="link" href="#debris_removal">4.1.10.11.1. Debris removal</a></h6>
+<div class="paragraph">
+<p>The RLP field survey protocols define a number of interventions in a table. Below shows one example taken from the field survey protocols for <em>debris removal</em>.</p>
+</div>
+<div class="paragraph">
+<p>All RLP field survey interventions have <em>inputs</em> and <em>outputs</em>. Inputs are modelled as <code>tern:Attribute</code> class instances and outputs are modelled as <code>tern:Observation</code> class instances. The <code>tern:interventionType</code> property links to a <em>global</em> concept within TERN&#8217;s controlled vocabularies for <em>debris removal</em> and the <code>sosa:usedProcedure</code> links to the <em>local</em> protocol-specific version of <em>debris removal</em>. The spatial extent is recorded digitally as a polygon feature in the data input app and is captured here with the <code>geo:hasGeometry</code> property pointing to a description of the polygon as an instance of <code>geo:Geometry</code>. The actual coordinates of the polygon are recorded on the geometry object with the property <code>geo:asWKT</code>. Each one of the input fields are recorded as a <code>tern:Attribute</code> linked to the intervention activity via the property <code>tern:hasAttribute</code>. Each individual outcome is also recorded as a <code>tern:Attribute</code>. Observations that are made after the intervention can be linked using the <code>prov:wasInformedBy</code> property to express that the observational result was affected by a past intervention activity.</p>
+</div>
+<div class="paragraph">
+<p><strong>RLP interventions table headers</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.091%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Project Service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field Collection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">App Group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Output Measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapping Requirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapping Area (ha)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reporting Fields</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Field Class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schema</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comment RLP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comment TERN</p></td>
+</tr>
+</tbody>
+</table>
+<div id="image-debris-removal-table" class="paragraph">
+<div class="title">Debris removal table</div>
+<p><span class="image"><img src="https://w3id.org/tern/static/tern-ontology/spec/debris-removal-table.png" alt="debris removal table"></span></p>
+</div>
+<div id="image-intervention-example" class="paragraph">
+<div class="title">Diagram modelling debris removal with the Intervention class</div>
+<p><span class="image"><img src="https://w3id.org/tern/static/tern-ontology/spec/intervention-example-debris-removal.png" alt="intervention example debris removal"></span></p>
+</div>
+<div class="paragraph">
+<p>Other interventions are described in the original document at <a href="https://www.dcceew.gov.au/sites/default/files/documents/merit-ready-reckoner-rlp-project-services.pdf">MERIT Ready Reckoner V3 Regional Land Partnerships – Project Services</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="class-tern:MaterialSample"><a class="link" href="#class-tern:MaterialSample">4.1.11. Class: tern:MaterialSample</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3016,7 +3760,7 @@ h6 > a.link:hover,
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:MaterialSample-dwc:materialSampleID"><a class="link" href="#class-tern:MaterialSample-dwc:materialSampleID">4.1.10.1. Property: dwc:materialSampleID</a></h5>
+<h5 id="class-tern:MaterialSample-dwc:materialSampleID"><a class="link" href="#class-tern:MaterialSample-dwc:materialSampleID">4.1.11.1. Property: dwc:materialSampleID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3078,7 +3822,7 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Observation"><a class="link" href="#class-tern:Observation">4.1.11. Class: tern:Observation</a></h4>
+<h4 id="class-tern:Observation"><a class="link" href="#class-tern:Observation">4.1.12. Class: tern:Observation</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3114,7 +3858,7 @@ h6 > a.link:hover,
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Observation-sosa:hasResult"><a class="link" href="#class-tern:Observation-sosa:hasResult">4.1.11.1. Property: sosa:hasResult</a></h5>
+<h5 id="class-tern:Observation-sosa:hasResult"><a class="link" href="#class-tern:Observation-sosa:hasResult">4.1.12.1. Property: sosa:hasResult</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3175,7 +3919,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-dcterms:identifier"><a class="link" href="#class-tern:Observation-dcterms:identifier">4.1.11.2. Property: dcterms:identifier</a></h5>
+<h5 id="class-tern:Observation-dcterms:identifier"><a class="link" href="#class-tern:Observation-dcterms:identifier">4.1.12.2. Property: dcterms:identifier</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3236,7 +3980,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-dcterms:type"><a class="link" href="#class-tern:Observation-dcterms:type">4.1.11.3. Property: dcterms:type</a></h5>
+<h5 id="class-tern:Observation-dcterms:type"><a class="link" href="#class-tern:Observation-dcterms:type">4.1.12.3. Property: dcterms:type</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3297,7 +4041,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-geo:hasGeometry"><a class="link" href="#class-tern:Observation-geo:hasGeometry">4.1.11.4. Property: geo:hasGeometry</a></h5>
+<h5 id="class-tern:Observation-geo:hasGeometry"><a class="link" href="#class-tern:Observation-geo:hasGeometry">4.1.12.4. Property: geo:hasGeometry</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3358,7 +4102,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-prov:qualifiedAssociation"><a class="link" href="#class-tern:Observation-prov:qualifiedAssociation">4.1.11.5. Property: prov:qualifiedAssociation</a></h5>
+<h5 id="class-tern:Observation-prov:qualifiedAssociation"><a class="link" href="#class-tern:Observation-prov:qualifiedAssociation">4.1.12.5. Property: prov:qualifiedAssociation</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3419,7 +4163,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-prov:wasAssociatedWith"><a class="link" href="#class-tern:Observation-prov:wasAssociatedWith">4.1.11.6. Property: prov:wasAssociatedWith</a></h5>
+<h5 id="class-tern:Observation-prov:wasAssociatedWith"><a class="link" href="#class-tern:Observation-prov:wasAssociatedWith">4.1.12.6. Property: prov:wasAssociatedWith</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3480,7 +4224,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-rdfs:comment"><a class="link" href="#class-tern:Observation-rdfs:comment">4.1.11.7. Property: rdfs:comment</a></h5>
+<h5 id="class-tern:Observation-rdfs:comment"><a class="link" href="#class-tern:Observation-rdfs:comment">4.1.12.7. Property: rdfs:comment</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3541,7 +4285,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-sosa:hasFeatureOfInterest"><a class="link" href="#class-tern:Observation-sosa:hasFeatureOfInterest">4.1.11.8. Property: sosa:hasFeatureOfInterest</a></h5>
+<h5 id="class-tern:Observation-sosa:hasFeatureOfInterest"><a class="link" href="#class-tern:Observation-sosa:hasFeatureOfInterest">4.1.12.8. Property: sosa:hasFeatureOfInterest</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3602,7 +4346,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-sosa:hasSimpleResult"><a class="link" href="#class-tern:Observation-sosa:hasSimpleResult">4.1.11.9. Property: sosa:hasSimpleResult</a></h5>
+<h5 id="class-tern:Observation-sosa:hasSimpleResult"><a class="link" href="#class-tern:Observation-sosa:hasSimpleResult">4.1.12.9. Property: sosa:hasSimpleResult</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3663,7 +4407,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-sosa:madeBySensor"><a class="link" href="#class-tern:Observation-sosa:madeBySensor">4.1.11.10. Property: sosa:madeBySensor</a></h5>
+<h5 id="class-tern:Observation-sosa:madeBySensor"><a class="link" href="#class-tern:Observation-sosa:madeBySensor">4.1.12.10. Property: sosa:madeBySensor</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3724,7 +4468,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-sosa:observedProperty"><a class="link" href="#class-tern:Observation-sosa:observedProperty">4.1.11.11. Property: sosa:observedProperty</a></h5>
+<h5 id="class-tern:Observation-sosa:observedProperty"><a class="link" href="#class-tern:Observation-sosa:observedProperty">4.1.12.11. Property: sosa:observedProperty</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3785,7 +4529,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-sosa:phenomenonTime"><a class="link" href="#class-tern:Observation-sosa:phenomenonTime">4.1.11.12. Property: sosa:phenomenonTime</a></h5>
+<h5 id="class-tern:Observation-sosa:phenomenonTime"><a class="link" href="#class-tern:Observation-sosa:phenomenonTime">4.1.12.12. Property: sosa:phenomenonTime</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3846,7 +4590,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-tern:resultDateTime"><a class="link" href="#class-tern:Observation-tern:resultDateTime">4.1.11.13. Property: tern:resultDateTime</a></h5>
+<h5 id="class-tern:Observation-tern:resultDateTime"><a class="link" href="#class-tern:Observation-tern:resultDateTime">4.1.12.13. Property: tern:resultDateTime</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3909,7 +4653,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-sosa:usedProcedure"><a class="link" href="#class-tern:Observation-sosa:usedProcedure">4.1.11.14. Property: sosa:usedProcedure</a></h5>
+<h5 id="class-tern:Observation-sosa:usedProcedure"><a class="link" href="#class-tern:Observation-sosa:usedProcedure">4.1.12.14. Property: sosa:usedProcedure</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3970,7 +4714,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-tern:hasSiteVisit"><a class="link" href="#class-tern:Observation-tern:hasSiteVisit">4.1.11.15. Property: tern:hasSiteVisit</a></h5>
+<h5 id="class-tern:Observation-tern:hasSiteVisit"><a class="link" href="#class-tern:Observation-tern:hasSiteVisit">4.1.12.15. Property: tern:hasSiteVisit</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4031,7 +4775,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-tern:observationType"><a class="link" href="#class-tern:Observation-tern:observationType">4.1.11.16. Property: tern:observationType</a></h5>
+<h5 id="class-tern:Observation-tern:observationType"><a class="link" href="#class-tern:Observation-tern:observationType">4.1.12.16. Property: tern:observationType</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4092,7 +4836,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Observation-void:inDataset"><a class="link" href="#class-tern:Observation-void:inDataset">4.1.11.17. Property: void:inDataset</a></h5>
+<h5 id="class-tern:Observation-void:inDataset"><a class="link" href="#class-tern:Observation-void:inDataset">4.1.12.17. Property: void:inDataset</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4154,7 +4898,7 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:ObservationCollection"><a class="link" href="#class-tern:ObservationCollection">4.1.12. Class: tern:ObservationCollection</a></h4>
+<h4 id="class-tern:ObservationCollection"><a class="link" href="#class-tern:ObservationCollection">4.1.13. Class: tern:ObservationCollection</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4190,7 +4934,7 @@ h6 > a.link:hover,
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-sosa:hasFeatureOfInterest"><a class="link" href="#class-tern:ObservationCollection-sosa:hasFeatureOfInterest">4.1.12.1. Property: sosa:hasFeatureOfInterest</a></h5>
+<h5 id="class-tern:ObservationCollection-sosa:hasFeatureOfInterest"><a class="link" href="#class-tern:ObservationCollection-sosa:hasFeatureOfInterest">4.1.13.1. Property: sosa:hasFeatureOfInterest</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4251,7 +4995,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-sosa:hasMember"><a class="link" href="#class-tern:ObservationCollection-sosa:hasMember">4.1.12.2. Property: sosa:hasMember</a></h5>
+<h5 id="class-tern:ObservationCollection-sosa:hasMember"><a class="link" href="#class-tern:ObservationCollection-sosa:hasMember">4.1.13.2. Property: sosa:hasMember</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4313,7 +5057,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-sosa:hasUltimateFeatureOfInterest"><a class="link" href="#class-tern:ObservationCollection-sosa:hasUltimateFeatureOfInterest">4.1.12.3. Property: sosa:hasUltimateFeatureOfInterest</a></h5>
+<h5 id="class-tern:ObservationCollection-sosa:hasUltimateFeatureOfInterest"><a class="link" href="#class-tern:ObservationCollection-sosa:hasUltimateFeatureOfInterest">4.1.13.3. Property: sosa:hasUltimateFeatureOfInterest</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4374,7 +5118,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-sosa:madeBySensor"><a class="link" href="#class-tern:ObservationCollection-sosa:madeBySensor">4.1.12.4. Property: sosa:madeBySensor</a></h5>
+<h5 id="class-tern:ObservationCollection-sosa:madeBySensor"><a class="link" href="#class-tern:ObservationCollection-sosa:madeBySensor">4.1.13.4. Property: sosa:madeBySensor</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4435,7 +5179,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-sosa:observedProperty"><a class="link" href="#class-tern:ObservationCollection-sosa:observedProperty">4.1.12.5. Property: sosa:observedProperty</a></h5>
+<h5 id="class-tern:ObservationCollection-sosa:observedProperty"><a class="link" href="#class-tern:ObservationCollection-sosa:observedProperty">4.1.13.5. Property: sosa:observedProperty</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4496,7 +5240,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-sosa:phenomenonTime"><a class="link" href="#class-tern:ObservationCollection-sosa:phenomenonTime">4.1.12.6. Property: sosa:phenomenonTime</a></h5>
+<h5 id="class-tern:ObservationCollection-sosa:phenomenonTime"><a class="link" href="#class-tern:ObservationCollection-sosa:phenomenonTime">4.1.13.6. Property: sosa:phenomenonTime</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4557,7 +5301,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-tern:resultDateTime"><a class="link" href="#class-tern:ObservationCollection-tern:resultDateTime">4.1.12.7. Property: tern:resultDateTime</a></h5>
+<h5 id="class-tern:ObservationCollection-tern:resultDateTime"><a class="link" href="#class-tern:ObservationCollection-tern:resultDateTime">4.1.13.7. Property: tern:resultDateTime</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4620,7 +5364,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:ObservationCollection-sosa:usedProcedure"><a class="link" href="#class-tern:ObservationCollection-sosa:usedProcedure">4.1.12.8. Property: sosa:usedProcedure</a></h5>
+<h5 id="class-tern:ObservationCollection-sosa:usedProcedure"><a class="link" href="#class-tern:ObservationCollection-sosa:usedProcedure">4.1.13.8. Property: sosa:usedProcedure</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4682,7 +5426,7 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:RDFDataset"><a class="link" href="#class-tern:RDFDataset">4.1.13. Class: tern:RDFDataset</a></h4>
+<h4 id="class-tern:RDFDataset"><a class="link" href="#class-tern:RDFDataset">4.1.14. Class: tern:RDFDataset</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4718,7 +5462,7 @@ h6 > a.link:hover,
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:contributor"><a class="link" href="#class-tern:RDFDataset-dcterms:contributor">4.1.13.1. Property: dcterms:contributor</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:contributor"><a class="link" href="#class-tern:RDFDataset-dcterms:contributor">4.1.14.1. Property: dcterms:contributor</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4779,7 +5523,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:created"><a class="link" href="#class-tern:RDFDataset-dcterms:created">4.1.13.2. Property: dcterms:created</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:created"><a class="link" href="#class-tern:RDFDataset-dcterms:created">4.1.14.2. Property: dcterms:created</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4840,7 +5584,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:creator"><a class="link" href="#class-tern:RDFDataset-dcterms:creator">4.1.13.3. Property: dcterms:creator</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:creator"><a class="link" href="#class-tern:RDFDataset-dcterms:creator">4.1.14.3. Property: dcterms:creator</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4901,7 +5645,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:date"><a class="link" href="#class-tern:RDFDataset-dcterms:date">4.1.13.4. Property: dcterms:date</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:date"><a class="link" href="#class-tern:RDFDataset-dcterms:date">4.1.14.4. Property: dcterms:date</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4962,7 +5706,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:description"><a class="link" href="#class-tern:RDFDataset-dcterms:description">4.1.13.5. Property: dcterms:description</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:description"><a class="link" href="#class-tern:RDFDataset-dcterms:description">4.1.14.5. Property: dcterms:description</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5023,7 +5767,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:issued"><a class="link" href="#class-tern:RDFDataset-dcterms:issued">4.1.13.6. Property: dcterms:issued</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:issued"><a class="link" href="#class-tern:RDFDataset-dcterms:issued">4.1.14.6. Property: dcterms:issued</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5084,7 +5828,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:license"><a class="link" href="#class-tern:RDFDataset-dcterms:license">4.1.13.7. Property: dcterms:license</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:license"><a class="link" href="#class-tern:RDFDataset-dcterms:license">4.1.14.7. Property: dcterms:license</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5145,7 +5889,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:modified"><a class="link" href="#class-tern:RDFDataset-dcterms:modified">4.1.13.8. Property: dcterms:modified</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:modified"><a class="link" href="#class-tern:RDFDataset-dcterms:modified">4.1.14.8. Property: dcterms:modified</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5206,7 +5950,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:publisher"><a class="link" href="#class-tern:RDFDataset-dcterms:publisher">4.1.13.9. Property: dcterms:publisher</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:publisher"><a class="link" href="#class-tern:RDFDataset-dcterms:publisher">4.1.14.9. Property: dcterms:publisher</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5267,7 +6011,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:rightsHolder"><a class="link" href="#class-tern:RDFDataset-dcterms:rightsHolder">4.1.13.10. Property: dcterms:rightsHolder</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:rightsHolder"><a class="link" href="#class-tern:RDFDataset-dcterms:rightsHolder">4.1.14.10. Property: dcterms:rightsHolder</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5328,7 +6072,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:source"><a class="link" href="#class-tern:RDFDataset-dcterms:source">4.1.13.11. Property: dcterms:source</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:source"><a class="link" href="#class-tern:RDFDataset-dcterms:source">4.1.14.11. Property: dcterms:source</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5389,7 +6133,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:subject"><a class="link" href="#class-tern:RDFDataset-dcterms:subject">4.1.13.12. Property: dcterms:subject</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:subject"><a class="link" href="#class-tern:RDFDataset-dcterms:subject">4.1.14.12. Property: dcterms:subject</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5450,7 +6194,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-void:subset"><a class="link" href="#class-tern:RDFDataset-void:subset">4.1.13.13. Property: void:subset</a></h5>
+<h5 id="class-tern:RDFDataset-void:subset"><a class="link" href="#class-tern:RDFDataset-void:subset">4.1.14.13. Property: void:subset</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5516,7 +6260,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-dcterms:title"><a class="link" href="#class-tern:RDFDataset-dcterms:title">4.1.13.14. Property: dcterms:title</a></h5>
+<h5 id="class-tern:RDFDataset-dcterms:title"><a class="link" href="#class-tern:RDFDataset-dcterms:title">4.1.14.14. Property: dcterms:title</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5577,7 +6321,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:RDFDataset-void:vocabulary"><a class="link" href="#class-tern:RDFDataset-void:vocabulary">4.1.13.15. Property: void:vocabulary</a></h5>
+<h5 id="class-tern:RDFDataset-void:vocabulary"><a class="link" href="#class-tern:RDFDataset-void:vocabulary">4.1.14.15. Property: void:vocabulary</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5639,7 +6383,7 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Result"><a class="link" href="#class-tern:Result">4.1.14. Class: tern:Result</a></h4>
+<h4 id="class-tern:Result"><a class="link" href="#class-tern:Result">4.1.15. Class: tern:Result</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5675,7 +6419,7 @@ h6 > a.link:hover,
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Result-sosa:isResultOf"><a class="link" href="#class-tern:Result-sosa:isResultOf">4.1.14.1. Property: sosa:isResultOf</a></h5>
+<h5 id="class-tern:Result-sosa:isResultOf"><a class="link" href="#class-tern:Result-sosa:isResultOf">4.1.15.1. Property: sosa:isResultOf</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5738,7 +6482,7 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Sample"><a class="link" href="#class-tern:Sample">4.1.15. Class: tern:Sample</a></h4>
+<h4 id="class-tern:Sample"><a class="link" href="#class-tern:Sample">4.1.16. Class: tern:Sample</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5774,7 +6518,7 @@ h6 > a.link:hover,
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Sample-sosa:isResultOf"><a class="link" href="#class-tern:Sample-sosa:isResultOf">4.1.15.1. Property: sosa:isResultOf</a></h5>
+<h5 id="class-tern:Sample-sosa:isResultOf"><a class="link" href="#class-tern:Sample-sosa:isResultOf">4.1.16.1. Property: sosa:isResultOf</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5835,7 +6579,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sample-sosa:isSampleOf"><a class="link" href="#class-tern:Sample-sosa:isSampleOf">4.1.15.2. Property: sosa:isSampleOf</a></h5>
+<h5 id="class-tern:Sample-sosa:isSampleOf"><a class="link" href="#class-tern:Sample-sosa:isSampleOf">4.1.16.2. Property: sosa:isSampleOf</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5897,7 +6641,7 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Sampler"><a class="link" href="#class-tern:Sampler">4.1.16. Class: tern:Sampler</a></h4>
+<h4 id="class-tern:Sampler"><a class="link" href="#class-tern:Sampler">4.1.17. Class: tern:Sampler</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5933,7 +6677,7 @@ h6 > a.link:hover,
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Sampler-ssn:implements"><a class="link" href="#class-tern:Sampler-ssn:implements">4.1.16.1. Property: ssn:implements</a></h5>
+<h5 id="class-tern:Sampler-ssn:implements"><a class="link" href="#class-tern:Sampler-ssn:implements">4.1.17.1. Property: ssn:implements</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5994,7 +6738,7 @@ h6 > a.link:hover,
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampler-sosa:madeSampling"><a class="link" href="#class-tern:Sampler-sosa:madeSampling">4.1.16.2. Property: sosa:madeSampling</a></h5>
+<h5 id="class-tern:Sampler-sosa:madeSampling"><a class="link" href="#class-tern:Sampler-sosa:madeSampling">4.1.17.2. Property: sosa:madeSampling</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6056,7 +6800,7 @@ h6 > a.link:hover,
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Sampling"><a class="link" href="#class-tern:Sampling">4.1.17. Class: tern:Sampling</a></h4>
+<h4 id="class-tern:Sampling"><a class="link" href="#class-tern:Sampling">4.1.18. Class: tern:Sampling</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6102,7 +6846,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Sampling-sosa:hasResult"><a class="link" href="#class-tern:Sampling-sosa:hasResult">4.1.17.1. Property: sosa:hasResult</a></h5>
+<h5 id="class-tern:Sampling-sosa:hasResult"><a class="link" href="#class-tern:Sampling-sosa:hasResult">4.1.18.1. Property: sosa:hasResult</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6163,7 +6907,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-sosa:madeBySampler"><a class="link" href="#class-tern:Sampling-sosa:madeBySampler">4.1.17.2. Property: sosa:madeBySampler</a></h5>
+<h5 id="class-tern:Sampling-sosa:madeBySampler"><a class="link" href="#class-tern:Sampling-sosa:madeBySampler">4.1.18.2. Property: sosa:madeBySampler</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6224,7 +6968,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-dcterms:identifier"><a class="link" href="#class-tern:Sampling-dcterms:identifier">4.1.17.3. Property: dcterms:identifier</a></h5>
+<h5 id="class-tern:Sampling-dcterms:identifier"><a class="link" href="#class-tern:Sampling-dcterms:identifier">4.1.18.3. Property: dcterms:identifier</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6285,7 +7029,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-dcterms:type"><a class="link" href="#class-tern:Sampling-dcterms:type">4.1.17.4. Property: dcterms:type</a></h5>
+<h5 id="class-tern:Sampling-dcterms:type"><a class="link" href="#class-tern:Sampling-dcterms:type">4.1.18.4. Property: dcterms:type</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6346,7 +7090,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-geo:hasGeometry"><a class="link" href="#class-tern:Sampling-geo:hasGeometry">4.1.17.5. Property: geo:hasGeometry</a></h5>
+<h5 id="class-tern:Sampling-geo:hasGeometry"><a class="link" href="#class-tern:Sampling-geo:hasGeometry">4.1.18.5. Property: geo:hasGeometry</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6407,7 +7151,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-prov:qualifiedAssociation"><a class="link" href="#class-tern:Sampling-prov:qualifiedAssociation">4.1.17.6. Property: prov:qualifiedAssociation</a></h5>
+<h5 id="class-tern:Sampling-prov:qualifiedAssociation"><a class="link" href="#class-tern:Sampling-prov:qualifiedAssociation">4.1.18.6. Property: prov:qualifiedAssociation</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6468,7 +7212,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-prov:wasAssociatedWith"><a class="link" href="#class-tern:Sampling-prov:wasAssociatedWith">4.1.17.7. Property: prov:wasAssociatedWith</a></h5>
+<h5 id="class-tern:Sampling-prov:wasAssociatedWith"><a class="link" href="#class-tern:Sampling-prov:wasAssociatedWith">4.1.18.7. Property: prov:wasAssociatedWith</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6529,7 +7273,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-rdfs:comment"><a class="link" href="#class-tern:Sampling-rdfs:comment">4.1.17.8. Property: rdfs:comment</a></h5>
+<h5 id="class-tern:Sampling-rdfs:comment"><a class="link" href="#class-tern:Sampling-rdfs:comment">4.1.18.8. Property: rdfs:comment</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6590,7 +7334,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-sosa:hasFeatureOfInterest"><a class="link" href="#class-tern:Sampling-sosa:hasFeatureOfInterest">4.1.17.9. Property: sosa:hasFeatureOfInterest</a></h5>
+<h5 id="class-tern:Sampling-sosa:hasFeatureOfInterest"><a class="link" href="#class-tern:Sampling-sosa:hasFeatureOfInterest">4.1.18.9. Property: sosa:hasFeatureOfInterest</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6651,7 +7395,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-tern:resultDateTime"><a class="link" href="#class-tern:Sampling-tern:resultDateTime">4.1.17.10. Property: tern:resultDateTime</a></h5>
+<h5 id="class-tern:Sampling-tern:resultDateTime"><a class="link" href="#class-tern:Sampling-tern:resultDateTime">4.1.18.10. Property: tern:resultDateTime</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6714,7 +7458,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-sosa:usedProcedure"><a class="link" href="#class-tern:Sampling-sosa:usedProcedure">4.1.17.11. Property: sosa:usedProcedure</a></h5>
+<h5 id="class-tern:Sampling-sosa:usedProcedure"><a class="link" href="#class-tern:Sampling-sosa:usedProcedure">4.1.18.11. Property: sosa:usedProcedure</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6775,7 +7519,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-tern:hasSiteVisit"><a class="link" href="#class-tern:Sampling-tern:hasSiteVisit">4.1.17.12. Property: tern:hasSiteVisit</a></h5>
+<h5 id="class-tern:Sampling-tern:hasSiteVisit"><a class="link" href="#class-tern:Sampling-tern:hasSiteVisit">4.1.18.12. Property: tern:hasSiteVisit</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6836,7 +7580,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-tern:samplingType"><a class="link" href="#class-tern:Sampling-tern:samplingType">4.1.17.13. Property: tern:samplingType</a></h5>
+<h5 id="class-tern:Sampling-tern:samplingType"><a class="link" href="#class-tern:Sampling-tern:samplingType">4.1.18.13. Property: tern:samplingType</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6897,7 +7641,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sampling-void:inDataset"><a class="link" href="#class-tern:Sampling-void:inDataset">4.1.17.14. Property: void:inDataset</a></h5>
+<h5 id="class-tern:Sampling-void:inDataset"><a class="link" href="#class-tern:Sampling-void:inDataset">4.1.18.14. Property: void:inDataset</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6959,7 +7703,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Sensor"><a class="link" href="#class-tern:Sensor">4.1.18. Class: tern:Sensor</a></h4>
+<h4 id="class-tern:Sensor"><a class="link" href="#class-tern:Sensor">4.1.19. Class: tern:Sensor</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6995,7 +7739,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Sensor-ssn:implements"><a class="link" href="#class-tern:Sensor-ssn:implements">4.1.18.1. Property: ssn:implements</a></h5>
+<h5 id="class-tern:Sensor-ssn:implements"><a class="link" href="#class-tern:Sensor-ssn:implements">4.1.19.1. Property: ssn:implements</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7056,7 +7800,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sensor-sosa:madeObservation"><a class="link" href="#class-tern:Sensor-sosa:madeObservation">4.1.18.2. Property: sosa:madeObservation</a></h5>
+<h5 id="class-tern:Sensor-sosa:madeObservation"><a class="link" href="#class-tern:Sensor-sosa:madeObservation">4.1.19.2. Property: sosa:madeObservation</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7117,7 +7861,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Sensor-sosa:observes"><a class="link" href="#class-tern:Sensor-sosa:observes">4.1.18.3. Property: sosa:observes</a></h5>
+<h5 id="class-tern:Sensor-sosa:observes"><a class="link" href="#class-tern:Sensor-sosa:observes">4.1.19.3. Property: sosa:observes</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7179,7 +7923,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:SiteVisit"><a class="link" href="#class-tern:SiteVisit">4.1.19. Class: tern:SiteVisit</a></h4>
+<h4 id="class-tern:Site"><a class="link" href="#class-tern:Site">4.1.20. Class: tern:Site</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7194,7 +7938,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/SiteVisit"><code>tern:SiteVisit</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/Site"><code>tern:Site</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
@@ -7202,20 +7946,20 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Site Visit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Site</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A Site Visit is a discrete time-bounded activity at a <code>Site</code>, during which <code>Sampling</code> or <code>Observation</code> activities occur.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An ecological monitoring site where observations and samplings occur. This <code>Site</code> class is a subclass of <code>Sample</code> since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:SiteVisit-prov:endedAtTime"><a class="link" href="#class-tern:SiteVisit-prov:endedAtTime">4.1.19.1. Property: prov:endedAtTime</a></h5>
+<h5 id="class-tern:Site-tern:dimension"><a class="link" href="#class-tern:Site-tern:dimension">4.1.20.1. Property: tern:dimension</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7230,23 +7974,23 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#endedAtTime"><code>prov:endedAtTime</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/dimension"><code>tern:dimension</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/SiteVisit-endedAtTime" class="bare">https://w3id.org/tern/shapes/tern/SiteVisit-endedAtTime</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Site-dimension" class="bare">https://w3id.org/tern/shapes/tern/Site-dimension</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ended at time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dimension</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which an activity ended.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimenion in metres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
@@ -7254,7 +7998,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:SiteVisit</code> <em>MAY</em> have a maximum of 1 <code>prov:endedAtTime</code> predicate where the value node is a literal with the datatype <code>xsd:dateTime</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:Site</code> <em>MAY</em> have a maximum of 1 <code>tern:dimension</code> predicate where the value node is a literal with the datatype `xsd:string.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
@@ -7266,7 +8010,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#string"><code>xsd:string</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
@@ -7276,7 +8020,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:SiteVisit-prov:startedAtTime"><a class="link" href="#class-tern:SiteVisit-prov:startedAtTime">4.1.19.2. Property: prov:startedAtTime</a></h5>
+<h5 id="class-tern:Site-tern:hasSiteVisit"><a class="link" href="#class-tern:Site-tern:hasSiteVisit">4.1.20.2. Property: tern:hasSiteVisit</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7291,11 +8035,11 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#startedAtTime"><code>prov:startedAtTime</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/hasSiteVisit"><code>tern:hasSiteVisit</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/SiteVisit-startedAtTime" class="bare">https://w3id.org/tern/shapes/tern/SiteVisit-startedAtTime</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Site-hasSiteVisit" class="bare">https://w3id.org/tern/shapes/tern/Site-hasSiteVisit</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
@@ -7303,11 +8047,11 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">started at time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has site visit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which an activity started.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
@@ -7315,68 +8059,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:SiteVisit</code> <em>MUST</em> have exactly 1 <code>prov:startedAtTime</code> predicate where the value node is a literal with the datatype <code>xsd:dateTime</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="class-tern:SiteVisit-dcterms:identifier"><a class="link" href="#class-tern:SiteVisit-dcterms:identifier">4.1.19.3. Property: dcterms:identifier</a></h5>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/dcterms-identifier" class="bare">https://w3id.org/tern/shapes/tern/dcterms-identifier</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An unambiguous reference to the resource within a given context.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:Site</code> <em>MAY</em> have a <code>tern:hasSiteVisit</code> predicate where the value node is an IRI of type <code>tern:SiteVisit</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
@@ -7384,11 +8067,11 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/SiteVisit"><code>tern:SiteVisit</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
@@ -7398,7 +8081,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:SiteVisit-dcterms:type"><a class="link" href="#class-tern:SiteVisit-dcterms:type">4.1.19.4. Property: dcterms:type</a></h5>
+<h5 id="class-tern:Site-tern:locationProcedure"><a class="link" href="#class-tern:Site-tern:locationProcedure">4.1.20.3. Property: tern:locationProcedure</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7413,31 +8096,92 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/locationProcedure"><code>tern:locationProcedure</code></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/dcterms-type" class="bare">https://w3id.org/tern/shapes/tern/dcterms-type</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/Site-locationProcedure" class="bare">https://w3id.org/tern/shapes/tern/Site-locationProcedure</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location procedure</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary <a href="http://dublincore.org/documents/dcmi-type-vocabulary/">DCMI-TYPE</a>. To describe the file format, physical medium, or dimensions of the resource, use the property Format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to a procedure used to obtain the location.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Useful to capture the proximate class type in situations when <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf"><code>rdfs:subClassOf</code></a> entailment is enabled and <code>rdf:type</code> is not suitable.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>dcterms:type</code> predicate <em>MUST</em> have an IRI value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:Site</code> <em>MAY</em> have a maximum of 1 <code>tern:locationProcedure</code> predicate where the value node is an IRI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:Site-geo:sfWithin"><a class="link" href="#class-tern:Site-geo:sfWithin">4.1.20.4. Property: geo:sfWithin</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.opengis.net/ont/geosparql#sfWithin"><code>geo:sfWithin</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/geo-sfWithin" class="bare">https://w3id.org/tern/shapes/tern/geo-sfWithin</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SF within</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F<strong>F</strong>*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>geo:sfWithin</code> <em>MUST</em> have an IRI value.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
@@ -7459,129 +8203,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:SiteVisit-prov:qualifiedAssociation"><a class="link" href="#class-tern:SiteVisit-prov:qualifiedAssociation">4.1.19.5. Property: prov:qualifiedAssociation</a></h5>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#qualifiedAssociation"><code>prov:qualifiedAssociation</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation" class="bare">https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">qualified association</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:qualifiedAssociation</code> <em>MUST</em> have a blank node or IRI value of type <code>prov:Association</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#BlankNodeOrIRI"><code>sh:BlankNodeOrIRI</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Association"><code>prov:Association</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="class-tern:SiteVisit-prov:wasAssociatedWith"><a class="link" href="#class-tern:SiteVisit-prov:wasAssociatedWith">4.1.19.6. Property: prov:wasAssociatedWith</a></h5>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#wasAssociatedWith"><code>prov:wasAssociatedWith</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith" class="bare">https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">was associated with</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:wasAssociatedWith</code> predicate <em>MUST</em> an IRI value of type <code>prov:Agent</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Agent"><code>prov:Agent</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="class-tern:SiteVisit-tern:locationDescription"><a class="link" href="#class-tern:SiteVisit-tern:locationDescription">4.1.19.7. Property: tern:locationDescription</a></h5>
+<h5 id="class-tern:Site-tern:locationDescription"><a class="link" href="#class-tern:Site-tern:locationDescription">4.1.20.5. Property: tern:locationDescription</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7643,7 +8265,534 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:SiteVisit-tern:siteDescription"><a class="link" href="#class-tern:SiteVisit-tern:siteDescription">4.1.19.8. Property: tern:siteDescription</a></h5>
+<h5 id="class-tern:Site-tern:siteDescription"><a class="link" href="#class-tern:Site-tern:siteDescription">4.1.20.6. Property: tern:siteDescription</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/siteDescription"><code>tern:siteDescription</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-siteDescription" class="bare">https://w3id.org/tern/shapes/tern/tern-siteDescription</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">site description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description of the site.</p>
+<p class="tableblock">Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sand fan into western edge. Very few, 3, plants regenerating after recent moderate rains. Silt, sand with scattered iron conglomerate stones on surface.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:siteDescription</code> <em>MUST</em> have a literal value with the datatype <code>xsd:string</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#string"><code>xsd:string</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="class-tern:SiteVisit"><a class="link" href="#class-tern:SiteVisit">4.1.21. Class: tern:SiteVisit</a></h4>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/SiteVisit"><code>tern:SiteVisit</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Site Visit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A Site Visit is a discrete time-bounded activity at a <code>Site</code>, during which <code>Sampling</code> or <code>Observation</code> activities occur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-prov:endedAtTime"><a class="link" href="#class-tern:SiteVisit-prov:endedAtTime">4.1.21.1. Property: prov:endedAtTime</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#endedAtTime"><code>prov:endedAtTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/SiteVisit-endedAtTime" class="bare">https://w3id.org/tern/shapes/tern/SiteVisit-endedAtTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ended at time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which an activity ended.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:SiteVisit</code> <em>MAY</em> have a maximum of 1 <code>prov:endedAtTime</code> predicate where the value node is a literal with the datatype <code>xsd:dateTime</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-prov:startedAtTime"><a class="link" href="#class-tern:SiteVisit-prov:startedAtTime">4.1.21.2. Property: prov:startedAtTime</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#startedAtTime"><code>prov:startedAtTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/SiteVisit-startedAtTime" class="bare">https://w3id.org/tern/shapes/tern/SiteVisit-startedAtTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">started at time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which an activity started.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:SiteVisit</code> <em>MUST</em> have exactly 1 <code>prov:startedAtTime</code> predicate where the value node is a literal with the datatype <code>xsd:dateTime</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#dateTime"><code>xsd:dateTime</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-dcterms:identifier"><a class="link" href="#class-tern:SiteVisit-dcterms:identifier">4.1.21.3. Property: dcterms:identifier</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/dc/terms/identifier"><code>dcterms:identifier</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/dcterms-identifier" class="bare">https://w3id.org/tern/shapes/tern/dcterms-identifier</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An unambiguous reference to the resource within a given context.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-dcterms:type"><a class="link" href="#class-tern:SiteVisit-dcterms:type">4.1.21.4. Property: dcterms:type</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://purl.org/dc/terms/type"><code>dcterms:type</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/dcterms-type" class="bare">https://w3id.org/tern/shapes/tern/dcterms-type</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary <a href="http://dublincore.org/documents/dcmi-type-vocabulary/">DCMI-TYPE</a>. To describe the file format, physical medium, or dimensions of the resource, use the property Format.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Useful to capture the proximate class type in situations when <a href="http://www.w3.org/2000/01/rdf-schema#subClassOf"><code>rdfs:subClassOf</code></a> entailment is enabled and <code>rdf:type</code> is not suitable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>dcterms:type</code> predicate <em>MUST</em> have an IRI value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-prov:qualifiedAssociation"><a class="link" href="#class-tern:SiteVisit-prov:qualifiedAssociation">4.1.21.5. Property: prov:qualifiedAssociation</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#qualifiedAssociation"><code>prov:qualifiedAssociation</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation" class="bare">https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">qualified association</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:qualifiedAssociation</code> <em>MUST</em> have a blank node or IRI value of type <code>prov:Association</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#BlankNodeOrIRI"><code>sh:BlankNodeOrIRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Association"><code>prov:Association</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-prov:wasAssociatedWith"><a class="link" href="#class-tern:SiteVisit-prov:wasAssociatedWith">4.1.21.6. Property: prov:wasAssociatedWith</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#wasAssociatedWith"><code>prov:wasAssociatedWith</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith" class="bare">https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>stable</code> <span class="icon"><i class="fa fa-check-circle"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">was associated with</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>prov:wasAssociatedWith</code> predicate <em>MUST</em> an IRI value of type <code>prov:Agent</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#IRI"><code>sh:IRI</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/prov#Agent"><code>prov:Agent</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-tern:locationDescription"><a class="link" href="#class-tern:SiteVisit-tern:locationDescription">4.1.21.7. Property: tern:locationDescription</a></h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/ontologies/tern/locationDescription"><code>tern:locationDescription</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shape IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/tern/shapes/tern/tern-locationDescription" class="bare">https://w3id.org/tern/shapes/tern/tern-locationDescription</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>experimental</code> <span class="icon"><i class="fa fa-circle-o"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">location description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The description of the site&#8217;s location.</p>
+<p class="tableblock">Example: 10km west of Fletcherview Tropical Rangeland SuperSite.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scope note</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implementation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>tern:locationDescription</code> <em>MUST</em> have a literal value with the datatype <code>xsd:string</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cardinality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/shacl#Literal"><code>sh:Literal</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2001/XMLSchema#string"><code>xsd:string</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected values</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="class-tern:SiteVisit-tern:siteDescription"><a class="link" href="#class-tern:SiteVisit-tern:siteDescription">4.1.21.8. Property: tern:siteDescription</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7705,7 +8854,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:SiteVisit-void:inDataset"><a class="link" href="#class-tern:SiteVisit-void:inDataset">4.1.19.9. Property: void:inDataset</a></h5>
+<h5 id="class-tern:SiteVisit-void:inDataset"><a class="link" href="#class-tern:SiteVisit-void:inDataset">4.1.21.9. Property: void:inDataset</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7767,7 +8916,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:System"><a class="link" href="#class-tern:System">4.1.20. Class: tern:System</a></h4>
+<h4 id="class-tern:System"><a class="link" href="#class-tern:System">4.1.22. Class: tern:System</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7803,7 +8952,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:System-ssn:hasDeployment"><a class="link" href="#class-tern:System-ssn:hasDeployment">4.1.20.1. Property: ssn:hasDeployment</a></h5>
+<h5 id="class-tern:System-ssn:hasDeployment"><a class="link" href="#class-tern:System-ssn:hasDeployment">4.1.22.1. Property: ssn:hasDeployment</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7864,7 +9013,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:System-sosa:isHostedBy"><a class="link" href="#class-tern:System-sosa:isHostedBy">4.1.20.2. Property: sosa:isHostedBy</a></h5>
+<h5 id="class-tern:System-sosa:isHostedBy"><a class="link" href="#class-tern:System-sosa:isHostedBy">4.1.22.2. Property: sosa:isHostedBy</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7925,7 +9074,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:System-tern:systemType"><a class="link" href="#class-tern:System-tern:systemType">4.1.20.3. Property: tern:systemType</a></h5>
+<h5 id="class-tern:System-tern:systemType"><a class="link" href="#class-tern:System-tern:systemType">4.1.22.3. Property: tern:systemType</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7986,7 +9135,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:System-dcterms:type"><a class="link" href="#class-tern:System-dcterms:type">4.1.20.4. Property: dcterms:type</a></h5>
+<h5 id="class-tern:System-dcterms:type"><a class="link" href="#class-tern:System-dcterms:type">4.1.22.4. Property: dcterms:type</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8047,7 +9196,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:System-ssn:implements"><a class="link" href="#class-tern:System-ssn:implements">4.1.20.5. Property: ssn:implements</a></h5>
+<h5 id="class-tern:System-ssn:implements"><a class="link" href="#class-tern:System-ssn:implements">4.1.22.5. Property: ssn:implements</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8109,7 +9258,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Taxon"><a class="link" href="#class-tern:Taxon">4.1.21. Class: tern:Taxon</a></h4>
+<h4 id="class-tern:Taxon"><a class="link" href="#class-tern:Taxon">4.1.23. Class: tern:Taxon</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8145,7 +9294,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:acceptedNameUsage"><a class="link" href="#class-tern:Taxon-dwc:acceptedNameUsage">4.1.21.1. Property: dwc:acceptedNameUsage</a></h5>
+<h5 id="class-tern:Taxon-dwc:acceptedNameUsage"><a class="link" href="#class-tern:Taxon-dwc:acceptedNameUsage">4.1.23.1. Property: dwc:acceptedNameUsage</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8206,7 +9355,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:acceptedNameUsageID"><a class="link" href="#class-tern:Taxon-dwc:acceptedNameUsageID">4.1.21.2. Property: dwc:acceptedNameUsageID</a></h5>
+<h5 id="class-tern:Taxon-dwc:acceptedNameUsageID"><a class="link" href="#class-tern:Taxon-dwc:acceptedNameUsageID">4.1.23.2. Property: dwc:acceptedNameUsageID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8267,7 +9416,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:class"><a class="link" href="#class-tern:Taxon-dwc:class">4.1.21.3. Property: dwc:class</a></h5>
+<h5 id="class-tern:Taxon-dwc:class"><a class="link" href="#class-tern:Taxon-dwc:class">4.1.23.3. Property: dwc:class</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8328,7 +9477,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:cultivarEpithet"><a class="link" href="#class-tern:Taxon-dwc:cultivarEpithet">4.1.21.4. Property: dwc:cultivarEpithet</a></h5>
+<h5 id="class-tern:Taxon-dwc:cultivarEpithet"><a class="link" href="#class-tern:Taxon-dwc:cultivarEpithet">4.1.23.4. Property: dwc:cultivarEpithet</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8389,7 +9538,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:family"><a class="link" href="#class-tern:Taxon-dwc:family">4.1.21.5. Property: dwc:family</a></h5>
+<h5 id="class-tern:Taxon-dwc:family"><a class="link" href="#class-tern:Taxon-dwc:family">4.1.23.5. Property: dwc:family</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8450,7 +9599,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:genericName"><a class="link" href="#class-tern:Taxon-dwc:genericName">4.1.21.6. Property: dwc:genericName</a></h5>
+<h5 id="class-tern:Taxon-dwc:genericName"><a class="link" href="#class-tern:Taxon-dwc:genericName">4.1.23.6. Property: dwc:genericName</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8511,7 +9660,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:genus"><a class="link" href="#class-tern:Taxon-dwc:genus">4.1.21.7. Property: dwc:genus</a></h5>
+<h5 id="class-tern:Taxon-dwc:genus"><a class="link" href="#class-tern:Taxon-dwc:genus">4.1.23.7. Property: dwc:genus</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8572,7 +9721,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:higherClassification"><a class="link" href="#class-tern:Taxon-dwc:higherClassification">4.1.21.8. Property: dwc:higherClassification</a></h5>
+<h5 id="class-tern:Taxon-dwc:higherClassification"><a class="link" href="#class-tern:Taxon-dwc:higherClassification">4.1.23.8. Property: dwc:higherClassification</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8633,7 +9782,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:infragenericEpithet"><a class="link" href="#class-tern:Taxon-dwc:infragenericEpithet">4.1.21.9. Property: dwc:infragenericEpithet</a></h5>
+<h5 id="class-tern:Taxon-dwc:infragenericEpithet"><a class="link" href="#class-tern:Taxon-dwc:infragenericEpithet">4.1.23.9. Property: dwc:infragenericEpithet</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8694,7 +9843,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:infraspecificEpithet"><a class="link" href="#class-tern:Taxon-dwc:infraspecificEpithet">4.1.21.10. Property: dwc:infraspecificEpithet</a></h5>
+<h5 id="class-tern:Taxon-dwc:infraspecificEpithet"><a class="link" href="#class-tern:Taxon-dwc:infraspecificEpithet">4.1.23.10. Property: dwc:infraspecificEpithet</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8755,7 +9904,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:kingdom"><a class="link" href="#class-tern:Taxon-dwc:kingdom">4.1.21.11. Property: dwc:kingdom</a></h5>
+<h5 id="class-tern:Taxon-dwc:kingdom"><a class="link" href="#class-tern:Taxon-dwc:kingdom">4.1.23.11. Property: dwc:kingdom</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8816,7 +9965,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:nameAccordingTo"><a class="link" href="#class-tern:Taxon-dwc:nameAccordingTo">4.1.21.12. Property: dwc:nameAccordingTo</a></h5>
+<h5 id="class-tern:Taxon-dwc:nameAccordingTo"><a class="link" href="#class-tern:Taxon-dwc:nameAccordingTo">4.1.23.12. Property: dwc:nameAccordingTo</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8877,7 +10026,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:nameAccordingToID"><a class="link" href="#class-tern:Taxon-dwc:nameAccordingToID">4.1.21.13. Property: dwc:nameAccordingToID</a></h5>
+<h5 id="class-tern:Taxon-dwc:nameAccordingToID"><a class="link" href="#class-tern:Taxon-dwc:nameAccordingToID">4.1.23.13. Property: dwc:nameAccordingToID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8938,7 +10087,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:namePublishedIn"><a class="link" href="#class-tern:Taxon-dwc:namePublishedIn">4.1.21.14. Property: dwc:namePublishedIn</a></h5>
+<h5 id="class-tern:Taxon-dwc:namePublishedIn"><a class="link" href="#class-tern:Taxon-dwc:namePublishedIn">4.1.23.14. Property: dwc:namePublishedIn</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8999,7 +10148,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:namePublishedInID"><a class="link" href="#class-tern:Taxon-dwc:namePublishedInID">4.1.21.15. Property: dwc:namePublishedInID</a></h5>
+<h5 id="class-tern:Taxon-dwc:namePublishedInID"><a class="link" href="#class-tern:Taxon-dwc:namePublishedInID">4.1.23.15. Property: dwc:namePublishedInID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9060,7 +10209,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:namePublishedInYear"><a class="link" href="#class-tern:Taxon-dwc:namePublishedInYear">4.1.21.16. Property: dwc:namePublishedInYear</a></h5>
+<h5 id="class-tern:Taxon-dwc:namePublishedInYear"><a class="link" href="#class-tern:Taxon-dwc:namePublishedInYear">4.1.23.16. Property: dwc:namePublishedInYear</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9121,7 +10270,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:nomenclaturalCode"><a class="link" href="#class-tern:Taxon-dwc:nomenclaturalCode">4.1.21.17. Property: dwc:nomenclaturalCode</a></h5>
+<h5 id="class-tern:Taxon-dwc:nomenclaturalCode"><a class="link" href="#class-tern:Taxon-dwc:nomenclaturalCode">4.1.23.17. Property: dwc:nomenclaturalCode</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9182,7 +10331,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:nomenclaturalStatus"><a class="link" href="#class-tern:Taxon-dwc:nomenclaturalStatus">4.1.21.18. Property: dwc:nomenclaturalStatus</a></h5>
+<h5 id="class-tern:Taxon-dwc:nomenclaturalStatus"><a class="link" href="#class-tern:Taxon-dwc:nomenclaturalStatus">4.1.23.18. Property: dwc:nomenclaturalStatus</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9243,7 +10392,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:order"><a class="link" href="#class-tern:Taxon-dwc:order">4.1.21.19. Property: dwc:order</a></h5>
+<h5 id="class-tern:Taxon-dwc:order"><a class="link" href="#class-tern:Taxon-dwc:order">4.1.23.19. Property: dwc:order</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9304,7 +10453,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:originalNameUsage"><a class="link" href="#class-tern:Taxon-dwc:originalNameUsage">4.1.21.20. Property: dwc:originalNameUsage</a></h5>
+<h5 id="class-tern:Taxon-dwc:originalNameUsage"><a class="link" href="#class-tern:Taxon-dwc:originalNameUsage">4.1.23.20. Property: dwc:originalNameUsage</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9365,7 +10514,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:originalNameUsageID"><a class="link" href="#class-tern:Taxon-dwc:originalNameUsageID">4.1.21.21. Property: dwc:originalNameUsageID</a></h5>
+<h5 id="class-tern:Taxon-dwc:originalNameUsageID"><a class="link" href="#class-tern:Taxon-dwc:originalNameUsageID">4.1.23.21. Property: dwc:originalNameUsageID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9426,7 +10575,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:parentNameUsage"><a class="link" href="#class-tern:Taxon-dwc:parentNameUsage">4.1.21.22. Property: dwc:parentNameUsage</a></h5>
+<h5 id="class-tern:Taxon-dwc:parentNameUsage"><a class="link" href="#class-tern:Taxon-dwc:parentNameUsage">4.1.23.22. Property: dwc:parentNameUsage</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9487,7 +10636,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:parentNameUsageID"><a class="link" href="#class-tern:Taxon-dwc:parentNameUsageID">4.1.21.23. Property: dwc:parentNameUsageID</a></h5>
+<h5 id="class-tern:Taxon-dwc:parentNameUsageID"><a class="link" href="#class-tern:Taxon-dwc:parentNameUsageID">4.1.23.23. Property: dwc:parentNameUsageID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9548,7 +10697,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:phylum"><a class="link" href="#class-tern:Taxon-dwc:phylum">4.1.21.24. Property: dwc:phylum</a></h5>
+<h5 id="class-tern:Taxon-dwc:phylum"><a class="link" href="#class-tern:Taxon-dwc:phylum">4.1.23.24. Property: dwc:phylum</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9609,7 +10758,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:scientificName"><a class="link" href="#class-tern:Taxon-dwc:scientificName">4.1.21.25. Property: dwc:scientificName</a></h5>
+<h5 id="class-tern:Taxon-dwc:scientificName"><a class="link" href="#class-tern:Taxon-dwc:scientificName">4.1.23.25. Property: dwc:scientificName</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9670,7 +10819,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:scientificNameAuthorship"><a class="link" href="#class-tern:Taxon-dwc:scientificNameAuthorship">4.1.21.26. Property: dwc:scientificNameAuthorship</a></h5>
+<h5 id="class-tern:Taxon-dwc:scientificNameAuthorship"><a class="link" href="#class-tern:Taxon-dwc:scientificNameAuthorship">4.1.23.26. Property: dwc:scientificNameAuthorship</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9731,7 +10880,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:scientificNameID"><a class="link" href="#class-tern:Taxon-dwc:scientificNameID">4.1.21.27. Property: dwc:scientificNameID</a></h5>
+<h5 id="class-tern:Taxon-dwc:scientificNameID"><a class="link" href="#class-tern:Taxon-dwc:scientificNameID">4.1.23.27. Property: dwc:scientificNameID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9792,7 +10941,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:specificEpithet"><a class="link" href="#class-tern:Taxon-dwc:specificEpithet">4.1.21.28. Property: dwc:specificEpithet</a></h5>
+<h5 id="class-tern:Taxon-dwc:specificEpithet"><a class="link" href="#class-tern:Taxon-dwc:specificEpithet">4.1.23.28. Property: dwc:specificEpithet</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9853,7 +11002,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:subfamily"><a class="link" href="#class-tern:Taxon-dwc:subfamily">4.1.21.29. Property: dwc:subfamily</a></h5>
+<h5 id="class-tern:Taxon-dwc:subfamily"><a class="link" href="#class-tern:Taxon-dwc:subfamily">4.1.23.29. Property: dwc:subfamily</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9914,7 +11063,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:subgenus"><a class="link" href="#class-tern:Taxon-dwc:subgenus">4.1.21.30. Property: dwc:subgenus</a></h5>
+<h5 id="class-tern:Taxon-dwc:subgenus"><a class="link" href="#class-tern:Taxon-dwc:subgenus">4.1.23.30. Property: dwc:subgenus</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9975,7 +11124,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:taxonConceptID"><a class="link" href="#class-tern:Taxon-dwc:taxonConceptID">4.1.21.31. Property: dwc:taxonConceptID</a></h5>
+<h5 id="class-tern:Taxon-dwc:taxonConceptID"><a class="link" href="#class-tern:Taxon-dwc:taxonConceptID">4.1.23.31. Property: dwc:taxonConceptID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10036,7 +11185,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:taxonID"><a class="link" href="#class-tern:Taxon-dwc:taxonID">4.1.21.32. Property: dwc:taxonID</a></h5>
+<h5 id="class-tern:Taxon-dwc:taxonID"><a class="link" href="#class-tern:Taxon-dwc:taxonID">4.1.23.32. Property: dwc:taxonID</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10097,7 +11246,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:taxonRank"><a class="link" href="#class-tern:Taxon-dwc:taxonRank">4.1.21.33. Property: dwc:taxonRank</a></h5>
+<h5 id="class-tern:Taxon-dwc:taxonRank"><a class="link" href="#class-tern:Taxon-dwc:taxonRank">4.1.23.33. Property: dwc:taxonRank</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10158,7 +11307,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:taxonRemarks"><a class="link" href="#class-tern:Taxon-dwc:taxonRemarks">4.1.21.34. Property: dwc:taxonRemarks</a></h5>
+<h5 id="class-tern:Taxon-dwc:taxonRemarks"><a class="link" href="#class-tern:Taxon-dwc:taxonRemarks">4.1.23.34. Property: dwc:taxonRemarks</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10219,7 +11368,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:taxonomicStatus"><a class="link" href="#class-tern:Taxon-dwc:taxonomicStatus">4.1.21.35. Property: dwc:taxonomicStatus</a></h5>
+<h5 id="class-tern:Taxon-dwc:taxonomicStatus"><a class="link" href="#class-tern:Taxon-dwc:taxonomicStatus">4.1.23.35. Property: dwc:taxonomicStatus</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10280,7 +11429,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:verbatimTaxonRank"><a class="link" href="#class-tern:Taxon-dwc:verbatimTaxonRank">4.1.21.36. Property: dwc:verbatimTaxonRank</a></h5>
+<h5 id="class-tern:Taxon-dwc:verbatimTaxonRank"><a class="link" href="#class-tern:Taxon-dwc:verbatimTaxonRank">4.1.23.36. Property: dwc:verbatimTaxonRank</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10341,7 +11490,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Taxon-dwc:vernacularName"><a class="link" href="#class-tern:Taxon-dwc:vernacularName">4.1.21.37. Property: dwc:vernacularName</a></h5>
+<h5 id="class-tern:Taxon-dwc:vernacularName"><a class="link" href="#class-tern:Taxon-dwc:vernacularName">4.1.23.37. Property: dwc:vernacularName</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10403,7 +11552,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Text"><a class="link" href="#class-tern:Text">4.1.22. Class: tern:Text</a></h4>
+<h4 id="class-tern:Text"><a class="link" href="#class-tern:Text">4.1.24. Class: tern:Text</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10439,7 +11588,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Text-rdf:value"><a class="link" href="#class-tern:Text-rdf:value">4.1.22.1. Property: rdf:value</a></h5>
+<h5 id="class-tern:Text-rdf:value"><a class="link" href="#class-tern:Text-rdf:value">4.1.24.1. Property: rdf:value</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10502,7 +11651,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Transect"><a class="link" href="#class-tern:Transect">4.1.23. Class: tern:Transect</a></h4>
+<h4 id="class-tern:Transect"><a class="link" href="#class-tern:Transect">4.1.25. Class: tern:Transect</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10538,7 +11687,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="class-tern:Transect-tern:featureType"><a class="link" href="#class-tern:Transect-tern:featureType">4.1.23.1. Property: tern:featureType</a></h5>
+<h5 id="class-tern:Transect-tern:featureType"><a class="link" href="#class-tern:Transect-tern:featureType">4.1.25.1. Property: tern:featureType</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10599,7 +11748,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Transect-geo:hasGeometry"><a class="link" href="#class-tern:Transect-geo:hasGeometry">4.1.23.2. Property: geo:hasGeometry</a></h5>
+<h5 id="class-tern:Transect-geo:hasGeometry"><a class="link" href="#class-tern:Transect-geo:hasGeometry">4.1.25.2. Property: geo:hasGeometry</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10661,7 +11810,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Transect-tern:transectDirection"><a class="link" href="#class-tern:Transect-tern:transectDirection">4.1.23.3. Property: tern:transectDirection</a></h5>
+<h5 id="class-tern:Transect-tern:transectDirection"><a class="link" href="#class-tern:Transect-tern:transectDirection">4.1.25.3. Property: tern:transectDirection</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10722,7 +11871,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Transect-tern:transectEndPoint"><a class="link" href="#class-tern:Transect-tern:transectEndPoint">4.1.23.4. Property: tern:transectEndPoint</a></h5>
+<h5 id="class-tern:Transect-tern:transectEndPoint"><a class="link" href="#class-tern:Transect-tern:transectEndPoint">4.1.25.4. Property: tern:transectEndPoint</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10783,7 +11932,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="class-tern:Transect-tern:transectStartPoint"><a class="link" href="#class-tern:Transect-tern:transectStartPoint">4.1.23.5. Property: tern:transectStartPoint</a></h5>
+<h5 id="class-tern:Transect-tern:transectStartPoint"><a class="link" href="#class-tern:Transect-tern:transectStartPoint">4.1.25.5. Property: tern:transectStartPoint</a></h5>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10845,7 +11994,7 @@ Taking a diamond-drill core from a rock outcrop.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="class-tern:Value"><a class="link" href="#class-tern:Value">4.1.24. Class: tern:Value</a></h4>
+<h4 id="class-tern:Value"><a class="link" href="#class-tern:Value">4.1.26. Class: tern:Value</a></h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12247,7 +13396,7 @@ This Annex is normative.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-07-04 00:21:41 UTC
+Last updated 2022-11-28 04:40:33 UTC
 </div>
 </div>
 </body>
