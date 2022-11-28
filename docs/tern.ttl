@@ -93,7 +93,7 @@ sosa:isSampleOf
         sosa: ,
         ssn: ,
         <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
-    owl:versionIRI <https://w3id.org/tern/ontologies/tern/0.6.3> ;
+    owl:versionIRI tern:0.7.0 ;
     owl:versionInfo "0.6.3" ;
     skos:definition "The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
     skos:prefLabel "TERN Ontology" ;
@@ -382,6 +382,16 @@ tern:Integer
     rdfs:subClassOf tern:Value ;
     skos:definition "A class to encapsulate an integer value." ;
     skos:prefLabel "Integer" ;
+.
+
+tern:Intervention
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "An `Intervention` is a human-induced activity that carries out a `Procedure` to observe or change the properties of a `Feature Of Interest`." ;
+    skos:prefLabel "Intervention" ;
+    skos:scopeNote "An intervention is a management process to maintain, restore or improve an ecosystem within a spatial area." ;
+    skos:example "Controlled burns, breeding programs, weed and debris removal, installation of new structures, etc." ;
 .
 
 tern:ManagedFeature
@@ -702,6 +712,12 @@ tern:instrumentType
     rdfs:label "instrument type" ;
     rdfs:range skos:Concept ;
     skos:definition "The type of instrument used." ;
+.
+
+tern:interventionType
+    a owl:ObjectProperty ;
+    rdfs:label "intervention type" ;
+    skos:definition "The type of intervention act." ;
 .
 
 tern:isSiteOf
