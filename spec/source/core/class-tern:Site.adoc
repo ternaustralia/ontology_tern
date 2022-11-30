@@ -44,7 +44,7 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/Site-hasSiteVisit
 | Status | `stable` icon:check-circle[]
 | Label | has site visit
-| Definition | A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit).
+| Definition | A property that links, e.g., a Site to a Site Visit.
 | Scope note | 
 | Implementation | A `tern:Site` _MAY_ have a `tern:hasSiteVisit` predicate where the value node is an IRI of type `tern:SiteVisit`.
 | Cardinality | 
