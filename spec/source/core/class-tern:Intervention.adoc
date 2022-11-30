@@ -158,7 +158,7 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
 | Status | `stable` icon:check-circle[]
 | Label | has attribute
-| Definition | Link to an [Attribute](#Attribute).
+| Definition | Link to an Attribute.
 | Scope note | 
 | Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
 | Cardinality | 

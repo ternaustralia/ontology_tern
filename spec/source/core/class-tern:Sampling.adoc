@@ -246,7 +246,7 @@ link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSiteVisit
 | Status | `stable` icon:check-circle[]
 | Label | has site visit
-| Definition | A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit).
+| Definition | A property that links, e.g., a Site to a Site Visit.
 | Scope note | 
 | Implementation | A maximum of 1 `tern:hasSiteVisit` _MAY_ exist where the value node is an IRI of type `tern:SiteVisit`.
 | Cardinality | Maximum 1
