@@ -259,7 +259,7 @@ tern-shapes:ManagedFeature
         [
             a sh:PropertyShape ;
             sh:datatype xsd:date ;
-            sh:description "The date when, e.g., a [Site](#EcologicalSite) is ready to commence its operations, after it is successfully installed and tested." ;
+            sh:description "The date when, e.g., a Site is ready to commence its operations, after it is successfully installed and tested." ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "tern:dateCommissioned" ;
@@ -268,7 +268,7 @@ tern-shapes:ManagedFeature
         [
             a sh:PropertyShape ;
             sh:datatype xsd:date ;
-            sh:description "The date when, e.g., a [Site](#EcologicalSite) is decommissioned or stopped operating." ;
+            sh:description "The date when, e.g., a Site is decommissioned or stopped operating." ;
             sh:maxCount 1 ;
             sh:name "tern:dateDecommissioned" ;
             sh:path tern:dateDecommissioned
@@ -1242,7 +1242,7 @@ tern-shapes:Site-hasSiteVisit
     reg:status reg:statusStable ;
     skos:prefLabel "has site visit" ;
     sh:class tern:SiteVisit ;
-    sh:description "A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit)." ;
+    sh:description "A property that links, e.g., a Site to a Site Visit." ;
     sh:message "A `tern:Site` _MAY_ have a `tern:hasSiteVisit` predicate where the value node is an IRI of type `tern:SiteVisit`." ;
     sh:name "tern:hasSiteVisit" ;
     sh:nodeKind sh:IRI ;
@@ -2057,7 +2057,7 @@ tern-shapes:tern-hasAttribute
     reg:status reg:statusStable ;
     skos:prefLabel "has attribute" ;
     sh:class tern:Attribute ;
-    sh:description "Link to an [Attribute](#Attribute)." ;
+    sh:description "Link to an Attribute." ;
     sh:message "A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`." ;
     sh:name "tern:hasAttribute" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
@@ -2388,7 +2388,7 @@ tern-shapes:tern-hasSiteVisit
     reg:status reg:statusStable ;
     skos:prefLabel "has site visit" ;
     sh:class tern:SiteVisit ;
-    sh:description "A property that links, e.g., a [Site](#EcologicalSite) to a [Site Visit](#EcologicalSiteVisit)." ;
+    sh:description "A property that links, e.g., a Site to a Site Visit." ;
     sh:maxCount 1 ;
     sh:message "A maximum of 1 `tern:hasSiteVisit` _MAY_ exist where the value node is an IRI of type `tern:SiteVisit`." ;
     sh:name "tern:hasSiteVisit" ;
