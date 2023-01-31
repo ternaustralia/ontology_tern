@@ -225,17 +225,6 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
-        ] ,
-        [
-            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern:length
         ] ,
@@ -260,6 +249,17 @@ tern:Dimension
                         )
                 ] ;
             owl:onProperty tern:length
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:width
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -389,9 +389,9 @@ tern:Intervention
     reg:status reg:statusExperimental ;
     rdfs:subClassOf prov:Activity ;
     skos:definition "An `Intervention` is a human-induced activity that carries out a `Procedure` to observe or change the properties of a `Feature Of Interest`." ;
+    skos:example "Controlled burns, breeding programs, weed and debris removal, installation of new structures, etc." ;
     skos:prefLabel "Intervention" ;
     skos:scopeNote "An intervention is a management process to maintain, restore or improve an ecosystem within a spatial area." ;
-    skos:example "Controlled burns, breeding programs, weed and debris removal, installation of new structures, etc." ;
 .
 
 tern:ManagedFeature
@@ -553,7 +553,9 @@ tern:Sampler
 tern:Sensor
     a owl:Class ;
     reg:status reg:statusStable ;
-    rdfs:subClassOf sosa:Sensor ;
+    rdfs:subClassOf
+        sosa:Sensor ,
+        tern:System ;
     skos:definition "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms." ;
     skos:prefLabel "Sensor" ;
 .
@@ -1102,14 +1104,6 @@ tern:SiteVisit
     skos:prefLabel "Site Visit" ;
 .
 
-tern:System
-    a owl:Class ;
-    reg:status reg:statusStable ;
-    rdfs:subClassOf ssn:System ;
-    skos:definition "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems." ;
-    skos:prefLabel "System" ;
-.
-
 tern:centroidPoint
     a rdf:Property ;
     rdfs:label "centroid point" ;
@@ -1286,6 +1280,14 @@ tern:FixedPlatform
     rdfs:label "Fixed Platform" ;
     rdfs:subClassOf tern:Platform ;
     skos:definition "A fixed platform based on land." ;
+.
+
+tern:System
+    a owl:Class ;
+    reg:status reg:statusStable ;
+    rdfs:subClassOf ssn:System ;
+    skos:definition "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems." ;
+    skos:prefLabel "System" ;
 .
 
 tern:length
