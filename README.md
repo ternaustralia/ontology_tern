@@ -92,5 +92,5 @@ The contents of this repository is made available for use under the [Creative Co
 
 ## Contact
 
-**Edmond Chuc**  
-e.chuc@uq.edu.au
+**TERN Support**  
+esupport@tern.org.au
