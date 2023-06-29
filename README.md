@@ -1,6 +1,6 @@
 # TERN Ontology
 
-The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the representation of ecological survey data. The TERN Ontology is used as a common information model to represent and facilitate the sharing of survey data across different systems.
+The TERN Ontology is an OWL Ontology with SHACL profiles to facilitate the representation of ecological site-based survey and opportunistic observation data. The TERN Ontology is used as a common information model to represent and facilitate the sharing of survey data across different systems.
 
 View classes: https://linkeddata.tern.org.au/viewers/tern-ontology  
 Online documentation: https://linkeddata.tern.org.au/information-models/tern-ontology  
@@ -12,7 +12,7 @@ The TERN Ontology makes GitHub Releases for each version. See [TERN Ontology rel
 
 ## Source files
 
-Source files are maintained as RDF Turtle files and they are located in the [docs/](docs/) directory as files ending in `.ttl`.
+Source files are maintained as RDF Turtle files, and they are located in the [docs/](docs/) directory as files ending in `.ttl`.
 
 > Only edit the source files in TopBraid Composer.
 
@@ -26,13 +26,13 @@ Source files:
 
 ## Version control
 
-The main branch (master) is the working branch of the TERN Ontology. Changes must be made in another branch along with a GitHub pull request to merge into the main branch.
+The main branch (master) is the working branch of the TERN Ontology. Changes must be made in another branch, along with a GitHub pull request to merge into the main branch.
 
-Each push to a branch will trigger GitHub Actions to run validations and tests. These validations and tests must pass before the branch can be merged into the main branch.
+Each push to a branch will trigger GitHub Actions to run validations and tests. These validations and tests must pass before merging the branch into the main branch.
 
 ## Editing the TERN Ontology
 
-We use ontotools, a Python command line application to normalize the source files.
+We use ontotools, a Python command line application to normalise the source files.
 
 Ensure the following instructions are performed whenever edits are made to the source files before committing to git.
 
