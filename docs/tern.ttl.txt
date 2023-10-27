@@ -38,7 +38,8 @@ title TERN Ontology
 "sosa:Sensor" <|-- ":Sensor"
 "sosa:Procedure" <|-- ":Procedure"
 ":Value" <|-- ":IRI"
-"prov:Activity" <|-- ":SiteVisit"
+"prov:Activity" <|-- ":Survey"
+":Survey" <|-- ":SiteVisit"
 ":Platform" <|-- ":FixedPlatform"
 ":Value" <|-- ":Taxon"
 "dcat:Dataset" <|-- ":Dataset"
@@ -134,6 +135,8 @@ Class ":Procedure" [[https://w3id.org/tern/ontologies/tern/Procedure]] {
 Class ":IRI" [[https://w3id.org/tern/ontologies/tern/IRI]] {
 }
 Class ":SiteVisit" [[https://w3id.org/tern/ontologies/tern/SiteVisit]] {
+}
+Class ":Survey" [[https://w3id.org/tern/ontologies/tern/Survey]] {
 }
 Class ":FixedPlatform" [[https://w3id.org/tern/ontologies/tern/FixedPlatform]] {
 }
