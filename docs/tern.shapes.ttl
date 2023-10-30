@@ -419,7 +419,7 @@ tern-shapes:SiteVisit
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
         tern-shapes:tern-locationDescription ,
-        tern-shapes:tern-siteDescription ,
+        tern-shapes:tern-siteDescription ;
     sh:targetClass tern:SiteVisit ;
 .
 
