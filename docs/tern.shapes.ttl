@@ -425,7 +425,7 @@ tern-shapes:SiteVisit
 
 tern-shapes:Survey
     a sh:NodeShape ;
-    rdfs:label "Site Visit" ;
+    rdfs:label "Survey" ;
     sh:property
         tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-startedAtTime ,
