@@ -1099,9 +1099,17 @@ Taking a diamond-drill core from a rock outcrop.""" ;
 tern:SiteVisit
     a owl:Class ;
     reg:status reg:statusStable ;
-    rdfs:subClassOf prov:Activity ;
-    skos:definition "A Site Visit is a discrete time-bounded activity at a `Site`, during which `Sampling` or `Observation` activities occur." ;
+    rdfs:subClassOf tern:Survey ;
+    skos:definition "A Site Visit is a `Survey` that visits a `Site`." ;
     skos:prefLabel "Site Visit" ;
+.
+
+tern:Survey
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "A Survey is an `Activity` during which `Sampling` or `Observation` Activities occur." ;
+    skos:prefLabel "Survey" ;
 .
 
 tern:centroidPoint
