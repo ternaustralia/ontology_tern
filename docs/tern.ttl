@@ -225,6 +225,28 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:length
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:width
+        ] ,
+        [
+            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern:length
         ] ,
@@ -238,28 +260,6 @@ tern:Dimension
             owl:onClass <http://qudt.org/schema/qudt/Unit> ;
             owl:onProperty tern:unit ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
