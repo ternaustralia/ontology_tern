@@ -239,12 +239,12 @@ tern-shapes:Intervention
     a sh:NodeShape ;
     rdfs:label "Intervention" ;
     sh:property
-        tern-shapes:prov-endedAtTime ,
-        tern-shapes:prov-startedAtTime ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
         tern-shapes:geo-hasGeometry ,
+        tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
+        tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-interventionType ,
@@ -428,8 +428,8 @@ tern-shapes:Survey
     rdfs:label "Survey" ;
     sh:property
         tern-shapes:prov-endedAtTime ,
-        tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
+        tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Survey ;
@@ -780,33 +780,6 @@ tern-shapes:Integer-value
     sh:name "rdf:value" ;
     sh:nodeKind sh:Literal ;
     sh:path rdf:value ;
-.
-
-tern-shapes:prov-endedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "ended at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity ended." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:name "prov:endedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:endedAtTime ;
-.
-
-tern-shapes:prov-startedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "started at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity started." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:minCount 1 ;
-    sh:name "prov:startedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:Observation-hasResult
@@ -2308,6 +2281,33 @@ tern-shapes:time-unitType
     sh:qualifiedValueShape [
             sh:property <urn:shape:geo-sfWithin-min-1>
         ] ;
+.
+
+tern-shapes:prov-endedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "ended at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which an activity ended." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:name "prov:endedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:endedAtTime ;
+.
+
+tern-shapes:prov-startedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "started at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which an activity started." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:minCount 1 ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:sosa-hasFeatureOfInterest
