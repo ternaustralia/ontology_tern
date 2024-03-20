@@ -516,6 +516,54 @@ tern-shapes:Value
     sh:targetClass tern:Value ;
 .
 
+tern-shapes:tern-collaborator
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "collaborator" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:collaborator` property. It specifies that values of the `tern:collaborator` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:collaborator` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:collaborator" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:collaborator ;
+.
+
+tern-shapes:tern-editor
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "editor" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:editor` property. It specifies that values of the `tern:editor` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:editor` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:editor" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:editor ;
+.
+
+tern-shapes:tern-funder
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "funder" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:funder` property. It specifies that values of the `tern:funder` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:funder` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:funder" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:funder ;
+.
+
+tern-shapes:tern-producer
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "producer" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:producer` property. It specifies that values of the `tern:producer` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:producer` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:producer" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:producer ;
+.
+
 tern-shapes:tern-wasInformedBy
     a sh:PropertyShape ;
     reg:status reg:statusStable ;

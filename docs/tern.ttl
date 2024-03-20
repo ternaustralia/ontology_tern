@@ -233,17 +233,6 @@ tern:Dimension
                             xsd:integer
                         )
                 ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
             owl:onProperty tern:width
         ] ,
         [
@@ -261,6 +250,17 @@ tern:Dimension
             owl:onClass <http://qudt.org/schema/qudt/Unit> ;
             owl:onProperty tern:unit ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:length
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -609,6 +609,13 @@ tern:cardinalDirection
     skos:example "NNE, W, SE, etc." ;
 .
 
+tern:collaborator
+    a rdf:Property ;
+    rdfs:label "collaborator" ;
+    skos:definition "The collaborator of a project." ;
+    skos:example "Alice Smith is one of collaborators for ant survey project." ;
+.
+
 tern:dimension
     a rdf:Property ;
     rdfs:label "dimension" ;
@@ -623,12 +630,26 @@ tern:domain
     skos:example "Vegetation, soil, disturbance, landform, etc." ;
 .
 
+tern:editor
+    a rdf:Property ;
+    rdfs:label "editor" ;
+    skos:definition "The editor of a dataset." ;
+    skos:example "Alice Smith is one of editors for ant survey dataset." ;
+.
+
 tern:featureType
     a owl:ObjectProperty ;
     rdfs:label "feature type" ;
     rdfs:domain tern:FeatureOfInterest ;
     rdfs:range skos:Concept ;
     skos:definition "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
+.
+
+tern:funder
+    a rdf:Property ;
+    rdfs:label "funder" ;
+    skos:definition "The funder of a project." ;
+    skos:example "Environment department is one of funders for ant survey project." ;
 .
 
 tern:globalValue
@@ -756,6 +777,13 @@ tern:observationType
     rdfs:label "observation type" ;
     skos:definition "The type of observation." ;
     skos:example "human observation, machine observation." ;
+.
+
+tern:producer
+    a rdf:Property ;
+    rdfs:label "producer" ;
+    skos:definition "The producer of a dataset." ;
+    skos:example "Alice Smith is one of producers for ant survey dataset." ;
 .
 
 tern:resultDateTime
