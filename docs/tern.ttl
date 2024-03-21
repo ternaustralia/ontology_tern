@@ -226,6 +226,28 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:length
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:width
+        ] ,
+        [
+            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern:length
         ] ,
@@ -239,28 +261,6 @@ tern:Dimension
             owl:onClass <http://qudt.org/schema/qudt/Unit> ;
             owl:onProperty tern:unit ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -587,6 +587,15 @@ tern:Transect
     skos:scopeNote "There are several types of transects in ecology such as strip transects, line transects, belt transects, point transects and curved line transects." ;
 .
 
+tern:VerticalExtent
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf <http://sweetontology.net/propSpaceHeight/VerticalExtent> ;
+    skos:definition "A class representing the vertical extent of an object or phenomenon in a given context." ;
+    skos:example "The vertical extent of a mountain range." ;
+    skos:prefLabel "Vertical Extent" ;
+.
+
 tern:area
     a rdf:Property ;
     rdfs:label "area" ;
@@ -779,6 +788,20 @@ tern:locationProcedure
     skos:definition "Link to a procedure used to obtain the location." ;
 .
 
+tern:maxAltitude
+    a rdf:Property ;
+    rdfs:label "maximum altitude" ;
+    skos:definition "The maximum altitude of a vertical extent in a given context." ;
+    skos:example "The maximum altitude of a mountain range is 1000m." ;
+.
+
+tern:minAltitude
+    a rdf:Property ;
+    rdfs:label "minimum altitude" ;
+    skos:definition "The minimum altitude of a vertical extent in a given context." ;
+    skos:example "The minimum altitude of a mountain range is 100m." ;
+.
+
 tern:observationType
     a owl:ObjectProperty ;
     rdfs:label "observation type" ;
@@ -918,6 +941,13 @@ tern:valueType
     rdfs:label "value type" ;
     skos:definition "Relates a Property to a specialisation of tern:Value." ;
     skos:example "Use it to describe an instance of sosa:ObservableProperty and its recommended tern:Value type such as tern:QuantitativeMeasure, tern:Boolean, etc." ;
+.
+
+tern:verticalExtent
+    a rdf:Property ;
+    rdfs:label "vertical extent" ;
+    skos:definition "The vertical extent of an object or phenomenon in a given context." ;
+    skos:example "The vertical extent of a mountain range." ;
 .
 
 <https://linked.data.gov.au/org/csiro>

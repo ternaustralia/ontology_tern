@@ -516,6 +516,16 @@ tern-shapes:Value
     sh:targetClass tern:Value ;
 .
 
+tern-shapes:VerticalExtent
+    a sh:NodeShape ;
+    rdfs:label "Vertical extent" ;
+    sh:property
+        tern-shapes:tern-maxAltitude ,
+        tern-shapes:tern-minAltitude ,
+        tern-shapes:tern-unit ;
+    sh:targetClass tern:VerticalExtent ;
+.
+
 tern-shapes:tern-collaborator
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -601,6 +611,23 @@ tern-shapes:tern-supplementalInformation
     sh:name "tern:supplementalInformation" ;
     sh:nodeKind sh:Literal ;
     sh:path tern:supplementalInformation ;
+.
+
+tern-shapes:tern-verticalExtent
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "vertical extent" ;
+    sh:class tern:VerticalExtent ;
+    sh:description "This SHACL shape defines constraints for the `tern:verticalExtent` property. It specifies that values of the `tern:verticalExtent` property must be IRIs or blank nodes of type `tern:VerticalExtent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:verticalExtent` predicate _MUST_ have an IRI or blank node value of type `tern:VerticalExtent`." ;
+    sh:name "tern:verticalExtent" ;
+    sh:nodeKind [
+            sh:in (
+                    sh:IRI
+                    sh:BlankNode
+                )
+        ] ;
+    sh:path tern:verticalExtent ;
 .
 
 tern-shapes:tern-wasInformedBy
@@ -2154,6 +2181,58 @@ tern-shapes:tern-isAttributeOf
     sh:path tern:isAttributeOf ;
 .
 
+tern-shapes:tern-maxAltitude
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "maximum altitude" ;
+    sh:description "This SHACL shape defines constraints for the `tern:maxAltitude` property. It specifies that values of the `tern:maxAltitude` property must be literals of type `xsd:integer`, `xsd:float`, `xsd:double`, or `xsd:decimal`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:maxAltitude` predicate _MUST_ have a literal value of type `xsd:integer`, `xsd:float`, `xsd:double`, `xsd:decimal`." ;
+    sh:name "tern:maxAltitude" ;
+    sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:integer
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:decimal
+            ]
+        ) ;
+    sh:path tern:maxAltitude ;
+.
+
+tern-shapes:tern-minAltitude
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "minimum altitude" ;
+    sh:description "This SHACL shape defines constraints for the `tern:minAltitude` property. It specifies that values of the `tern:minAltitude` property must be literals of type `xsd:integer`, `xsd:float`, `xsd:double`, or `xsd:decimal`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:minAltitude` predicate _MUST_ have a literal value of type `xsd:integer`, `xsd:float`, `xsd:double`, `xsd:decimal`." ;
+    sh:name "tern:minAltitude" ;
+    sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:integer
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:decimal
+            ]
+        ) ;
+    sh:path tern:minAltitude ;
+.
+
 tern-shapes:tern-observationType
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2493,18 +2572,6 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
     sh:path tern:siteDescription ;
 .
 
-tern-shapes:tern-unit
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "unit of measure" ;
-    sh:description "The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary]." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:unit` predicate _MUST_ have an IRI value." ;
-    sh:name "tern:unit" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:unit ;
-.
-
 <urn:shape:geo-hasGeometry-min-1>
     a sh:PropertyShape ;
     sh:description "At least one geo:hasGeometry must exist." ;
@@ -2530,6 +2597,18 @@ tern-shapes:rdfs-comment
     sh:name "rdfs:comment" ;
     sh:nodeKind sh:Literal ;
     sh:path rdfs:comment ;
+.
+
+tern-shapes:tern-unit
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "unit of measure" ;
+    sh:description "The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary]." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:unit` predicate _MUST_ have an IRI value." ;
+    sh:name "tern:unit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:unit ;
 .
 
 tern-shapes:geo-hasGeometry
