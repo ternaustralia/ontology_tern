@@ -540,6 +540,19 @@ tern-shapes:tern-editor
     sh:path tern:editor ;
 .
 
+tern-shapes:tern-environmentDescription
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "environment description" ;
+    sh:datatype xsd:string ;
+    sh:description "This SHACL shape defines constraints for the `tern:environmentDescription` property. It specifies that values of the `tern:environmentDescription` property must be literals with the datatype `xsd:string`. The maximum cardinality of this property is restricted to one. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:environmentDescription` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "tern:environmentDescription" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:environmentDescription ;
+.
+
 tern-shapes:tern-funder
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -562,6 +575,32 @@ tern-shapes:tern-producer
     sh:name "tern:producer" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:producer ;
+.
+
+tern-shapes:tern-resourceSpecificUsage
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "resource specific usage" ;
+    sh:datatype xsd:string ;
+    sh:description "This SHACL shape defines constraints for the `tern:resourceSpecificUsage` property. It specifies that values of the `tern:resourceSpecificUsage` property must be literals with the datatype `xsd:string`. The maximum cardinality of this property is restricted to one. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:resourceSpecificUsage` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "tern:resourceSpecificUsage" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:resourceSpecificUsage ;
+.
+
+tern-shapes:tern-supplementalInformation
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "supplemental information" ;
+    sh:datatype xsd:string ;
+    sh:description "This SHACL shape defines constraints for the `tern:supplementalInformation` property. It specifies that values of the `tern:supplementalInformation` property must be literals with the datatype `xsd:string`. The maximum cardinality of this property is restricted to one. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:supplementalInformation` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "tern:supplementalInformation" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:supplementalInformation ;
 .
 
 tern-shapes:tern-wasInformedBy

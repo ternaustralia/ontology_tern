@@ -226,17 +226,6 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
-        ] ,
-        [
-            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern:length
         ] ,
@@ -261,6 +250,17 @@ tern:Dimension
                         )
                 ] ;
             owl:onProperty tern:length
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:width
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -637,6 +637,13 @@ tern:editor
     skos:example "Alice Smith is one of editors for ant survey dataset." ;
 .
 
+tern:environmentDescription
+    a rdf:Property ;
+    rdfs:label "environment description" ;
+    skos:definition "The environment description of a dataset." ;
+    skos:example "A dataset collected from weather monitoring stations across the country." ;
+.
+
 tern:featureType
     a owl:ObjectProperty ;
     rdfs:label "feature type" ;
@@ -786,6 +793,13 @@ tern:producer
     skos:example "Alice Smith is one of producers for ant survey dataset." ;
 .
 
+tern:resourceSpecificUsage
+    a rdf:Property ;
+    rdfs:label "resource specific usage" ;
+    skos:definition "The specific usage of resources." ;
+    skos:example "Data analysis for marketing research." ;
+.
+
 tern:resultDateTime
     a owl:DatatypeProperty ;
     rdfs:label "result date time" ;
@@ -839,6 +853,13 @@ tern:stratum
     rdfs:subPropertyOf dcterms:type ;
     skos:definition "A stratum is a distinct, easily seen, layer of foliage and branches of a measurable height." ;
     skos:scopeNote "Value should be from a controlled vocabulary identified by a URI." ;
+.
+
+tern:supplementalInformation
+    a rdf:Property ;
+    rdfs:label "supplemental information" ;
+    skos:definition "The supplemental information of a dataset." ;
+    skos:example "This dataset includes metadata about the data collection process and quality control measures." ;
 .
 
 tern:swPoint
