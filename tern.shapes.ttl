@@ -239,12 +239,12 @@ tern-shapes:Intervention
     a sh:NodeShape ;
     rdfs:label "Intervention" ;
     sh:property
-        tern-shapes:prov-endedAtTime ,
-        tern-shapes:prov-startedAtTime ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
         tern-shapes:geo-hasGeometry ,
+        tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
+        tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-interventionType ,
@@ -428,8 +428,8 @@ tern-shapes:Survey
     rdfs:label "Survey" ;
     sh:property
         tern-shapes:prov-endedAtTime ,
-        tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
+        tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Survey ;
@@ -514,6 +514,120 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:targetClass tern:Value ;
+.
+
+tern-shapes:VerticalExtent
+    a sh:NodeShape ;
+    rdfs:label "Vertical extent" ;
+    sh:property
+        tern-shapes:tern-maxAltitude ,
+        tern-shapes:tern-minAltitude ,
+        tern-shapes:tern-unit ;
+    sh:targetClass tern:VerticalExtent ;
+.
+
+tern-shapes:tern-collaborator
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "collaborator" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:collaborator` property. It specifies that values of the `tern:collaborator` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:collaborator` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:collaborator" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:collaborator ;
+.
+
+tern-shapes:tern-editor
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "editor" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:editor` property. It specifies that values of the `tern:editor` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:editor` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:editor" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:editor ;
+.
+
+tern-shapes:tern-environmentDescription
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "environment description" ;
+    sh:datatype xsd:string ;
+    sh:description "This SHACL shape defines constraints for the `tern:environmentDescription` property. It specifies that values of the `tern:environmentDescription` property must be literals with the datatype `xsd:string`. The maximum cardinality of this property is restricted to one. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:environmentDescription` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "tern:environmentDescription" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:environmentDescription ;
+.
+
+tern-shapes:tern-funder
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "funder" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:funder` property. It specifies that values of the `tern:funder` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:funder` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:funder" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:funder ;
+.
+
+tern-shapes:tern-producer
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "producer" ;
+    sh:class prov:Agent ;
+    sh:description "This SHACL shape defines constraints for the `tern:producer` property. It specifies that values of the `tern:producer` property must be IRIs of type `prov:Agent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:producer` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:producer" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:producer ;
+.
+
+tern-shapes:tern-resourceSpecificUsage
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "resource specific usage" ;
+    sh:datatype xsd:string ;
+    sh:description "This SHACL shape defines constraints for the `tern:resourceSpecificUsage` property. It specifies that values of the `tern:resourceSpecificUsage` property must be literals with the datatype `xsd:string`. The maximum cardinality of this property is restricted to one. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:resourceSpecificUsage` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "tern:resourceSpecificUsage" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:resourceSpecificUsage ;
+.
+
+tern-shapes:tern-supplementalInformation
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "supplemental information" ;
+    sh:datatype xsd:string ;
+    sh:description "This SHACL shape defines constraints for the `tern:supplementalInformation` property. It specifies that values of the `tern:supplementalInformation` property must be literals with the datatype `xsd:string`. The maximum cardinality of this property is restricted to one. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:supplementalInformation` _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "tern:supplementalInformation" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:supplementalInformation ;
+.
+
+tern-shapes:tern-verticalExtent
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "vertical extent" ;
+    sh:class tern:VerticalExtent ;
+    sh:description "This SHACL shape defines constraints for the `tern:verticalExtent` property. It specifies that values of the `tern:verticalExtent` property must be IRIs or blank nodes of type `tern:VerticalExtent`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:message "A `tern:verticalExtent` predicate _MUST_ have an IRI or blank node value of type `tern:VerticalExtent`." ;
+    sh:name "tern:verticalExtent" ;
+    sh:nodeKind [
+            sh:in (
+                    sh:IRI
+                    sh:BlankNode
+                )
+        ] ;
+    sh:path tern:verticalExtent ;
 .
 
 tern-shapes:tern-wasInformedBy
@@ -780,33 +894,6 @@ tern-shapes:Integer-value
     sh:name "rdf:value" ;
     sh:nodeKind sh:Literal ;
     sh:path rdf:value ;
-.
-
-tern-shapes:prov-endedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "ended at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity ended." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:name "prov:endedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:endedAtTime ;
-.
-
-tern-shapes:prov-startedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "started at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity started." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:minCount 1 ;
-    sh:name "prov:startedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:Observation-hasResult
@@ -2094,6 +2181,58 @@ tern-shapes:tern-isAttributeOf
     sh:path tern:isAttributeOf ;
 .
 
+tern-shapes:tern-maxAltitude
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "maximum altitude" ;
+    sh:description "This SHACL shape defines constraints for the `tern:maxAltitude` property. It specifies that values of the `tern:maxAltitude` property must be literals of type `xsd:integer`, `xsd:float`, `xsd:double`, or `xsd:decimal`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:maxAltitude` predicate _MUST_ have a literal value of type `xsd:integer`, `xsd:float`, `xsd:double`, `xsd:decimal`." ;
+    sh:name "tern:maxAltitude" ;
+    sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:integer
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:decimal
+            ]
+        ) ;
+    sh:path tern:maxAltitude ;
+.
+
+tern-shapes:tern-minAltitude
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "minimum altitude" ;
+    sh:description "This SHACL shape defines constraints for the `tern:minAltitude` property. It specifies that values of the `tern:minAltitude` property must be literals of type `xsd:integer`, `xsd:float`, `xsd:double`, or `xsd:decimal`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:minAltitude` predicate _MUST_ have a literal value of type `xsd:integer`, `xsd:float`, `xsd:double`, `xsd:decimal`." ;
+    sh:name "tern:minAltitude" ;
+    sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:integer
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:decimal
+            ]
+        ) ;
+    sh:path tern:minAltitude ;
+.
+
 tern-shapes:tern-observationType
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2310,6 +2449,33 @@ tern-shapes:time-unitType
         ] ;
 .
 
+tern-shapes:prov-endedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "ended at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which an activity ended." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:name "prov:endedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:endedAtTime ;
+.
+
+tern-shapes:prov-startedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "started at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which an activity started." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:minCount 1 ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:startedAtTime ;
+.
+
 tern-shapes:sosa-hasFeatureOfInterest
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2406,18 +2572,6 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
     sh:path tern:siteDescription ;
 .
 
-tern-shapes:tern-unit
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "unit of measure" ;
-    sh:description "The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary]." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:unit` predicate _MUST_ have an IRI value." ;
-    sh:name "tern:unit" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:unit ;
-.
-
 <urn:shape:geo-hasGeometry-min-1>
     a sh:PropertyShape ;
     sh:description "At least one geo:hasGeometry must exist." ;
@@ -2443,6 +2597,18 @@ tern-shapes:rdfs-comment
     sh:name "rdfs:comment" ;
     sh:nodeKind sh:Literal ;
     sh:path rdfs:comment ;
+.
+
+tern-shapes:tern-unit
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "unit of measure" ;
+    sh:description "The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary]." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:unit` predicate _MUST_ have an IRI value." ;
+    sh:name "tern:unit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:unit ;
 .
 
 tern-shapes:geo-hasGeometry

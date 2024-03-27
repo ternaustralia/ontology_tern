@@ -14,6 +14,7 @@
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -225,6 +226,28 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:length
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:width
+        ] ,
+        [
+            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern:length
         ] ,
@@ -238,28 +261,6 @@ tern:Dimension
             owl:onClass <http://qudt.org/schema/qudt/Unit> ;
             owl:onProperty tern:unit ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -586,6 +587,15 @@ tern:Transect
     skos:scopeNote "There are several types of transects in ecology such as strip transects, line transects, belt transects, point transects and curved line transects." ;
 .
 
+tern:VerticalExtent
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf <http://sweetontology.net/propSpaceHeight/VerticalExtent> ;
+    skos:definition "A class representing the vertical extent of an object or phenomenon in a given context." ;
+    skos:example "The vertical extent of a mountain range." ;
+    skos:prefLabel "Vertical Extent" ;
+.
+
 tern:area
     a rdf:Property ;
     rdfs:label "area" ;
@@ -608,6 +618,13 @@ tern:cardinalDirection
     skos:example "NNE, W, SE, etc." ;
 .
 
+tern:collaborator
+    a rdf:Property ;
+    rdfs:label "collaborator" ;
+    skos:definition "The collaborator of a project." ;
+    skos:example "Alice Smith is one of collaborators for ant survey project." ;
+.
+
 tern:dimension
     a rdf:Property ;
     rdfs:label "dimension" ;
@@ -622,12 +639,33 @@ tern:domain
     skos:example "Vegetation, soil, disturbance, landform, etc." ;
 .
 
+tern:editor
+    a rdf:Property ;
+    rdfs:label "editor" ;
+    skos:definition "The editor of a dataset." ;
+    skos:example "Alice Smith is one of editors for ant survey dataset." ;
+.
+
+tern:environmentDescription
+    a rdf:Property ;
+    rdfs:label "environment description" ;
+    skos:definition "The environment description of a dataset." ;
+    skos:example "A dataset collected from weather monitoring stations across the country." ;
+.
+
 tern:featureType
     a owl:ObjectProperty ;
     rdfs:label "feature type" ;
     rdfs:domain tern:FeatureOfInterest ;
     rdfs:range skos:Concept ;
     skos:definition "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
+.
+
+tern:funder
+    a rdf:Property ;
+    rdfs:label "funder" ;
+    skos:definition "The funder of a project." ;
+    skos:example "Environment department is one of funders for ant survey project." ;
 .
 
 tern:globalValue
@@ -750,11 +788,39 @@ tern:locationProcedure
     skos:definition "Link to a procedure used to obtain the location." ;
 .
 
+tern:maxAltitude
+    a rdf:Property ;
+    rdfs:label "maximum altitude" ;
+    skos:definition "The maximum altitude of a vertical extent in a given context." ;
+    skos:example "The maximum altitude of a mountain range is 1000m." ;
+.
+
+tern:minAltitude
+    a rdf:Property ;
+    rdfs:label "minimum altitude" ;
+    skos:definition "The minimum altitude of a vertical extent in a given context." ;
+    skos:example "The minimum altitude of a mountain range is 100m." ;
+.
+
 tern:observationType
     a owl:ObjectProperty ;
     rdfs:label "observation type" ;
     skos:definition "The type of observation." ;
     skos:example "human observation, machine observation." ;
+.
+
+tern:producer
+    a rdf:Property ;
+    rdfs:label "producer" ;
+    skos:definition "The producer of a dataset." ;
+    skos:example "Alice Smith is one of producers for ant survey dataset." ;
+.
+
+tern:resourceSpecificUsage
+    a rdf:Property ;
+    rdfs:label "resource specific usage" ;
+    skos:definition "The specific usage of resources." ;
+    skos:example "Data analysis for marketing research." ;
 .
 
 tern:resultDateTime
@@ -769,7 +835,7 @@ tern:resultDateTime
 tern:sampleStorageLocation
     a rdf:Property ;
     rdfs:label "sample storage location" ;
-    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+    rdfs:subPropertyOf geo:hasGeometry ;
     skos:definition "A property that links a [PhysicalSpecimen](#PhysicalSpecimen) to the location [Point](http://www.opengis.net/ont/sf#Point) of where it is stored." ;
 .
 
@@ -812,10 +878,17 @@ tern:stratum
     skos:scopeNote "Value should be from a controlled vocabulary identified by a URI." ;
 .
 
+tern:supplementalInformation
+    a rdf:Property ;
+    rdfs:label "supplemental information" ;
+    skos:definition "The supplemental information of a dataset." ;
+    skos:example "This dataset includes metadata about the data collection process and quality control measures." ;
+.
+
 tern:swPoint
     a rdf:Property ;
     rdfs:label "sw point" ;
-    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+    rdfs:subPropertyOf geo:hasGeometry ;
     owl:deprecated true ;
     skos:definition "The south-west point of the subject." ;
 .
@@ -868,6 +941,13 @@ tern:valueType
     rdfs:label "value type" ;
     skos:definition "Relates a Property to a specialisation of tern:Value." ;
     skos:example "Use it to describe an instance of sosa:ObservableProperty and its recommended tern:Value type such as tern:QuantitativeMeasure, tern:Boolean, etc." ;
+.
+
+tern:verticalExtent
+    a rdf:Property ;
+    rdfs:label "vertical extent" ;
+    skos:definition "The vertical extent of an object or phenomenon in a given context." ;
+    skos:example "The vertical extent of a mountain range." ;
 .
 
 <https://linked.data.gov.au/org/csiro>
@@ -1116,7 +1196,7 @@ tern:centroidPoint
     a rdf:Property ;
     rdfs:label "centroid point" ;
     rdfs:seeAlso <https://en.wikipedia.org/wiki/List_of_centroids> ;
-    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+    rdfs:subPropertyOf geo:hasGeometry ;
     owl:deprecated true ;
     skos:definition "The centroid point of an object-of-interest." ;
     skos:example """The geometric center of 1-ha vegetation plot expressed 
