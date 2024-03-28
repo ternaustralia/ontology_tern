@@ -31,6 +31,60 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is an IRI." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:minCount 1 ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:created ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:isPartOf` predicate where the value node is an IRI." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:isPartOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind schema:Person ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind schema:Organization ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcat:contactPoint ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
             sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
             sh:minCount 1 ;
             sh:path dcterms:modified ;
@@ -83,60 +137,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 <http://www.w3.org/2011/content#characterEncoding> predicate where the value node is a literal value." ;
             sh:nodeKind sh:Literal ;
             sh:path <http://www.w3.org/2011/content#characterEncoding> ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:source ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
-            sh:node :DateOrDateTimeDataType_Shape ;
-            sh:path dcterms:created ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:isPartOf` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:isPartOf ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:nodeKind sh:IRI ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
-            sh:path dcterms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:nodeKind schema:Person ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:nodeKind schema:Organization ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
-            sh:path dcat:contactPoint ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:CatalogRecord ;
@@ -475,6 +475,51 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Dataset"@en ;
     sh:property
         [
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:hasVersion ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:isVersionOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:path dcterms:language ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:path dcterms:provenance ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:relation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:type ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:maxCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path owl:versionInfo ;
@@ -594,51 +639,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:maxCount 1 ;
             sh:path dcterms:accrualPeriodicity ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:conformsTo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:hasVersion ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:isVersionOf ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:issued ;
-            sh:severity sh:Violation ;
-            sh:shape :DateOrDateTimeDataType_Shape
-        ] ,
-        [
-            sh:path dcterms:language ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:modified ;
-            sh:severity sh:Violation ;
-            sh:shape :DateOrDateTimeDataType_Shape
-        ] ,
-        [
-            sh:path dcterms:provenance ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path dcterms:relation ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:source ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:type ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Dataset ;
@@ -900,6 +900,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:property
         [
             sh:maxCount 1 ;
+            sh:message "A `dcterms:PeriodOfTime` _MAY_ have a maximum of 1 `dcat:endDate` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:nodeKind sh:Literal ;
             sh:path dcat:endDate ;
             sh:severity sh:Violation ;
             sh:shape :DateOrDateTimeDataType_Shape
@@ -916,6 +918,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
+            sh:message "A `dcterms:PeriodOfTime` _MAY_ have a maximum of 1 `dcat:startDate` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:nodeKind sh:Literal ;
             sh:path dcat:startDate ;
             sh:severity sh:Violation ;
             sh:shape :DateOrDateTimeDataType_Shape
