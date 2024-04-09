@@ -6,6 +6,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dqv: <http://www.w3.org/ns/dqv#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geodcat: <http://data.europa.eu/930/>
 PREFIX oa: <http://www.w3.org/ns/oa#>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -30,44 +31,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:minCount 1 ;
             sh:node :DcatResource_Shape ;
             sh:path foaf:primaryTopic ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal value." ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:description ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:node :DateOrDateTimeDataType_Shape ;
-            sh:path dcterms:issued ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:nodeKind sh:IRI ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
-            sh:path dcterms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:source ;
             sh:severity sh:Violation
         ] ,
         [
@@ -122,6 +85,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal value." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:class dcterms:Standard ;
             sh:maxCount 1 ;
             sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:conformsTo` predicate where the value node is an IRI of an individual with the type `dcterms:Standard`." ;
@@ -140,6 +110,37 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:title` predicate where the value node is a literal value." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is an IRI." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:source ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:CatalogRecord ;
@@ -478,76 +479,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Dataset"@en ;
     sh:property
         [
-            sh:maxCount 1 ;
-            sh:path dcterms:accessRights ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:accrualPeriodicity ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:conformsTo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:hasVersion ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:isVersionOf ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:issued ;
-            sh:severity sh:Violation ;
-            sh:shape :DateOrDateTimeDataType_Shape
-        ] ,
-        [
-            sh:path dcterms:language ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:modified ;
-            sh:severity sh:Violation ;
-            sh:shape :DateOrDateTimeDataType_Shape
-        ] ,
-        [
-            sh:path dcterms:provenance ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path dcterms:relation ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:source ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:type ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path owl:versionInfo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:Literal ;
-            sh:path adms:versionNotes ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path adms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:path adms:sample ;
             sh:severity sh:Violation
         ] ,
@@ -642,6 +573,76 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:path dcat:theme ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:accessRights ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:accrualPeriodicity ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:hasVersion ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:isVersionOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:path dcterms:language ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:path dcterms:provenance ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:relation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:type ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path owl:versionInfo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:Literal ;
+            sh:path adms:versionNotes ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path adms:identifier ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Dataset ;
@@ -1117,6 +1118,51 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ;
     sh:targetClass dqv:QualityAnnotation ;
+.
+
+:QualityMeasurement_Shape
+    a sh:NodeShape ;
+    rdfs:label "Quality Measurement"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `dqv:isMeasurementOf` where the value is `geodcat:spatialResolutionAsAngularDistance`, `geodcat:spatialResolutionAsDistance`, `geodcat:spatialResolutionAsScale`, or `geodcat:spatialResolutionAsVerticalDistance`." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsAngularDistance
+                    ]
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsDistance
+                    ]
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsScale
+                    ]
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsVerticalDistance
+                    ]
+                ) ;
+            sh:path dqv:isMeasurementOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `dqv:value` predicate where the value node is a literal with datatype `xsd:decimal`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dqv:value ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `tern:unit` predicate where the value node is an IRI." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:unit ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dqv:QualityMeasurement ;
 .
 
 :Resource_Shape
