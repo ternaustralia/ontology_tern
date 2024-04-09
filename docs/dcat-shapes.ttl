@@ -33,44 +33,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:nodeKind sh:IRI ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
-            sh:path dcterms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 <http://www.w3.org/2011/content#characterEncoding> predicate where the value node is a literal value." ;
-            sh:nodeKind sh:Literal ;
-            sh:path <http://www.w3.org/2011/content#characterEncoding> ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
-            sh:node :DateOrDateTimeDataType_Shape ;
-            sh:path dcterms:created ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:isPartOf` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:isPartOf ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:minCount 1 ;
             sh:or (
@@ -123,6 +85,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
             sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is an IRI." ;
             sh:nodeKind sh:IRI ;
             sh:path dcterms:source ;
@@ -140,6 +119,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:language` where the value node is an IRI." ;
             sh:nodeKind sh:IRI ;
             sh:path dcterms:language ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 <http://www.w3.org/2011/content#characterEncoding> predicate where the value node is a literal value." ;
+            sh:nodeKind sh:Literal ;
+            sh:path <http://www.w3.org/2011/content#characterEncoding> ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:minCount 1 ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:created ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:isPartOf` predicate where the value node is an IRI." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:isPartOf ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:CatalogRecord ;
@@ -478,6 +478,50 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Dataset"@en ;
     sh:property
         [
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:type ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path owl:versionInfo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:Literal ;
+            sh:path adms:versionNotes ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path adms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path adms:sample ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcat:landingPage ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path foaf:page ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcat:qualifiedRelation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:isReferencedBy ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:path prov:qualifiedAttribution ;
             sh:severity sh:Violation
         ] ,
@@ -598,50 +642,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path dcterms:relation ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:source ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:type ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path owl:versionInfo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:Literal ;
-            sh:path adms:versionNotes ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path adms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path adms:sample ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcat:landingPage ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path foaf:page ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcat:qualifiedRelation ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path dcterms:isReferencedBy ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Dataset ;
@@ -834,6 +834,34 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcterms:LicenseDocument ;
+.
+
+:Method_Shape
+    a sh:NodeShape ;
+    rdfs:label "Method"@en ;
+    sh:property
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have a maximum of 1 `tern:scope` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:scope ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class rdf:Seq ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have a maximum of 1 `tern:instructions` predicate where the value node is `rdf:Seq`." ;
+            sh:path tern:instructions ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class rdfs:Resource ;
+            sh:message "A `tern:Method` _MAY_ have a `dcterms:source` where the value node is `rdfs:Resource`." ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:Method ;
 .
 
 :Organization_Shape
