@@ -5,6 +5,7 @@ PREFIX dcatap: <http://data.europa.eu/r5r>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dqv: <http://www.w3.org/ns/dqv#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX oa: <http://www.w3.org/ns/oa#>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -29,39 +30,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:minCount 1 ;
             sh:node :DcatResource_Shape ;
             sh:path foaf:primaryTopic ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:nodeKind sh:IRI ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
-            sh:path dcterms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:nodeKind schema:Person ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:nodeKind schema:Organization ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
-            sh:path dcat:contactPoint ;
             sh:severity sh:Violation
         ] ,
         [
@@ -122,6 +90,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
             sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 <http://www.w3.org/2011/content#characterEncoding> predicate where the value node is a literal value." ;
             sh:nodeKind sh:Literal ;
             sh:path <http://www.w3.org/2011/content#characterEncoding> ;
@@ -139,6 +124,22 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:isPartOf` predicate where the value node is an IRI." ;
             sh:nodeKind sh:IRI ;
             sh:path dcterms:isPartOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind schema:Person ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind schema:Organization ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcat:contactPoint ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:CatalogRecord ;
@@ -477,6 +478,50 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Dataset"@en ;
     sh:property
         [
+            sh:path dcat:distribution ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:Literal ;
+            sh:path dcat:keyword ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:publisher ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:spatial ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:temporal ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcat:theme ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:accessRights ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:accrualPeriodicity ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:hasVersion ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:path dcterms:isVersionOf ;
             sh:severity sh:Violation
         ] ,
@@ -597,50 +642,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:path dcat:contactPoint ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcat:distribution ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:Literal ;
-            sh:path dcat:keyword ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:publisher ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:spatial ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:temporal ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcat:theme ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:accessRights ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:accrualPeriodicity ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:conformsTo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:hasVersion ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Dataset ;
@@ -773,6 +774,30 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Distribution ;
+.
+
+:Geometry_Shape
+    a sh:NodeShape ;
+    rdfs:label "Geometry"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `geo:Geometry` _MUST_ have exactly 1 `tern:locationDescription` predicate where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:locationDescription ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype geo:WKTLiteral ;
+            sh:maxCount 1 ;
+            sh:message "A `geo:Geometry` _MUST_ have exactly 1 `geo:asWKT` where the value node is a literal with the datatype `geo:WKTLiteral`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path geo:asWKT ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass geo:Geometry ;
 .
 
 :LicenceDocument_Shape
