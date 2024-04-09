@@ -33,43 +33,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:nodeKind schema:Person ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:nodeKind schema:Organization ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
-            sh:path dcat:contactPoint ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:class dcterms:Standard ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:conformsTo` predicate where the value node is an IRI of an individual with the type `dcterms:Standard`." ;
-            sh:path dcterms:conformsTo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
-            sh:path dcterms:modified ;
-            sh:severity sh:Violation ;
-            sh:shape :DateOrDateTimeDataType_Shape
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:title` predicate where the value node is a literal value." ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:title ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:maxCount 1 ;
             sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal value." ;
             sh:nodeKind sh:Literal ;
@@ -122,6 +85,22 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind schema:Person ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind schema:Organization ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcat:contactPoint ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:maxCount 1 ;
             sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 <http://www.w3.org/2011/content#characterEncoding> predicate where the value node is a literal value." ;
             sh:nodeKind sh:Literal ;
@@ -140,6 +119,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:isPartOf` predicate where the value node is an IRI." ;
             sh:nodeKind sh:IRI ;
             sh:path dcterms:isPartOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcterms:Standard ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:conformsTo` predicate where the value node is an IRI of an individual with the type `dcterms:Standard`." ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:minCount 1 ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:title` predicate where the value node is a literal value." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:CatalogRecord ;
@@ -478,6 +478,53 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Dataset"@en ;
     sh:property
         [
+            sh:maxCount 1 ;
+            sh:path dcterms:accessRights ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:accrualPeriodicity ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:hasVersion ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:isVersionOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:path dcterms:language ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:path dcterms:provenance ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:relation ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:path dcterms:source ;
             sh:severity sh:Violation
         ] ,
@@ -595,53 +642,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:path dcat:theme ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:accessRights ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:accrualPeriodicity ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:conformsTo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:hasVersion ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:isVersionOf ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:issued ;
-            sh:severity sh:Violation ;
-            sh:shape :DateOrDateTimeDataType_Shape
-        ] ,
-        [
-            sh:path dcterms:language ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:modified ;
-            sh:severity sh:Violation ;
-            sh:shape :DateOrDateTimeDataType_Shape
-        ] ,
-        [
-            sh:path dcterms:provenance ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path dcterms:relation ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Dataset ;
@@ -1223,6 +1223,47 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass dcterms:Standard ;
 .
 
+:VerticalExtent_Shape
+    a sh:NodeShape ;
+    rdfs:label "Vertical Extent"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:minAltitude` predicate where the value node is a literal with the datatype `xsd:integer`, `xsd:float`, `xsd:double` or `xsd:decimal`." ;
+            sh:minCount 1 ;
+            sh:node :NumericDataType_Shape ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:minAltitude ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:maxAltitude` predicate where the value node is a literal with the datatype `xsd:integer`, `xsd:float`, `xsd:double` or `xsd:decimal`." ;
+            sh:minCount 1 ;
+            sh:node :NumericDataType_Shape ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:maxAltitude ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:unit ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `dcterms:conformsTo` predicate where the value node is `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:VerticalExtent ;
+.
+
 :DcatResource_Shape
     a sh:NodeShape ;
     rdfs:label "dcat:Resource" ;
@@ -1237,6 +1278,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             ]
             [
                 sh:class dcat:DataService
+            ]
+        ) ;
+.
+
+:NumericDataType_Shape
+    a sh:NodeShape ;
+    rdfs:label "Numeric datatype" ;
+    rdfs:comment "Numeric datatype shape checks that a datatype property receives a temporal value: integer, float, double or decimal literal" ;
+    sh:message "The values must be data typed as either xsd:integer, xsd:float, xsd:double or xsd:decimal" ;
+    sh:or (
+            [
+                sh:datatype xsd:integer
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:decimal
             ]
         ) ;
 .
