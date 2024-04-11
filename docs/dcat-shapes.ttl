@@ -222,7 +222,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:message "A `dcat:Catalog` _MAY_ have a `dcat:dataset predicate where the value node is a `dcat:Dataset`." ;
-            sh:nodeKind dcat:Dataset ;
+            sh:class dcat:Dataset ;
             sh:path dcat:dataset ;
             sh:severity sh:Violation
         ] ,
