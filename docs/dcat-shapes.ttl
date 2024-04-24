@@ -96,11 +96,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:minCount 1 ;
             sh:or (
                     [
+                        sh:datatype xsd:anyURI ;
                         sh:nodeKind sh:Literal ;
                         sh:severity sh:Violation
                     ]
                     [
-                        sh:nodeKind sh:IRI ;
+                        sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ;
                         sh:severity sh:Violation
                     ]
                 ) ;
@@ -878,7 +880,18 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:maxCount 1 ;
             sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal with datatype `xsd:anyURI`." ;
             sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
+            sh:or (
+                    [
+                        sh:datatype xsd:anyURI ;
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
             sh:path dcterms:identifier ;
             sh:severity sh:Violation
         ] ,
