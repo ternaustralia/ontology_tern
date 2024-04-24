@@ -1048,9 +1048,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:datatype geo:WKTLiteral ;
+            sh:datatype geo:wktLiteral ;
             sh:maxCount 1 ;
-            sh:message "A `geo:Geometry` _MUST_ have exactly 1 `geo:asWKT` where the value node is a literal with the datatype `geo:WKTLiteral`." ;
+            sh:message "A `geo:Geometry` _MUST_ have exactly 1 `geo:asWKT` where the value node is a literal with the datatype `geo:wktLiteral`." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path geo:asWKT ;
