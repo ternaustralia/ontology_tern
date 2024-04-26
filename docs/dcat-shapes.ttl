@@ -878,7 +878,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:datatype xsd:anyURI ;
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal with datatype `xsd:anyURI` or `xsd:string`." ;
             sh:minCount 1 ;
             sh:or (
                     [
