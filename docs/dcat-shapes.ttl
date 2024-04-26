@@ -578,9 +578,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class dcterms:LicenseDocumentation ;
+            sh:class dcterms:LicenseDocument ;
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dcterms:license` predicate where the value node is `dcterms:LicenseDocumentation`." ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dcterms:license` predicate where the value node is `dcterms:LicenseDocument`." ;
             sh:path dcterms:license ;
             sh:severity sh:Violation
         ] ,
