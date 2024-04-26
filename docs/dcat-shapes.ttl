@@ -1513,6 +1513,25 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass dcterms:RightsStatement ;
 .
 
+:Seq_Shape
+    a sh:NodeShape ;
+    rdfs:label "Seq"@en ;
+    sh:property [
+        sh:path rdf:_ ;
+        sh:message "A `rdf:Seq` _MAY_ have an `rdf:_N` where the value node is a `schema:Person` or `schema:Organization`." ;
+        sh:or (
+                [
+                    sh:class schema:Person
+                ]
+                [
+                    sh:class schema:Organization
+                ]
+            ) ;
+        sh:severity sh:Violation
+    ] ;
+    sh:targetClass rdf:Seq ;
+.
+
 :Standard_Shape
     a sh:NodeShape ;
     rdfs:label "Standard"@en ;
