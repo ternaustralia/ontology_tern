@@ -786,15 +786,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:creator` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:class rdf:Seq ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:creator` where the value node is a `rdf:Seq`." ;
             sh:path dcterms:creator ;
             sh:severity sh:Violation
         ] ,
