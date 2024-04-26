@@ -191,8 +191,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Catalog` _MAY_ have a maximum 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
             sh:path dcterms:modified ;
             sh:severity sh:Violation ;
             sh:shape :DateOrDateTimeDataType_Shape
