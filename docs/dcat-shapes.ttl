@@ -792,6 +792,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:class rdf:Seq ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:coAuthor` where the value node is a `rdf:Seq`." ;
+            sh:path tern:coAuthor ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:collaborator` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:or (
                     [
