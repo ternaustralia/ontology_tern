@@ -238,8 +238,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Catalog` _MUST_ have at least 1 `dcterms:description` where the value node is literal." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcterms:description` where the value node is literal." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:description ;
             sh:severity sh:Violation
