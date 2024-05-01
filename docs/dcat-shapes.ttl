@@ -1061,8 +1061,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:property
         [
             sh:maxCount 1 ;
-            sh:message "A `geo:Geometry` _MUST_ have exactly 1 `tern:locationDescription` predicate where the value node is a literal." ;
-            sh:minCount 1 ;
+            sh:message "A `geo:Geometry` _MAY_ have maximum 1 `tern:locationDescription` predicate where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path tern:locationDescription ;
             sh:severity sh:Violation
