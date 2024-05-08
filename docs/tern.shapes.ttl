@@ -389,6 +389,22 @@ tern-shapes:Sampling
     sh:targetClass tern:Sampling ;
 .
 
+tern-shapes:SamplingCollection
+    a sh:NodeShape ;
+    rdfs:label "Sampling collection" ;
+    sh:property
+        tern-shapes:SamplingCollection-hasFeatureOfInterest ,
+        tern-shapes:SamplingCollection-hasMember ,
+        tern-shapes:SamplingCollection-hasUltimateFeatureOfInterest ,
+        tern-shapes:SamplingCollection-madeBySampler ,
+        tern-shapes:SamplingCollection-phenomenonTime ,
+        tern-shapes:SamplingCollection-resultTime ,
+        tern-shapes:SamplingCollection-usedProcedure ,
+        tern-shapes:SamplingCollection-hasAttribute ,
+        tern-shapes:SamplingCollection-hasGeometry ;
+    sh:targetClass tern:SamplingCollection ;
+.
+
 tern-shapes:Sensor
     a sh:NodeShape ;
     rdfs:label "Sensor" ;
@@ -1281,6 +1297,137 @@ tern-shapes:Sampling-madeBySampler
     sh:name "sosa:madeBySampler" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:madeBySampler ;
+.
+
+tern-shapes:SamplingCollection-hasFeatureOfInterest
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has feature of interest" ;
+    sh:class tern:FeatureOfInterest ;
+    sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:SamplingCollection` _MAY_ have a maximum of 1 `sosa:hasFeatureOfInterest` predicate where the value node is an IRI of type `tern:FeatureOfInterest`." ;
+    sh:name "sosa:hasFeatureOfInterest" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:hasFeatureOfInterest ;
+.
+
+tern-shapes:SamplingCollection-hasMember
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has member" ;
+    sh:description "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties." ;
+    sh:message "A `tern:SamplingCollection` _MUST_ have at least 1 `sosa:hasMember` predicate where the value node is an IRI of type `tern:Sampling` or `tern:SamplingCollection`." ;
+    sh:minCount 1 ;
+    sh:name "sosa:hasMember" ;
+    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:Sampling
+            ]
+            [
+                sh:class tern:SamplingCollection
+            ]
+        ) ;
+    sh:path sosa:hasMember ;
+.
+
+tern-shapes:SamplingCollection-hasUltimateFeatureOfInterest
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has ultimate feature of interest" ;
+    sh:class tern:FeatureOfInterest ;
+    sh:description "Link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or transitively." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:SamplingCollection` _MAY_ have a maximum of 1 `sosa:hasUltimateFeatureOfInterest` where the value node is an IRI of type `tern:FeatureOfInterest`." ;
+    sh:name "sosa:hasUltimateFeatureOfInterest" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:hasUltimateFeatureOfInterest ;
+.
+
+tern-shapes:SamplingCollection-madeBySampler
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "made by sampler" ;
+    sh:class tern:Sampler ;
+    sh:description "Relation between a Sampling and the Sampler which made the Sampling." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:SamplingCollection` _MAY_ have a maximum of 1 `sosa:madeBySampler` predicate where the value node is an IRI of type `tern:Sampler`." ;
+    sh:name "sosa:madeBySampler" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:madeBySampler ;
+.
+
+tern-shapes:SamplingCollection-phenomenonTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "phenomenon time" ;
+    sh:class time:Instant ;
+    sh:description "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:SamplingCollection` _MAY_ have a maximum of 1 `sosa:phenomenonTime` predicate where the value node is an IRI of type `time:Instant`." ;
+    sh:name "sosa:phenomenonTime" ;
+    sh:path sosa:phenomenonTime ;
+.
+
+tern-shapes:SamplingCollection-resultTime
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "result time" ;
+    sh:description "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed." ;
+    sh:maxCount 1 ;
+    sh:message
+        "A `tern:SamplingCollection` _MAY_ have a maximum of 1 `tern:resultDateTime` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ,
+        "A `tern:resultDateTime` predicate _MUST_ have a literal value with a datatype of `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`." ;
+    sh:name "tern:resultDateTime" ;
+    sh:or (
+            [
+                sh:datatype xsd:dateTime
+            ]
+            [
+                sh:datatype xsd:date
+            ]
+            [
+                sh:datatype xsd:dateTimeStamp
+            ]
+        ) ;
+    sh:path tern:resultDateTime ;
+.
+
+tern-shapes:SamplingCollection-usedProcedure
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "used procedure" ;
+    sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:SamplingCollection` _MAY_ have a maximum of 1 `sosa:usedProcedure` predicate where the value node is an IRI." ;
+    sh:name "sosa:usedProcedure" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:usedProcedure ;
+.
+
+tern-shapes:SamplingCollection-hasGeometry
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has geometry" ;
+    sh:class geo:Geometry ;
+    sh:description "A spatial representation for a given feature." ;
+    sh:message "A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value." ;
+    sh:name "geo:hasGeometry" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path geo:hasGeometry ;
+.
+
+tern-shapes:SamplingCollection-hasAttribute
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has attribute" ;
+    sh:class tern:Attribute ;
+    sh:description "Link to an Attribute." ;
+    sh:message "A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`." ;
+    sh:name "tern:hasAttribute" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:hasAttribute ;
 .
 
 tern-shapes:Sensor-implements

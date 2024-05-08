@@ -1176,6 +1176,14 @@ Splitting a piece of drill-core to create two new samples.
 Taking a diamond-drill core from a rock outcrop.""" ;
 .
 
+tern:SamplingCollection
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf sosa:SamplingCollection ;
+    skos:definition "Collection of one or more Samplings, whose members share a common value for one or more property" ;
+    skos:prefLabel "Sampling collection" ;
+.
+
 tern:SiteVisit
     a owl:Class ;
     reg:status reg:statusStable ;
