@@ -251,6 +251,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `skos:notation`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:notation ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:message "A `dcat:Catalog` _MUST_ have at least 1 `dcterms:title` where the value node is literal." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
