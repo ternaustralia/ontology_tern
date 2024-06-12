@@ -301,7 +301,7 @@ tern-shapes:Observation
         tern-shapes:sosa-resultTime ,
         tern-shapes:sosa-usedProcedure ,
         tern-shapes:tern-hasSiteVisit ,
-        tern-shapes:tern-observationType ,
+        tern-shapes:Observation-sdo-additionalType ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Observation ;
 .
@@ -384,7 +384,7 @@ tern-shapes:Sampling
         tern-shapes:sosa-resultTime ,
         tern-shapes:sosa-usedProcedure ,
         tern-shapes:tern-hasSiteVisit ,
-        tern-shapes:tern-samplingType ,
+        tern-shapes:Sampling-sdo-additionalType ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Sampling ;
 .
@@ -2233,28 +2233,28 @@ tern-shapes:tern-minAltitude
     sh:path tern:minAltitude ;
 .
 
-tern-shapes:tern-observationType
+tern-shapes:Observation-sdo-additionalType
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "observation type" ;
-    sh:description "The type of observation." ;
+    sh:description "The type of observation. Used separately to, but in conjunction with the usedProcedure." ;
     sh:maxCount 1 ;
-    sh:message "A maximum of 1 `tern:observationType` _MAY_ exist with an IRI value." ;
-    sh:name "tern:observationType" ;
+    sh:message "A `tern:Observation` _MAY_ have a maximum of 1 `sdo:additionalType` where the value node is an IRI." ;
+    sh:name "sdo:additionalType" ;
     sh:nodeKind sh:IRI ;
-    sh:path tern:observationType ;
+    sh:path sdo:additionalType ;
 .
 
-tern-shapes:tern-samplingType
+tern-shapes:Sampling-sdo-additionalType
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "sampling type" ;
-    sh:description "The type of sampling act." ;
+    sh:description "The type of sampling act. Used separately to, but in conjunction with the usedProcedure." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Sampling` _MAY_ have a maximum of 1 `tern:samplingType` predicate where the value node is an IRI." ;
-    sh:name "tern:samplingType" ;
+    sh:message "A `tern:Sampling` _MAY_ have a maximum of 1 `sdo:additionalType` predicate where the value node is an IRI." ;
+    sh:name "sdo:additionalType" ;
     sh:nodeKind sh:IRI ;
-    sh:path tern:samplingType ;
+    sh:path sdo:additionalType ;
 .
 
 tern-shapes:time-Instant-inDateTime
