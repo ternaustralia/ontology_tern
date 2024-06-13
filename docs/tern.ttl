@@ -802,13 +802,6 @@ tern:minAltitude
     skos:example "The minimum altitude of a mountain range is 100m." ;
 .
 
-tern:observationType
-    a owl:ObjectProperty ;
-    rdfs:label "observation type" ;
-    skos:definition "The type of observation." ;
-    skos:example "human observation, machine observation." ;
-.
-
 tern:producer
     a rdf:Property ;
     rdfs:label "producer" ;
@@ -837,12 +830,6 @@ tern:sampleStorageLocation
     rdfs:label "sample storage location" ;
     rdfs:subPropertyOf geo:hasGeometry ;
     skos:definition "A property that links a [PhysicalSpecimen](#PhysicalSpecimen) to the location [Point](http://www.opengis.net/ont/sf#Point) of where it is stored." ;
-.
-
-tern:samplingType
-    a owl:ObjectProperty ;
-    rdfs:label "sampling type" ;
-    skos:definition "The type of sampling act." ;
 .
 
 tern:shortName
