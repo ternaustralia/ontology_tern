@@ -515,6 +515,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:dataQuality` where the value node is a `tern:DataQuality`." ;
+            sh:class tern:DataQuality ;
+            sh:path tern:dataQuality ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:path dcterms:spatial ;
             sh:severity sh:Violation
         ] ,
@@ -546,8 +552,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:class skos:Concept ;
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dcterms:accessRights` where the value is `skos:Concept`." ;
-            sh:path dcterms:accessRights ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `tern:securityConstraints` where the value is `skos:Concept`." ;
+            sh:path tern:securityConstraints ;
             sh:severity sh:Violation
         ] ,
         [
@@ -634,8 +640,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:class dcterms:RightsStatement ;
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:rights` predicate where the value node is `dcterms:RightsStatement`." ;
-            sh:path dcterms:rights ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:otherConstraints` predicate where the value node is `dcterms:RightsStatement`." ;
+            sh:path tern:otherConstraints ;
             sh:severity sh:Violation
         ] ,
         [
@@ -724,8 +730,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:class rdfs:Resource ;
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:relation` predicate where the value node is `rdfs:Resource`." ;
-            sh:path dcterms:relation ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:addtionalDocumentation` predicate where the value node is `rdfs:Resource`." ;
+            sh:path tern:addtionalDocumentation ;
             sh:severity sh:Violation
         ] ,
         [
@@ -879,9 +885,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:description` where the value node is a literal." ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:purpose` where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
-            sh:path dcterms:description ;
+            sh:path tern:purpose ;
             sh:severity sh:Violation
         ] ,
         [
