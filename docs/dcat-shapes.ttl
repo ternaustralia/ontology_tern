@@ -1618,6 +1618,37 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass tern:VerticalExtent ;
 .
 
+:Extent_Shape
+    a sh:NodeShape ;
+    rdfs:label "Extent"@en ;
+    sh:property
+        [
+            sh:message "A `tern:Extent` _MAY_ have 1 `dcterms:temporal` predicate where the value node is a `dcterms:PeriodOfTime`." ;
+            sh:class dcterms:PeriodOfTime ;
+            sh:path dcterms:temporal ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `tern:Extent` _MAY_ have 1 `geo:hasGeometry` predicate where the value node is a `geo:Geometry`." ;
+            sh:class geo:Geometry ;
+            sh:path geo:hasGeometry ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `tern:Extent` _MAY_ have 1 `tern:verticalExtent` predicate where the value node is a `tern:VerticalExtent`." ;
+            sh:class tern:VerticalExtent ;
+            sh:path tern:verticalExtent ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `tern:Extent` _MAY_ have 1 `tern:locationDescription` predicate where the value has datatype `xsd:string`." ;
+            sh:datatype xsd:string ;
+            sh:path tern:locationDescription ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:Extent ;
+.
+
 :DcatResource_Shape
     a sh:NodeShape ;
     rdfs:label "dcat:Resource" ;
