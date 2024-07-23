@@ -11,6 +11,7 @@ PREFIX oa: <http://www.w3.org/ns/oa#>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/>
@@ -358,8 +359,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `skos:Concept` _MAY_ have a `tern:unit` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
+            sh:message "A `skos:Concept` _MAY_ have a `tern:unit` predicate where the value node is a `qudt:Unit`." ;
+            sh:class qudt:Unit ;
             sh:path tern:unit ;
             sh:severity sh:Violation
         ] ,
@@ -1451,9 +1452,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `tern:unit` predicate where the value node is an IRI." ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `tern:unit` predicate where the value node is a `qudt:Unit`." ;
             sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
+            sh:class qudt:Unit ;
             sh:path tern:unit ;
             sh:severity sh:Violation
         ] ;
@@ -1607,9 +1608,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:unit` predicate where the value node is `qudt:Unit`." ;
             sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
+            sh:class qudt:Unit ;
             sh:path tern:unit ;
             sh:severity sh:Violation
         ] ,
