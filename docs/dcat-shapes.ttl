@@ -144,14 +144,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:node :PersonOrg_Shape ;
             sh:path dcat:contactPoint ;
             sh:severity sh:Violation
         ] ;
@@ -847,68 +840,117 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:collaborator` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:node :PersonOrg_Shape ;
             sh:path tern:collaborator ;
             sh:severity sh:Violation
         ] ,
         [
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:funder` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:node :PersonOrg_Shape ;
             sh:path tern:funder ;
             sh:severity sh:Violation
         ] ,
         [
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:editor` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:node :PersonOrg_Shape ;
             sh:path tern:editor ;
             sh:severity sh:Violation
         ] ,
         [
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:producer` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:node :PersonOrg_Shape ;
             sh:path tern:producer ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:resourceProvider` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:resourceProvider ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:custodian` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:custodian ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:owner` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:owner ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:user` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:user ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:distributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:distributor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:originator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:originator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:principalInvestigator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:principalInvestigator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:processor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:processor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:sponsor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:sponsor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:coAuthor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:coAuthor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:mediator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:mediator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:rightsHolder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:rightsHolder ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:contributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:contributor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:stakeholder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:stakeholder ;
             sh:severity sh:Violation
         ] ,
         [
             sh:maxCount 1 ;
             sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:publisher` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:node :PersonOrg_Shape ;
             sh:path dcterms:publisher ;
             sh:severity sh:Violation
         ] ,
@@ -954,14 +996,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:message "A `dcat:Dataset` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:class schema:Person
-                    ]
-                    [
-                        sh:class schema:Organization
-                    ]
-                ) ;
+            sh:node :PersonOrg_Shape ;
             sh:path dcat:contactPoint ;
             sh:severity sh:Violation
         ] ;
@@ -1094,6 +1129,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:Distribution` _MUST_ have at least 1 `dcat:accessURL` predicate where the value node is `rdfs:Resource`." ;
             sh:minCount 1 ;
             sh:path dcat:accessURL ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Distribution` _MAY_ have a `tern:distributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:distributor ;
             sh:severity sh:Violation
         ] ,
         [
@@ -1562,14 +1603,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:property [
         sh:path rdf:_ ;
         sh:message "A `rdf:Seq` _MAY_ have an `rdf:_N` where the value node is a `schema:Person` or `schema:Organization`." ;
-        sh:or (
-                [
-                    sh:class schema:Person
-                ]
-                [
-                    sh:class schema:Organization
-                ]
-            ) ;
+        sh:node :PersonOrg_Shape ;
         sh:severity sh:Violation
     ] ;
     sh:targetClass rdf:Seq ;
@@ -1697,6 +1731,21 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             ]
             [
                 sh:class dcat:DataService
+            ]
+        ) ;
+.
+
+:PersonOrg_Shape
+    a sh:NodeShape ;
+    rdfs:label "Person and Organization" ;
+    rdfs:comment "The union of Person and Organization" ;
+    sh:message "The node is either a Person or Organization" ;
+    sh:or (
+            [
+                sh:class schema:Person
+            ]
+            [
+                sh:class schema:Organization
             ]
         ) ;
 .
