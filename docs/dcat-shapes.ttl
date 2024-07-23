@@ -609,13 +609,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class tern:VerticalExtent ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `tern:verticalExtent` predicate where the value node is `tern:VerticalExtent`." ;
-            sh:path tern:verticalExtent ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `tern:resourceSpecificUsage` predicate where the value node is a literal with datatype `xsd:string`." ;
@@ -656,6 +649,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path schema:abstract ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `tern:hasExtent` predicate where the value node is a `tern:Extent`." ;
+            sh:minCount 1 ;
+            sh:class tern:Extent ;
+            sh:path tern:hasExtent ;
             sh:severity sh:Violation
         ] ,
         [
