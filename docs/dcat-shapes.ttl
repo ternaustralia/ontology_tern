@@ -347,6 +347,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass spdx:Checksum ;
 .
 
+:Unit_Shape
+    a sh:NodeShape ;
+    rdfs:label "QUDT Unit"@en ;
+    sh:property
+        [
+            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:label` where the value node is a literal." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `qudt:Unit` _MAY_ have 1 `rdfs:isDefinedBy` where the value node is a `sh:IRI`." ;
+            sh:nodeKind sh:IRI ;
+            sh:path rdfs:isDefinedBy ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass qudt:Unit ;
+.
+
 :Concept_Shape
     a sh:NodeShape ;
     rdfs:label "Concept"@en ;
