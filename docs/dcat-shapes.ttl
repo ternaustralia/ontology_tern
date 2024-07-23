@@ -522,6 +522,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:inSeries` where the value node is a `dcat:DatasetSeries`." ;
+            sh:class dcat:DatasetSeries ;
+            sh:path dcat:inSeries ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:path dcterms:spatial ;
             sh:severity sh:Violation
         ] ,
