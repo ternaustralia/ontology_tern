@@ -45,9 +45,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:datatype xsd:anyURI ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcat:landingPage` predicate where the value node is a literal with the datatype `xsd:anyURI`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcat:landingPage` predicate where the value node is a literal with the datatype `xsd:anyURI`." ;
             sh:nodeKind sh:Literal ;
             sh:path dcat:landingPage ;
             sh:severity sh:Violation
@@ -102,20 +100,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
             sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:datatype xsd:anyURI ;
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:datatype xsd:string ;
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
+            sh:nodeKind sh:Literal ;
             sh:path dcterms:identifier ;
             sh:severity sh:Violation
         ] ,
@@ -156,7 +143,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Catalog"@en ;
     sh:property
         [
-            sh:message "A `dcat:Catalog` _MAY_ have a `dcterms:language` predicate where the value node is an IRI." ;
+            sh:message "A `dcat:Catalog` _MUST_ have at least 1 `dcterms:language` predicate where the value node is an IRI." ;
+            sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path dcterms:language ;
             sh:severity sh:Violation
@@ -246,8 +234,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `skos:notation`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Catalog` _May_ have maximum 1 of `skos:notation` where the value is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path skos:notation ;
             sh:severity sh:Violation
@@ -261,11 +248,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal with the datatype `xsd:anyURI`." ;
+            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
             sh:minCount 1 ;
             sh:or (
                     [
-                        sh:datatype xsd:anyURI ;
                         sh:nodeKind sh:Literal ;
                         sh:severity sh:Violation
                     ]
@@ -288,13 +274,24 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass dcat:Catalog ;
 .
 
-:CategoryScheme_Shape
+:ConceptScheme_Shape
     a sh:NodeShape ;
-    rdfs:label "Category Scheme"@en ;
-    sh:property [
+    rdfs:label "Concept Scheme"@en ;
+    sh:property 
+        [
+            sh:maxCount 1 ;
+            sh:message "A `skos:ConceptScheme` _MUST_ have exactly 1 `skos:prefLabel` where the value node is a literal." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path skos:prefLabel ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `skos:ConceptScheme` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass skos:ConceptScheme ;
@@ -379,8 +376,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `skos:Concept` _MAY_ have a `skos:inScheme` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
+            sh:class skos:ConceptScheme ;
+            sh:message "A `skos:Concept` _MAY_ have a `skos:inScheme` predicate where the value node is a `skos:ConceptScheme`." ;
             sh:path skos:inScheme ;
             sh:severity sh:Violation
         ] ,
@@ -469,13 +466,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:message "A `dcat:DatasetSeries` _MUST_ have at least 1 `dcterms:title` where the value node is a literal." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:title ;
             sh:severity sh:Violation
         ] ,
         [
-            sh:minCount 1 ;
+            sh:message "A `dcat:DatasetSeries` _MAY_ have a `dcterms:description` where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:description ;
             sh:severity sh:Violation
@@ -519,8 +517,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:property
         [
             sh:class dcat:Distribution ;
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:distribution` where the value node is `dcat:Distribution`." ;
+            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `dcat:distribution` where the value node is `dcat:Distribution`." ;
+            sh:minCount 1 ;
             sh:path dcat:distribution ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:accessRights` where the value node is `skos:Concept`." ;
+            sh:path dcterms:accessRights ;
             sh:severity sh:Violation
         ] ,
         [
@@ -542,6 +547,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:message "A `dcat:Dataset` _MAY_ have 1 `tern:verticalExtent` predicate where the value node is a `tern:VerticalExtent`." ;
+            sh:class tern:VerticalExtent ;
+            sh:path tern:verticalExtent ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:path dcterms:spatial ;
             sh:severity sh:Violation
         ] ,
@@ -558,15 +569,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:theme` where the value is a literal or `skos:Concept`." ;
-            sh:or (
-                    [
-                        sh:nodeKind sh:Literal
-                    ]
-                    [
-                        sh:class skos:Concept
-                    ]
-                ) ;
+            sh:class skos:Concept ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:theme` where the value is a `skos:Concept`." ;
             sh:path dcat:theme ;
             sh:severity sh:Violation
         ] ,
@@ -621,10 +625,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class skos:Concept ;
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `adms:status` predicate where the value node is `skos:Concept`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Dataset` _MUST_ have maximum 1 `adms:status` predicate where the value node is `sh:IRI`." ;
+            sh:nodeKind sh:IRI ;
             sh:path adms:status ;
             sh:severity sh:Violation
         ] ,
@@ -666,6 +669,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:class dcterms:RightsStatement ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:rights` predicate where the value node is `dcterms:RightsStatement`." ;
+            sh:path dcterms:rights ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:class geo:Geometry ;
             sh:message "A `dcat:Dataset` _MAY_ have a `geo:hasGeometry` predicate where the value node is `geo:Geometry`." ;
             sh:path geo:hasGeometry ;
@@ -703,12 +712,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:subject` predicate where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:subject ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `skos:inScheme` predicate where the value node is `sh:IRI`." ;
-            sh:nodeKind sh:IRI ;
-            sh:path skos:inScheme ;
             sh:severity sh:Violation
         ] ,
         [
@@ -756,6 +759,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:class rdfs:Resource ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:relation` predicate where the value node is `rdfs:Resource`." ;
+            sh:path dcterms:relation ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:path dcterms:source ;
             sh:severity sh:Violation
         ] ,
@@ -775,8 +784,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:datatype xsd:anyURI ;
-            sh:message "A `dcat:Dataset` _MAY_ have an `adms:identifier` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:message "A `dcat:Dataset` _MAY_ have an `adms:identifier` predicate where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path adms:identifier ;
             sh:severity sh:Violation
@@ -917,12 +925,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:coAuthor` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:coAuthor ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:mediator` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:node :PersonOrg_Shape ;
             sh:path tern:mediator ;
@@ -974,22 +976,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:datatype xsd:anyURI ;
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal with datatype `xsd:anyURI` or `xsd:string`." ;
+            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
             sh:minCount 1 ;
-            sh:or (
-                    [
-                        sh:datatype xsd:anyURI ;
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                    [
-                        sh:datatype xsd:string ;
-                        sh:nodeKind sh:Literal ;
-                        sh:severity sh:Violation
-                    ]
-                ) ;
+            sh:nodeKind sh:Literal ;
             sh:path dcterms:identifier ;
             sh:severity sh:Violation
         ] ,
@@ -1040,12 +1030,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:datatype xsd:decimal ;
             sh:maxCount 1 ;
             sh:path dcat:spatialResolutionInMeters ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:minCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path dcat:accessURL ;
             sh:severity sh:Violation
         ] ,
         [
@@ -1138,6 +1122,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:message "A `dcat:Distribution` _MUST_ have at least 1 `tern:producer` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:minCount 1 ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:producer ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:maxCount 1 ;
             sh:path dcat:mediaType ;
             sh:severity sh:Violation
@@ -1168,9 +1159,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass geo:Geometry ;
 .
 
-:LicenceDocument_Shape
+:LicenseDocument_Shape
     a sh:NodeShape ;
-    rdfs:label "Licence Document"@en ;
+    rdfs:label "License Document"@en ;
     sh:property
         [
             sh:message "A `dcterms:LicenseDocument` _MUST_ have at least 1 `dcterms:type` where the value node is an IRI." ;
@@ -1193,9 +1184,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:datatype xsd:anyURI ;
             sh:maxCount 1 ;
-            sh:message "A `dcterms:LicenseDocument` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal with the datatype `xsd:anyURI`." ;
+            sh:message "A `dcterms:LicenseDocument` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:identifier ;
@@ -1209,10 +1199,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Method"@en ;
     sh:property
         [
-            sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have a maximum of 1 `tern:scope` where the value node is a literal with the datatype `xsd:string`." ;
-            sh:nodeKind sh:Literal ;
+            sh:message "A `tern:Method` _MAY_ have a maximum of 1 `tern:scope` where the value node is a `sh:IRI`." ;
+            sh:nodeKind sh:IRI ;
             sh:path tern:scope ;
             sh:severity sh:Violation
         ] ,
@@ -1419,8 +1408,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `schema:Person` _MAY_ have a `schema:affiliation` where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
+            sh:class schema:Organization ;
+            sh:message "A `schema:Person` _MAY_ have a `schema:affiliation` where the value node is a `schema:Organization`." ;
             sh:path schema:affiliation ;
             sh:severity sh:Violation
         ] ,
@@ -1550,18 +1539,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:class dcterms:Standard ;
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MUST_ have exactly 1 `dcterms:conformsTo` predicate where the value node is `sh:IRI`." ;
+            sh:message "A `rdfs:Resource` _MUST_ have exactly 1 `dcterms:conformsTo` predicate where the value node is `dcterms:Standard`." ;
             sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
             sh:path dcterms:conformsTo ;
             sh:severity sh:Violation
         ] ,
         [
-            sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MUST_ have exactly 1 `dcterms:type` predicate where the value node is `sh:IRI`." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
+            sh:class skos:Concept ;
+            sh:message "A `rdfs:Resource` _MAY_ have a `dcterms:type` predicate where the value node is `skos:Concept`." ;
             sh:path dcterms:type ;
             sh:severity sh:Violation
         ] ,
@@ -1574,9 +1561,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MAY_ have a maximum of 1 `dcterms:format` where the value is a literal with datatype `xsd:string`." ;
+            sh:message "A `rdfs:Resource` _MAY_ have a maximum of 1 `dcterms:format` where the value is a literal." ;
             sh:path dcterms:format ;
             sh:severity sh:Violation
         ] ;
