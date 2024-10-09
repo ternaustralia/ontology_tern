@@ -669,12 +669,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class dcterms:RightsStatement ;
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:rights` predicate where the value node is `dcterms:RightsStatement`." ;
-            sh:path dcterms:rights ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:class geo:Geometry ;
             sh:message "A `dcat:Dataset` _MAY_ have a `geo:hasGeometry` predicate where the value node is `geo:Geometry`." ;
             sh:path geo:hasGeometry ;
@@ -819,22 +813,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:datatype xsd:duration ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dcat:temporalResolution` predicate where the value node is a literal with datatype `xsd:duration`." ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcat:temporalResolution ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dcat:spatialResolutionInMeters` predicate where the value node is a literal with datatype `xsd:decimal`." ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcat:spatialResolutionInMeters ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:class rdf:Seq ;
             sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:creator` where the value node is a `rdf:Seq`." ;
             sh:path dcterms:creator ;
@@ -960,12 +938,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:purpose` where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path tern:purpose ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcatap:applicableLegislation` where the value node is `sh:IRI`." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcatap:applicableLegislation ;
             sh:severity sh:Violation
         ] ,
         [
