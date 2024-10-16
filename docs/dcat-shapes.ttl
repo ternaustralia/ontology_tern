@@ -481,12 +481,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Dataset Series"@en ;
     sh:property
         [
-            sh:inversePath dcat:inSeries ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:severity sh:Warning
-        ] ,
-        [
             sh:nodeKind sh:IRI ;
             sh:path dcatap:applicableLegislation ;
             sh:severity sh:Violation
