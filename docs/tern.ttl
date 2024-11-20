@@ -368,6 +368,14 @@ tern:FluxTower
         "Alice Springs Mulga flux tower" ;
 .
 
+tern:IGSN
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    skos:definition "A globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
+    skos:example "The IGSN 'AU1234567' represents a rock sample collected from a geological survey in Australia, with metadata detailing its location, collection date, and characteristics." ;
+    skos:prefLabel "IGSN" ;
+.
+
 tern:IRI
     a owl:Class ;
     reg:status reg:statusStable ;
@@ -837,6 +845,14 @@ tern:sampleStorageLocation
     rdfs:label "sample storage location" ;
     rdfs:subPropertyOf geo:hasGeometry ;
     skos:definition "A property that links a [PhysicalSpecimen](#PhysicalSpecimen) to the location [Point](http://www.opengis.net/ont/sf#Point) of where it is stored." ;
+.
+
+tern:sampleType
+    a owl:ObjectProperty ;
+    rdfs:label "sample type" ;
+    rdfs:domain tern:IGSN ;
+    rdfs:range skos:Concept ;
+    skos:definition "The sample type of an [IGSN](#IGSN)." ;
 .
 
 tern:samplingType
