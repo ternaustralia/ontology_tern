@@ -25,6 +25,42 @@ tern-shapes:IGSN
     sh:targetClass tern:IGSN ;
 .
 
+<urn:igsn-shape:tern-collaborator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:collaborator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:collaborator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:collaborator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:collaborator ;
+.
+
+<urn:igsn-shape:tern-editor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:editor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:editor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:editor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:editor ;
+.
+
+<urn:igsn-shape:tern-funder>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:funder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:funder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:funder" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:funder ;
+.
+
+<urn:igsn-shape:tern-producer>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:producer where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:producer where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:producer" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:producer ;
+.
+
 <urn:igsn-shape:dcat-keyword>
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
@@ -42,14 +78,7 @@ tern-shapes:IGSN
     sh:message "There _MUST_ be exactly one dcterms:creator where the value node is a `schema:Person` or `schema:Organization`." ;
     sh:minCount 1 ;
     sh:name "dcterms:creator" ;
-    sh:or (
-            [
-                sh:class schema1:Person
-            ]
-            [
-                sh:class schema1:Organization
-            ]
-        ) ;
+    sh:node <urn:igsn-shape:person-org> ;
     sh:path dcterms:creator ;
 .
 
@@ -84,14 +113,7 @@ tern-shapes:IGSN
     sh:message "There _MUST_ be exactly one dcterms:publisher where the value node is a `schema:Person` or `schema:Organization`." ;
     sh:minCount 1 ;
     sh:name "dcterms:publisher" ;
-    sh:or (
-            [
-                sh:class schema1:Person
-            ]
-            [
-                sh:class schema1:Organization
-            ]
-        ) ;
+    sh:node <urn:igsn-shape:person-org> ;
     sh:path dcterms:publisher ;
 .
 
@@ -135,5 +157,20 @@ tern-shapes:IGSN
     sh:minCount 1 ;
     sh:name "tern:sampleType" ;
     sh:path tern:sampleType ;
+.
+
+<urn:igsn-shape:person-org>
+    a sh:NodeShape ;
+    rdfs:label "Person and Organization" ;
+    rdfs:comment "The union of Person and Organization" ;
+    sh:message "The node is either a Person or Organization" ;
+    sh:or (
+            [
+                sh:class schema1:Person
+            ]
+            [
+                sh:class schema1:Organization
+            ]
+        ) ;
 .
 
