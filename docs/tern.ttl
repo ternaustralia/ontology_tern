@@ -233,17 +233,6 @@ tern:Dimension
                             xsd:integer
                         )
                 ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
             owl:onProperty tern:width
         ] ,
         [
@@ -261,6 +250,17 @@ tern:Dimension
             owl:onClass <http://qudt.org/schema/qudt/Unit> ;
             owl:onProperty tern:unit ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:length
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -366,14 +366,6 @@ tern:FluxTower
     skos:example
         <https://w3id.org/tern/resources/fd2809a2-e705-4961-b09c-7e9ae1ffa87e> ,
         "Alice Springs Mulga flux tower" ;
-.
-
-tern:IGSN
-    a owl:Class ;
-    reg:status reg:statusExperimental ;
-    skos:definition "A globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
-    skos:example "The IGSN 'AU1234567' represents a rock sample collected from a geological survey in Australia, with metadata detailing its location, collection date, and characteristics." ;
-    skos:prefLabel "IGSN" ;
 .
 
 tern:IRI
@@ -1019,6 +1011,14 @@ tern:verticalExtent
     sdo:affiliation <https://linked.data.gov.au/org/tern> ;
     sdo:email "a.devaraju@uq.edu.au"^^xsd:anyURI ;
     sdo:name "Anusuriya Devaraju" ;
+.
+
+tern:IGSN
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    skos:definition "A globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
+    skos:example "The IGSN 'AU1234567' represents a rock sample collected from a geological survey in Australia, with metadata detailing its location, collection date, and characteristics." ;
+    skos:prefLabel "IGSN" ;
 .
 
 tern:Input
