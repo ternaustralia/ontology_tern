@@ -1,42 +1,38 @@
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX reg: <http://purl.org/linked-data/registry#>
-PREFIX sf: <http://www.opengis.net/ont/sf#>
+PREFIX schema1: <http://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX ssn: <http://www.w3.org/ns/ssn/>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
-PREFIX time: <http://www.w3.org/2006/time#>
-PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 tern-shapes:IGSN
     a sh:NodeShape ;
     rdfs:label "IGSN" ;
     sh:property
-        <urn:igsn-shape:dcterms-identifier> ,
+        <urn:igsn-shape:dcat-keyword> ,
         <urn:igsn-shape:dcterms-creator> ,
-        <urn:igsn-shape:dcterms-publisher> ;
+        <urn:igsn-shape:dcterms-identifier> ,
+        <urn:igsn-shape:dcterms-issued> ,
+        <urn:igsn-shape:dcterms-publisher> ,
+        <urn:igsn-shape:dcterms-subject> ,
+        <urn:igsn-shape:dcterms-title> ,
+        <urn:igsn-shape:dcterms-type> ,
+        <urn:igsn-shape:tern-sampleType> ;
     sh:targetClass tern:IGSN ;
 .
 
-<urn:igsn-shape:dcterms-identifier>
+<urn:igsn-shape:dcat-keyword>
     a sh:PropertyShape ;
-    sh:description "There _MUST_ be exactly one dcterms:identifier where the value node is a literal." ;
-    sh:maxCount 1 ;
-    sh:message "There _MUST_ be exactly one dcterms:identifier where the value node is a literal." ;
-    sh:minCount 1 ;
-    sh:name "dcterms:identifier" ;
+    sh:datatype xsd:string ;
+    sh:description "There _MAY_ be one dcat:keyword where the value node is a literal." ;
+    sh:message "There _MAY_ be one dcat:keyword where the value node is a literal." ;
+    sh:name "dcat:keyword" ;
     sh:nodeKind sh:Literal ;
-    sh:path dcterms:identifier ;
+    sh:path dcat:keyword ;
 .
 
 <urn:igsn-shape:dcterms-creator>
@@ -48,13 +44,37 @@ tern-shapes:IGSN
     sh:name "dcterms:creator" ;
     sh:or (
             [
-                sh:class schema:Person
+                sh:class schema1:Person
             ]
             [
-                sh:class schema:Organization
+                sh:class schema1:Organization
             ]
         ) ;
     sh:path dcterms:creator ;
+.
+
+<urn:igsn-shape:dcterms-identifier>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MUST_ be exactly one dcterms:identifier where the value node is a literal." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:identifier where the value node is a literal." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:identifier" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:identifier ;
+.
+
+<urn:igsn-shape:dcterms-issued>
+    a sh:PropertyShape ;
+    sh:datatype xsd:gYear ;
+    sh:description "There _MUST_ be exactly one dcterms:issued where the value has datatype `xsd:gYear`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:issued where the value has datatype `xsd:gYear`." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:issued" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:issued ;
 .
 
 <urn:igsn-shape:dcterms-publisher>
@@ -66,11 +86,54 @@ tern-shapes:IGSN
     sh:name "dcterms:publisher" ;
     sh:or (
             [
-                sh:class schema:Person
+                sh:class schema1:Person
             ]
             [
-                sh:class schema:Organization
+                sh:class schema1:Organization
             ]
         ) ;
     sh:path dcterms:publisher ;
 .
+
+<urn:igsn-shape:dcterms-subject>
+    a sh:PropertyShape ;
+    sh:class skos:Concept ;
+    sh:description "There _MAY_ be one dcterms:subject where the value node is a skos:Concept." ;
+    sh:message "There _MAY_ be one dcterms:subject where the value node is a skos:Concept." ;
+    sh:name "dcterms:subject" ;
+    sh:path dcterms:subject ;
+.
+
+<urn:igsn-shape:dcterms-title>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MUST_ be exactly one dcterms:title where the value node is a literal." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:title where the value node is a literal." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:title" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:title ;
+.
+
+<urn:igsn-shape:dcterms-type>
+    a sh:PropertyShape ;
+    sh:description "There _MUST_ be exactly one dcterms:type." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:type." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:type" ;
+    sh:path dcterms:type ;
+.
+
+<urn:igsn-shape:tern-sampleType>
+    a sh:PropertyShape ;
+    sh:class skos:Concept ;
+    sh:description "There _MUST_ be exactly one tern:sampleType where the value node is a skos:Concept." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one tern:sampleType where the value node is a skos:Concept." ;
+    sh:minCount 1 ;
+    sh:name "tern:sampleType" ;
+    sh:path tern:sampleType ;
+.
+
