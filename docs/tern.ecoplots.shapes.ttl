@@ -211,16 +211,47 @@ tern-shapes:IGSN
     sh:path dcterms:identifier ;
 .
 
+<urn:igsn-shape:adms-identifier>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MAY_ be one adms:identifier where the value node is a literal." ;
+    sh:message "There _MAY_ be one adms:identifier where the value node is a literal." ;
+    sh:name "adms:identifier" ;
+    sh:nodeKind sh:Literal ;
+    sh:path adms:identifier ;
+.
+
 <urn:igsn-shape:dcterms-issued>
     a sh:PropertyShape ;
-    sh:datatype xsd:gYear ;
-    sh:description "There _MUST_ be exactly one dcterms:issued where the value has datatype `xsd:gYear`." ;
+    sh:datatype xsd:date ;
+    sh:description "There _MAY_ be maximum one dcterms:issued where the value has datatype `xsd:date`." ;
     sh:maxCount 1 ;
-    sh:message "There _MUST_ be exactly one dcterms:issued where the value has datatype `xsd:gYear`." ;
-    sh:minCount 1 ;
+    sh:message "There _MAY_ be maximum one dcterms:issued where the value has datatype `xsd:date`." ;
     sh:name "dcterms:issued" ;
     sh:nodeKind sh:Literal ;
     sh:path dcterms:issued ;
+.
+
+<urn:igsn-shape:dcterms-created>
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "There _MAY_ be maximum one dcterms:created where the value has datatype `xsd:date`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MAY_ be maximum one dcterms:created where the value has datatype `xsd:date`." ;
+    sh:name "dcterms:created" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:created ;
+.
+
+<urn:igsn-shape:dcterms-modified>
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "There _MAY_ be maximum one dcterms:modified where the value has datatype `xsd:date`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MAY_ be maximum one dcterms:modified where the value has datatype `xsd:date`." ;
+    sh:name "dcterms:modified" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:modified ;
 .
 
 <urn:igsn-shape:dcterms-publisher>
@@ -241,6 +272,71 @@ tern-shapes:IGSN
     sh:message "There _MAY_ be one dcterms:subject where the value node is a skos:Concept." ;
     sh:name "dcterms:subject" ;
     sh:path dcterms:subject ;
+.
+
+<urn:igsn-shape:dcterms-isPartOf>
+    a sh:PropertyShape ;
+    sh:class rdfs:Resource ;
+    sh:description "There _MAY_ be one dcterms:isPartOf where the value node is a rdfs:Resource." ;
+    sh:message "There _MAY_ be one dcterms:isPartOf where the value node is a rdfs:Resource." ;
+    sh:name "dcterms:isPartOf" ;
+    sh:path dcterms:isPartOf ;
+.
+
+<urn:igsn-shape:dcterms-hasPart>
+    a sh:PropertyShape ;
+    sh:class rdfs:Resource ;
+    sh:description "There _MAY_ be one dcterms:hasPart where the value node is a rdfs:Resource." ;
+    sh:message "There _MAY_ be one dcterms:hasPart where the value node is a rdfs:Resource." ;
+    sh:name "dcterms:hasPart" ;
+    sh:path dcterms:hasPart ;
+.
+
+<urn:igsn-shape:geo-hasGeometry>
+    a sh:PropertyShape ;
+    sh:class geo:Geometry ;
+    sh:description "There _MAY_ be one geo:hasGeometry where the value node is a geo:Geometry." ;
+    sh:message "There _MAY_ be one geo:hasGeometry where the value node is a geo:Geometry." ;
+    sh:name "geo:hasGeometry" ;
+    sh:path geo:hasGeometry ;
+.
+
+<urn:igsn-shape:foaf-page>
+    a sh:PropertyShape ;
+    sh:class rdfs:Resource ;
+    sh:description "There _MAY_ be one foaf:page where the value node is a rdfs:Resource." ;
+    sh:message "There _MAY_ be one foaf:page where the value node is a rdfs:Resource." ;
+    sh:name "foaf:page" ;
+    sh:path foaf:page ;
+.
+
+<urn:igsn-shape:void-inDataset>
+    a sh:PropertyShape ;
+    sh:class tern:RDFDataset ;
+    sh:description "There _MAY_ be one void:inDataset where the value node is a tern:RDFDataset." ;
+    sh:message "There _MAY_ be one void:inDataset where the value node is a tern:RDFDataset." ;
+    sh:name "void:inDataset" ;
+    sh:path void:inDataset ;
+.
+
+<urn:igsn-shape:dcterms-description>
+    a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:description "There _MAY_ be one dcterms:description where the value node is a literal." ;
+    sh:message "There _MAY_ be one dcterms:description where the value node is a literal." ;
+    sh:name "dcterms:description" ;
+    sh:path dcterms:description ;
+.
+
+<urn:igsn-shape:dcat-landingPage>
+    a sh:PropertyShape ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:anyURI ;
+    sh:description "There _MAY_ be one dcat:landingPage where the value node is a literal with datatype `xsd:anyURI`." ;
+    sh:message "There _MAY_ be one dcat:landingPage where the value node is a literal with datatype `xsd:anyURI`." ;
+    sh:name "dcat:landingPage" ;
+    sh:path dcat:landingPage ;
 .
 
 <urn:igsn-shape:dcterms-title>
