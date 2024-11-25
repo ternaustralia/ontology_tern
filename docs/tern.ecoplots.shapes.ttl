@@ -61,6 +61,123 @@ tern-shapes:IGSN
     sh:path tern:producer ;
 .
 
+<urn:igsn-shape:tern-resourceProvider>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:resourceProvider where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:resourceProvider where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:resourceProvider" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:resourceProvider ;
+.
+
+<urn:igsn-shape:tern-custodian>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:custodian where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:custodian where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:custodian" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:custodian ;
+.
+
+<urn:igsn-shape:tern-owner>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:owner where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:owner where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:owner" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:owner ;
+.
+
+<urn:igsn-shape:tern-user>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:user where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:user where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:user" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:user ;
+.
+
+<urn:igsn-shape:tern-distributor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:distributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:distributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:distributor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:distributor ;
+.
+
+<urn:igsn-shape:tern-originator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:originator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:originator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:originator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:originator ;
+.
+
+<urn:igsn-shape:tern-principalInvestigator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:principalInvestigator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:principalInvestigator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:principalInvestigator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:principalInvestigator ;
+.
+
+<urn:igsn-shape:tern-processor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:processor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:processor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:processor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:processor ;
+.
+
+<urn:igsn-shape:tern-sponsor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:sponsor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:sponsor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:sponsor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:sponsor ;
+.
+
+<urn:igsn-shape:tern-mediator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:mediator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:mediator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:mediator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:mediator ;
+.
+
+<urn:igsn-shape:tern-rightsHolder>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:rightsHolder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:rightsHolder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:rightsHolder" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:rightsHolder ;
+.
+
+<urn:igsn-shape:tern-contributor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:contributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:contributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:contributor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:contributor ;
+.
+
+<urn:igsn-shape:tern-stakeholder>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:stakeholder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:stakeholder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:stakeholder" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:stakeholder ;
+.
+
 <urn:igsn-shape:dcat-keyword>
     a sh:PropertyShape ;
     sh:datatype xsd:string ;
