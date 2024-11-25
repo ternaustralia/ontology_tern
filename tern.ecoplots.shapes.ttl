@@ -1,1 +1,420 @@
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema1: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+tern-shapes:IGSN
+    a sh:NodeShape ;
+    rdfs:label "IGSN" ;
+    sh:property
+        <urn:igsn-shape:adms-identifier> ,
+        <urn:igsn-shape:dcat-keyword> ,
+        <urn:igsn-shape:dcat-landingPage> ,
+        <urn:igsn-shape:dcterms-created> ,
+        <urn:igsn-shape:dcterms-creator> ,
+        <urn:igsn-shape:dcterms-description> ,
+        <urn:igsn-shape:dcterms-hasPart> ,
+        <urn:igsn-shape:dcterms-identifier> ,
+        <urn:igsn-shape:dcterms-isPartOf> ,
+        <urn:igsn-shape:dcterms-issued> ,
+        <urn:igsn-shape:dcterms-modified> ,
+        <urn:igsn-shape:dcterms-publisher> ,
+        <urn:igsn-shape:dcterms-subject> ,
+        <urn:igsn-shape:dcterms-title> ,
+        <urn:igsn-shape:dcterms-type> ,
+        <urn:igsn-shape:foaf-page> ,
+        <urn:igsn-shape:geo-hasGeometry> ,
+        <urn:igsn-shape:tern-collaborator> ,
+        <urn:igsn-shape:tern-contributor> ,
+        <urn:igsn-shape:tern-custodian> ,
+        <urn:igsn-shape:tern-distributor> ,
+        <urn:igsn-shape:tern-editor> ,
+        <urn:igsn-shape:tern-funder> ,
+        <urn:igsn-shape:tern-mediator> ,
+        <urn:igsn-shape:tern-originator> ,
+        <urn:igsn-shape:tern-owner> ,
+        <urn:igsn-shape:tern-principalInvestigator> ,
+        <urn:igsn-shape:tern-processor> ,
+        <urn:igsn-shape:tern-producer> ,
+        <urn:igsn-shape:tern-resourceProvider> ,
+        <urn:igsn-shape:tern-rightsHolder> ,
+        <urn:igsn-shape:tern-sampleType> ,
+        <urn:igsn-shape:tern-sponsor> ,
+        <urn:igsn-shape:tern-stakeholder> ,
+        <urn:igsn-shape:tern-user> ,
+        <urn:igsn-shape:void-inDataset> ;
+    sh:targetClass tern:IGSN ;
+.
+
+<urn:igsn-shape:adms-identifier>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MAY_ be one adms:identifier where the value node is a literal." ;
+    sh:message "There _MAY_ be one adms:identifier where the value node is a literal." ;
+    sh:name "adms:identifier" ;
+    sh:nodeKind sh:Literal ;
+    sh:path adms:identifier ;
+.
+
+<urn:igsn-shape:dcat-keyword>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MAY_ be one dcat:keyword where the value node is a literal." ;
+    sh:message "There _MAY_ be one dcat:keyword where the value node is a literal." ;
+    sh:name "dcat:keyword" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcat:keyword ;
+.
+
+<urn:igsn-shape:dcat-landingPage>
+    a sh:PropertyShape ;
+    sh:datatype xsd:anyURI ;
+    sh:description "There _MAY_ be one dcat:landingPage where the value node is a literal with datatype `xsd:anyURI`." ;
+    sh:message "There _MAY_ be one dcat:landingPage where the value node is a literal with datatype `xsd:anyURI`." ;
+    sh:name "dcat:landingPage" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcat:landingPage ;
+.
+
+<urn:igsn-shape:dcterms-created>
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "There _MAY_ be maximum one dcterms:created where the value has datatype `xsd:date`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MAY_ be maximum one dcterms:created where the value has datatype `xsd:date`." ;
+    sh:name "dcterms:created" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:created ;
+.
+
+<urn:igsn-shape:dcterms-creator>
+    a sh:PropertyShape ;
+    sh:description "There _MUST_ be exactly one dcterms:creator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:creator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:creator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path dcterms:creator ;
+.
+
+<urn:igsn-shape:dcterms-description>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MAY_ be one dcterms:description where the value node is a literal." ;
+    sh:message "There _MAY_ be one dcterms:description where the value node is a literal." ;
+    sh:name "dcterms:description" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:description ;
+.
+
+<urn:igsn-shape:dcterms-hasPart>
+    a sh:PropertyShape ;
+    sh:class rdfs:Resource ;
+    sh:description "There _MAY_ be one dcterms:hasPart where the value node is a rdfs:Resource." ;
+    sh:message "There _MAY_ be one dcterms:hasPart where the value node is a rdfs:Resource." ;
+    sh:name "dcterms:hasPart" ;
+    sh:path dcterms:hasPart ;
+.
+
+<urn:igsn-shape:dcterms-identifier>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MUST_ be exactly one dcterms:identifier where the value node is a literal." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:identifier where the value node is a literal." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:identifier" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:identifier ;
+.
+
+<urn:igsn-shape:dcterms-isPartOf>
+    a sh:PropertyShape ;
+    sh:class rdfs:Resource ;
+    sh:description "There _MAY_ be one dcterms:isPartOf where the value node is a rdfs:Resource." ;
+    sh:message "There _MAY_ be one dcterms:isPartOf where the value node is a rdfs:Resource." ;
+    sh:name "dcterms:isPartOf" ;
+    sh:path dcterms:isPartOf ;
+.
+
+<urn:igsn-shape:dcterms-issued>
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "There _MAY_ be maximum one dcterms:issued where the value has datatype `xsd:date`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MAY_ be maximum one dcterms:issued where the value has datatype `xsd:date`." ;
+    sh:name "dcterms:issued" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:issued ;
+.
+
+<urn:igsn-shape:dcterms-modified>
+    a sh:PropertyShape ;
+    sh:datatype xsd:date ;
+    sh:description "There _MAY_ be maximum one dcterms:modified where the value has datatype `xsd:date`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MAY_ be maximum one dcterms:modified where the value has datatype `xsd:date`." ;
+    sh:name "dcterms:modified" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:modified ;
+.
+
+<urn:igsn-shape:dcterms-publisher>
+    a sh:PropertyShape ;
+    sh:description "There _MUST_ be exactly one dcterms:publisher where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:publisher where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:publisher" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path dcterms:publisher ;
+.
+
+<urn:igsn-shape:dcterms-subject>
+    a sh:PropertyShape ;
+    sh:class skos:Concept ;
+    sh:description "There _MAY_ be one dcterms:subject where the value node is a skos:Concept." ;
+    sh:message "There _MAY_ be one dcterms:subject where the value node is a skos:Concept." ;
+    sh:name "dcterms:subject" ;
+    sh:path dcterms:subject ;
+.
+
+<urn:igsn-shape:dcterms-title>
+    a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "There _MUST_ be exactly one dcterms:title where the value node is a literal." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:title where the value node is a literal." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:title" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:title ;
+.
+
+<urn:igsn-shape:dcterms-type>
+    a sh:PropertyShape ;
+    sh:description "There _MUST_ be exactly one dcterms:type." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one dcterms:type." ;
+    sh:minCount 1 ;
+    sh:name "dcterms:type" ;
+    sh:path dcterms:type ;
+.
+
+<urn:igsn-shape:foaf-page>
+    a sh:PropertyShape ;
+    sh:class rdfs:Resource ;
+    sh:description "There _MAY_ be one foaf:page where the value node is a rdfs:Resource." ;
+    sh:message "There _MAY_ be one foaf:page where the value node is a rdfs:Resource." ;
+    sh:name "foaf:page" ;
+    sh:path foaf:page ;
+.
+
+<urn:igsn-shape:geo-hasGeometry>
+    a sh:PropertyShape ;
+    sh:class geo:Geometry ;
+    sh:description "There _MAY_ be one geo:hasGeometry where the value node is a geo:Geometry." ;
+    sh:message "There _MAY_ be one geo:hasGeometry where the value node is a geo:Geometry." ;
+    sh:name "geo:hasGeometry" ;
+    sh:path geo:hasGeometry ;
+.
+
+<urn:igsn-shape:tern-collaborator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:collaborator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:collaborator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:collaborator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:collaborator ;
+.
+
+<urn:igsn-shape:tern-contributor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:contributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:contributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:contributor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:contributor ;
+.
+
+<urn:igsn-shape:tern-custodian>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:custodian where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:custodian where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:custodian" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:custodian ;
+.
+
+<urn:igsn-shape:tern-distributor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:distributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:distributor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:distributor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:distributor ;
+.
+
+<urn:igsn-shape:tern-editor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:editor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:editor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:editor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:editor ;
+.
+
+<urn:igsn-shape:tern-funder>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:funder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:funder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:funder" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:funder ;
+.
+
+<urn:igsn-shape:tern-mediator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:mediator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:mediator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:mediator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:mediator ;
+.
+
+<urn:igsn-shape:tern-originator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:originator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:originator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:originator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:originator ;
+.
+
+<urn:igsn-shape:tern-owner>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:owner where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:owner where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:owner" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:owner ;
+.
+
+<urn:igsn-shape:tern-principalInvestigator>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:principalInvestigator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:principalInvestigator where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:principalInvestigator" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:principalInvestigator ;
+.
+
+<urn:igsn-shape:tern-processor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:processor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:processor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:processor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:processor ;
+.
+
+<urn:igsn-shape:tern-producer>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:producer where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:producer where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:producer" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:producer ;
+.
+
+<urn:igsn-shape:tern-resourceProvider>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:resourceProvider where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:resourceProvider where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:resourceProvider" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:resourceProvider ;
+.
+
+<urn:igsn-shape:tern-rightsHolder>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:rightsHolder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:rightsHolder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:rightsHolder" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:rightsHolder ;
+.
+
+<urn:igsn-shape:tern-sampleType>
+    a sh:PropertyShape ;
+    sh:class skos:Concept ;
+    sh:description "There _MUST_ be exactly one tern:sampleType where the value node is a skos:Concept." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ be exactly one tern:sampleType where the value node is a skos:Concept." ;
+    sh:minCount 1 ;
+    sh:name "tern:sampleType" ;
+    sh:path tern:sampleType ;
+.
+
+<urn:igsn-shape:tern-sponsor>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:sponsor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:sponsor where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:sponsor" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:sponsor ;
+.
+
+<urn:igsn-shape:tern-stakeholder>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:stakeholder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:stakeholder where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:stakeholder" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:stakeholder ;
+.
+
+<urn:igsn-shape:tern-user>
+    a sh:PropertyShape ;
+    sh:description "There _MAY_ be one tern:user where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:message "There _MAY_ be one tern:user where the value node is a `schema:Person` or `schema:Organization`." ;
+    sh:name "tern:user" ;
+    sh:node <urn:igsn-shape:person-org> ;
+    sh:path tern:user ;
+.
+
+<urn:igsn-shape:void-inDataset>
+    a sh:PropertyShape ;
+    sh:class tern:RDFDataset ;
+    sh:description "There _MAY_ be one void:inDataset where the value node is a tern:RDFDataset." ;
+    sh:message "There _MAY_ be one void:inDataset where the value node is a tern:RDFDataset." ;
+    sh:name "void:inDataset" ;
+    sh:path void:inDataset ;
+.
+
+<urn:igsn-shape:person-org>
+    a sh:NodeShape ;
+    rdfs:label "Person and Organization" ;
+    rdfs:comment "The union of Person and Organization" ;
+    sh:message "The node is either a Person or Organization" ;
+    sh:or (
+            [
+                sh:class schema1:Person
+            ]
+            [
+                sh:class schema1:Organization
+            ]
+        ) ;
+.
 
