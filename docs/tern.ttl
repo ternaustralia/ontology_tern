@@ -226,17 +226,6 @@ tern:Dimension
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
-        ] ,
-        [
-            a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern:length
         ] ,
@@ -261,6 +250,17 @@ tern:Dimension
                         )
                 ] ;
             owl:onProperty tern:length
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:allValuesFrom [
+                    a owl:Class ;
+                    owl:unionOf (
+                            xsd:double
+                            xsd:integer
+                        )
+                ] ;
+            owl:onProperty tern:width
         ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
@@ -807,6 +807,13 @@ tern:observationType
     rdfs:label "observation type" ;
     skos:definition "The type of observation." ;
     skos:example "human observation, machine observation." ;
+.
+
+tern:platformType
+    a owl:ObjectProperty ;
+    rdfs:label "platform type" ;
+    rdfs:range skos:Concept ;
+    skos:definition "The type of platform to conduct surveys." ;
 .
 
 tern:producer
