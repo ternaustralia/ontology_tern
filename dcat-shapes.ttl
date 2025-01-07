@@ -37,8 +37,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have maximum 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
             sh:node :DateOrDateTimeDataType_Shape ;
             sh:path dcterms:created ;
             sh:severity sh:Violation
@@ -80,8 +79,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have maximum 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
             sh:path dcterms:modified ;
             sh:severity sh:Violation ;
             sh:shape :DateOrDateTimeDataType_Shape
@@ -131,8 +129,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:CatalogRecord` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:node :PersonOrg_Shape ;
             sh:path dcat:contactPoint ;
             sh:severity sh:Violation
@@ -630,16 +627,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
             sh:node :DateOrDateTimeDataType_Shape ;
             sh:path dcterms:created ;
             sh:severity sh:Violation
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcat:version` predicate where the value node is a literal." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `dcat:version` predicate where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path dcat:version ;
             sh:severity sh:Violation
@@ -697,8 +692,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:class tern:Extent ;
-            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `tern:hasExtent` predicate where the value node is a `tern:Extent`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:hasExtent` predicate where the value node is a `tern:Extent`." ;
             sh:path tern:hasExtent ;
             sh:severity sh:Violation
         ] ,
@@ -753,8 +747,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
             sh:path dcterms:modified ;
             sh:severity sh:Violation ;
             sh:shape :DateOrDateTimeDataType_Shape
@@ -945,8 +938,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `dcterms:publisher` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:publisher` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:node :PersonOrg_Shape ;
             sh:path dcterms:publisher ;
             sh:severity sh:Violation
@@ -974,8 +966,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:minCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
             sh:node :PersonOrg_Shape ;
             sh:path dcat:contactPoint ;
             sh:severity sh:Violation
