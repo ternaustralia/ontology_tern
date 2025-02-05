@@ -311,6 +311,18 @@ tern:FluxTower
     rdfs:subClassOf
         [
             a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:string ;
+            owl:onProperty tern:ozfluxID
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass xsd:string ;
+            owl:onProperty tern:igbpCode
+        ] ,
+        [
+            a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty dcterms:description
         ] ,
@@ -1543,5 +1555,21 @@ tern:Value
             xsd:string
             xsd:int
         ) ;
+.
+
+tern:ozfluxID
+    a rdf:Property ;
+    rdfs:label "ozflux ID" ;
+    rdfs:seeAlso <https://www.ozflux.org.au/> ;
+    skos:definition "The unique identifier for flux towers in the OzFlux network, which provides observations of energy, carbon and water exchange between the atmosphere and Australian/NZ ecosystems." ;
+    skos:example "YarIrr" ;
+.
+
+tern:igbpCode
+    a rdf:Property ;
+    rdfs:label "IGBP code" ;
+    rdfs:seeAlso <https://fluxnet.org/data/badm-data-templates/igbp-classification/> ;
+    skos:definition "The IGBP classification code that identifies the biome type and land cover characteristics of a flux tower site." ;
+    skos:example "GRA - Grasslands: Lands with herbaceous types of cover. Tree and shrub cover is less than 10%." ;
 .
 

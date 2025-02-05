@@ -403,6 +403,7 @@ tern-shapes:Site
     a sh:NodeShape ;
     rdfs:label "Site" ;
     sh:property
+        tern-shapes:Site-featureType ,
         tern-shapes:Site-dimension ,
         tern-shapes:Site-hasSiteVisit ,
         tern-shapes:Site-locationProcedure ,
@@ -1316,6 +1317,17 @@ tern-shapes:Sensor-observes
     sh:name "sosa:observes" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:observes ;
+.
+
+tern-shapes:Site-featureType
+    a sh:PropertyShape ;
+    sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Site` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI." ;
+    sh:minCount 1 ;
+    sh:name "tern:featureType" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:featureType ;
 .
 
 tern-shapes:Site-dimension
