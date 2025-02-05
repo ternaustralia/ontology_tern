@@ -1573,3 +1573,11 @@ tern:igbpCode
     skos:example "GRA - Grasslands: Lands with herbaceous types of cover. Tree and shrub cover is less than 10%." ;
 .
 
+tern:climateCode
+    a rdf:Property ;
+    rdfs:label "Köppen climate code" ;
+    rdfs:seeAlso <https://fluxnet.org/data/badm-data-templates/koppen-climate-classification/> ;
+    skos:definition "The Köppen Climate Classification code that categorizes climates based on temperature, precipitation, and seasonal patterns. It was developed by Wladimir Köppen in 1884 and has been refined over time." ;
+    skos:example "Bwh - Desert: warm winter" ;
+.
+

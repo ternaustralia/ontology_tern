@@ -256,23 +256,8 @@ tern-shapes:ManagedFeature
     a sh:NodeShape ;
     rdfs:label "Feature which is managed for TERN purposes" ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:date ;
-            sh:description "The date when, e.g., a Site is ready to commence its operations, after it is successfully installed and tested." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "tern:dateCommissioned" ;
-            sh:path tern:dateCommissioned
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:datatype xsd:date ;
-            sh:description "The date when, e.g., a Site is decommissioned or stopped operating." ;
-            sh:maxCount 1 ;
-            sh:name "tern:dateDecommissioned" ;
-            sh:path tern:dateDecommissioned
-        ] ;
+        tern-shapes:tern-dateCommissioned ,
+        tern-shapes:tern-dateDecommissioned ;
 .
 
 tern-shapes:MaterialSample
@@ -329,7 +314,7 @@ tern-shapes:RDFDataset
         tern-shapes:RDFDataset-created ,
         tern-shapes:RDFDataset-creator ,
         tern-shapes:RDFDataset-date ,
-        tern-shapes:RDFDataset-description ,
+        tern-shapes:dcterms-description ,
         tern-shapes:RDFDataset-issued ,
         tern-shapes:RDFDataset-license ,
         tern-shapes:RDFDataset-modified ,
@@ -411,6 +396,20 @@ tern-shapes:Site
         tern-shapes:tern-locationDescription ,
         tern-shapes:tern-siteDescription ;
     sh:targetClass tern:Site ;
+.
+
+tern-shapes:Platform
+    a sh:NodeShape ;
+    rdfs:label "Platform" ;
+    sh:property
+        tern-shapes:tern-dateCommissioned ,
+        tern-shapes:tern-dateDecommissioned ,
+        tern-shapes:tern-purpose ,
+        tern-shapes:dcterms-description ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:tern-climateCode ,
+        tern-shapes:tern-platformType ;
+    sh:targetClass tern:Platform ;
 .
 
 tern-shapes:SiteVisit
@@ -662,7 +661,7 @@ tern-shapes:Association-agent
     reg:status reg:statusStable ;
     skos:prefLabel "agent" ;
     sh:class prov:Agent ;
-    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity." ;
+    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity." ;
     sh:maxCount 1 ;
     sh:message "A `prov:Association` _MUST_ have exactly 1 `prov:agent` predicate where the value node is an IRI of an individual with the type `prov:Agent`." ;
     sh:minCount 1 ;
@@ -723,7 +722,7 @@ tern-shapes:Attribution-agent
     reg:status reg:statusStable ;
     skos:prefLabel "agent" ;
     sh:class prov:Agent ;
-    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity." ;
+    sh:description "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity." ;
     sh:maxCount 1 ;
     sh:message "A `prov:Attribution` _MUST_ have exactly 1 `prov:agent` predicate where the value node is an IRI of an individual with the type `prov:Agent`." ;
     sh:minCount 1 ;
@@ -1074,15 +1073,26 @@ tern-shapes:RDFDataset-date
     sh:path dcterms:date ;
 .
 
-tern-shapes:RDFDataset-description
+tern-shapes:dcterms-description
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "description" ;
     sh:datatype xsd:string ;
-    sh:description "A textual description of the dataset." ;
-    sh:message "A `tern:RDFDataset` _MAY_ have a `dcterms:description` predicate where the value node is a literal with the datatype `xsd:string`." ;
+    sh:description "A textual description." ;
+    sh:message "A `dcterms:description` predicate has a literal value with the datatype `xsd:string`." ;
     sh:name "dcterms:description" ;
     sh:path dcterms:description ;
+.
+
+tern-shapes:tern-purpose
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "purpose" ;
+    sh:datatype xsd:string ;
+    sh:description "Describe the purpose of something." ;
+    sh:message "A `tern:purpose` predicate has a literal value with the datatype `xsd:string`." ;
+    sh:name "tern:purpose" ;
+    sh:path tern:purpose ;
 .
 
 tern-shapes:RDFDataset-issued
@@ -1328,6 +1338,17 @@ tern-shapes:Site-featureType
     sh:name "tern:featureType" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:featureType ;
+.
+
+tern-shapes:tern-platformType
+    a sh:PropertyShape ;
+    sh:class skos:Concept ;
+    sh:description "The type of platform." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Platform` _MUST_ have exactly 1 `tern:platformType` predicate where the value node is a skos:Concept." ;
+    sh:minCount 1 ;
+    sh:name "tern:platformType" ;
+    sh:path tern:platformType ;
 .
 
 tern-shapes:Site-dimension
@@ -2669,6 +2690,16 @@ tern-shapes:dcterms-identifier
     sh:path dcterms:identifier ;
 .
 
+tern-shapes:tern-climateCode
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "climate code" ;
+    sh:description "The Köppen Climate Classification code that categorizes climates based on temperature, precipitation, and seasonal patterns. It was developed by Wladimir Köppen in 1884 and has been refined over time." ;
+    sh:message "A `tern:climateCode` predicate _MAY_ have an IRI value or a literal value." ;
+    sh:name "tern:climateCode" ;
+    sh:path tern:climateCode ;
+.
+
 tern-shapes:void-inDataset
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2693,5 +2724,32 @@ tern-shapes:dcterms-type
     sh:name "dcterms:type" ;
     sh:nodeKind sh:IRI ;
     sh:path dcterms:type ;
+.
+
+tern-shapes:tern-dateCommissioned
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "date commissioned" ;
+    sh:datatype xsd:date ;
+    sh:description "The date when, e.g., a Site is ready to commence its operations, after it is successfully installed and tested." ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:message "A managed feature _MUST_ have exactly 1 `tern:dateCommissioned` predicate where the value node is a literal with the datatype `xsd:date`." ;
+    sh:name "tern:dateCommissioned" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:dateCommissioned ;
+.
+
+tern-shapes:tern-dateDecommissioned
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "date decommissioned" ;
+    sh:datatype xsd:date ;
+    sh:description "The date when, e.g., a Site is decommissioned or stopped operating." ;
+    sh:maxCount 1 ;
+    sh:message "A managed feature _MAY_ have a maximum of 1 `tern:dateDecommissioned` predicate where the value node is a literal with the datatype `xsd:date`." ;
+    sh:name "tern:dateDecommissioned" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:dateDecommissioned ;
 .
 
