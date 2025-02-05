@@ -680,6 +680,55 @@ tern:funder
     skos:example "Environment department is one of funders for ant survey project." ;
 .
 
+tern:technician
+    a rdf:Property ;
+    rdfs:label "technician" ;
+    skos:definition "The technician of a project, platform or system." ;
+    skos:example "Alice Smith is one of technicians for ant survey project." ;
+.
+
+tern:dataManager
+    a rdf:Property ;
+    rdfs:label "data manager" ;
+    skos:definition "The data manager of a project, platform or system." ;
+    skos:example "Alice Smith is one of data managers for ant survey project." ;
+.
+
+tern:principalInvestigator
+    a rdf:Property ;
+    rdfs:label "principal investigator" ;
+    skos:definition "The principal investigator of a project, platform or system." ;
+    skos:example "Alice Smith is one of principal investigators for ant survey project." ;
+.
+
+tern:owner
+    a rdf:Property ;
+    rdfs:label "owner" ;
+    skos:definition "The owner of something." ;
+    skos:example "Environment department is one of owners for ant survey project." ;
+.
+
+tern:manufacturer
+    a rdf:Property ;
+    rdfs:label "manufacturer" ;
+    skos:definition "The manufacturer of a system." ;
+    skos:example "The manufacturer of a sensor." ;
+.
+
+tern:isOperatedBy
+    a rdf:Property ;
+    rdfs:label "is operated by" ;
+    skos:definition "The entity that operates a platform or system." ;
+    skos:example "TERN operates sensors." ;
+.
+
+tern:isManagedBy
+    a rdf:Property ;
+    rdfs:label "is managed by" ;
+    skos:definition "The entity that manages a platform or system." ;
+    skos:example "TERN manages sensors." ;
+.
+
 tern:globalValue
     a rdf:Property ;
     rdfs:label "global value" ;

@@ -111,7 +111,8 @@ tern-shapes:Deployment
     rdfs:label "Deployment" ;
     sh:property
         tern-shapes:ssn-deployedOnPlatform ,
-        tern-shapes:ssn-deployedSystem ;
+        tern-shapes:ssn-deployedSystem ,
+        tern-shapes:geo-hasGeometry ;
     sh:targetClass tern:Deployment ;
 .
 
@@ -514,6 +515,18 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:targetClass tern:Value ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
+    ] ;
+    sh:property [
+        sh:path tern:unit ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "A `tern:Value` _MAY_ have one `tern:unit` predicate where the value is an IRI." ;
+    ] ;
 .
 
 tern-shapes:VerticalExtent
