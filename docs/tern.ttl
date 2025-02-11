@@ -180,6 +180,23 @@ tern:Deployment
     skos:prefLabel "Deployment" ;
 .
 
+tern:MeasurementRange
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf ssn-system:MeasurementRange , ssn-system:SystemProperty ;
+    skos:definition "The set of values that the Sensor can return as the Result of an Observation under the defined Conditions with the defined system properties."@en ;
+    skos:example "For example, a temperature sensor that can measure temperatures between -40°C and +80°C, or a humidity sensor that can measure relative humidity from 0% to 100%." ;
+    skos:prefLabel "Measurement Range" ;
+.
+
+tern:Calibration
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    skos:definition "An activity to calibrate properties of a System (such as a Sensor or Sampler) to ensure accurate measurements and proper functioning of the device."@en ;
+    skos:example "For example, calibrating a temperature sensor against a reference thermometer to ensure accurate temperature readings, or calibrating a pH meter using standard buffer solutions." ;
+    skos:prefLabel "Calibration" ;
+.
+
 tern:DigitalCamera
     a owl:Class ;
     rdfs:label "Digital Camera" ;
@@ -681,6 +698,13 @@ tern:funder
     skos:example "Environment department is one of funders for ant survey project." ;
 .
 
+tern:calibratedBy
+    a rdf:Property ;
+    rdfs:label "calibrated by" ;
+    skos:definition "The entity that calibrates a System." ;
+    skos:example "The temperature sensor was calibrated by TERN's calibration laboratory on 2024-01-15." ;
+.
+
 tern:technician
     a rdf:Property ;
     rdfs:label "technician" ;
@@ -807,6 +831,34 @@ tern:hasValue
     rdfs:label "has value" ;
     rdfs:range tern:Value ;
     skos:definition "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) which encapulates the value of this thing." ;
+.
+
+tern:hasCalibration
+    a owl:ObjectProperty ;
+    rdfs:label "has calibration" ;
+    rdfs:range tern:Calibration ;
+    skos:definition "A link to a [tern:Calibration](https://w3id.org/tern/ontologies/tern/Calibration) which represents a calibration activity performed on this System's properties to ensure accurate measurements and proper functioning." ;
+.
+
+tern:calibrationReferenceResult
+    a owl:ObjectProperty ;
+    rdfs:label "calibration reference result" ;
+    rdfs:range tern:Value ;
+    skos:definition "Links to a reference value used during calibration. This represents the known, standard, or expected value against which the actual measurement is compared." ;
+.
+
+tern:calibrationActualResult
+    a owl:ObjectProperty ;
+    rdfs:label "calibration actual result" ;
+    rdfs:range tern:Value ;
+    skos:definition "Links to the actual measured value obtained during calibration. This represents the value returned by the system or device being calibrated." ;
+.
+
+tern:calibrationOffset
+    a owl:ObjectProperty ;
+    rdfs:label "calibration offset" ;
+    rdfs:range tern:Value ;
+    skos:definition "Links to a value representing the difference between the reference and actual results during calibration. This offset can be used for measurement corrections." ;
 .
 
 tern:instrumentType

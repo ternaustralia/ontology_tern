@@ -25,6 +25,7 @@ PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX void: <http://rdfs.org/ns/void#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
 
 tern-shapes:
     a owl:Ontology ;
@@ -437,6 +438,35 @@ tern-shapes:Survey
     sh:targetClass tern:Survey ;
 .
 
+tern-shapes:MeasurementRange
+    a sh:NodeShape ;
+    rdfs:label "Measurement Range" ;
+    sh:property
+        tern-shapes:tern-unit ,
+        tern-shapes:qudt-minInclusive ,
+        tern-shapes:qudt-maxInclusive ,
+        tern-shapes:qudt-minExclusive ,
+        tern-shapes:qudt-maxExclusive ;
+    sh:targetClass tern:MeasurementRange ;
+.
+
+tern-shapes:Calibration
+    a sh:NodeShape ;
+    rdfs:label "Calibration" ;
+    sh:property
+        tern-shapes:tern-calibratesProperty ,
+        tern-shapes:tern-verifiesCapability , 
+        tern-shapes:tern-hasCalibrationReferenceResult ,
+        tern-shapes:tern-hasCalibrationActualResult ,
+        tern-shapes:tern-hasCalibrationOffset ,
+        tern-shapes:dcterms-description ,
+        tern-shapes:sosa-usedProcedure ,
+        tern-shapes:prov-startedAtTime ,
+        tern-shapes:prov-endedAtTime ,
+        tern-shapes:tern-calibratedBy ;
+    sh:targetClass tern:Calibration ;
+.
+
 tern-shapes:System
     a sh:NodeShape ;
     rdfs:label "System" ;
@@ -455,7 +485,8 @@ tern-shapes:System
         tern-shapes:ssn-systems-hasOperatingProperty ,
         tern-shapes:ssn-systems-hasSystemCapability ,
         tern-shapes:ssn-systems-hasSystemProperty ,
-        tern-shapes:sosa-implements ;
+        tern-shapes:sosa-implements ,
+        tern-shapes:tern-hasCalibration ;
     sh:targetClass tern:System ;
 .
 
@@ -597,6 +628,18 @@ tern-shapes:tern-funder
     sh:name "tern:funder" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:funder ;
+.
+
+tern-shapes:tern-calibratedBy
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "calibrated by" ;
+    sh:class prov:Agent ;
+    sh:description "Indicates the agent (person, organization, or service) that performed the calibration activity. This property links a Calibration to the responsible agent." ;
+    sh:message "A `tern:calibratedBy` predicate _MUST_ have an IRI value of type `prov:Agent`." ;
+    sh:name "tern:calibratedBy" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:calibratedBy ;
 .
 
 tern-shapes:tern-producer
@@ -2333,6 +2376,45 @@ tern-shapes:tern-hasValue
     sh:path tern:hasValue ;
 .
 
+tern-shapes:tern-calibrationReferenceResult
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "calibration reference result" ;
+    sh:class tern:Value ;
+    sh:description "Links to a reference value used during calibration. This represents the known, standard, or expected value against which the actual measurement is compared." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Calibration` _MAY_ have maximum one `tern:calibrationReferenceResult` predicate where the value is a blank node or IRI of type `tern:Value`." ;
+    sh:name "tern:calibrationReferenceResult" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:calibrationReferenceResult ;
+.
+
+tern-shapes:tern-calibrationActualResult
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "calibration actual result" ;
+    sh:class tern:Value ;
+    sh:description "Links to the actual measured value obtained during calibration. This represents the value returned by the system or device being calibrated." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Calibration` _MAY_ have maximum one `tern:calibrationActualResult` predicate where the value is a blank node or IRI of type `tern:Value`." ;
+    sh:name "tern:calibrationActualResult" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:calibrationActualResult ;
+.
+
+tern-shapes:tern-calibrationOffset
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "calibration offset" ;
+    sh:class tern:Value ;
+    sh:description "Links to a value representing the difference between the reference and actual results during calibration. This offset can be used for measurement corrections." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Calibration` _MAY_ have maximum one `tern:calibrationOffset` predicate where the value is a blank node or IRI of type `tern:Value`." ;
+    sh:name "tern:calibrationOffset" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:calibrationOffset ;
+.
+
 tern-shapes:tern-interventionType
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -2784,6 +2866,54 @@ tern-shapes:tern-unit
     sh:name "tern:unit" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:unit ;
+.
+
+tern-shapes:qudt-minInclusive
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "minimum inclusive value" ;
+    sh:description "The inclusive lower bound of the measurement range. This value represents the minimum value that can be measured by the sensor." ;
+    sh:maxCount 1 ;
+    sh:message "A `qudt:minInclusive` predicate _MAY_ have maximum one literal value representing the lower bound of the measurement range." ;
+    sh:name "qudt:minInclusive" ;
+    sh:nodeKind sh:Literal ;
+    sh:path qudt:minInclusive ;
+.
+
+tern-shapes:qudt-minExclusive
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "minimum exclusive value" ;
+    sh:description "The exclusive lower bound of the measurement range. This value represents the value just below the minimum that can be measured by the sensor." ;
+    sh:maxCount 1 ;
+    sh:message "A `qudt:minExclusive` predicate _MAY_ have maximum one literal value representing the exclusive lower bound of the measurement range." ;
+    sh:name "qudt:minExclusive" ;
+    sh:nodeKind sh:Literal ;
+    sh:path qudt:minExclusive ;
+.
+
+tern-shapes:qudt-maxInclusive
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "maximum inclusive value" ;
+    sh:description "The inclusive upper bound of the measurement range. This value represents the maximum value that can be measured by the sensor." ;
+    sh:maxCount 1 ;
+    sh:message "A `qudt:maxInclusive` predicate _MAY_ have maximum one literal value representing the upper bound of the measurement range." ;
+    sh:name "qudt:maxInclusive" ;
+    sh:nodeKind sh:Literal ;
+    sh:path qudt:maxInclusive ;
+.
+
+tern-shapes:qudt-maxExclusive
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "maximum exclusive value" ;
+    sh:description "The exclusive upper bound of the measurement range. This value represents the value just above the maximum that can be measured by the sensor." ;
+    sh:maxCount 1 ;
+    sh:message "A `qudt:maxExclusive` predicate _MAY_ have maximum one literal value representing the exclusive upper bound of the measurement range." ;
+    sh:name "qudt:maxExclusive" ;
+    sh:nodeKind sh:Literal ;
+    sh:path qudt:maxExclusive ;
 .
 
 tern-shapes:geo-hasGeometry
