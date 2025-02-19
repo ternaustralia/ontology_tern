@@ -129,8 +129,11 @@ tern-shapes:DateTime
 tern-shapes:Deployment
     a sh:NodeShape ;
     rdfs:label "Deployment" ;
+    sh:or (
+            tern-shapes:geo-hasGeometry
+            tern-shapes:sdo-spatial
+        ) ;
     sh:property
-        tern-shapes:geo-hasGeometry ,
         tern-shapes:ssn-deployedOnPlatform ,
         tern-shapes:ssn-deployedSystem ;
     sh:targetClass tern:Deployment ;
@@ -153,11 +156,14 @@ tern-shapes:Duration
 tern-shapes:FeatureOfInterest
     a sh:NodeShape ;
     rdfs:label "Feature of Interest" ;
+    sh:or (
+            tern-shapes:geo-hasGeometry
+            tern-shapes:sdo-spatial
+        ) ;
     sh:property
         tern-shapes:FeatureOfInterest-featureType ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
-        tern-shapes:geo-hasGeometry ,
         tern-shapes:prov-qualifiedAttribution ,
         tern-shapes:prov-wasAttributedTo ,
         tern-shapes:rdfs-comment ,
@@ -259,10 +265,13 @@ tern-shapes:Interval
 tern-shapes:Intervention
     a sh:NodeShape ;
     rdfs:label "Intervention" ;
+    sh:or (
+            tern-shapes:geo-hasGeometry
+            tern-shapes:sdo-spatial
+        ) ;
     sh:property
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
-        tern-shapes:geo-hasGeometry ,
         tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
         tern-shapes:prov-startedAtTime ,
@@ -303,11 +312,14 @@ tern-shapes:MeasurementRange
 tern-shapes:Observation
     a sh:NodeShape ;
     rdfs:label "Observation" ;
+    sh:or (
+            tern-shapes:geo-hasGeometry
+            tern-shapes:sdo-spatial
+        ) ;
     sh:property
         tern-shapes:Observation-hasResult ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
-        tern-shapes:geo-hasGeometry ,
         tern-shapes:prov-qualifiedAssociation ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:rdfs-comment ,
@@ -342,9 +354,12 @@ tern-shapes:ObservationCollection
 tern-shapes:Platform
     a sh:NodeShape ;
     rdfs:label "Platform" ;
+    sh:or (
+            tern-shapes:geo-hasGeometry
+            tern-shapes:sdo-spatial
+        ) ;
     sh:property
         tern-shapes:dcterms-description ,
-        tern-shapes:geo-hasGeometry ,
         tern-shapes:tern-climateCode ,
         tern-shapes:tern-dateCommissioned ,
         tern-shapes:tern-dateDecommissioned ,
@@ -403,12 +418,15 @@ tern-shapes:Sampler
 tern-shapes:Sampling
     a sh:NodeShape ;
     rdfs:label "Sampling" ;
+    sh:or (
+            tern-shapes:geo-hasGeometry
+            tern-shapes:sdo-spatial
+        ) ;
     sh:property
         tern-shapes:Sampling-hasResult ,
         tern-shapes:Sampling-madeBySampler ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
-        tern-shapes:geo-hasGeometry ,
         tern-shapes:prov-qualifiedAssociation ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:rdfs-comment ,
@@ -545,9 +563,12 @@ tern-shapes:Text
 tern-shapes:Transect
     a sh:NodeShape ;
     rdfs:label "Transect" ;
+    sh:or (
+            tern-shapes:Transect-hasGeometry
+            tern-shapes:Transect-spatial
+        ) ;
     sh:property
         tern-shapes:Transect-featureType ,
-        tern-shapes:Transect-hasGeometry ,
         tern-shapes:Transect-transectDirection ,
         tern-shapes:Transect-transectEndPoint ,
         tern-shapes:Transect-transectStartPoint ;
@@ -759,8 +780,10 @@ tern-shapes:tern-wasInformedBy
     sh:message "At least one (geo:hasGeoemtry, geo:sfWithin) must exist on itself or on a sample in the chain of samples)" ;
     sh:or (
             <urn:shape:geo-hasGeometry-min-1>
+            <urn:shape:sdo-spatial-min-1>
             <urn:shape:geo-sfWithin-min-1>
             <urn:shape:Observation-hasFeatureOfInterest>
+            <urn:shape:Sampling-hasResult-Site-sdo-spatial>
         ) ;
     sh:targetClass
         tern:Intervention ,
@@ -938,12 +961,19 @@ tern-shapes:Float-uncertainty
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "uncertainty" ;
-    sh:datatype xsd:double ;
     sh:description "Measurement error (±)." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Float` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:double`." ;
+    sh:message "A `tern:Float` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:double` or `xsd:float`." ;
     sh:name "tern:uncertainty" ;
     sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+        ) ;
     sh:path tern:uncertainty ;
 .
 
@@ -951,13 +981,20 @@ tern-shapes:Float-value
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "value" ;
-    sh:datatype xsd:double ;
     sh:description "Float value." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Float` _MUST_ have exactly 1 `rdf:value` where the value node is a literal with a datatype of `xsd:double`." ;
+    sh:message "A `tern:Float` _MUST_ have exactly 1 `rdf:value` where the value node is a literal with a datatype of `xsd:double` or `xsd:float`." ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
     sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+        ) ;
     sh:path rdf:value ;
 .
 
@@ -980,7 +1017,7 @@ tern-shapes:Integer-uncertainty
     skos:prefLabel "uncertainty" ;
     sh:description "Measurement error (±)." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Integer` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:integer` or `xsd:double`." ;
+    sh:message "A `tern:Integer` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:integer`, `xsd:double`, or `xsd:float`." ;
     sh:name "tern:uncertainty" ;
     sh:nodeKind sh:Literal ;
     sh:or (
@@ -989,6 +1026,9 @@ tern-shapes:Integer-uncertainty
             ]
             [
                 sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:float
             ]
         ) ;
     sh:path tern:uncertainty ;
@@ -1026,12 +1066,27 @@ tern-shapes:ObservationCollection-hasFeatureOfInterest
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
     skos:prefLabel "has feature of interest" ;
-    sh:class tern:FeatureOfInterest ;
     sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
     sh:maxCount 1 ;
     sh:message "A `tern:ObservationCollection` _MAY_ have a maximum of 1 `sosa:hasFeatureOfInterest` predicate where the value node is an IRI of type `tern:FeatureOfInterest`." ;
     sh:name "sosa:hasFeatureOfInterest" ;
-    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:FeatureOfInterest
+            ]
+            [
+                sh:class tern:Sample
+            ]
+            [
+                sh:class tern:MaterialSample
+            ]
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
     sh:path sosa:hasFeatureOfInterest ;
 .
 
@@ -1059,12 +1114,27 @@ tern-shapes:ObservationCollection-hasUltimateFeatureOfInterest
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
     skos:prefLabel "has ultimate feature of interest" ;
-    sh:class tern:FeatureOfInterest ;
     sh:description "Link to the ultimate feature of interest of an observation or act of sampling. This is useful when the proximate feature of interest is a sample of the ultimate feature of interest, directly or transitively." ;
     sh:maxCount 1 ;
     sh:message "A `tern:ObservationCollection` _MAY_ have a maximum of 1 `sosa:hasUltimateFeatureOfInterest` where the value node is an IRI of type `tern:FeatureOfInterest`." ;
     sh:name "sosa:hasUltimateFeatureOfInterest" ;
-    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:FeatureOfInterest
+            ]
+            [
+                sh:class tern:Sample
+            ]
+            [
+                sh:class tern:MaterialSample
+            ]
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
     sh:path sosa:hasUltimateFeatureOfInterest ;
 .
 
@@ -1336,15 +1406,33 @@ tern-shapes:Sample-isResultOf
 
 tern-shapes:Sample-isSampleOf
     a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "is sample of" ;
-    sh:class tern:FeatureOfInterest ;
-    sh:description "Relation from a Sample to the FeatureOfInterest that it is intended to be representative of." ;
-    sh:message "A `tern:Sample` _MUST_ have at least 1 `sosa:isSampleOf` predicate where the value node is an IRI of type `tern:FeatureOfInterest`." ;
-    sh:minCount 1 ;
-    sh:name "sosa:isSampleOf" ;
-    sh:nodeKind sh:IRI ;
-    sh:path sosa:isSampleOf ;
+    sh:description "At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths." ;
+    sh:name "Sample's sosa:isSampleOf or tern:hasSite" ;
+    sh:path [
+            sh:zeroOrMorePath [
+                    sh:alternativePath (
+                            sosa:isSampleOf
+                            tern:hasSite
+                        )
+                ]
+        ] ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [
+            sh:or (
+                    [
+                        sh:property <urn:shape:sdo-spatial-min-1>
+                    ]
+                    [
+                        sh:property <urn:shape:geo-hasGeometry-min-1>
+                    ]
+                    [
+                        sh:property <urn:shape:transectStartPoint-min-1>
+                    ]
+                    [
+                        sh:property <urn:shape:transectEndPoint-min-1>
+                    ]
+                )
+        ] ;
 .
 
 tern-shapes:Sampler-implements
@@ -1363,12 +1451,22 @@ tern-shapes:Sampling-hasResult
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "has result" ;
-    sh:class tern:Sample ;
     sh:description "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample." ;
     sh:message "A `tern:Sampling` _MUST_ have at least 1 `sosa:hasResult` predicate where the value node is an IRI of type `tern:Sample`." ;
     sh:minCount 1 ;
     sh:name "sosa:hasResult" ;
     sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:Sample
+            ]
+            [
+                sh:class tern:MaterialSample
+            ]
+            [
+                sh:class tern:Site
+            ]
+        ) ;
     sh:path sosa:hasResult ;
 .
 
@@ -2001,6 +2099,26 @@ tern-shapes:Transect-hasGeometry
     sh:path geo:hasGeometry ;
 .
 
+tern-shapes:Transect-spatial
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "spatial" ;
+    sh:description "A spatial representation for a given feature." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `sdo:spatial` predicate where the value node is a blank node or IRI of type `sf:LineString` or `geo:Geometry`." ;
+    sh:name "sdo:spatial" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:or (
+            [
+                sh:class sf:LineString
+            ]
+            [
+                sh:class geo:Geometry
+            ]
+        ) ;
+    sh:path sdo:spatial ;
+.
+
 tern-shapes:Transect-transectDirection
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2017,12 +2135,19 @@ tern-shapes:Transect-transectEndPoint
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "transect end point" ;
-    sh:class sf:Point ;
-    sh:description "Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] representing the end of a transect." ;
+    sh:description "Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] or geo:Geometry representing the end of a transect." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectEndPoint` predicate where the value node is an IRI of type `sf:Point`." ;
+    sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectEndPoint` predicate where the value node is an IRI of type `sf:Point` or `geo:Geometry`." ;
     sh:name "tern:transectEndPoint" ;
     sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class sf:Point
+            ]
+            [
+                sh:class geo:Geometry
+            ]
+        ) ;
     sh:path tern:transectEndPoint ;
 .
 
@@ -2030,12 +2155,19 @@ tern-shapes:Transect-transectStartPoint
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "transect start point" ;
-    sh:class sf:Point ;
-    sh:description "Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] representing the start of a transect." ;
+    sh:description "Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] or geo:Geometry representing the start of a transect." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Transect` _MAY_ have a `tern:transectStartPoint` predicate where the value node is an IRI of type `sf:Point`." ;
+    sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectStartPoint` predicate where the value node is an IRI of type `sf:Point` or `geo:Geometry`." ;
     sh:name "tern:transectStartPoint" ;
     sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class sf:Point
+            ]
+            [
+                sh:class geo:Geometry
+            ]
+        ) ;
     sh:path tern:transectStartPoint ;
 .
 
@@ -2215,11 +2347,17 @@ tern-shapes:sosa-hasSample
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "has sample" ;
-    sh:class tern:Sample ;
     sh:description "Relation between a FeatureOfInterest and the Sample used to represent it." ;
     sh:message "A `tern:FeatureOfInterest` _MAY_ have a `sosa:hasSample` predicate where the value node is an IRI of type `tern:Sample`." ;
     sh:name "sosa:hasSample" ;
-    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:Sample
+            ]
+            [
+                sh:class tern:MaterialSample
+            ]
+        ) ;
     sh:path sosa:hasSample ;
 .
 
@@ -2784,22 +2922,9 @@ tern-shapes:time-unitType
     a sh:NodeShape ;
     rdfs:label "Sample node shape of sosa:hasFeatureOfInterest" ;
     sh:or (
-            <urn:shape:Sample-isSampleOf-hasGeometry>
+            <urn:shape:Sample-isSampleOf-spatial>
             <urn:shape:Sample-isSampleOf-sfWithin>
         ) ;
-.
-
-<urn:shape:Sample-isSampleOf-hasGeometry>
-    a sh:PropertyShape ;
-    sh:description "At least one geo:hasGeometry exists along the chain of sosa:isSampleOf paths." ;
-    sh:name "Sample's sosa:isSampleOf" ;
-    sh:path [
-            sh:zeroOrMorePath sosa:isSampleOf
-        ] ;
-    sh:qualifiedMinCount 1 ;
-    sh:qualifiedValueShape [
-            sh:property <urn:shape:geo-hasGeometry-min-1>
-        ] ;
 .
 
 <urn:shape:Sample-isSampleOf-sfWithin>
@@ -2807,7 +2932,12 @@ tern-shapes:time-unitType
     sh:description "At least one geo:sfWithin exists along the chain of sosa:isSampleOf paths." ;
     sh:name "Sample's sosa:isSampleOf" ;
     sh:path [
-            sh:zeroOrMorePath sosa:isSampleOf
+            sh:zeroOrMorePath [
+                    sh:alternativePath (
+                            sosa:isSampleOf
+                            tern:hasSite
+                        )
+                ]
         ] ;
     sh:qualifiedMinCount 1 ;
     sh:qualifiedValueShape [
@@ -2815,17 +2945,79 @@ tern-shapes:time-unitType
         ] ;
 .
 
+<urn:shape:Sample-isSampleOf-spatial>
+    a sh:PropertyShape ;
+    sh:description "At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths." ;
+    sh:name "Sample's sosa:isSampleOf or tern:hasSite" ;
+    sh:path [
+            sh:zeroOrMorePath [
+                    sh:alternativePath (
+                            sosa:isSampleOf
+                            tern:hasSite
+                        )
+                ]
+        ] ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedValueShape [
+            sh:or (
+                    [
+                        sh:property <urn:shape:sdo-spatial-min-1>
+                    ]
+                    [
+                        sh:property <urn:shape:geo-hasGeometry-min-1>
+                    ]
+                    [
+                        sh:property <urn:shape:transectStartPoint-min-1>
+                    ]
+                    [
+                        sh:property <urn:shape:transectEndPoint-min-1>
+                    ]
+                )
+        ] ;
+.
+
+<urn:shape:Sampling-hasResult-Site-sdo-spatial>
+    a sh:NodeShape ;
+    rdfs:label "Sampling has result Site with spatial" ;
+    sh:property [
+            sh:path sosa:hasResult ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [
+                    sh:class tern:Site ;
+                    sh:property [
+                            sh:minCount 1 ;
+                            sh:path sdo:spatial
+                        ]
+                ]
+        ] ;
+.
+
 tern-shapes:sosa-hasFeatureOfInterest
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "has feature of interest" ;
-    sh:class tern:FeatureOfInterest ;
     sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
     sh:maxCount 1 ;
     sh:message "Exactly 1 `sosa:hasFeatureOfInterest` predicate _MUST_ exist_ with an IRI value." ;
     sh:minCount 1 ;
     sh:name "sosa:hasFeatureOfInterest" ;
-    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:FeatureOfInterest
+            ]
+            [
+                sh:class tern:Sample
+            ]
+            [
+                sh:class tern:MaterialSample
+            ]
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
     sh:path sosa:hasFeatureOfInterest ;
 .
 
@@ -2925,20 +3117,28 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
     sh:path tern:siteDescription ;
 .
 
-<urn:shape:geo-hasGeometry-min-1>
-    a sh:PropertyShape ;
-    sh:description "At least one geo:hasGeometry must exist." ;
-    sh:minCount 1 ;
-    sh:name "geo:hasGeometry" ;
-    sh:path geo:hasGeometry ;
-.
-
 <urn:shape:geo-sfWithin-min-1>
     a sh:PropertyShape ;
     sh:description "At least one geo:sfWithin must exist." ;
     sh:minCount 1 ;
     sh:name "geo:sfWithin" ;
     sh:path geo:sfWithin ;
+.
+
+<urn:shape:transectEndPoint-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one tern:transectEndPoint must exist." ;
+    sh:minCount 1 ;
+    sh:name "tern:transectEndPoint" ;
+    sh:path tern:transectEndPoint ;
+.
+
+<urn:shape:transectStartPoint-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one tern:transectStartPoint must exist." ;
+    sh:minCount 1 ;
+    sh:name "tern:transectStartPoint" ;
+    sh:path tern:transectStartPoint ;
 .
 
 tern-shapes:dcterms-description
@@ -3003,6 +3203,22 @@ tern-shapes:sosa-usedProcedure
     sh:path sosa:usedProcedure ;
 .
 
+<urn:shape:geo-hasGeometry-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one geo:hasGeometry must exist." ;
+    sh:minCount 1 ;
+    sh:name "geo:hasGeometry" ;
+    sh:path geo:hasGeometry ;
+.
+
+<urn:shape:sdo-spatial-min-1>
+    a sh:PropertyShape ;
+    sh:description "At least one sdo:spatial must exist." ;
+    sh:minCount 1 ;
+    sh:name "sdo:spatial" ;
+    sh:path sdo:spatial ;
+.
+
 tern-shapes:prov-qualifiedAssociation
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3019,11 +3235,18 @@ tern-shapes:prov-wasAssociatedWith
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "was associated with" ;
-    sh:class prov:Agent ;
     sh:description "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity." ;
-    sh:message "A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent`." ;
+    sh:message "A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent` or `sdo:Person`." ;
     sh:name "prov:wasAssociatedWith" ;
     sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class prov:Agent
+            ]
+            [
+                sh:class sdo:Person
+            ]
+        ) ;
     sh:path prov:wasAssociatedWith ;
 .
 
@@ -3059,6 +3282,18 @@ tern-shapes:geo-hasGeometry
     sh:name "geo:hasGeometry" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path geo:hasGeometry ;
+.
+
+tern-shapes:sdo-spatial
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "spatial" ;
+    sh:class geo:Geometry ;
+    sh:description "A spatial representation for a given feature." ;
+    sh:message "A `sdo:spatial` predicate _MUST_ have a blank node or IRI value." ;
+    sh:name "sdo:spatial" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path sdo:spatial ;
 .
 
 tern-shapes:void-inDataset
