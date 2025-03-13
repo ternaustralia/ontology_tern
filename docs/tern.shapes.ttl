@@ -126,6 +126,215 @@ tern-shapes:DateTime
     sh:targetClass tern:DateTime ;
 .
 
+tern-shapes:DigitalCamera
+    a sh:NodeShape ;
+    rdfs:label "Digital Camera" ;
+    reg:status reg:statusStable ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:path <http://schema.org/model> ;
+            sh:minCount 1 ;
+            sh:name "schema:model" ;
+            sh:description "The model as defined by the manufacturer." ;
+            sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `schema:model` predicate." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path skos:prefLabel ;
+            sh:minCount 1 ;
+            sh:name "skos:prefLabel" ;
+            sh:description "The preferred label for the digital camera." ;
+            sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `skos:prefLabel` predicate." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dcterms:source ;
+            sh:minCount 1 ;
+            sh:datatype xsd:string ;
+            sh:name "dcterms:source" ;
+            sh:description "The source of information about the digital camera." ;
+            sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `dcterms:source` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path <http://schema.org/manufacturer> ;
+            sh:minCount 1 ;
+            sh:datatype xsd:string ;
+            sh:name "schema:manufacturer" ;
+            sh:description "The manufacturer of the digital camera." ;
+            sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `schema:manufacturer` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path skos:altLabel ;
+            sh:datatype xsd:string ;
+            sh:name "skos:altLabel" ;
+            sh:description "Alternative labels for the digital camera." ;
+            sh:message "If present, `skos:altLabel` predicates on a `tern:DigitalCamera` _MUST_ have string values." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path skos:definition ;
+            sh:datatype xsd:string ;
+            sh:name "skos:definition" ;
+            sh:description "The definition of the digital camera." ;
+            sh:message "If present, `skos:definition` predicates on a `tern:DigitalCamera` _MUST_ have string values." ;
+        ] ;
+    sh:targetClass tern:DigitalCamera ;
+.
+
+tern-shapes:Dimension
+    a sh:NodeShape ;
+    rdfs:label "Dimension" ;
+    reg:status reg:statusStable ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:path tern:length ;
+            sh:or ([
+                sh:datatype xsd:double
+            ] [
+                sh:datatype xsd:integer
+            ]) ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "tern:length" ;
+            sh:description "The length dimension." ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:length` predicate with a double or integer value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:width ;
+            sh:or ([
+                sh:datatype xsd:double
+            ] [
+                sh:datatype xsd:integer
+            ]) ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "tern:width" ;
+            sh:description "The width dimension." ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:unit ;
+            sh:class <http://qudt.org/schema/qudt/Unit> ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "tern:unit" ;
+            sh:description "The unit of measurement for the dimensions." ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:unit` predicate with a value of type `qudt:Unit`." ;
+        ] ;
+    sh:targetClass tern:Dimension ;
+.
+
+tern-shapes:FluxTower
+    a sh:NodeShape ;
+    rdfs:label "Flux Tower" ;
+    reg:status reg:statusStable ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:path tern:ozfluxID ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "tern:ozfluxID" ;
+            sh:description "The OzFlux ID of the flux tower." ;
+            sh:message "A `tern:FluxTower` _MAY_ have at most 1 `tern:ozfluxID` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:igbpCode ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "tern:igbpCode" ;
+            sh:description "The IGBP code of the flux tower." ;
+            sh:message "A `tern:FluxTower` _MAY_ have at most 1 `tern:igbpCode` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dcterms:description ;
+            sh:datatype xsd:string ;
+            sh:name "dcterms:description" ;
+            sh:description "The description of the flux tower." ;
+            sh:message "If present, `dcterms:description` predicates on a `tern:FluxTower` _MUST_ have string values." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path rdfs:comment ;
+            sh:datatype xsd:string ;
+            sh:name "rdfs:comment" ;
+            sh:description "Comments about the flux tower." ;
+            sh:message "If present, `rdfs:comment` predicates on a `tern:FluxTower` _MUST_ have string values." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:dateDecommissioned ;
+            sh:datatype xsd:date ;
+            sh:maxCount 1 ;
+            sh:name "tern:dateDecommissioned" ;
+            sh:description "The date when the flux tower was decommissioned." ;
+            sh:message "A `tern:FluxTower` _MAY_ have at most 1 `tern:dateDecommissioned` predicate with a date value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:fluxnetID ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "tern:fluxnetID" ;
+            sh:description "The FLUXNET ID of the flux tower." ;
+            sh:message "A `tern:FluxTower` _MAY_ have at most 1 `tern:fluxnetID` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path sosa:isHostedBy ;
+            sh:class tern:Site ;
+            sh:maxCount 1 ;
+            sh:name "sosa:isHostedBy" ;
+            sh:description "The site that hosts the flux tower." ;
+            sh:message "A `tern:FluxTower` _MAY_ have at most 1 `sosa:isHostedBy` predicate with a value of type `tern:Site`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:purpose ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "tern:purpose" ;
+            sh:description "The purpose of the flux tower." ;
+            sh:message "A `tern:FluxTower` _MAY_ have at most 1 `tern:purpose` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:centroidPoint ;
+            sh:class <http://www.opengis.net/ont/sf#Point> ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "tern:centroidPoint" ;
+            sh:description "The centroid point of the flux tower." ;
+            sh:message "A `tern:FluxTower` _MUST_ have exactly 1 `tern:centroidPoint` predicate with a value of type `sf:Point`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:dateCommissioned ;
+            sh:datatype xsd:date ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "tern:dateCommissioned" ;
+            sh:description "The date when the flux tower was commissioned." ;
+            sh:message "A `tern:FluxTower` _MUST_ have exactly 1 `tern:dateCommissioned` predicate with a date value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path rdfs:label ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "rdfs:label" ;
+            sh:description "The label of the flux tower." ;
+            sh:message "A `tern:FluxTower` _MUST_ have exactly 1 `rdfs:label` predicate with a string value." ;
+        ] ;
+    sh:targetClass tern:FluxTower ;
+.
+
 tern-shapes:Deployment
     a sh:NodeShape ;
     rdfs:label "Deployment" ;
@@ -188,6 +397,40 @@ tern-shapes:IRI
     rdfs:label "IRI" ;
     sh:property tern-shapes:IRI-value ;
     sh:targetClass tern:IRI ;
+.
+
+tern-shapes:Input
+    a sh:NodeShape ;
+    rdfs:label "Input" ;
+    reg:status reg:statusStable ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:path dcterms:description ;
+            sh:datatype xsd:string ;
+            sh:name "dcterms:description" ;
+            sh:description "The description of the input." ;
+            sh:message "If present, `dcterms:description` predicates on a `tern:Input` _MUST_ have string values." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path rdf:value ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "rdf:value" ;
+            sh:description "The value of the input." ;
+            sh:message "A `tern:Input` _MUST_ have exactly 1 `rdf:value` predicate." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path rdfs:label ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "rdfs:label" ;
+            sh:description "The label of the input." ;
+            sh:message "A `tern:Input` _MUST_ have exactly 1 `rdfs:label` predicate with a string value." ;
+        ] ;
+    sh:targetClass tern:Input ;
 .
 
 tern-shapes:Instant
@@ -309,6 +552,113 @@ tern-shapes:MeasurementRange
     sh:targetClass tern:MeasurementRange ;
 .
 
+tern-shapes:Method
+    a sh:NodeShape ;
+    rdfs:label "Method" ;
+    reg:status reg:statusStable ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:path <http://schema.org/timeRequired> ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "schema:timeRequired" ;
+            sh:description "The time required for the method." ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `schema:timeRequired` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path skos:note ;
+            sh:datatype xsd:string ;
+            sh:name "skos:note" ;
+            sh:description "Notes about the method." ;
+            sh:message "If present, `skos:note` predicates on a `tern:Method` _MUST_ have string values." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:hasCategoricalCollection ;
+            sh:class skos:Collection ;
+            sh:name "tern:hasCategoricalCollection" ;
+            sh:description "The categorical collection of the method." ;
+            sh:message "If present, `tern:hasCategoricalCollection` predicates on a `tern:Method` _MUST_ have values of type `skos:Collection`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:hasParameter ;
+            sh:class skos:Concept ;
+            sh:name "tern:hasParameter" ;
+            sh:description "The parameters of the method." ;
+            sh:message "If present, `tern:hasParameter` predicates on a `tern:Method` _MUST_ have values of type `skos:Concept`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path dcterms:source ;
+            sh:or ([
+                sh:datatype xsd:string
+            ] [
+                sh:datatype xsd:anyURI
+            ]) ;
+            sh:name "dcterms:source" ;
+            sh:description "The source of the method." ;
+            sh:message "If present, `dcterms:source` predicates on a `tern:Method` _MUST_ have string or URI values." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:instructions ;
+            sh:class rdf:Seq ;
+            sh:maxCount 1 ;
+            sh:name "tern:instructions" ;
+            sh:description "The instructions for the method." ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:instructions` predicate with a value of type `rdf:Seq`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path skos:definition ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "skos:definition" ;
+            sh:description "The definition of the method." ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `skos:definition` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:equipment ;
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:name "tern:equipment" ;
+            sh:description "The equipment used for the method." ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:equipment` predicate with a value of type `skos:Concept`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:purpose ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "tern:purpose" ;
+            sh:description "The purpose of the method." ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:purpose` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:scope ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:name "tern:scope" ;
+            sh:description "The scope of the method." ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:scope` predicate with a string value." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path skos:prefLabel ;
+            sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "skos:prefLabel" ;
+            sh:description "The preferred label of the method." ;
+            sh:message "A `tern:Method` _MUST_ have exactly 1 `skos:prefLabel` predicate with a string value." ;
+        ] ;
+    sh:targetClass tern:Method ;
+.
+
 tern-shapes:Observation
     a sh:NodeShape ;
     rdfs:label "Observation" ;
@@ -351,6 +701,63 @@ tern-shapes:ObservationCollection
     sh:targetClass tern:ObservationCollection ;
 .
 
+tern-shapes:ObservableProperty
+    a sh:NodeShape ;
+    rdfs:label "Observable Property" ;
+    reg:status reg:statusStable ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:path tern:localValue ;
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:name "tern:localValue" ;
+            sh:description "The local value of the observable property." ;
+            sh:message "A `tern:ObservableProperty` _MAY_ have at most 1 `tern:localValue` predicate with a value of type `skos:Concept`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path rdf:value ;
+            sh:class tern:Parameter ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "rdf:value" ;
+            sh:description "The parameter value of the observable property." ;
+            sh:message "A `tern:ObservableProperty` _MUST_ have exactly 1 `rdf:value` predicate with a value of type `tern:Parameter`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:localVocabulary ;
+            sh:or ([
+                sh:class skos:ConceptScheme
+            ] [
+                sh:class skos:Collection
+            ] [
+                sh:class owl:Ontology
+            ]) ;
+            sh:maxCount 1 ;
+            sh:name "tern:localVocabulary" ;
+            sh:description "The local vocabulary of the observable property." ;
+            sh:message "A `tern:ObservableProperty` _MAY_ have at most 1 `tern:localVocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:vocabulary ;
+            sh:or ([
+                sh:class skos:ConceptScheme
+            ] [
+                sh:class skos:Collection
+            ] [
+                sh:class owl:Ontology
+            ]) ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "tern:vocabulary" ;
+            sh:description "The vocabulary of the observable property." ;
+            sh:message "A `tern:ObservableProperty` _MUST_ have exactly 1 `tern:vocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
+        ] ;
+    sh:targetClass tern:ObservableProperty ;
+.
+
 tern-shapes:Platform
     a sh:NodeShape ;
     rdfs:label "Platform" ;
@@ -366,6 +773,49 @@ tern-shapes:Platform
         tern-shapes:tern-platformType ,
         tern-shapes:tern-purpose ;
     sh:targetClass tern:Platform ;
+.
+
+tern-shapes:Procedure
+    a sh:NodeShape ;
+    rdfs:label "Procedure" ;
+    reg:status reg:statusStable ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:path tern:vocabulary ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "tern:vocabulary" ;
+            sh:description "The vocabulary of the procedure." ;
+            sh:message "A `tern:Procedure` _MUST_ have exactly 1 `tern:vocabulary` predicate." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path ssn:hasInput ;
+            sh:class tern:Input ;
+            sh:maxCount 1 ;
+            sh:name "ssn:hasInput" ;
+            sh:description "The input of the procedure." ;
+            sh:message "A `tern:Procedure` _MAY_ have at most 1 `ssn:hasInput` predicate with a value of type `tern:Input`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path rdf:value ;
+            sh:class tern:Method ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:name "rdf:value" ;
+            sh:description "The method value of the procedure." ;
+            sh:message "A `tern:Procedure` _MUST_ have exactly 1 `rdf:value` predicate with a value of type `tern:Method`." ;
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:path tern:methodType ;
+            sh:class skos:Concept ;
+            sh:name "tern:methodType" ;
+            sh:description "The method type of the procedure." ;
+            sh:message "If present, `tern:methodType` predicates on a `tern:Procedure` _MUST_ have values of type `skos:Concept`." ;
+        ] ;
+    sh:targetClass tern:Procedure ;
 .
 
 tern-shapes:RDFDataset

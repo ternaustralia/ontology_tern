@@ -183,40 +183,7 @@ tern:Deployment
 tern:DigitalCamera
     a owl:Class ;
     rdfs:label "Digital Camera" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://schema.org/model>
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty skos:prefLabel
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty dcterms:source
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty <http://schema.org/manufacturer>
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty skos:altLabel
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty skos:definition
-        ] ,
-        skos:Concept ;
+    rdfs:subClassOf skos:Concept ;
     skos:definition "The model as defined by the manufacturer." ;
     skos:example "E.g. EOS 350D" ;
 .
@@ -224,45 +191,6 @@ tern:DigitalCamera
 tern:Dimension
     a owl:Class ;
     rdfs:label "Dimension" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:double
-                            xsd:integer
-                        )
-                ] ;
-            owl:onProperty tern:width
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:length
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:width
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass <http://qudt.org/schema/qudt/Unit> ;
-            owl:onProperty tern:unit ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ;
     owl:deprecated true ;
     skos:definition "The dimension of a 2D square or rectangular feature. Example, the dimension of a rectangular plot Site. This class should perhaps have specialised classes to express not just square or rectangular features but also others such as circular features." ;
 .
@@ -309,72 +237,7 @@ tern:Float
 tern:FluxTower
     a owl:Class ;
     rdfs:label "Flux Tower" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:ozfluxID
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:igbpCode
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:description
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty rdfs:comment
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:date ;
-            owl:onProperty tern:dateDecommissioned
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty tern:fluxnetID
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass tern:Site ;
-            owl:onProperty sosa:isHostedBy
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty tern:purpose
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass <http://www.opengis.net/ont/sf#Point> ;
-            owl:onProperty tern:centroidPoint ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass xsd:date ;
-            owl:onProperty tern:dateCommissioned ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass xsd:string ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        tern:FixedPlatform ;
+    rdfs:subClassOf tern:FixedPlatform ;
     skos:definition "Across the globe, towers stand among the landscape, with sensors monitoring these eddies for carbon dioxide, water vapor and other gasses.  These so-called flux towers collect data on carbon dioxide exchange rates between the earth and atmosphere." ;
     skos:example
         <https://w3id.org/tern/resources/fd2809a2-e705-4961-b09c-7e9ae1ffa87e> ,
@@ -411,27 +274,6 @@ tern:Intervention
 tern:ManagedFeature
     a owl:Class ;
     rdfs:label "Feature which is managed for TERN purposes" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty tern:dateCommissioned
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:date ;
-            owl:onProperty tern:dateDecommissioned
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:dateCommissioned
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:dateDecommissioned
-        ] ;
 .
 
 tern:MaterialSample
@@ -459,50 +301,7 @@ tern:MeasurementRange
 tern:ObservableProperty
     a owl:Class ;
     rdfs:label "Observable Property" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
-            owl:onProperty tern:localValue
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom tern:Parameter ;
-            owl:onProperty rdf:value
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            skos:ConceptScheme
-                            skos:Collection
-                            owl:Ontology
-                        )
-                ] ;
-            owl:onProperty tern:localVocabulary
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdf:value
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:vocabulary
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:localValue
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:localVocabulary
-        ] ,
-        sosa:ObservableProperty ;
+    rdfs:subClassOf sosa:ObservableProperty ;
     skos:definition "An observable quality (property, characteristic) of a [FeatureOfInterest](http://w3.org/ns/sosa/FeatureOfInterest). A feature-of-interest refers to a feature whose properties are measured or observed. " ;
     skos:example """Sampling depth, bulk density, pH are examples of properties of a 
 soil sample, and the soil sample is the feature-of-interest, 
@@ -520,30 +319,7 @@ tern:ObservationCollection
 tern:Procedure
     a owl:Class ;
     rdfs:label "Procedure" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern:vocabulary
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass tern:Input ;
-            owl:onProperty ssn:hasInput
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass tern:Method ;
-            owl:onProperty rdf:value ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
-            owl:onProperty tern:methodType
-        ] ,
-        sosa:Procedure ;
+    rdfs:subClassOf sosa:Procedure ;
     skos:definition "A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A Procedure is re-usable, and might be involved in many Observation, Sampling, or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at a reproducible Result." ;
     skos:example """The procedure for collecting photopoints are specified in the 
 [AusPlots Rangelands Survey Protocols Manual](http://dx.doi.org/10.13140/2.1.4287.3607).
@@ -1155,24 +931,7 @@ tern:IGSN
 tern:Input
     a owl:Class ;
     rdfs:label "Input" ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty dcterms:description
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdf:value
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass xsd:string ;
-            owl:onProperty rdfs:label ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        ssn:Input ;
+    rdfs:subClassOf ssn:Input ;
     skos:definition "*Input* - Any information that is provided to a Procedure for its use." ;
     skos:example """A **wedge prism** or **relascope** can be used to estimate the Basal Area per hectare. 
 The number of counted trees and the Basal Area Factor are inputs to estimate the Basal Area.""" ;
@@ -1185,80 +944,7 @@ tern:Method
     rdfs:seeAlso
         <https://apps.usgs.gov/thesaurus/term-simple.php?thcode=2&code=376> ,
         <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
-    rdfs:subClassOf
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://schema.org/timeRequired>
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty skos:note
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom skos:Collection ;
-            owl:onProperty tern:hasCategoricalCollection
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
-            owl:onProperty tern:hasParameter
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:allValuesFrom [
-                    a owl:Class ;
-                    owl:unionOf (
-                            xsd:string
-                            xsd:anyURI
-                        )
-                ] ;
-            owl:onProperty dcterms:source
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://schema.org/timeRequired>
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass rdf:Seq ;
-            owl:onProperty tern:instructions
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass xsd:string ;
-            owl:onProperty skos:definition
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass skos:Concept ;
-            owl:onProperty tern:equipment
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty tern:purpose
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onDataRange xsd:string ;
-            owl:onProperty tern:scope
-        ] ,
-        [
-            a owl:Restriction ;
-            owl:onClass xsd:string ;
-            owl:onProperty skos:prefLabel ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-        ] ,
-        skos:Concept ;
+    rdfs:subClassOf skos:Concept ;
     skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an Observation or a Sample. It explains the steps to be carried out to arrive at reproducible Result." ;
     skos:example """Borehole logging is a field method in which 
 in situ physical measurements (e.g., temperature) are made down the 
