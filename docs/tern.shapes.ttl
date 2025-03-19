@@ -371,6 +371,7 @@ tern-shapes:FeatureOfInterest
         ) ;
     sh:property
         tern-shapes:FeatureOfInterest-featureType ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
         tern-shapes:prov-qualifiedAttribution ,
@@ -536,7 +537,8 @@ tern-shapes:ManagedFeature
 tern-shapes:MaterialSample
     a sh:NodeShape ;
     rdfs:label "Material sample" ;
-    sh:property tern-shapes:dwc-materialSampleID ;
+    sh:property tern-shapes:dwc-materialSampleID ,
+        tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:MaterialSample ;
 .
 
@@ -668,6 +670,7 @@ tern-shapes:Observation
         ) ;
     sh:property
         tern-shapes:Observation-hasResult ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
         tern-shapes:prov-qualifiedAssociation ,
@@ -691,6 +694,7 @@ tern-shapes:ObservationCollection
     rdfs:label "Observation collection" ;
     sh:property
         tern-shapes:ObservationCollection-hasFeatureOfInterest ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:ObservationCollection-hasMember ,
         tern-shapes:ObservationCollection-hasUltimateFeatureOfInterest ,
         tern-shapes:ObservationCollection-madeBySensor ,
@@ -823,6 +827,7 @@ tern-shapes:RDFDataset
     rdfs:label "RDFDataset" ;
     sh:property
         tern-shapes:RDFDataset-contributor ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:RDFDataset-created ,
         tern-shapes:RDFDataset-creator ,
         tern-shapes:RDFDataset-date ,
@@ -852,6 +857,7 @@ tern-shapes:Sample
     rdfs:label "Sample" ;
     sh:property
         tern-shapes:Sample-isResultOf ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:Sample-isSampleOf ;
     sh:targetClass tern:Sample ;
 .
@@ -874,6 +880,7 @@ tern-shapes:Sampling
         ) ;
     sh:property
         tern-shapes:Sampling-hasResult ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:Sampling-madeBySampler ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
@@ -904,6 +911,7 @@ tern-shapes:Site
     rdfs:label "Site" ;
     sh:property
         tern-shapes:Site-dimension ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:Site-featureType ,
         tern-shapes:Site-hasSiteVisit ,
         tern-shapes:Site-locationProcedure ,
@@ -918,6 +926,7 @@ tern-shapes:SiteVisit
     rdfs:label "Site Visit" ;
     sh:property
         tern-shapes:dcterms-identifier ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:dcterms-type ,
         tern-shapes:tern-locationDescription ,
         tern-shapes:tern-siteDescription ;
