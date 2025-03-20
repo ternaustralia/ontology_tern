@@ -371,6 +371,7 @@ tern-shapes:FeatureOfInterest
         ) ;
     sh:property
         tern-shapes:FeatureOfInterest-featureType ,
+        tern-shapes:tern-hasSite ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
@@ -2009,6 +2010,24 @@ tern-shapes:Site-hasSiteVisit
     sh:name "tern:hasSiteVisit" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:hasSiteVisit ;
+.
+
+tern-shapes:tern-hasSite
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has site" ;
+    sh:description "A property that links, e.g., a FeatureOfInterest to a Site or Transect." ;
+    sh:message "A `tern:FeatureOfInterest` _MAY_ have a `tern:hasSite` predicate where the value node is an IRI of type `tern:Site` or `tern:Transect`." ;
+    sh:name "tern:hasSite" ;
+    sh:or (
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
+    sh:path tern:hasSite ;
 .
 
 tern-shapes:Site-locationProcedure
