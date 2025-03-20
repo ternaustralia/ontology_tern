@@ -415,11 +415,10 @@ tern-shapes:Input
         [
             a sh:PropertyShape ;
             sh:path rdf:value ;
-            sh:minCount 1 ;
             sh:maxCount 1 ;
             sh:name "rdf:value" ;
             sh:description "The value of the input." ;
-            sh:message "A `tern:Input` _MUST_ have exactly 1 `rdf:value` predicate." ;
+            sh:message "A `tern:Input` _MAY_ have at most 1 `rdf:value` predicate." ;
         ] ,
         [
             a sh:PropertyShape ;
