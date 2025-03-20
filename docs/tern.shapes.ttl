@@ -371,6 +371,7 @@ tern-shapes:FeatureOfInterest
         ) ;
     sh:property
         tern-shapes:FeatureOfInterest-featureType ,
+        tern-shapes:geo-hasGeometry ,
         tern-shapes:tern-hasSite ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:dcterms-identifier ,
