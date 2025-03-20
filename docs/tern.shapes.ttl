@@ -92,9 +92,9 @@ tern-shapes:Calibration
         tern-shapes:sosa-usedProcedure ,
         tern-shapes:tern-calibratedBy ,
         tern-shapes:tern-calibratesProperty ,
-        tern-shapes:tern-hasCalibrationActualResult ,
-        tern-shapes:tern-hasCalibrationOffset ,
-        tern-shapes:tern-hasCalibrationReferenceResult ,
+        tern-shapes:tern-calibrationActualResult ,
+        tern-shapes:tern-calibrationOffset ,
+        tern-shapes:tern-calibrationReferenceResult ,
         tern-shapes:tern-verifiesCapability ;
     sh:targetClass tern:Calibration ;
 .
