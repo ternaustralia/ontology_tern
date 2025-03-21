@@ -338,12 +338,10 @@ tern-shapes:FluxTower
 tern-shapes:Deployment
     a sh:NodeShape ;
     rdfs:label "Deployment" ;
-    sh:or (
-            tern-shapes:geo-hasGeometry
-            tern-shapes:sdo-spatial
-        ) ;
     sh:property
         tern-shapes:ssn-deployedOnPlatform ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:sdo-spatial ,
         tern-shapes:ssn-deployedSystem ;
     sh:targetClass tern:Deployment ;
 .
@@ -365,12 +363,10 @@ tern-shapes:Duration
 tern-shapes:FeatureOfInterest
     a sh:NodeShape ;
     rdfs:label "Feature of Interest" ;
-    sh:or (
-            tern-shapes:geo-hasGeometry
-            tern-shapes:sdo-spatial
-        ) ;
     sh:property
         tern-shapes:FeatureOfInterest-featureType ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:sdo-spatial ,
         tern-shapes:geo-hasGeometry ,
         tern-shapes:tern-hasSite ,
         tern-shapes:tern-hasAttribute ,
@@ -510,12 +506,10 @@ tern-shapes:Interval
 tern-shapes:Intervention
     a sh:NodeShape ;
     rdfs:label "Intervention" ;
-    sh:or (
-            tern-shapes:geo-hasGeometry
-            tern-shapes:sdo-spatial
-        ) ;
     sh:property
         tern-shapes:dcterms-identifier ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:sdo-spatial ,
         tern-shapes:dcterms-type ,
         tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
@@ -665,12 +659,10 @@ tern-shapes:Method
 tern-shapes:Observation
     a sh:NodeShape ;
     rdfs:label "Observation" ;
-    sh:or (
-            tern-shapes:geo-hasGeometry
-            tern-shapes:sdo-spatial
-        ) ;
     sh:property
         tern-shapes:Observation-hasResult ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:sdo-spatial ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
@@ -766,12 +758,10 @@ tern-shapes:ObservableProperty
 tern-shapes:Platform
     a sh:NodeShape ;
     rdfs:label "Platform" ;
-    sh:or (
-            tern-shapes:geo-hasGeometry
-            tern-shapes:sdo-spatial
-        ) ;
     sh:property
         tern-shapes:dcterms-description ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:sdo-spatial ,
         tern-shapes:tern-climateCode ,
         tern-shapes:tern-dateCommissioned ,
         tern-shapes:tern-dateDecommissioned ,
@@ -875,12 +865,10 @@ tern-shapes:Sampler
 tern-shapes:Sampling
     a sh:NodeShape ;
     rdfs:label "Sampling" ;
-    sh:or (
-            tern-shapes:geo-hasGeometry
-            tern-shapes:sdo-spatial
-        ) ;
     sh:property
         tern-shapes:Sampling-hasResult ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:sdo-spatial ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:Sampling-madeBySampler ,
         tern-shapes:dcterms-identifier ,
@@ -1023,12 +1011,10 @@ tern-shapes:Text
 tern-shapes:Transect
     a sh:NodeShape ;
     rdfs:label "Transect" ;
-    sh:or (
-            tern-shapes:Transect-hasGeometry
-            tern-shapes:Transect-spatial
-        ) ;
     sh:property
         tern-shapes:Transect-featureType ,
+        tern-shapes:Transect-hasGeometry ,
+        tern-shapes:Transect-spatial ,
         tern-shapes:Transect-transectDirection ,
         tern-shapes:Transect-transectEndPoint ,
         tern-shapes:Transect-transectStartPoint ;
@@ -1558,7 +1544,6 @@ tern-shapes:ObservationCollection-hasMember
     sh:message "A `tern:ObservationCollection` _MUST_ have at least 1 `sosa:hasMember` predicate where the value node is an IRI of type `tern:Observation` or `tern:ObservationCollection`." ;
     sh:minCount 1 ;
     sh:name "sosa:hasMember" ;
-    sh:nodeKind sh:IRI ;
     sh:or (
             [
                 sh:class tern:Observation
@@ -1840,7 +1825,6 @@ tern-shapes:Result-isResultOf
     sh:maxCount 1 ;
     sh:message "A `tern:Result` _MAY_ have at most 1 `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`." ;
     sh:name "sosa:isResultOf" ;
-    sh:nodeKind sh:IRI ;
     sh:or (
             [
                 sh:class tern:Observation
@@ -1915,7 +1899,6 @@ tern-shapes:Sampling-hasResult
     sh:message "A `tern:Sampling` _MUST_ have at least 1 `sosa:hasResult` predicate where the value node is an IRI of type `tern:Sample`." ;
     sh:minCount 1 ;
     sh:name "sosa:hasResult" ;
-    sh:nodeKind sh:IRI ;
     sh:or (
             [
                 sh:class tern:Sample
@@ -2617,7 +2600,6 @@ tern-shapes:Transect-transectEndPoint
     sh:maxCount 1 ;
     sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectEndPoint` predicate where the value node is an IRI of type `sf:Point` or `geo:Geometry`." ;
     sh:name "tern:transectEndPoint" ;
-    sh:nodeKind sh:IRI ;
     sh:or (
             [
                 sh:class sf:Point
@@ -2637,7 +2619,6 @@ tern-shapes:Transect-transectStartPoint
     sh:maxCount 1 ;
     sh:message "A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectStartPoint` predicate where the value node is an IRI of type `sf:Point` or `geo:Geometry`." ;
     sh:name "tern:transectStartPoint" ;
-    sh:nodeKind sh:IRI ;
     sh:or (
             [
                 sh:class sf:Point
@@ -2870,7 +2851,6 @@ tern-shapes:sosa-isFeatureOfInterestOf
     sh:description "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it." ;
     sh:message "A `tern:FeatureOfInterest` _MAY_ have a `sosa:isFeatureOfInterestOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`." ;
     sh:name "sosa:isFeatureOfInterestOf" ;
-    sh:nodeKind sh:IRI ;
     sh:or (
             [
                 sh:class tern:Observation
@@ -3716,7 +3696,6 @@ tern-shapes:prov-wasAssociatedWith
     sh:description "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity." ;
     sh:message "A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent` or `sdo:Person`." ;
     sh:name "prov:wasAssociatedWith" ;
-    sh:nodeKind sh:IRI ;
     sh:or (
             [
                 sh:class prov:Agent
