@@ -1232,7 +1232,6 @@ tern-shapes:tern-wasInformedBy
             <urn:shape:Sampling-hasResult-Site-sdo-spatial>
         ) ;
     sh:targetClass
-        tern:Intervention ,
         tern:Observation ,
         tern:Sampling ;
 .
