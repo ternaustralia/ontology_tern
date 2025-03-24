@@ -904,6 +904,7 @@ tern-shapes:Site
         tern-shapes:Site-featureType ,
         tern-shapes:Site-hasSiteVisit ,
         tern-shapes:Site-locationProcedure ,
+        tern-shapes:sosa-hasSample ,
         tern-shapes:geo-sfWithin ,
         tern-shapes:tern-locationDescription ,
         tern-shapes:tern-siteDescription ;
@@ -1017,6 +1018,7 @@ tern-shapes:Transect
         tern-shapes:Transect-spatial ,
         tern-shapes:Transect-transectDirection ,
         tern-shapes:Transect-transectEndPoint ,
+        tern-shapes:sosa-hasSample ,
         tern-shapes:Transect-transectStartPoint ;
     sh:targetClass tern:Transect ;
 .
