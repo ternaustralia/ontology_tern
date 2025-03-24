@@ -2655,11 +2655,10 @@ tern-shapes:dwc-materialSampleID
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "material sample ID" ;
-    sh:datatype xsd:string ;
     sh:description "An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique." ;
-    sh:message "A `dwc:materialSampleID` predicate _MUST_ have a literal value with a datatype of `xsd:string`." ;
+    sh:message "A `dwc:materialSampleID` predicate _MUST_ have a literal value or IRI value." ;
     sh:name "dwc:materialSampleID" ;
-    sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:IRIOrLiteral ;
     sh:path dwc:materialSampleID ;
 .
 
