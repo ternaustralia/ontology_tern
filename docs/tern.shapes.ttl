@@ -2035,8 +2035,18 @@ tern-shapes:System-hasDeployment
     sh:description "Relation between a System and a Deployment, recording that the System is deployed in that Deployment." ;
     sh:message "A `tern:System` _MAY_ have an `ssn:hasDeployment` predicate where the value node is an IRI of type `tern:Deployment`." ;
     sh:name "ssn:hasDeployment" ;
-    sh:nodeKind sh:IRI ;
     sh:path ssn:hasDeployment ;
+.
+
+tern-shapes:tern-hasCalibration
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has calibration" ;
+    sh:class tern:Calibration ;
+    sh:description "Relation between a System and a Calibration, recording that the System is calibrated." ;
+    sh:message "A `tern:System` _MAY_ have an `tern:hasCalibration` predicate where the value node is an IRI of type `tern:Calibration`." ;
+    sh:name "tern:hasCalibration" ;
+    sh:path tern:hasCalibration ;
 .
 
 tern-shapes:System-isHostedBy
