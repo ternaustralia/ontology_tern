@@ -536,6 +536,13 @@ tern:hasCalibration
     skos:definition "A link to a [tern:Calibration](https://w3id.org/tern/ontologies/tern/Calibration) which represents a calibration activity performed on this System's properties to ensure accurate measurements and proper functioning." ;
 .
 
+tern:hasIGSN
+    a owl:ObjectProperty ;
+    rdfs:label "has IGSN" ;
+    rdfs:range tern:IGSN ;
+    skos:definition "A link to a [tern:IGSN](https://w3id.org/tern/ontologies/tern/IGSN) which represents a globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
+.
+
 tern:hasEnvironmentalCharacteristic
     a owl:ObjectProperty ;
     rdfs:label "has environmental characteristic" ;
@@ -737,6 +744,14 @@ tern:sampleType
     rdfs:domain tern:IGSN ;
     rdfs:range skos:Concept ;
     skos:definition "The sample type of an [IGSN](#IGSN)." ;
+.
+
+tern:sampleSubType
+    a owl:ObjectProperty ;
+    rdfs:label "sample sub type" ;
+    rdfs:domain tern:IGSN ;
+    rdfs:range skos:Concept ;
+    skos:definition "The sample sub type of an [IGSN](#IGSN)." ;
 .
 
 tern:samplingType
