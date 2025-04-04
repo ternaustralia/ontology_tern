@@ -252,6 +252,15 @@ tern:IRI
     skos:prefLabel "IRI" ;
 .
 
+tern:Input
+    a owl:Class ;
+    rdfs:label "Input" ;
+    rdfs:subClassOf ssn:Input ;
+    skos:definition "*Input* - Any information that is provided to a Procedure for its use." ;
+    skos:example """A **wedge prism** or **relascope** can be used to estimate the Basal Area per hectare. 
+The number of counted trees and the Basal Area Factor are inputs to estimate the Basal Area.""" ;
+.
+
 tern:Integer
     a owl:Class ;
     reg:status reg:statusStable ;
@@ -298,6 +307,20 @@ tern:MeasurementRange
     skos:prefLabel "Measurement Range" ;
 .
 
+tern:Method
+    a owl:Class ;
+    rdfs:label "Method" ;
+    rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
+    rdfs:seeAlso
+        <https://apps.usgs.gov/thesaurus/term-simple.php?thcode=2&code=376> ,
+        <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an Observation or a Sample. It explains the steps to be carried out to arrive at reproducible Result." ;
+    skos:example """Borehole logging is a field method in which 
+in situ physical measurements (e.g., temperature) are made down the 
+length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)""" ;
+.
+
 tern:ObservableProperty
     a owl:Class ;
     rdfs:label "Observable Property" ;
@@ -314,6 +337,13 @@ tern:ObservationCollection
     rdfs:subClassOf sosa:ObservationCollection ;
     skos:definition "Collection of one or more observations, whose members share a common value for one or more property" ;
     skos:prefLabel "Observation collection" ;
+.
+
+tern:Parameter
+    a owl:Class ;
+    rdfs:label "Parameter" ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A [FeatureOfInterest's](http://w3.org/ns/sosa/FeatureOfInterest) property or characteristic which an Observation is measuring using some Procedure." ;
 .
 
 tern:Procedure
@@ -446,6 +476,17 @@ tern:cardinalDirection
     skos:example "NNE, W, SE, etc." ;
 .
 
+tern:centroidPoint
+    a rdf:Property ;
+    rdfs:label "centroid point" ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/List_of_centroids> ;
+    rdfs:subPropertyOf geo:hasGeometry ;
+    owl:deprecated true ;
+    skos:definition "The centroid point of an object-of-interest." ;
+    skos:example """The geometric center of 1-ha vegetation plot expressed 
+as [sf:Point](http://www.opengis.net/ont/sf#Point).""" ;
+.
+
 tern:climateCode
     a rdf:Property ;
     rdfs:label "Köppen climate code" ;
@@ -466,6 +507,24 @@ tern:dataManager
     rdfs:label "data manager" ;
     skos:definition "The data manager of a project, platform or system." ;
     skos:example "Alice Smith is one of data managers for ant survey project." ;
+.
+
+tern:dateCommissioned
+    a rdf:Property ;
+    rdfs:label "date commissioned" ;
+    skos:definition "The date when, e.g., a Site is ready to commence its operations, after it is successfully installed and tested." ;
+    skos:example """1 August 2017 is the date commisioned of the 
+[Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
+    skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing start date may be set to the first of the month." ;
+.
+
+tern:dateDecommissioned
+    a rdf:Property ;
+    rdfs:label "date decommissioned" ;
+    skos:definition "The date when, e.g., a Site is decommissioned or stopped operating." ;
+    skos:example """30 Nov 2019 is the date decommisioned of the 
+[Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
+    skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing end date may be set to the end of the month." ;
 .
 
 tern:dimension
@@ -496,12 +555,26 @@ tern:environmentDescription
     skos:example "A dataset collected from weather monitoring stations across the country." ;
 .
 
+tern:equipment
+    a owl:ObjectProperty ;
+    rdfs:label "equipment" ;
+    skos:definition "Describe the equipment used as text." ;
+.
+
 tern:featureType
     a owl:ObjectProperty ;
     rdfs:label "feature type" ;
     rdfs:domain tern:FeatureOfInterest ;
     rdfs:range skos:Concept ;
     skos:definition "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
+.
+
+tern:fluxnetID
+    a rdf:Property ;
+    rdfs:label "fluxnet ID" ;
+    rdfs:seeAlso <https://fluxnet.org/> ;
+    skos:definition "The unique identifier for flux towers registered with FLUXNET." ;
+    skos:example "AU-ASM" ;
 .
 
 tern:funder
@@ -536,11 +609,10 @@ tern:hasCalibration
     skos:definition "A link to a [tern:Calibration](https://w3id.org/tern/ontologies/tern/Calibration) which represents a calibration activity performed on this System's properties to ensure accurate measurements and proper functioning." ;
 .
 
-tern:hasIGSN
-    a owl:ObjectProperty ;
-    rdfs:label "has IGSN" ;
-    rdfs:range tern:IGSN ;
-    skos:definition "A link to a [tern:IGSN](https://w3id.org/tern/ontologies/tern/IGSN) which represents a globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
+tern:hasCategoricalCollection
+    a rdf:Property ;
+    rdfs:label "has categorical collection" ;
+    skos:definition "A property that links a concept to a collection containing its categorical values." ;
 .
 
 tern:hasEnvironmentalCharacteristic
@@ -556,6 +628,13 @@ tern:hasFeatureType
     skos:definition "Links a concept to a feature type." ;
 .
 
+tern:hasIGSN
+    a owl:ObjectProperty ;
+    rdfs:label "has IGSN" ;
+    rdfs:range tern:IGSN ;
+    skos:definition "A link to a [tern:IGSN](https://w3id.org/tern/ontologies/tern/IGSN) which represents a globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
+.
+
 tern:hasObservation
     a owl:ObjectProperty ;
     rdfs:label "has observation" ;
@@ -568,6 +647,13 @@ tern:hasObservationTheme
     rdfs:label "has observation theme" ;
     rdfs:subPropertyOf skos:relatedMatch ;
     skos:definition "Link a concept to an observation theme." ;
+.
+
+tern:hasParameter
+    a rdf:Property ;
+    rdfs:label "has parameter" ;
+    rdfs:subPropertyOf skos:relatedMatch ;
+    skos:definition "A property that links a concept to a parameter." ;
 .
 
 tern:hasSampling
@@ -602,6 +688,20 @@ tern:hasValue
     rdfs:label "has value" ;
     rdfs:range tern:Value ;
     skos:definition "A link to a [tern:Value](https://w3id.org/tern/ontologies/tern/Value) which encapulates the value of this thing." ;
+.
+
+tern:igbpCode
+    a rdf:Property ;
+    rdfs:label "IGBP code" ;
+    rdfs:seeAlso <https://fluxnet.org/data/badm-data-templates/igbp-classification/> ;
+    skos:definition "The IGBP classification code that identifies the biome type and land cover characteristics of a flux tower site." ;
+    skos:example "GRA - Grasslands: Lands with herbaceous types of cover. Tree and shrub cover is less than 10%." ;
+.
+
+tern:instructions
+    a owl:ObjectProperty ;
+    rdfs:label "instructions" ;
+    skos:definition "Describe the instructions of the procedure/method." ;
 .
 
 tern:instrumentType
@@ -643,6 +743,31 @@ tern:isSubActivityOf
     skos:definition "A property that links an activity to its parent activity." ;
 .
 
+tern:length
+    a rdf:Property ;
+    rdfs:label "length" ;
+    rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Length> ;
+    skos:definition "A measure of distance." ;
+.
+
+tern:localValue
+    a rdf:Property ;
+    rdfs:label "local value" ;
+.
+
+tern:localVocabulary
+    a rdf:Property ;
+    rdfs:label "local vocabulary" ;
+    rdfs:range [
+            a owl:Class ;
+            owl:unionOf (
+                    skos:ConceptScheme
+                    skos:Collection
+                    owl:Ontology
+                )
+        ] ;
+.
+
 tern:locationDescription
     a rdf:Property ;
     rdfs:label "location description" ;
@@ -673,6 +798,12 @@ tern:maxAltitude
     skos:example "The maximum altitude of a mountain range is 1000m." ;
 .
 
+tern:methodType
+    a rdf:Property ;
+    rdfs:label "method type" ;
+    skos:definition "A particular method type used to conduct some survey." ;
+.
+
 tern:minAltitude
     a rdf:Property ;
     rdfs:label "minimum altitude" ;
@@ -694,6 +825,14 @@ tern:owner
     skos:example "Environment department is one of owners for ant survey project." ;
 .
 
+tern:ozfluxID
+    a rdf:Property ;
+    rdfs:label "ozflux ID" ;
+    rdfs:seeAlso <https://www.ozflux.org.au/> ;
+    skos:definition "The unique identifier for flux towers in the OzFlux network, which provides observations of energy, carbon and water exchange between the atmosphere and Australian/NZ ecosystems." ;
+    skos:example "YarIrr" ;
+.
+
 tern:platformType
     a owl:ObjectProperty ;
     rdfs:label "platform type" ;
@@ -713,6 +852,13 @@ tern:producer
     rdfs:label "producer" ;
     skos:definition "The producer of a dataset." ;
     skos:example "Alice Smith is one of producers for ant survey dataset." ;
+.
+
+tern:purpose
+    a owl:DatatypeProperty ;
+    rdfs:label "purpose" ;
+    rdfs:range xsd:string ;
+    skos:definition "Describe the purpose of something." ;
 .
 
 tern:resourceSpecificUsage
@@ -738,14 +884,6 @@ tern:sampleStorageLocation
     skos:definition "A property that links a [PhysicalSpecimen](#PhysicalSpecimen) to the location [Point](http://www.opengis.net/ont/sf#Point) of where it is stored." ;
 .
 
-tern:sampleType
-    a owl:ObjectProperty ;
-    rdfs:label "sample type" ;
-    rdfs:domain tern:IGSN ;
-    rdfs:range skos:Concept ;
-    skos:definition "The sample type of an [IGSN](#IGSN)." ;
-.
-
 tern:sampleSubType
     a owl:ObjectProperty ;
     rdfs:label "sample sub type" ;
@@ -754,10 +892,25 @@ tern:sampleSubType
     skos:definition "The sample sub type of an [IGSN](#IGSN)." ;
 .
 
+tern:sampleType
+    a owl:ObjectProperty ;
+    rdfs:label "sample type" ;
+    rdfs:domain tern:IGSN ;
+    rdfs:range skos:Concept ;
+    skos:definition "The sample type of an [IGSN](#IGSN)." ;
+.
+
 tern:samplingType
     a owl:ObjectProperty ;
     rdfs:label "sampling type" ;
     skos:definition "The type of sampling act." ;
+.
+
+tern:scope
+    a owl:DatatypeProperty ;
+    rdfs:label "scope" ;
+    rdfs:range xsd:string ;
+    skos:definition "Describe the scope of something." ;
 .
 
 tern:shortName
@@ -858,6 +1011,12 @@ tern:uncertainty
     skos:scopeNote "measurement = (best estimate ± uncertainty) units " ;
 .
 
+tern:unit
+    a owl:ObjectProperty ;
+    rdfs:label "unit" ;
+    skos:definition "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
+.
+
 tern:valueType
     a rdf:Property ;
     rdfs:label "value type" ;
@@ -870,6 +1029,27 @@ tern:verticalExtent
     rdfs:label "vertical extent" ;
     skos:definition "The vertical extent of an object or phenomenon in a given context." ;
     skos:example "The vertical extent of a mountain range." ;
+.
+
+tern:vocabulary
+    a owl:ObjectProperty ;
+    rdfs:label "vocabulary" ;
+    rdfs:range [
+            a owl:Class ;
+            owl:unionOf (
+                    skos:ConceptScheme
+                    skos:Collection
+                    owl:Ontology
+                )
+        ] ;
+    skos:definition "Controlled vocabulary, taxonomy etc." ;
+.
+
+tern:width
+    a rdf:Property ;
+    rdfs:label "width" ;
+    rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Width> ;
+    skos:definition "The measurement or extent of something from side to side." ;
 .
 
 <https://linked.data.gov.au/org/csiro>
@@ -935,37 +1115,6 @@ tern:Calibration
     skos:prefLabel "Calibration" ;
 .
 
-tern:IGSN
-    a owl:Class ;
-    reg:status reg:statusExperimental ;
-    skos:definition "A globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
-    skos:example "The IGSN 'AU1234567' represents a rock sample collected from a geological survey in Australia, with metadata detailing its location, collection date, and characteristics." ;
-    skos:prefLabel "IGSN" ;
-.
-
-tern:Input
-    a owl:Class ;
-    rdfs:label "Input" ;
-    rdfs:subClassOf ssn:Input ;
-    skos:definition "*Input* - Any information that is provided to a Procedure for its use." ;
-    skos:example """A **wedge prism** or **relascope** can be used to estimate the Basal Area per hectare. 
-The number of counted trees and the Basal Area Factor are inputs to estimate the Basal Area.""" ;
-.
-
-tern:Method
-    a owl:Class ;
-    rdfs:label "Method" ;
-    rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
-    rdfs:seeAlso
-        <https://apps.usgs.gov/thesaurus/term-simple.php?thcode=2&code=376> ,
-        <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
-    rdfs:subClassOf skos:Concept ;
-    skos:definition "A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an Observation or a Sample. It explains the steps to be carried out to arrive at reproducible Result." ;
-    skos:example """Borehole logging is a field method in which 
-in situ physical measurements (e.g., temperature) are made down the 
-length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)""" ;
-.
-
 tern:MobilePlatform
     a owl:Class ;
     rdfs:label "Mobile Platform" ;
@@ -984,13 +1133,6 @@ tern:Observation
 an anemometer sensor. The results of the observation are the measurement values 
 of the properties estimated by the sensor.""" ;
     skos:prefLabel "Observation" ;
-.
-
-tern:Parameter
-    a owl:Class ;
-    rdfs:label "Parameter" ;
-    rdfs:subClassOf skos:Concept ;
-    skos:definition "A [FeatureOfInterest's](http://w3.org/ns/sosa/FeatureOfInterest) property or characteristic which an Observation is measuring using some Procedure." ;
 .
 
 tern:Result
@@ -1040,31 +1182,6 @@ tern:Survey
     skos:prefLabel "Survey" ;
 .
 
-tern:centroidPoint
-    a rdf:Property ;
-    rdfs:label "centroid point" ;
-    rdfs:seeAlso <https://en.wikipedia.org/wiki/List_of_centroids> ;
-    rdfs:subPropertyOf geo:hasGeometry ;
-    owl:deprecated true ;
-    skos:definition "The centroid point of an object-of-interest." ;
-    skos:example """The geometric center of 1-ha vegetation plot expressed 
-as [sf:Point](http://www.opengis.net/ont/sf#Point).""" ;
-.
-
-tern:equipment
-    a owl:ObjectProperty ;
-    rdfs:label "equipment" ;
-    skos:definition "Describe the equipment used as text." ;
-.
-
-tern:fluxnetID
-    a rdf:Property ;
-    rdfs:label "fluxnet ID" ;
-    rdfs:seeAlso <https://fluxnet.org/> ;
-    skos:definition "The unique identifier for flux towers registered with FLUXNET." ;
-    skos:example "AU-ASM" ;
-.
-
 tern:globalMatch
     a rdf:Property ;
     rdfs:label "global match" ;
@@ -1083,24 +1200,11 @@ tern:hasAttribute
     skos:definition "Link to an Attribute." ;
 .
 
-tern:hasCategoricalCollection
-    a rdf:Property ;
-    rdfs:label "has categorical collection" ;
-    skos:definition "A property that links a concept to a collection containing its categorical values." ;
-.
-
 tern:hasMethod
     a rdf:Property ;
     rdfs:label "has method" ;
     rdfs:subPropertyOf skos:relatedMatch ;
     skos:definition "A property that links a concept to a method." ;
-.
-
-tern:hasParameter
-    a rdf:Property ;
-    rdfs:label "has parameter" ;
-    rdfs:subPropertyOf skos:relatedMatch ;
-    skos:definition "A property that links a concept to a parameter." ;
 .
 
 tern:hasSamplingPoint
@@ -1115,20 +1219,6 @@ tern:hasSite
     rdfs:label "has site" ;
     rdfs:range tern:Site ;
     skos:definition "A property that links, e.g., a Site Visit to a Site." ;
-.
-
-tern:igbpCode
-    a rdf:Property ;
-    rdfs:label "IGBP code" ;
-    rdfs:seeAlso <https://fluxnet.org/data/badm-data-templates/igbp-classification/> ;
-    skos:definition "The IGBP classification code that identifies the biome type and land cover characteristics of a flux tower site." ;
-    skos:example "GRA - Grasslands: Lands with herbaceous types of cover. Tree and shrub cover is less than 10%." ;
-.
-
-tern:instructions
-    a owl:ObjectProperty ;
-    rdfs:label "instructions" ;
-    skos:definition "Describe the instructions of the procedure/method." ;
 .
 
 tern:isAttributeOf
@@ -1159,33 +1249,6 @@ tern:isSiteVisitOf
     a owl:ObjectProperty ;
     rdfs:label "is site visit of" ;
     owl:inverseOf tern:isSiteVisitOf ;
-.
-
-tern:methodType
-    a rdf:Property ;
-    rdfs:label "method type" ;
-    skos:definition "A particular method type used to conduct some survey." ;
-.
-
-tern:ozfluxID
-    a rdf:Property ;
-    rdfs:label "ozflux ID" ;
-    rdfs:seeAlso <https://www.ozflux.org.au/> ;
-    skos:definition "The unique identifier for flux towers in the OzFlux network, which provides observations of energy, carbon and water exchange between the atmosphere and Australian/NZ ecosystems." ;
-    skos:example "YarIrr" ;
-.
-
-tern:scope
-    a owl:DatatypeProperty ;
-    rdfs:label "scope" ;
-    rdfs:range xsd:string ;
-    skos:definition "Describe the scope of something." ;
-.
-
-tern:unit
-    a owl:ObjectProperty ;
-    rdfs:label "unit" ;
-    skos:definition "The unit of measure of the value. Use [QUDT units of measure vocabulary](http://qudt.org/vocab/unit/)." ;
 .
 
 <https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb>
@@ -1234,6 +1297,17 @@ tern:FixedPlatform
     skos:definition "A fixed platform based on land." ;
 .
 
+tern:Site
+    a owl:Class ;
+    reg:status reg:statusStable ;
+    rdfs:subClassOf
+        tern:Platform ,
+        tern:Sample ;
+    skos:definition "An ecological monitoring site where observations and samplings occur. This `Site` class is a subclass of `Sample` since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
+    skos:prefLabel "Site" ;
+    skos:scopeNote "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
+.
+
 tern:System
     a owl:Class ;
     reg:status reg:statusStable ;
@@ -1242,63 +1316,18 @@ tern:System
     skos:prefLabel "System" ;
 .
 
-tern:length
-    a rdf:Property ;
-    rdfs:label "length" ;
-    rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Length> ;
-    skos:definition "A measure of distance." ;
-.
-
-tern:localValue
-    a rdf:Property ;
-    rdfs:label "local value" ;
-.
-
-tern:localVocabulary
-    a rdf:Property ;
-    rdfs:label "local vocabulary" ;
-    rdfs:range [
-            a owl:Class ;
-            owl:unionOf (
-                    skos:ConceptScheme
-                    skos:Collection
-                    owl:Ontology
-                )
-        ] ;
-.
-
-tern:purpose
-    a owl:DatatypeProperty ;
-    rdfs:label "purpose" ;
-    rdfs:range xsd:string ;
-    skos:definition "Describe the purpose of something." ;
-.
-
-tern:vocabulary
-    a owl:ObjectProperty ;
-    rdfs:label "vocabulary" ;
-    rdfs:range [
-            a owl:Class ;
-            owl:unionOf (
-                    skos:ConceptScheme
-                    skos:Collection
-                    owl:Ontology
-                )
-        ] ;
-    skos:definition "Controlled vocabulary, taxonomy etc." ;
-.
-
-tern:width
-    a rdf:Property ;
-    rdfs:label "width" ;
-    rdfs:seeAlso <http://qudt.org/vocab/quantitykind/Width> ;
-    skos:definition "The measurement or extent of something from side to side." ;
-.
-
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
     a sdo:Organization ;
     sdo:identifier <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
     sdo:name "TERN" ;
+.
+
+tern:IGSN
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    skos:definition "A globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles." ;
+    skos:example "The IGSN 'AU1234567' represents a rock sample collected from a geological survey in Australia, with metadata detailing its location, collection date, and characteristics." ;
+    skos:prefLabel "IGSN" ;
 .
 
 tern:Platform
@@ -1322,35 +1351,6 @@ tern:Sample
     skos:definition "A feature which is intended to be representative of a `FeatureOfInterest` on which `Observations` may be made." ;
     skos:prefLabel "Sample" ;
     skos:scopeNote "A sample may be a physical sample or a sub-divided section of some larger feature of interest. For example, land surface, plant population, ground cover are all common sub-samples of a site (feature of interest) in ecological surveys." ;
-.
-
-tern:Site
-    a owl:Class ;
-    reg:status reg:statusStable ;
-    rdfs:subClassOf
-        tern:Platform ,
-        tern:Sample ;
-    skos:definition "An ecological monitoring site where observations and samplings occur. This `Site` class is a subclass of `Sample` since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
-    skos:prefLabel "Site" ;
-    skos:scopeNote "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
-.
-
-tern:dateCommissioned
-    a rdf:Property ;
-    rdfs:label "date commissioned" ;
-    skos:definition "The date when, e.g., a Site is ready to commence its operations, after it is successfully installed and tested." ;
-    skos:example """1 August 2017 is the date commisioned of the 
-[Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
-    skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing start date may be set to the first of the month." ;
-.
-
-tern:dateDecommissioned
-    a rdf:Property ;
-    rdfs:label "date decommissioned" ;
-    skos:definition "The date when, e.g., a Site is decommissioned or stopped operating." ;
-    skos:example """30 Nov 2019 is the date decommisioned of the 
-[Collie flux station](http://ozflux.org.au/monitoringsites/collie/index.html)""" ;
-    skos:scopeNote "Use ISO 8601 international standard for representing dates and times. Missing end date may be set to the end of the month." ;
 .
 
 <https://linked.data.gov.au/org/tern>
