@@ -704,6 +704,30 @@ tern:instructions
     skos:definition "Describe the instructions of the procedure/method." ;
 .
 
+tern:undertakenConcurrently
+    a owl:ObjectProperty ;
+    rdfs:label "undertaken concurrently" ;
+    skos:definition "Relation to Method that could be undertaken concurrently." ;
+.
+
+tern:undertakenBefore
+    a owl:ObjectProperty ;
+    rdfs:label "undertaken before" ;
+    skos:definition "Relation to Method that should be taken after current one." ;
+.
+
+tern:undertakenComplementarily
+    a owl:ObjectProperty ;
+    rdfs:label "undertaken complementarily" ;
+    skos:definition "Relation to Method that could be taken complementarily." ;
+.
+
+tern:undertakenAfter
+    a owl:ObjectProperty ;
+    rdfs:label "undertaken after" ;
+    skos:definition "Relation to Method that should be taken before current one." ;
+.
+
 tern:instrumentType
     a owl:ObjectProperty ;
     rdfs:label "instrument type" ;

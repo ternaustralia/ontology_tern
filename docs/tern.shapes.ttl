@@ -682,7 +682,7 @@ tern-shapes:Method
             sh:minCount 1 ;
             sh:name "skos:prefLabel" ;
             sh:path skos:prefLabel
-        ] ;
+        ] , tern-shapes:tern-undertakenConcurrently , tern-shapes:tern-undertakenBefore , tern-shapes:tern-undertakenComplementarily , tern-shapes:tern-undertakenAfter ;
     sh:targetClass tern:Method ;
 .
 
@@ -3963,5 +3963,49 @@ tern-shapes:tern-hasAttribute
     sh:name "tern:hasAttribute" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path tern:hasAttribute ;
+.
+
+tern-shapes:tern-undertakenConcurrently
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken concurrently" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenConcurrently` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenConcurrently" ;
+    sh:path tern:undertakenConcurrently ;
+.
+
+tern-shapes:tern-undertakenBefore
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken before" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenBefore` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenBefore" ;
+    sh:path tern:undertakenBefore ;
+.
+
+tern-shapes:tern-undertakenComplementarily
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken complementarily" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenComplementarily` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenComplementarily" ;
+    sh:path tern:undertakenComplementarily ;
+.
+
+tern-shapes:tern-undertakenAfter
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken after" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenAfter` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenAfter" ;
+    sh:path tern:undertakenAfter ;
 .
 
