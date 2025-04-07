@@ -532,6 +532,7 @@ tern-shapes:Intervention
     sh:property
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
+        tern-shapes:sosa-usedProcedure ,
         tern-shapes:geo-hasGeometry ,
         tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
@@ -985,6 +986,7 @@ tern-shapes:System
         tern-shapes:dcat-contactPoint ,
         tern-shapes:dcterms-source ,
         tern-shapes:dcterms-type ,
+        tern-shapes:ssn-implements ,
         tern-shapes:schema-serialNumber ,
         tern-shapes:skos-altLabel ,
         tern-shapes:skos-exactMatch ,
@@ -3799,11 +3801,38 @@ tern-shapes:sosa-usedProcedure
     skos:prefLabel "used procedure" ;
     sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
     sh:maxCount 1 ;
-    sh:message "Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is an IRI." ;
+    sh:message "Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is a `tern:Method` or `sosa:Procedure`." ;
     sh:minCount 1 ;
     sh:name "sosa:usedProcedure" ;
-    sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class sosa:Procedure
+            ]
+            [
+                sh:class tern:Method
+            ]
+        ) ;
     sh:path sosa:usedProcedure ;
+.
+
+tern-shapes:ssn-implements
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "ssn implements" ;
+    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
+    sh:maxCount 1 ;
+    sh:message "Exactly 1 `ssn:implements` _MUST_ exist where the value node is a `tern:Method` or `sosa:Procedure`." ;
+    sh:minCount 1 ;
+    sh:name "ssn:implements" ;
+    sh:or (
+            [
+                sh:class sosa:Procedure
+            ]
+            [
+                sh:class tern:Method
+            ]
+        ) ;
+    sh:path ssn:implements ;
 .
 
 <urn:shape:geo-hasGeometry-min-1>
