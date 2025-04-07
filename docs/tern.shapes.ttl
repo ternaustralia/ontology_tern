@@ -450,7 +450,7 @@ tern-shapes:Input
             sh:minCount 1 ;
             sh:name "rdfs:label" ;
             sh:path rdfs:label
-        ] ;
+        ] , tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Input ;
 .
 
