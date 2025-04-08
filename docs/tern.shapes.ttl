@@ -844,9 +844,9 @@ tern-shapes:Procedure
         ] ,
         [
             a sh:PropertyShape ;
-            sh:class skos:Concept ;
+            sh:class tern:Method ;
             sh:description "The method type of the procedure." ;
-            sh:message "If present, `tern:methodType` predicates on a `tern:Procedure` _MUST_ have values of type `skos:Concept`." ;
+            sh:message "If present, `tern:methodType` predicates on a `tern:Procedure` _MUST_ have values of type `tern:Method`." ;
             sh:name "tern:methodType" ;
             sh:path tern:methodType
         ] ;
@@ -3801,12 +3801,12 @@ tern-shapes:sosa-usedProcedure
     skos:prefLabel "used procedure" ;
     sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
     sh:maxCount 1 ;
-    sh:message "Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is a `tern:Method` or `sosa:Procedure`." ;
+    sh:message "Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`." ;
     sh:minCount 1 ;
     sh:name "sosa:usedProcedure" ;
     sh:or (
             [
-                sh:class sosa:Procedure
+                sh:class tern:Procedure
             ]
             [
                 sh:class tern:Method
@@ -3821,12 +3821,12 @@ tern-shapes:ssn-implements
     skos:prefLabel "ssn implements" ;
     sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
     sh:maxCount 1 ;
-    sh:message "Exactly 1 `ssn:implements` _MUST_ exist where the value node is a `tern:Method` or `sosa:Procedure`." ;
+    sh:message "Exactly 1 `ssn:implements` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`." ;
     sh:minCount 1 ;
     sh:name "ssn:implements" ;
     sh:or (
             [
-                sh:class sosa:Procedure
+                sh:class tern:Procedure
             ]
             [
                 sh:class tern:Method
