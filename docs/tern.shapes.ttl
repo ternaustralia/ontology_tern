@@ -957,6 +957,7 @@ tern-shapes:SiteVisit
     rdfs:label "Site Visit" ;
     sh:property
         tern-shapes:dcterms-identifier ,
+        tern-shapes:tern-hasSite ,
         tern-shapes:dcterms-type ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-locationDescription ,
@@ -1056,6 +1057,7 @@ tern-shapes:Transect
     rdfs:label "Transect" ;
     sh:property
         tern-shapes:Transect-featureType ,
+        tern-shapes:Site-hasSiteVisit ,
         tern-shapes:Transect-hasGeometry ,
         tern-shapes:Transect-spatial ,
         tern-shapes:Transect-transectDirection ,
