@@ -142,17 +142,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Catalog"@en ;
     sh:property
         [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `dcterms:language` predicate where the value node is an IRI." ;
+            sh:message "A `dcat:Catalog` _MUST_ have at least 1 `dcterms:language` predicate where the value node is an IRI." ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path dcterms:language ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Catalog` _MAY_ have a `dcatap:applicableLegislation` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcatap:applicableLegislation ;
             sh:severity sh:Violation
         ] ,
         [
@@ -169,11 +162,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:path dcterms:spatial ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
             sh:path dcterms:hasPart ;
             sh:severity sh:Violation
         ] ,
@@ -189,22 +177,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:shape :DateOrDateTimeDataType_Shape
         ] ,
         [
-            sh:maxCount 1 ;
-            sh:path dcterms:rights ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:class dcat:CatalogRecord ;
             sh:message "A `dcat:Catalog` _MAY_ have a `dcat:record` predicate where the value node is a `dcat:CatalogRecord`." ;
             sh:path dcat:record ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcat:themeTaxonomy ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcat:service ;
             sh:severity sh:Violation
         ] ,
         [
@@ -212,13 +187,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:path dcterms:creator ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:class dcat:Dataset ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:Catalog` _MAY_ have maximum 1 `dcat:dataset predicate where the value node is a `dcat:Dataset`." ;
+            sh:or (
+                    [
+                        sh:class dcat:Dataset
+                    ]
+                    [
+                        sh:class dcat:DatasetSeries
+                    ]
+                ) ;
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcat:dataset` predicate where the value node is a `dcat:Dataset` or `dcat:DatasetSeries`." ;
             sh:path dcat:dataset ;
             sh:severity sh:Violation
         ] ,
@@ -242,8 +219,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `dcterms:title` where the value node is literal." ;
+            sh:message "A `dcat:Catalog` _MUST_ have at least 1 `dcterms:title` where the value node is literal." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:title ;
