@@ -248,19 +248,26 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Concept Scheme"@en ;
     sh:property 
         [
+            sh:datatype xsd:anyURI ;
+            sh:message "A `skos:ConceptScheme` _MAY_ have a `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:maxCount 1 ;
-            sh:message "A `skos:ConceptScheme` _MUST_ have exactly 1 `skos:prefLabel` where the value node is a literal." ;
+            sh:message "A `skos:ConceptScheme` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
-            sh:path skos:prefLabel ;
+            sh:path dcterms:title ;
             sh:severity sh:Violation
         ] ;
     sh:targetClass skos:ConceptScheme ;
 .
 
-:Category_Shape
+:Concept_Shape
     a sh:NodeShape ;
-    rdfs:label "Category"@en ;
+    rdfs:label "Concept"@en ;
     sh:property 
         [
             sh:minCount 1 ;
@@ -277,27 +284,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass skos:Concept ;
 .
 
-:Checksum_Shape
-    a sh:NodeShape ;
-    rdfs:label "Checksum"@en ;
-    sh:property
-        [
-            sh:hasValue spdx:checksumAlgorithm_sha1 ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path spdx:algorithm ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:hexBinary ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path spdx:checksumValue ;
-            sh:severity sh:Violation
-        ] ;
-    sh:targetClass spdx:Checksum ;
-.
-
 :Unit_Shape
     a sh:NodeShape ;
     rdfs:label "QUDT Unit"@en ;
@@ -311,7 +297,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `qudt:Unit` _MAY_ have 1 `rdfs:isDefinedBy` where the value node is a `sh:IRI`." ;
+            sh:maxCount 1 ;
+            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:isDefinedBy` where the value node is a `sh:IRI`." ;
+            sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path rdfs:isDefinedBy ;
             sh:severity sh:Violation
@@ -333,8 +321,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `skos:Concept` _MAY_ have maximum 1 `tern:unit` predicate where the value node is a `qudt:Unit`." ;
-            sh:class qudt:Unit ;
+            sh:message "A `skos:Concept` _MAY_ have maximum 1 `tern:unit` predicate where the value node is a `sh:IRI." ;
+            sh:nodeKind sh:IRI ;
             sh:path tern:unit ;
             sh:severity sh:Violation
         ] ,
@@ -1475,9 +1463,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `tern:unit` predicate where the value node is a `qudt:Unit`." ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `tern:unit` predicate where the value node is a `sh:IRI`." ;
             sh:minCount 1 ;
-            sh:class qudt:Unit ;
+            sh:nodeKind sh:IRI ;
             sh:path tern:unit ;
             sh:severity sh:Violation
         ] ;
@@ -1621,9 +1609,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:unit` predicate where the value node is `qudt:Unit`." ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
             sh:minCount 1 ;
-            sh:class qudt:Unit ;
+            sh:nodeKind sh:IRI ;
             sh:path tern:unit ;
             sh:severity sh:Violation
         ] ,
