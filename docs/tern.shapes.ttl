@@ -202,23 +202,6 @@ tern-shapes:Dimension
     sh:property
         [
             a sh:PropertyShape ;
-            sh:description "The width dimension." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
-            sh:minCount 1 ;
-            sh:name "tern:width" ;
-            sh:or (
-                    [
-                        sh:datatype xsd:double
-                    ]
-                    [
-                        sh:datatype xsd:integer
-                    ]
-                ) ;
-            sh:path tern:width
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:class qudt:Unit ;
             sh:description "The unit of measurement for the dimensions." ;
             sh:maxCount 1 ;
@@ -243,6 +226,23 @@ tern-shapes:Dimension
                     ]
                 ) ;
             sh:path tern:length
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:description "The width dimension." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
+            sh:minCount 1 ;
+            sh:name "tern:width" ;
+            sh:or (
+                    [
+                        sh:datatype xsd:double
+                    ]
+                    [
+                        sh:datatype xsd:integer
+                    ]
+                ) ;
+            sh:path tern:width
         ] ;
     sh:targetClass tern:Dimension ;
 .
@@ -450,7 +450,8 @@ tern-shapes:Input
             sh:minCount 1 ;
             sh:name "rdfs:label" ;
             sh:path rdfs:label
-        ] , tern-shapes:tern-hasAttribute ;
+        ] ,
+        tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Input ;
 .
 
@@ -532,13 +533,13 @@ tern-shapes:Intervention
     sh:property
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
-        tern-shapes:sosa-usedProcedure ,
         tern-shapes:geo-hasGeometry ,
         tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
         tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:sdo-spatial ,
+        tern-shapes:sosa-usedProcedure ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-interventionType ,
         tern-shapes:void-inDataset ;
@@ -682,7 +683,11 @@ tern-shapes:Method
             sh:minCount 1 ;
             sh:name "skos:prefLabel" ;
             sh:path skos:prefLabel
-        ] , tern-shapes:tern-undertakenConcurrently , tern-shapes:tern-undertakenBefore , tern-shapes:tern-undertakenComplementarily , tern-shapes:tern-undertakenAfter ;
+        ] ,
+        tern-shapes:tern-undertakenAfter ,
+        tern-shapes:tern-undertakenBefore ,
+        tern-shapes:tern-undertakenComplementarily ,
+        tern-shapes:tern-undertakenConcurrently ;
     sh:targetClass tern:Method ;
 .
 
@@ -957,9 +962,9 @@ tern-shapes:SiteVisit
     rdfs:label "Site Visit" ;
     sh:property
         tern-shapes:dcterms-identifier ,
-        tern-shapes:tern-hasSite ,
         tern-shapes:dcterms-type ,
         tern-shapes:tern-hasAttribute ,
+        tern-shapes:tern-hasSite ,
         tern-shapes:tern-locationDescription ,
         tern-shapes:tern-siteDescription ;
     sh:targetClass tern:SiteVisit ;
@@ -987,13 +992,13 @@ tern-shapes:System
         tern-shapes:dcat-contactPoint ,
         tern-shapes:dcterms-source ,
         tern-shapes:dcterms-type ,
-        tern-shapes:ssn-implements ,
         tern-shapes:schema-serialNumber ,
         tern-shapes:skos-altLabel ,
         tern-shapes:skos-exactMatch ,
         tern-shapes:skos-prefLabel ,
         tern-shapes:skos-scopeNote ,
         tern-shapes:sosa-implements ,
+        tern-shapes:ssn-implements ,
         tern-shapes:ssn-system-hasOperatingProperty ,
         tern-shapes:ssn-system-hasSystemCapability ,
         tern-shapes:ssn-system-hasSystemProperty ,
@@ -1056,8 +1061,8 @@ tern-shapes:Transect
     a sh:NodeShape ;
     rdfs:label "Transect" ;
     sh:property
-        tern-shapes:Transect-featureType ,
         tern-shapes:Site-hasSiteVisit ,
+        tern-shapes:Transect-featureType ,
         tern-shapes:Transect-hasGeometry ,
         tern-shapes:Transect-spatial ,
         tern-shapes:Transect-transectDirection ,
@@ -2058,18 +2063,6 @@ tern-shapes:Site-featureType
     sh:path tern:featureType ;
 .
 
-tern-shapes:Site-hasSiteVisit
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "has site visit" ;
-    sh:class tern:SiteVisit ;
-    sh:description "A property that links, e.g., a Site to a Site Visit." ;
-    sh:message "A `tern:Site` _MAY_ have a `tern:hasSiteVisit` predicate where the value node is an IRI of type `tern:SiteVisit`." ;
-    sh:name "tern:hasSiteVisit" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:hasSiteVisit ;
-.
-
 tern-shapes:Site-locationProcedure
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -2975,6 +2968,26 @@ tern-shapes:ssn-deployedSystem
     sh:path ssn:deployedSystem ;
 .
 
+tern-shapes:ssn-implements
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "ssn implements" ;
+    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
+    sh:maxCount 1 ;
+    sh:message "Exactly 1 `ssn:implements` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`." ;
+    sh:minCount 1 ;
+    sh:name "ssn:implements" ;
+    sh:or (
+            [
+                sh:class tern:Procedure
+            ]
+            [
+                sh:class tern:Method
+            ]
+        ) ;
+    sh:path ssn:implements ;
+.
+
 tern-shapes:ssn-system-hasOperatingProperty
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -3141,24 +3154,6 @@ tern-shapes:tern-hasSimpleValue
     sh:path tern:hasSimpleValue ;
 .
 
-tern-shapes:tern-hasSite
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "has site" ;
-    sh:description "A property that links, e.g., a FeatureOfInterest to a Site or Transect." ;
-    sh:message "A `tern:FeatureOfInterest` _MAY_ have a `tern:hasSite` predicate where the value node is an IRI of type `tern:Site` or `tern:Transect`." ;
-    sh:name "tern:hasSite" ;
-    sh:or (
-            [
-                sh:class tern:Site
-            ]
-            [
-                sh:class tern:Transect
-            ]
-        ) ;
-    sh:path tern:hasSite ;
-.
-
 tern-shapes:tern-hasValue
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3318,6 +3313,50 @@ tern-shapes:tern-samplingType
     sh:name "tern:samplingType" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:samplingType ;
+.
+
+tern-shapes:tern-undertakenAfter
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken after" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenAfter` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenAfter" ;
+    sh:path tern:undertakenAfter ;
+.
+
+tern-shapes:tern-undertakenBefore
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken before" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenBefore` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenBefore" ;
+    sh:path tern:undertakenBefore ;
+.
+
+tern-shapes:tern-undertakenComplementarily
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken complementarily" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenComplementarily` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenComplementarily" ;
+    sh:path tern:undertakenComplementarily ;
+.
+
+tern-shapes:tern-undertakenConcurrently
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "undertaken concurrently" ;
+    sh:class tern:Method ;
+    sh:description "Link to a Method." ;
+    sh:message "A `tern:undertakenConcurrently` predicate _MUST_ have an IRI value of type `tern:Method`." ;
+    sh:name "tern:undertakenConcurrently" ;
+    sh:path tern:undertakenConcurrently ;
 .
 
 tern-shapes:tern-verifiesCapability
@@ -3568,6 +3607,18 @@ tern-shapes:time-unitType
         ] ;
 .
 
+tern-shapes:Site-hasSiteVisit
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has site visit" ;
+    sh:class tern:SiteVisit ;
+    sh:description "A property that links, e.g., a Site to a Site Visit." ;
+    sh:message "A `tern:Site` _MAY_ have a `tern:hasSiteVisit` predicate where the value node is an IRI of type `tern:SiteVisit`." ;
+    sh:name "tern:hasSiteVisit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:hasSiteVisit ;
+.
+
 tern-shapes:sosa-hasFeatureOfInterest
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3661,6 +3712,24 @@ tern-shapes:tern-hasIGSN
     sh:minCount 1 ;
     sh:name "tern:hasIGSN" ;
     sh:path tern:hasIGSN ;
+.
+
+tern-shapes:tern-hasSite
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has site" ;
+    sh:description "A property that links, e.g., a FeatureOfInterest to a Site or Transect." ;
+    sh:message "A `tern:FeatureOfInterest` _MAY_ have a `tern:hasSite` predicate where the value node is an IRI of type `tern:Site` or `tern:Transect`." ;
+    sh:name "tern:hasSite" ;
+    sh:or (
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
+    sh:path tern:hasSite ;
 .
 
 tern-shapes:tern-hasSiteVisit
@@ -3797,46 +3866,6 @@ tern-shapes:sosa-hasSample
     sh:path sosa:hasSample ;
 .
 
-tern-shapes:sosa-usedProcedure
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "used procedure" ;
-    sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
-    sh:maxCount 1 ;
-    sh:message "Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`." ;
-    sh:minCount 1 ;
-    sh:name "sosa:usedProcedure" ;
-    sh:or (
-            [
-                sh:class tern:Procedure
-            ]
-            [
-                sh:class tern:Method
-            ]
-        ) ;
-    sh:path sosa:usedProcedure ;
-.
-
-tern-shapes:ssn-implements
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "ssn implements" ;
-    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
-    sh:maxCount 1 ;
-    sh:message "Exactly 1 `ssn:implements` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`." ;
-    sh:minCount 1 ;
-    sh:name "ssn:implements" ;
-    sh:or (
-            [
-                sh:class tern:Procedure
-            ]
-            [
-                sh:class tern:Method
-            ]
-        ) ;
-    sh:path ssn:implements ;
-.
-
 <urn:shape:geo-hasGeometry-min-1>
     a sh:PropertyShape ;
     sh:description "At least one geo:hasGeometry must exist." ;
@@ -3881,6 +3910,26 @@ tern-shapes:prov-wasAssociatedWith
             ]
         ) ;
     sh:path prov:wasAssociatedWith ;
+.
+
+tern-shapes:sosa-usedProcedure
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "used procedure" ;
+    sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
+    sh:maxCount 1 ;
+    sh:message "Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`." ;
+    sh:minCount 1 ;
+    sh:name "sosa:usedProcedure" ;
+    sh:or (
+            [
+                sh:class tern:Procedure
+            ]
+            [
+                sh:class tern:Method
+            ]
+        ) ;
+    sh:path sosa:usedProcedure ;
 .
 
 tern-shapes:tern-unit
@@ -3965,49 +4014,5 @@ tern-shapes:tern-hasAttribute
     sh:name "tern:hasAttribute" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path tern:hasAttribute ;
-.
-
-tern-shapes:tern-undertakenConcurrently
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "undertaken concurrently" ;
-    sh:class tern:Method ;
-    sh:description "Link to a Method." ;
-    sh:message "A `tern:undertakenConcurrently` predicate _MUST_ have an IRI value of type `tern:Method`." ;
-    sh:name "tern:undertakenConcurrently" ;
-    sh:path tern:undertakenConcurrently ;
-.
-
-tern-shapes:tern-undertakenBefore
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "undertaken before" ;
-    sh:class tern:Method ;
-    sh:description "Link to a Method." ;
-    sh:message "A `tern:undertakenBefore` predicate _MUST_ have an IRI value of type `tern:Method`." ;
-    sh:name "tern:undertakenBefore" ;
-    sh:path tern:undertakenBefore ;
-.
-
-tern-shapes:tern-undertakenComplementarily
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "undertaken complementarily" ;
-    sh:class tern:Method ;
-    sh:description "Link to a Method." ;
-    sh:message "A `tern:undertakenComplementarily` predicate _MUST_ have an IRI value of type `tern:Method`." ;
-    sh:name "tern:undertakenComplementarily" ;
-    sh:path tern:undertakenComplementarily ;
-.
-
-tern-shapes:tern-undertakenAfter
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "undertaken after" ;
-    sh:class tern:Method ;
-    sh:description "Link to a Method." ;
-    sh:message "A `tern:undertakenAfter` predicate _MUST_ have an IRI value of type `tern:Method`." ;
-    sh:name "tern:undertakenAfter" ;
-    sh:path tern:undertakenAfter ;
 .
 
