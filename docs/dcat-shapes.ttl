@@ -408,9 +408,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class rdfs:Resource ;
+            sh:class tern:OnlineResource ;
             sh:maxCount 1 ;
-            sh:message "A `tern:DataQuality` _MAY_ have maximum 1 `tern:DQ_standaloneQualityReport` predicate where the value node is a `rdfs:Resource`." ;
+            sh:message "A `tern:DataQuality` _MAY_ have maximum 1 `tern:DQ_standaloneQualityReport` predicate where the value node is a `tern:OnlineResource`." ;
             sh:path tern:DQ_standaloneQualityReport ;
             sh:severity sh:Violation
         ] ,
@@ -757,14 +757,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class rdfs:Resource ;
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:addtionalDocumentation` predicate where the value node is `rdfs:Resource`." ;
+            sh:class tern:OnlineResource ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:addtionalDocumentation` predicate where the value node is `tern:OnlineResource`." ;
             sh:path tern:addtionalDocumentation ;
             sh:severity sh:Violation
         ] ,
         [
-            sh:class rdfs:Resource ;
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:relation` predicate where the value node is `rdfs:Resource`." ;
+            sh:class tern:OnlineResource ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:relation` predicate where the value node is `tern:OnlineResource`." ;
             sh:path dcterms:relation ;
             sh:severity sh:Violation
         ] ,
@@ -1090,9 +1090,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class rdfs:Resource ;
+            sh:class tern:OnlineResource ;
             sh:maxCount 1 ;
-            sh:message "A `dcat:Distribution` _MUST_ have exactly 1 `dcat:accessURL` predicate where the value node is `rdfs:Resource`." ;
+            sh:message "A `dcat:Distribution` _MUST_ have exactly 1 `dcat:accessURL` predicate where the value node is `tern:OnlineResource`." ;
             sh:minCount 1 ;
             sh:path dcat:accessURL ;
             sh:severity sh:Violation
@@ -1197,9 +1197,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class rdfs:Resource ;
+            sh:class tern:OnlineResource ;
             sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have maximum 1 `tern:otherDocumentation` where the value node is `rdfs:Resource`." ;
+            sh:message "A `tern:Method` _MAY_ have maximum 1 `tern:otherDocumentation` where the value node is `tern:OnlineResource`." ;
             sh:path tern:otherDocumentation ;
             sh:severity sh:Violation
         ] ,
@@ -1450,9 +1450,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class rdfs:Resource ;
+            sh:class tern:OnlineResource ;
             sh:maxCount 1 ;
-            sh:message "A `dqv:QualityAnnotation` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is `rdfs:Resource`." ;
+            sh:message "A `dqv:QualityAnnotation` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is `tern:OnlineResource`." ;
             sh:path dcterms:source ;
             sh:severity sh:Violation
         ] ,
@@ -1520,12 +1520,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :Resource_Shape
     a sh:NodeShape ;
-    rdfs:label "Resource"@en ;
+    rdfs:label "Online Resource"@en ;
     sh:property
         [
             sh:datatype xsd:anyURI ;
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource`_MUST_ have exactly 1 `rdf:value` where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:message "A `tern:OnlineResource`_MUST_ have exactly 1 `rdf:value` where the value node is a literal with datatype `xsd:anyURI`." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path rdf:value ;
@@ -1533,7 +1533,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal." ;
+            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:description ;
             sh:severity sh:Violation
@@ -1541,20 +1541,20 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:class dcterms:Standard ;
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MAY_ have maximum 1 `dcterms:conformsTo` predicate where the value node is `dcterms:Standard`." ;
+            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:conformsTo` predicate where the value node is `dcterms:Standard`." ;
             sh:path dcterms:conformsTo ;
             sh:severity sh:Violation
         ] ,
         [
             sh:class skos:Concept ;
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MAY_ have maximum 1 `dcterms:type` predicate where the value node is `skos:Concept`." ;
+            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:type` predicate where the value node is `skos:Concept`." ;
             sh:path dcterms:type ;
             sh:severity sh:Violation
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
+            sh:message "A `tern:OnlineResource` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:title ;
@@ -1562,11 +1562,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `rdfs:Resource` _MAY_ have a maximum of 1 `dcterms:format` where the value is a literal." ;
+            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:format` where the value is a literal." ;
             sh:path dcterms:format ;
             sh:severity sh:Violation
         ] ;
-    sh:targetClass rdfs:Resource ;
+    sh:targetClass tern:OnlineResource ;
 .
 
 :RightsStatement_Shape

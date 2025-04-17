@@ -1396,6 +1396,14 @@ tern:Value
     skos:scopeNote "This is an 'abstract' class and is not intended to be used directly to create individuals." ;
 .
 
+tern:OnlineResource
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf rdfs:Resource ;
+    skos:definition "Online resources, e.g. additional documentation for datasets." ;
+    skos:prefLabel "Online Resource" ;
+.
+
 []    a owl:Class ;
     owl:unionOf (
             xsd:string
