@@ -58,14 +58,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:isPartOf` predicate where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:isPartOf ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal value." ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:description` where the value node is a literal value." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:description ;
             sh:severity sh:Violation
@@ -85,8 +78,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:shape :DateOrDateTimeDataType_Shape
         ] ,
         [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have maximum 1 `dcterms:title` predicate where the value node is a literal value." ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:title` predicate where the value node is a literal value." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:title ;
             sh:severity sh:Violation
@@ -107,10 +99,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class skos:Concept ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `adms:status` predicate where the value node is an IRI of an individual with the type `skos:Concept`." ;
-            sh:path adms:status ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `skos:notation` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:notation ;
             sh:severity sh:Violation
         ] ,
         [
@@ -122,8 +113,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:language` where the value node is an IRI." ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:language` where the value node is an IRI." ;
             sh:nodeKind sh:IRI ;
             sh:path dcterms:language ;
             sh:severity sh:Violation
