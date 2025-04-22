@@ -953,6 +953,12 @@ tern:supplementalInformation
     skos:example "This dataset includes metadata about the data collection process and quality control measures." ;
 .
 
+tern:otherCitationDetails
+    a rdf:Property ;
+    rdfs:label "other citation details" ;
+    skos:definition "Other citation details of a dataset." ;
+.
+
 tern:swPoint
     a rdf:Property ;
     rdfs:label "sw point" ;
