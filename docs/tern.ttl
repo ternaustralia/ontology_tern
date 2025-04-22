@@ -127,6 +127,14 @@ tern:Boolean
     skos:prefLabel "Boolean" ;
 .
 
+dcat:DatasetSeries
+    a owl:Class ;
+    reg:status reg:statusStable ;
+    rdfs:subClassOf dcat:Dataset ;
+    skos:definition "A collection of datasets that are published separately, but share some characteristics that group them." ;
+    skos:prefLabel "Dataset series" ;
+.
+
 tern:CategoricalValue
     a owl:Class ;
     rdfs:label "Categorical Value" ;
