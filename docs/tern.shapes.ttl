@@ -1460,6 +1460,7 @@ tern-shapes:IGSN-hasGeometry
     reg:status reg:statusExperimental ;
     skos:prefLabel "IGSN hasGeometry" ;
     sh:class geo:Geometry ;
+    sh:description "This SHACL shape defines constraints for the `geo:hasGeometry` property. It specifies that values of the `geo:hasGeometry` property of `tern:IGSN` must be IRIs of type `geo:Geometry`. The status of this shape is experimental, indicating that it might be subject to change in the future." ;
     sh:message "A `tern:IGSN` _MUST_ have at least 1 `geo:hasGeometry` of type `geo:Geometry`." ;
     sh:minCount 1 ;
     sh:name "geo:hasGeometry" ;
