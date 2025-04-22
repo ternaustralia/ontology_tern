@@ -840,117 +840,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Distribution"@en ;
     sh:property
         [
-            sh:path foaf:page ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path odrl:hasPolicy ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcat:accessService ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcat:compressFormat ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcat:packageFormat ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:duration ;
-            sh:maxCount 1 ;
-            sh:path dcat:temporalResolution ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:path dcat:spatialResolutionInMeters ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:description ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcatap:availability ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:format ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:license ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:conformsTo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:IRI ;
-            sh:path dcatap:applicableLegislation ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:node :DateOrDateTimeDataType_Shape ;
-            sh:path dcterms:issued ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:path dcterms:language ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:node :DateOrDateTimeDataType_Shape ;
-            sh:path dcterms:modified ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcterms:rights ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:title ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path spdx:checksum ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path adms:status ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:decimal ;
-            sh:maxCount 1 ;
-            sh:path dcat:byteSize ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path dcat:downloadURL ;
-            sh:severity sh:Violation
-        ] ,
-        [
             sh:class tern:OnlineResource ;
             sh:maxCount 1 ;
             sh:message "A `dcat:Distribution` _MUST_ have exactly 1 `dcat:accessURL` predicate where the value node is `tern:OnlineResource`." ;
@@ -964,17 +853,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:node :PersonOrg_Shape ;
             sh:path tern:distributor ;
             sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Distribution` _MAY_ have a `tern:producer` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:producer ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:path dcat:mediaType ;
-            sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Distribution ;
 .
@@ -983,13 +861,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a sh:NodeShape ;
     rdfs:label "Geometry"@en ;
     sh:property
-        [
-            sh:maxCount 1 ;
-            sh:message "A `geo:Geometry` _MAY_ have maximum 1 `tern:locationDescription` predicate where the value node is a literal." ;
-            sh:nodeKind sh:Literal ;
-            sh:path tern:locationDescription ;
-            sh:severity sh:Violation
-        ] ,
         [
             sh:datatype geo:wktLiteral ;
             sh:maxCount 1 ;
@@ -1045,7 +916,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:property
         [
             sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have a maximum of 1 `tern:scope` where the value node is a `sh:IRI`." ;
+            sh:message "A `tern:Method` _MUST_ have exactly 1 `tern:scope` where the value node is a `sh:IRI`." ;
+            sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path tern:scope ;
             sh:severity sh:Violation
@@ -1059,14 +931,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:class tern:OnlineResource ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have maximum 1 `tern:otherDocumentation` where the value node is `tern:OnlineResource`." ;
-            sh:path tern:otherDocumentation ;
+            sh:message "A `tern:Method` _MAY_ have a `tern:additionalDocumentation` where the value node is `tern:OnlineResource`." ;
+            sh:path tern:additionalDocumentation ;
             sh:severity sh:Violation
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have maximum 1 `dcterms:description` where the value is a literal." ;
+            sh:message "A `tern:Method` _MUST_ have exactly 1 `dcterms:description` where the value is a literal." ;
+            sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:description ;
             sh:severity sh:Violation
@@ -1291,49 +1163,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass schema:Person ;
 .
 
-:QualityAnnotation_Shape
-    a sh:NodeShape ;
-    rdfs:label "Quality Annotation"@en ;
-    sh:property
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dqv:QualityAnnotation` _MAY_ have a maximum of 1 `oa:bodyvalue` where the value node is a literal." ;
-            sh:nodeKind sh:Literal ;
-            sh:path oa:bodyvalue ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "A `dqv:QualityAnnotation` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal with datatype `xsd:string`." ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:description ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:class tern:OnlineResource ;
-            sh:maxCount 1 ;
-            sh:message "A `dqv:QualityAnnotation` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is `tern:OnlineResource`." ;
-            sh:path dcterms:source ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dqv:QualityAnnotation` _MAY_ have a maximum of 1 `oa:hasTarget` where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path oa:hasTarget ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:hasValue dqv:qualityAssessment ;
-            sh:maxCount 1 ;
-            sh:message "A `dqv:QualityAnnotation` _MAY_ have a maximum of 1 `oa:motivatedBy` where the value is `dqv:qualityAssessment`." ;
-            sh:path oa:motivatedBy ;
-            sh:severity sh:Violation
-        ] ;
-    sh:targetClass dqv:QualityAnnotation ;
-.
-
 :QualityMeasurement_Shape
     a sh:NodeShape ;
     rdfs:label "Quality Measurement"@en ;
@@ -1379,7 +1208,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass dqv:QualityMeasurement ;
 .
 
-:Resource_Shape
+:OnlineResource_Shape
     a sh:NodeShape ;
     rdfs:label "Online Resource"@en ;
     sh:property
@@ -1551,13 +1380,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `tern:Extent` _MAY_ have 1 `tern:verticalExtent` predicate where the value node is a `tern:VerticalExtent`." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:verticalExtent` predicate where the value node is a `tern:VerticalExtent`." ;
             sh:class tern:VerticalExtent ;
             sh:path tern:verticalExtent ;
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `tern:Extent` _MAY_ have 1 `tern:locationDescription` predicate where the value has datatype `xsd:string`." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:locationDescription` predicate where the value has datatype `xsd:string`." ;
             sh:datatype xsd:string ;
             sh:path tern:locationDescription ;
             sh:severity sh:Violation
