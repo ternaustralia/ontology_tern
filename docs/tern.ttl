@@ -60,6 +60,14 @@ time:Interval
     skos:prefLabel "Interval" ;
 .
 
+dcat:DatasetSeries
+    a owl:Class ;
+    reg:status reg:statusStable ;
+    rdfs:subClassOf dcat:Dataset ;
+    skos:definition "A collection of datasets that are published separately, but share some characteristics that group them." ;
+    skos:prefLabel "Dataset series" ;
+.
+
 prov:Association
     a owl:Class ;
     reg:status reg:statusStable ;
@@ -125,14 +133,6 @@ tern:Boolean
     rdfs:subClassOf tern:Value ;
     skos:definition "Class to encapsulate a true-or-false value." ;
     skos:prefLabel "Boolean" ;
-.
-
-dcat:DatasetSeries
-    a owl:Class ;
-    reg:status reg:statusStable ;
-    rdfs:subClassOf dcat:Dataset ;
-    skos:definition "A collection of datasets that are published separately, but share some characteristics that group them." ;
-    skos:prefLabel "Dataset series" ;
 .
 
 tern:CategoricalValue
@@ -345,6 +345,14 @@ tern:ObservationCollection
     rdfs:subClassOf sosa:ObservationCollection ;
     skos:definition "Collection of one or more observations, whose members share a common value for one or more property" ;
     skos:prefLabel "Observation collection" ;
+.
+
+tern:OnlineResource
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf rdfs:Resource ;
+    skos:definition "Online resources, e.g. additional documentation for datasets." ;
+    skos:prefLabel "Online Resource" ;
 .
 
 tern:Parameter
@@ -826,6 +834,12 @@ tern:observationType
     skos:example "human observation, machine observation." ;
 .
 
+tern:otherCitationDetails
+    a rdf:Property ;
+    rdfs:label "other citation details" ;
+    skos:definition "Other citation details of a dataset." ;
+.
+
 tern:owner
     a rdf:Property ;
     rdfs:label "owner" ;
@@ -959,12 +973,6 @@ tern:supplementalInformation
     rdfs:label "supplemental information" ;
     skos:definition "The supplemental information of a dataset." ;
     skos:example "This dataset includes metadata about the data collection process and quality control measures." ;
-.
-
-tern:otherCitationDetails
-    a rdf:Property ;
-    rdfs:label "other citation details" ;
-    skos:definition "Other citation details of a dataset." ;
 .
 
 tern:swPoint
@@ -1408,14 +1416,6 @@ tern:Value
     skos:definition "A value of an `Attribute` or an `Observation`. " ;
     skos:prefLabel "Value" ;
     skos:scopeNote "This is an 'abstract' class and is not intended to be used directly to create individuals." ;
-.
-
-tern:OnlineResource
-    a owl:Class ;
-    reg:status reg:statusExperimental ;
-    rdfs:subClassOf rdfs:Resource ;
-    skos:definition "Online resources, e.g. additional documentation for datasets." ;
-    skos:prefLabel "Online Resource" ;
 .
 
 []    a owl:Class ;

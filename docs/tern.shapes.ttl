@@ -202,6 +202,23 @@ tern-shapes:Dimension
     sh:property
         [
             a sh:PropertyShape ;
+            sh:description "The width dimension." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
+            sh:minCount 1 ;
+            sh:name "tern:width" ;
+            sh:or (
+                    [
+                        sh:datatype xsd:double
+                    ]
+                    [
+                        sh:datatype xsd:integer
+                    ]
+                ) ;
+            sh:path tern:width
+        ] ,
+        [
+            a sh:PropertyShape ;
             sh:class qudt:Unit ;
             sh:description "The unit of measurement for the dimensions." ;
             sh:maxCount 1 ;
@@ -226,23 +243,6 @@ tern-shapes:Dimension
                     ]
                 ) ;
             sh:path tern:length
-        ] ,
-        [
-            a sh:PropertyShape ;
-            sh:description "The width dimension." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
-            sh:minCount 1 ;
-            sh:name "tern:width" ;
-            sh:or (
-                    [
-                        sh:datatype xsd:double
-                    ]
-                    [
-                        sh:datatype xsd:integer
-                    ]
-                ) ;
-            sh:path tern:width
         ] ;
     sh:targetClass tern:Dimension ;
 .

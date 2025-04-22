@@ -7,10 +7,7 @@ PREFIX dqv: <http://www.w3.org/ns/dqv#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geodcat: <http://data.europa.eu/930/>
-PREFIX oa: <http://www.w3.org/ns/oa#>
-PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX qudt: <http://qudt.org/schema/qudt#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -18,7 +15,6 @@ PREFIX schema: <http://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX spdx: <http://spdx.org/rdf/terms#>
 PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -33,6 +29,40 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:minCount 1 ;
             sh:node :DcatResource_Shape ;
             sh:path foaf:primaryTopic ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `skos:notation` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:notation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:language` where the value node is an IRI." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:language ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcat:contactPoint ;
             sh:severity sh:Violation
         ] ,
         [
@@ -89,40 +119,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:node :DateOrDateTimeDataType_Shape ;
             sh:path dcterms:issued ;
             sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a `skos:notation` where the value node is a literal." ;
-            sh:nodeKind sh:Literal ;
-            sh:path skos:notation ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:anyURI ;
-            sh:maxCount 1 ;
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:source ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:language` where the value node is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path dcterms:language ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path dcat:contactPoint ;
-            sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:CatalogRecord ;
 .
@@ -152,9 +148,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:path dcterms:hasPart ;
-            sh:message "A `dcat:Catalog` _MAY_ have a `dcterms:hasPart` predicate where the value node is a `dcat:Catalog`." ;
             sh:class dcat:Catalog ;
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcterms:hasPart` predicate where the value node is a `dcat:Catalog`." ;
+            sh:path dcterms:hasPart ;
             sh:severity sh:Violation
         ] ,
         [
@@ -179,6 +175,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcat:dataset` predicate where the value node is a `dcat:Dataset` or `dcat:DatasetSeries`." ;
             sh:or (
                     [
                         sh:class dcat:Dataset
@@ -187,7 +184,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                         sh:class dcat:DatasetSeries
                     ]
                 ) ;
-            sh:message "A `dcat:Catalog` _MAY_ have a `dcat:dataset` predicate where the value node is a `dcat:Dataset` or `dcat:DatasetSeries`." ;
             sh:path dcat:dataset ;
             sh:severity sh:Violation
         ] ,
@@ -248,7 +244,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :ConceptScheme_Shape
     a sh:NodeShape ;
     rdfs:label "Concept Scheme"@en ;
-    sh:property 
+    sh:property
         [
             sh:datatype xsd:anyURI ;
             sh:message "A `skos:ConceptScheme` _MAY_ have a `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
@@ -270,7 +266,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :Concept_Shape
     a sh:NodeShape ;
     rdfs:label "Concept"@en ;
-    sh:property 
+    sh:property
         [
             sh:minCount 1 ;
             sh:nodeKind sh:Literal ;
@@ -282,37 +278,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:nodeKind sh:IRI ;
             sh:path skos:inScheme ;
             sh:severity sh:Violation
-        ] ;
-    sh:targetClass skos:Concept ;
-.
-
-:Unit_Shape
-    a sh:NodeShape ;
-    rdfs:label "QUDT Unit"@en ;
-    sh:property
-        [
-            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:label` where the value node is a literal." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path rdfs:label ;
-            sh:severity sh:Violation
         ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:isDefinedBy` where the value node is a `sh:IRI`." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:IRI ;
-            sh:path rdfs:isDefinedBy ;
-            sh:severity sh:Violation
-        ] ;
-    sh:targetClass qudt:Unit ;
-.
-
-:Concept_Shape
-    a sh:NodeShape ;
-    rdfs:label "Concept"@en ;
-    sh:property
         [
             sh:maxCount 1 ;
             sh:message "A `skos:Concept` _MUST_ have exactly 1 `skos:prefLabel` where the value node is a literal." ;
@@ -499,6 +465,141 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Dataset"@en ;
     sh:property
         [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:collaborator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:collaborator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:funder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:funder ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:editor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:editor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:producer` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:producer ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:resourceProvider` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:resourceProvider ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:custodian` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:custodian ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:owner` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:owner ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:user` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:user ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:distributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:distributor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:originator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:originator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:principalInvestigator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:principalInvestigator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:processor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:processor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:sponsor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:sponsor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:mediator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:mediator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:rightsHolder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcterms:rightsHolder ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:contributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:contributor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:stakeholder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:stakeholder ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:publisher` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcterms:publisher ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:purpose` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:purpose ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `dcterms:title` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcat:contactPoint ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:class dcat:Distribution ;
             sh:message "A `dcat:Dataset` _MAY_ have a `dcat:distribution` where the value node is `dcat:Distribution`." ;
             sh:path dcat:distribution ;
@@ -511,15 +612,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:class tern:DataQuality ;
             sh:maxCount 1 ;
             sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `tern:dataQuality` where the value node is a `tern:DataQuality`." ;
-            sh:class tern:DataQuality ;
             sh:path tern:dataQuality ;
             sh:severity sh:Violation
         ] ,
         [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:inSeries` where the value node is a `dcat:DatasetSeries`." ;
             sh:class dcat:DatasetSeries ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:inSeries` where the value node is a `dcat:DatasetSeries`." ;
             sh:path dcat:inSeries ;
             sh:severity sh:Violation
         ] ,
@@ -696,141 +797,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:message "A `dcat:Dataset` _MAY_ have a `tern:coAuthor` where the value node is a `rdf:Seq`." ;
             sh:path tern:coAuthor ;
             sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:collaborator` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:collaborator ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:funder` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:funder ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:editor` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:editor ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:producer` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:producer ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:resourceProvider` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:resourceProvider ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:custodian` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:custodian ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:owner` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:owner ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:user` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:user ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:distributor` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:distributor ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:originator` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:originator ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:principalInvestigator` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:principalInvestigator ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:processor` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:processor ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:sponsor` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:sponsor ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:mediator` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:mediator ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:rightsHolder` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path dcterms:rightsHolder ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:contributor` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:contributor ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:stakeholder` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path tern:stakeholder ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:publisher` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path dcterms:publisher ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `tern:purpose` where the value node is a literal." ;
-            sh:nodeKind sh:Literal ;
-            sh:path tern:purpose ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `dcterms:title` where the value node is a literal." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:title ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:identifier ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
-            sh:node :PersonOrg_Shape ;
-            sh:path dcat:contactPoint ;
-            sh:severity sh:Violation
         ] ;
     sh:targetClass dcat:Dataset ;
 .
@@ -857,11 +823,44 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass dcat:Distribution ;
 .
 
+:Extent_Shape
+    a sh:NodeShape ;
+    rdfs:label "Extent"@en ;
+    sh:property
+        [
+            sh:class dcterms:PeriodOfTime ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum of 1 `dcterms:temporal` predicate where the value node is a `dcterms:PeriodOfTime`." ;
+            sh:path dcterms:temporal ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class geo:Geometry ;
+            sh:message "A `tern:Extent` _MAY_ have 1 `geo:hasGeometry` predicate where the value node is a `geo:Geometry`." ;
+            sh:path geo:hasGeometry ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:VerticalExtent ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:verticalExtent` predicate where the value node is a `tern:VerticalExtent`." ;
+            sh:path tern:verticalExtent ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:locationDescription` predicate where the value has datatype `xsd:string`." ;
+            sh:path tern:locationDescription ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:Extent ;
+.
+
 :Geometry_Shape
     a sh:NodeShape ;
     rdfs:label "Geometry"@en ;
-    sh:property
-        [
+    sh:property [
             sh:datatype geo:wktLiteral ;
             sh:maxCount 1 ;
             sh:message "A `geo:Geometry` _MUST_ have exactly 1 `geo:asWKT` where the value node is a literal with the datatype `geo:wktLiteral`." ;
@@ -944,6 +943,57 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ;
     sh:targetClass tern:Method ;
+.
+
+:OnlineResource_Shape
+    a sh:NodeShape ;
+    rdfs:label "Online Resource"@en ;
+    sh:property
+        [
+            sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource`_MUST_ have exactly 1 `rdf:value` where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcterms:Standard ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:conformsTo` predicate where the value node is `dcterms:Standard`." ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:type` predicate where the value node is `skos:Concept`." ;
+            sh:path dcterms:type ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:format` where the value is a literal." ;
+            sh:path dcterms:format ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:OnlineResource ;
 .
 
 :Organization_Shape
@@ -1208,57 +1258,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass dqv:QualityMeasurement ;
 .
 
-:OnlineResource_Shape
-    a sh:NodeShape ;
-    rdfs:label "Online Resource"@en ;
-    sh:property
-        [
-            sh:datatype xsd:anyURI ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:OnlineResource`_MUST_ have exactly 1 `rdf:value` where the value node is a literal with datatype `xsd:anyURI`." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path rdf:value ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal." ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:description ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:class dcterms:Standard ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:conformsTo` predicate where the value node is `dcterms:Standard`." ;
-            sh:path dcterms:conformsTo ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:class skos:Concept ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:type` predicate where the value node is `skos:Concept`." ;
-            sh:path dcterms:type ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:OnlineResource` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
-            sh:minCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:path dcterms:title ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:format` where the value is a literal." ;
-            sh:path dcterms:format ;
-            sh:severity sh:Violation
-        ] ;
-    sh:targetClass tern:OnlineResource ;
-.
-
 :RightsStatement_Shape
     a sh:NodeShape ;
     rdfs:label "Rights Statement"@en ;
@@ -1277,11 +1276,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a sh:NodeShape ;
     rdfs:label "Seq"@en ;
     sh:property [
-        sh:path rdf:_ ;
-        sh:message "A `rdf:Seq` _MAY_ have an `rdf:_N` where the value node is a `schema:Person` or `schema:Organization`." ;
-        sh:node :PersonOrg_Shape ;
-        sh:severity sh:Violation
-    ] ;
+            sh:message "A `rdf:Seq` _MAY_ have an `rdf:_N` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path rdf:_ ;
+            sh:severity sh:Violation
+        ] ;
     sh:targetClass rdf:Seq ;
 .
 
@@ -1319,6 +1318,29 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ;
     sh:targetClass dcterms:Standard ;
+.
+
+:Unit_Shape
+    a sh:NodeShape ;
+    rdfs:label "QUDT Unit"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:label` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:isDefinedBy` where the value node is a `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path rdfs:isDefinedBy ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass qudt:Unit ;
 .
 
 :VerticalExtent_Shape
@@ -1362,40 +1384,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass tern:VerticalExtent ;
 .
 
-:Extent_Shape
-    a sh:NodeShape ;
-    rdfs:label "Extent"@en ;
-    sh:property
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:Extent` _MAY_ have maximum of 1 `dcterms:temporal` predicate where the value node is a `dcterms:PeriodOfTime`." ;
-            sh:class dcterms:PeriodOfTime ;
-            sh:path dcterms:temporal ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:message "A `tern:Extent` _MAY_ have 1 `geo:hasGeometry` predicate where the value node is a `geo:Geometry`." ;
-            sh:class geo:Geometry ;
-            sh:path geo:hasGeometry ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:verticalExtent` predicate where the value node is a `tern:VerticalExtent`." ;
-            sh:class tern:VerticalExtent ;
-            sh:path tern:verticalExtent ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:locationDescription` predicate where the value has datatype `xsd:string`." ;
-            sh:datatype xsd:string ;
-            sh:path tern:locationDescription ;
-            sh:severity sh:Violation
-        ] ;
-    sh:targetClass tern:Extent ;
-.
-
 :DcatResource_Shape
     a sh:NodeShape ;
     rdfs:label "dcat:Resource" ;
@@ -1410,21 +1398,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             ]
             [
                 sh:class dcat:DataService
-            ]
-        ) ;
-.
-
-:PersonOrg_Shape
-    a sh:NodeShape ;
-    rdfs:label "Person and Organization" ;
-    rdfs:comment "The union of Person and Organization" ;
-    sh:message "The node is either a Person or Organization" ;
-    sh:or (
-            [
-                sh:class schema:Person
-            ]
-            [
-                sh:class schema:Organization
             ]
         ) ;
 .
@@ -1467,6 +1440,21 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             ]
             [
                 sh:datatype xsd:gYearMonth
+            ]
+        ) ;
+.
+
+:PersonOrg_Shape
+    a sh:NodeShape ;
+    rdfs:label "Person and Organization" ;
+    rdfs:comment "The union of Person and Organization" ;
+    sh:message "The node is either a Person or Organization" ;
+    sh:or (
+            [
+                sh:class schema:Person
+            ]
+            [
+                sh:class schema:Organization
             ]
         ) ;
 .
