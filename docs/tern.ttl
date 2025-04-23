@@ -281,7 +281,9 @@ tern:Integer
 tern:Intervention
     a owl:Class ;
     reg:status reg:statusExperimental ;
-    rdfs:subClassOf prov:Activity ;
+    rdfs:subClassOf
+        prov:Activity ,
+        sosa:Actuation ;
     skos:definition "An `Intervention` is a human-induced activity that carries out a `Procedure` to observe or change the properties of a `Feature Of Interest`." ;
     skos:example "Controlled burns, breeding programs, weed and debris removal, installation of new structures, etc." ;
     skos:prefLabel "Intervention" ;
@@ -1250,7 +1252,7 @@ tern:hasMethod
     a rdf:Property ;
     rdfs:label "has method" ;
     rdfs:subPropertyOf skos:relatedMatch ;
-    skos:definition "A property that links a concept to a method." ;
+    skos:definition "A property that links a `Concept` or `Procedure` to a `Method`." ;
 .
 
 tern:hasSamplingPoint

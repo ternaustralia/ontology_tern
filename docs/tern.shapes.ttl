@@ -202,23 +202,6 @@ tern-shapes:Dimension
     sh:property
         [
             a sh:PropertyShape ;
-            sh:description "The width dimension." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
-            sh:minCount 1 ;
-            sh:name "tern:width" ;
-            sh:or (
-                    [
-                        sh:datatype xsd:double
-                    ]
-                    [
-                        sh:datatype xsd:integer
-                    ]
-                ) ;
-            sh:path tern:width
-        ] ,
-        [
-            a sh:PropertyShape ;
             sh:class qudt:Unit ;
             sh:description "The unit of measurement for the dimensions." ;
             sh:maxCount 1 ;
@@ -243,6 +226,23 @@ tern-shapes:Dimension
                     ]
                 ) ;
             sh:path tern:length
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:description "The width dimension." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
+            sh:minCount 1 ;
+            sh:name "tern:width" ;
+            sh:or (
+                    [
+                        sh:datatype xsd:double
+                    ]
+                    [
+                        sh:datatype xsd:integer
+                    ]
+                ) ;
+            sh:path tern:width
         ] ;
     sh:targetClass tern:Dimension ;
 .
@@ -451,7 +451,8 @@ tern-shapes:Input
             sh:name "rdfs:label" ;
             sh:path rdfs:label
         ] ,
-        tern-shapes:tern-hasAttribute ;
+        tern-shapes:tern-hasAttribute ,
+        tern-shapes:void-inDataset ;
     sh:targetClass tern:Input ;
 .
 
@@ -539,6 +540,7 @@ tern-shapes:Intervention
         tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:sdo-spatial ,
+        tern-shapes:sosa-hasFeatureOfInterest ,
         tern-shapes:sosa-usedProcedure ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-interventionType ,
@@ -795,7 +797,8 @@ tern-shapes:ObservationCollection
         tern-shapes:ObservationCollection-phenomenonTime ,
         tern-shapes:ObservationCollection-resultTime ,
         tern-shapes:ObservationCollection-usedProcedure ,
-        tern-shapes:tern-hasAttribute ;
+        tern-shapes:tern-hasAttribute ,
+        tern-shapes:void-inDataset ;
     sh:targetClass tern:ObservationCollection ;
 .
 
@@ -851,10 +854,11 @@ tern-shapes:Procedure
             a sh:PropertyShape ;
             sh:class tern:Method ;
             sh:description "The method type of the procedure." ;
-            sh:message "If present, `tern:methodType` predicates on a `tern:Procedure` _MUST_ have values of type `tern:Method`." ;
-            sh:name "tern:methodType" ;
-            sh:path tern:methodType
-        ] ;
+            sh:message "If present, `tern:hasMethod` predicates on a `tern:Procedure` _MUST_ have values of type `tern:Method`." ;
+            sh:name "tern:hasMethod" ;
+            sh:path tern:hasMethod
+        ] ,
+        tern-shapes:void-inDataset ;
     sh:targetClass tern:Procedure ;
 .
 
@@ -884,7 +888,9 @@ tern-shapes:RDFDataset
 tern-shapes:Result
     a sh:NodeShape ;
     rdfs:label "Result" ;
-    sh:property tern-shapes:Result-isResultOf ;
+    sh:property
+        tern-shapes:Result-isResultOf ,
+        tern-shapes:void-inDataset ;
     sh:targetClass tern:Result ;
 .
 
@@ -1087,7 +1093,8 @@ tern-shapes:Value
             sh:message "A `tern:Value` _MAY_ have one `tern:unit` predicate where the value is an IRI." ;
             sh:nodeKind sh:IRI ;
             sh:path tern:unit
-        ] ;
+        ] ,
+        tern-shapes:void-inDataset ;
     sh:targetClass tern:Value ;
 .
 
@@ -3620,35 +3627,6 @@ tern-shapes:Site-hasSiteVisit
     sh:path tern:hasSiteVisit ;
 .
 
-tern-shapes:sosa-hasFeatureOfInterest
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "has feature of interest" ;
-    sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
-    sh:maxCount 1 ;
-    sh:message "Exactly 1 `sosa:hasFeatureOfInterest` predicate _MUST_ exist_ with an IRI value." ;
-    sh:minCount 1 ;
-    sh:name "sosa:hasFeatureOfInterest" ;
-    sh:or (
-            [
-                sh:class tern:FeatureOfInterest
-            ]
-            [
-                sh:class tern:Sample
-            ]
-            [
-                sh:class tern:MaterialSample
-            ]
-            [
-                sh:class tern:Site
-            ]
-            [
-                sh:class tern:Transect
-            ]
-        ) ;
-    sh:path sosa:hasFeatureOfInterest ;
-.
-
 tern-shapes:sosa-resultTime
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3849,6 +3827,35 @@ tern-shapes:rdfs-comment
     sh:path rdfs:comment ;
 .
 
+tern-shapes:sosa-hasFeatureOfInterest
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has feature of interest" ;
+    sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
+    sh:maxCount 1 ;
+    sh:message "Exactly 1 `sosa:hasFeatureOfInterest` predicate _MUST_ exist_ with an IRI value." ;
+    sh:minCount 1 ;
+    sh:name "sosa:hasFeatureOfInterest" ;
+    sh:or (
+            [
+                sh:class tern:FeatureOfInterest
+            ]
+            [
+                sh:class tern:Sample
+            ]
+            [
+                sh:class tern:MaterialSample
+            ]
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
+    sh:path sosa:hasFeatureOfInterest ;
+.
+
 tern-shapes:sosa-hasSample
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3979,20 +3986,6 @@ tern-shapes:sdo-spatial
     sh:path sdo:spatial ;
 .
 
-tern-shapes:void-inDataset
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "in dataset" ;
-    sh:class tern:RDFDataset ;
-    sh:description "A link to the RDF payload's metadata which this resource was a part of." ;
-    sh:maxCount 1 ;
-    sh:message "There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`." ;
-    sh:minCount 1 ;
-    sh:name "void:inDataset" ;
-    sh:nodeKind sh:IRI ;
-    sh:path void:inDataset ;
-.
-
 tern-shapes:dcterms-type
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -4015,5 +4008,19 @@ tern-shapes:tern-hasAttribute
     sh:name "tern:hasAttribute" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:path tern:hasAttribute ;
+.
+
+tern-shapes:void-inDataset
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "in dataset" ;
+    sh:class tern:RDFDataset ;
+    sh:description "A link to the RDF payload's metadata which this resource was a part of." ;
+    sh:maxCount 1 ;
+    sh:message "There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`." ;
+    sh:minCount 1 ;
+    sh:name "void:inDataset" ;
+    sh:nodeKind sh:IRI ;
+    sh:path void:inDataset ;
 .
 
