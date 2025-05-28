@@ -311,6 +311,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:targetClass skos:Concept ;
 .
 
+:ContextOfConcept_Shape
+    a sh:NodeShape ;
+    rdfs:label "Context of Concept"@en ;
+    sh:property
+        [
+            sh:message "A `ContextOfConcept` _MAY_ have 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:unit ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:message "A `ContextOfConcept` _MUST_ have exactly 1 `urnp:property:concept` where the value node is a `skos:Concept`." ;
+            sh:minCount 1 ;
+            sh:path <urnp:property:concept> ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass <urnc:class:ContextOfConcept> ;
+.
+
 :DataQuality_Shape
     a sh:NodeShape ;
     rdfs:label "Data Quality"@en ;
@@ -625,7 +646,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
-            sh:class skos:Concept ;
+            sh:or (
+                    [
+                        sh:class skos:Concept
+                    ]
+                    [
+                        sh:class <urnc:class:ContextOfConcept>
+                    ]
+                ) ;
             sh:message "A `dcat:Dataset` _MAY_ have a `dcat:theme` where the value is a `skos:Concept`." ;
             sh:path dcat:theme ;
             sh:severity sh:Violation
@@ -936,8 +964,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MUST_ have exactly 1 `dcterms:description` where the value is a literal." ;
-            sh:minCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have maximum 1 `dcterms:description` where the value is a literal." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:description ;
             sh:severity sh:Violation
