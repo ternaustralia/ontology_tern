@@ -316,7 +316,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Context of Concept"@en ;
     sh:property
         [
-            sh:message "A `ContextOfConcept` _MAY_ have 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
+            sh:maxCount 1 ;
+            sh:message "A `ContextOfConcept` _MAY_ have maximum 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
             sh:nodeKind sh:IRI ;
             sh:path tern:unit ;
             sh:severity sh:Violation
