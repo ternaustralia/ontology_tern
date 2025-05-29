@@ -1,6 +1,5 @@
 from typing import List, Tuple, Union
 
-import requests
 from rdflib import BNode, Graph, URIRef
 from jinja2 import Template
 
@@ -17,18 +16,10 @@ def get_curie(uri: URIRef) -> str:
     base_uri, local_name = get_base_uri_and_local_name(uri)
     prefix = prefix_cache.get(base_uri)
     if prefix is None:
-        r = requests.get("https://prefix.zazuko.com/api/v1/shrink", params={"q": uri})
-        r.raise_for_status()
-        data = r.json()
-
-        # Store it in the cache
-        prefix = data["value"].split(":")[0]
+        # Use the last segment of the base URI as the prefix
+        prefix = base_uri.rstrip("/").split("/")[-1].lower()
         prefix_cache[base_uri] = prefix
-
-        return data["value"]
-    else:
-        # Found in cache
-        return f"{prefix}:{local_name}"
+    return f"{prefix}:{local_name}"
 
 
 def get_class_type_as_str(uri: Union[BNode, URIRef], g: Graph) -> str:
