@@ -1168,20 +1168,35 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:property
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
-            sh:minCount 1 ;
-            sh:path rdf:value
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:Value` _MAY_ have one `tern:unit` predicate where the value is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:unit
-        ] ,
+        tern-shapes:Value-value ,
+        tern-shapes:Value-unit ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Value ;
+.
+
+tern-shapes:Value-value
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "value" ;
+    sh:description "The value of the `tern:Value`." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
+    sh:minCount 1 ;
+    sh:name "rdf:value" ;
+    sh:nodeKind sh:Literal ;
+    sh:path rdf:value ;
+.
+
+tern-shapes:Value-unit
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "unit" ;
+    sh:description "The unit of the `tern:Value`." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Value` _MAY_ have maximum one `tern:unit` predicate where the value is an IRI." ;
+    sh:name "tern:unit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:unit ;
 .
 
 tern-shapes:VerticalExtent
