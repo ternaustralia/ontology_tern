@@ -25,12 +25,12 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/Attribution-agent
 | Status | `stable` icon:check-circle[]
 | Label | agent
-| Definition | An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent’s activity.
+| Definition | An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.
 | Scope note | 
 | Implementation | A `prov:Attribution` _MUST_ have exactly 1 `prov:agent` predicate where the value node is an IRI of an individual with the type `prov:Agent`.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:http://www.w3.org/ns/prov#Agent[`prov:Agent`]
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov#:Agent`]
 | Expected values | 
 |===
 

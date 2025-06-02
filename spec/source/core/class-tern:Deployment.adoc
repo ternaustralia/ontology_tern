@@ -15,6 +15,44 @@
 |===
 
 
+[#class-tern:Deployment-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Deployment-sdo:spatial]
+===== Property: sdo:spatial
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://schema.org/spatial[`sdo:spatial`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sdo-spatial
+| Status | `experimental` icon:circle-o[]
+| Label | spatial
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `sdo:spatial` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
 [#class-tern:Deployment-ssn:deployedOnPlatform]
 ===== Property: ssn:deployedOnPlatform
 [cols="1,4"]
@@ -23,7 +61,7 @@
 
 | IRI | http://www.w3.org/ns/ssn/deployedOnPlatform[`ssn:deployedOnPlatform`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/ssn-deployedOnPlatform
-| Status | `experimental` icon:circle-o[]
+| Status | `stable` icon:check-circle[]
 | Label | deployed on platform
 | Definition | Relation between a Deployment and the Platform on which the Systems are deployed.
 | Scope note | 
@@ -42,7 +80,7 @@
 
 | IRI | http://www.w3.org/ns/ssn/deployedSystem[`ssn:deployedSystem`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/ssn-deployedSystem
-| Status | `experimental` icon:circle-o[]
+| Status | `stable` icon:check-circle[]
 | Label | deployed system
 | Definition | Relation between a Deployment and a deployed System.
 | Scope note | 

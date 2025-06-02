@@ -1,0 +1,207 @@
+
+[#class-tern:Calibration]
+==== Class: tern:Calibration
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Calibration[`tern:Calibration`]
+| Status | `experimental` icon:circle-o[]
+| Label | Calibration
+| Definition | An activity to calibrate properties of a System (such as a Sensor or Sampler) to ensure accurate measurements and proper functioning of the device.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Calibration-dcterms:description]
+===== Property: dcterms:description
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/description[`dcterms:description`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-description
+| Status | `stable` icon:check-circle[]
+| Label | description
+| Definition | A textual description.
+| Scope note | 
+| Implementation | A `dcterms:description` predicate has a literal value with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-prov:endedAtTime]
+===== Property: prov:endedAtTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#endedAtTime[`prov:endedAtTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-endedAtTime
+| Status | `stable` icon:check-circle[]
+| Label | ended at time
+| Definition | The time at which an activity ended.
+| Scope note | 
+| Implementation | A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-prov:startedAtTime]
+===== Property: prov:startedAtTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#startedAtTime[`prov:startedAtTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-startedAtTime
+| Status | `stable` icon:check-circle[]
+| Label | started at time
+| Definition | The time at which an activity started.
+| Scope note | 
+| Implementation | A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-sosa:usedProcedure]
+===== Property: sosa:usedProcedure
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/usedProcedure[`sosa:usedProcedure`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-usedProcedure
+| Status | `stable` icon:check-circle[]
+| Label | used procedure
+| Definition | A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.
+| Scope note | 
+| Implementation | Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Procedure[`tern:Procedure`] +
+link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-tern:calibratedBy]
+===== Property: tern:calibratedBy
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/calibratedBy[`tern:calibratedBy`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-calibratedBy
+| Status | `experimental` icon:circle-o[]
+| Label | calibrated by
+| Definition | Indicates the agent (person, organization, or service) that performed the calibration activity. This property links a Calibration to the responsible agent.
+| Scope note | 
+| Implementation | A `tern:calibratedBy` predicate _MUST_ have an IRI value of type `prov:Agent`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov#:Agent`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-tern:calibratesProperty]
+===== Property: tern:calibratesProperty
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/calibratesProperty[`tern:calibratesProperty`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-calibratesProperty
+| Status | `experimental` icon:circle-o[]
+| Label | calibrates property
+| Definition | Relation from a calibration activity to a system property that is being calibrated. This property is used to specify which system property is the target of the calibration.
+| Scope note | 
+| Implementation | A `tern:calibratesProperty` predicate _MUST_ have an IRI or blank node value of type `ssn-system:SystemProperty`.
+| Cardinality | 
+| Node kind | link:n823711835ce84c68b7240bbe1a8755afb249[`n823711835ce84c68b7240bbe1a8755afb249`]
+| Class type | link:http://www.w3.org/ns/ssn/systems/SystemProperty[`systems:SystemProperty`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-tern:calibrationActualResult]
+===== Property: tern:calibrationActualResult
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/calibrationActualResult[`tern:calibrationActualResult`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-calibrationActualResult
+| Status | `experimental` icon:circle-o[]
+| Label | calibration actual result
+| Definition | Links to the actual measured value obtained during calibration. This represents the value returned by the system or device being calibrated.
+| Scope note | 
+| Implementation | A `tern:Calibration` _MAY_ have maximum one `tern:calibrationActualResult` predicate where the value is a blank node or IRI of type `tern:Value`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-tern:calibrationOffset]
+===== Property: tern:calibrationOffset
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/calibrationOffset[`tern:calibrationOffset`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-calibrationOffset
+| Status | `experimental` icon:circle-o[]
+| Label | calibration offset
+| Definition | Links to a value representing the difference between the reference and actual results during calibration. This offset can be used for measurement corrections.
+| Scope note | 
+| Implementation | A `tern:Calibration` _MAY_ have maximum one `tern:calibrationOffset` predicate where the value is a blank node or IRI of type `tern:Value`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-tern:calibrationReferenceResult]
+===== Property: tern:calibrationReferenceResult
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/calibrationReferenceResult[`tern:calibrationReferenceResult`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-calibrationReferenceResult
+| Status | `experimental` icon:circle-o[]
+| Label | calibration reference result
+| Definition | Links to a reference value used during calibration. This represents the known, standard, or expected value against which the actual measurement is compared.
+| Scope note | 
+| Implementation | A `tern:Calibration` _MAY_ have maximum one `tern:calibrationReferenceResult` predicate where the value is a blank node or IRI of type `tern:Value`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Value[`tern:Value`]
+| Expected values | 
+|===
+
+[#class-tern:Calibration-tern:verifiesCapability]
+===== Property: tern:verifiesCapability
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/verifiesCapability[`tern:verifiesCapability`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-verifiesCapability
+| Status | `experimental` icon:circle-o[]
+| Label | verifies capability
+| Definition | Relation from a calibration activity to a system capability that is being verified. This property is used to specify which system capability is being confirmed or validated.
+| Scope note | 
+| Implementation | A `tern:verifiesCapability` predicate _MUST_ have an IRI or blank node value of type `ssn-system:SystemCapability`.
+| Cardinality | 
+| Node kind | link:n823711835ce84c68b7240bbe1a8755afb268[`n823711835ce84c68b7240bbe1a8755afb268`]
+| Class type | link:http://www.w3.org/ns/ssn/systems/SystemCapability[`systems:SystemCapability`]
+| Expected values | 
+|===

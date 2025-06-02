@@ -15,6 +15,25 @@
 |===
 
 
+[#class-tern:Transect-tern:hasSiteVisit]
+===== Property: tern:hasSiteVisit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSiteVisit[`tern:hasSiteVisit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Site-hasSiteVisit
+| Status | `stable` icon:check-circle[]
+| Label | has site visit
+| Definition | A property that links, e.g., a Site to a Site Visit.
+| Scope note | 
+| Implementation | A `tern:Site` _MAY_ have a `tern:hasSiteVisit` predicate where the value node is an IRI of type `tern:SiteVisit`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
+| Expected values | 
+|===
+
 [#class-tern:Transect-tern:featureType]
 ===== Property: tern:featureType
 [cols="1,4"]
@@ -49,8 +68,28 @@
 | Implementation | A `tern:Transect` _MAY_ have a maximum of 1 `geo:hasGeometry` predicate where the value node is a blank node or IRI of type `sf:LineString` or `geo:Geometry`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.opengis.net/ont/sf#LineString[`sf:LineString`] +
-link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
+| Class type | link:http://www.opengis.net/ont/sf#LineString[`sf#:LineString`] +
+link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Transect-sdo:spatial]
+===== Property: sdo:spatial
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://schema.org/spatial[`sdo:spatial`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Transect-spatial
+| Status | `stable` icon:check-circle[]
+| Label | spatial
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `tern:Transect` _MAY_ have a maximum of 1 `sdo:spatial` predicate where the value node is a blank node or IRI of type `sf:LineString` or `geo:Geometry`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/sf#LineString[`sf#:LineString`] +
+link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
 | Expected values | 
 |===
 
@@ -83,12 +122,13 @@ link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/Transect-transectEndPoint
 | Status | `stable` icon:check-circle[]
 | Label | transect end point
-| Definition | Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] representing the end of a transect.
+| Definition | Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] or geo:Geometry representing the end of a transect.
 | Scope note | 
-| Implementation | A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectEndPoint` predicate where the value node is an IRI of type `sf:Point`.
+| Implementation | A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectEndPoint` predicate where the value node is an IRI of type `sf:Point` or `geo:Geometry`.
 | Cardinality | Maximum 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:http://www.opengis.net/ont/sf#Point[`sf:Point`]
+| Node kind | 
+| Class type | link:http://www.opengis.net/ont/sf#Point[`sf#:Point`] +
+link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
 | Expected values | 
 |===
 
@@ -102,11 +142,32 @@ link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/Transect-transectStartPoint
 | Status | `stable` icon:check-circle[]
 | Label | transect start point
-| Definition | Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] representing the start of a transect.
+| Definition | Relationship to the link:http://www.opengis.net/ont/sf#Point[sf:Point] or geo:Geometry representing the start of a transect.
 | Scope note | 
-| Implementation | A `tern:Transect` _MAY_ have a `tern:transectStartPoint` predicate where the value node is an IRI of type `sf:Point`.
+| Implementation | A `tern:Transect` _MAY_ have a maximum of 1 `tern:transectStartPoint` predicate where the value node is an IRI of type `sf:Point` or `geo:Geometry`.
 | Cardinality | Maximum 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:http://www.opengis.net/ont/sf#Point[`sf:Point`]
+| Node kind | 
+| Class type | link:http://www.opengis.net/ont/sf#Point[`sf#:Point`] +
+link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Transect-sosa:hasSample]
+===== Property: sosa:hasSample
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/hasSample[`sosa:hasSample`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-hasSample
+| Status | `stable` icon:check-circle[]
+| Label | has sample
+| Definition | Relation between a FeatureOfInterest and the Sample used to represent it.
+| Scope note | 
+| Implementation | A `tern:FeatureOfInterest` _MAY_ have a `sosa:hasSample` predicate where the value node is an IRI of type `tern:Sample`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`] +
+link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`]
 | Expected values | 
 |===

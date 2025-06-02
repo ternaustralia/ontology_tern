@@ -1,0 +1,79 @@
+
+[#class-tern:VerticalExtent]
+==== Class: tern:VerticalExtent
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/VerticalExtent[`tern:VerticalExtent`]
+| Status | `experimental` icon:circle-o[]
+| Label | Vertical Extent
+| Definition | A class representing the vertical extent of an object or phenomenon in a given context.
+
+| Scope note | 
+|===
+
+
+[#class-tern:VerticalExtent-tern:maxAltitude]
+===== Property: tern:maxAltitude
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/maxAltitude[`tern:maxAltitude`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-maxAltitude
+| Status | `experimental` icon:circle-o[]
+| Label | maximum altitude
+| Definition | This SHACL shape defines constraints for the `tern:maxAltitude` property. It specifies that values of the `tern:maxAltitude` property must be literals of type `xsd:integer`, `xsd:float`, `xsd:double`, or `xsd:decimal`. The status of this shape is experimental, indicating that it might be subject to change in the future.
+| Scope note | 
+| Implementation | A `tern:maxAltitude` predicate _MUST_ have a literal value of type `xsd:integer`, `xsd:float`, `xsd:double`, `xsd:decimal`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xmlschema#:integer`] +
+link:http://www.w3.org/2001/XMLSchema#float[`xmlschema#:float`] +
+link:http://www.w3.org/2001/XMLSchema#double[`xmlschema#:double`] +
+link:http://www.w3.org/2001/XMLSchema#decimal[`xmlschema#:decimal`]
+| Expected values | 
+|===
+
+[#class-tern:VerticalExtent-tern:minAltitude]
+===== Property: tern:minAltitude
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/minAltitude[`tern:minAltitude`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-minAltitude
+| Status | `experimental` icon:circle-o[]
+| Label | minimum altitude
+| Definition | This SHACL shape defines constraints for the `tern:minAltitude` property. It specifies that values of the `tern:minAltitude` property must be literals of type `xsd:integer`, `xsd:float`, `xsd:double`, or `xsd:decimal`. The status of this shape is experimental, indicating that it might be subject to change in the future.
+| Scope note | 
+| Implementation | A `tern:minAltitude` predicate _MUST_ have a literal value of type `xsd:integer`, `xsd:float`, `xsd:double`, `xsd:decimal`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xmlschema#:integer`] +
+link:http://www.w3.org/2001/XMLSchema#float[`xmlschema#:float`] +
+link:http://www.w3.org/2001/XMLSchema#double[`xmlschema#:double`] +
+link:http://www.w3.org/2001/XMLSchema#decimal[`xmlschema#:decimal`]
+| Expected values | 
+|===
+
+[#class-tern:VerticalExtent-tern:unit]
+===== Property: tern:unit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/unit[`tern:unit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-unit
+| Status | `stable` icon:check-circle[]
+| Label | unit of measure
+| Definition | The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary].
+| Scope note | 
+| Implementation | A `tern:unit` predicate _MUST_ have an IRI value.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

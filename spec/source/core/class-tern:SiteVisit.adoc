@@ -9,49 +9,11 @@
 | IRI | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
 | Status | `stable` icon:check-circle[]
 | Label | Site Visit
-| Definition | A Site Visit is a discrete time-bounded activity at a `Site`, during which `Sampling` or `Observation` activities occur.
+| Definition | A Site Visit is a `Survey` that visits a `Site`.
 
 | Scope note | 
 |===
 
-
-[#class-tern:SiteVisit-prov:endedAtTime]
-===== Property: prov:endedAtTime
-[cols="1,4"]
-|===
-| Property | Value
-
-| IRI | http://www.w3.org/ns/prov#endedAtTime[`prov:endedAtTime`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/SiteVisit-endedAtTime
-| Status | `stable` icon:check-circle[]
-| Label | ended at time
-| Definition | The time at which an activity ended.
-| Scope note | 
-| Implementation | A `tern:SiteVisit` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`.
-| Cardinality | Maximum 1
-| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`]
-| Expected values | 
-|===
-
-[#class-tern:SiteVisit-prov:startedAtTime]
-===== Property: prov:startedAtTime
-[cols="1,4"]
-|===
-| Property | Value
-
-| IRI | http://www.w3.org/ns/prov#startedAtTime[`prov:startedAtTime`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/SiteVisit-startedAtTime
-| Status | `stable` icon:check-circle[]
-| Label | started at time
-| Definition | The time at which an activity started.
-| Scope note | 
-| Implementation | A `tern:SiteVisit` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`.
-| Cardinality | Exactly 1
-| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`]
-| Expected values | 
-|===
 
 [#class-tern:SiteVisit-dcterms:identifier]
 ===== Property: dcterms:identifier
@@ -91,41 +53,42 @@
 | Expected values | 
 |===
 
-[#class-tern:SiteVisit-prov:qualifiedAssociation]
-===== Property: prov:qualifiedAssociation
+[#class-tern:SiteVisit-tern:hasAttribute]
+===== Property: tern:hasAttribute
 [cols="1,4"]
 |===
 | Property | Value
 
-| IRI | http://www.w3.org/ns/prov#qualifiedAssociation[`prov:qualifiedAssociation`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/prov-qualifiedAssociation
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
 | Status | `stable` icon:check-circle[]
-| Label | qualified association
-| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Label | has attribute
+| Definition | Link to an Attribute.
 | Scope note | 
-| Implementation | A `prov:qualifiedAssociation` _MUST_ have a blank node or IRI value of type `prov:Association`.
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/ns/prov#Association[`prov:Association`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
 | Expected values | 
 |===
 
-[#class-tern:SiteVisit-prov:wasAssociatedWith]
-===== Property: prov:wasAssociatedWith
+[#class-tern:SiteVisit-tern:hasSite]
+===== Property: tern:hasSite
 [cols="1,4"]
 |===
 | Property | Value
 
-| IRI | http://www.w3.org/ns/prov#wasAssociatedWith[`prov:wasAssociatedWith`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith
+| IRI | https://w3id.org/tern/ontologies/tern/hasSite[`tern:hasSite`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSite
 | Status | `stable` icon:check-circle[]
-| Label | was associated with
-| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Label | has site
+| Definition | A property that links, e.g., a FeatureOfInterest to a Site or Transect.
 | Scope note | 
-| Implementation | A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent`.
+| Implementation | A `tern:FeatureOfInterest` _MAY_ have a `tern:hasSite` predicate where the value node is an IRI of type `tern:Site` or `tern:Transect`.
 | Cardinality | 
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:http://www.w3.org/ns/prov#Agent[`prov:Agent`]
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Site[`tern:Site`] +
+link:https://w3id.org/tern/ontologies/tern/Transect[`tern:Transect`]
 | Expected values | 
 |===
 
@@ -139,14 +102,12 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/tern-locationDescription
 | Status | `experimental` icon:circle-o[]
 | Label | location description
-| Definition | The description of the site's location. 
-
-Example: 10km west of Fletcherview Tropical Rangeland SuperSite.
+| Definition | The description of the site's location. Example: 10km west of Fletcherview Tropical Rangeland SuperSite.
 | Scope note | 
 | Implementation | A `tern:locationDescription` _MUST_ have a literal value with the datatype `xsd:string`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -167,25 +128,6 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
 | Implementation | A `tern:siteDescription` _MUST_ have a literal value with the datatype `xsd:string`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
-| Expected values | 
-|===
-
-[#class-tern:SiteVisit-void:inDataset]
-===== Property: void:inDataset
-[cols="1,4"]
-|===
-| Property | Value
-
-| IRI | http://rdfs.org/ns/void#inDataset[`void:inDataset`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/void-inDataset
-| Status | `stable` icon:check-circle[]
-| Label | in dataset
-| Definition | A link to the RDF payload's metadata which this resource was a part of.
-| Scope note | 
-| Implementation | There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`.
-| Cardinality | Exactly 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===

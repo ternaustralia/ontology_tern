@@ -87,7 +87,7 @@
 | Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
 | Expected values | 
 |===
 
@@ -106,7 +106,7 @@
 | Implementation | A `prov:qualifiedAssociation` _MUST_ have a blank node or IRI value of type `prov:Association`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/ns/prov#Association[`prov:Association`]
+| Class type | link:http://www.w3.org/ns/prov#Association[`prov#:Association`]
 | Expected values | 
 |===
 
@@ -122,10 +122,11 @@
 | Label | was associated with
 | Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
 | Scope note | 
-| Implementation | A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent`.
+| Implementation | A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent` or `sdo:Person`.
 | Cardinality | 
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:http://www.w3.org/ns/prov#Agent[`prov:Agent`]
+| Node kind | 
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov#:Agent`] +
+link:https://schema.org/Person[`schema.org:Person`]
 | Expected values | 
 |===
 
@@ -148,6 +149,25 @@
 | Expected values | 
 |===
 
+[#class-tern:Observation-sdo:spatial]
+===== Property: sdo:spatial
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://schema.org/spatial[`sdo:spatial`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sdo-spatial
+| Status | `experimental` icon:circle-o[]
+| Label | spatial
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `sdo:spatial` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
 [#class-tern:Observation-sosa:hasFeatureOfInterest]
 ===== Property: sosa:hasFeatureOfInterest
 [cols="1,4"]
@@ -162,8 +182,12 @@
 | Scope note | 
 | Implementation | Exactly 1 `sosa:hasFeatureOfInterest` predicate _MUST_ exist_ with an IRI value.
 | Cardinality | Exactly 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:https://w3id.org/tern/ontologies/tern/FeatureOfInterest[`tern:FeatureOfInterest`]
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/FeatureOfInterest[`tern:FeatureOfInterest`] +
+link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`] +
+link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`] +
+link:https://w3id.org/tern/ontologies/tern/Site[`tern:Site`] +
+link:https://w3id.org/tern/ontologies/tern/Transect[`tern:Transect`]
 | Expected values | 
 |===
 
@@ -239,7 +263,7 @@
 | Implementation | Exactly 1 `sosa:phenomenonTime` predicate _MUST_ exist where the value node is a blank node or IRI of type `time:Instant`.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/2006/time#Instant[`time:Instant`]
+| Class type | link:http://www.w3.org/2006/time#Instant[`time#:Instant`]
 | Expected values | 
 |===
 
@@ -258,9 +282,9 @@
 | Implementation | A `tern:resultDateTime` predicate _MUST_ have a literal value where the datatype is an `xsd:date`, `xsd:dateTime` or `xsd:dateTimeStamp`.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`] +
-link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`] +
-link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`] +
+link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`] +
+link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xmlschema#:dateTimeStamp`]
 | Expected values | 
 |===
 
@@ -276,10 +300,30 @@ link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
 | Label | used procedure
 | Definition | A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.
 | Scope note | 
-| Implementation | Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is an IRI.
+| Implementation | Exactly 1 `sosa:usedProcedure` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`.
 | Cardinality | Exactly 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Procedure[`tern:Procedure`] +
+link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
+| Expected values | 
+|===
+
+[#class-tern:Observation-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
 | Expected values | 
 |===
 

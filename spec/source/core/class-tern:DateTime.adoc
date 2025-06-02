@@ -30,6 +30,6 @@
 | Implementation | A `tern:DateTime` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with a datatype of `xsd:dateTime`.
 | Cardinality | Exactly 1
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
 | Expected values | 
 |===

@@ -34,21 +34,59 @@
 | Expected values | 
 |===
 
-[#class-tern:Sample-sosa:isSampleOf]
-===== Property: sosa:isSampleOf
+[#class-tern:Sample-Sample's sosa:isSampleOf or tern:hasSite]
+===== Property: Sample's sosa:isSampleOf or tern:hasSite
 [cols="1,4"]
 |===
 | Property | Value
 
-| IRI | http://www.w3.org/ns/sosa/isSampleOf[`sosa:isSampleOf`]
+| IRI | nb8df7c5c86414387be6e85d1441e1036b193[`Sample's sosa:isSampleOf or tern:hasSite`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/Sample-isSampleOf
-| Status | `stable` icon:check-circle[]
-| Label | is sample of
-| Definition | Relation from a Sample to the FeatureOfInterest that it is intended to be representative of.
+| Status | `experimental` icon:circle-o[]
+| Label | is sample of or has site
+| Definition | At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths.
 | Scope note | 
-| Implementation | A `tern:Sample` _MUST_ have at least 1 `sosa:isSampleOf` predicate where the value node is an IRI of type `tern:FeatureOfInterest`.
-| Cardinality | Minimum 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:https://w3id.org/tern/ontologies/tern/FeatureOfInterest[`tern:FeatureOfInterest`]
+| Implementation | At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sample-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Expected values | 
+|===
+
+[#class-tern:Sample-tern:hasIGSN]
+===== Property: tern:hasIGSN
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasIGSN[`tern:hasIGSN`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasIGSN
+| Status | `experimental` icon:circle-o[]
+| Label | has IGSN
+| Definition | Relation between a Sample and an IGSN.
+| Scope note | 
+| Implementation | A `tern:Sample` or `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/IGSN[`tern:IGSN`]
 | Expected values | 
 |===

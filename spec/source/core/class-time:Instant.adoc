@@ -30,7 +30,7 @@
 | Implementation | Value _MUST_ be a literal with a datatype of `xsd:dateTime`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xsd:dateTime`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
 | Expected values | 
 |===
 
@@ -49,7 +49,7 @@
 | Implementation | Value _MUST_ be an instance of `time:TimePosition`. Maximum of one value is allowed for this property. The value node _MUST_ be a blank node or IRI.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/2006/time#TimePosition[`time:TimePosition`]
+| Class type | link:http://www.w3.org/2006/time#TimePosition[`time#:TimePosition`]
 | Expected values | 
 |===
 
@@ -68,7 +68,7 @@
 | Implementation | Value _MUST_ be a literal with a datatype of `xsd:date`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`]
 | Expected values | 
 |===
 
@@ -87,7 +87,7 @@
 | Implementation | Value _MUST_ be a literal with a datatype of `xsd:dateTimeStamp`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xsd:dateTimeStamp`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xmlschema#:dateTimeStamp`]
 | Expected values | 
 |===
 
@@ -106,7 +106,7 @@
 | Implementation | Value _MUST_ be a literal with a datatype of `xsd:gYear`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#gYear[`xsd:gYear`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#gYear[`xmlschema#:gYear`]
 | Expected values | 
 |===
 
@@ -125,6 +125,6 @@
 | Implementation | Value _MUST_ be a literal with a datatype of `xsd:gYearMonth`. Maximum of one value is allowed for this property.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#gYearMonth[`xsd:gYearMonth`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#gYearMonth[`xmlschema#:gYearMonth`]
 | Expected values | 
 |===

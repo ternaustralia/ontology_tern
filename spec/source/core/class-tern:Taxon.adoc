@@ -30,7 +30,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:acceptedNameUsage` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -49,7 +49,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:acceptedNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -68,7 +68,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:class` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -87,7 +87,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:cultivarEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -106,7 +106,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:family` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -125,7 +125,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:genericName` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -144,7 +144,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:genus` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -163,7 +163,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:higherClassification` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -182,7 +182,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:infragenericEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -201,7 +201,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:infraspecificEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -220,7 +220,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:kingdom` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -239,7 +239,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:nameAccordingTo` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -258,7 +258,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:nameAccordingToID` predicate where the value node is a literal with a datatype of `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -277,7 +277,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:namePublishedIn` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -296,7 +296,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:namePublishedInID` where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -315,7 +315,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:namePublishedInYear` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -334,7 +334,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:nomenclaturalCode` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -353,7 +353,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:nomenclaturalStatus` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -372,7 +372,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:order` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -391,7 +391,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:originalNameUsage` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -410,7 +410,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:originalNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -429,7 +429,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:parentNameUsage` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -448,7 +448,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:parentNameUsageID` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -467,7 +467,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:phylum` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -486,7 +486,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:scientificName` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -505,7 +505,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:scientificNameAuthorship` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -524,7 +524,7 @@
 | Implementation | A `tern:Taxon _MAY_ have a `dwc:scientificNameID` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -543,7 +543,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:specificEpithet` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -562,7 +562,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:subfamily` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -581,7 +581,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:subgenus` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -600,7 +600,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonConceptID` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -619,7 +619,7 @@
 | Implementation | A `ternTaxon` _MAY_ have a `dwc:taxonID` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -638,7 +638,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonRank` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -657,7 +657,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonRemarks` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -676,7 +676,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:taxonomicStatus` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -695,7 +695,7 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:verbatimTaxonRank` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -714,6 +714,6 @@
 | Implementation | A `tern:Taxon` _MAY_ have a `dwc:vernacularName` predicate where the value node is a literal with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===

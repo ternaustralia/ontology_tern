@@ -27,10 +27,11 @@
 | Label | uncertainty
 | Definition | Measurement error (±).
 | Scope note | 
-| Implementation | A `tern:Float` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:double`.
+| Implementation | A `tern:Float` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:double` or `xsd:float`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#double[`xmlschema#:double`] +
+link:http://www.w3.org/2001/XMLSchema#float[`xmlschema#:float`]
 | Expected values | 
 |===
 
@@ -46,10 +47,11 @@
 | Label | value
 | Definition | Float value.
 | Scope note | 
-| Implementation | A `tern:Float` _MUST_ have exactly 1 `rdf:value` where the value node is a literal with a datatype of `xsd:double`.
+| Implementation | A `tern:Float` _MUST_ have exactly 1 `rdf:value` where the value node is a literal with a datatype of `xsd:double` or `xsd:float`.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#double[`xmlschema#:double`] +
+link:http://www.w3.org/2001/XMLSchema#float[`xmlschema#:float`]
 | Expected values | 
 |===
 

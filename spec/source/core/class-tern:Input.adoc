@@ -1,0 +1,111 @@
+
+[#class-tern:Input]
+==== Class: tern:Input
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Input[`tern:Input`]
+| Status | `experimental` icon:circle-o[]
+| Label | Input
+| Definition | *Input* - Any information that is provided to a Procedure for its use.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Input-dcterms:description]
+===== Property: dcterms:description
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/description[`dcterms:description`]
+| Shape IRI | nb24bd8a488304acfa438a053cbc2bc64b30
+| Status | `experimental` icon:circle-o[]
+| Label | input description
+| Definition | The description of the input.
+| Scope note | 
+| Implementation | If present, `dcterms:description` predicates on a `tern:Input` _MUST_ have string values.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Input-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | nb24bd8a488304acfa438a053cbc2bc64b31
+| Status | `experimental` icon:circle-o[]
+| Label | input value
+| Definition | The value of the input.
+| Scope note | 
+| Implementation | A `tern:Input` _MAY_ have at most 1 `rdf:value` predicate.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Input-rdfs:label]
+===== Property: rdfs:label
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2000/01/rdf-schema#label[`rdfs:label`]
+| Shape IRI | nb24bd8a488304acfa438a053cbc2bc64b32
+| Status | `experimental` icon:circle-o[]
+| Label | input label
+| Definition | The label of the input.
+| Scope note | 
+| Implementation | A `tern:Input` _MUST_ have exactly 1 `rdfs:label` predicate with a string value.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Input-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Expected values | 
+|===
+
+[#class-tern:Input-void:inDataset]
+===== Property: void:inDataset
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rdfs.org/ns/void#inDataset[`void:inDataset`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/void-inDataset
+| Status | `stable` icon:check-circle[]
+| Label | in dataset
+| Definition | A link to the RDF payload's metadata which this resource was a part of.
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
+| Expected values | 
+|===
