@@ -110,6 +110,26 @@ include::core/class-tern:Transect.adoc[]
 
 include::core/class-tern:Value.adoc[]
 
+include::core/class-tern:Calibration.adoc[]
+
+include::core/class-tern:IGSN.adoc[]
+
+include::core/class-tern:Input.adoc[]
+
+include::core/class-tern:MeasurementRange.adoc[]
+
+include::core/class-tern:Method.adoc[]
+
+include::core/class-tern:Platform.adoc[]
+
+include::core/class-tern:Procedure.adoc[]
+
+include::core/class-tern:RDFDataset.adoc[]
+
+include::core/class-tern:Survey.adoc[]
+
+include::core/class-tern:VerticalExtent.adoc[]
+
 === External Classes
 
 include::core/class-prov:Association.adoc[]
