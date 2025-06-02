@@ -262,6 +262,8 @@ tern:IRI
 
 tern:Input
     a owl:Class ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "Input" ;
     rdfs:label "Input" ;
     rdfs:subClassOf ssn:Input ;
     skos:definition "*Input* - Any information that is provided to a Procedure for its use." ;
@@ -319,6 +321,8 @@ tern:MeasurementRange
 
 tern:Method
     a owl:Class ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Method" ;
     rdfs:label "Method" ;
     rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
     rdfs:seeAlso
@@ -366,6 +370,8 @@ tern:Parameter
 
 tern:Procedure
     a owl:Class ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Procedure" ;
     rdfs:label "Procedure" ;
     rdfs:subClassOf sosa:Procedure ;
     skos:definition "A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A Procedure is re-usable, and might be involved in many Observation, Sampling, or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at a reproducible Result." ;
@@ -1380,6 +1386,8 @@ tern:IGSN
 
 tern:Platform
     a owl:Class ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "Platform" ;
     rdfs:label "Platform" ;
     rdfs:subClassOf sosa:Platform ;
     skos:definition "An entity that hosts other entities, particularly Sensors, Samplers, and other Platforms." ;
