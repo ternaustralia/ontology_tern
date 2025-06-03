@@ -29,8 +29,27 @@
 | Scope note | 
 | Implementation | A `tern:Result` _MAY_ have at most 1 `sosa:isResultOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`.
 | Cardinality | Maximum 1
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Node kind | 
 | Class type | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`] +
 link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
+| Expected values | 
+|===
+
+[#class-tern:Result-void:inDataset]
+===== Property: void:inDataset
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rdfs.org/ns/void#inDataset[`void:inDataset`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/void-inDataset
+| Status | `stable` icon:check-circle[]
+| Label | in dataset
+| Definition | A link to the RDF payload's metadata which this resource was a part of.
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
 | Expected values | 
 |===

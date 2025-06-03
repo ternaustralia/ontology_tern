@@ -27,11 +27,12 @@
 | Label | uncertainty
 | Definition | Measurement error (±).
 | Scope note | 
-| Implementation | A `tern:Integer` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:integer` or `xsd:double`.
+| Implementation | A `tern:Integer` _MAY_ have 1 `tern:uncertainty` predicate where the value node is a literal with a datatype of `xsd:integer`, `xsd:double`, or `xsd:float`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xsd:integer`] +
-link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xmlschema#:integer`] +
+link:http://www.w3.org/2001/XMLSchema#double[`xmlschema#:double`] +
+link:http://www.w3.org/2001/XMLSchema#float[`xmlschema#:float`]
 | Expected values | 
 |===
 
@@ -50,7 +51,7 @@ link:http://www.w3.org/2001/XMLSchema#double[`xsd:double`]
 | Implementation | A `tern:Integer` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with a datatype of `xsd:integer`
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xsd:integer`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#integer[`xmlschema#:integer`]
 | Expected values | 
 |===
 

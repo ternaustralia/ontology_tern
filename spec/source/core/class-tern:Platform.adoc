@@ -1,0 +1,168 @@
+
+[#class-tern:Platform]
+==== Class: tern:Platform
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Platform[`tern:Platform`]
+| Status | `stable` icon:check-circle[]
+| Label | Platform
+| Definition | An entity that hosts other entities, particularly Sensors, Samplers, and other Platforms.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Platform-dcterms:description]
+===== Property: dcterms:description
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/description[`dcterms:description`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-description
+| Status | `stable` icon:check-circle[]
+| Label | description
+| Definition | A textual description.
+| Scope note | 
+| Implementation | A `dcterms:description` predicate has a literal value with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
+| Expected values | 
+|===
+
+[#class-tern:Platform-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Platform-sdo:spatial]
+===== Property: sdo:spatial
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://schema.org/spatial[`sdo:spatial`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sdo-spatial
+| Status | `experimental` icon:circle-o[]
+| Label | spatial
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `sdo:spatial` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Platform-tern:climateCode]
+===== Property: tern:climateCode
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/climateCode[`tern:climateCode`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-climateCode
+| Status | `stable` icon:check-circle[]
+| Label | climate code
+| Definition | The Köppen Climate Classification code that categorizes climates based on temperature, precipitation, and seasonal patterns. It was developed by Wladimir Köppen in 1884 and has been refined over time.
+| Scope note | 
+| Implementation | A `tern:climateCode` predicate _MAY_ have an IRI value or a literal value.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Platform-tern:dateCommissioned]
+===== Property: tern:dateCommissioned
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/dateCommissioned[`tern:dateCommissioned`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-dateCommissioned
+| Status | `stable` icon:check-circle[]
+| Label | date commissioned
+| Definition | The date when, e.g., a Site is ready to commence its operations, after it is successfully installed and tested.
+| Scope note | 
+| Implementation | A managed feature _MUST_ have exactly 1 `tern:dateCommissioned` predicate where the value node is a literal with the datatype `xsd:date`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`]
+| Expected values | 
+|===
+
+[#class-tern:Platform-tern:dateDecommissioned]
+===== Property: tern:dateDecommissioned
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/dateDecommissioned[`tern:dateDecommissioned`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-dateDecommissioned
+| Status | `stable` icon:check-circle[]
+| Label | date decommissioned
+| Definition | The date when, e.g., a Site is decommissioned or stopped operating.
+| Scope note | 
+| Implementation | A managed feature _MAY_ have a maximum of 1 `tern:dateDecommissioned` predicate where the value node is a literal with the datatype `xsd:date`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`]
+| Expected values | 
+|===
+
+[#class-tern:Platform-tern:platformType]
+===== Property: tern:platformType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/platformType[`tern:platformType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-platformType
+| Status | `stable` icon:check-circle[]
+| Label | platform type
+| Definition | The type of platform.
+| Scope note | 
+| Implementation | A `tern:Platform` _MUST_ have exactly 1 `tern:platformType` predicate where the value node is a skos:Concept.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | link:http://www.w3.org/2004/02/skos/core#Concept[`core#:Concept`]
+| Expected values | 
+|===
+
+[#class-tern:Platform-tern:purpose]
+===== Property: tern:purpose
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/purpose[`tern:purpose`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-purpose
+| Status | `stable` icon:check-circle[]
+| Label | purpose
+| Definition | Describe the purpose of something.
+| Scope note | 
+| Implementation | A `tern:purpose` predicate has a literal value with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
+| Expected values | 
+|===

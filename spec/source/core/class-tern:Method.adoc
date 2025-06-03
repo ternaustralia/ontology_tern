@@ -1,0 +1,301 @@
+
+[#class-tern:Method]
+==== Class: tern:Method
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
+| Status | `stable` icon:check-circle[]
+| Label | Method
+| Definition | A Method describes in detailed steps how a workflow, protocol, plan or algorithm is carried out to make an Observation or a Sample. It explains the steps to be carried out to arrive at reproducible Result.
+
+| Scope note | 
+|===
+
+
+[#class-tern:Method-schema:timeRequired]
+===== Property: schema:timeRequired
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://schema.org/timeRequired[`schema:timeRequired`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb51
+| Status | `experimental` icon:circle-o[]
+| Label | method required duration
+| Definition | The time required for the method.
+| Scope note | 
+| Implementation | A `tern:Method` _MAY_ have at most 1 `schema:timeRequired` predicate with a string value.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-skos:note]
+===== Property: skos:note
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2004/02/skos/core#note[`skos:note`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb52
+| Status | `stable` icon:check-circle[]
+| Label | note of method
+| Definition | Notes about the method.
+| Scope note | 
+| Implementation | If present, `skos:note` predicates on a `tern:Method` _MUST_ have string values.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:hasCategoricalCollection]
+===== Property: tern:hasCategoricalCollection
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasCategoricalCollection[`tern:hasCategoricalCollection`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb53
+| Status | `experimental` icon:circle-o[]
+| Label | categorial collection of method
+| Definition | The categorical collection of the method.
+| Scope note | 
+| Implementation | If present, `tern:hasCategoricalCollection` predicates on a `tern:Method` _MUST_ have values of type `skos:Collection`.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:hasParameter]
+===== Property: tern:hasParameter
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasParameter[`tern:hasParameter`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb54
+| Status | `experimental` icon:circle-o[]
+| Label | parameter of method
+| Definition | The parameters of the method.
+| Scope note | 
+| Implementation | If present, `tern:hasParameter` predicates on a `tern:Method` _MUST_ have values of type `skos:Concept`.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-dcterms:source]
+===== Property: dcterms:source
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/source[`dcterms:source`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb55
+| Status | `stable` icon:check-circle[]
+| Label | digital camera preferred label
+| Definition | The source of the method.
+| Scope note | 
+| Implementation | If present, `dcterms:source` predicates on a `tern:Method` _MUST_ have string or URI values.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:instructions]
+===== Property: tern:instructions
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/instructions[`tern:instructions`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb60
+| Status | `stable` icon:check-circle[]
+| Label | method instructions
+| Definition | The instructions for the method.
+| Scope note | 
+| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:instructions` predicate with a value of type `rdf:Seq`.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-skos:definition]
+===== Property: skos:definition
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2004/02/skos/core#definition[`skos:definition`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb61
+| Status | `stable` icon:check-circle[]
+| Label | method definition
+| Definition | The definition of the method.
+| Scope note | 
+| Implementation | A `tern:Method` _MAY_ have at most 1 `skos:definition` predicate with a string value.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:equipment]
+===== Property: tern:equipment
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/equipment[`tern:equipment`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb62
+| Status | `stable` icon:check-circle[]
+| Label | method equipment
+| Definition | The equipment used for the method.
+| Scope note | 
+| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:equipment` predicate with a value of type `skos:Concept`.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:purpose]
+===== Property: tern:purpose
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/purpose[`tern:purpose`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb63
+| Status | `stable` icon:check-circle[]
+| Label | method purpose
+| Definition | The purpose of the method.
+| Scope note | 
+| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:purpose` predicate with a string value.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:scope]
+===== Property: tern:scope
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/scope[`tern:scope`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb64
+| Status | `stable` icon:check-circle[]
+| Label | method scope
+| Definition | The scope of the method.
+| Scope note | 
+| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:scope` predicate with a string value.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-skos:prefLabel]
+===== Property: skos:prefLabel
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2004/02/skos/core#prefLabel[`skos:prefLabel`]
+| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb65
+| Status | `stable` icon:check-circle[]
+| Label | method preferred label
+| Definition | The preferred label of the method.
+| Scope note | 
+| Implementation | A `tern:Method` _MUST_ have exactly 1 `skos:prefLabel` predicate with a string value.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:undertakenAfter]
+===== Property: tern:undertakenAfter
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/undertakenAfter[`tern:undertakenAfter`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-undertakenAfter
+| Status | `experimental` icon:circle-o[]
+| Label | undertaken after
+| Definition | Link to a Method.
+| Scope note | 
+| Implementation | A `tern:undertakenAfter` predicate _MUST_ have an IRI value of type `tern:Method`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:undertakenBefore]
+===== Property: tern:undertakenBefore
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/undertakenBefore[`tern:undertakenBefore`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-undertakenBefore
+| Status | `experimental` icon:circle-o[]
+| Label | undertaken before
+| Definition | Link to a Method.
+| Scope note | 
+| Implementation | A `tern:undertakenBefore` predicate _MUST_ have an IRI value of type `tern:Method`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:undertakenComplementarily]
+===== Property: tern:undertakenComplementarily
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/undertakenComplementarily[`tern:undertakenComplementarily`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-undertakenComplementarily
+| Status | `experimental` icon:circle-o[]
+| Label | undertaken complementarily
+| Definition | Link to a Method.
+| Scope note | 
+| Implementation | A `tern:undertakenComplementarily` predicate _MUST_ have an IRI value of type `tern:Method`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:undertakenConcurrently]
+===== Property: tern:undertakenConcurrently
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/undertakenConcurrently[`tern:undertakenConcurrently`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-undertakenConcurrently
+| Status | `experimental` icon:circle-o[]
+| Label | undertaken concurrently
+| Definition | Link to a Method.
+| Scope note | 
+| Implementation | A `tern:undertakenConcurrently` predicate _MUST_ have an IRI value of type `tern:Method`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
+| Expected values | 
+|===

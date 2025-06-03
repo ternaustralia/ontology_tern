@@ -30,7 +30,7 @@
 | Implementation | A `tern:Text` _MUST_ have exactly 1 `rdf:value` predicate where the value node is a literal with the datatype `xsd:string` or `rdf:langString`.
 | Cardinality | Exactly 1
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`] +
-link:http://www.w3.org/1999/02/22-rdf-syntax-ns#langString[`rdf:langString`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`] +
+link:http://www.w3.org/1999/02/22-rdf-syntax-ns#langString[`22-rdf-syntax-ns#:langString`]
 | Expected values | 
 |===

@@ -1,0 +1,111 @@
+
+[#class-tern:Procedure]
+==== Class: tern:Procedure
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/Procedure[`tern:Procedure`]
+| Status | `stable` icon:check-circle[]
+| Label | Procedure
+| Definition | A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A Procedure is re-usable, and might be involved in many Observation, Sampling, or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at a reproducible Result.
+
+| Scope note | Input can be used to capture any input values for a procedure, such as the input value of the basal wedge to estimate the basal area per hectare.
+|===
+
+
+[#class-tern:Procedure-tern:vocabulary]
+===== Property: tern:vocabulary
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/vocabulary[`tern:vocabulary`]
+| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb82
+| Status | `experimental` icon:circle-o[]
+| Label | vocabulary of procedure
+| Definition | The vocabulary of the procedure.
+| Scope note | 
+| Implementation | A `tern:Procedure` _MUST_ have exactly 1 `tern:vocabulary` predicate.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Procedure-ssn:hasInput]
+===== Property: ssn:hasInput
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/hasInput[`ssn:hasInput`]
+| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb83
+| Status | `experimental` icon:circle-o[]
+| Label | procedure has input
+| Definition | The input of the procedure.
+| Scope note | 
+| Implementation | A `tern:Procedure` _MAY_ have at most 1 `ssn:hasInput` predicate with a value of type `tern:Input`.
+| Cardinality | Maximum 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Procedure-rdf:value]
+===== Property: rdf:value
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
+| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb84
+| Status | `experimental` icon:circle-o[]
+| Label | value of procedure
+| Definition | The method value of the procedure.
+| Scope note | 
+| Implementation | A `tern:Procedure` _MUST_ have exactly 1 `rdf:value` predicate with a value of type `tern:Method`.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Procedure-tern:hasMethod]
+===== Property: tern:hasMethod
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasMethod[`tern:hasMethod`]
+| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb85
+| Status | `experimental` icon:circle-o[]
+| Label | method of procedure
+| Definition | The method type of the procedure.
+| Scope note | 
+| Implementation | If present, `tern:hasMethod` predicates on a `tern:Procedure` _MUST_ have values of type `tern:Method`.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Procedure-void:inDataset]
+===== Property: void:inDataset
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://rdfs.org/ns/void#inDataset[`void:inDataset`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/void-inDataset
+| Status | `stable` icon:check-circle[]
+| Label | in dataset
+| Definition | A link to the RDF payload's metadata which this resource was a part of.
+| Scope note | 
+| Implementation | There _MUST_ exist exactly 1 `void:inDataset` property with an IRI value to a `tern:RDFDataset`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/RDFDataset[`tern:RDFDataset`]
+| Expected values | 
+|===

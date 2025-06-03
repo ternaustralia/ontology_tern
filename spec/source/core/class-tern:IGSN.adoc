@@ -1,0 +1,151 @@
+
+[#class-tern:IGSN]
+==== Class: tern:IGSN
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/IGSN[`tern:IGSN`]
+| Status | `experimental` icon:circle-o[]
+| Label | IGSN
+| Definition | A globally unique identifier assigned to physical samples to enable traceability, citation, and reuse in scientific research, adhering to FAIR data principles.
+
+| Scope note | 
+|===
+
+
+[#class-tern:IGSN-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/IGSN-hasGeometry
+| Status | `experimental` icon:circle-o[]
+| Label | IGSN hasGeometry
+| Definition | This SHACL shape defines constraints for the `geo:hasGeometry` property. It specifies that values of the `geo:hasGeometry` property of `tern:IGSN` must be IRIs of type `geo:Geometry`. The status of this shape is experimental, indicating that it might be subject to change in the future.
+| Scope note | 
+| Implementation | A `tern:IGSN` _MUST_ have at least 1 `geo:hasGeometry` of type `geo:Geometry`.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:IGSN-dcterms:hasPart]
+===== Property: dcterms:hasPart
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/hasPart[`dcterms:hasPart`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/IGSN-hasPart
+| Status | `experimental` icon:circle-o[]
+| Label | IGSN hasPart
+| Definition | This SHACL shape defines constraints for the `dcterms:hasPart` property. It specifies that values of the `dcterms:hasPart` property of `tern:IGSN` must be IRIs of type `tern:IGSN`. The status of this shape is experimental, indicating that it might be subject to change in the future.
+| Scope note | 
+| Implementation | A `dcterms:hasPart` predicate _MUST_ have an IRI value of type `tern:IGSN`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/IGSN[`tern:IGSN`]
+| Expected values | 
+|===
+
+[#class-tern:IGSN-dcterms:isPartOf]
+===== Property: dcterms:isPartOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/isPartOf[`dcterms:isPartOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/IGSN-isPartOf
+| Status | `experimental` icon:circle-o[]
+| Label | IGSN isPartOf
+| Definition | This SHACL shape defines constraints for the `dcterms:isPartOf` property. It specifies that values of the `dcterms:isPartOf` property of `tern:IGSN` must be IRIs of type `tern:IGSN`. The status of this shape is experimental, indicating that it might be subject to change in the future.
+| Scope note | 
+| Implementation | A `dcterms:isPartOf` predicate _MUST_ have an IRI value of type `tern:IGSN`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/IGSN[`tern:IGSN`]
+| Expected values | 
+|===
+
+[#class-tern:IGSN-dcterms:publisher]
+===== Property: dcterms:publisher
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/publisher[`dcterms:publisher`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/IGSN-publisher
+| Status | `experimental` icon:circle-o[]
+| Label | IGSN publisher
+| Definition | This SHACL shape defines constraints for the `dcterms:publisher` property. It specifies that values of the `dcterms:publisher` property of `tern:IGSN` must be IRIs of specified types. The status of this shape is experimental, indicating that it might be subject to change in the future.
+| Scope note | 
+| Implementation | A `dcterms:publisher` predicate _MUST_ have an IRI value of type `tern:IGSN`.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://schema.org/Organization[`schema.org:Organization`] +
+link:https://schema.org/Project[`schema.org:Project`] +
+link:http://www.w3.org/ns/prov#Agent[`prov#:Agent`]
+| Expected values | 
+|===
+
+[#class-tern:IGSN-dcterms:relation]
+===== Property: dcterms:relation
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/relation[`dcterms:relation`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/IGSN-relation
+| Status | `experimental` icon:circle-o[]
+| Label | IGSN relation
+| Definition | This SHACL shape defines constraints for the `dcterms:relation` property. It specifies that values of the `dcterms:relation` property of `tern:IGSN` must be IRIs of type `tern:IGSN`. The status of this shape is experimental, indicating that it might be subject to change in the future.
+| Scope note | 
+| Implementation | A `dcterms:relation` predicate _MUST_ have an IRI value of type `tern:IGSN`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/IGSN[`tern:IGSN`]
+| Expected values | 
+|===
+
+[#class-tern:IGSN-tern:sampleSubType]
+===== Property: tern:sampleSubType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/sampleSubType[`tern:sampleSubType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-sampleSubType
+| Status | `experimental` icon:circle-o[]
+| Label | sample sub type
+| Definition | The sample sub type of a `tern:IGSN` from a controlled vocabulary.
+| Scope note | 
+| Implementation | A `tern:IGSN` _MUST_ have exactly 1 `tern:sampleSubType` predicate where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:IGSN-tern:sampleType]
+===== Property: tern:sampleType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/sampleType[`tern:sampleType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-sampleType
+| Status | `experimental` icon:circle-o[]
+| Label | sample type
+| Definition | The sample type of a `tern:IGSN` from a controlled vocabulary.
+| Scope note | 
+| Implementation | A `tern:IGSN` _MUST_ have exactly 1 `tern:sampleType` predicate where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

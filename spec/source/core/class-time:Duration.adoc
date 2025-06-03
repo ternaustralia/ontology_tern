@@ -30,7 +30,7 @@
 | Implementation | A `time:Duration` _MUST_ have exactly 1 `time:numericDuration` predicate where the value node is a literal with a datatype of `xsd:decimal`.
 | Cardinality | Exactly 1
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#decimal[`xsd:decimal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#decimal[`xmlschema#:decimal`]
 | Expected values | 
 |===
 

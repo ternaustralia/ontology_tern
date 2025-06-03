@@ -1,0 +1,111 @@
+
+[#class-tern:MeasurementRange]
+==== Class: tern:MeasurementRange
+
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | link:https://w3id.org/tern/ontologies/tern/MeasurementRange[`tern:MeasurementRange`]
+| Status | `experimental` icon:circle-o[]
+| Label | Measurement Range
+| Definition | The set of values that the Sensor can return as the Result of an Observation under the defined Conditions with the defined system properties.
+
+| Scope note | 
+|===
+
+
+[#class-tern:MeasurementRange-qudt:maxExclusive]
+===== Property: qudt:maxExclusive
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://qudt.org/schema/qudt/maxExclusive[`qudt:maxExclusive`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/qudt-maxExclusive
+| Status | `experimental` icon:circle-o[]
+| Label | maximum exclusive value
+| Definition | The exclusive upper bound of the measurement range. This value represents the value just above the maximum that can be measured by the sensor.
+| Scope note | 
+| Implementation | A `qudt:maxExclusive` predicate _MAY_ have maximum one literal value representing the exclusive upper bound of the measurement range.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:MeasurementRange-qudt:maxInclusive]
+===== Property: qudt:maxInclusive
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://qudt.org/schema/qudt/maxInclusive[`qudt:maxInclusive`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/qudt-maxInclusive
+| Status | `experimental` icon:circle-o[]
+| Label | maximum inclusive value
+| Definition | The inclusive upper bound of the measurement range. This value represents the maximum value that can be measured by the sensor.
+| Scope note | 
+| Implementation | A `qudt:maxInclusive` predicate _MAY_ have maximum one literal value representing the upper bound of the measurement range.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:MeasurementRange-qudt:minExclusive]
+===== Property: qudt:minExclusive
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://qudt.org/schema/qudt/minExclusive[`qudt:minExclusive`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/qudt-minExclusive
+| Status | `experimental` icon:circle-o[]
+| Label | minimum exclusive value
+| Definition | The exclusive lower bound of the measurement range. This value represents the value just below the minimum that can be measured by the sensor.
+| Scope note | 
+| Implementation | A `qudt:minExclusive` predicate _MAY_ have maximum one literal value representing the exclusive lower bound of the measurement range.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:MeasurementRange-qudt:minInclusive]
+===== Property: qudt:minInclusive
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://qudt.org/schema/qudt/minInclusive[`qudt:minInclusive`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/qudt-minInclusive
+| Status | `experimental` icon:circle-o[]
+| Label | minimum inclusive value
+| Definition | The inclusive lower bound of the measurement range. This value represents the minimum value that can be measured by the sensor.
+| Scope note | 
+| Implementation | A `qudt:minInclusive` predicate _MAY_ have maximum one literal value representing the lower bound of the measurement range.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:MeasurementRange-tern:unit]
+===== Property: tern:unit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/unit[`tern:unit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-unit
+| Status | `stable` icon:check-circle[]
+| Label | unit of measure
+| Definition | The unit of measure of the value. Recommended best practice is to use the link:http://qudt.org/vocab/unit/[QUDT units of measure vocabulary].
+| Scope note | 
+| Implementation | A `tern:unit` predicate _MUST_ have an IRI value.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===

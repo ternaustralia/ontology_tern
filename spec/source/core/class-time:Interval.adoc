@@ -30,7 +30,7 @@
 | Implementation | A `time:hasBeginning` predicate _MUST_ exist where the value node is a blank node or IRI of type `time:Instant`.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/2006/time#Instant[`time:Instant`]
+| Class type | link:http://www.w3.org/2006/time#Instant[`time#:Instant`]
 | Expected values | 
 |===
 
@@ -49,7 +49,7 @@
 | Implementation | A `time:hasDuration` _MAY_ exist where the value node is a blank node or IRI of type `time:Duration`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/2006/time#Duration[`time:Duration`]
+| Class type | link:http://www.w3.org/2006/time#Duration[`time#:Duration`]
 | Expected values | 
 |===
 
@@ -68,6 +68,6 @@
 | Implementation | A `time:hasEnd` predicate _MUST_ exist where the value node is a blank node or IRI of type `time:Instant`.
 | Cardinality | Exactly 1
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/2006/time#Instant[`time:Instant`]
+| Class type | link:http://www.w3.org/2006/time#Instant[`time#:Instant`]
 | Expected values | 
 |===

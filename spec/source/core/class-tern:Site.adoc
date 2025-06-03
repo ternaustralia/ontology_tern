@@ -30,7 +30,26 @@
 | Implementation | A `tern:Site` _MAY_ have a maximum of 1 `tern:dimension` predicate where the value node is a literal with the datatype `xsd:string.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
+| Expected values | 
+|===
+
+[#class-tern:Site-tern:featureType]
+===== Property: tern:featureType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/featureType[`tern:featureType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Site-featureType
+| Status | `stable` icon:check-circle[]
+| Label | site feature type
+| Definition | The feature type of a [Feature of Interest](#FeatureofInterest).
+| Scope note | 
+| Implementation | A `tern:Site` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
 | Expected values | 
 |===
 
@@ -91,6 +110,45 @@
 | Expected values | 
 |===
 
+[#class-tern:Site-sosa:hasSample]
+===== Property: sosa:hasSample
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/hasSample[`sosa:hasSample`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-hasSample
+| Status | `stable` icon:check-circle[]
+| Label | has sample
+| Definition | Relation between a FeatureOfInterest and the Sample used to represent it.
+| Scope note | 
+| Implementation | A `tern:FeatureOfInterest` _MAY_ have a `sosa:hasSample` predicate where the value node is an IRI of type `tern:Sample`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`] +
+link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`]
+| Expected values | 
+|===
+
+[#class-tern:Site-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Expected values | 
+|===
+
 [#class-tern:Site-tern:locationDescription]
 ===== Property: tern:locationDescription
 [cols="1,4"]
@@ -101,14 +159,12 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/tern-locationDescription
 | Status | `experimental` icon:circle-o[]
 | Label | location description
-| Definition | The description of the site's location. 
-
-Example: 10km west of Fletcherview Tropical Rangeland SuperSite.
+| Definition | The description of the site's location. Example: 10km west of Fletcherview Tropical Rangeland SuperSite.
 | Scope note | 
 | Implementation | A `tern:locationDescription` _MUST_ have a literal value with the datatype `xsd:string`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -129,6 +185,6 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
 | Implementation | A `tern:siteDescription` _MUST_ have a literal value with the datatype `xsd:string`.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===

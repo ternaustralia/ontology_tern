@@ -104,8 +104,11 @@ tern-shapes:Dataset
     rdfs:label "Dataset" ;
     sh:property [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "dataset distribution" ;
             sh:class tern:Distribution ;
             sh:description "An available distribution of the dataset." ;
+            sh:message "A `tern:Dataset` _MAY_ have a `dcat:distribution` predicate with a value of type `tern:Distribution`." ;
             sh:name "dcat:distribution" ;
             sh:nodeKind sh:IRI ;
             sh:path dcat:distribution
@@ -144,6 +147,8 @@ tern-shapes:DigitalCamera
     sh:property
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "digital camera model" ;
             sh:description "The model as defined by the manufacturer." ;
             sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `schema:model` predicate." ;
             sh:minCount 1 ;
@@ -152,6 +157,8 @@ tern-shapes:DigitalCamera
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "digital camera preferred label" ;
             sh:description "The preferred label for the digital camera." ;
             sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `skos:prefLabel` predicate." ;
             sh:minCount 1 ;
@@ -160,6 +167,8 @@ tern-shapes:DigitalCamera
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "digital camera source" ;
             sh:datatype xsd:string ;
             sh:description "The source of information about the digital camera." ;
             sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `dcterms:source` predicate with a string value." ;
@@ -169,6 +178,8 @@ tern-shapes:DigitalCamera
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "digital camera manufacturer" ;
             sh:datatype xsd:string ;
             sh:description "The manufacturer of the digital camera." ;
             sh:message "A `tern:DigitalCamera` _MUST_ have at least 1 `schema:manufacturer` predicate with a string value." ;
@@ -178,6 +189,8 @@ tern-shapes:DigitalCamera
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "digital camera alternative label" ;
             sh:datatype xsd:string ;
             sh:description "Alternative labels for the digital camera." ;
             sh:message "If present, `skos:altLabel` predicates on a `tern:DigitalCamera` _MUST_ have string values." ;
@@ -186,6 +199,8 @@ tern-shapes:DigitalCamera
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "digital camera definition" ;
             sh:datatype xsd:string ;
             sh:description "The definition of the digital camera." ;
             sh:message "If present, `skos:definition` predicates on a `tern:DigitalCamera` _MUST_ have string values." ;
@@ -202,6 +217,8 @@ tern-shapes:Dimension
     sh:property
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "dimension unit" ;
             sh:class qudt:Unit ;
             sh:description "The unit of measurement for the dimensions." ;
             sh:maxCount 1 ;
@@ -212,6 +229,8 @@ tern-shapes:Dimension
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "dimension length" ;
             sh:description "The length dimension." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:length` predicate with a double or integer value." ;
@@ -229,6 +248,8 @@ tern-shapes:Dimension
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "diemnsion width" ;
             sh:description "The width dimension." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
@@ -298,6 +319,8 @@ tern-shapes:FluxTower
     sh:property
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower ozflux ID" ;
             sh:datatype xsd:string ;
             sh:description "The OzFlux ID of the flux tower." ;
             sh:maxCount 1 ;
@@ -307,6 +330,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower IGBP code" ;
             sh:datatype xsd:string ;
             sh:description "The IGBP code of the flux tower." ;
             sh:maxCount 1 ;
@@ -316,6 +341,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower description" ;
             sh:datatype xsd:string ;
             sh:description "The description of the flux tower." ;
             sh:message "If present, `dcterms:description` predicates on a `tern:FluxTower` _MUST_ have string values." ;
@@ -324,6 +351,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower comment" ;
             sh:datatype xsd:string ;
             sh:description "Comments about the flux tower." ;
             sh:message "If present, `rdfs:comment` predicates on a `tern:FluxTower` _MUST_ have string values." ;
@@ -332,6 +361,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "decommissioned date of flux tower" ;
             sh:datatype xsd:date ;
             sh:description "The date when the flux tower was decommissioned." ;
             sh:maxCount 1 ;
@@ -341,6 +372,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower fluxnet ID" ;
             sh:datatype xsd:string ;
             sh:description "The FLUXNET ID of the flux tower." ;
             sh:maxCount 1 ;
@@ -350,6 +383,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower is hosted by" ;
             sh:class tern:Site ;
             sh:description "The site that hosts the flux tower." ;
             sh:maxCount 1 ;
@@ -359,6 +394,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower purpose" ;
             sh:datatype xsd:string ;
             sh:description "The purpose of the flux tower." ;
             sh:maxCount 1 ;
@@ -368,6 +405,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "flux tower centroid point" ;
             sh:class sf:Point ;
             sh:description "The centroid point of the flux tower." ;
             sh:maxCount 1 ;
@@ -378,6 +417,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "commissioned date of flux tower" ;
             sh:datatype xsd:date ;
             sh:description "The date when the flux tower was commissioned." ;
             sh:maxCount 1 ;
@@ -388,6 +429,8 @@ tern-shapes:FluxTower
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "flux tower label" ;
             sh:datatype xsd:string ;
             sh:description "The label of the flux tower." ;
             sh:maxCount 1 ;
@@ -427,6 +470,8 @@ tern-shapes:Input
     sh:property
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "input description" ;
             sh:datatype xsd:string ;
             sh:description "The description of the input." ;
             sh:message "If present, `dcterms:description` predicates on a `tern:Input` _MUST_ have string values." ;
@@ -435,6 +480,8 @@ tern-shapes:Input
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "input value" ;
             sh:description "The value of the input." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Input` _MAY_ have at most 1 `rdf:value` predicate." ;
@@ -443,6 +490,8 @@ tern-shapes:Input
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "input label" ;
             sh:datatype xsd:string ;
             sh:description "The label of the input." ;
             sh:maxCount 1 ;
@@ -585,6 +634,8 @@ tern-shapes:Method
     sh:property
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "method required duration" ;
             sh:datatype xsd:string ;
             sh:description "The time required for the method." ;
             sh:maxCount 1 ;
@@ -594,6 +645,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "note of method" ;
             sh:datatype xsd:string ;
             sh:description "Notes about the method." ;
             sh:message "If present, `skos:note` predicates on a `tern:Method` _MUST_ have string values." ;
@@ -602,6 +655,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "categorial collection of method" ;
             sh:class skos:Collection ;
             sh:description "The categorical collection of the method." ;
             sh:message "If present, `tern:hasCategoricalCollection` predicates on a `tern:Method` _MUST_ have values of type `skos:Collection`." ;
@@ -610,6 +665,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "parameter of method" ;
             sh:class skos:Concept ;
             sh:description "The parameters of the method." ;
             sh:message "If present, `tern:hasParameter` predicates on a `tern:Method` _MUST_ have values of type `skos:Concept`." ;
@@ -618,6 +675,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "digital camera preferred label" ;
             sh:description "The source of the method." ;
             sh:message "If present, `dcterms:source` predicates on a `tern:Method` _MUST_ have string or URI values." ;
             sh:name "dcterms:source" ;
@@ -633,6 +692,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "method instructions" ;
             sh:class rdf:Seq ;
             sh:description "The instructions for the method." ;
             sh:maxCount 1 ;
@@ -642,6 +703,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "method definition" ;
             sh:datatype xsd:string ;
             sh:description "The definition of the method." ;
             sh:maxCount 1 ;
@@ -651,6 +714,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "method equipment" ;
             sh:class skos:Concept ;
             sh:description "The equipment used for the method." ;
             sh:maxCount 1 ;
@@ -660,6 +725,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "method purpose" ;
             sh:datatype xsd:string ;
             sh:description "The purpose of the method." ;
             sh:maxCount 1 ;
@@ -669,6 +736,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "method scope" ;
             sh:datatype xsd:string ;
             sh:description "The scope of the method." ;
             sh:maxCount 1 ;
@@ -678,6 +747,8 @@ tern-shapes:Method
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusStable ;
+            skos:prefLabel "method preferred label" ;
             sh:datatype xsd:string ;
             sh:description "The preferred label of the method." ;
             sh:maxCount 1 ;
@@ -700,6 +771,8 @@ tern-shapes:ObservableProperty
     sh:property
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "local value of observable property" ;
             sh:class skos:Concept ;
             sh:description "The local value of the observable property." ;
             sh:maxCount 1 ;
@@ -709,6 +782,8 @@ tern-shapes:ObservableProperty
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "value of observable property" ;
             sh:class tern:Parameter ;
             sh:description "The parameter value of the observable property." ;
             sh:maxCount 1 ;
@@ -719,6 +794,8 @@ tern-shapes:ObservableProperty
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "local vocabulary of observable property" ;
             sh:description "The local vocabulary of the observable property." ;
             sh:maxCount 1 ;
             sh:message "A `tern:ObservableProperty` _MAY_ have at most 1 `tern:localVocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
@@ -738,6 +815,8 @@ tern-shapes:ObservableProperty
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "vocabulary of observable property" ;
             sh:description "The vocabulary of the observable property." ;
             sh:maxCount 1 ;
             sh:message "A `tern:ObservableProperty` _MUST_ have exactly 1 `tern:vocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
@@ -824,6 +903,8 @@ tern-shapes:Procedure
     sh:property
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "vocabulary of procedure" ;
             sh:description "The vocabulary of the procedure." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Procedure` _MUST_ have exactly 1 `tern:vocabulary` predicate." ;
@@ -833,6 +914,8 @@ tern-shapes:Procedure
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "procedure has input" ;
             sh:class tern:Input ;
             sh:description "The input of the procedure." ;
             sh:maxCount 1 ;
@@ -842,6 +925,8 @@ tern-shapes:Procedure
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "value of procedure" ;
             sh:class tern:Method ;
             sh:description "The method value of the procedure." ;
             sh:maxCount 1 ;
@@ -852,6 +937,8 @@ tern-shapes:Procedure
         ] ,
         [
             a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "method of procedure" ;
             sh:class tern:Method ;
             sh:description "The method type of the procedure." ;
             sh:message "If present, `tern:hasMethod` predicates on a `tern:Procedure` _MUST_ have values of type `tern:Method`." ;
@@ -1003,7 +1090,6 @@ tern-shapes:System
         tern-shapes:skos-exactMatch ,
         tern-shapes:skos-prefLabel ,
         tern-shapes:skos-scopeNote ,
-        tern-shapes:sosa-implements ,
         tern-shapes:ssn-implements ,
         tern-shapes:ssn-system-hasOperatingProperty ,
         tern-shapes:ssn-system-hasSystemCapability ,
@@ -1082,20 +1168,35 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:property
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
-            sh:minCount 1 ;
-            sh:path rdf:value
-        ] ,
-        [
-            sh:maxCount 1 ;
-            sh:message "A `tern:Value` _MAY_ have one `tern:unit` predicate where the value is an IRI." ;
-            sh:nodeKind sh:IRI ;
-            sh:path tern:unit
-        ] ,
+        tern-shapes:Value-value ,
+        tern-shapes:Value-unit ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Value ;
+.
+
+tern-shapes:Value-value
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "value" ;
+    sh:description "The value of the `tern:Value`." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
+    sh:minCount 1 ;
+    sh:name "rdf:value" ;
+    sh:nodeKind sh:Literal ;
+    sh:path rdf:value ;
+.
+
+tern-shapes:Value-unit
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "unit" ;
+    sh:description "The unit of the `tern:Value`." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Value` _MAY_ have maximum one `tern:unit` predicate where the value is an IRI." ;
+    sh:name "tern:unit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:unit ;
 .
 
 tern-shapes:VerticalExtent
@@ -1597,7 +1698,7 @@ tern-shapes:Observation-hasResult
 
 tern-shapes:ObservationCollection-hasFeatureOfInterest
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "has feature of interest" ;
     sh:description "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled." ;
     sh:maxCount 1 ;
@@ -1625,7 +1726,7 @@ tern-shapes:ObservationCollection-hasFeatureOfInterest
 
 tern-shapes:ObservationCollection-hasMember
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "has member" ;
     sh:description "Link to a member of a collection of observations that share the same value for one or more of the characteristic properties." ;
     sh:message "A `tern:ObservationCollection` _MUST_ have at least 1 `sosa:hasMember` predicate where the value node is an IRI of type `tern:Observation` or `tern:ObservationCollection`." ;
@@ -1672,7 +1773,7 @@ tern-shapes:ObservationCollection-hasUltimateFeatureOfInterest
 
 tern-shapes:ObservationCollection-madeBySensor
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "made by sensor" ;
     sh:class tern:Sensor ;
     sh:description "Relation between an Observation and the Sensor which made the Observations." ;
@@ -1697,7 +1798,7 @@ tern-shapes:ObservationCollection-observedProperty
 
 tern-shapes:ObservationCollection-phenomenonTime
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "phenomenon time" ;
     sh:class time:Instant ;
     sh:description "The time that the Result of an Observation, Actuation, or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an interval or an instant, or some other compound temporal entity." ;
@@ -1733,7 +1834,7 @@ tern-shapes:ObservationCollection-resultTime
 
 tern-shapes:ObservationCollection-usedProcedure
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "used procedure" ;
     sh:description "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler." ;
     sh:maxCount 1 ;
@@ -1937,7 +2038,10 @@ tern-shapes:Sample-isResultOf
 
 tern-shapes:Sample-isSampleOf
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is sample of or has site" ;
     sh:description "At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths." ;
+    sh:message "At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths." ;
     sh:name "Sample's sosa:isSampleOf or tern:hasSite" ;
     sh:path [
             sh:zeroOrMorePath [
@@ -2062,6 +2166,8 @@ tern-shapes:Site-dimension
 
 tern-shapes:Site-featureType
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "site feature type" ;
     sh:description "The feature type of a [Feature of Interest](#FeatureofInterest)." ;
     sh:maxCount 1 ;
     sh:message "A `tern:Site` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI." ;
@@ -2096,7 +2202,7 @@ tern-shapes:System-hasDeployment
 
 tern-shapes:System-isHostedBy
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "is hosted by" ;
     sh:class tern:Platform ;
     sh:description "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by." ;
@@ -2109,7 +2215,7 @@ tern-shapes:System-isHostedBy
 
 tern-shapes:System-systemType
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "system type" ;
     sh:description "The type of system. Values are from some controlled vocabulary." ;
     sh:message "A `tern:System` _MAY_ have a `tern:systemType` predicate where the value node is an IRI." ;
@@ -2756,7 +2862,7 @@ tern-shapes:prov-wasAttributedTo
 
 tern-shapes:qudt-maxExclusive
     a sh:PropertyShape ;
-    reg:status reg:statusStable ;
+    reg:status reg:statusExperimental ;
     skos:prefLabel "maximum exclusive value" ;
     sh:description "The exclusive upper bound of the measurement range. This value represents the value just above the maximum that can be measured by the sensor." ;
     sh:maxCount 1 ;
@@ -2768,7 +2874,7 @@ tern-shapes:qudt-maxExclusive
 
 tern-shapes:qudt-maxInclusive
     a sh:PropertyShape ;
-    reg:status reg:statusStable ;
+    reg:status reg:statusExperimental ;
     skos:prefLabel "maximum inclusive value" ;
     sh:description "The inclusive upper bound of the measurement range. This value represents the maximum value that can be measured by the sensor." ;
     sh:maxCount 1 ;
@@ -2780,7 +2886,7 @@ tern-shapes:qudt-maxInclusive
 
 tern-shapes:qudt-minExclusive
     a sh:PropertyShape ;
-    reg:status reg:statusStable ;
+    reg:status reg:statusExperimental ;
     skos:prefLabel "minimum exclusive value" ;
     sh:description "The exclusive lower bound of the measurement range. This value represents the value just below the minimum that can be measured by the sensor." ;
     sh:maxCount 1 ;
@@ -2792,7 +2898,7 @@ tern-shapes:qudt-minExclusive
 
 tern-shapes:qudt-minInclusive
     a sh:PropertyShape ;
-    reg:status reg:statusStable ;
+    reg:status reg:statusExperimental ;
     skos:prefLabel "minimum inclusive value" ;
     sh:description "The inclusive lower bound of the measurement range. This value represents the minimum value that can be measured by the sensor." ;
     sh:maxCount 1 ;
@@ -2826,7 +2932,7 @@ tern-shapes:skos-altLabel
 
 tern-shapes:skos-exactMatch
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "exact match" ;
     sh:description "Indicates that two concepts, terms, or resources are semantically equivalent and can be used interchangeably. Used to link a resource to its exact corresponding match in another system or vocabulary." ;
     sh:message "A resource _MAY_ have a `skos:exactMatch` predicate where the value is an IRI." ;
@@ -2868,17 +2974,6 @@ tern-shapes:sosa-hasSimpleResult
     sh:name "sosa:hasSimpleResult" ;
     sh:nodeKing sh:IRIOrLiteral ;
     sh:path sosa:hasSimpleResult ;
-.
-
-tern-shapes:sosa-implements
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "implements" ;
-    sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
-    sh:message "An `ssn:implements` _MUST_ have an IRI value." ;
-    sh:name "ssn:implements" ;
-    sh:nodeKind sh:IRI ;
-    sh:path ssn:implements ;
 .
 
 tern-shapes:sosa-isFeatureOfInterestOf
@@ -2953,7 +3048,7 @@ tern-shapes:sosa-phenomenonTime
 
 tern-shapes:ssn-deployedOnPlatform
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "deployed on platform" ;
     sh:class tern:Platform ;
     sh:description "Relation between a Deployment and the Platform on which the Systems are deployed." ;
@@ -2966,7 +3061,7 @@ tern-shapes:ssn-deployedOnPlatform
 
 tern-shapes:ssn-deployedSystem
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "deployed system" ;
     sh:class tern:System ;
     sh:description "Relation between a Deployment and a deployed System." ;
@@ -3265,6 +3360,8 @@ tern-shapes:tern-observationType
 
 tern-shapes:tern-platformType
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "platform type" ;
     sh:class skos:Concept ;
     sh:description "The type of platform." ;
     sh:maxCount 1 ;
@@ -3535,7 +3632,10 @@ tern-shapes:time-unitType
 
 <urn:shape:Observation-hasFeatureOfInterest>
     a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "observation has feature of interest" ;
     sh:description "Has at least 1 spatial indicator alongs its chain of samples" ;
+    sh:message "An `Observation` _MUST_ have at least one `sosa:hasFeatureOfInterest` predicate where the value node is an IRI of type `tern:FeatureOfInterest` and its subclasses." ;
     sh:name "Observation's sosa:hasFeatureOfInterest" ;
     sh:node <urn:shape:Observation-hasFeatureOfInterest-Sample> ;
     sh:path sosa:hasFeatureOfInterest ;
@@ -3552,7 +3652,10 @@ tern-shapes:time-unitType
 
 <urn:shape:Sample-isSampleOf-sfWithin>
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "sample's sosa:isSampleOf sfWithin" ;
     sh:description "At least one geo:sfWithin exists along the chain of sosa:isSampleOf paths." ;
+    sh:message "A `tern:Sample` _MUST_ have at least one `sosa:isSampleOf` or `tern:hasSite` predicate with location information." ;
     sh:name "Sample's sosa:isSampleOf" ;
     sh:path [
             sh:zeroOrMorePath [
@@ -3570,7 +3673,10 @@ tern-shapes:time-unitType
 
 <urn:shape:Sample-isSampleOf-spatial>
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "sample's sosa:isSampleOf spatial" ;
     sh:description "At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths." ;
+    sh:message "At least one sdo:spatial, geo:hasGeometry, tern:transectStartPoint, or tern:transectEndPoint exists along the chain of sosa:isSampleOf or tern:hasSite paths." ;
     sh:name "Sample's sosa:isSampleOf or tern:hasSite" ;
     sh:path [
             sh:zeroOrMorePath [
@@ -3729,9 +3835,7 @@ tern-shapes:tern-locationDescription
     reg:status reg:statusExperimental ;
     skos:prefLabel "location description" ;
     sh:datatype xsd:string ;
-    sh:description """The description of the site's location. 
-
-Example: 10km west of Fletcherview Tropical Rangeland SuperSite.""" ;
+    sh:description "The description of the site's location. Example: 10km west of Fletcherview Tropical Rangeland SuperSite." ;
     sh:maxCount 1 ;
     sh:message "A `tern:locationDescription` _MUST_ have a literal value with the datatype `xsd:string`." ;
     sh:name "tern:locationDescription" ;
@@ -3756,7 +3860,10 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
 
 <urn:shape:geo-sfWithin-min-1>
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "geo sfWithin min 1" ;
     sh:description "At least one geo:sfWithin must exist." ;
+    sh:message "At least one geo:sfWithin must exist." ;
     sh:minCount 1 ;
     sh:name "geo:sfWithin" ;
     sh:path geo:sfWithin ;
@@ -3764,7 +3871,10 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
 
 <urn:shape:transectEndPoint-min-1>
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "transect end point min 1" ;
     sh:description "At least one tern:transectEndPoint must exist." ;
+    sh:message "At least one tern:transectEndPoint must exist." ;
     sh:minCount 1 ;
     sh:name "tern:transectEndPoint" ;
     sh:path tern:transectEndPoint ;
@@ -3772,7 +3882,10 @@ Example: Outer fringe of larger lake chain, isolated by reddish dunes, yellow sa
 
 <urn:shape:transectStartPoint-min-1>
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "transect start point min 1" ;
     sh:description "At least one tern:transectStartPoint must exist." ;
+    sh:message "At least one tern:transectStartPoint must exist." ;
     sh:minCount 1 ;
     sh:name "tern:transectStartPoint" ;
     sh:path tern:transectStartPoint ;
@@ -3791,7 +3904,7 @@ tern-shapes:dcterms-description
 
 tern-shapes:prov-endedAtTime
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "ended at time" ;
     sh:datatype xsd:dateTime ;
     sh:description "The time at which an activity ended." ;
@@ -3804,7 +3917,7 @@ tern-shapes:prov-endedAtTime
 
 tern-shapes:prov-startedAtTime
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
+    reg:status reg:statusStable ;
     skos:prefLabel "started at time" ;
     sh:datatype xsd:dateTime ;
     sh:description "The time at which an activity started." ;
@@ -3876,7 +3989,10 @@ tern-shapes:sosa-hasSample
 
 <urn:shape:geo-hasGeometry-min-1>
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "geo has geometry min 1" ;
     sh:description "At least one geo:hasGeometry must exist." ;
+    sh:message "At least one geo:hasGeometry must exist." ;
     sh:minCount 1 ;
     sh:name "geo:hasGeometry" ;
     sh:path geo:hasGeometry ;
@@ -3884,7 +4000,10 @@ tern-shapes:sosa-hasSample
 
 <urn:shape:sdo-spatial-min-1>
     a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "sdo spatial min 1" ;
     sh:description "At least one sdo:spatial must exist." ;
+    sh:message "At least one sdo:spatial must exist." ;
     sh:minCount 1 ;
     sh:name "sdo:spatial" ;
     sh:path sdo:spatial ;

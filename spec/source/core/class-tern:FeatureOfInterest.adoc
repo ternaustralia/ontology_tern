@@ -87,7 +87,7 @@
 | Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geo:Geometry`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
 | Expected values | 
 |===
 
@@ -106,7 +106,7 @@
 | Implementation | A `prov:qualifiedAttribution` _MUST_ have a blank node or IRI value where the type is `prov:Attribution`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
-| Class type | link:http://www.w3.org/ns/prov#Attribution[`prov:Attribution`]
+| Class type | link:http://www.w3.org/ns/prov#Attribution[`prov#:Attribution`]
 | Expected values | 
 |===
 
@@ -125,7 +125,7 @@
 | Implementation | A `prov:wasAttributedTo` predicate _MUST_ have an IRI value of type `prov:Agent`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:http://www.w3.org/ns/prov#Agent[`prov:Agent`]
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov#:Agent`]
 | Expected values | 
 |===
 
@@ -148,6 +148,25 @@
 | Expected values | 
 |===
 
+[#class-tern:FeatureOfInterest-sdo:spatial]
+===== Property: sdo:spatial
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://schema.org/spatial[`sdo:spatial`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sdo-spatial
+| Status | `experimental` icon:circle-o[]
+| Label | spatial
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `sdo:spatial` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
 [#class-tern:FeatureOfInterest-sosa:hasSample]
 ===== Property: sosa:hasSample
 [cols="1,4"]
@@ -162,8 +181,9 @@
 | Scope note | 
 | Implementation | A `tern:FeatureOfInterest` _MAY_ have a `sosa:hasSample` predicate where the value node is an IRI of type `tern:Sample`.
 | Cardinality | 
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`]
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Sample[`tern:Sample`] +
+link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`]
 | Expected values | 
 |===
 
@@ -181,9 +201,48 @@
 | Scope note | 
 | Implementation | A `tern:FeatureOfInterest` _MAY_ have a `sosa:isFeatureOfInterestOf` predicate where the value node is an IRI of type `tern:Observation` or `tern:Sampling`.
 | Cardinality | 
-| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Node kind | 
 | Class type | link:https://w3id.org/tern/ontologies/tern/Observation[`tern:Observation`] +
 link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
+| Expected values | 
+|===
+
+[#class-tern:FeatureOfInterest-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Expected values | 
+|===
+
+[#class-tern:FeatureOfInterest-tern:hasSite]
+===== Property: tern:hasSite
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSite[`tern:hasSite`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSite
+| Status | `stable` icon:check-circle[]
+| Label | has site
+| Definition | A property that links, e.g., a FeatureOfInterest to a Site or Transect.
+| Scope note | 
+| Implementation | A `tern:FeatureOfInterest` _MAY_ have a `tern:hasSite` predicate where the value node is an IRI of type `tern:Site` or `tern:Transect`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:https://w3id.org/tern/ontologies/tern/Site[`tern:Site`] +
+link:https://w3id.org/tern/ontologies/tern/Transect[`tern:Transect`]
 | Expected values | 
 |===
 

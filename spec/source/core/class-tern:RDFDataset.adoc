@@ -49,7 +49,7 @@
 | Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`.
 | Cardinality | 
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`]
 | Expected values | 
 |===
 
@@ -87,26 +87,7 @@
 | Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:date` predicate where the value node is a literal with the datatype `xsd:date`.
 | Cardinality | 
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
-| Expected values | 
-|===
-
-[#class-tern:RDFDataset-dcterms:description]
-===== Property: dcterms:description
-[cols="1,4"]
-|===
-| Property | Value
-
-| IRI | http://purl.org/dc/terms/description[`dcterms:description`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/RDFDataset-description
-| Status | `stable` icon:check-circle[]
-| Label | description
-| Definition | A textual description of the dataset.
-| Scope note | 
-| Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:description` predicate where the value node is a literal with the datatype `xsd:string`.
-| Cardinality | 
-| Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`]
 | Expected values | 
 |===
 
@@ -125,7 +106,7 @@
 | Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`.
 | Cardinality | 
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`]
 | Expected values | 
 |===
 
@@ -163,7 +144,7 @@
 | Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`.
 | Cardinality | 
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xsd:date`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#date[`xmlschema#:date`]
 | Expected values | 
 |===
 
@@ -264,7 +245,7 @@
 | Implementation | A `tern:RDFDataset` _MAY_ have a `void:subset` predicate where the value node is an IRI of type `void:Dataset`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
-| Class type | link:http://rdfs.org/ns/void#Dataset[`void:Dataset`]
+| Class type | link:http://rdfs.org/ns/void#Dataset[`void#:Dataset`]
 | Expected values | 
 |===
 
@@ -283,7 +264,7 @@
 | Implementation | A `tern:RDFDataset` _MAY_ have a `dcterms:title` predicate where the value node is a literal with a datatype `xsd:string`.
 | Cardinality | 
 | Node kind | 
-| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xsd:string`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 
@@ -303,5 +284,43 @@
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | 
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-dcterms:description]
+===== Property: dcterms:description
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/description[`dcterms:description`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-description
+| Status | `stable` icon:check-circle[]
+| Label | description
+| Definition | A textual description.
+| Scope note | 
+| Implementation | A `dcterms:description` predicate has a literal value with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
+| Expected values | 
+|===
+
+[#class-tern:RDFDataset-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
 | Expected values | 
 |===
