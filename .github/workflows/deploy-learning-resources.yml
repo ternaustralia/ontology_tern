@@ -9,7 +9,7 @@ on:
     paths: [ 'rdf-learning-resources/**' ]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
   pull-requests: write
@@ -21,17 +21,17 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Create site structure
         run: |
@@ -40,19 +40,18 @@ jobs:
 
       - name: Download existing GitHub Pages content
         run: |
-          # Try to download existing GitHub Pages content to preserve it
+          # Try to checkout existing gh-pages branch content
           echo "Attempting to preserve existing GitHub Pages content..."
           
-          # Download the current site if it exists
-          curl -f -s -o existing-site.tar.gz -L "https://github.com/ternaustralia/ontology_tern/archive/gh-pages.tar.gz" || echo "No existing gh-pages branch found"
-          
-          # If we got existing content, extract it
-          if [ -f existing-site.tar.gz ]; then
-            tar -xzf existing-site.tar.gz --strip-components=1 -C _site/ || echo "Failed to extract existing content"
-            rm existing-site.tar.gz
-            echo "✅ Preserved existing GitHub Pages content"
+          if git checkout gh-pages 2>/dev/null; then
+            echo "✅ Found existing gh-pages branch"
+            # Copy existing content to _site
+            cp -r . _site/ 2>/dev/null || true
+            # Remove git files from _site
+            rm -rf _site/.git _site/.github 2>/dev/null || true
+            git checkout -
           else
-            echo "ℹ️  No existing GitHub Pages content found, starting fresh"
+            echo "ℹ️  No existing gh-pages branch found, starting fresh"
           fi
 
       - name: Verify existing content preservation
@@ -144,14 +143,39 @@ jobs:
             ls -la _site/preview/
           fi
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to gh-pages branch
+        run: |
+          # Create or switch to gh-pages branch
+          if git checkout gh-pages 2>/dev/null; then
+            echo "Using existing gh-pages branch"
+          else
+            echo "Creating new gh-pages branch"
+            git checkout --orphan gh-pages
+          fi
+          
+          # Clear the branch (but keep .git)
+          git rm -rf . 2>/dev/null || true
+          
+          # Copy new content
+          cp -r _site/* . 2>/dev/null || true
+          cp _site/.* . 2>/dev/null || true  # Copy hidden files if any
+          
+          # Add and commit
+          git add .
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              git commit -m "Deploy preview for PR #${{ github.event.number }} (${{ github.head_ref }})"
+            else
+              git commit -m "Deploy learning resources from ${{ github.ref_name }}"
+            fi
+            
+            # Push to gh-pages
+            git push origin gh-pages
+            echo "✅ Successfully deployed to gh-pages branch"
+          fi
 
       - name: Comment on PR with preview link
         if: github.event_name == 'pull_request'
