@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:sosa="http://www.w3.org/ns/sosa/"
+    xmlns:ssn="http://www.w3.org/ns/ssn/"
+    xmlns:ex="http://example.org/">
+
+    <!-- Weather station example -->
+    <ex:WeatherStation rdf:about="http://example.org/WeatherStation42">
+        <rdfs:label>Campus Weather Station 42</rdfs:label>
+        <sosa:hosts rdf:resource="http://example.org/Thermometer123"/>
+        <sosa:hosts rdf:resource="http://example.org/HumiditySensor456"/>
+        <ex:location rdf:resource="http://example.org/Room104"/>
+    </ex:WeatherStation>
+
+    <ex:Room rdf:about="http://example.org/Room104">
+        <rdfs:label>Room 104</rdfs:label>
+        <ex:hasLocation rdf:resource="http://example.org/Building7"/>
+    </ex:Room>
+
+    <ex:Building rdf:about="http://example.org/Building7">
+        <rdfs:label>Science Building</rdfs:label>
+    </ex:Building>
+
+    <!-- Sensors -->
+    <sosa:Sensor rdf:about="http://example.org/Thermometer123">
+        <rdfs:label>Temperature Sensor 123</rdfs:label>
+        <sosa:observes rdf:resource="http://example.org/Temperature"/>
+        <ex:serialNumber>TS-123-ABC</ex:serialNumber>
+        <ex:manufacturer>SensorTech</ex:manufacturer>
+    </sosa:Sensor>
+
+    <sosa:Sensor rdf:about="http://example.org/HumiditySensor456">
+        <rdfs:label>Humidity Sensor 456</rdfs:label>
+        <sosa:observes rdf:resource="http://example.org/Humidity"/>
+        <ex:serialNumber>HS-456-DEF</ex:serialNumber>
+        <ex:manufacturer>SensorTech</ex:manufacturer>
+    </sosa:Sensor>
+
+    <!-- Observable properties -->
+    <sosa:ObservableProperty rdf:about="http://example.org/Temperature">
+        <rdfs:label>Air Temperature</rdfs:label>
+        <rdfs:comment>The ambient air temperature in degrees Celsius</rdfs:comment>
+    </sosa:ObservableProperty>
+
+    <sosa:ObservableProperty rdf:about="http://example.org/Humidity">
+        <rdfs:label>Air Humidity</rdfs:label>
+        <rdfs:comment>The relative humidity in percent</rdfs:comment>
+    </sosa:ObservableProperty>
+
+    <!-- Observations -->
+    <sosa:Observation rdf:about="http://example.org/Observation_Temp_001">
+        <sosa:observedProperty rdf:resource="http://example.org/Temperature"/>
+        <sosa:madeBySensor rdf:resource="http://example.org/Thermometer123"/>
+        <sosa:resultTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-05-15T10:30:00Z</sosa:resultTime>
+        <sosa:hasResult rdf:resource="http://example.org/Result_Temp_001"/>
+        <sosa:hasFeatureOfInterest rdf:resource="http://example.org/Room104"/>
+    </sosa:Observation>
+
+    <sosa:Observation rdf:about="http://example.org/Observation_Humidity_001">
+        <sosa:observedProperty rdf:resource="http://example.org/Humidity"/>
+        <sosa:madeBySensor rdf:resource="http://example.org/HumiditySensor456"/>
+        <sosa:resultTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-05-15T10:30:00Z</sosa:resultTime>
+        <sosa:hasResult rdf:resource="http://example.org/Result_Humidity_001"/>
+        <sosa:hasFeatureOfInterest rdf:resource="http://example.org/Room104"/>
+    </sosa:Observation>
+
+    <!-- Results -->
+    <sosa:Result rdf:about="http://example.org/Result_Temp_001">
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">23.5</sosa:hasSimpleResult>
+        <ex:unit>°C</ex:unit>
+    </sosa:Result>
+
+    <sosa:Result rdf:about="http://example.org/Result_Humidity_001">
+        <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">42.0</sosa:hasSimpleResult>
+        <ex:unit>%</ex:unit>
+    </sosa:Result>
+</rdf:RDF> 
