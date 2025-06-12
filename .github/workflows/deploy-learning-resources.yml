@@ -29,15 +29,13 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
       - name: Create site structure
         run: |
           mkdir -p _site
           echo "Site directory created"
 
-      - name: Download existing GitHub Pages content (main branch only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: Download existing GitHub Pages content
         run: |
           # Try to download existing GitHub Pages content to preserve it
           echo "Attempting to preserve existing GitHub Pages content..."
@@ -54,8 +52,7 @@ jobs:
             echo "ℹ️  No existing GitHub Pages content found, starting fresh"
           fi
 
-      - name: Verify existing content preservation (main branch only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: Verify existing content preservation
         run: |
           echo "📁 Current site structure after preservation:"
           ls -la _site/ || echo "No content preserved"
@@ -67,7 +64,7 @@ jobs:
             echo "⚠️  No existing index.html found - may be first deployment"
           fi
 
-      - name: Deploy learning resources to /learning/ path (main branch only)
+      - name: Deploy learning resources to /learning/ path (main branch)
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
           # Create learning directory and copy content
@@ -75,10 +72,8 @@ jobs:
           cp -r rdf-learning-resources/* _site/learning/
           
           echo "✅ Learning resources deployed to /learning/"
-          echo "📁 Final site structure:"
-          ls -la _site/
 
-      - name: Deploy branch preview
+      - name: Deploy branch preview (PR only)
         if: github.event_name == 'pull_request'
         run: |
           # Get clean branch name
@@ -137,24 +132,23 @@ jobs:
           echo "✅ Branch preview deployed to /preview/$CLEAN_BRANCH/"
           echo "CLEAN_BRANCH=$CLEAN_BRANCH" >> $GITHUB_ENV
 
-      - name: Upload artifact (main branch only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: Show final site structure
+        run: |
+          echo "📁 Final site structure:"
+          ls -la _site/
+          if [ -d "_site/preview" ]; then
+            echo "📁 Preview directories:"
+            ls -la _site/preview/
+          fi
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-      - name: Deploy to GitHub Pages (main branch only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Upload preview artifact (PR only)
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: preview-${{ env.CLEAN_BRANCH }}
-          path: _site
-          retention-days: 30
 
       - name: Comment on PR with preview link
         if: github.event_name == 'pull_request'
@@ -185,9 +179,11 @@ jobs:
             - Learning resources will be at: https://ternaustralia.github.io/ontology_tern/learning/ (after merge)
             
             ### Safety Check:
-            - This workflow only deploys to \`/learning/\` subdirectory
+            - This workflow only deploys to \`/learning/\` subdirectory (main) or \`/preview/\` (PRs)
             - Existing TERN ontology documentation is preserved
             - No conflicts with existing TERN infrastructure
+            
+            ⏱️ **Note**: It may take 2-3 minutes for the preview to be available after this comment.
             
             _This preview updates automatically with each push to this branch._`;
             
