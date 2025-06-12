@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about controlled vocabularies and their role in RDF data organization">
+    <title>Module 4: Controlled Vocabularies | RDF Learning Resources</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#content" class="skip-to-content">Skip to Content</a>
+    
+    <header>
+        <h1>RDF Learning Resources</h1>
+        <p class="tagline">Module 4: Controlled Vocabularies</p>
+    </header>
+    
+    <main id="content">
+        <section class="module-intro">
+            <h2>Understanding Controlled Vocabularies</h2>
+            <p>Controlled vocabularies provide standardized terms and concepts to ensure consistent data representation. In the RDF world, they are crucial for establishing shared meaning across datasets.</p>
+            <p>In this module, you'll learn:</p>
+            <ul>
+                <li>What controlled vocabularies are and their importance</li>
+                <li>SKOS Collections and Concepts</li>
+                <li>SKOS ConceptSchemes and their relationship to Concepts</li>
+                <li>The differences between Collections and ConceptSchemes</li>
+                <li>How controlled vocabularies are used with ontology class instances</li>
+            </ul>
+            
+            <div class="module-nav">
+                <a href="../index.html" class="cta-button secondary">Back to Home</a>
+                <a href="module3.html" class="cta-button secondary">Previous Module</a>
+                <a href="#vocabulary-basics" class="cta-button">Start Learning</a>
+            </div>
+        </section>
+        
+        <section id="vocabulary-basics" class="content-section">
+            <h2>Controlled Vocabulary Basics</h2>
+            <p>A controlled vocabulary is a curated list of terms that have been explicitly enumerated and managed. These vocabularies help standardize terminology and improve data consistency.</p>
+            
+            <div class="concept-container">
+                <div class="concept-definition">
+                    <h3>What is a Controlled Vocabulary?</h3>
+                    <p>A controlled vocabulary is an organized set of words, phrases, or terms that are used for indexing, tagging, and retrieving content. They provide a way to organize knowledge for subsequent retrieval.</p>
+                    <p>Key characteristics of controlled vocabularies include:</p>
+                    <ul>
+                        <li><strong>Standardization</strong> - Ensures consistent terminology</li>
+                        <li><strong>Ambiguity control</strong> - Resolves language ambiguities</li>
+                        <li><strong>Relationship expression</strong> - Shows how terms relate to each other</li>
+                        <li><strong>Defined scope</strong> - Clearly defines the domain covered</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <h4>Examples of Controlled Vocabularies:</h4>
+                    <ul>
+                        <li><strong>Taxonomies</strong> - Hierarchical classifications (e.g., biological classification)</li>
+                        <li><strong>Thesauri</strong> - Collections of related terms showing relationships</li>
+                        <li><strong>Subject headings</strong> - Standardized terms for cataloging</li>
+                        <li><strong>Code lists</strong> - Enumerated sets of codes and their meanings</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="interactive-element">
+                <h3>Why Are Controlled Vocabularies Important?</h3>
+                <div class="comparison-table vocabulary-benefits-table">
+                    <div class="comparison-row header" style="background-color: #2c4a73; border: 1px solid #1e3859;">
+                        <div class="comparison-cell" style="color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); flex: 1; padding: 12px;">Without Controlled Vocabulary</div>
+                        <div class="comparison-cell" style="color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); flex: 1; padding: 12px;">With Controlled Vocabulary</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell" style="color: #333; flex: 1; padding: 12px; vertical-align: top;">
+                            <ul>
+                                <li>Inconsistent terminology</li>
+                                <li>Ambiguous meanings</li>
+                                <li>Difficult to aggregate data</li>
+                                <li>Poor search results</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-cell" style="color: #333; flex: 1; padding: 12px; vertical-align: top;">
+                            <ul>
+                                <li>Standardized terminology</li>
+                                <li>Clear, defined meanings</li>
+                                <li>Easy data integration</li>
+                                <li>Improved search precision</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skos-concepts" class="content-section">
+            <h2>SKOS Concepts</h2>
+            <p>The <strong>Simple Knowledge Organization System (SKOS)</strong> is a W3C recommendation for representing controlled vocabularies in RDF. It provides a way to standardize how we express concepts and their relationships.</p>
+            
+            <div class="concept-container">
+                <div class="concept-definition">
+                    <h3>What is a SKOS Concept?</h3>
+                    <p>In SKOS, a <code>skos:Concept</code> is an idea or notion - a unit of thought. Concepts are the basic elements used to build controlled vocabularies.</p>
+                    <p>Each concept can have:</p>
+                    <ul>
+                        <li><strong>Labels</strong> - Preferred (skos:prefLabel) and alternative (skos:altLabel) terms</li>
+                        <li><strong>Definitions</strong> - Formal explanations of meaning (skos:definition)</li>
+                        <li><strong>Semantic relationships</strong> - How concepts relate to each other (broader, narrower, related)</li>
+                        <li><strong>Notes</strong> - Additional information about usage, scope, etc.</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>SKOS Concept Example:</h4>
+                    <pre><code>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix ex: &lt;http://example.org/&gt; .
+
+ex:Mammal a skos:Concept ;
+    skos:prefLabel "Mammal"@en ;
+    skos:altLabel "Mammalia"@en ;
+    skos:definition "Warm-blooded vertebrate animals characterized by hair or fur."@en ;
+    skos:broader ex:Vertebrate ;
+    skos:narrower ex:Cat, ex:Dog, ex:Elephant .</code></pre>
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <h3>SKOS Concept Relationships</h3>
+                <div class="skos-diagram">
+                    <div class="concept-node" id="concept-vertebrate">
+                        <div class="node-content">
+                            <strong>ex:Vertebrate</strong>
+                            <div class="concept-label">skos:Concept</div>
+                        </div>
+                    </div>
+                    <div class="relationship-arrow down">skos:narrower</div>
+                    <div class="concept-node" id="concept-mammal">
+                        <div class="node-content">
+                            <strong>ex:Mammal</strong>
+                            <div class="concept-label">skos:Concept</div>
+                            <div class="node-details">
+                                <div>prefLabel: "Mammal"</div>
+                                <div>altLabel: "Mammalia"</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relationship-arrow down split">skos:narrower</div>
+                    <div class="concept-children">
+                        <div class="concept-node smaller" id="concept-cat">
+                            <div class="node-content">
+                                <strong>ex:Cat</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node smaller" id="concept-dog">
+                            <div class="node-content">
+                                <strong>ex:Dog</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node smaller" id="concept-elephant">
+                            <div class="node-content">
+                                <strong>ex:Elephant</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interactive-element">
+                <h3>Concept Relationship Exercise</h3>
+                <p>Match each SKOS relationship with its correct description:</p>
+                
+                <div class="matching-exercise" id="concept-relationship-exercise">
+                    <div class="matching-item">
+                        <span class="term">skos:broader</span>
+                        <select id="broader-relationship" data-correct="A concept with more general meaning">
+                            <option value="">-- Select the correct description --</option>
+                            <option value="A concept with more general meaning">A concept with more general meaning</option>
+                            <option value="A concept with more specific meaning">A concept with more specific meaning</option>
+                            <option value="A concept that is associated but not hierarchically related">A concept that is associated but not hierarchically related</option>
+                            <option value="An alternative name for the concept">An alternative name for the concept</option>
+                        </select>
+                    </div>
+                    
+                    <div class="matching-item">
+                        <span class="term">skos:narrower</span>
+                        <select id="narrower-relationship" data-correct="A concept with more specific meaning">
+                            <option value="">-- Select the correct description --</option>
+                            <option value="A concept with more general meaning">A concept with more general meaning</option>
+                            <option value="A concept with more specific meaning">A concept with more specific meaning</option>
+                            <option value="A concept that is associated but not hierarchically related">A concept that is associated but not hierarchically related</option>
+                            <option value="An alternative name for the concept">An alternative name for the concept</option>
+                        </select>
+                    </div>
+                    
+                    <div class="matching-item">
+                        <span class="term">skos:related</span>
+                        <select id="related-relationship" data-correct="A concept that is associated but not hierarchically related">
+                            <option value="">-- Select the correct description --</option>
+                            <option value="A concept with more general meaning">A concept with more general meaning</option>
+                            <option value="A concept with more specific meaning">A concept with more specific meaning</option>
+                            <option value="A concept that is associated but not hierarchically related">A concept that is associated but not hierarchically related</option>
+                            <option value="An alternative name for the concept">An alternative name for the concept</option>
+                        </select>
+                    </div>
+                    
+                    <div class="matching-item">
+                        <span class="term">skos:altLabel</span>
+                        <select id="altlabel-relationship" data-correct="An alternative name for the concept">
+                            <option value="">-- Select the correct description --</option>
+                            <option value="A concept with more general meaning">A concept with more general meaning</option>
+                            <option value="A concept with more specific meaning">A concept with more specific meaning</option>
+                            <option value="A concept that is associated but not hierarchically related">A concept that is associated but not hierarchically related</option>
+                            <option value="An alternative name for the concept">An alternative name for the concept</option>
+                        </select>
+                    </div>
+                    
+                    <div id="concept-relationship-feedback" class="feedback-message"></div>
+                    <button id="check-concept-relationships" class="check-button">Check Answers</button>
+                </div>
+            </div>
+            
+
+        </section>
+        
+        <section id="collections" class="content-section">
+            <h2>SKOS Collections</h2>
+            <p>A <code>skos:Collection</code> represents a group of SKOS concepts that are gathered for a particular purpose. Unlike ConceptSchemes, Collections don't necessarily form a complete vocabulary system.</p>
+            
+            <div class="concept-container">
+                <div class="concept-definition">
+                    <h3>What is a SKOS Collection?</h3>
+                    <p>A Collection is a labeled and/or ordered group of SKOS concepts. Collections are useful for representing sets of concepts that have something in common but don't form a complete scheme.</p>
+                    <p>Key points about Collections:</p>
+                    <ul>
+                        <li><strong>Group membership</strong> - Includes concepts via skos:member property</li>
+                        <li><strong>Purpose-specific</strong> - Typically gathered for a specific need or context</li>
+                        <li><strong>Optional ordering</strong> - Can be ordered (skos:OrderedCollection) or unordered</li>
+                        <li><strong>Nesting</strong> - Collections can contain other collections</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Collection Example:</h4>
+                    <pre><code>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix ex: &lt;http://example.org/&gt; .
+
+ex:EndangeredSpecies a skos:Collection ;
+    skos:prefLabel "Endangered Species List"@en ;
+    skos:definition "A collection of animal concepts that are classified as endangered"@en ;
+    skos:member ex:SiberianTiger, ex:BlackRhino, ex:MountainGorilla, ex:BlueWhale .
+
+ex:SiberianTiger a skos:Concept ;
+    skos:prefLabel "Siberian Tiger"@en ;
+    skos:inScheme ex:AnimalClassification .</code></pre>
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <h3>Collection Structure</h3>
+                <div class="collection-diagram">
+                    <div class="collection-node" id="collection-endangered">
+                        <div class="node-content">
+                            <strong>ex:EndangeredSpecies</strong>
+                            <div class="concept-label">skos:Collection</div>
+                        </div>
+                    </div>
+                    <div class="relationship-arrow down split-four">skos:member</div>
+                    <div class="collection-members">
+                        <div class="concept-node smaller" id="concept-tiger">
+                            <div class="node-content">
+                                <strong>ex:SiberianTiger</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node smaller" id="concept-rhino">
+                            <div class="node-content">
+                                <strong>ex:BlackRhino</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node smaller" id="concept-gorilla">
+                            <div class="node-content">
+                                <strong>ex:MountainGorilla</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node smaller" id="concept-whale">
+                            <div class="node-content">
+                                <strong>ex:BlueWhale</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="note-box">
+                <h3>OrderedCollection</h3>
+                <p>SKOS also provides <code>skos:OrderedCollection</code>, a subclass of <code>skos:Collection</code> that maintains a meaningful order among its members. Instead of <code>skos:member</code>, it uses <code>skos:memberList</code> to point to an RDF list that specifies the order.</p>
+                <pre><code>ex:ThreatLevels a skos:OrderedCollection ;
+    skos:prefLabel "IUCN Conservation Status Levels"@en ;
+    skos:memberList ( ex:ExtinctInWild ex:CriticallyEndangered ex:Endangered 
+                       ex:Vulnerable ex:NearThreatened ex:LeastConcern ) .</code></pre>
+            </div>
+            
+            <div class="interactive-element">
+                <h3>Collection Builder Exercise</h3>
+                <p>Create a valid SKOS Collection by dragging the appropriate concepts into the collection:</p>
+                
+                <div class="collection-builder-exercise" id="collection-builder">
+                    <div class="exercise-prompt">
+                        <p>Build a collection of "Freshwater Fish Species" by selecting only the freshwater fish concepts:</p>
+                    </div>
+                    
+                    <div class="drag-drop-container">
+                        <div class="drag-options">
+                            <div class="drag-item" draggable="true" data-type="freshwater">ex:Trout (Freshwater)</div>
+                            <div class="drag-item" draggable="true" data-type="saltwater">ex:Tuna (Saltwater)</div>
+                            <div class="drag-item" draggable="true" data-type="freshwater">ex:Bass (Freshwater)</div>
+                            <div class="drag-item" draggable="true" data-type="freshwater">ex:Carp (Freshwater)</div>
+                            <div class="drag-item" draggable="true" data-type="saltwater">ex:Mackerel (Saltwater)</div>
+                            <div class="drag-item" draggable="true" data-type="both">ex:Salmon (Both)</div>
+                            <div class="drag-item" draggable="true" data-type="freshwater">ex:Catfish (Freshwater)</div>
+                            <div class="drag-item" draggable="true" data-type="saltwater">ex:Cod (Saltwater)</div>
+                        </div>
+                        
+                        <div class="collection-container">
+                            <div class="collection-header">
+                                <strong>ex:FreshwaterFish a skos:Collection;</strong>
+                            </div>
+                            <div class="collection-body">
+                                <div class="collection-prefix">skos:member</div>
+                                <div class="collection-members-box" id="collection-members-box">
+                                    <p class="instruction">Drop freshwater fish concepts here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="check-collection-builder" class="check-button">Check Collection</button>
+                    <div id="collection-builder-feedback" class="feedback-message"></div>
+                    <button id="reset-collection-builder" class="reset-button">Reset</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="concept-schemes" class="content-section">
+            <h2>SKOS ConceptSchemes</h2>
+            <p>A <code>skos:ConceptScheme</code> represents a knowledge organization system like a thesaurus, classification scheme, subject heading list, or any other type of structured controlled vocabulary.</p>
+            
+            <div class="concept-container">
+                <div class="concept-definition">
+                    <h3>What is a ConceptScheme?</h3>
+                    <p>A ConceptScheme is a set of concepts that includes statements about how the concepts relate to each other. Think of it as a framework that organizes concepts into a coherent structure.</p>
+                    <p>Key aspects of ConceptSchemes:</p>
+                    <ul>
+                        <li><strong>Aggregation</strong> - Groups related concepts together</li>
+                        <li><strong>Top concepts</strong> - Defines entry points into the hierarchy (skos:hasTopConcept)</li>
+                        <li><strong>Documentation</strong> - Includes metadata about the scheme itself</li>
+                        <li><strong>Concept membership</strong> - Indicates which concepts belong to the scheme (skos:inScheme)</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>ConceptScheme Example:</h4>
+                    <pre><code>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix ex: &lt;http://example.org/&gt; .
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+
+ex:AnimalClassification a skos:ConceptScheme ;
+    dct:title "Animal Classification Scheme"@en ;
+    dct:description "A taxonomy of animal classifications"@en ;
+    dct:creator "Biology Department"@en ;
+    skos:hasTopConcept ex:Vertebrate, ex:Invertebrate .
+    
+ex:Vertebrate a skos:Concept ;
+    skos:prefLabel "Vertebrate"@en ;
+    skos:inScheme ex:AnimalClassification ;
+    skos:narrower ex:Mammal, ex:Bird, ex:Reptile, ex:Amphibian, ex:Fish .</code></pre>
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <h3>ConceptScheme Structure</h3>
+                <div class="scheme-diagram">
+                    <div class="scheme-node" id="scheme-animal">
+                        <div class="node-content">
+                            <strong>ex:AnimalClassification</strong>
+                            <div class="concept-label">skos:ConceptScheme</div>
+                        </div>
+                    </div>
+                    <div class="relationship-arrow down split">skos:hasTopConcept</div>
+                    <div class="scheme-top-concepts">
+                        <div class="concept-node" id="concept-vertebrate-scheme">
+                            <div class="node-content">
+                                <strong>ex:Vertebrate</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node" id="concept-invertebrate">
+                            <div class="node-content">
+                                <strong>ex:Invertebrate</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relationship-arrow down">skos:narrower</div>
+                    <div class="scheme-subconcepts">
+                        <div class="concept-node smaller" id="concept-mammal-scheme">
+                            <div class="node-content">
+                                <strong>ex:Mammal</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node smaller" id="concept-bird">
+                            <div class="node-content">
+                                <strong>ex:Bird</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                        <div class="concept-node smaller" id="concept-reptile">
+                            <div class="node-content">
+                                <strong>ex:Reptile</strong>
+                                <div class="concept-label">skos:Concept</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interactive-element">
+                <h3>ConceptScheme Exercise</h3>
+                <p>Identify which statements are true about SKOS ConceptSchemes:</p>
+                
+                <div class="true-false-exercise" id="concept-scheme-exercise">
+                    <div class="exercise-item">
+                        <input type="checkbox" id="scheme-statement-1" data-correct="true">
+                        <label for="scheme-statement-1">A concept can belong to multiple ConceptSchemes</label>
+                    </div>
+                    
+                    <div class="exercise-item">
+                        <input type="checkbox" id="scheme-statement-2" data-correct="false">
+                        <label for="scheme-statement-2">A ConceptScheme must have exactly one top concept</label>
+                    </div>
+                    
+                    <div class="exercise-item">
+                        <input type="checkbox" id="scheme-statement-3" data-correct="true">
+                        <label for="scheme-statement-3">ConceptSchemes can have metadata like creators and titles</label>
+                    </div>
+                    
+                    <div class="exercise-item">
+                        <input type="checkbox" id="scheme-statement-4" data-correct="true">
+                        <label for="scheme-statement-4">The relationship between a concept and its scheme is expressed with skos:inScheme</label>
+                    </div>
+                    
+                    <div class="exercise-item">
+                        <input type="checkbox" id="scheme-statement-5" data-correct="false">
+                        <label for="scheme-statement-5">A ConceptScheme is a subclass of skos:Concept</label>
+                    </div>
+                    
+                    <button id="check-concept-scheme" class="check-button">Check Answers</button>
+                    <div id="concept-scheme-feedback" class="feedback-message"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="collection-vs-scheme" class="content-section">
+            <h2>SKOS Collections vs. ConceptSchemes</h2>
+            <p>Both Collections and ConceptSchemes organize SKOS concepts, but they serve different purposes and have different structural characteristics.</p>
+            
+            <div class="comparison-table">
+                <div class="comparison-row header">
+                    <div class="comparison-cell">Feature</div>
+                    <div class="comparison-cell">SKOS Collection</div>
+                    <div class="comparison-cell">SKOS ConceptScheme</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Purpose</div>
+                    <div class="comparison-cell">Group concepts for a specific purpose</div>
+                    <div class="comparison-cell">Organize complete knowledge systems</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Membership</div>
+                    <div class="comparison-cell">skos:member, skos:memberList</div>
+                    <div class="comparison-cell">skos:inScheme, skos:hasTopConcept</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Structure</div>
+                    <div class="comparison-cell">Flat or nested collections</div>
+                    <div class="comparison-cell">Hierarchical with relationships</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Typical Use</div>
+                    <div class="comparison-cell">Ad-hoc groupings, lists</div>
+                    <div class="comparison-cell">Thesauri, taxonomies, classifications</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell">Can concepts belong to multiple?</div>
+                    <div class="comparison-cell">Yes, a concept can be in many collections</div>
+                    <div class="comparison-cell">Yes, a concept can be in many schemes</div>
+                </div>
+            </div>
+            
+
+        </section>
+        
+        <section id="vocab-application" class="content-section">
+            <h2>Using Controlled Vocabularies with Ontologies</h2>
+            <p>SKOS vocabularies work in tandem with OWL ontologies to enhance semantic interoperability. While ontologies define the structure and semantics of data, controlled vocabularies provide standard sets of terms for consistent naming and classification.</p>
+            
+            <div class="concept-container">
+                <div class="concept-definition">
+                    <h3>Integration Points</h3>
+                    <p>Controlled vocabularies can be integrated with ontology-based data in several ways:</p>
+                    <ul>
+                        <li><strong>Classification of instances</strong> - Using SKOS concepts to categorize instances of ontology classes</li>
+                        <li><strong>Property values</strong> - Using SKOS concepts as values for object properties</li>
+                        <li><strong>Annotation</strong> - Using SKOS concepts to tag and annotate ontology elements</li>
+                        <li><strong>Extension</strong> - Creating domain-specific extensions of standard vocabularies</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <h4>Example: Observer Type Vocabulary</h4>
+                    <pre><code>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix ex: &lt;http://example.org/&gt; .
+@prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; .
+
+# SKOS Concept Scheme for Observer Types
+ex:ObserverTypes a skos:ConceptScheme ;
+    skos:prefLabel "Observer Type Classification"@en ;
+    skos:hasTopConcept ex:HumanObserver, ex:MachineSensor .
+
+# SKOS Concepts for observer types
+ex:HumanObserver a skos:Concept ;
+    skos:prefLabel "Human Observer"@en ;
+    skos:inScheme ex:ObserverTypes .
+
+ex:MachineSensor a skos:Concept ;
+    skos:prefLabel "Machine Sensor"@en ;
+    skos:inScheme ex:ObserverTypes ;
+    skos:narrower ex:AutomaticWeatherStation, ex:SatelliteSensor .
+
+# Using vocabulary with ontology instances
+ex:WeatherStation1 a sosa:Platform ;
+    sosa:hosts ex:TemperatureSensor1 ;
+    ex:hasObserverType ex:AutomaticWeatherStation .</code></pre>
+                </div>
+            </div>
+            
+            <div class="note-box">
+                <h3>Best Practices</h3>
+                <p>When using SKOS vocabularies with ontologies:</p>
+                <ul>
+                    <li>Define explicit relationships between ontology classes and SKOS concepts</li>
+                    <li>Use object properties to link instances to their SKOS concept classifications</li>
+                    <li>Maintain separation of concerns - ontologies for structure, vocabularies for terminology</li>
+                    <li>Reuse existing vocabularies where possible before creating your own</li>
+                </ul>
+            </div>
+            
+            <div class="interactive-element">
+                <h3>Observer Vocabulary Exercise</h3>
+                <p>Select the most appropriate SKOS concept from the Observer Types vocabulary for each sensing device:</p>
+                
+                <div class="matching-exercise" id="observer-vocabulary-exercise">
+                    <div class="matching-item">
+                        <p>1. A person recording bird sightings in a notebook:</p>
+                        <div class="button-options">
+                            <button class="option-button" data-value="human">Human Observer</button>
+                            <button class="option-button" data-value="machine">Machine Sensor</button>
+                            <button class="option-button" data-value="weather">Automatic Weather Station</button>
+                            <button class="option-button" data-value="satellite">Satellite Sensor</button>
+                        </div>
+                        <div class="selected-value" id="observer-selected-1"></div>
+                    </div>
+                    
+                    <div class="matching-item">
+                        <p>2. A weather station that automatically records temperature readings every hour:</p>
+                        <div class="button-options">
+                            <button class="option-button" data-value="human">Human Observer</button>
+                            <button class="option-button" data-value="machine">Machine Sensor</button>
+                            <button class="option-button" data-value="weather">Automatic Weather Station</button>
+                            <button class="option-button" data-value="satellite">Satellite Sensor</button>
+                        </div>
+                        <div class="selected-value" id="observer-selected-2"></div>
+                    </div>
+                    
+                    <div class="matching-item">
+                        <p>3. A NASA Earth observation satellite capturing atmospheric data:</p>
+                        <div class="button-options">
+                            <button class="option-button" data-value="human">Human Observer</button>
+                            <button class="option-button" data-value="machine">Machine Sensor</button>
+                            <button class="option-button" data-value="weather">Automatic Weather Station</button>
+                            <button class="option-button" data-value="satellite">Satellite Sensor</button>
+                        </div>
+                        <div class="selected-value" id="observer-selected-3"></div>
+                    </div>
+                    
+                    <div class="matching-item">
+                        <p>4. A digital camera trap that takes pictures when animals walk by:</p>
+                        <div class="button-options">
+                            <button class="option-button" data-value="human">Human Observer</button>
+                            <button class="option-button" data-value="machine">Machine Sensor</button>
+                            <button class="option-button" data-value="weather">Automatic Weather Station</button>
+                            <button class="option-button" data-value="satellite">Satellite Sensor</button>
+                        </div>
+                        <div class="selected-value" id="observer-selected-4"></div>
+                    </div>
+                    
+                    <button id="check-observer-vocabulary" class="check-button">Check Answers</button>
+                    <div id="observer-vocabulary-feedback" class="feedback-message"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="module-navigation">
+            <div class="nav-container">
+                <a href="module3.html" class="cta-button secondary">← Previous: Module 3</a>
+                <a href="../index.html" class="cta-button">🏠 Back to Home</a>
+                <a href="module5.html" class="cta-button">Next: Module 5 →</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <div class="fireworks" aria-hidden="true"></div>
+    
+    <div class="help-button" role="button" aria-label="Open help menu" tabindex="0">?</div>
+    
+    <div class="help-panel" aria-hidden="true">
+        <div class="help-header">
+            <h2>References & Sources</h2>
+            <span class="close-help" role="button" aria-label="Close help menu" tabindex="0">×</span>
+        </div>
+        <div class="help-content">
+                <h3>W3C Standards & Specifications</h3>
+                <ul>
+                    <li><a href="https://www.w3.org/RDF/" target="_blank" rel="noopener noreferrer">Resource Description Framework (RDF)</a> - W3C RDF Working Group</li>
+                    <li><a href="https://www.w3.org/TR/rdf11-primer/" target="_blank" rel="noopener noreferrer">RDF 1.1 Primer</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/rdf11-concepts/" target="_blank" rel="noopener noreferrer">RDF 1.1 Concepts and Abstract Syntax</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/sparql11-query/" target="_blank" rel="noopener noreferrer">SPARQL 1.1 Query Language</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/shacl/" target="_blank" rel="noopener noreferrer">Shapes Constraint Language (SHACL)</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/skos-reference/" target="_blank" rel="noopener noreferrer">SKOS Simple Knowledge Organization System</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/owl2-overview/" target="_blank" rel="noopener noreferrer">OWL 2 Web Ontology Language</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/turtle/" target="_blank" rel="noopener noreferrer">RDF 1.1 Turtle</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/json-ld11/" target="_blank" rel="noopener noreferrer">JSON-LD 1.1</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/rdf-syntax-grammar/" target="_blank" rel="noopener noreferrer">RDF/XML Syntax Specification</a> - W3C Recommendation</li>
+                </ul>
+                
+                <h3>Ontologies & Vocabularies</h3>
+                <ul>
+                    <li><a href="https://www.w3.org/TR/vocab-ssn/" target="_blank" rel="noopener noreferrer">Semantic Sensor Network Ontology</a> - W3C Recommendation</li>
+                    <li><a href="https://www.w3.org/TR/vocab-dcat-3/" target="_blank" rel="noopener noreferrer">Data Catalog Vocabulary (DCAT)</a> - W3C Recommendation</li>
+                    <li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" rel="noopener noreferrer">Dublin Core Metadata Terms</a> - Dublin Core Metadata Initiative</li>
+                    <li><a href="https://schema.org/" target="_blank" rel="noopener noreferrer">Schema.org</a> - Structured data vocabulary</li>
+                                    <li><a href="http://xmlns.com/foaf/spec/" target="_blank" rel="noopener noreferrer">Friend of a Friend (FOAF) Vocabulary</a></li>
+                <li><a href="https://www.w3.org/TR/prov-o/" target="_blank" rel="noopener noreferrer">PROV-O: The PROV Ontology</a> - W3C Recommendation</li>
+                </ul>
+                
+                <h3>Educational Resources</h3>
+                <ul>
+                    <li><a href="https://www.w3.org/2007/02/turtle/primer/" target="_blank" rel="noopener noreferrer">Turtle - Terse RDF Triple Language</a> - W3C Team Submission</li>
+                    <li><a href="https://mitpress.mit.edu/9780262018289/semantic-web-for-the-working-ontologist/" target="_blank" rel="noopener noreferrer">Semantic Web for the Working Ontologist</a> - Academic textbook</li>
+                    <li><a href="https://link.springer.com/book/10.1007/978-3-642-30284-8" target="_blank" rel="noopener noreferrer">Foundations of Semantic Web Technologies</a> - Academic textbook</li>
+                    <li><a href="https://www.semantic-web-journal.net/" target="_blank" rel="noopener noreferrer">Semantic Web Journal</a> - IOS Press</li>
+                </ul>
+                
+                <h3>Tools & Technologies</h3>
+                <ul>
+                    <li><a href="https://jena.apache.org/" target="_blank" rel="noopener noreferrer">Apache Jena</a> - Java framework for semantic web applications</li>
+                    <li><a href="https://rdf4j.org/" target="_blank" rel="noopener noreferrer">Eclipse RDF4J</a> - Java framework for RDF databases</li>
+                    <li><a href="https://www.stardog.com/" target="_blank" rel="noopener noreferrer">Stardog</a> - Enterprise knowledge graph platform</li>
+                    <li><a href="https://virtuoso.openlinksw.com/" target="_blank" rel="noopener noreferrer">OpenLink Virtuoso</a> - Multi-model database</li>
+                    <li><a href="https://graphdb.ontotext.com/" target="_blank" rel="noopener noreferrer">GraphDB</a> - RDF database and SPARQL endpoint</li>
+                </ul>
+                
+                <h3>Data Sources & Datasets</h3>
+                <ul>
+                    <li><a href="https://wiki.dbpedia.org/" target="_blank" rel="noopener noreferrer">DBpedia</a> - Structured content from Wikipedia</li>
+                    <li><a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a> - Free and open knowledge base</li>
+                    <li><a href="https://lod-cloud.net/" target="_blank" rel="noopener noreferrer">Linked Open Data Cloud</a> - Collection of interconnected datasets</li>
+                    <li><a href="https://old.datahub.io/dataset" target="_blank" rel="noopener noreferrer">DataHub Datasets</a> - Curated datasets</li>
+                </ul>
+                
+                <p class="disclaimer">This educational resource references multiple official specifications, standards, and authoritative sources to provide comprehensive learning materials about RDF and semantic web technologies.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 RDF Learning Resources. All rights reserved.</p>
+    </footer>
+    
+    <script src="../js/script.js"></script>
+    <script src="../js/module4.js"></script>
+</body>
+</html> 
