@@ -324,7 +324,7 @@ tern:Method
     reg:status reg:statusStable ;
     skos:prefLabel "Method" ;
     rdfs:label "Method" ;
-    rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
+    rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://the9000store.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
     rdfs:seeAlso
         <https://apps.usgs.gov/thesaurus/term-simple.php?thcode=2&code=376> ,
         <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
