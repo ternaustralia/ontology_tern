@@ -334,12 +334,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:class skos:Concept ;
             sh:maxCount 1 ;
-            sh:message "A `ContextOfConcept` _MUST_ have exactly 1 `urnp:property:concept` where the value node is a `skos:Concept`." ;
+            sh:message "A `ContextOfConcept` _MUST_ have exactly 1 `urn:property:concept` where the value node is a `skos:Concept`." ;
             sh:minCount 1 ;
-            sh:path <urnp:property:concept> ;
+            sh:path <urn:property:concept> ;
             sh:severity sh:Violation
         ] ;
-    sh:targetClass <urnc:class:ContextOfConcept> ;
+    sh:targetClass <urn:class:ContextOfConcept> ;
 .
 
 :DataQuality_Shape
@@ -661,7 +661,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                         sh:class skos:Concept
                     ]
                     [
-                        sh:class <urnc:class:ContextOfConcept>
+                        sh:class <urn:class:ContextOfConcept>
                     ]
                 ) ;
             sh:message "A `dcat:Dataset` _MAY_ have a `dcat:theme` where the value is a `skos:Concept`." ;
