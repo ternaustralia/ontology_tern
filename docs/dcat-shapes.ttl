@@ -7,6 +7,7 @@ PREFIX dqv: <http://www.w3.org/ns/dqv#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geodcat: <http://data.europa.eu/930/>
+PREFIX org: <https://w3id.org/tern/ontologies/org/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX qudt: <http://qudt.org/schema/qudt#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -246,8 +247,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:label "Concept Scheme"@en ;
     sh:property
         [
-            sh:datatype xsd:anyURI ;
-            sh:message "A `skos:ConceptScheme` _MAY_ have a `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
+            
+            sh:or (
+                    [
+                        sh:datatype xsd:anyURI 
+                    ]
+                    [
+                        sh:datatype xsd:string 
+                    ]
+                ) ;
+            sh:message "A `skos:ConceptScheme` _MAY_ have a `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI` or `xsd:string`." ;
             sh:nodeKind sh:Literal ;
             sh:path dcterms:source ;
             sh:severity sh:Violation
@@ -1055,6 +1064,38 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:class org:Site ;
+            sh:minCount 1 ;
+            sh:message "A `schema:Organization` _MUST_ have at least 1 `org:hasSite` where the value node is `org:Site`." ;
+            sh:path org:hasSite ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass schema:Organization ;
+.
+
+
+:OrgSite_Shape
+    a sh:NodeShape ;
+    rdfs:label "Organization Site"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:message "A `schema:Organization` _MAY_ have maximum 1 `schema:email` where the value node is a literal with the datatype `xsd:string`." ;
@@ -1110,7 +1151,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:path schema:streetAddress ;
             sh:severity sh:Violation
         ] ;
-    sh:targetClass schema:Organization ;
+    sh:targetClass org:Site ;
 .
 
 :PeriodOfTime_Shape
@@ -1415,8 +1456,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :DcatResource_Shape
     a sh:NodeShape ;
     rdfs:label "dcat:Resource" ;
-    rdfs:comment "the union of Catalog, Dataset and DataService" ;
-    sh:message "The node is either a Catalog, Dataset or a DataService" ;
+    rdfs:comment "the union of Catalog, Dataset and DatasetSeries" ;
+    sh:message "The node is either a Catalog, Dataset or a DatasetSeries" ;
     sh:or (
             [
                 sh:class dcat:Catalog
@@ -1425,7 +1466,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                 sh:class dcat:Dataset
             ]
             [
-                sh:class dcat:DataService
+                sh:class dcat:DatasetSeries
             ]
         ) ;
 .
@@ -1486,4 +1527,3 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             ]
         ) ;
 .
-
