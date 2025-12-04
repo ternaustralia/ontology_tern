@@ -987,8 +987,7 @@ tern-shapes:Sample
     sh:property
         tern-shapes:Sample-isResultOf ,
         tern-shapes:Sample-isSampleOf ,
-        tern-shapes:tern-hasAttribute ,
-        tern-shapes:tern-hasIGSN ;
+        tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Sample ;
 .
 
@@ -3791,9 +3790,9 @@ tern-shapes:tern-hasIGSN
     reg:status reg:statusExperimental ;
     skos:prefLabel "has IGSN" ;
     sh:class tern:IGSN ;
-    sh:description "Relation between a Sample and an IGSN." ;
+    sh:description "Relation between a MaterialSample and an IGSN." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Sample` or `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`." ;
+    sh:message "A `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`." ;
     sh:minCount 1 ;
     sh:name "tern:hasIGSN" ;
     sh:path tern:hasIGSN ;
