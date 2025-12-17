@@ -1064,6 +1064,22 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:severity sh:Violation
         ] ,
         [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have maximum 1 `schema:email` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:email ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have maximum 1 `schema:telephone` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:telephone ;
+            sh:severity sh:Violation
+        ] ,
+        [
             sh:class org:Site ;
             sh:minCount 1 ;
             sh:message "A `schema:Organization` _MUST_ have at least 1 `org:hasSite` where the value node is `org:Site`." ;
@@ -1080,7 +1096,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:property
         [
             sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:message "A `org:Site` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
             sh:minCount 1 ;
             sh:or (
                     [
@@ -1098,23 +1114,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MAY_ have maximum 1 `schema:email` where the value node is a literal with the datatype `xsd:string`." ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:email ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MAY_ have maximum 1 `schema:telephone` where the value node is a literal with the datatype `xsd:string`." ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:telephone ;
-            sh:severity sh:Violation
-        ] ,
-        [
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:addressCountry` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:message "A `An `org:Site`` _MAY_ have a maximum of 1 `schema:addressCountry` where the value node is a literal with the datatype `xsd:string`." ;
             sh:nodeKind sh:Literal ;
             sh:path schema:addressCountry ;
             sh:severity sh:Violation
@@ -1122,7 +1122,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:addressLocality` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:message "A `An `org:Site`` _MAY_ have a maximum of 1 `schema:addressLocality` where the value node is a literal with the datatype `xsd:string`." ;
             sh:nodeKind sh:Literal ;
             sh:path schema:addressLocality ;
             sh:severity sh:Violation
@@ -1130,7 +1130,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:addressRegion` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:message "A `An `org:Site`` _MAY_ have a maximum of 1 `schema:addressRegion` where the value node is a literal with the datatype `xsd:string`." ;
             sh:nodeKind sh:Literal ;
             sh:path schema:addressRegion ;
             sh:severity sh:Violation
@@ -1138,7 +1138,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:postalCode` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:message "A `An `org:Site`` _MAY_ have a maximum of 1 `schema:postalCode` where the value node is a literal with the datatype `xsd:string`." ;
             sh:nodeKind sh:Literal ;
             sh:path schema:postalCode ;
             sh:severity sh:Violation
@@ -1146,7 +1146,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
-            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:streetAddress` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:message "A `An `org:Site`` _MAY_ have a maximum of 1 `schema:streetAddress` where the value node is a literal with the datatype `xsd:string`." ;
             sh:nodeKind sh:Literal ;
             sh:path schema:streetAddress ;
             sh:severity sh:Violation
