@@ -1,0 +1,26 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: sample-chain node shape requires spatial information via sosa:isSampleOf/tern:hasSite.
+<urn:example:sampling-node-missing>
+    a tern:Sampling ;
+    sosa:hasFeatureOfInterest <urn:example:site-2> ;
+    sosa:hasResult <urn:example:sample-2> ;
+    sosa:usedProcedure <urn:example:method-2> ;
+    tern:resultDateTime "2024-01-01T00:00:00Z"^^xsd:dateTime ;
+.
+
+<urn:example:method-2>
+    a tern:Method ;
+.
+
+<urn:example:sample-2>
+    a tern:Sample ;
+    sosa:isSampleOf <urn:example:site-2> ;
+.
+
+<urn:example:site-2>
+    a tern:Site ;
+    tern:featureType <https://example.com/site-type> ;
+.

@@ -1,0 +1,26 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sdo: <https://schema.org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+# Rule: tern:hasIGSN must be an IRI of type tern:IGSN with required IGSN fields.
+<urn:example:material-sample-1>
+    a tern:MaterialSample ;
+    tern:hasIGSN <urn:example:igsn-1> ;
+.
+
+<urn:example:igsn-1>
+    a tern:IGSN ;
+    dcterms:publisher <urn:example:publisher-1> ;
+    geo:hasGeometry <urn:example:geometry-1> ;
+    tern:sampleType <https://example.com/sample-type/soil> ;
+    tern:sampleSubType <https://example.com/sample-subtype/topsoil> ;
+.
+
+<urn:example:geometry-1>
+    a geo:Geometry ;
+.
+
+<urn:example:publisher-1>
+    a sdo:Organization ;
+.

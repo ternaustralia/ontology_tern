@@ -1,0 +1,9 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: tern:DateTime requires exactly one rdf:value literal typed as xsd:dateTime.
+<urn:example:datetime-1>
+    a tern:DateTime ;
+    rdf:value "2024-01-01T00:00:00Z"^^xsd:dateTime ;
+.

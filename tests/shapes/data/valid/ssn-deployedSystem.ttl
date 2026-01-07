@@ -1,0 +1,14 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+# Rule: ssn:deployedSystem must be an IRI of type tern:System.
+<urn:example:deployment-2>
+    a tern:Deployment ;
+    ssn:deployedSystem <urn:example:system-1> ;
+.
+
+<urn:example:system-1>
+    a tern:System ;
+    rdfs:label "Example system" ;
+.

@@ -1,0 +1,22 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Rule: ssn:deployedOnPlatform must be an IRI of type tern:Platform.
+<urn:example:deployment-1>
+    a tern:Deployment ;
+    rdfs:label "Example system deployment" ;
+    ssn:deployedOnPlatform <urn:example:platform-1> ;
+.
+
+<urn:example:platform-1>
+    a tern:Platform ;
+    tern:dateCommissioned "2020-01-01"^^xsd:date ;
+    tern:platformType <urn:example:platform-type-1> ;
+.
+
+<urn:example:platform-type-1>
+    a skos:Concept ;
+.
