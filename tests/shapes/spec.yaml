@@ -1,0 +1,464 @@
+target_classes:
+  http://www.w3.org/2006/time#Duration:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#decimal
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/2006/time#numericDuration
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/2006/time#unitType
+  http://www.w3.org/2006/time#Interval:
+    required_properties:
+    - class: http://www.w3.org/2006/time#Instant
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#BlankNodeOrIRI
+      path: http://www.w3.org/2006/time#hasBeginning
+    - class: http://www.w3.org/2006/time#Instant
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#BlankNodeOrIRI
+      path: http://www.w3.org/2006/time#hasEnd
+  http://www.w3.org/ns/prov#Association:
+    required_properties:
+    - class: http://www.w3.org/ns/prov#Agent
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/prov#agent
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/prov#hadRole
+  http://www.w3.org/ns/prov#Attribution:
+    required_properties:
+    - class: http://www.w3.org/ns/prov#Agent
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/prov#agent
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/prov#hadRole
+  https://w3id.org/tern/ontologies/tern/Attribute:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/attribute
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRIOrLiteral
+      path: https://w3id.org/tern/ontologies/tern/hasSimpleValue
+    - class: https://w3id.org/tern/ontologies/tern/Value
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#BlankNodeOrIRI
+      path: https://w3id.org/tern/ontologies/tern/hasValue
+  https://w3id.org/tern/ontologies/tern/Boolean:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#boolean
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  https://w3id.org/tern/ontologies/tern/Calibration:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#dateTime
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      path: http://www.w3.org/ns/prov#startedAtTime
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/Method
+        - https://w3id.org/tern/ontologies/tern/Procedure
+      path: http://www.w3.org/ns/sosa/usedProcedure
+  https://w3id.org/tern/ontologies/tern/Date:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#date
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  https://w3id.org/tern/ontologies/tern/DateTime:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#dateTime
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  https://w3id.org/tern/ontologies/tern/DigitalCamera:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#string
+      min_count: 1
+      path: http://purl.org/dc/terms/source
+    - datatype: http://www.w3.org/2001/XMLSchema#string
+      min_count: 1
+      path: http://schema.org/manufacturer
+    - min_count: 1
+      path: http://schema.org/model
+    - min_count: 1
+      path: http://www.w3.org/2004/02/skos/core#prefLabel
+  https://w3id.org/tern/ontologies/tern/Dimension:
+    required_properties:
+    - max_count: 1
+      min_count: 1
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#double
+        - http://www.w3.org/2001/XMLSchema#integer
+      path: https://w3id.org/tern/ontologies/tern/length
+    - class: http://qudt.org/schema/qudt/Unit
+      max_count: 1
+      min_count: 1
+      path: https://w3id.org/tern/ontologies/tern/unit
+    - max_count: 1
+      min_count: 1
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#double
+        - http://www.w3.org/2001/XMLSchema#integer
+      path: https://w3id.org/tern/ontologies/tern/width
+  https://w3id.org/tern/ontologies/tern/FeatureOfInterest:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/featureType
+  https://w3id.org/tern/ontologies/tern/Float:
+    required_properties:
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#double
+        - http://www.w3.org/2001/XMLSchema#float
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  https://w3id.org/tern/ontologies/tern/FluxTower:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#string
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/2000/01/rdf-schema#label
+    - class: http://www.opengis.net/ont/sf#Point
+      max_count: 1
+      min_count: 1
+      path: https://w3id.org/tern/ontologies/tern/centroidPoint
+    - datatype: http://www.w3.org/2001/XMLSchema#date
+      max_count: 1
+      min_count: 1
+      path: https://w3id.org/tern/ontologies/tern/dateCommissioned
+  https://w3id.org/tern/ontologies/tern/IGSN:
+    required_properties:
+    - min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      or:
+        class:
+        - http://www.w3.org/ns/prov#Agent
+        - https://schema.org/Organization
+        - https://schema.org/Project
+      path: http://purl.org/dc/terms/publisher
+    - class: http://www.opengis.net/ont/geosparql#Geometry
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.opengis.net/ont/geosparql#hasGeometry
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/sampleSubType
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/sampleType
+  https://w3id.org/tern/ontologies/tern/IRI:
+    required_properties:
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  https://w3id.org/tern/ontologies/tern/Input:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - datatype: http://www.w3.org/2001/XMLSchema#string
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/2000/01/rdf-schema#label
+  https://w3id.org/tern/ontologies/tern/Integer:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#integer
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  https://w3id.org/tern/ontologies/tern/Intervention:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - datatype: http://www.w3.org/2001/XMLSchema#dateTime
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      path: http://www.w3.org/ns/prov#startedAtTime
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/FeatureOfInterest
+        - https://w3id.org/tern/ontologies/tern/MaterialSample
+        - https://w3id.org/tern/ontologies/tern/Sample
+        - https://w3id.org/tern/ontologies/tern/Site
+        - https://w3id.org/tern/ontologies/tern/Transect
+      path: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/Method
+        - https://w3id.org/tern/ontologies/tern/Procedure
+      path: http://www.w3.org/ns/sosa/usedProcedure
+  https://w3id.org/tern/ontologies/tern/MaterialSample:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/IGSN
+      max_count: 1
+      min_count: 1
+      path: https://w3id.org/tern/ontologies/tern/hasIGSN
+  https://w3id.org/tern/ontologies/tern/Method:
+    required_properties:
+    - min_count: 1
+      or:
+        datatype: http://www.w3.org/2001/XMLSchema#anyURI
+      path: http://purl.org/dc/terms/source
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      path: http://www.w3.org/2004/02/skos/core#prefLabel
+  https://w3id.org/tern/ontologies/tern/ObservableProperty:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/Parameter
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - http://www.w3.org/2002/07/owl#Ontology
+        - http://www.w3.org/2004/02/skos/core#Collection
+        - http://www.w3.org/2004/02/skos/core#ConceptScheme
+      path: https://w3id.org/tern/ontologies/tern/vocabulary
+  https://w3id.org/tern/ontologies/tern/Observation:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/FeatureOfInterest
+        - https://w3id.org/tern/ontologies/tern/MaterialSample
+        - https://w3id.org/tern/ontologies/tern/Sample
+        - https://w3id.org/tern/ontologies/tern/Site
+        - https://w3id.org/tern/ontologies/tern/Transect
+      path: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    - class: https://w3id.org/tern/ontologies/tern/Value
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#BlankNodeOrIRI
+      path: http://www.w3.org/ns/sosa/hasResult
+    - max_count: 1
+      min_count: 1
+      path: http://www.w3.org/ns/sosa/hasSimpleResult
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/sosa/observedProperty
+    - class: http://www.w3.org/2006/time#Instant
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#BlankNodeOrIRI
+      path: http://www.w3.org/ns/sosa/phenomenonTime
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/Method
+        - https://w3id.org/tern/ontologies/tern/Procedure
+      path: http://www.w3.org/ns/sosa/usedProcedure
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#date
+        - http://www.w3.org/2001/XMLSchema#dateTime
+        - http://www.w3.org/2001/XMLSchema#dateTimeStamp
+      path: https://w3id.org/tern/ontologies/tern/resultDateTime
+  https://w3id.org/tern/ontologies/tern/ObservationCollection:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/Observation
+        - https://w3id.org/tern/ontologies/tern/ObservationCollection
+      path: http://www.w3.org/ns/sosa/hasMember
+  https://w3id.org/tern/ontologies/tern/Platform:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#date
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      path: https://w3id.org/tern/ontologies/tern/dateCommissioned
+    - class: http://www.w3.org/2004/02/skos/core#Concept
+      max_count: 1
+      min_count: 1
+      path: https://w3id.org/tern/ontologies/tern/platformType
+  https://w3id.org/tern/ontologies/tern/Procedure:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - class: https://w3id.org/tern/ontologies/tern/Method
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+    - max_count: 1
+      min_count: 1
+      path: https://w3id.org/tern/ontologies/tern/vocabulary
+  https://w3id.org/tern/ontologies/tern/Result:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+  https://w3id.org/tern/ontologies/tern/Sampler:
+    required_properties:
+    - min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/ssn/implements
+  https://w3id.org/tern/ontologies/tern/Sampling:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/FeatureOfInterest
+        - https://w3id.org/tern/ontologies/tern/MaterialSample
+        - https://w3id.org/tern/ontologies/tern/Sample
+        - https://w3id.org/tern/ontologies/tern/Site
+        - https://w3id.org/tern/ontologies/tern/Transect
+      path: http://www.w3.org/ns/sosa/hasFeatureOfInterest
+    - min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/MaterialSample
+        - https://w3id.org/tern/ontologies/tern/Sample
+        - https://w3id.org/tern/ontologies/tern/Site
+      path: http://www.w3.org/ns/sosa/hasResult
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/Method
+        - https://w3id.org/tern/ontologies/tern/Procedure
+      path: http://www.w3.org/ns/sosa/usedProcedure
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#date
+        - http://www.w3.org/2001/XMLSchema#dateTime
+        - http://www.w3.org/2001/XMLSchema#dateTimeStamp
+      path: https://w3id.org/tern/ontologies/tern/resultDateTime
+  https://w3id.org/tern/ontologies/tern/Sensor:
+    required_properties:
+    - min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/ssn/implements
+  https://w3id.org/tern/ontologies/tern/Site:
+    required_properties:
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/featureType
+  https://w3id.org/tern/ontologies/tern/Survey:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - datatype: http://www.w3.org/2001/XMLSchema#dateTime
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      path: http://www.w3.org/ns/prov#startedAtTime
+  https://w3id.org/tern/ontologies/tern/System:
+    required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#string
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/2000/01/rdf-schema#label
+  https://w3id.org/tern/ontologies/tern/Text:
+    required_properties:
+    - max_count: 1
+      min_count: 1
+      or:
+        datatype:
+        - http://www.w3.org/1999/02/22-rdf-syntax-ns#langString
+        - http://www.w3.org/2001/XMLSchema#string
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
+  https://w3id.org/tern/ontologies/tern/Transect:
+    required_properties:
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/featureType
+  https://w3id.org/tern/ontologies/tern/Value:
+    required_properties:
+    - class: https://w3id.org/tern/ontologies/tern/RDFDataset
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://rdfs.org/ns/void#inDataset
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value

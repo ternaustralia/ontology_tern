@@ -4,3 +4,4 @@ watchdog[watchmedo]
 jinja2
 pytest
 requests
+pyyaml

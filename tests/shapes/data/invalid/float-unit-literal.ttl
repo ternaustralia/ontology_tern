@@ -1,0 +1,10 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: tern:unit must be an IRI, not a literal.
+<urn:example:float-unit-literal>
+    a tern:Float ;
+    rdf:value "2.5"^^xsd:double ;
+    tern:unit "metre" ;
+.

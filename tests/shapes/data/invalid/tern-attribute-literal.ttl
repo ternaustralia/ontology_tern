@@ -1,0 +1,13 @@
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+# Rule: tern:attribute must be an IRI, not a literal.
+<urn:example:attribute-literal>
+    a tern:Attribute ;
+    tern:attribute "not-an-iri" ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

@@ -1,0 +1,26 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: Sampling hasResult Site must include sdo:spatial (qualifiedMinCount).
+<urn:example:sampling-result-missing>
+    a tern:Sampling ;
+    sosa:hasFeatureOfInterest <urn:example:feature-2> ;
+    sosa:hasResult <urn:example:site-4> ;
+    sosa:usedProcedure <urn:example:method-4> ;
+    tern:resultDateTime "2024-01-02T00:00:00Z"^^xsd:dateTime ;
+.
+
+<urn:example:feature-2>
+    a tern:FeatureOfInterest ;
+    tern:featureType <https://example.com/feature-type/area> ;
+.
+
+<urn:example:method-4>
+    a tern:Method ;
+.
+
+<urn:example:site-4>
+    a tern:Site ;
+    tern:featureType <https://example.com/site-type> ;
+.

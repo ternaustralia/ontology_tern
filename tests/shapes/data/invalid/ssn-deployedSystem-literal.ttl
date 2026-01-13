@@ -1,0 +1,8 @@
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+# Rule: ssn:deployedSystem must be an IRI of type tern:System.
+<urn:example:deployment-bad-system>
+    a tern:Deployment ;
+    ssn:deployedSystem "not-an-iri" ;
+.
