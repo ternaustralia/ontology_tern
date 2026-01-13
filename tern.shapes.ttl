@@ -513,36 +513,48 @@ tern-shapes:Instant
             [
                 sh:property [
                         sh:minCount 1 ;
+                        sh:description "Presence of `time:inDateTime`." ;
+                        sh:message "At least 1 `time:inDateTime` predicate must be present." ;
                         sh:path time:inDateTime
                     ]
             ]
             [
                 sh:property [
                         sh:minCount 1 ;
+                        sh:description "Presence of `time:inTimePosition`." ;
+                        sh:message "At least 1 `time:inTimePosition` predicate must be present." ;
                         sh:path time:inTimePosition
                     ]
             ]
             [
                 sh:property [
                         sh:minCount 1 ;
+                        sh:description "Presence of `time:inXSDDate`." ;
+                        sh:message "At least 1 `time:inXSDDate` predicate must be present." ;
                         sh:path time:inXSDDate
                     ]
             ]
             [
                 sh:property [
                         sh:minCount 1 ;
+                        sh:description "Presence of `time:inXSDDateTimeStamp`." ;
+                        sh:message "At least 1 `time:inXSDDateTimeStamp` predicate must be present." ;
                         sh:path time:inXSDDateTimeStamp
                     ]
             ]
             [
                 sh:property [
                         sh:minCount 1 ;
+                        sh:description "Presence of `time:inXSDgYear`." ;
+                        sh:message "At least 1 `time:inXSDgYear` predicate must be present." ;
                         sh:path time:inXSDgYear
                     ]
             ]
             [
                 sh:property [
                         sh:minCount 1 ;
+                        sh:description "Presence of `time:inXSDgYearMonth`." ;
+                        sh:message "At least 1 `time:inXSDgYearMonth` predicate must be present." ;
                         sh:path time:inXSDgYearMonth
                     ]
             ]
@@ -3779,12 +3791,16 @@ tern-shapes:time-unitType
     a sh:NodeShape ;
     rdfs:label "Sampling has result Site with spatial" ;
     sh:property [
+            sh:description "Sampling results include a `tern:Site` with spatial data." ;
+            sh:message "At least 1 `sosa:hasResult` predicate must refer to a `tern:Site` that has `sdo:spatial`." ;
             sh:path sosa:hasResult ;
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [
                     sh:class tern:Site ;
                     sh:property [
                             sh:minCount 1 ;
+                            sh:description "Site has spatial data." ;
+                            sh:message "At least 1 `sdo:spatial` predicate must be present on the `tern:Site`." ;
                             sh:path sdo:spatial
                         ]
                 ]
@@ -4212,4 +4228,3 @@ tern-shapes:void-inDataset
     sh:nodeKind sh:IRI ;
     sh:path void:inDataset ;
 .
-
