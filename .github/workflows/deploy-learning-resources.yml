@@ -1,0 +1,222 @@
+name: Deploy RDF Learning Resources
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'rdf-learning-resources/**' ]
+  pull_request:
+    branches: [ master ]
+    paths: [ 'rdf-learning-resources/**' ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+
+concurrency:
+  group: "learning-resources-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create site structure
+        run: |
+          mkdir -p _site
+          echo "Site directory created"
+
+      - name: Download existing GitHub Pages content
+        run: |
+          # Try to checkout existing gh-pages branch content
+          echo "Attempting to preserve existing GitHub Pages content..."
+          
+          if git checkout gh-pages 2>/dev/null; then
+            echo "✅ Found existing gh-pages branch"
+            # Copy existing content to _site
+            cp -r . _site/ 2>/dev/null || true
+            # Remove git files from _site
+            rm -rf _site/.git _site/.github 2>/dev/null || true
+            git checkout -
+          else
+            echo "ℹ️  No existing gh-pages branch found, starting fresh"
+          fi
+
+      - name: Verify existing content preservation
+        run: |
+          echo "📁 Current site structure after preservation:"
+          ls -la _site/ || echo "No content preserved"
+          
+          # Check if critical TERN files exist
+          if [ -f "_site/index.html" ]; then
+            echo "✅ Found existing index.html - TERN documentation preserved"
+          else
+            echo "⚠️  No existing index.html found - may be first deployment"
+          fi
+
+      - name: Deploy learning resources to /learning/ path (main branch)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          # Create learning directory and copy content
+          mkdir -p _site/learning
+          cp -r rdf-learning-resources/* _site/learning/
+          
+          echo "✅ Learning resources deployed to /learning/"
+
+      - name: Deploy branch preview (PR only)
+        if: github.event_name == 'pull_request'
+        run: |
+          # Get clean branch name
+          BRANCH_NAME="${{ github.head_ref }}"
+          CLEAN_BRANCH=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g' | tr '[:upper:]' '[:lower:]')
+          
+          # Create preview directory
+          mkdir -p _site/preview/$CLEAN_BRANCH
+          cp -r rdf-learning-resources/* _site/preview/$CLEAN_BRANCH/
+          
+          # Create preview landing page
+          cat > _site/preview/$CLEAN_BRANCH/preview-info.html << EOF
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Preview: $BRANCH_NAME</title>
+              <style>
+                  body { font-family: Arial, sans-serif; margin: 40px; }
+                  .preview-banner { 
+                      background: #fff3cd; 
+                      border: 1px solid #ffeaa7; 
+                      padding: 15px; 
+                      margin-bottom: 20px; 
+                      border-radius: 5px;
+                  }
+                  .btn { 
+                      background: #007cba; 
+                      color: white; 
+                      padding: 10px 20px; 
+                      text-decoration: none; 
+                      border-radius: 5px; 
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="preview-banner">
+                  <h2>🚧 Branch Preview</h2>
+                  <p><strong>Branch:</strong> $BRANCH_NAME</p>
+                  <p><strong>Status:</strong> Under Review</p>
+                  <p>This is a preview of changes that are not yet merged to the main branch.</p>
+              </div>
+              
+              <h1>RDF Learning Resources Preview</h1>
+              <p>Click below to test the learning resources with your changes:</p>
+              <a href="index.html" class="btn">Open Learning Resources</a>
+              
+              <hr style="margin: 40px 0;">
+              <p><small>Preview URL: https://ternaustralia.github.io/ontology_tern/preview/$CLEAN_BRANCH/</small></p>
+              <p><small><a href="../../">← Back to main TERN site</a></small></p>
+          </body>
+          </html>
+          EOF
+          
+          echo "✅ Branch preview deployed to /preview/$CLEAN_BRANCH/"
+          echo "CLEAN_BRANCH=$CLEAN_BRANCH" >> $GITHUB_ENV
+
+      - name: Show final site structure
+        run: |
+          echo "📁 Final site structure:"
+          ls -la _site/
+          if [ -d "_site/preview" ]; then
+            echo "📁 Preview directories:"
+            ls -la _site/preview/
+          fi
+
+      - name: Deploy to gh-pages branch
+        run: |
+          # Create or switch to gh-pages branch
+          if git checkout gh-pages 2>/dev/null; then
+            echo "Using existing gh-pages branch"
+          else
+            echo "Creating new gh-pages branch"
+            git checkout --orphan gh-pages
+          fi
+          
+          # Clear the branch (but keep .git)
+          git rm -rf . 2>/dev/null || true
+          
+          # Copy new content
+          cp -r _site/* . 2>/dev/null || true
+          cp _site/.* . 2>/dev/null || true  # Copy hidden files if any
+          
+          # Add and commit
+          git add .
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              git commit -m "Deploy preview for PR #${{ github.event.number }} (${{ github.head_ref }})"
+            else
+              git commit -m "Deploy learning resources from ${{ github.ref_name }}"
+            fi
+            
+            # Push to gh-pages
+            git push origin gh-pages
+            echo "✅ Successfully deployed to gh-pages branch"
+          fi
+
+      - name: Comment on PR with preview link
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const cleanBranch = process.env.CLEAN_BRANCH;
+            const previewUrl = `https://ternaustralia.github.io/ontology_tern/preview/${cleanBranch}/`;
+            const previewInfoUrl = `https://ternaustralia.github.io/ontology_tern/preview/${cleanBranch}/preview-info.html`;
+            
+            const comment = `## 🚀 Preview Deployed!
+            
+            Your RDF Learning Resources changes are ready for review:
+            
+            🔗 **Preview URL:** ${previewUrl}
+            📋 **Preview Info:** ${previewInfoUrl}
+            
+            ### What to test:
+            - [ ] All learning modules load correctly
+            - [ ] Interactive exercises work as expected  
+            - [ ] Navigation between modules functions
+            - [ ] Styling and layout appear correct
+            - [ ] JavaScript functionality operates properly
+            
+            ### Note:
+            - The preview does not affect the main TERN Ontology site
+            - Main site: https://ternaustralia.github.io/ontology_tern/
+            - Learning resources will be at: https://ternaustralia.github.io/ontology_tern/learning/ (after merge)
+            
+            ### Safety Check:
+            - This workflow only deploys to \`/learning/\` subdirectory (main) or \`/preview/\` (PRs)
+            - Existing TERN ontology documentation is preserved
+            - No conflicts with existing TERN infrastructure
+            
+            ⏱️ **Note**: It may take 2-3 minutes for the preview to be available after this comment.
+            
+            _This preview updates automatically with each push to this branch._`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

@@ -1,0 +1,113 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "ex": "http://example.org/",
+    "label": "rdfs:label",
+    "comment": "rdfs:comment",
+    "type": "@type",
+    "hosts": "sosa:hosts",
+    "location": "ex:location",
+    "hasLocation": "ex:hasLocation",
+    "observes": "sosa:observes",
+    "serialNumber": "ex:serialNumber",
+    "manufacturer": "ex:manufacturer",
+    "observedProperty": "sosa:observedProperty",
+    "madeBySensor": "sosa:madeBySensor",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "xsd:dateTime"
+    },
+    "hasResult": "sosa:hasResult",
+    "hasFeatureOfInterest": "sosa:hasFeatureOfInterest",
+    "hasSimpleResult": {
+      "@id": "sosa:hasSimpleResult",
+      "@type": "xsd:decimal"
+    },
+    "unit": "ex:unit"
+  },
+  "@graph": [
+    {
+      "@id": "ex:WeatherStation42",
+      "@type": "ex:WeatherStation",
+      "label": "Campus Weather Station 42",
+      "hosts": [
+        { "@id": "ex:Thermometer123" },
+        { "@id": "ex:HumiditySensor456" }
+      ],
+      "location": { "@id": "ex:Room104" }
+    },
+    {
+      "@id": "ex:Room104",
+      "@type": "ex:Room",
+      "label": "Room 104",
+      "hasLocation": { "@id": "ex:Building7" }
+    },
+    {
+      "@id": "ex:Building7",
+      "@type": "ex:Building",
+      "label": "Science Building"
+    },
+    {
+      "@id": "ex:Thermometer123",
+      "@type": "sosa:Sensor",
+      "label": "Temperature Sensor 123",
+      "observes": { "@id": "ex:Temperature" },
+      "serialNumber": "TS-123-ABC",
+      "manufacturer": "SensorTech"
+    },
+    {
+      "@id": "ex:HumiditySensor456",
+      "@type": "sosa:Sensor",
+      "label": "Humidity Sensor 456",
+      "observes": { "@id": "ex:Humidity" },
+      "serialNumber": "HS-456-DEF",
+      "manufacturer": "SensorTech"
+    },
+    {
+      "@id": "ex:Temperature",
+      "@type": "sosa:ObservableProperty",
+      "label": "Air Temperature",
+      "comment": "The ambient air temperature in degrees Celsius"
+    },
+    {
+      "@id": "ex:Humidity",
+      "@type": "sosa:ObservableProperty",
+      "label": "Air Humidity",
+      "comment": "The relative humidity in percent"
+    },
+    {
+      "@id": "ex:Observation_Temp_001",
+      "@type": "sosa:Observation",
+      "observedProperty": { "@id": "ex:Temperature" },
+      "madeBySensor": { "@id": "ex:Thermometer123" },
+      "resultTime": "2023-05-15T10:30:00Z",
+      "hasResult": { "@id": "ex:Result_Temp_001" },
+      "hasFeatureOfInterest": { "@id": "ex:Room104" }
+    },
+    {
+      "@id": "ex:Observation_Humidity_001",
+      "@type": "sosa:Observation",
+      "observedProperty": { "@id": "ex:Humidity" },
+      "madeBySensor": { "@id": "ex:HumiditySensor456" },
+      "resultTime": "2023-05-15T10:30:00Z",
+      "hasResult": { "@id": "ex:Result_Humidity_001" },
+      "hasFeatureOfInterest": { "@id": "ex:Room104" }
+    },
+    {
+      "@id": "ex:Result_Temp_001",
+      "@type": "sosa:Result",
+      "hasSimpleResult": "23.5",
+      "unit": "°C"
+    },
+    {
+      "@id": "ex:Result_Humidity_001",
+      "@type": "sosa:Result",
+      "hasSimpleResult": "42.0",
+      "unit": "%"
+    }
+  ]
+} 
