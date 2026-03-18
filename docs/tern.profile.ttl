@@ -94,7 +94,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcterms:description "Site types controlled vocabulary to describe the types of ecological survey sites." ;
     dcterms:format "text/html" ;
     dcterms:title "TERN Ontology vocabulary - site types" ;
-    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159"^^xsd:anyURI ;
+    prof:hasArtifact "http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4"^^xsd:anyURI ;
     prof:hasRole role:vocabulary ;
 .
 
