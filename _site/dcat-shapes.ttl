@@ -1,0 +1,1489 @@
+PREFIX : <https://w3id.org/tern/shapes/dcat/>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcatap: <http://data.europa.eu/r5r>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geodcat: <http://data.europa.eu/930/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX tern: <https://w3id.org/tern/ontologies/tern/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:CatalogRecord_Shape
+    a sh:NodeShape ;
+    rdfs:label "Catalog Record"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `foaf:primaryTopic` predicate where the value node is an individual with the type `dcat:Catalog`, or `dcat:Dataset`, or `dcat:DataService`." ;
+            sh:minCount 1 ;
+            sh:node :DcatResource_Shape ;
+            sh:path foaf:primaryTopic ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `skos:notation` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:notation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:language` where the value node is an IRI." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:language ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcat:contactPoint ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have maximum 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:created ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have maximum 1 `dcat:landingPage` predicate where the value node is a literal with the datatype `xsd:anyURI`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcat:landingPage ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 <http://www.w3.org/2011/content#characterEncoding> predicate where the value node is a literal value." ;
+            sh:nodeKind sh:Literal ;
+            sh:path <http://www.w3.org/2011/content#characterEncoding> ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:description` where the value node is a literal value." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcterms:Standard ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:conformsTo` predicate where the value node is an IRI of an individual with the type `dcterms:Standard`." ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have maximum 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a `dcterms:title` predicate where the value node is a literal value." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:CatalogRecord` _MAY_ have a maximum of 1 `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcat:CatalogRecord ;
+.
+
+:Catalog_Shape
+    a sh:NodeShape ;
+    rdfs:label "Catalog"@en ;
+    sh:property
+        [
+            sh:message "A `dcat:Catalog` _MUST_ have at least 1 `dcterms:language` predicate where the value node is an IRI." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:language ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Catalog` _MAY_ have a maximum of 1 `dcterms:license`." ;
+            sh:path dcterms:license ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Catalog` _MAY_ have a maximum of 1 `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcat:Catalog ;
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcterms:hasPart` predicate where the value node is a `dcat:Catalog`." ;
+            sh:path dcterms:hasPart ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcterms:isPartOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Catalog` _MAY_ have a maximum 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:class dcat:CatalogRecord ;
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcat:record` predicate where the value node is a `dcat:CatalogRecord`." ;
+            sh:path dcat:record ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcat:catalog ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcat:dataset` predicate where the value node is a `dcat:Dataset` or `dcat:DatasetSeries`." ;
+            sh:or (
+                    [
+                        sh:class dcat:Dataset
+                    ]
+                    [
+                        sh:class dcat:DatasetSeries
+                    ]
+                ) ;
+            sh:path dcat:dataset ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Catalog` _MAY_ have a `dcterms:description` where the value node is literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `dcterms:publisher`." ;
+            sh:minCount 1 ;
+            sh:path dcterms:publisher ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Catalog` _MAY_ have a `skos:notation` where the value is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:notation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Catalog` _MUST_ have at least 1 `dcterms:title` where the value node is literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Catalog` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Catalog` _MAY_ have a maximum of 1 `foaf:homepage` where the value node is a literal with the datatype `xsd:anyURI`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path foaf:homepage ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcat:Catalog ;
+.
+
+:ConceptScheme_Shape
+    a sh:NodeShape ;
+    rdfs:label "Concept Scheme"@en ;
+    sh:property
+        [
+            sh:datatype xsd:anyURI ;
+            sh:message "A `skos:ConceptScheme` _MAY_ have a `dcterms:source` predicate where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `skos:ConceptScheme` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass skos:ConceptScheme ;
+.
+
+:Concept_Shape
+    a sh:NodeShape ;
+    rdfs:label "Concept"@en ;
+    sh:property
+        [
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:prefLabel ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `skos:Concept` _MUST_ have exactly 1 `skos:prefLabel` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:prefLabel ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `skos:Concept` _MAY_ have maximum 1 `tern:unit` predicate where the value node is a `sh:IRI." ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:unit ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:ConceptScheme ;
+            sh:maxCount 1 ;
+            sh:message "A `skos:Concept` _MAY_ have maximum 1 `skos:inScheme` predicate where the value node is a `skos:ConceptScheme`." ;
+            sh:path skos:inScheme ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:anyURI ;
+            sh:message "A `skos:Concept` _MAY_ have a `dcterms:source` where the value node is a literal with the datatype `xsd:anyURI`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:source ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass skos:Concept ;
+.
+
+:ContextOfConcept_Shape
+    a sh:NodeShape ;
+    rdfs:label "Context of Concept"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `ContextOfConcept` _MAY_ have maximum 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:unit ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:message "A `ContextOfConcept` _MUST_ have exactly 1 `urnp:property:concept` where the value node is a `skos:Concept`." ;
+            sh:minCount 1 ;
+            sh:path <urnp:property:concept> ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass <urnc:class:ContextOfConcept> ;
+.
+
+:DataQuality_Shape
+    a sh:NodeShape ;
+    rdfs:label "Data Quality"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:DataQuality` _MAY_ have maximum 1 `tern:DQ_descriptiveResult` where the value is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:DQ_descriptiveResult ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:DataQuality` _MAY_ have maximum 1 `tern:DQ_scopeDescription` where the value is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:DQ_scopeDescription ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:OnlineResource ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:DataQuality` _MAY_ have maximum 1 `tern:DQ_standaloneQualityReport` predicate where the value node is a `tern:OnlineResource`." ;
+            sh:path tern:DQ_standaloneQualityReport ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:DataQuality` _MUST_ have exactly 1 `tern:DQ_scope` where the value node is a `skos:Concept`." ;
+            sh:minCount 1 ;
+            sh:path tern:DQ_scope ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:DataQuality ;
+.
+
+:DataService_Shape
+    a sh:NodeShape ;
+    rdfs:label "Data Service"@en ;
+    sh:property
+        [
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:IRI ;
+            sh:path dcatap:applicableLegislation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcat:endpointURL ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:path dcat:servesDataset ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcat:endpointDescription ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:license ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path dcterms:accessRights ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcat:DataService ;
+.
+
+:DatasetSeries_Shape
+    a sh:NodeShape ;
+    rdfs:label "Dataset Series"@en ;
+    sh:property
+        [
+            sh:nodeKind sh:IRI ;
+            sh:path dcatap:applicableLegislation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:spatial ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:accrualPeriodicity ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:DatasetSeries` _MAY_ have a `dcterms:title` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:DatasetSeries` _MAY_ have a `dcterms:description` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:publisher ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcat:contactPoint ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path dcterms:temporal ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcat:DatasetSeries ;
+.
+
+:Dataset_Shape
+    a sh:NodeShape ;
+    rdfs:label "Dataset"@en ;
+    sh:property
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:collaborator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:collaborator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:funder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:funder ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:editor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:editor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:producer` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:producer ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:resourceProvider` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:resourceProvider ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:custodian` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:custodian ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:owner` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:owner ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:user` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:user ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:distributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:distributor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:originator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:originator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:principalInvestigator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:principalInvestigator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:processor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:processor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:sponsor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:sponsor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:mediator` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:mediator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:rightsHolder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcterms:rightsHolder ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:contributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:contributor ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:stakeholder` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:stakeholder ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:publisher` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcterms:publisher ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:purpose` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:purpose ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `dcterms:title` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:contactPoint` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path dcat:contactPoint ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcat:Distribution ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:distribution` where the value node is `dcat:Distribution`." ;
+            sh:path dcat:distribution ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:keyword` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcat:keyword ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:DataQuality ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `tern:dataQuality` where the value node is a `tern:DataQuality`." ;
+            sh:path tern:dataQuality ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcat:DatasetSeries ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:inSeries` where the value node is a `dcat:DatasetSeries`." ;
+            sh:path dcat:inSeries ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:or (
+                    [
+                        sh:class skos:Concept
+                    ]
+                    [
+                        sh:class <urnc:class:ContextOfConcept>
+                    ]
+                ) ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcat:theme` where the value is a `skos:Concept`." ;
+            sh:path dcat:theme ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `tern:securityConstraints` where the value is `skos:Concept`." ;
+            sh:path tern:securityConstraints ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dqv:QualityMeasurement ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dqv:hasQualityMeasurement` where the value is `dqv:QualityMeasurement`." ;
+            sh:path dqv:hasQualityMeasurement ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dcterms:accrualPeriodicity` where the value is `skos:Concept`." ;
+            sh:path dcterms:accrualPeriodicity ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:Method ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `sosa:usedProcedure` where the value is `tern:Method`." ;
+            sh:path sosa:usedProcedure ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `dcterms:created` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:created ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `dcat:version` predicate where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcat:version ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MUST_ have maximum 1 `adms:status` predicate where the value node is `sh:IRI`." ;
+            sh:nodeKind sh:IRI ;
+            sh:path adms:status ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcterms:LicenseDocument ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:license` predicate where the value node is `dcterms:LicenseDocument`." ;
+            sh:path dcterms:license ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `tern:resourceSpecificUsage` predicate where the value node is a literal with datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:resourceSpecificUsage ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `tern:environmentDescription` predicate where the value node is a literal with datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:environmentDescription ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `tern:supplementalInformation` predicate where the value node is a literal with datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:supplementalInformation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:otherCitationDetails` predicate where the value node is a literal with datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:otherCitationDetails ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcterms:RightsStatement ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:otherConstraints` predicate where the value node is `dcterms:RightsStatement`." ;
+            sh:path tern:otherConstraints ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MUST_ have at least 1 `schema:abstract` predicate where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:abstract ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:Extent ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:hasExtent` predicate where the value node is a `tern:Extent`." ;
+            sh:path tern:hasExtent ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `schema:creditText` predicate where the value node is a literal with datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:creditText ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:subject` predicate where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:subject ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MUST_ have maximum 1 `dcterms:conformsTo` predicate where the value node is `sh:IRI`." ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have a maximum of 1 `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `dcterms:modified` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:path dcterms:provenance ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:OnlineResource ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:addtionalDocumentation` predicate where the value node is `tern:OnlineResource`." ;
+            sh:path tern:addtionalDocumentation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Dataset` _MAY_ have maximum 1 `adms:identifier` predicate where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path adms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class rdf:Seq ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `dcterms:creator` where the value node is a `rdf:Seq`." ;
+            sh:path dcterms:creator ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class rdf:Seq ;
+            sh:message "A `dcat:Dataset` _MAY_ have a `tern:coAuthor` where the value node is a `rdf:Seq`." ;
+            sh:path tern:coAuthor ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcat:Dataset ;
+.
+
+:Distribution_Shape
+    a sh:NodeShape ;
+    rdfs:label "Distribution"@en ;
+    sh:property
+        [
+            sh:class tern:OnlineResource ;
+            sh:maxCount 1 ;
+            sh:message "A `dcat:Distribution` _MUST_ have exactly 1 `dcat:accessURL` predicate where the value node is `tern:OnlineResource`." ;
+            sh:minCount 1 ;
+            sh:path dcat:accessURL ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcat:Distribution` _MUST_ have at least 1 `tern:distributor` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:minCount 1 ;
+            sh:node :PersonOrg_Shape ;
+            sh:path tern:distributor ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcat:Distribution ;
+.
+
+:Extent_Shape
+    a sh:NodeShape ;
+    rdfs:label "Extent"@en ;
+    sh:property
+        [
+            sh:class dcterms:PeriodOfTime ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum of 1 `dcterms:temporal` predicate where the value node is a `dcterms:PeriodOfTime`." ;
+            sh:path dcterms:temporal ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class geo:Geometry ;
+            sh:message "A `tern:Extent` _MAY_ have 1 `geo:hasGeometry` predicate where the value node is a `geo:Geometry`." ;
+            sh:path geo:hasGeometry ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:VerticalExtent ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:verticalExtent` predicate where the value node is a `tern:VerticalExtent`." ;
+            sh:path tern:verticalExtent ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Extent` _MAY_ have maximum 1 `tern:locationDescription` predicate where the value has datatype `xsd:string`." ;
+            sh:path tern:locationDescription ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:Extent ;
+.
+
+:Geometry_Shape
+    a sh:NodeShape ;
+    rdfs:label "Geometry"@en ;
+    sh:property [
+            sh:datatype geo:wktLiteral ;
+            sh:maxCount 1 ;
+            sh:message "A `geo:Geometry` _MUST_ have exactly 1 `geo:asWKT` where the value node is a literal with the datatype `geo:wktLiteral`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path geo:asWKT ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass geo:Geometry ;
+.
+
+:LicenseDocument_Shape
+    a sh:NodeShape ;
+    rdfs:label "License Document"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:LicenseDocument` _MUST_ have exactly 1 `dcterms:type` where the value node is an IRI." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:type ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:LicenseDocument` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:message "A `dcterms:LicenseDocument` _MAY_ have a `dcterms:description` predicate where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:LicenseDocument` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcterms:LicenseDocument ;
+.
+
+:Method_Shape
+    a sh:NodeShape ;
+    rdfs:label "Method"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MUST_ have exactly 1 `tern:scope` where the value node is a `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:scope ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class rdf:Seq ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have a maximum of 1 `tern:instructions` predicate where the value node is `rdf:Seq`." ;
+            sh:path tern:instructions ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class tern:OnlineResource ;
+            sh:message "A `tern:Method` _MAY_ have a `tern:additionalDocumentation` where the value node is `tern:OnlineResource`." ;
+            sh:path tern:additionalDocumentation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have maximum 1 `dcterms:description` where the value is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:Method ;
+.
+
+:OnlineResource_Shape
+    a sh:NodeShape ;
+    rdfs:label "Online Resource"@en ;
+    sh:property
+        [
+            sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource`_MUST_ have exactly 1 `rdf:value` where the value node is a literal with datatype `xsd:anyURI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:description` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class dcterms:Standard ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:conformsTo` predicate where the value node is `dcterms:Standard`." ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class skos:Concept ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have maximum 1 `dcterms:type` predicate where the value node is `skos:Concept`." ;
+            sh:path dcterms:type ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MUST_ have exactly 1 `dcterms:title` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:OnlineResource` _MAY_ have a maximum of 1 `dcterms:format` where the value is a literal." ;
+            sh:path dcterms:format ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:OnlineResource ;
+.
+
+:Organization_Shape
+    a sh:NodeShape ;
+    rdfs:label "Organization"@en ;
+    sh:property
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MUST_ have exactly 1 `schema:name` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:name ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have maximum 1 `schema:email` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:email ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have maximum 1 `schema:telephone` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:telephone ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:addressCountry` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:addressCountry ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:addressLocality` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:addressLocality ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:addressRegion` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:addressRegion ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:postalCode` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:postalCode ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Organization` _MAY_ have a maximum of 1 `schema:streetAddress` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:streetAddress ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass schema:Organization ;
+.
+
+:PeriodOfTime_Shape
+    a sh:NodeShape ;
+    rdfs:label "PeriodOfTime"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:PeriodOfTime` _MAY_ have a maximum of 1 `dcat:endDate` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcat:endDate ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path time:hasBeginning ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:path time:hasEnd ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:PeriodOfTime` _MAY_ have a maximum of 1 `dcat:startDate` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcat:startDate ;
+            sh:severity sh:Violation ;
+            sh:shape :DateOrDateTimeDataType_Shape
+        ] ;
+    sh:targetClass dcterms:PeriodOfTime ;
+.
+
+:Person_Shape
+    a sh:NodeShape ;
+    rdfs:label "Person"@en ;
+    sh:property
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MUST_ have exactly 1 `schema:name` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:name ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MAY_ have a maximum of 1 `schema:addressCountry` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:addressCountry ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MAY_ have a maximum of 1 `schema:addressLocality` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:addressLocality ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MAY_ have a maximum of 1 `schema:addressRegion` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:addressRegion ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MAY_ have a maximum of 1 `schema:postalCode` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:postalCode ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MAY_ have a maximum of 1 `schema:streetAddress` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:streetAddress ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MUST_ have exactly 1 `dcterms:identifier` where the value node is an IRI or literal." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:nodeKind sh:Literal ;
+                        sh:severity sh:Violation
+                    ]
+                    [
+                        sh:nodeKind sh:IRI ;
+                        sh:severity sh:Violation
+                    ]
+                ) ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:class schema:Organization ;
+            sh:message "A `schema:Person` _MAY_ have a `schema:affiliation` where the value node is a `schema:Organization`." ;
+            sh:path schema:affiliation ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MAY_ have maximum 1 `schema:email` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:email ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "A `schema:Person` _MAY_ have maximum 1 `schema:telephone` where the value node is a literal with the datatype `xsd:string`." ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:telephone ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass schema:Person ;
+.
+
+:QualityMeasurement_Shape
+    a sh:NodeShape ;
+    rdfs:label "Quality Measurement"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `dqv:isMeasurementOf` where the value is `geodcat:spatialResolutionAsAngularDistance`, `geodcat:spatialResolutionAsDistance`, `geodcat:spatialResolutionAsScale`, or `geodcat:spatialResolutionAsVerticalDistance`." ;
+            sh:minCount 1 ;
+            sh:or (
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsAngularDistance
+                    ]
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsDistance
+                    ]
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsScale
+                    ]
+                    [
+                        sh:hasValue geodcat:spatialResolutionAsVerticalDistance
+                    ]
+                ) ;
+            sh:path dqv:isMeasurementOf ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `dqv:value` predicate where the value node is a literal with datatype `xsd:decimal`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dqv:value ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dqv:QualityMeasurement` _MUST_ have exactly 1 `tern:unit` predicate where the value node is a `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:unit ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dqv:QualityMeasurement ;
+.
+
+:RightsStatement_Shape
+    a sh:NodeShape ;
+    rdfs:label "Rights Statement"@en ;
+    sh:property [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:RightsStatement` _MUST_ have exactly 1 `dcterms:title` predicate where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcterms:RightsStatement ;
+.
+
+:Seq_Shape
+    a sh:NodeShape ;
+    rdfs:label "Seq"@en ;
+    sh:property [
+            sh:message "A `rdf:Seq` _MAY_ have an `rdf:_N` where the value node is a `schema:Person` or `schema:Organization`." ;
+            sh:node :PersonOrg_Shape ;
+            sh:path rdf:_ ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass rdf:Seq ;
+.
+
+:Standard_Shape
+    a sh:NodeShape ;
+    rdfs:label "Standard"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:Standard` _MAY_ have a maximum of 1 `dcterms:title` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:Standard` _MAY_ have a maximum of 1 `owl:versionInfo` where the value node is a literal." ;
+            sh:nodeKind sh:Literal ;
+            sh:path owl:versionInfo ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:Standard` _MAY_ have a maximum of 1 `dcterms:issued` predicate where the value node is a literal with the datatype `xsd:date`, `xsd:dateTime`, `xsd:gYear` or `xsd:gYearMonth`." ;
+            sh:node :DateOrDateTimeDataType_Shape ;
+            sh:path dcterms:issued ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `dcterms:Standard` _MUST_ have exactly 1 `dcterms:identifier` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:identifier ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass dcterms:Standard ;
+.
+
+:Unit_Shape
+    a sh:NodeShape ;
+    rdfs:label "QUDT Unit"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:label` where the value node is a literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `qudt:Unit` _MUST_ have exactly 1 `rdfs:isDefinedBy` where the value node is a `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path rdfs:isDefinedBy ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass qudt:Unit ;
+.
+
+:VerticalExtent_Shape
+    a sh:NodeShape ;
+    rdfs:label "Vertical Extent"@en ;
+    sh:property
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:minAltitude` predicate where the value node is a literal with the datatype `xsd:integer`, `xsd:float`, `xsd:double` or `xsd:decimal`." ;
+            sh:minCount 1 ;
+            sh:node :NumericDataType_Shape ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:minAltitude ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:maxAltitude` predicate where the value node is a literal with the datatype `xsd:integer`, `xsd:float`, `xsd:double` or `xsd:decimal`." ;
+            sh:minCount 1 ;
+            sh:node :NumericDataType_Shape ;
+            sh:nodeKind sh:Literal ;
+            sh:path tern:maxAltitude ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `tern:unit` predicate where the value node is `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path tern:unit ;
+            sh:severity sh:Violation
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "A `tern:VerticalExtent` _MUST_ have exactly 1 `dcterms:conformsTo` predicate where the value node is `sh:IRI`." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dcterms:conformsTo ;
+            sh:severity sh:Violation
+        ] ;
+    sh:targetClass tern:VerticalExtent ;
+.
+
+:DcatResource_Shape
+    a sh:NodeShape ;
+    rdfs:label "dcat:Resource" ;
+    rdfs:comment "the union of Catalog, Dataset and DataService" ;
+    sh:message "The node is either a Catalog, Dataset or a DataService" ;
+    sh:or (
+            [
+                sh:class dcat:Catalog
+            ]
+            [
+                sh:class dcat:Dataset
+            ]
+            [
+                sh:class dcat:DataService
+            ]
+        ) ;
+.
+
+:NumericDataType_Shape
+    a sh:NodeShape ;
+    rdfs:label "Numeric datatype" ;
+    rdfs:comment "Numeric datatype shape checks that a datatype property receives a temporal value: integer, float, double or decimal literal" ;
+    sh:message "The values must be data typed as either xsd:integer, xsd:float, xsd:double or xsd:decimal" ;
+    sh:or (
+            [
+                sh:datatype xsd:integer
+            ]
+            [
+                sh:datatype xsd:float
+            ]
+            [
+                sh:datatype xsd:double
+            ]
+            [
+                sh:datatype xsd:decimal
+            ]
+        ) ;
+.
+
+:DateOrDateTimeDataType_Shape
+    a sh:NodeShape ;
+    rdfs:label "Date time date disjunction" ;
+    rdfs:comment "Date time date disjunction shape checks that a datatype property receives a temporal value: date, dateTime, gYear or gYearMonth literal" ;
+    sh:message "The values must be data typed as either xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth" ;
+    sh:or (
+            [
+                sh:datatype xsd:date
+            ]
+            [
+                sh:datatype xsd:dateTime
+            ]
+            [
+                sh:datatype xsd:gYear
+            ]
+            [
+                sh:datatype xsd:gYearMonth
+            ]
+        ) ;
+.
+
+:PersonOrg_Shape
+    a sh:NodeShape ;
+    rdfs:label "Person and Organization" ;
+    rdfs:comment "The union of Person and Organization" ;
+    sh:message "The node is either a Person or Organization" ;
+    sh:or (
+            [
+                sh:class schema:Person
+            ]
+            [
+                sh:class schema:Organization
+            ]
+        ) ;
+.
+
