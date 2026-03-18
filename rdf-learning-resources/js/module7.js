@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupNodeTargeting();
     setupPropertyShape();
     setupConstraintsQuiz();
-    setupShapeMatching();
-    setupConstraintTypes();
     setupCardinalityExercise();
     setupSeverityQuiz();
     setupShapeBuilder();
@@ -83,50 +81,51 @@ function handlePropertyShapeDragOver(e) {
 
 function handlePropertyShapeDragEnter(e) {
     e.preventDefault();
-    e.target.classList.add('drag-hover');
+    e.currentTarget.classList.add('drag-hover');
 }
 
 function handlePropertyShapeDragLeave(e) {
-    e.target.classList.remove('drag-hover');
+    e.currentTarget.classList.remove('drag-hover');
 }
 
 function handlePropertyShapeDrop(e) {
     e.preventDefault();
-    e.target.classList.remove('drag-hover');
-    
+    const dropZone = e.currentTarget;
+    dropZone.classList.remove('drag-hover');
+
     const draggedValue = e.dataTransfer.getData('text/plain');
     const draggedElement = document.querySelector(`.drag-item[data-value="${draggedValue}"]`);
-    const expectedValue = e.target.getAttribute('data-expects');
-    
+    const expectedValue = dropZone.getAttribute('data-expects');
+
     // Check if drop zone already has an item
-    if (e.target.querySelector('.dropped-item')) {
+    if (dropZone.querySelector('.dropped-item')) {
         return; // Don't allow drop if zone is already occupied
     }
-    
+
     // Hide the original drag item
     if (draggedElement) {
         draggedElement.style.display = 'none';
     }
-    
+
     // Add the dropped content
     const droppedItem = document.createElement('span');
     droppedItem.textContent = draggedValue;
     droppedItem.className = 'dropped-item';
     droppedItem.draggable = true;
     droppedItem.setAttribute('data-value', draggedValue);
-    
+
     // Add event listeners for dragging back
     droppedItem.addEventListener('dragstart', handleDroppedItemDragStart);
     droppedItem.addEventListener('dragend', handleDroppedItemDragEnd);
-    
+
     // Check if it's correct
     if (draggedValue === expectedValue) {
         droppedItem.classList.add('correct-answer');
     } else {
         droppedItem.classList.add('incorrect-answer');
     }
-    
-    e.target.appendChild(droppedItem);
+
+    dropZone.appendChild(droppedItem);
 }
 
 function handleDroppedItemDragStart(e) {
@@ -140,17 +139,17 @@ function handleDroppedItemDragEnd(e) {
 
 function handleDragItemsContainerEnter(e) {
     e.preventDefault();
-    e.target.classList.add('drag-hover');
+    e.currentTarget.classList.add('drag-hover');
 }
 
 function handleDragItemsContainerLeave(e) {
-    e.target.classList.remove('drag-hover');
+    e.currentTarget.classList.remove('drag-hover');
 }
 
 function handleDragItemsContainerDrop(e) {
     e.preventDefault();
-    e.target.classList.remove('drag-hover');
-    
+    e.currentTarget.classList.remove('drag-hover');
+
     const draggedValue = e.dataTransfer.getData('text/plain');
     const draggedElement = document.querySelector(`.dropped-item[data-value="${draggedValue}"]`);
     
@@ -205,19 +204,6 @@ function setupSeverityQuiz() {
     }
 }
 
-function setupShapeMatching() {
-    const checkButton = document.getElementById('check-shape-matching');
-    if (checkButton) {
-        checkButton.addEventListener('click', checkShapeMatching);
-    }
-}
-
-function setupConstraintTypes() {
-    const checkButton = document.getElementById('check-constraint-types');
-    if (checkButton) {
-        checkButton.addEventListener('click', checkConstraintTypes);
-    }
-}
 
 function setupCardinalityExercise() {
     const checkButton = document.getElementById('check-cardinality');
@@ -247,88 +233,6 @@ function setupShapeBuilder() {
     }
 }
 
-function checkShapeMatching() {
-    const selects = document.querySelectorAll('#shape-matching-exercise select');
-    const feedback = document.getElementById('shape-matching-feedback');
-    
-    let correct = 0;
-    selects.forEach((select) => {
-        const correctValue = select.getAttribute('data-correct');
-        if (select.value === correctValue) {
-            select.classList.add('correct-answer');
-            select.classList.remove('incorrect-answer');
-            correct++;
-        } else {
-            select.classList.add('incorrect-answer');
-            select.classList.remove('correct-answer');
-        }
-    });
-    
-    feedback.style.display = 'block';
-    
-    if (correct === selects.length) {
-        feedback.className = 'feedback-message success';
-        feedback.innerHTML = '<p>🎉 Perfect! You understand SHACL shape matching.</p>';
-        
-        // Show celebration fireworks
-        if (typeof showCelebrationFireworks === 'function') {
-            showCelebrationFireworks();
-        } else if (typeof showFireworks === 'function') {
-            showFireworks();
-        }
-    } else {
-        feedback.className = 'feedback-message error';
-        feedback.innerHTML = `<p>You got ${correct} out of ${selects.length} correct. Review SHACL shape concepts!</p>`;
-    }
-}
-
-function checkConstraintTypes() {
-    const checkboxGroups = document.querySelectorAll('#constraint-types-exercise .checkbox-group');
-    const feedback = document.getElementById('constraint-types-feedback');
-    
-    let correct = 0;
-    let totalGroups = checkboxGroups.length;
-    
-    checkboxGroups.forEach((group) => {
-        const checkboxes = group.querySelectorAll('input[type="checkbox"]');
-        let groupCorrect = true;
-        
-        checkboxes.forEach((checkbox) => {
-            const shouldBeChecked = checkbox.getAttribute('data-correct') === 'true';
-            const isChecked = checkbox.checked;
-            
-            if (shouldBeChecked !== isChecked) {
-                groupCorrect = false;
-            }
-        });
-        
-        if (groupCorrect) {
-            group.classList.add('correct-answer');
-            group.classList.remove('incorrect-answer');
-            correct++;
-        } else {
-            group.classList.add('incorrect-answer');
-            group.classList.remove('correct-answer');
-        }
-    });
-    
-    feedback.style.display = 'block';
-    
-    if (correct === totalGroups) {
-        feedback.className = 'feedback-message success';
-        feedback.innerHTML = '<p>🎉 Excellent! You understand SHACL constraint types.</p>';
-        
-        // Show celebration fireworks
-        if (typeof showCelebrationFireworks === 'function') {
-            showCelebrationFireworks();
-        } else if (typeof showFireworks === 'function') {
-            showFireworks();
-        }
-    } else {
-        feedback.className = 'feedback-message error';
-        feedback.innerHTML = `<p>You got ${correct} out of ${totalGroups} constraint groups correct. Review constraint types!</p>`;
-    }
-}
 
 function checkCardinality() {
     const feedback = document.getElementById('cardinality-feedback');
@@ -493,34 +397,107 @@ function checkPropertyShape() {
 }
 
 function checkConstraintsQuiz() {
-    // Generic function for constraints quiz - would need specific implementation based on HTML structure
     const feedback = document.getElementById('constraints-quiz-feedback');
-    
+    if (!feedback) return;
+
+    const correctAnswers = {
+        'constraint-quiz-1': "sh:pattern '^.+@.+\\..+$'",
+        'constraint-quiz-2': 'sh:minInclusive -50 and sh:maxInclusive 50',
+        'constraint-quiz-3': 'sh:nodeKind sh:IRI'
+    };
+
+    let correct = 0;
+    let answered = 0;
+    const totalQuestions = Object.keys(correctAnswers).length;
+
+    Object.keys(correctAnswers).forEach(groupName => {
+        const selectedRadio = document.querySelector(`input[name="${groupName}"]:checked`);
+        const quizQuestion = document.querySelector(`input[name="${groupName}"]`).closest('.quiz-question');
+
+        if (selectedRadio) {
+            answered++;
+            if (selectedRadio.value === correctAnswers[groupName]) {
+                quizQuestion.classList.add('correct-answer');
+                quizQuestion.classList.remove('incorrect-answer');
+                correct++;
+            } else {
+                quizQuestion.classList.add('incorrect-answer');
+                quizQuestion.classList.remove('correct-answer');
+            }
+        } else {
+            quizQuestion.classList.remove('correct-answer', 'incorrect-answer');
+        }
+    });
+
     feedback.style.display = 'block';
-    feedback.className = 'feedback-message success';
-    feedback.innerHTML = '<p>🎉 Excellent! You understand SHACL constraints.</p>';
-    
-    // Show celebration fireworks
-    if (typeof showCelebrationFireworks === 'function') {
-        showCelebrationFireworks();
-    } else if (typeof showFireworks === 'function') {
-        showFireworks();
+
+    if (answered < totalQuestions) {
+        feedback.className = 'feedback-message error';
+        feedback.innerHTML = '<p>Please answer all questions before checking.</p>';
+    } else if (correct === totalQuestions) {
+        feedback.className = 'feedback-message success';
+        feedback.innerHTML = '<p>🎉 Excellent! You understand SHACL constraints.</p>';
+
+        if (typeof showCelebrationFireworks === 'function') {
+            showCelebrationFireworks();
+        } else if (typeof showFireworks === 'function') {
+            showFireworks();
+        }
+    } else {
+        feedback.className = 'feedback-message error';
+        feedback.innerHTML = `<p>You got ${correct} out of ${totalQuestions} correct. Review the constraint types and try again!</p>`;
     }
 }
 
 function checkSeverityQuiz() {
-    // Generic function for severity quiz - would need specific implementation based on HTML structure
     const feedback = document.getElementById('severity-quiz-feedback');
-    
+    if (!feedback) return;
+
+    const correctAnswers = {
+        'severity-quiz-1': 'violation',
+        'severity-quiz-2': 'warning'
+    };
+
+    let correct = 0;
+    let answered = 0;
+    const totalQuestions = Object.keys(correctAnswers).length;
+
+    Object.keys(correctAnswers).forEach(groupName => {
+        const selectedRadio = document.querySelector(`input[name="${groupName}"]:checked`);
+        const quizQuestion = document.querySelector(`input[name="${groupName}"]`).closest('.quiz-question');
+
+        if (selectedRadio) {
+            answered++;
+            if (selectedRadio.value === correctAnswers[groupName]) {
+                quizQuestion.classList.add('correct-answer');
+                quizQuestion.classList.remove('incorrect-answer');
+                correct++;
+            } else {
+                quizQuestion.classList.add('incorrect-answer');
+                quizQuestion.classList.remove('correct-answer');
+            }
+        } else {
+            quizQuestion.classList.remove('correct-answer', 'incorrect-answer');
+        }
+    });
+
     feedback.style.display = 'block';
-    feedback.className = 'feedback-message success';
-    feedback.innerHTML = '<p>🎉 Perfect! You understand SHACL severity levels.</p>';
-    
-    // Show celebration fireworks
-    if (typeof showCelebrationFireworks === 'function') {
-        showCelebrationFireworks();
-    } else if (typeof showFireworks === 'function') {
-        showFireworks();
+
+    if (answered < totalQuestions) {
+        feedback.className = 'feedback-message error';
+        feedback.innerHTML = '<p>Please answer all questions before checking.</p>';
+    } else if (correct === totalQuestions) {
+        feedback.className = 'feedback-message success';
+        feedback.innerHTML = '<p>🎉 Perfect! You understand SHACL severity levels.</p>';
+
+        if (typeof showCelebrationFireworks === 'function') {
+            showCelebrationFireworks();
+        } else if (typeof showFireworks === 'function') {
+            showFireworks();
+        }
+    } else {
+        feedback.className = 'feedback-message error';
+        feedback.innerHTML = `<p>You got ${correct} out of ${totalQuestions} correct. Review severity levels and try again!</p>`;
     }
 }
 

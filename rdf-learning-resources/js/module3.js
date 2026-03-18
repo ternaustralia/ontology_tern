@@ -152,12 +152,3 @@ function checkThinkingModeAnswers(e) {
     }
 }
 
-function showFireworks() {
-    const fireworks = document.querySelector('.fireworks');
-    fireworks.classList.add('show');
-    
-    // Hide after a few seconds
-    setTimeout(() => {
-        fireworks.classList.remove('show');
-    }, 3000);
-} 

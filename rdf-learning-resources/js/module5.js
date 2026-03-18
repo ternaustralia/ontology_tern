@@ -1,19 +1,11 @@
 // Module 5 Interactive Elements - RDF Serialization Formats
 document.addEventListener('DOMContentLoaded', function() {
-    setupFormatQuiz();
     setupFormatIdentification();
     setupRdfXmlComponents();
     setupTurtleSyntax();
     setupNTripleParser();
     setupJsonLdKeywords();
 });
-
-function setupFormatQuiz() {
-    const checkButton = document.getElementById('check-format-quiz');
-    if (checkButton) {
-        checkButton.addEventListener('click', checkFormatQuiz);
-    }
-}
 
 function setupFormatIdentification() {
     const checkButton = document.getElementById('check-format-identification');
@@ -198,42 +190,6 @@ function resetTurtleSyntax() {
     
     // Re-setup drag and drop after reset
     setupDragAndDrop();
-}
-
-function checkFormatQuiz() {
-    const selects = document.querySelectorAll('#format-quiz select');
-    const feedback = document.getElementById('format-quiz-feedback');
-    const correctAnswers = ['turtle', 'n-triples', 'json-ld', 'rdf-xml']; // Example correct answers
-    
-    let correct = 0;
-    selects.forEach((select, index) => {
-        const correctValue = select.getAttribute('data-correct');
-        if (select.value === correctValue) {
-            select.classList.add('correct-answer');
-            select.classList.remove('incorrect-answer');
-            correct++;
-        } else {
-            select.classList.add('incorrect-answer');
-            select.classList.remove('correct-answer');
-        }
-    });
-    
-    feedback.style.display = 'block';
-    
-    if (correct === selects.length) {
-        feedback.className = 'feedback-message success';
-        feedback.innerHTML = '<p>🎉 Perfect! You can identify different RDF serialization formats.</p>';
-        
-        // Show celebration fireworks
-        if (typeof showCelebrationFireworks === 'function') {
-            showCelebrationFireworks();
-        } else if (typeof showFireworks === 'function') {
-            showFireworks();
-        }
-    } else {
-        feedback.className = 'feedback-message error';
-        feedback.innerHTML = `<p>You got ${correct} out of ${selects.length} correct. Look at the syntax patterns more carefully!</p>`;
-    }
 }
 
 function checkFormatIdentification() {

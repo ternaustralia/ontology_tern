@@ -6,11 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setupConceptExercise() {
-    const checkButton = document.getElementById('check-concept-matching');
-    if (checkButton) {
-        checkButton.addEventListener('click', checkConceptMatching);
-    }
-    
     // Setup concept relationships exercise
     const checkRelationshipsButton = document.getElementById('check-concept-relationships');
     if (checkRelationshipsButton) {
@@ -85,33 +80,34 @@ function handleCollectionDragOver(e) {
 
 function handleCollectionDragEnter(e) {
     e.preventDefault();
-    e.target.classList.add('drag-hover');
+    e.currentTarget.classList.add('drag-hover');
 }
 
 function handleCollectionDragLeave(e) {
-    e.target.classList.remove('drag-hover');
+    e.currentTarget.classList.remove('drag-hover');
 }
 
 function handleCollectionDrop(e) {
     e.preventDefault();
-    e.target.classList.remove('drag-hover');
-    
+    const dropZone = e.currentTarget;
+    dropZone.classList.remove('drag-hover');
+
     const draggedData = JSON.parse(e.dataTransfer.getData('text/plain'));
-    const draggedElement = Array.from(document.querySelectorAll('.drag-item')).find(item => 
+    const draggedElement = Array.from(document.querySelectorAll('.drag-item')).find(item =>
         item.textContent === draggedData.value && item.style.display !== 'none'
     );
-    
+
     // Hide the original drag item
     if (draggedElement) {
         draggedElement.style.display = 'none';
     }
-    
+
     // Remove instruction text if it exists
-    const instruction = e.target.querySelector('.instruction');
+    const instruction = dropZone.querySelector('.instruction');
     if (instruction) {
         instruction.remove();
     }
-    
+
     // Add the dropped content
     const droppedItem = document.createElement('div');
     droppedItem.textContent = draggedData.value;
@@ -119,19 +115,12 @@ function handleCollectionDrop(e) {
     droppedItem.draggable = true;
     droppedItem.setAttribute('data-type', draggedData.type);
     droppedItem.setAttribute('data-value', draggedData.value);
-    
+
     // Add event listeners for dragging back
     droppedItem.addEventListener('dragstart', handleDroppedCollectionItemDragStart);
     droppedItem.addEventListener('dragend', handleDroppedCollectionItemDragEnd);
-    
-    // Add correct/incorrect styling based on type
-    if (draggedData.type === 'freshwater' || draggedData.type === 'both') {
-        droppedItem.classList.add('correct-answer');
-    } else {
-        droppedItem.classList.add('incorrect-answer');
-    }
-    
-    e.target.appendChild(droppedItem);
+
+    dropZone.appendChild(droppedItem);
 }
 
 function handleDroppedCollectionItemDragStart(e) {
@@ -148,16 +137,16 @@ function handleDroppedCollectionItemDragEnd(e) {
 
 function handleDragOptionsEnter(e) {
     e.preventDefault();
-    e.target.classList.add('drag-hover');
+    e.currentTarget.classList.add('drag-hover');
 }
 
 function handleDragOptionsLeave(e) {
-    e.target.classList.remove('drag-hover');
+    e.currentTarget.classList.remove('drag-hover');
 }
 
 function handleDragOptionsDrop(e) {
     e.preventDefault();
-    e.target.classList.remove('drag-hover');
+    e.currentTarget.classList.remove('drag-hover');
     
     const draggedData = JSON.parse(e.dataTransfer.getData('text/plain'));
     const draggedElement = document.querySelector(`.collection-item[data-value="${draggedData.value}"]`);
@@ -314,41 +303,6 @@ function checkConceptScheme() {
     } else {
         feedback.className = 'feedback-message error';
         feedback.innerHTML = `<p>You got ${correct} out of ${total} correct. Review the ConceptScheme concepts and try again!</p>`;
-    }
-}
-
-function checkConceptMatching() {
-    const selects = document.querySelectorAll('#concept-matching-exercise select');
-    const feedback = document.getElementById('concept-matching-feedback');
-    const correctAnswers = ['concept', 'scheme', 'collection']; // Example correct answers
-    
-    let correct = 0;
-    selects.forEach((select, index) => {
-        if (select.value === correctAnswers[index]) {
-            select.classList.add('correct-answer');
-            select.classList.remove('incorrect-answer');
-            correct++;
-        } else {
-            select.classList.add('incorrect-answer');
-            select.classList.remove('correct-answer');
-        }
-    });
-    
-    feedback.style.display = 'block';
-    
-    if (correct === correctAnswers.length) {
-        feedback.className = 'feedback-message success';
-        feedback.innerHTML = '<p>🎉 Perfect! You understand the different SKOS components.</p>';
-        
-        // Show celebration fireworks
-        if (typeof showCelebrationFireworks === 'function') {
-            showCelebrationFireworks();
-        } else if (typeof showFireworks === 'function') {
-            showFireworks();
-        }
-    } else {
-        feedback.className = 'feedback-message error';
-        feedback.innerHTML = `<p>You got ${correct} out of ${correctAnswers.length} correct. Review the concepts and try again!</p>`;
     }
 }
 

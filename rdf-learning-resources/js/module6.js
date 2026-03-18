@@ -92,36 +92,37 @@ function handleDragOver(e) {
 
 function handleDragEnter(e) {
     e.preventDefault();
-    e.target.classList.add('drag-hover');
+    e.currentTarget.classList.add('drag-hover');
 }
 
 function handleDragLeave(e) {
-    e.target.classList.remove('drag-hover');
+    e.currentTarget.classList.remove('drag-hover');
 }
 
 function handleDrop(e) {
     e.preventDefault();
-    e.target.classList.remove('drag-hover');
-    
+    const dropZone = e.currentTarget;
+    dropZone.classList.remove('drag-hover');
+
     const draggedValue = e.dataTransfer.getData('text/plain');
-    const expectedValue = e.target.getAttribute('data-expects');
-    
+    const expectedValue = dropZone.getAttribute('data-expects');
+
     // Clear any existing content
-    e.target.innerHTML = '';
-    
+    dropZone.innerHTML = '';
+
     // Add the dropped content
     const droppedItem = document.createElement('span');
     droppedItem.textContent = draggedValue;
     droppedItem.className = 'dropped-item';
-    
+
     // Check if it's correct
     if (draggedValue === expectedValue) {
         droppedItem.classList.add('correct-answer');
     } else {
         droppedItem.classList.add('incorrect-answer');
     }
-    
-    e.target.appendChild(droppedItem);
+
+    dropZone.appendChild(droppedItem);
 }
 
 function resetOptionalQuery() {
