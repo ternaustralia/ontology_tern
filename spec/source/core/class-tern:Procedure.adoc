@@ -22,7 +22,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/vocabulary[`tern:vocabulary`]
-| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb82
+| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b114
 | Status | `experimental` icon:circle-o[]
 | Label | vocabulary of procedure
 | Definition | The vocabulary of the procedure.
@@ -41,7 +41,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/ns/ssn/hasInput[`ssn:hasInput`]
-| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb83
+| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b115
 | Status | `experimental` icon:circle-o[]
 | Label | procedure has input
 | Definition | The input of the procedure.
@@ -60,7 +60,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
-| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb84
+| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b116
 | Status | `experimental` icon:circle-o[]
 | Label | value of procedure
 | Definition | The method value of the procedure.
@@ -79,7 +79,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/hasMethod[`tern:hasMethod`]
-| Shape IRI | n2be5b758ef2047ccb746d28ad8becc0cb85
+| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b117
 | Status | `experimental` icon:circle-o[]
 | Label | method of procedure
 | Definition | The method type of the procedure.
@@ -88,6 +88,121 @@
 | Cardinality | 
 | Node kind | 
 | Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Procedure-prov:startedAtTime]
+===== Property: prov:startedAtTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#startedAtTime[`prov:startedAtTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Procedure-startedAtTime
+| Status | `experimental` icon:circle-o[]
+| Label | started at time
+| Definition | The time at which the Procedure started.
+| Scope note | 
+| Implementation | A `prov:startedAtTime` predicate on a `tern:Procedure` _MUST_ have a literal value with the datatype `xsd:dateTime`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
+| Expected values | 
+|===
+
+[#class-tern:Procedure-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Procedure-prov:endedAtTime]
+===== Property: prov:endedAtTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#endedAtTime[`prov:endedAtTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-endedAtTime
+| Status | `stable` icon:check-circle[]
+| Label | ended at time
+| Definition | The time at which an activity ended.
+| Scope note | 
+| Implementation | A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
+| Expected values | 
+|===
+
+[#class-tern:Procedure-prov:wasAssociatedWith]
+===== Property: prov:wasAssociatedWith
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#wasAssociatedWith[`prov:wasAssociatedWith`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith
+| Status | `stable` icon:check-circle[]
+| Label | was associated with
+| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Scope note | 
+| Implementation | A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent` or `sdo:Person`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov#:Agent`] +
+link:https://schema.org/Person[`schema.org:Person`]
+| Expected values | 
+|===
+
+[#class-tern:Procedure-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Expected values | 
+|===
+
+[#class-tern:Procedure-tern:hasSurvey]
+===== Property: tern:hasSurvey
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSurvey[`tern:hasSurvey`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSurvey
+| Status | `experimental` icon:circle-o[]
+| Label | has survey
+| Definition | A link to the Survey under which the subject activity was conducted.
+| Scope note | 
+| Implementation | A `tern:hasSurvey` predicate _MUST_ have an IRI value of type `tern:Survey`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Survey[`tern:Survey`]
 | Expected values | 
 |===
 

@@ -22,12 +22,12 @@
 | Property | Value
 
 | IRI | http://schema.org/timeRequired[`schema:timeRequired`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb51
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b51
 | Status | `experimental` icon:circle-o[]
 | Label | method required duration
 | Definition | The time required for the method.
 | Scope note | 
-| Implementation | A `tern:Method` _MAY_ have at most 1 `schema:timeRequired` predicate with a string value.
+| Implementation | A `tern:Method` _MAY_ have at most 1 `schema:timeRequired` predicate with a string or duration value.
 | Cardinality | Maximum 1
 | Node kind | 
 | Class type | 
@@ -41,14 +41,14 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2004/02/skos/core#note[`skos:note`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb52
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b56
 | Status | `stable` icon:check-circle[]
 | Label | note of method
 | Definition | Notes about the method.
 | Scope note | 
 | Implementation | If present, `skos:note` predicates on a `tern:Method` _MUST_ have string values.
 | Cardinality | 
-| Node kind | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | 
 | Expected values | 
 |===
@@ -60,7 +60,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/hasCategoricalCollection[`tern:hasCategoricalCollection`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb53
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b57
 | Status | `experimental` icon:circle-o[]
 | Label | categorial collection of method
 | Definition | The categorical collection of the method.
@@ -79,12 +79,12 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/hasParameter[`tern:hasParameter`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb54
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b58
 | Status | `experimental` icon:circle-o[]
 | Label | parameter of method
 | Definition | The parameters of the method.
 | Scope note | 
-| Implementation | If present, `tern:hasParameter` predicates on a `tern:Method` _MUST_ have values of type `skos:Concept`.
+| Implementation | If present, `tern:hasParameter` predicates on a `tern:Method` _MUST_ have values that are `skos:Concept` nodes or string literals.
 | Cardinality | 
 | Node kind | 
 | Class type | 
@@ -98,13 +98,13 @@
 | Property | Value
 
 | IRI | http://purl.org/dc/terms/source[`dcterms:source`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb55
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b63
 | Status | `stable` icon:check-circle[]
 | Label | digital camera preferred label
 | Definition | The source of the method.
 | Scope note | 
-| Implementation | If present, `dcterms:source` predicates on a `tern:Method` _MUST_ have string or URI values.
-| Cardinality | 
+| Implementation | A `tern:Method` _MUST_ have at least 1 `dcterms:source` predicate with a string or URI value.
+| Cardinality | Minimum 1
 | Node kind | 
 | Class type | 
 | Expected values | 
@@ -117,12 +117,12 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/instructions[`tern:instructions`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb60
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b68
 | Status | `stable` icon:check-circle[]
 | Label | method instructions
 | Definition | The instructions for the method.
 | Scope note | 
-| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:instructions` predicate with a value of type `rdf:Seq`.
+| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:instructions` predicate with either an `rdf:Seq` value or an `rdf:HTML` or string literal.
 | Cardinality | Maximum 1
 | Node kind | 
 | Class type | 
@@ -136,13 +136,51 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2004/02/skos/core#definition[`skos:definition`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb61
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b75
 | Status | `stable` icon:check-circle[]
 | Label | method definition
 | Definition | The definition of the method.
 | Scope note | 
 | Implementation | A `tern:Method` _MAY_ have at most 1 `skos:definition` predicate with a string value.
 | Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-dcterms:description]
+===== Property: dcterms:description
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/description[`dcterms:description`]
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b76
+| Status | `stable` icon:check-circle[]
+| Label | method description
+| Definition | A description of the method.
+| Scope note | 
+| Implementation | If present, `dcterms:description` predicates on a `tern:Method` _MUST_ have string or HTML literal values.
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-tern:additionalDocumentation]
+===== Property: tern:additionalDocumentation
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/additionalDocumentation[`tern:additionalDocumentation`]
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b81
+| Status | `stable` icon:check-circle[]
+| Label | method additional documentation
+| Definition | Links to additional online resources related to the method.
+| Scope note | 
+| Implementation | If present, `tern:additionalDocumentation` predicates on a `tern:Method` _MUST_ have values that are IRIs, `xsd:anyURI` literals, or string literals.
+| Cardinality | 
 | Node kind | 
 | Class type | 
 | Expected values | 
@@ -155,12 +193,12 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/equipment[`tern:equipment`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb62
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b88
 | Status | `stable` icon:check-circle[]
 | Label | method equipment
 | Definition | The equipment used for the method.
 | Scope note | 
-| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:equipment` predicate with a value of type `skos:Concept`.
+| Implementation | A `tern:Method` _MAY_ have at most 1 `tern:equipment` predicate with a value of type `skos:Concept`, string literal, or HTML literal.
 | Cardinality | Maximum 1
 | Node kind | 
 | Class type | 
@@ -174,14 +212,14 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/purpose[`tern:purpose`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb63
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b95
 | Status | `stable` icon:check-circle[]
 | Label | method purpose
 | Definition | The purpose of the method.
 | Scope note | 
 | Implementation | A `tern:Method` _MAY_ have at most 1 `tern:purpose` predicate with a string value.
 | Cardinality | Maximum 1
-| Node kind | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | 
 | Expected values | 
 |===
@@ -193,14 +231,14 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/scope[`tern:scope`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb64
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b96
 | Status | `stable` icon:check-circle[]
 | Label | method scope
 | Definition | The scope of the method.
 | Scope note | 
 | Implementation | A `tern:Method` _MAY_ have at most 1 `tern:scope` predicate with a string value.
 | Cardinality | Maximum 1
-| Node kind | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | 
 | Expected values | 
 |===
@@ -212,15 +250,34 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2004/02/skos/core#prefLabel[`skos:prefLabel`]
-| Shape IRI | n11c9b6dbf289454786d8c185e1488e3eb65
+| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b97
 | Status | `stable` icon:check-circle[]
 | Label | method preferred label
 | Definition | The preferred label of the method.
 | Scope note | 
 | Implementation | A `tern:Method` _MUST_ have exactly 1 `skos:prefLabel` predicate with a string value.
 | Cardinality | Exactly 1
-| Node kind | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Method-dcterms:version]
+===== Property: dcterms:version
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/version[`dcterms:version`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-version
+| Status | `experimental` icon:circle-o[]
+| Label | version
+| Definition | The version of the resource.
+| Scope note | 
+| Implementation | A `dcterms:version` predicate _MUST_ have a literal value with the datatype `xsd:string`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]
 | Expected values | 
 |===
 

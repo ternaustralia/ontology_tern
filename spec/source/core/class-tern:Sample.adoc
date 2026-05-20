@@ -15,6 +15,25 @@
 |===
 
 
+[#class-tern:Sample-tern:featureType]
+===== Property: tern:featureType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/featureType[`tern:featureType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sample-featureType
+| Status | `experimental` icon:circle-o[]
+| Label | feature type
+| Definition | The feature type of a `tern:Sample` from a controlled vocabulary.
+| Scope note | 
+| Implementation | A `tern:Sample` _MUST_ have at least 1 `tern:featureType` predicate where the value node is an IRI.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
 [#class-tern:Sample-sosa:isResultOf]
 ===== Property: sosa:isResultOf
 [cols="1,4"]
@@ -40,7 +59,7 @@
 |===
 | Property | Value
 
-| IRI | nb8df7c5c86414387be6e85d1441e1036b193[`Sample's sosa:isSampleOf or tern:hasSite`]
+| IRI | n077986d0ee964d47894f6ab79a1ede30b226[`Sample's sosa:isSampleOf or tern:hasSite`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/Sample-isSampleOf
 | Status | `experimental` icon:circle-o[]
 | Label | is sample of or has site
@@ -50,6 +69,44 @@
 | Cardinality | 
 | Node kind | 
 | Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sample-dcterms:identifier]
+===== Property: dcterms:identifier
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/identifier[`dcterms:identifier`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-identifier
+| Status | `stable` icon:check-circle[]
+| Label | identifier
+| Definition | An unambiguous reference to the resource within a given context.
+| Scope note | 
+| Implementation | N/A
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sample-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
 | Expected values | 
 |===
 
@@ -69,24 +126,5 @@
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
-| Expected values | 
-|===
-
-[#class-tern:Sample-tern:hasIGSN]
-===== Property: tern:hasIGSN
-[cols="1,4"]
-|===
-| Property | Value
-
-| IRI | https://w3id.org/tern/ontologies/tern/hasIGSN[`tern:hasIGSN`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasIGSN
-| Status | `experimental` icon:circle-o[]
-| Label | has IGSN
-| Definition | Relation between a Sample and an IGSN.
-| Scope note | 
-| Implementation | A `tern:Sample` or `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`.
-| Cardinality | Exactly 1
-| Node kind | 
-| Class type | link:https://w3id.org/tern/ontologies/tern/IGSN[`tern:IGSN`]
 | Expected values | 
 |===
