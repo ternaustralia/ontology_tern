@@ -243,6 +243,13 @@ target_classes:
       max_count: 1
       min_count: 1
       path: https://w3id.org/tern/ontologies/tern/hasIGSN
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/featureType
+    - min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: http://www.w3.org/ns/sosa/isSampleOf
   https://w3id.org/tern/ontologies/tern/Method:
     required_properties:
     - min_count: 1
@@ -330,6 +337,11 @@ target_classes:
         - https://w3id.org/tern/ontologies/tern/Observation
         - https://w3id.org/tern/ontologies/tern/ObservationCollection
       path: http://www.w3.org/ns/sosa/hasMember
+    - class: https://w3id.org/tern/ontologies/tern/SiteVisit
+      max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/hasSiteVisit
   https://w3id.org/tern/ontologies/tern/Platform:
     required_properties:
     - datatype: http://www.w3.org/2001/XMLSchema#date
@@ -367,6 +379,9 @@ target_classes:
     - min_count: 1
       node_kind: http://www.w3.org/ns/shacl#IRI
       path: http://www.w3.org/ns/ssn/implements
+    - min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#IRI
+      path: https://w3id.org/tern/ontologies/tern/systemType
   https://w3id.org/tern/ontologies/tern/Sampling:
     required_properties:
     - class: https://w3id.org/tern/ontologies/tern/RDFDataset

@@ -1,12 +1,26 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix sdo: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
 
 # Rule: tern:hasIGSN must be an IRI of type tern:IGSN with required IGSN fields.
 <urn:example:material-sample-1>
     a tern:MaterialSample ;
+    sosa:isSampleOf <urn:example:feature-of-interest-1> ;
+    tern:featureType <https://example.com/sample-feature-type> ;
     tern:hasIGSN <urn:example:igsn-1> ;
+.
+
+<urn:example:feature-of-interest-1>
+    a tern:FeatureOfInterest ;
+    tern:featureType <https://example.com/sample-feature-type> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
 .
 
 <urn:example:igsn-1>
