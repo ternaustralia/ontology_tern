@@ -59,7 +59,7 @@
 |===
 | Property | Value
 
-| IRI | n077986d0ee964d47894f6ab79a1ede30b226[`Sample's sosa:isSampleOf or tern:hasSite`]
+| IRI | nde8e8ef9ad1c48369c1118832dbe0edab226[`Sample's sosa:isSampleOf or tern:hasSite`]
 | Shape IRI | https://w3id.org/tern/shapes/tern/Sample-isSampleOf
 | Status | `experimental` icon:circle-o[]
 | Label | is sample of or has site

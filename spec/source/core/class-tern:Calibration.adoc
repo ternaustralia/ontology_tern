@@ -125,7 +125,7 @@ link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Scope note | 
 | Implementation | A `tern:calibratesProperty` predicate _MUST_ have an IRI or blank node value of type `ssn-system:SystemProperty`.
 | Cardinality | 
-| Node kind | link:ne3fec7855abb47668ca127a308abd7f1b273[`ne3fec7855abb47668ca127a308abd7f1b273`]
+| Node kind | link:n81efc877f0634f1eb4b9e4a5539ae262b273[`n81efc877f0634f1eb4b9e4a5539ae262b273`]
 | Class type | link:http://www.w3.org/ns/ssn/systems/SystemProperty[`systems:SystemProperty`]
 | Expected values | 
 |===
@@ -201,7 +201,7 @@ link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Scope note | 
 | Implementation | A `tern:verifiesCapability` predicate _MUST_ have an IRI or blank node value of type `ssn-system:SystemCapability`.
 | Cardinality | 
-| Node kind | link:ne3fec7855abb47668ca127a308abd7f1b292[`ne3fec7855abb47668ca127a308abd7f1b292`]
+| Node kind | link:n81efc877f0634f1eb4b9e4a5539ae262b292[`n81efc877f0634f1eb4b9e4a5539ae262b292`]
 | Class type | link:http://www.w3.org/ns/ssn/systems/SystemCapability[`systems:SystemCapability`]
 | Expected values | 
 |===

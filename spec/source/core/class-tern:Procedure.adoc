@@ -22,7 +22,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/vocabulary[`tern:vocabulary`]
-| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b114
+| Shape IRI | n1941c0c85d614270bbfade6889e7e2a2b114
 | Status | `experimental` icon:circle-o[]
 | Label | vocabulary of procedure
 | Definition | The vocabulary of the procedure.
@@ -41,7 +41,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/ns/ssn/hasInput[`ssn:hasInput`]
-| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b115
+| Shape IRI | n1941c0c85d614270bbfade6889e7e2a2b115
 | Status | `experimental` icon:circle-o[]
 | Label | procedure has input
 | Definition | The input of the procedure.
@@ -60,7 +60,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
-| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b116
+| Shape IRI | n1941c0c85d614270bbfade6889e7e2a2b116
 | Status | `experimental` icon:circle-o[]
 | Label | value of procedure
 | Definition | The method value of the procedure.
@@ -79,7 +79,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/hasMethod[`tern:hasMethod`]
-| Shape IRI | n3ac0ab67de1b4372ae1feb78fc3fc924b117
+| Shape IRI | n1941c0c85d614270bbfade6889e7e2a2b117
 | Status | `experimental` icon:circle-o[]
 | Label | method of procedure
 | Definition | The method type of the procedure.

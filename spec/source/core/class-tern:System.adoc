@@ -22,7 +22,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2000/01/rdf-schema#label[`rdfs:label`]
-| Shape IRI | n61b64efe789c4f7a987fe364ada76c90b118
+| Shape IRI | ndd200a95ffbd4bdf99df60c90fd07e34b118
 | Status | `stable` icon:check-circle[]
 | Label | system label
 | Definition | The primary label or name of the system.

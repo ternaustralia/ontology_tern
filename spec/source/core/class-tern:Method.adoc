@@ -22,7 +22,7 @@
 | Property | Value
 
 | IRI | http://schema.org/timeRequired[`schema:timeRequired`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b51
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb51
 | Status | `experimental` icon:circle-o[]
 | Label | method required duration
 | Definition | The time required for the method.
@@ -41,7 +41,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2004/02/skos/core#note[`skos:note`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b56
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb56
 | Status | `stable` icon:check-circle[]
 | Label | note of method
 | Definition | Notes about the method.
@@ -60,7 +60,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/hasCategoricalCollection[`tern:hasCategoricalCollection`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b57
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb57
 | Status | `experimental` icon:circle-o[]
 | Label | categorial collection of method
 | Definition | The categorical collection of the method.
@@ -79,7 +79,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/hasParameter[`tern:hasParameter`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b58
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb58
 | Status | `experimental` icon:circle-o[]
 | Label | parameter of method
 | Definition | The parameters of the method.
@@ -98,7 +98,7 @@
 | Property | Value
 
 | IRI | http://purl.org/dc/terms/source[`dcterms:source`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b63
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb63
 | Status | `stable` icon:check-circle[]
 | Label | digital camera preferred label
 | Definition | The source of the method.
@@ -117,7 +117,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/instructions[`tern:instructions`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b68
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb68
 | Status | `stable` icon:check-circle[]
 | Label | method instructions
 | Definition | The instructions for the method.
@@ -136,7 +136,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2004/02/skos/core#definition[`skos:definition`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b75
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb75
 | Status | `stable` icon:check-circle[]
 | Label | method definition
 | Definition | The definition of the method.
@@ -155,7 +155,7 @@
 | Property | Value
 
 | IRI | http://purl.org/dc/terms/description[`dcterms:description`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b76
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb76
 | Status | `stable` icon:check-circle[]
 | Label | method description
 | Definition | A description of the method.
@@ -174,7 +174,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/additionalDocumentation[`tern:additionalDocumentation`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b81
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb81
 | Status | `stable` icon:check-circle[]
 | Label | method additional documentation
 | Definition | Links to additional online resources related to the method.
@@ -193,7 +193,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/equipment[`tern:equipment`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b88
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb88
 | Status | `stable` icon:check-circle[]
 | Label | method equipment
 | Definition | The equipment used for the method.
@@ -212,7 +212,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/purpose[`tern:purpose`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b95
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb95
 | Status | `stable` icon:check-circle[]
 | Label | method purpose
 | Definition | The purpose of the method.
@@ -231,7 +231,7 @@
 | Property | Value
 
 | IRI | https://w3id.org/tern/ontologies/tern/scope[`tern:scope`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b96
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb96
 | Status | `stable` icon:check-circle[]
 | Label | method scope
 | Definition | The scope of the method.
@@ -250,7 +250,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2004/02/skos/core#prefLabel[`skos:prefLabel`]
-| Shape IRI | n8fd9a06916d74986a8e1a1c27236fad0b97
+| Shape IRI | ndd97c4101f58445d8b64d4c7ddc590dfb97
 | Status | `stable` icon:check-circle[]
 | Label | method preferred label
 | Definition | The preferred label of the method.
@@ -262,19 +262,19 @@
 | Expected values | 
 |===
 
-[#class-tern:Method-dcterms:version]
-===== Property: dcterms:version
+[#class-tern:Method-dcat:version]
+===== Property: dcat:version
 [cols="1,4"]
 |===
 | Property | Value
 
-| IRI | http://purl.org/dc/terms/version[`dcterms:version`]
-| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-version
+| IRI | http://www.w3.org/ns/dcat#version[`dcat:version`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcat-version
 | Status | `experimental` icon:circle-o[]
 | Label | version
-| Definition | The version of the resource.
+| Definition | The version indicator (name or identifier) of the resource.
 | Scope note | 
-| Implementation | A `dcterms:version` predicate _MUST_ have a literal value with the datatype `xsd:string`.
+| Implementation | A `dcat:version` predicate _MUST_ have a literal value with the datatype `xsd:string`.
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
 | Class type | link:http://www.w3.org/2001/XMLSchema#string[`xmlschema#:string`]

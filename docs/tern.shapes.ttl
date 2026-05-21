@@ -853,7 +853,7 @@ tern-shapes:Method
             sh:name "skos:prefLabel" ;
             sh:path skos:prefLabel
         ] ,
-        tern-shapes:dcterms-version ,
+        tern-shapes:dcat-version ,
         tern-shapes:tern-undertakenAfter ,
         tern-shapes:tern-undertakenBefore ,
         tern-shapes:tern-undertakenComplementarily ,
@@ -4271,16 +4271,16 @@ tern-shapes:void-inDataset
     sh:path void:inDataset ;
 .
 
-tern-shapes:dcterms-version
+tern-shapes:dcat-version
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
     skos:prefLabel "version" ;
     sh:datatype xsd:string ;
-    sh:description "The version of the resource." ;
-    sh:message "A `dcterms:version` predicate _MUST_ have a literal value with the datatype `xsd:string`." ;
-    sh:name "dcterms:version" ;
+    sh:description "The version indicator (name or identifier) of the resource." ;
+    sh:message "A `dcat:version` predicate _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "dcat:version" ;
     sh:nodeKind sh:Literal ;
-    sh:path dcterms:version ;
+    sh:path dcat:version ;
 .
 
 tern-shapes:sosa-isObservedBy
