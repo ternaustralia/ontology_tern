@@ -58,6 +58,7 @@ tern-shapes:Attribute
     sh:property
         tern-shapes:dcterms-type ,
         tern-shapes:tern-attribute ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-hasSimpleValue ,
         tern-shapes:tern-hasValue ,
         tern-shapes:tern-isAttributeOf ,
@@ -133,10 +134,16 @@ tern-shapes:Deployment
     a sh:NodeShape ;
     rdfs:label "Deployment" ;
     sh:property
+        tern-shapes:Deployment-usedProcedure ,
+        tern-shapes:dcterms-identifier ,
         tern-shapes:geo-hasGeometry ,
+        tern-shapes:prov-endedAtTime ,
+        tern-shapes:prov-startedAtTime ,
+        tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:sdo-spatial ,
         tern-shapes:ssn-deployedOnPlatform ,
-        tern-shapes:ssn-deployedSystem ;
+        tern-shapes:ssn-deployedSystem ,
+        tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Deployment ;
 .
 
@@ -296,6 +303,7 @@ tern-shapes:FeatureOfInterest
         tern-shapes:sdo-spatial ,
         tern-shapes:sosa-hasSample ,
         tern-shapes:sosa-isFeatureOfInterestOf ,
+        tern-shapes:sosa-isSampleOf ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-hasSite ,
         tern-shapes:void-inDataset ;
@@ -621,9 +629,13 @@ tern-shapes:MaterialSample
     a sh:NodeShape ;
     rdfs:label "Material sample" ;
     sh:property
+        tern-shapes:MaterialSample-featureType ,
+        tern-shapes:MaterialSample-isSampleOf ,
         tern-shapes:dwc-materialSampleID ,
+        tern-shapes:geo-hasGeometry ,
         tern-shapes:tern-hasAttribute ,
-        tern-shapes:tern-hasIGSN ;
+        tern-shapes:tern-hasIGSN ,
+        tern-shapes:tern-isSubSampleOf ;
     sh:targetClass tern:MaterialSample ;
 .
 
@@ -841,6 +853,7 @@ tern-shapes:Method
             sh:name "skos:prefLabel" ;
             sh:path skos:prefLabel
         ] ,
+        tern-shapes:dcat-version ,
         tern-shapes:tern-undertakenAfter ,
         tern-shapes:tern-undertakenBefore ,
         tern-shapes:tern-undertakenComplementarily ,
@@ -954,12 +967,17 @@ tern-shapes:ObservationCollection
     sh:property
         tern-shapes:ObservationCollection-hasFeatureOfInterest ,
         tern-shapes:ObservationCollection-hasMember ,
+        tern-shapes:ObservationCollection-hasSiteVisit ,
         tern-shapes:ObservationCollection-hasUltimateFeatureOfInterest ,
         tern-shapes:ObservationCollection-madeBySensor ,
         tern-shapes:ObservationCollection-observedProperty ,
         tern-shapes:ObservationCollection-phenomenonTime ,
         tern-shapes:ObservationCollection-resultTime ,
         tern-shapes:ObservationCollection-usedProcedure ,
+        tern-shapes:dcterms-identifier ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:prov-wasAssociatedWith ,
+        tern-shapes:sosa-isObservedBy ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:ObservationCollection ;
@@ -1029,6 +1047,12 @@ tern-shapes:Procedure
             sh:name "tern:hasMethod" ;
             sh:path tern:hasMethod
         ] ,
+        tern-shapes:Procedure-startedAtTime ,
+        tern-shapes:geo-hasGeometry ,
+        tern-shapes:prov-endedAtTime ,
+        tern-shapes:prov-wasAssociatedWith ,
+        tern-shapes:tern-hasAttribute ,
+        tern-shapes:tern-hasSurvey ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Procedure ;
 .
@@ -1069,8 +1093,11 @@ tern-shapes:Sample
     a sh:NodeShape ;
     rdfs:label "Sample" ;
     sh:property
+        tern-shapes:Sample-featureType ,
         tern-shapes:Sample-isResultOf ,
         tern-shapes:Sample-isSampleOf ,
+        tern-shapes:dcterms-identifier ,
+        tern-shapes:geo-hasGeometry ,
         tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Sample ;
 .
@@ -1080,7 +1107,11 @@ tern-shapes:Sampler
     rdfs:label "Sampler" ;
     sh:property
         tern-shapes:Sampler-implements ,
-        tern-shapes:sosa-madeSampling ;
+        tern-shapes:Sampler-systemType ,
+        tern-shapes:dcterms-identifier ,
+        tern-shapes:sosa-madeSampling ,
+        tern-shapes:ssn-hasSubSystem ,
+        tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Sampler ;
 .
 
@@ -1090,9 +1121,11 @@ tern-shapes:Sampling
     sh:property
         tern-shapes:Sampling-hasResult ,
         tern-shapes:Sampling-madeBySampler ,
+        tern-shapes:Sampling-startedAtTime ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
         tern-shapes:geo-hasGeometry ,
+        tern-shapes:prov-endedAtTime ,
         tern-shapes:prov-qualifiedAssociation ,
         tern-shapes:prov-wasAssociatedWith ,
         tern-shapes:rdfs-comment ,
@@ -1102,6 +1135,8 @@ tern-shapes:Sampling
         tern-shapes:sosa-usedProcedure ,
         tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-hasSiteVisit ,
+        tern-shapes:tern-hasSurvey ,
+        tern-shapes:tern-sampleCollectionTime ,
         tern-shapes:tern-samplingType ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Sampling ;
@@ -1113,7 +1148,9 @@ tern-shapes:Sensor
     sh:property
         tern-shapes:Sensor-implements ,
         tern-shapes:Sensor-madeObservation ,
-        tern-shapes:Sensor-observes ;
+        tern-shapes:Sensor-observes ,
+        tern-shapes:ssn-hasSubSystem ,
+        tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Sensor ;
 .
 
@@ -1128,6 +1165,7 @@ tern-shapes:Site
         tern-shapes:geo-sfWithin ,
         tern-shapes:sosa-hasSample ,
         tern-shapes:tern-hasAttribute ,
+        tern-shapes:tern-hasOutlookZone ,
         tern-shapes:tern-locationDescription ,
         tern-shapes:tern-siteDescription ;
     sh:targetClass tern:Site ;
@@ -1154,6 +1192,8 @@ tern-shapes:Survey
         tern-shapes:prov-qualifiedAssociation ,
         tern-shapes:prov-startedAtTime ,
         tern-shapes:prov-wasAssociatedWith ,
+        tern-shapes:tern-hasAttribute ,
+        tern-shapes:tern-hasSiteVisit ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Survey ;
 .
@@ -1189,6 +1229,7 @@ tern-shapes:System
         tern-shapes:ssn-system-hasOperatingProperty ,
         tern-shapes:ssn-system-hasSystemCapability ,
         tern-shapes:ssn-system-hasSystemProperty ,
+        tern-shapes:tern-hasAttribute ,
         tern-shapes:tern-hasCalibration ;
     sh:targetClass tern:System ;
 .
@@ -1255,7 +1296,8 @@ tern-shapes:Transect
         tern-shapes:Transect-transectDirection ,
         tern-shapes:Transect-transectEndPoint ,
         tern-shapes:Transect-transectStartPoint ,
-        tern-shapes:sosa-hasSample ;
+        tern-shapes:sosa-hasSample ,
+        tern-shapes:tern-hasAttribute ;
     sh:targetClass tern:Transect ;
 .
 
@@ -4227,4 +4269,201 @@ tern-shapes:void-inDataset
     sh:name "void:inDataset" ;
     sh:nodeKind sh:IRI ;
     sh:path void:inDataset ;
+.
+
+tern-shapes:dcat-version
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "version" ;
+    sh:datatype xsd:string ;
+    sh:description "The version indicator (name or identifier) of the resource." ;
+    sh:message "A `dcat:version` predicate _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "dcat:version" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcat:version ;
+.
+
+tern-shapes:sosa-isObservedBy
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is observed by" ;
+    sh:description "Relation between an ObservationCollection and a Sensor or Observer that recorded it." ;
+    sh:message "A `sosa:isObservedBy` predicate _MUST_ have a blank node or IRI value." ;
+    sh:name "sosa:isObservedBy" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path sosa:isObservedBy ;
+.
+
+tern-shapes:sosa-isSampleOf
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is sample of" ;
+    sh:description "Relation from a Sample to the FeatureOfInterest it represents." ;
+    sh:message "A `sosa:isSampleOf` predicate _MUST_ have an IRI value." ;
+    sh:name "sosa:isSampleOf" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:isSampleOf ;
+.
+
+tern-shapes:ssn-hasSubSystem
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has subsystem" ;
+    sh:description "A link from a System to one of its component subsystems." ;
+    sh:message "A `ssn:hasSubSystem` predicate _MUST_ have a blank node or IRI value." ;
+    sh:name "ssn:hasSubSystem" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path ssn:hasSubSystem ;
+.
+
+tern-shapes:tern-hasOutlookZone
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has outlook zone" ;
+    sh:description "A link to an outlook zone from which observations are made (e.g., the field of view of a vantage-point fauna count)." ;
+    sh:message "A `tern:hasOutlookZone` predicate _MUST_ have a blank node or an IRI value." ;
+    sh:name "tern:hasOutlookZone" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:hasOutlookZone ;
+.
+
+tern-shapes:tern-hasSurvey
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has survey" ;
+    sh:class tern:Survey ;
+    sh:description "A link to the Survey under which the subject activity was conducted." ;
+    sh:message "A `tern:hasSurvey` predicate _MUST_ have an IRI value of type `tern:Survey`." ;
+    sh:name "tern:hasSurvey" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:hasSurvey ;
+.
+
+tern-shapes:tern-isSubSampleOf
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is sub sample of" ;
+    sh:class tern:MaterialSample ;
+    sh:description "Link from a MaterialSample to its parent sample." ;
+    sh:message "A `tern:isSubSampleOf` predicate _MUST_ have an IRI value of type `tern:MaterialSample`." ;
+    sh:name "tern:isSubSampleOf" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:isSubSampleOf ;
+.
+
+tern-shapes:tern-sampleCollectionTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "sample collection time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The date and time at which a sample was collected during a Sampling activity." ;
+    sh:message "A `tern:sampleCollectionTime` predicate _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
+    sh:name "tern:sampleCollectionTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:sampleCollectionTime ;
+.
+
+tern-shapes:Deployment-usedProcedure
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "used procedure" ;
+    sh:description "A link from a Deployment to a re-usable Procedure or Method." ;
+    sh:message "A `sosa:usedProcedure` predicate on a `tern:Deployment` _MUST_ have an IRI value of type `tern:Method` or `tern:Procedure`." ;
+    sh:name "sosa:usedProcedure" ;
+    sh:or (
+            [
+                sh:class tern:Procedure
+            ]
+            [
+                sh:class tern:Method
+            ]
+        ) ;
+    sh:path sosa:usedProcedure ;
+.
+
+tern-shapes:MaterialSample-featureType
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "feature type" ;
+    sh:description "The feature type of a `tern:MaterialSample` from a controlled vocabulary." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:MaterialSample` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI." ;
+    sh:minCount 1 ;
+    sh:name "tern:featureType" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:featureType ;
+.
+
+tern-shapes:MaterialSample-isSampleOf
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is sample of" ;
+    sh:description "A `tern:MaterialSample` is a sample of one or more features of interest." ;
+    sh:message "A `tern:MaterialSample` _MUST_ have at least 1 `sosa:isSampleOf` predicate with an IRI value." ;
+    sh:minCount 1 ;
+    sh:name "sosa:isSampleOf" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:isSampleOf ;
+.
+
+tern-shapes:ObservationCollection-hasSiteVisit
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has site visit" ;
+    sh:class tern:SiteVisit ;
+    sh:description "An ObservationCollection must reference exactly one SiteVisit." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:ObservationCollection` _MUST_ have exactly 1 `tern:hasSiteVisit` predicate with an IRI value of type `tern:SiteVisit`." ;
+    sh:minCount 1 ;
+    sh:name "tern:hasSiteVisit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:hasSiteVisit ;
+.
+
+tern-shapes:Procedure-startedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "started at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which the Procedure started." ;
+    sh:message "A `prov:startedAtTime` predicate on a `tern:Procedure` _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:startedAtTime ;
+.
+
+tern-shapes:Sample-featureType
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "feature type" ;
+    sh:description "The feature type of a `tern:Sample` from a controlled vocabulary." ;
+    sh:message "A `tern:Sample` _MUST_ have at least 1 `tern:featureType` predicate where the value node is an IRI." ;
+    sh:minCount 1 ;
+    sh:name "tern:featureType" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:featureType ;
+.
+
+tern-shapes:Sampler-systemType
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "system type" ;
+    sh:description "The type of `tern:Sampler`. Values are from a controlled vocabulary." ;
+    sh:message "A `tern:Sampler` _MUST_ have at least 1 `tern:systemType` predicate with an IRI value." ;
+    sh:minCount 1 ;
+    sh:name "tern:systemType" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:systemType ;
+.
+
+tern-shapes:Sampling-startedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "started at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which the Sampling started." ;
+    sh:message "A `prov:startedAtTime` predicate on a `tern:Sampling` _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:startedAtTime ;
 .

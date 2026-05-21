@@ -26,6 +26,7 @@
 <urn:example:sample-1>
     a tern:Sample ;
     sosa:isSampleOf <urn:example:site-1> ;
+    tern:featureType <https://example.com/sample-feature-type> ;
 .
 
 <urn:example:site-1>

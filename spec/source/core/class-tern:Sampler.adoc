@@ -34,6 +34,44 @@
 | Expected values | 
 |===
 
+[#class-tern:Sampler-tern:systemType]
+===== Property: tern:systemType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/systemType[`tern:systemType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sampler-systemType
+| Status | `experimental` icon:circle-o[]
+| Label | system type
+| Definition | The type of `tern:Sampler`. Values are from a controlled vocabulary.
+| Scope note | 
+| Implementation | A `tern:Sampler` _MUST_ have at least 1 `tern:systemType` predicate with an IRI value.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sampler-dcterms:identifier]
+===== Property: dcterms:identifier
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/identifier[`dcterms:identifier`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-identifier
+| Status | `stable` icon:check-circle[]
+| Label | identifier
+| Definition | An unambiguous reference to the resource within a given context.
+| Scope note | 
+| Implementation | N/A
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
 [#class-tern:Sampler-sosa:madeSampling]
 ===== Property: sosa:madeSampling
 [cols="1,4"]
@@ -50,5 +88,43 @@
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
+| Expected values | 
+|===
+
+[#class-tern:Sampler-ssn:hasSubSystem]
+===== Property: ssn:hasSubSystem
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/ssn/hasSubSystem[`ssn:hasSubSystem`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/ssn-hasSubSystem
+| Status | `experimental` icon:circle-o[]
+| Label | has subsystem
+| Definition | A link from a System to one of its component subsystems.
+| Scope note | 
+| Implementation | A `ssn:hasSubSystem` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:Sampler-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
 | Expected values | 
 |===

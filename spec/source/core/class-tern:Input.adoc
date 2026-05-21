@@ -22,7 +22,7 @@
 | Property | Value
 
 | IRI | http://purl.org/dc/terms/description[`dcterms:description`]
-| Shape IRI | nb24bd8a488304acfa438a053cbc2bc64b30
+| Shape IRI | n08c279c9c13d46b5821bb0b424334294b30
 | Status | `experimental` icon:circle-o[]
 | Label | input description
 | Definition | The description of the input.
@@ -41,7 +41,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/1999/02/22-rdf-syntax-ns#value[`rdf:value`]
-| Shape IRI | nb24bd8a488304acfa438a053cbc2bc64b31
+| Shape IRI | n08c279c9c13d46b5821bb0b424334294b31
 | Status | `experimental` icon:circle-o[]
 | Label | input value
 | Definition | The value of the input.
@@ -60,7 +60,7 @@
 | Property | Value
 
 | IRI | http://www.w3.org/2000/01/rdf-schema#label[`rdfs:label`]
-| Shape IRI | nb24bd8a488304acfa438a053cbc2bc64b32
+| Shape IRI | n08c279c9c13d46b5821bb0b424334294b32
 | Status | `experimental` icon:circle-o[]
 | Label | input label
 | Definition | The label of the input.

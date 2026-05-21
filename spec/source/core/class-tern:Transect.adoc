@@ -171,3 +171,22 @@ link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
 link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`]
 | Expected values | 
 |===
+
+[#class-tern:Transect-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Expected values | 
+|===

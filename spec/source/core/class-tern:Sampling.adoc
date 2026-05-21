@@ -65,6 +65,25 @@ link:https://w3id.org/tern/ontologies/tern/Site[`tern:Site`]
 | Expected values | 
 |===
 
+[#class-tern:Sampling-prov:startedAtTime]
+===== Property: prov:startedAtTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#startedAtTime[`prov:startedAtTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/Sampling-startedAtTime
+| Status | `experimental` icon:circle-o[]
+| Label | started at time
+| Definition | The time at which the Sampling started.
+| Scope note | 
+| Implementation | A `prov:startedAtTime` predicate on a `tern:Sampling` _MUST_ have a literal value with the datatype `xsd:dateTime`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
+| Expected values | 
+|===
+
 [#class-tern:Sampling-dcterms:identifier]
 ===== Property: dcterms:identifier
 [cols="1,4"]
@@ -119,6 +138,25 @@ link:https://w3id.org/tern/ontologies/tern/Site[`tern:Site`]
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-prov:endedAtTime]
+===== Property: prov:endedAtTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#endedAtTime[`prov:endedAtTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-endedAtTime
+| Status | `stable` icon:check-circle[]
+| Label | ended at time
+| Definition | The time at which an activity ended.
+| Scope note | 
+| Implementation | A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
 | Expected values | 
 |===
 
@@ -298,6 +336,44 @@ link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-tern:hasSurvey]
+===== Property: tern:hasSurvey
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSurvey[`tern:hasSurvey`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSurvey
+| Status | `experimental` icon:circle-o[]
+| Label | has survey
+| Definition | A link to the Survey under which the subject activity was conducted.
+| Scope note | 
+| Implementation | A `tern:hasSurvey` predicate _MUST_ have an IRI value of type `tern:Survey`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Survey[`tern:Survey`]
+| Expected values | 
+|===
+
+[#class-tern:Sampling-tern:sampleCollectionTime]
+===== Property: tern:sampleCollectionTime
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/sampleCollectionTime[`tern:sampleCollectionTime`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-sampleCollectionTime
+| Status | `experimental` icon:circle-o[]
+| Label | sample collection time
+| Definition | The date and time at which a sample was collected during a Sampling activity.
+| Scope note | 
+| Implementation | A `tern:sampleCollectionTime` predicate _MUST_ have a literal value with the datatype `xsd:dateTime`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#Literal[`sh:Literal`]
+| Class type | link:http://www.w3.org/2001/XMLSchema#dateTime[`xmlschema#:dateTime`]
 | Expected values | 
 |===
 

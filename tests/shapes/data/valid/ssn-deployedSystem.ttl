@@ -1,10 +1,13 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Rule: ssn:deployedSystem must be an IRI of type tern:System.
 <urn:example:deployment-2>
     a tern:Deployment ;
+    prov:startedAtTime "2020-01-01T00:00:00Z"^^xsd:dateTime ;
     ssn:deployedSystem <urn:example:system-1> ;
 .
 
