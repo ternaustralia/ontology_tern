@@ -233,6 +233,12 @@ tern:EcosystemProcessesSite
     skos:definition "An ecological Site that usually hosts a Flux Tower." ;
 .
 
+tern:Extent
+    a owl:Class ;
+    rdfs:label "Extent" ;
+    skos:definition "A spatial and/or temporal extent that describes the bounding region or time period a resource refers to." ;
+.
+
 tern:Float
     a owl:Class ;
     reg:status reg:statusStable ;
@@ -1303,6 +1309,51 @@ tern:isSiteVisitOf
     a owl:ObjectProperty ;
     rdfs:label "is site visit of" ;
     owl:inverseOf tern:isSiteVisitOf ;
+.
+
+tern:hasExtent
+    a owl:ObjectProperty ;
+    rdfs:label "has extent" ;
+    rdfs:range tern:Extent ;
+    skos:definition "Link to an [Extent](https://w3id.org/tern/ontologies/tern/Extent) describing the spatial and/or temporal coverage of the subject." ;
+.
+
+tern:hasOutlookZone
+    a owl:ObjectProperty ;
+    rdfs:label "has outlook zone" ;
+    skos:definition "Link to an outlook zone from which observations are made (e.g., the field of view of a vantage-point fauna count)." ;
+.
+
+tern:hasSubSample
+    a owl:ObjectProperty ;
+    rdfs:label "has sub sample" ;
+    rdfs:range tern:MaterialSample ;
+    owl:inverseOf tern:isSubSampleOf ;
+    skos:definition "Link from a [MaterialSample](https://w3id.org/tern/ontologies/tern/MaterialSample) to a child sample derived from it." ;
+.
+
+tern:hasSurvey
+    a owl:ObjectProperty ;
+    rdfs:label "has survey" ;
+    rdfs:range tern:Survey ;
+    skos:definition "Link to a [Survey](https://w3id.org/tern/ontologies/tern/Survey) under which the subject activity was conducted." ;
+.
+
+tern:isSubSampleOf
+    a owl:ObjectProperty ;
+    rdfs:label "is sub sample of" ;
+    rdfs:domain tern:MaterialSample ;
+    rdfs:range tern:MaterialSample ;
+    owl:inverseOf tern:hasSubSample ;
+    skos:definition "Link from a [MaterialSample](https://w3id.org/tern/ontologies/tern/MaterialSample) to its parent sample." ;
+.
+
+tern:sampleCollectionTime
+    a owl:DatatypeProperty ;
+    rdfs:label "sample collection time" ;
+    rdfs:domain tern:Sampling ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date and time at which a sample was collected during a [Sampling](https://w3id.org/tern/ontologies/tern/Sampling) activity." ;
 .
 
 <https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb>
