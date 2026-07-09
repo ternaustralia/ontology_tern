@@ -158,9 +158,7 @@ tern:Dataset
     rdfs:label "Dataset" ;
     rdfs:subClassOf dcat:Dataset ;
     skos:definition "A collection of data, published or curated by a single agent, and available for access or download in one or more representations." ;
-    skos:scopeNote
-        "This class describes the actual dataset as published by the dataset provider. In cases where a distinction between the actual dataset and its entry in the catalog is necessary (because metadata such as modification date might differ), the catalog record class can be used for the latter." ,
-        "This class describes the conceptual dataset. One or more representations might be available, with differing schematic layouts and formats or serializations." ;
+    skos:scopeNote "Use this class for the dataset as a conceptual resource published or curated by a provider. It is distinct from a catalog record that describes the dataset, and from any distribution that provides a particular representation, format, serialization, or access method for the dataset." ;
 .
 
 tern:Date
