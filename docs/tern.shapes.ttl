@@ -225,6 +225,25 @@ tern-shapes:Dimension
         [
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
+            skos:prefLabel "diemnsion width" ;
+            sh:description "The width dimension." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
+            sh:minCount 1 ;
+            sh:name "tern:width" ;
+            sh:or (
+                    [
+                        sh:datatype xsd:double
+                    ]
+                    [
+                        sh:datatype xsd:integer
+                    ]
+                ) ;
+            sh:path tern:width
+        ] ,
+        [
+            a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
             skos:prefLabel "dimension unit" ;
             sh:class qudt:Unit ;
             sh:description "The unit of measurement for the dimensions." ;
@@ -252,25 +271,6 @@ tern-shapes:Dimension
                     ]
                 ) ;
             sh:path tern:length
-        ] ,
-        [
-            a sh:PropertyShape ;
-            reg:status reg:statusExperimental ;
-            skos:prefLabel "diemnsion width" ;
-            sh:description "The width dimension." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
-            sh:minCount 1 ;
-            sh:name "tern:width" ;
-            sh:or (
-                    [
-                        sh:datatype xsd:double
-                    ]
-                    [
-                        sh:datatype xsd:integer
-                    ]
-                ) ;
-            sh:path tern:width
         ] ;
     sh:targetClass tern:Dimension ;
 .
@@ -520,49 +520,49 @@ tern-shapes:Instant
     sh:or (
             [
                 sh:property [
-                        sh:minCount 1 ;
                         sh:description "Presence of `time:inDateTime`." ;
                         sh:message "At least 1 `time:inDateTime` predicate must be present." ;
+                        sh:minCount 1 ;
                         sh:path time:inDateTime
                     ]
             ]
             [
                 sh:property [
-                        sh:minCount 1 ;
                         sh:description "Presence of `time:inTimePosition`." ;
                         sh:message "At least 1 `time:inTimePosition` predicate must be present." ;
+                        sh:minCount 1 ;
                         sh:path time:inTimePosition
                     ]
             ]
             [
                 sh:property [
-                        sh:minCount 1 ;
                         sh:description "Presence of `time:inXSDDate`." ;
                         sh:message "At least 1 `time:inXSDDate` predicate must be present." ;
+                        sh:minCount 1 ;
                         sh:path time:inXSDDate
                     ]
             ]
             [
                 sh:property [
-                        sh:minCount 1 ;
                         sh:description "Presence of `time:inXSDDateTimeStamp`." ;
                         sh:message "At least 1 `time:inXSDDateTimeStamp` predicate must be present." ;
+                        sh:minCount 1 ;
                         sh:path time:inXSDDateTimeStamp
                     ]
             ]
             [
                 sh:property [
-                        sh:minCount 1 ;
                         sh:description "Presence of `time:inXSDgYear`." ;
                         sh:message "At least 1 `time:inXSDgYear` predicate must be present." ;
+                        sh:minCount 1 ;
                         sh:path time:inXSDgYear
                     ]
             ]
             [
                 sh:property [
-                        sh:minCount 1 ;
                         sh:description "Presence of `time:inXSDgYearMonth`." ;
                         sh:message "At least 1 `time:inXSDgYearMonth` predicate must be present." ;
+                        sh:minCount 1 ;
                         sh:path time:inXSDgYearMonth
                     ]
             ]
@@ -660,6 +660,10 @@ tern-shapes:Method
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
             skos:prefLabel "method required duration" ;
+            sh:description "The time required for the method." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `schema:timeRequired` predicate with a string or duration value." ;
+            sh:name "schema:timeRequired" ;
             sh:or (
                     [
                         sh:nodeKind sh:Literal
@@ -668,20 +672,16 @@ tern-shapes:Method
                         sh:datatype xsd:duration
                     ]
                 ) ;
-            sh:description "The time required for the method." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have at most 1 `schema:timeRequired` predicate with a string or duration value." ;
-            sh:name "schema:timeRequired" ;
             sh:path <http://schema.org/timeRequired>
         ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
             skos:prefLabel "note of method" ;
-            sh:nodeKind sh:Literal ;
             sh:description "Notes about the method." ;
             sh:message "If present, `skos:note` predicates on a `tern:Method` _MUST_ have string values." ;
             sh:name "skos:note" ;
+            sh:nodeKind sh:Literal ;
             sh:path skos:note
         ] ,
         [
@@ -698,6 +698,9 @@ tern-shapes:Method
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
             skos:prefLabel "parameter of method" ;
+            sh:description "The parameters of the method." ;
+            sh:message "If present, `tern:hasParameter` predicates on a `tern:Method` _MUST_ have values that are `skos:Concept` nodes or string literals." ;
+            sh:name "tern:hasParameter" ;
             sh:or (
                     [
                         sh:class skos:Concept
@@ -706,9 +709,6 @@ tern-shapes:Method
                         sh:nodeKind sh:Literal
                     ]
                 ) ;
-            sh:description "The parameters of the method." ;
-            sh:message "If present, `tern:hasParameter` predicates on a `tern:Method` _MUST_ have values that are `skos:Concept` nodes or string literals." ;
-            sh:name "tern:hasParameter" ;
             sh:path tern:hasParameter
         ] ,
         [
@@ -717,6 +717,7 @@ tern-shapes:Method
             skos:prefLabel "digital camera preferred label" ;
             sh:description "The source of the method." ;
             sh:message "A `tern:Method` _MUST_ have at least 1 `dcterms:source` predicate with a string or URI value." ;
+            sh:minCount 1 ;
             sh:name "dcterms:source" ;
             sh:or (
                     [
@@ -726,13 +727,16 @@ tern-shapes:Method
                         sh:datatype xsd:anyURI
                     ]
                 ) ;
-            sh:minCount 1 ;
             sh:path dcterms:source
         ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
             skos:prefLabel "method instructions" ;
+            sh:description "The instructions for the method." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:instructions` predicate with either an `rdf:Seq` value or an `rdf:HTML` or string literal." ;
+            sh:name "tern:instructions" ;
             sh:or (
                     [
                         sh:class rdf:Seq
@@ -744,21 +748,17 @@ tern-shapes:Method
                         sh:nodeKind sh:Literal
                     ]
                 ) ;
-            sh:description "The instructions for the method." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:instructions` predicate with either an `rdf:Seq` value or an `rdf:HTML` or string literal." ;
-            sh:name "tern:instructions" ;
             sh:path tern:instructions
         ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
             skos:prefLabel "method definition" ;
-            sh:nodeKind sh:Literal ;
             sh:description "The definition of the method." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Method` _MAY_ have at most 1 `skos:definition` predicate with a string value." ;
             sh:name "skos:definition" ;
+            sh:nodeKind sh:Literal ;
             sh:path skos:definition
         ] ,
         [
@@ -770,7 +770,7 @@ tern-shapes:Method
             sh:name "dcterms:description" ;
             sh:or (
                     [
-                        sh:nodeKind sh:Literal ;
+                        sh:nodeKind sh:Literal
                     ]
                     [
                         sh:datatype rdf:HTML
@@ -802,6 +802,10 @@ tern-shapes:Method
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
             skos:prefLabel "method equipment" ;
+            sh:description "The equipment used for the method." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:equipment` predicate with a value of type `skos:Concept`, string literal, or HTML literal." ;
+            sh:name "tern:equipment" ;
             sh:or (
                     [
                         sh:class skos:Concept
@@ -813,44 +817,40 @@ tern-shapes:Method
                         sh:datatype rdf:HTML
                     ]
                 ) ;
-            sh:description "The equipment used for the method." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Method` _MAY_ have at most 1 `tern:equipment` predicate with a value of type `skos:Concept`, string literal, or HTML literal." ;
-            sh:name "tern:equipment" ;
             sh:path tern:equipment
         ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
             skos:prefLabel "method purpose" ;
-            sh:nodeKind sh:Literal ;
             sh:description "The purpose of the method." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Method` _MAY_ have at most 1 `tern:purpose` predicate with a string value." ;
             sh:name "tern:purpose" ;
+            sh:nodeKind sh:Literal ;
             sh:path tern:purpose
         ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
             skos:prefLabel "method scope" ;
-            sh:nodeKind sh:Literal ;
             sh:description "The scope of the method." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Method` _MAY_ have at most 1 `tern:scope` predicate with a string value." ;
             sh:name "tern:scope" ;
+            sh:nodeKind sh:Literal ;
             sh:path tern:scope
         ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
             skos:prefLabel "method preferred label" ;
-            sh:nodeKind sh:Literal ;
             sh:description "The preferred label of the method." ;
             sh:maxCount 1 ;
             sh:message "A `tern:Method` _MUST_ have exactly 1 `skos:prefLabel` predicate with a string value." ;
             sh:minCount 1 ;
             sh:name "skos:prefLabel" ;
+            sh:nodeKind sh:Literal ;
             sh:path skos:prefLabel
         ] ,
         tern-shapes:dcat-version ,
@@ -866,29 +866,6 @@ tern-shapes:ObservableProperty
     rdfs:label "Observable Property" ;
     reg:status reg:statusStable ;
     sh:property
-        [
-            a sh:PropertyShape ;
-            reg:status reg:statusExperimental ;
-            skos:prefLabel "local value of observable property" ;
-            sh:class skos:Concept ;
-            sh:description "The local value of the observable property." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:ObservableProperty` _MAY_ have at most 1 `tern:localValue` predicate with a value of type `skos:Concept`." ;
-            sh:name "tern:localValue" ;
-            sh:path tern:localValue
-        ] ,
-        [
-            a sh:PropertyShape ;
-            reg:status reg:statusExperimental ;
-            skos:prefLabel "value of observable property" ;
-            sh:class tern:Parameter ;
-            sh:description "The parameter value of the observable property." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:ObservableProperty` _MUST_ have exactly 1 `rdf:value` predicate with a value of type `tern:Parameter`." ;
-            sh:minCount 1 ;
-            sh:name "rdf:value" ;
-            sh:path rdf:value
-        ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
@@ -931,6 +908,29 @@ tern-shapes:ObservableProperty
                     ]
                 ) ;
             sh:path tern:vocabulary
+        ] ,
+        [
+            a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "local value of observable property" ;
+            sh:class skos:Concept ;
+            sh:description "The local value of the observable property." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:ObservableProperty` _MAY_ have at most 1 `tern:localValue` predicate with a value of type `skos:Concept`." ;
+            sh:name "tern:localValue" ;
+            sh:path tern:localValue
+        ] ,
+        [
+            a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "value of observable property" ;
+            sh:class tern:Parameter ;
+            sh:description "The parameter value of the observable property." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:ObservableProperty` _MUST_ have exactly 1 `rdf:value` predicate with a value of type `tern:Parameter`." ;
+            sh:minCount 1 ;
+            sh:name "rdf:value" ;
+            sh:path rdf:value
         ] ;
     sh:targetClass tern:ObservableProperty ;
 .
@@ -1202,14 +1202,6 @@ tern-shapes:System
     a sh:NodeShape ;
     rdfs:label "System" ;
     sh:property
-        tern-shapes:System-hasDeployment ,
-        tern-shapes:System-isHostedBy ,
-        tern-shapes:System-systemType ,
-        tern-shapes:dcat-contactPoint ,
-        tern-shapes:dcterms-source ,
-        tern-shapes:dcterms-type ,
-        tern-shapes:schema-serialNumber ,
-        tern-shapes:skos-altLabel ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusStable ;
@@ -1222,6 +1214,14 @@ tern-shapes:System
             sh:name "rdfs:label" ;
             sh:path rdfs:label
         ] ,
+        tern-shapes:System-hasDeployment ,
+        tern-shapes:System-isHostedBy ,
+        tern-shapes:System-systemType ,
+        tern-shapes:dcat-contactPoint ,
+        tern-shapes:dcterms-source ,
+        tern-shapes:dcterms-type ,
+        tern-shapes:schema-serialNumber ,
+        tern-shapes:skos-altLabel ,
         tern-shapes:skos-exactMatch ,
         tern-shapes:skos-prefLabel ,
         tern-shapes:skos-scopeNote ,
@@ -1305,35 +1305,10 @@ tern-shapes:Value
     a sh:NodeShape ;
     rdfs:label "Value" ;
     sh:property
-        tern-shapes:Value-value ,
         tern-shapes:Value-unit ,
+        tern-shapes:Value-value ,
         tern-shapes:void-inDataset ;
     sh:targetClass tern:Value ;
-.
-
-tern-shapes:Value-value
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "value" ;
-    sh:description "The value of the `tern:Value`." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
-    sh:minCount 1 ;
-    sh:name "rdf:value" ;
-    sh:nodeKind sh:Literal ;
-    sh:path rdf:value ;
-.
-
-tern-shapes:Value-unit
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "unit" ;
-    sh:description "The unit of the `tern:Value`." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Value` _MAY_ have maximum one `tern:unit` predicate where the value is an IRI." ;
-    sh:name "tern:unit" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:unit ;
 .
 
 tern-shapes:VerticalExtent
@@ -1646,6 +1621,24 @@ tern-shapes:DateTime-value
     sh:path rdf:value ;
 .
 
+tern-shapes:Deployment-usedProcedure
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "used procedure" ;
+    sh:description "A link from a Deployment to a re-usable Procedure or Method." ;
+    sh:message "A `sosa:usedProcedure` predicate on a `tern:Deployment` _MUST_ have an IRI value of type `tern:Method` or `tern:Procedure`." ;
+    sh:name "sosa:usedProcedure" ;
+    sh:or (
+            [
+                sh:class tern:Procedure
+            ]
+            [
+                sh:class tern:Method
+            ]
+        ) ;
+    sh:path sosa:usedProcedure ;
+.
+
 tern-shapes:FeatureOfInterest-featureType
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -1819,6 +1812,31 @@ tern-shapes:Integer-value
     sh:path rdf:value ;
 .
 
+tern-shapes:MaterialSample-featureType
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "feature type" ;
+    sh:description "The feature type of a `tern:MaterialSample` from a controlled vocabulary." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:MaterialSample` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI." ;
+    sh:minCount 1 ;
+    sh:name "tern:featureType" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:featureType ;
+.
+
+tern-shapes:MaterialSample-isSampleOf
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is sample of" ;
+    sh:description "A `tern:MaterialSample` is a sample of one or more features of interest." ;
+    sh:message "A `tern:MaterialSample` _MUST_ have at least 1 `sosa:isSampleOf` predicate with an IRI value." ;
+    sh:minCount 1 ;
+    sh:name "sosa:isSampleOf" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:isSampleOf ;
+.
+
 tern-shapes:Observation-hasResult
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -1878,6 +1896,20 @@ tern-shapes:ObservationCollection-hasMember
             ]
         ) ;
     sh:path sosa:hasMember ;
+.
+
+tern-shapes:ObservationCollection-hasSiteVisit
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has site visit" ;
+    sh:class tern:SiteVisit ;
+    sh:description "An ObservationCollection must reference exactly one SiteVisit." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:ObservationCollection` _MUST_ have exactly 1 `tern:hasSiteVisit` predicate with an IRI value of type `tern:SiteVisit`." ;
+    sh:minCount 1 ;
+    sh:name "tern:hasSiteVisit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:hasSiteVisit ;
 .
 
 tern-shapes:ObservationCollection-hasUltimateFeatureOfInterest
@@ -1979,6 +2011,18 @@ tern-shapes:ObservationCollection-usedProcedure
     sh:name "sosa:usedProcedure" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:usedProcedure ;
+.
+
+tern-shapes:Procedure-startedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "started at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which the Procedure started." ;
+    sh:message "A `prov:startedAtTime` predicate on a `tern:Procedure` _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:RDFDataset-contributor
@@ -2161,6 +2205,18 @@ tern-shapes:Result-isResultOf
     sh:path sosa:isResultOf ;
 .
 
+tern-shapes:Sample-featureType
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "feature type" ;
+    sh:description "The feature type of a `tern:Sample` from a controlled vocabulary." ;
+    sh:message "A `tern:Sample` _MUST_ have at least 1 `tern:featureType` predicate where the value node is an IRI." ;
+    sh:minCount 1 ;
+    sh:name "tern:featureType" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:featureType ;
+.
+
 tern-shapes:Sample-isResultOf
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2219,6 +2275,18 @@ tern-shapes:Sampler-implements
     sh:path ssn:implements ;
 .
 
+tern-shapes:Sampler-systemType
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "system type" ;
+    sh:description "The type of `tern:Sampler`. Values are from a controlled vocabulary." ;
+    sh:message "A `tern:Sampler` _MUST_ have at least 1 `tern:systemType` predicate with an IRI value." ;
+    sh:minCount 1 ;
+    sh:name "tern:systemType" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:systemType ;
+.
+
 tern-shapes:Sampling-hasResult
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2251,6 +2319,18 @@ tern-shapes:Sampling-madeBySampler
     sh:name "sosa:madeBySampler" ;
     sh:nodeKind sh:IRI ;
     sh:path sosa:madeBySampler ;
+.
+
+tern-shapes:Sampling-startedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "started at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which the Sampling started." ;
+    sh:message "A `prov:startedAtTime` predicate on a `tern:Sampling` _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:Sensor-implements
@@ -2931,6 +3011,31 @@ tern-shapes:Transect-transectStartPoint
     sh:path tern:transectStartPoint ;
 .
 
+tern-shapes:Value-unit
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "unit" ;
+    sh:description "The unit of the `tern:Value`." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Value` _MAY_ have maximum one `tern:unit` predicate where the value is an IRI." ;
+    sh:name "tern:unit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:unit ;
+.
+
+tern-shapes:Value-value
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "value" ;
+    sh:description "The value of the `tern:Value`." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
+    sh:minCount 1 ;
+    sh:name "rdf:value" ;
+    sh:nodeKind sh:Literal ;
+    sh:path rdf:value ;
+.
+
 tern-shapes:dcat-contactPoint
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -2940,6 +3045,18 @@ tern-shapes:dcat-contactPoint
     sh:name "dcat:contactPoint" ;
     sh:nodeKind sh:IRIOrLiteral ;
     sh:path dcat:contactPoint ;
+.
+
+tern-shapes:dcat-version
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "version" ;
+    sh:datatype xsd:string ;
+    sh:description "The version indicator (name or identifier) of the resource." ;
+    sh:message "A `dcat:version` predicate _MUST_ have a literal value with the datatype `xsd:string`." ;
+    sh:name "dcat:version" ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcat:version ;
 .
 
 tern-shapes:dcterms-source
@@ -3131,6 +3248,28 @@ tern-shapes:sosa-isFeatureOfInterestOf
             ]
         ) ;
     sh:path sosa:isFeatureOfInterestOf ;
+.
+
+tern-shapes:sosa-isObservedBy
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is observed by" ;
+    sh:description "Relation between an ObservationCollection and a Sensor or Observer that recorded it." ;
+    sh:message "A `sosa:isObservedBy` predicate _MUST_ have a blank node or IRI value." ;
+    sh:name "sosa:isObservedBy" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path sosa:isObservedBy ;
+.
+
+tern-shapes:sosa-isSampleOf
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is sample of" ;
+    sh:description "Relation from a Sample to the FeatureOfInterest it represents." ;
+    sh:message "A `sosa:isSampleOf` predicate _MUST_ have an IRI value." ;
+    sh:name "sosa:isSampleOf" ;
+    sh:nodeKind sh:IRI ;
+    sh:path sosa:isSampleOf ;
 .
 
 tern-shapes:sosa-madeBySensor
@@ -3368,6 +3507,30 @@ tern-shapes:tern-hasCalibration
     sh:path tern:hasCalibration ;
 .
 
+tern-shapes:tern-hasIGSN
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has IGSN" ;
+    sh:class tern:IGSN ;
+    sh:description "Relation between a MaterialSample and an IGSN." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`." ;
+    sh:minCount 1 ;
+    sh:name "tern:hasIGSN" ;
+    sh:path tern:hasIGSN ;
+.
+
+tern-shapes:tern-hasOutlookZone
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has outlook zone" ;
+    sh:description "A link to an outlook zone from which observations are made (e.g., the field of view of a vantage-point fauna count)." ;
+    sh:message "A `tern:hasOutlookZone` predicate _MUST_ have a blank node or an IRI value." ;
+    sh:name "tern:hasOutlookZone" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path tern:hasOutlookZone ;
+.
+
 tern-shapes:tern-hasSimpleValue
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3416,6 +3579,18 @@ tern-shapes:tern-isAttributeOf
     sh:name "tern:isAttributeOf" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:isAttributeOf ;
+.
+
+tern-shapes:tern-isSubSampleOf
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "is sub sample of" ;
+    sh:class tern:MaterialSample ;
+    sh:description "Link from a MaterialSample to its parent sample." ;
+    sh:message "A `tern:isSubSampleOf` predicate _MUST_ have an IRI value of type `tern:MaterialSample`." ;
+    sh:name "tern:isSubSampleOf" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:isSubSampleOf ;
 .
 
 tern-shapes:tern-maxAltitude
@@ -3504,6 +3679,18 @@ tern-shapes:tern-purpose
     sh:message "A `tern:purpose` predicate has a literal value with the datatype `xsd:string`." ;
     sh:name "tern:purpose" ;
     sh:path tern:purpose ;
+.
+
+tern-shapes:tern-sampleCollectionTime
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "sample collection time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The date and time at which a sample was collected during a Sampling activity." ;
+    sh:message "A `tern:sampleCollectionTime` predicate _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
+    sh:name "tern:sampleCollectionTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path tern:sampleCollectionTime ;
 .
 
 tern-shapes:tern-sampleSubType
@@ -3840,9 +4027,9 @@ tern-shapes:time-unitType
             sh:qualifiedValueShape [
                     sh:class tern:Site ;
                     sh:property [
-                            sh:minCount 1 ;
                             sh:description "Site has spatial data." ;
                             sh:message "At least 1 `sdo:spatial` predicate must be present on the `tern:Site`." ;
+                            sh:minCount 1 ;
                             sh:path sdo:spatial
                         ]
                 ]
@@ -3887,6 +4074,17 @@ tern-shapes:sosa-resultTime
     sh:path tern:resultDateTime ;
 .
 
+tern-shapes:ssn-hasSubSystem
+    a sh:PropertyShape ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has subsystem" ;
+    sh:description "A link from a System to one of its component subsystems." ;
+    sh:message "A `ssn:hasSubSystem` predicate _MUST_ have a blank node or IRI value." ;
+    sh:name "ssn:hasSubSystem" ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path ssn:hasSubSystem ;
+.
+
 tern-shapes:tern-dateCommissioned
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3914,19 +4112,6 @@ tern-shapes:tern-dateDecommissioned
     sh:path tern:dateDecommissioned ;
 .
 
-tern-shapes:tern-hasIGSN
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "has IGSN" ;
-    sh:class tern:IGSN ;
-    sh:description "Relation between a MaterialSample and an IGSN." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`." ;
-    sh:minCount 1 ;
-    sh:name "tern:hasIGSN" ;
-    sh:path tern:hasIGSN ;
-.
-
 tern-shapes:tern-hasSite
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -3945,17 +4130,16 @@ tern-shapes:tern-hasSite
     sh:path tern:hasSite ;
 .
 
-tern-shapes:tern-hasSiteVisit
+tern-shapes:tern-hasSurvey
     a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "has site visit" ;
-    sh:class tern:SiteVisit ;
-    sh:description "A property that links, e.g., a Site to a Site Visit." ;
-    sh:maxCount 1 ;
-    sh:message "A maximum of 1 `tern:hasSiteVisit` _MAY_ exist where the value node is an IRI of type `tern:SiteVisit`." ;
-    sh:name "tern:hasSiteVisit" ;
+    reg:status reg:statusExperimental ;
+    skos:prefLabel "has survey" ;
+    sh:class tern:Survey ;
+    sh:description "A link to the Survey under which the subject activity was conducted." ;
+    sh:message "A `tern:hasSurvey` predicate _MUST_ have an IRI value of type `tern:Survey`." ;
+    sh:name "tern:hasSurvey" ;
     sh:nodeKind sh:IRI ;
-    sh:path tern:hasSiteVisit ;
+    sh:path tern:hasSurvey ;
 .
 
 tern-shapes:tern-locationDescription
@@ -4030,33 +4214,6 @@ tern-shapes:dcterms-description
     sh:path dcterms:description ;
 .
 
-tern-shapes:prov-endedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "ended at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity ended." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:name "prov:endedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:endedAtTime ;
-.
-
-tern-shapes:prov-startedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "started at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity started." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
-    sh:minCount 1 ;
-    sh:name "prov:startedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:startedAtTime ;
-.
-
 tern-shapes:rdfs-comment
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -4115,6 +4272,19 @@ tern-shapes:sosa-hasSample
     sh:path sosa:hasSample ;
 .
 
+tern-shapes:tern-hasSiteVisit
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has site visit" ;
+    sh:class tern:SiteVisit ;
+    sh:description "A property that links, e.g., a Site to a Site Visit." ;
+    sh:maxCount 1 ;
+    sh:message "A maximum of 1 `tern:hasSiteVisit` _MAY_ exist where the value node is an IRI of type `tern:SiteVisit`." ;
+    sh:name "tern:hasSiteVisit" ;
+    sh:nodeKind sh:IRI ;
+    sh:path tern:hasSiteVisit ;
+.
+
 <urn:shape:geo-hasGeometry-min-1>
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -4149,22 +4319,18 @@ tern-shapes:prov-qualifiedAssociation
     sh:path prov:qualifiedAssociation ;
 .
 
-tern-shapes:prov-wasAssociatedWith
+tern-shapes:prov-startedAtTime
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
-    skos:prefLabel "was associated with" ;
-    sh:description "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity." ;
-    sh:message "A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent` or `sdo:Person`." ;
-    sh:name "prov:wasAssociatedWith" ;
-    sh:or (
-            [
-                sh:class prov:Agent
-            ]
-            [
-                sh:class sdo:Person
-            ]
-        ) ;
-    sh:path prov:wasAssociatedWith ;
+    skos:prefLabel "started at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which an activity started." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:minCount 1 ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:sosa-usedProcedure
@@ -4199,26 +4365,17 @@ tern-shapes:tern-unit
     sh:path tern:unit ;
 .
 
-tern-shapes:dcterms-identifier
+tern-shapes:prov-endedAtTime
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
-    skos:prefLabel "identifier" ;
-    sh:description "An unambiguous reference to the resource within a given context." ;
-    sh:message "N/A" ;
-    sh:name "dcterms:identifier" ;
-    sh:path dcterms:identifier ;
-.
-
-tern-shapes:geo-hasGeometry
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "has geometry" ;
-    sh:class geo:Geometry ;
-    sh:description "A spatial representation for a given feature." ;
-    sh:message "A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value." ;
-    sh:name "geo:hasGeometry" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path geo:hasGeometry ;
+    skos:prefLabel "ended at time" ;
+    sh:datatype xsd:dateTime ;
+    sh:description "The time at which an activity ended." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:name "prov:endedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:path prov:endedAtTime ;
 .
 
 tern-shapes:sdo-spatial
@@ -4245,16 +4402,44 @@ tern-shapes:dcterms-type
     sh:path dcterms:type ;
 .
 
-tern-shapes:tern-hasAttribute
+tern-shapes:prov-wasAssociatedWith
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
-    skos:prefLabel "has attribute" ;
-    sh:class tern:Attribute ;
-    sh:description "Link to an Attribute." ;
-    sh:message "A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`." ;
-    sh:name "tern:hasAttribute" ;
+    skos:prefLabel "was associated with" ;
+    sh:description "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity." ;
+    sh:message "A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent` or `sdo:Person`." ;
+    sh:name "prov:wasAssociatedWith" ;
+    sh:or (
+            [
+                sh:class prov:Agent
+            ]
+            [
+                sh:class sdo:Person
+            ]
+        ) ;
+    sh:path prov:wasAssociatedWith ;
+.
+
+tern-shapes:dcterms-identifier
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "identifier" ;
+    sh:description "An unambiguous reference to the resource within a given context." ;
+    sh:message "N/A" ;
+    sh:name "dcterms:identifier" ;
+    sh:path dcterms:identifier ;
+.
+
+tern-shapes:geo-hasGeometry
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has geometry" ;
+    sh:class geo:Geometry ;
+    sh:description "A spatial representation for a given feature." ;
+    sh:message "A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value." ;
+    sh:name "geo:hasGeometry" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path tern:hasAttribute ;
+    sh:path geo:hasGeometry ;
 .
 
 tern-shapes:void-inDataset
@@ -4271,199 +4456,15 @@ tern-shapes:void-inDataset
     sh:path void:inDataset ;
 .
 
-tern-shapes:dcat-version
+tern-shapes:tern-hasAttribute
     a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "version" ;
-    sh:datatype xsd:string ;
-    sh:description "The version indicator (name or identifier) of the resource." ;
-    sh:message "A `dcat:version` predicate _MUST_ have a literal value with the datatype `xsd:string`." ;
-    sh:name "dcat:version" ;
-    sh:nodeKind sh:Literal ;
-    sh:path dcat:version ;
-.
-
-tern-shapes:sosa-isObservedBy
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "is observed by" ;
-    sh:description "Relation between an ObservationCollection and a Sensor or Observer that recorded it." ;
-    sh:message "A `sosa:isObservedBy` predicate _MUST_ have a blank node or IRI value." ;
-    sh:name "sosa:isObservedBy" ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has attribute" ;
+    sh:class tern:Attribute ;
+    sh:description "Link to an Attribute." ;
+    sh:message "A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`." ;
+    sh:name "tern:hasAttribute" ;
     sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path sosa:isObservedBy ;
+    sh:path tern:hasAttribute ;
 .
 
-tern-shapes:sosa-isSampleOf
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "is sample of" ;
-    sh:description "Relation from a Sample to the FeatureOfInterest it represents." ;
-    sh:message "A `sosa:isSampleOf` predicate _MUST_ have an IRI value." ;
-    sh:name "sosa:isSampleOf" ;
-    sh:nodeKind sh:IRI ;
-    sh:path sosa:isSampleOf ;
-.
-
-tern-shapes:ssn-hasSubSystem
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "has subsystem" ;
-    sh:description "A link from a System to one of its component subsystems." ;
-    sh:message "A `ssn:hasSubSystem` predicate _MUST_ have a blank node or IRI value." ;
-    sh:name "ssn:hasSubSystem" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path ssn:hasSubSystem ;
-.
-
-tern-shapes:tern-hasOutlookZone
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "has outlook zone" ;
-    sh:description "A link to an outlook zone from which observations are made (e.g., the field of view of a vantage-point fauna count)." ;
-    sh:message "A `tern:hasOutlookZone` predicate _MUST_ have a blank node or an IRI value." ;
-    sh:name "tern:hasOutlookZone" ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:path tern:hasOutlookZone ;
-.
-
-tern-shapes:tern-hasSurvey
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "has survey" ;
-    sh:class tern:Survey ;
-    sh:description "A link to the Survey under which the subject activity was conducted." ;
-    sh:message "A `tern:hasSurvey` predicate _MUST_ have an IRI value of type `tern:Survey`." ;
-    sh:name "tern:hasSurvey" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:hasSurvey ;
-.
-
-tern-shapes:tern-isSubSampleOf
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "is sub sample of" ;
-    sh:class tern:MaterialSample ;
-    sh:description "Link from a MaterialSample to its parent sample." ;
-    sh:message "A `tern:isSubSampleOf` predicate _MUST_ have an IRI value of type `tern:MaterialSample`." ;
-    sh:name "tern:isSubSampleOf" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:isSubSampleOf ;
-.
-
-tern-shapes:tern-sampleCollectionTime
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "sample collection time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The date and time at which a sample was collected during a Sampling activity." ;
-    sh:message "A `tern:sampleCollectionTime` predicate _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
-    sh:name "tern:sampleCollectionTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path tern:sampleCollectionTime ;
-.
-
-tern-shapes:Deployment-usedProcedure
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "used procedure" ;
-    sh:description "A link from a Deployment to a re-usable Procedure or Method." ;
-    sh:message "A `sosa:usedProcedure` predicate on a `tern:Deployment` _MUST_ have an IRI value of type `tern:Method` or `tern:Procedure`." ;
-    sh:name "sosa:usedProcedure" ;
-    sh:or (
-            [
-                sh:class tern:Procedure
-            ]
-            [
-                sh:class tern:Method
-            ]
-        ) ;
-    sh:path sosa:usedProcedure ;
-.
-
-tern-shapes:MaterialSample-featureType
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "feature type" ;
-    sh:description "The feature type of a `tern:MaterialSample` from a controlled vocabulary." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:MaterialSample` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI." ;
-    sh:minCount 1 ;
-    sh:name "tern:featureType" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:featureType ;
-.
-
-tern-shapes:MaterialSample-isSampleOf
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "is sample of" ;
-    sh:description "A `tern:MaterialSample` is a sample of one or more features of interest." ;
-    sh:message "A `tern:MaterialSample` _MUST_ have at least 1 `sosa:isSampleOf` predicate with an IRI value." ;
-    sh:minCount 1 ;
-    sh:name "sosa:isSampleOf" ;
-    sh:nodeKind sh:IRI ;
-    sh:path sosa:isSampleOf ;
-.
-
-tern-shapes:ObservationCollection-hasSiteVisit
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "has site visit" ;
-    sh:class tern:SiteVisit ;
-    sh:description "An ObservationCollection must reference exactly one SiteVisit." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:ObservationCollection` _MUST_ have exactly 1 `tern:hasSiteVisit` predicate with an IRI value of type `tern:SiteVisit`." ;
-    sh:minCount 1 ;
-    sh:name "tern:hasSiteVisit" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:hasSiteVisit ;
-.
-
-tern-shapes:Procedure-startedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "started at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which the Procedure started." ;
-    sh:message "A `prov:startedAtTime` predicate on a `tern:Procedure` _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
-    sh:name "prov:startedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:startedAtTime ;
-.
-
-tern-shapes:Sample-featureType
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "feature type" ;
-    sh:description "The feature type of a `tern:Sample` from a controlled vocabulary." ;
-    sh:message "A `tern:Sample` _MUST_ have at least 1 `tern:featureType` predicate where the value node is an IRI." ;
-    sh:minCount 1 ;
-    sh:name "tern:featureType" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:featureType ;
-.
-
-tern-shapes:Sampler-systemType
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "system type" ;
-    sh:description "The type of `tern:Sampler`. Values are from a controlled vocabulary." ;
-    sh:message "A `tern:Sampler` _MUST_ have at least 1 `tern:systemType` predicate with an IRI value." ;
-    sh:minCount 1 ;
-    sh:name "tern:systemType" ;
-    sh:nodeKind sh:IRI ;
-    sh:path tern:systemType ;
-.
-
-tern-shapes:Sampling-startedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "started at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which the Sampling started." ;
-    sh:message "A `prov:startedAtTime` predicate on a `tern:Sampling` _MUST_ have a literal value with the datatype `xsd:dateTime`." ;
-    sh:name "prov:startedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:path prov:startedAtTime ;
-.
