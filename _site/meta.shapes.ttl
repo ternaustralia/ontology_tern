@@ -1,0 +1,77 @@
+# baseURI: https://w3id.org/tern/shapes/meta/
+# imports: http://datashapes.org/dash
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/shacl#
+# imports: https://w3id.org/tern/ontologies/tern/
+# prefix: meta-shapes
+PREFIX meta-shapes: <https://w3id.org/tern/shapes/meta/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+meta-shapes:
+    a owl:Ontology ;
+.
+
+meta-shapes:NodeShape
+    a sh:NodeShape ;
+    rdfs:label "Node Shape" ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "rdfs:label" ;
+            sh:path rdfs:label
+        ] ;
+    sh:targetClass sh:NodeShape ;
+.
+
+meta-shapes:OWLClass
+    a sh:NodeShape ;
+    rdfs:label "OWL Class" ;
+    sh:property [
+            a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "rdfs:label" ;
+            sh:path rdfs:label
+        ] ;
+    sh:target [
+            a sh:SPARQLTarget ;
+            sh:select """
+            select ?this {
+                ?this a owl:Class .
+                filter(!isBlank(?this))
+            }
+        """
+        ] ;
+.
+
+meta-shapes:PropertyShape
+    a sh:NodeShape ;
+    rdfs:label "Property Shape" ;
+    sh:property
+        [
+            a sh:PropertyShape ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "rdfs:label" ;
+            sh:path sh:name
+        ] ,
+        [
+            a sh:PropertyShape ;
+            sh:description "Each sh:PropertyShape should have exactly one rdfs:label" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "rdfs:label" ;
+            sh:path sh:description
+        ] ;
+    sh:targetClass sh:PropertyShape ;
+.
+
