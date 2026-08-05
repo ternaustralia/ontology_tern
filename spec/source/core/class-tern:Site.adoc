@@ -149,6 +149,25 @@ link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`]
 | Expected values | 
 |===
 
+[#class-tern:Site-tern:hasOutlookZone]
+===== Property: tern:hasOutlookZone
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasOutlookZone[`tern:hasOutlookZone`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasOutlookZone
+| Status | `experimental` icon:circle-o[]
+| Label | has outlook zone
+| Definition | A link to an outlook zone from which observations are made (e.g., the field of view of a vantage-point fauna count).
+| Scope note | 
+| Implementation | A `tern:hasOutlookZone` predicate _MUST_ have a blank node or an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | 
+| Expected values | 
+|===
+
 [#class-tern:Site-tern:locationDescription]
 ===== Property: tern:locationDescription
 [cols="1,4"]

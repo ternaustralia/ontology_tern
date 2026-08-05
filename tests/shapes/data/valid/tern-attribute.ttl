@@ -1,0 +1,23 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: tern:Attribute requires exactly one tern:attribute, tern:hasValue, and tern:hasSimpleValue.
+<urn:example:attribute-1>
+    a tern:Attribute ;
+    tern:attribute <https://example.com/attribute/baf> ;
+    tern:hasSimpleValue "Example value"^^xsd:string ;
+    tern:hasValue <urn:example:value-1> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:value-1>
+    a tern:Value, tern:Text ;
+    rdf:value "Example value"^^xsd:string ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

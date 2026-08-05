@@ -99,7 +99,7 @@ Other resources in the TERN Ontology profile include:
 ||TERN Ontology vocabulary - site types
 
 |Description | Site types controlled vocabulary to describe the types of ecological survey sites.
-|Artifcat | http://linked.data.gov.au/def/tern-cv/74aa68d3-28fd-468d-8ff5-7e791d9f7159
+|Artifcat | http://linked.data.gov.au/def/tern-cv/5bf7ae21-a454-440b-bdd7-f2fe982d8de4
 |Role | link:http://www.w3.org/ns/dx/prof/role/vocabulary[role:vocabulary]
 |===
 

@@ -92,6 +92,44 @@ link:https://schema.org/Person[`schema.org:Person`]
 | Expected values | 
 |===
 
+[#class-tern:Survey-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
+| Expected values | 
+|===
+
+[#class-tern:Survey-tern:hasSiteVisit]
+===== Property: tern:hasSiteVisit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSiteVisit[`tern:hasSiteVisit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasSiteVisit
+| Status | `stable` icon:check-circle[]
+| Label | has site visit
+| Definition | A property that links, e.g., a Site to a Site Visit.
+| Scope note | 
+| Implementation | A maximum of 1 `tern:hasSiteVisit` _MAY_ exist where the value node is an IRI of type `tern:SiteVisit`.
+| Cardinality | Maximum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
+| Expected values | 
+|===
+
 [#class-tern:Survey-void:inDataset]
 ===== Property: void:inDataset
 [cols="1,4"]

@@ -1,0 +1,47 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: tern:hasSiteVisit must be an IRI of type tern:SiteVisit.
+<urn:example:sampling-sitevisit-1>
+    a tern:Sampling ;
+    sosa:hasFeatureOfInterest <urn:example:feature-7> ;
+    sosa:hasResult <urn:example:site-7> ;
+    sosa:usedProcedure <urn:example:method-7> ;
+    tern:hasSiteVisit <urn:example:visit-1> ;
+    tern:resultDateTime "2024-01-04T00:00:00Z"^^xsd:dateTime ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:method-7>
+    a tern:Method ;
+    dcterms:source "https://example.com/method/source"^^xsd:anyURI ;
+    skos:prefLabel "Example method" ;
+.
+
+<urn:example:feature-7>
+    a tern:FeatureOfInterest ;
+    tern:featureType <https://example.com/feature-type/area> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:site-7>
+    a tern:Site ;
+    tern:featureType <https://example.com/site-type> ;
+    sdo:spatial _:geom7 ;
+.
+
+_:geom7 a geo:Geometry .
+
+<urn:example:visit-1>
+    a tern:SiteVisit ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

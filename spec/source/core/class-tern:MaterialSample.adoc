@@ -15,6 +15,44 @@
 |===
 
 
+[#class-tern:MaterialSample-tern:featureType]
+===== Property: tern:featureType
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/featureType[`tern:featureType`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/MaterialSample-featureType
+| Status | `experimental` icon:circle-o[]
+| Label | feature type
+| Definition | The feature type of a `tern:MaterialSample` from a controlled vocabulary.
+| Scope note | 
+| Implementation | A `tern:MaterialSample` _MUST_ have exactly 1 `tern:featureType` predicate where the value node is an IRI.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:MaterialSample-sosa:isSampleOf]
+===== Property: sosa:isSampleOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/isSampleOf[`sosa:isSampleOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/MaterialSample-isSampleOf
+| Status | `experimental` icon:circle-o[]
+| Label | is sample of
+| Definition | A `tern:MaterialSample` is a sample of one or more features of interest.
+| Scope note | 
+| Implementation | A `tern:MaterialSample` _MUST_ have at least 1 `sosa:isSampleOf` predicate with an IRI value.
+| Cardinality | Minimum 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
 [#class-tern:MaterialSample-dwc:materialSampleID]
 ===== Property: dwc:materialSampleID
 [cols="1,4"]
@@ -31,6 +69,25 @@
 | Cardinality | 
 | Node kind | link:http://www.w3.org/ns/shacl#IRIOrLiteral[`sh:IRIOrLiteral`]
 | Class type | 
+| Expected values | 
+|===
+
+[#class-tern:MaterialSample-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
 | Expected values | 
 |===
 
@@ -63,11 +120,30 @@
 | Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasIGSN
 | Status | `experimental` icon:circle-o[]
 | Label | has IGSN
-| Definition | Relation between a Sample and an IGSN.
+| Definition | Relation between a MaterialSample and an IGSN.
 | Scope note | 
-| Implementation | A `tern:Sample` or `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`.
+| Implementation | A `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`.
 | Cardinality | Exactly 1
 | Node kind | 
 | Class type | link:https://w3id.org/tern/ontologies/tern/IGSN[`tern:IGSN`]
+| Expected values | 
+|===
+
+[#class-tern:MaterialSample-tern:isSubSampleOf]
+===== Property: tern:isSubSampleOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/isSubSampleOf[`tern:isSubSampleOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-isSubSampleOf
+| Status | `experimental` icon:circle-o[]
+| Label | is sub sample of
+| Definition | Link from a MaterialSample to its parent sample.
+| Scope note | 
+| Implementation | A `tern:isSubSampleOf` predicate _MUST_ have an IRI value of type `tern:MaterialSample`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/MaterialSample[`tern:MaterialSample`]
 | Expected values | 
 |===

@@ -262,13 +262,13 @@ tern:IRI
 
 tern:Input
     a owl:Class ;
-    reg:status reg:statusExperimental ;
-    skos:prefLabel "Input" ;
     rdfs:label "Input" ;
+    reg:status reg:statusExperimental ;
     rdfs:subClassOf ssn:Input ;
     skos:definition "*Input* - Any information that is provided to a Procedure for its use." ;
     skos:example """A **wedge prism** or **relascope** can be used to estimate the Basal Area per hectare. 
 The number of counted trees and the Basal Area Factor are inputs to estimate the Basal Area.""" ;
+    skos:prefLabel "Input" ;
 .
 
 tern:Integer
@@ -297,17 +297,6 @@ tern:ManagedFeature
     rdfs:label "Feature which is managed for TERN purposes" ;
 .
 
-tern:MaterialSample
-    a owl:Class ;
-    reg:status reg:statusStable ;
-    rdfs:subClassOf
-        dwc:MaterialSample ,
-        tern:Sample ;
-    skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
-    skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
-    skos:prefLabel "Material sample" ;
-.
-
 tern:MeasurementRange
     a owl:Class ;
     reg:status reg:statusExperimental ;
@@ -321,10 +310,9 @@ tern:MeasurementRange
 
 tern:Method
     a owl:Class ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "Method" ;
     rdfs:label "Method" ;
-    rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://3yn1j14c4twk1bmdg82226en-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
+    reg:status reg:statusStable ;
+    rdfs:scopeNote "We recommend representing the method information following [ISO 9001 Processes, Procedures and Work Instructions](https://the9000store.com/wp-content/uploads/2016/08/iso-9001-procedure.pdf)" ;
     rdfs:seeAlso
         <https://apps.usgs.gov/thesaurus/term-simple.php?thcode=2&code=376> ,
         <https://the9000store.com/iso-9001-2015-requirements/iso-9001-2015-context-of-the-organization/processes-procedures-work-instructions/> ;
@@ -333,6 +321,7 @@ tern:Method
     skos:example """Borehole logging is a field method in which 
 in situ physical measurements (e.g., temperature) are made down the 
 length of a borehole by lowering measurement instruments down the borehole via cable. (Credit: PaST Thesaurus)""" ;
+    skos:prefLabel "Method" ;
 .
 
 tern:ObservableProperty
@@ -370,9 +359,8 @@ tern:Parameter
 
 tern:Procedure
     a owl:Class ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "Procedure" ;
     rdfs:label "Procedure" ;
+    reg:status reg:statusStable ;
     rdfs:subClassOf sosa:Procedure ;
     skos:definition "A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an [Actuator](http://w3.org/ns/sosa/Actuator). A Procedure is re-usable, and might be involved in many Observation, Sampling, or [Actuations](http://w3.org/ns/sosa/Actuation). it explains the steps to be carried out to arrive at a reproducible Result." ;
     skos:example """The procedure for collecting photopoints are specified in the 
@@ -380,6 +368,7 @@ tern:Procedure
 The DEC Nature Conservation Service Biodiversity have defined 
 [standard procedures](https://www.dpaw.wa.gov.au/images/documents/plants-animals/monitoring/sop/sop_establishingvegetationquadrats_20090818_v1.0.pdf)
 for establishing quadrats for vegetation sampling.""" ;
+    skos:prefLabel "Procedure" ;
     skos:scopeNote "Input can be used to capture any input values for a procedure, such as the input value of the basal wedge to estimate the basal area per hectare." ;
 .
 
@@ -645,6 +634,13 @@ tern:hasEnvironmentalCharacteristic
     skos:definition "The subject has some environmental characteristic. Points to a set of Observations within an EnvironmentalCharacteristic." ;
 .
 
+tern:hasExtent
+    a owl:ObjectProperty ;
+    rdfs:label "has extent" ;
+    rdfs:range tern:Extent ;
+    skos:definition "Link to an [Extent](https://w3id.org/tern/ontologies/tern/Extent) describing the spatial and/or temporal coverage of the subject." ;
+.
+
 tern:hasFeatureType
     a owl:ObjectProperty ;
     rdfs:label "has feature type" ;
@@ -671,6 +667,12 @@ tern:hasObservationTheme
     rdfs:label "has observation theme" ;
     rdfs:subPropertyOf skos:relatedMatch ;
     skos:definition "Link a concept to an observation theme." ;
+.
+
+tern:hasOutlookZone
+    a owl:ObjectProperty ;
+    rdfs:label "has outlook zone" ;
+    skos:definition "Link to an outlook zone from which observations are made (e.g., the field of view of a vantage-point fauna count)." ;
 .
 
 tern:hasParameter
@@ -705,6 +707,13 @@ tern:hasSubActivity
     a rdf:Property ;
     rdfs:label "has sub activity" ;
     skos:definition "Link to an Observation or Sampling." ;
+.
+
+tern:hasSurvey
+    a owl:ObjectProperty ;
+    rdfs:label "has survey" ;
+    rdfs:range tern:Survey ;
+    skos:definition "Link to a [Survey](https://w3id.org/tern/ontologies/tern/Survey) under which the subject activity was conducted." ;
 .
 
 tern:hasValue
@@ -905,6 +914,14 @@ tern:resultDateTime
     skos:note
         "A change request has been submitted to SOSA at https://github.com/w3c/sdw/issues/1338. Once the change request is submitted, this property `tern:resultDateTime` should be deprecated in favour of `sosa:resultTime`." ,
         "At the time of writing (2022-03-02), SOSA specifies `sosa:resultTime` with an `rdfs:range` of `xsd:dateTime`. This means that all values of `sosa:resultTime` must have the datatype `xsd:dateTime`. This is problematic for the BDR because most ecological surveys only have a precision of day and not date time. Ingestion of data may fail due to internal validators from TopQuadrant's EDG." ;
+.
+
+tern:sampleCollectionTime
+    a owl:DatatypeProperty ;
+    rdfs:label "sample collection time" ;
+    rdfs:domain tern:Sampling ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date and time at which a sample was collected during a [Sampling](https://w3id.org/tern/ontologies/tern/Sampling) activity." ;
 .
 
 tern:sampleStorageLocation
@@ -1169,6 +1186,12 @@ tern:Calibration
     skos:prefLabel "Calibration" ;
 .
 
+tern:Extent
+    a owl:Class ;
+    rdfs:label "Extent" ;
+    skos:definition "A spatial and/or temporal extent that describes the bounding region or time period a resource refers to." ;
+.
+
 tern:MobilePlatform
     a owl:Class ;
     rdfs:label "Mobile Platform" ;
@@ -1199,41 +1222,12 @@ tree together with the unit, e.g., Meter.""" ;
     skos:prefLabel "Result" ;
 .
 
-tern:Sampling
-    a owl:Class ;
-    reg:status reg:statusStable ;
-    rdfs:subClassOf
-        prov:Activity ,
-        sosa:Sampling ;
-    skos:definition "An activity of `Sampling` carries out a (`Sampling`) `Procedure` to create or transform one or more `Samples`." ;
-    skos:prefLabel "Sampling" ;
-    skos:scopeNote """Crushing a rock sample in a ball mill to create sub-samples of the rock.
-Digging a pit through a soil sequence.
-Dividing a field site into quadrants.
-Drawing blood from a patient.
-Drilling an observation well.
-Establishing a station for environmental monitoring.
-Registering an image of the landscape.
-Sieving a powder to separate the subset finer than 100-mesh.
-Selecting a subset of a population.
-Splitting a piece of drill-core to create two new samples.
-Taking a diamond-drill core from a rock outcrop.""" ;
-.
-
 tern:SiteVisit
     a owl:Class ;
     reg:status reg:statusStable ;
     rdfs:subClassOf tern:Survey ;
     skos:definition "A Site Visit is a `Survey` that visits a `Site`." ;
     skos:prefLabel "Site Visit" ;
-.
-
-tern:Survey
-    a owl:Class ;
-    reg:status reg:statusExperimental ;
-    rdfs:subClassOf prov:Activity ;
-    skos:definition "A Survey is an `Activity` during which `Sampling` or `Observation` Activities occur." ;
-    skos:prefLabel "Survey" ;
 .
 
 tern:globalMatch
@@ -1275,6 +1269,14 @@ tern:hasSite
     skos:definition "A property that links, e.g., a Site Visit to a Site." ;
 .
 
+tern:hasSubSample
+    a owl:ObjectProperty ;
+    rdfs:label "has sub sample" ;
+    rdfs:range tern:MaterialSample ;
+    owl:inverseOf tern:isSubSampleOf ;
+    skos:definition "Link from a [MaterialSample](https://w3id.org/tern/ontologies/tern/MaterialSample) to a child sample derived from it." ;
+.
+
 tern:isAttributeOf
     a owl:ObjectProperty ;
     rdfs:label "is attribute of" ;
@@ -1303,6 +1305,15 @@ tern:isSiteVisitOf
     a owl:ObjectProperty ;
     rdfs:label "is site visit of" ;
     owl:inverseOf tern:isSiteVisitOf ;
+.
+
+tern:isSubSampleOf
+    a owl:ObjectProperty ;
+    rdfs:label "is sub sample of" ;
+    rdfs:domain tern:MaterialSample ;
+    rdfs:range tern:MaterialSample ;
+    owl:inverseOf tern:hasSubSample ;
+    skos:definition "Link from a [MaterialSample](https://w3id.org/tern/ontologies/tern/MaterialSample) to its parent sample." ;
 .
 
 <https://w3id.org/tern/resources/19f47957-556a-41aa-bd38-a9e63c111fcb>
@@ -1351,6 +1362,27 @@ tern:FixedPlatform
     skos:definition "A fixed platform based on land." ;
 .
 
+tern:Sampling
+    a owl:Class ;
+    reg:status reg:statusStable ;
+    rdfs:subClassOf
+        prov:Activity ,
+        sosa:Sampling ;
+    skos:definition "An activity of `Sampling` carries out a (`Sampling`) `Procedure` to create or transform one or more `Samples`." ;
+    skos:prefLabel "Sampling" ;
+    skos:scopeNote """Crushing a rock sample in a ball mill to create sub-samples of the rock.
+Digging a pit through a soil sequence.
+Dividing a field site into quadrants.
+Drawing blood from a patient.
+Drilling an observation well.
+Establishing a station for environmental monitoring.
+Registering an image of the landscape.
+Sieving a powder to separate the subset finer than 100-mesh.
+Selecting a subset of a population.
+Splitting a piece of drill-core to create two new samples.
+Taking a diamond-drill core from a rock outcrop.""" ;
+.
+
 tern:Site
     a owl:Class ;
     reg:status reg:statusStable ;
@@ -1360,6 +1392,14 @@ tern:Site
     skos:definition "An ecological monitoring site where observations and samplings occur. This `Site` class is a subclass of `Sample` since ecological sites are designed to be representative of an environmental system (which may be an ecosystem or bioregion) or zone (which may be a zone such as a parcel or tract)." ;
     skos:prefLabel "Site" ;
     skos:scopeNote "Ausplots Rangelands Site 59858 (Site Name: WAACOO0011)" ;
+.
+
+tern:Survey
+    a owl:Class ;
+    reg:status reg:statusExperimental ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "A Survey is an `Activity` during which `Sampling` or `Observation` Activities occur." ;
+    skos:prefLabel "Survey" ;
 .
 
 tern:System
@@ -1384,17 +1424,28 @@ tern:IGSN
     skos:prefLabel "IGSN" ;
 .
 
-tern:Platform
+tern:MaterialSample
     a owl:Class ;
     reg:status reg:statusStable ;
-    skos:prefLabel "Platform" ;
+    rdfs:subClassOf
+        dwc:MaterialSample ,
+        tern:Sample ;
+    skos:definition "A physical result of a sampling (or subsampling) event. In biological collections, the material sample is typically collected, and either preserved or destructively processed." ;
+    skos:example "A whole organism preserved in a collection. A part of an organism isolated for some purpose. A soil sample. A marine microbial sample." ;
+    skos:prefLabel "Material sample" ;
+.
+
+tern:Platform
+    a owl:Class ;
     rdfs:label "Platform" ;
+    reg:status reg:statusStable ;
     rdfs:subClassOf sosa:Platform ;
     skos:definition "An entity that hosts other entities, particularly Sensors, Samplers, and other Platforms." ;
     skos:example """Ocean buoy is an example of platform that is equipped with 
 an array of sensors such as GPS, current meters, atmospheric sensors and water 
 quality monitors. Sensors measuring weather variables are attached to 
 a weather station (a platform)""" ;
+    skos:prefLabel "Platform" ;
 .
 
 tern:Sample

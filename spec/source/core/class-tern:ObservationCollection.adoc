@@ -58,6 +58,25 @@ link:https://w3id.org/tern/ontologies/tern/ObservationCollection[`tern:Observati
 | Expected values | 
 |===
 
+[#class-tern:ObservationCollection-tern:hasSiteVisit]
+===== Property: tern:hasSiteVisit
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasSiteVisit[`tern:hasSiteVisit`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/ObservationCollection-hasSiteVisit
+| Status | `experimental` icon:circle-o[]
+| Label | has site visit
+| Definition | An ObservationCollection must reference exactly one SiteVisit.
+| Scope note | 
+| Implementation | A `tern:ObservationCollection` _MUST_ have exactly 1 `tern:hasSiteVisit` predicate with an IRI value of type `tern:SiteVisit`.
+| Cardinality | Exactly 1
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/SiteVisit[`tern:SiteVisit`]
+| Expected values | 
+|===
+
 [#class-tern:ObservationCollection-sosa:hasUltimateFeatureOfInterest]
 ===== Property: sosa:hasUltimateFeatureOfInterest
 [cols="1,4"]
@@ -174,6 +193,83 @@ link:http://www.w3.org/2001/XMLSchema#dateTimeStamp[`xmlschema#:dateTimeStamp`]
 | Implementation | A `tern:ObservationCollection` _MAY_ have a maximum of 1 `sosa:usedProcedure` predicate where the value node is an IRI.
 | Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:ObservationCollection-dcterms:identifier]
+===== Property: dcterms:identifier
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://purl.org/dc/terms/identifier[`dcterms:identifier`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/dcterms-identifier
+| Status | `stable` icon:check-circle[]
+| Label | identifier
+| Definition | An unambiguous reference to the resource within a given context.
+| Scope note | 
+| Implementation | N/A
+| Cardinality | 
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
+[#class-tern:ObservationCollection-geo:hasGeometry]
+===== Property: geo:hasGeometry
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.opengis.net/ont/geosparql#hasGeometry[`geo:hasGeometry`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/geo-hasGeometry
+| Status | `stable` icon:check-circle[]
+| Label | has geometry
+| Definition | A spatial representation for a given feature.
+| Scope note | 
+| Implementation | A `geo:hasGeometry` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:http://www.opengis.net/ont/geosparql#Geometry[`geosparql#:Geometry`]
+| Expected values | 
+|===
+
+[#class-tern:ObservationCollection-prov:wasAssociatedWith]
+===== Property: prov:wasAssociatedWith
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/prov#wasAssociatedWith[`prov:wasAssociatedWith`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/prov-wasAssociatedWith
+| Status | `stable` icon:check-circle[]
+| Label | was associated with
+| Definition | An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.
+| Scope note | 
+| Implementation | A `prov:wasAssociatedWith` predicate _MUST_ an IRI value of type `prov:Agent` or `sdo:Person`.
+| Cardinality | 
+| Node kind | 
+| Class type | link:http://www.w3.org/ns/prov#Agent[`prov#:Agent`] +
+link:https://schema.org/Person[`schema.org:Person`]
+| Expected values | 
+|===
+
+[#class-tern:ObservationCollection-sosa:isObservedBy]
+===== Property: sosa:isObservedBy
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/isObservedBy[`sosa:isObservedBy`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-isObservedBy
+| Status | `experimental` icon:circle-o[]
+| Label | is observed by
+| Definition | Relation between an ObservationCollection and a Sensor or Observer that recorded it.
+| Scope note | 
+| Implementation | A `sosa:isObservedBy` predicate _MUST_ have a blank node or IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | 
 | Expected values | 
 |===

@@ -1,0 +1,6 @@
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+# Rule: tern:Boolean must have rdf:value.
+<urn:example:boolean-missing>
+    a tern:Boolean ;
+.

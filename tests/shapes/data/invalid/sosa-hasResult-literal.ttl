@@ -1,0 +1,31 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: sosa:hasResult for Sampling must be an IRI of a valid class, not a literal.
+<urn:example:sampling-hasresult-bad>
+    a tern:Sampling ;
+    sosa:hasFeatureOfInterest <urn:example:site-6> ;
+    sosa:hasResult "not-an-iri" ;
+    sosa:usedProcedure <urn:example:method-6> ;
+    tern:resultDateTime "2024-01-03T00:00:00Z"^^xsd:dateTime ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:method-6>
+    a tern:Method ;
+    dcterms:source "https://example.com/method/source"^^xsd:anyURI ;
+    skos:prefLabel "Example method" ;
+.
+
+<urn:example:site-6>
+    a tern:Site ;
+    tern:featureType <https://example.com/site-type> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

@@ -1,0 +1,7 @@
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+# Rule: tern:hasIGSN must be an IRI of type tern:IGSN.
+<urn:example:material-sample-bad>
+    a tern:MaterialSample ;
+    tern:hasIGSN "not-an-iri" ;
+.

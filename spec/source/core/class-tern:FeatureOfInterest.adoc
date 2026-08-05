@@ -207,6 +207,25 @@ link:https://w3id.org/tern/ontologies/tern/Sampling[`tern:Sampling`]
 | Expected values | 
 |===
 
+[#class-tern:FeatureOfInterest-sosa:isSampleOf]
+===== Property: sosa:isSampleOf
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/ns/sosa/isSampleOf[`sosa:isSampleOf`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/sosa-isSampleOf
+| Status | `experimental` icon:circle-o[]
+| Label | is sample of
+| Definition | Relation from a Sample to the FeatureOfInterest it represents.
+| Scope note | 
+| Implementation | A `sosa:isSampleOf` predicate _MUST_ have an IRI value.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
+| Class type | 
+| Expected values | 
+|===
+
 [#class-tern:FeatureOfInterest-tern:hasAttribute]
 ===== Property: tern:hasAttribute
 [cols="1,4"]

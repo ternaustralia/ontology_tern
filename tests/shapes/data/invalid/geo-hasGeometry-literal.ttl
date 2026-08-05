@@ -1,0 +1,9 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+# Rule: geo:hasGeometry must be a blank node or IRI of type geo:Geometry.
+<urn:example:feature-geom-literal>
+    a tern:FeatureOfInterest ;
+    tern:featureType <https://example.com/feature-type/plant-individual> ;
+    geo:hasGeometry "not-a-geometry" ;
+.

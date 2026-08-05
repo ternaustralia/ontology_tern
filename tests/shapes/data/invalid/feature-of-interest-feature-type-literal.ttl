@@ -1,0 +1,7 @@
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+
+# Rule: tern:FeatureOfInterest requires tern:featureType to be an IRI.
+<urn:example:feature-literal>
+    a tern:FeatureOfInterest ;
+    tern:featureType "not-an-iri" ;
+.

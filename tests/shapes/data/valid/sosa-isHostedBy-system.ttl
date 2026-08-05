@@ -1,0 +1,22 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: sosa:isHostedBy must be an IRI of type tern:Platform.
+<urn:example:system-2>
+    a tern:System ;
+    rdfs:label "Example system" ;
+    sosa:isHostedBy <urn:example:platform-2> ;
+.
+
+<urn:example:platform-2>
+    a tern:Platform ;
+    tern:dateCommissioned "2021-01-01"^^xsd:date ;
+    tern:platformType <urn:example:platform-type-2> ;
+.
+
+<urn:example:platform-type-2>
+    a skos:Concept ;
+.

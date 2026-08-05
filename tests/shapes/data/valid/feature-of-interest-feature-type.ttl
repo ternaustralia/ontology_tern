@@ -1,0 +1,13 @@
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+# Rule: tern:FeatureOfInterest requires exactly one tern:featureType IRI.
+<urn:example:feature-1>
+    a tern:FeatureOfInterest ;
+    tern:featureType <https://example.com/feature-type/plant-individual> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

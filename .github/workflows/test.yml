@@ -35,6 +35,8 @@ jobs:
             command: pyshacl -s docs/meta.shapes.ttl docs/tern.ecoplots.shapes.ttl
           - name: Validate shapes with meta shapes - docs/meta.shapes.ttl
             command: pyshacl -s docs/meta.shapes.ttl docs/meta.shapes.ttl
+          - name: Run shapes test suite
+            command: pytest -q tests/shapes
 
     steps:
       - name: Checkout the repo

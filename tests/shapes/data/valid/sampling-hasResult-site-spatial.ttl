@@ -1,0 +1,40 @@
+@prefix sdo: <https://schema.org/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: Sampling hasResult should include a tern:Site with sdo:spatial (qualifiedMinCount).
+<urn:example:sampling-result-1>
+    a tern:Sampling ;
+    sosa:hasFeatureOfInterest <urn:example:feature-1> ;
+    sosa:hasResult <urn:example:site-3> ;
+    sosa:usedProcedure <urn:example:method-3> ;
+    tern:resultDateTime "2024-01-02T00:00:00Z"^^xsd:dateTime ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:feature-1>
+    a tern:FeatureOfInterest ;
+    tern:featureType <https://example.com/feature-type/area> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:method-3>
+    a tern:Method ;
+    dcterms:source "https://example.com/method/source"^^xsd:anyURI ;
+    skos:prefLabel "Example method" ;
+.
+
+<urn:example:site-3>
+    a tern:Site ;
+    tern:featureType <https://example.com/site-type> ;
+    sdo:spatial <urn:example:geometry-1> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

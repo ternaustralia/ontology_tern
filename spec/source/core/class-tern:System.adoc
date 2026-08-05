@@ -15,6 +15,25 @@
 |===
 
 
+[#class-tern:System-rdfs:label]
+===== Property: rdfs:label
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | http://www.w3.org/2000/01/rdf-schema#label[`rdfs:label`]
+| Shape IRI | ndd200a95ffbd4bdf99df60c90fd07e34b118
+| Status | `stable` icon:check-circle[]
+| Label | system label
+| Definition | The primary label or name of the system.
+| Scope note | 
+| Implementation | A `tern:System` _MUST_ have exactly 1 `rdfs:label` predicate with a string value.
+| Cardinality | Exactly 1
+| Node kind | 
+| Class type | 
+| Expected values | 
+|===
+
 [#class-tern:System-ssn:hasDeployment]
 ===== Property: ssn:hasDeployment
 [cols="1,4"]
@@ -29,7 +48,7 @@
 | Scope note | 
 | Implementation | A `tern:System` _MAY_ have an `ssn:hasDeployment` predicate where the value node is an IRI of type `tern:Deployment`.
 | Cardinality | 
-| Node kind | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Deployment[`tern:Deployment`]
 | Expected values | 
 |===
@@ -65,8 +84,8 @@
 | Label | system type
 | Definition | The type of system. Values are from some controlled vocabulary.
 | Scope note | 
-| Implementation | A `tern:System` _MAY_ have a `tern:systemType` predicate where the value node is an IRI.
-| Cardinality | 
+| Implementation | A `tern:System` _MAY_ have at most 1 `tern:systemType` predicate where the value node is an IRI.
+| Cardinality | Maximum 1
 | Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | 
 | Expected values | 
@@ -236,9 +255,9 @@
 | Label | ssn implements
 | Definition | Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method).
 | Scope note | 
-| Implementation | Exactly 1 `ssn:implements` _MUST_ exist where the value node is a `tern:Method` or `tern:Procedure`.
-| Cardinality | Exactly 1
-| Node kind | 
+| Implementation | If present, `ssn:implements` predicates on a `tern:System` _MUST_ have IRI values of type `tern:Method` or `tern:Procedure`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Procedure[`tern:Procedure`] +
 link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Expected values | 
@@ -258,7 +277,7 @@ link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Scope note | 
 | Implementation | A `ssn-system:hasOperatingProperty` predicate _MUST_ have an IRI or blank node value of type `ssn-system:OperatingProperty`.
 | Cardinality | 
-| Node kind | link:n3da140865bca4e10a155115c6af4ae86b240[`n3da140865bca4e10a155115c6af4ae86b240`]
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:http://www.w3.org/ns/ssn/systems/OperatingProperty[`systems:OperatingProperty`]
 | Expected values | 
 |===
@@ -277,7 +296,7 @@ link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Scope note | 
 | Implementation | A `ssn-system:hasSystemCapability` predicate _MUST_ have an IRI or blank node value of type `ssn-system:SystemCapability`.
 | Cardinality | 
-| Node kind | link:n3da140865bca4e10a155115c6af4ae86b243[`n3da140865bca4e10a155115c6af4ae86b243`]
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:http://www.w3.org/ns/ssn/systems/SystemCapability[`systems:SystemCapability`]
 | Expected values | 
 |===
@@ -296,8 +315,27 @@ link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Scope note | 
 | Implementation | A `ssn-system:hasSystemProperty` predicate _MUST_ have an IRI or blank node value of type `ssn-system:SystemProperty`.
 | Cardinality | 
-| Node kind | link:n3da140865bca4e10a155115c6af4ae86b246[`n3da140865bca4e10a155115c6af4ae86b246`]
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
 | Class type | link:http://www.w3.org/ns/ssn/systems/SystemProperty[`systems:SystemProperty`]
+| Expected values | 
+|===
+
+[#class-tern:System-tern:hasAttribute]
+===== Property: tern:hasAttribute
+[cols="1,4"]
+|===
+| Property | Value
+
+| IRI | https://w3id.org/tern/ontologies/tern/hasAttribute[`tern:hasAttribute`]
+| Shape IRI | https://w3id.org/tern/shapes/tern/tern-hasAttribute
+| Status | `stable` icon:check-circle[]
+| Label | has attribute
+| Definition | Link to an Attribute.
+| Scope note | 
+| Implementation | A `tern:hasAttribute` predicate _MUST_ have a blank node or an IRI value of type `tern:Attribute`.
+| Cardinality | 
+| Node kind | link:http://www.w3.org/ns/shacl#BlankNodeOrIRI[`sh:BlankNodeOrIRI`]
+| Class type | link:https://w3id.org/tern/ontologies/tern/Attribute[`tern:Attribute`]
 | Expected values | 
 |===
 
@@ -315,7 +353,7 @@ link:https://w3id.org/tern/ontologies/tern/Method[`tern:Method`]
 | Scope note | 
 | Implementation | A `tern:System` _MAY_ have an `tern:hasCalibration` predicate where the value node is an IRI of type `tern:Calibration`.
 | Cardinality | 
-| Node kind | 
+| Node kind | link:http://www.w3.org/ns/shacl#IRI[`sh:IRI`]
 | Class type | link:https://w3id.org/tern/ontologies/tern/Calibration[`tern:Calibration`]
 | Expected values | 
 |===
