@@ -1,0 +1,27 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: tern:hasIGSN is optional, for example a voucher identified only by a barcode.
+<urn:example:material-sample-1>
+    a tern:MaterialSample ;
+    sosa:isSampleOf <urn:example:feature-1> ;
+    tern:featureType <https://example.com/sample-type/voucher> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:feature-1>
+    a tern:FeatureOfInterest ;
+    tern:featureType <https://example.com/feature-type/area> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

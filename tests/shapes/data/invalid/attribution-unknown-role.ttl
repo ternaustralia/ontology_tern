@@ -1,0 +1,20 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: prov:hadRole must come from one of the accepted role vocabularies.
+<urn:example:attribution-bad>
+    a prov:Attribution ;
+    prov:agent <urn:example:agent-1> ;
+    prov:hadRole <https://example.com/roles/data-wrangler> ;
+.
+
+<urn:example:agent-1>
+    a prov:Agent ;
+.

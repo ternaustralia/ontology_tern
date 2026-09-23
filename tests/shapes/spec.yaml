@@ -71,10 +71,13 @@ target_classes:
       path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
   https://w3id.org/tern/ontologies/tern/Calibration:
     required_properties:
-    - datatype: http://www.w3.org/2001/XMLSchema#dateTime
-      max_count: 1
+    - max_count: 1
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#Literal
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#date
+        - http://www.w3.org/2001/XMLSchema#dateTime
       path: http://www.w3.org/ns/prov#startedAtTime
     - max_count: 1
       min_count: 1
@@ -215,10 +218,13 @@ target_classes:
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#IRI
       path: http://rdfs.org/ns/void#inDataset
-    - datatype: http://www.w3.org/2001/XMLSchema#dateTime
-      max_count: 1
+    - max_count: 1
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#Literal
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#date
+        - http://www.w3.org/2001/XMLSchema#dateTime
       path: http://www.w3.org/ns/prov#startedAtTime
     - max_count: 1
       min_count: 1
@@ -239,10 +245,6 @@ target_classes:
       path: http://www.w3.org/ns/sosa/usedProcedure
   https://w3id.org/tern/ontologies/tern/MaterialSample:
     required_properties:
-    - class: https://w3id.org/tern/ontologies/tern/IGSN
-      max_count: 1
-      min_count: 1
-      path: https://w3id.org/tern/ontologies/tern/hasIGSN
     - max_count: 1
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#IRI
@@ -337,11 +339,6 @@ target_classes:
         - https://w3id.org/tern/ontologies/tern/Observation
         - https://w3id.org/tern/ontologies/tern/ObservationCollection
       path: http://www.w3.org/ns/sosa/hasMember
-    - class: https://w3id.org/tern/ontologies/tern/SiteVisit
-      max_count: 1
-      min_count: 1
-      node_kind: http://www.w3.org/ns/shacl#IRI
-      path: https://w3id.org/tern/ontologies/tern/hasSiteVisit
   https://w3id.org/tern/ontologies/tern/Platform:
     required_properties:
     - datatype: http://www.w3.org/2001/XMLSchema#date
@@ -360,10 +357,6 @@ target_classes:
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#IRI
       path: http://rdfs.org/ns/void#inDataset
-    - class: https://w3id.org/tern/ontologies/tern/Method
-      max_count: 1
-      min_count: 1
-      path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
     - max_count: 1
       min_count: 1
       path: https://w3id.org/tern/ontologies/tern/vocabulary
@@ -440,10 +433,13 @@ target_classes:
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#IRI
       path: http://rdfs.org/ns/void#inDataset
-    - datatype: http://www.w3.org/2001/XMLSchema#dateTime
-      max_count: 1
+    - max_count: 1
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#Literal
+      or:
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#date
+        - http://www.w3.org/2001/XMLSchema#dateTime
       path: http://www.w3.org/ns/prov#startedAtTime
   https://w3id.org/tern/ontologies/tern/System:
     required_properties:
@@ -475,5 +471,4 @@ target_classes:
       path: http://rdfs.org/ns/void#inDataset
     - max_count: 1
       min_count: 1
-      node_kind: http://www.w3.org/ns/shacl#Literal
       path: http://www.w3.org/1999/02/22-rdf-syntax-ns#value
