@@ -1,0 +1,62 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: tern:hasSiteVisit is optional, for protocols not carried out during a site visit.
+<urn:example:collection-1>
+    a tern:ObservationCollection ;
+    sosa:hasMember <urn:example:observation-1> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:observation-1>
+    a tern:Observation ;
+    sosa:hasFeatureOfInterest <urn:example:feature-1> ;
+    sosa:hasResult <urn:example:result-1> ;
+    sosa:hasSimpleResult "12" ;
+    sosa:observedProperty <https://example.com/property/height> ;
+    sosa:phenomenonTime <urn:example:instant-1> ;
+    sosa:usedProcedure <urn:example:method-1> ;
+    tern:resultDateTime "2024-01-04T00:00:00"^^xsd:dateTime ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:result-1>
+    a
+        tern:Integer ,
+        tern:Value ;
+    rdf:value "12"^^xsd:integer ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:feature-1>
+    a tern:FeatureOfInterest ;
+    geo:hasGeometry <urn:example:geometry-1> ;
+    tern:featureType <https://example.com/feature-type/area> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:instant-1>
+    a <http://www.w3.org/2006/time#Instant> ;
+    <http://www.w3.org/2006/time#inXSDDateTimeStamp> "2024-01-04T00:00:00Z"^^xsd:dateTimeStamp ;
+.
+
+<urn:example:method-1>
+    a tern:Method ;
+    <http://purl.org/dc/terms/source> "https://example.com/method/source"^^xsd:anyURI ;
+    skos:prefLabel "Example method" ;
+.
+
+<urn:example:geometry-1>
+    a geo:Geometry ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

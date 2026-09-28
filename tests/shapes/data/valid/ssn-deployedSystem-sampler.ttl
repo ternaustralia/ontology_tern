@@ -1,0 +1,20 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: ssn:deployedSystem accepts subclasses of tern:System, such as tern:Sampler, because
+# data is often supplied without the superclass type.
+<urn:example:deployment-3>
+    a tern:Deployment ;
+    prov:startedAtTime "2025-08-13"^^xsd:date ;
+    ssn:deployedSystem <urn:example:sampler-1> ;
+.
+
+<urn:example:sampler-1>
+    a tern:Sampler ;
+    rdfs:label "Example camera trap" ;
+    ssn:implements <https://example.com/method/camera-trapping> ;
+    tern:systemType <https://example.com/system-type/camera> ;
+.

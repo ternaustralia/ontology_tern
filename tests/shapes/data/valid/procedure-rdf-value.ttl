@@ -1,0 +1,21 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: a Procedure may give its method with rdf:value alone.
+<urn:example:procedure-2>
+    a tern:Procedure ;
+    rdf:value <https://example.com/method/transect-count> ;
+    tern:vocabulary <https://example.com/methods> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

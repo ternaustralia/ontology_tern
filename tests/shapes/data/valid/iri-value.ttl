@@ -1,0 +1,21 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: a tern:IRI value holds an IRI in rdf:value, so tern:Value must not require a literal.
+<urn:example:value-iri-1>
+    a
+        tern:IRI ,
+        tern:Value ;
+    rdf:value <https://example.com/concept/green> ;
+    void:inDataset <urn:example:dataset-1> ;
+.
+
+<urn:example:dataset-1>
+    a tern:RDFDataset ;
+.

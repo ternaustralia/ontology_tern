@@ -225,25 +225,6 @@ tern-shapes:Dimension
         [
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
-            skos:prefLabel "diemnsion width" ;
-            sh:description "The width dimension." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
-            sh:minCount 1 ;
-            sh:name "tern:width" ;
-            sh:or (
-                    [
-                        sh:datatype xsd:double
-                    ]
-                    [
-                        sh:datatype xsd:integer
-                    ]
-                ) ;
-            sh:path tern:width
-        ] ,
-        [
-            a sh:PropertyShape ;
-            reg:status reg:statusExperimental ;
             skos:prefLabel "dimension unit" ;
             sh:class qudt:Unit ;
             sh:description "The unit of measurement for the dimensions." ;
@@ -271,6 +252,25 @@ tern-shapes:Dimension
                     ]
                 ) ;
             sh:path tern:length
+        ] ,
+        [
+            a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "diemnsion width" ;
+            sh:description "The width dimension." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
+            sh:minCount 1 ;
+            sh:name "tern:width" ;
+            sh:or (
+                    [
+                        sh:datatype xsd:double
+                    ]
+                    [
+                        sh:datatype xsd:integer
+                    ]
+                ) ;
+            sh:path tern:width
         ] ;
     sh:targetClass tern:Dimension ;
 .
@@ -869,27 +869,6 @@ tern-shapes:ObservableProperty
         [
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
-            skos:prefLabel "local vocabulary of observable property" ;
-            sh:description "The local vocabulary of the observable property." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:ObservableProperty` _MAY_ have at most 1 `tern:localVocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
-            sh:name "tern:localVocabulary" ;
-            sh:or (
-                    [
-                        sh:class skos:ConceptScheme
-                    ]
-                    [
-                        sh:class skos:Collection
-                    ]
-                    [
-                        sh:class owl:Ontology
-                    ]
-                ) ;
-            sh:path tern:localVocabulary
-        ] ,
-        [
-            a sh:PropertyShape ;
-            reg:status reg:statusExperimental ;
             skos:prefLabel "vocabulary of observable property" ;
             sh:description "The vocabulary of the observable property." ;
             sh:maxCount 1 ;
@@ -931,6 +910,27 @@ tern-shapes:ObservableProperty
             sh:minCount 1 ;
             sh:name "rdf:value" ;
             sh:path rdf:value
+        ] ,
+        [
+            a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "local vocabulary of observable property" ;
+            sh:description "The local vocabulary of the observable property." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:ObservableProperty` _MAY_ have at most 1 `tern:localVocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
+            sh:name "tern:localVocabulary" ;
+            sh:or (
+                    [
+                        sh:class skos:ConceptScheme
+                    ]
+                    [
+                        sh:class skos:Collection
+                    ]
+                    [
+                        sh:class owl:Ontology
+                    ]
+                ) ;
+            sh:path tern:localVocabulary
         ] ;
     sh:targetClass tern:ObservableProperty ;
 .
@@ -1002,6 +1002,29 @@ tern-shapes:Procedure
     a sh:NodeShape ;
     rdfs:label "Procedure" ;
     reg:status reg:statusStable ;
+    sh:message "A `tern:Procedure` _MUST_ identify its method with either an `rdf:value` predicate or a `tern:hasMethod` predicate." ;
+    sh:or (
+            [
+                sh:property [
+                        a sh:PropertyShape ;
+                        sh:description "The method value of the procedure." ;
+                        sh:message "A `tern:Procedure` _MUST_ have at least 1 `rdf:value` predicate when no `tern:hasMethod` predicate is present." ;
+                        sh:minCount 1 ;
+                        sh:name "rdf:value" ;
+                        sh:path rdf:value
+                    ]
+            ]
+            [
+                sh:property [
+                        a sh:PropertyShape ;
+                        sh:description "The method of the procedure." ;
+                        sh:message "A `tern:Procedure` _MUST_ have at least 1 `tern:hasMethod` predicate when no `rdf:value` predicate is present." ;
+                        sh:minCount 1 ;
+                        sh:name "tern:hasMethod" ;
+                        sh:path tern:hasMethod
+                    ]
+            ]
+        ) ;
     sh:property
         [
             a sh:PropertyShape ;
@@ -1029,22 +1052,22 @@ tern-shapes:Procedure
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
             skos:prefLabel "value of procedure" ;
-            sh:class tern:Method ;
-            sh:description "The method value of the procedure." ;
+            sh:description "The method value of the procedure, given as the IRI of a `tern:Method`. The type of the method is not required in the data, because the method is usually defined in a separate vocabulary." ;
             sh:maxCount 1 ;
-            sh:message "A `tern:Procedure` _MUST_ have exactly 1 `rdf:value` predicate with a value of type `tern:Method`." ;
-            sh:minCount 1 ;
+            sh:message "A `tern:Procedure` _MAY_ have a maximum of 1 `rdf:value` predicate where the value node is an IRI." ;
             sh:name "rdf:value" ;
+            sh:nodeKind sh:IRI ;
             sh:path rdf:value
         ] ,
         [
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
             skos:prefLabel "method of procedure" ;
-            sh:class tern:Method ;
-            sh:description "The method type of the procedure." ;
-            sh:message "If present, `tern:hasMethod` predicates on a `tern:Procedure` _MUST_ have values of type `tern:Method`." ;
+            sh:description "The method of the procedure, given as the IRI of a `tern:Method`. The type of the method is not required in the data, because the method is usually defined in a separate vocabulary." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Procedure` _MAY_ have a maximum of 1 `tern:hasMethod` predicate where the value node is an IRI." ;
             sh:name "tern:hasMethod" ;
+            sh:nodeKind sh:IRI ;
             sh:path tern:hasMethod
         ] ,
         tern-shapes:Procedure-startedAtTime ,
@@ -1498,7 +1521,7 @@ tern-shapes:Association-hadRole
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "had role" ;
-    sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
+    sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end. Concepts from ISO 19115-1's CI Role Code and from the Australian Government Data Roles vocabulary are both accepted." ;
     sh:in (
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author>
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor>
@@ -1520,9 +1543,34 @@ tern-shapes:Association-hadRole
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor>
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder>
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user>
+            <https://linked.data.gov.au/def/data-roles/author>
+            <https://linked.data.gov.au/def/data-roles/coAuthor>
+            <https://linked.data.gov.au/def/data-roles/collaborator>
+            <https://linked.data.gov.au/def/data-roles/contributor>
+            <https://linked.data.gov.au/def/data-roles/custodian>
+            <https://linked.data.gov.au/def/data-roles/distributor>
+            <https://linked.data.gov.au/def/data-roles/editor>
+            <https://linked.data.gov.au/def/data-roles/funder>
+            <https://linked.data.gov.au/def/data-roles/mediator>
+            <https://linked.data.gov.au/def/data-roles/originator>
+            <https://linked.data.gov.au/def/data-roles/owner>
+            <https://linked.data.gov.au/def/data-roles/pointOfContact>
+            <https://linked.data.gov.au/def/data-roles/principalInvestigator>
+            <https://linked.data.gov.au/def/data-roles/processor>
+            <https://linked.data.gov.au/def/data-roles/projectLead>
+            <https://linked.data.gov.au/def/data-roles/projectParticipant>
+            <https://linked.data.gov.au/def/data-roles/publisher>
+            <https://linked.data.gov.au/def/data-roles/resourceProvider>
+            <https://linked.data.gov.au/def/data-roles/rightsHolder>
+            <https://linked.data.gov.au/def/data-roles/sponsor>
+            <https://linked.data.gov.au/def/data-roles/stakeholder>
+            <https://linked.data.gov.au/def/data-roles/subjectAgent>
+            <https://linked.data.gov.au/def/data-roles/subjectAgentRepresentative>
+            <https://linked.data.gov.au/def/data-roles/supervisor>
+            <https://linked.data.gov.au/def/data-roles/user>
         ) ;
     sh:maxCount 1 ;
-    sh:message "A `prov:Association` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code]." ;
+    sh:message "A `prov:Association` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code] or link:https://linked.data.gov.au/def/data-roles[the Data Roles vocabulary]." ;
     sh:minCount 1 ;
     sh:name "prov:hadRole" ;
     sh:nodeKind sh:IRI ;
@@ -1547,7 +1595,7 @@ tern-shapes:Attribution-hadRole
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "had role" ;
-    sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end." ;
+    sh:description "`prov:hadRole` references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end. Concepts from ISO 19115-1's CI Role Code and from the Australian Government Data Roles vocabulary are both accepted." ;
     sh:in (
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/author>
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/coAuthor>
@@ -1569,9 +1617,34 @@ tern-shapes:Attribution-hadRole
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/sponsor>
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/stakeholder>
             <http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode/user>
+            <https://linked.data.gov.au/def/data-roles/author>
+            <https://linked.data.gov.au/def/data-roles/coAuthor>
+            <https://linked.data.gov.au/def/data-roles/collaborator>
+            <https://linked.data.gov.au/def/data-roles/contributor>
+            <https://linked.data.gov.au/def/data-roles/custodian>
+            <https://linked.data.gov.au/def/data-roles/distributor>
+            <https://linked.data.gov.au/def/data-roles/editor>
+            <https://linked.data.gov.au/def/data-roles/funder>
+            <https://linked.data.gov.au/def/data-roles/mediator>
+            <https://linked.data.gov.au/def/data-roles/originator>
+            <https://linked.data.gov.au/def/data-roles/owner>
+            <https://linked.data.gov.au/def/data-roles/pointOfContact>
+            <https://linked.data.gov.au/def/data-roles/principalInvestigator>
+            <https://linked.data.gov.au/def/data-roles/processor>
+            <https://linked.data.gov.au/def/data-roles/projectLead>
+            <https://linked.data.gov.au/def/data-roles/projectParticipant>
+            <https://linked.data.gov.au/def/data-roles/publisher>
+            <https://linked.data.gov.au/def/data-roles/resourceProvider>
+            <https://linked.data.gov.au/def/data-roles/rightsHolder>
+            <https://linked.data.gov.au/def/data-roles/sponsor>
+            <https://linked.data.gov.au/def/data-roles/stakeholder>
+            <https://linked.data.gov.au/def/data-roles/subjectAgent>
+            <https://linked.data.gov.au/def/data-roles/subjectAgentRepresentative>
+            <https://linked.data.gov.au/def/data-roles/supervisor>
+            <https://linked.data.gov.au/def/data-roles/user>
         ) ;
     sh:maxCount 1 ;
-    sh:message "A `prov:Attribution` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code]." ;
+    sh:message "A `prov:Attribution` _MUST_ have exactly 1 `prov:hadRole` predicate where the value node is an IRI of a controlled concept from link:http://def.isotc211.org/iso19115/-1/2018/CitationAndResponsiblePartyInformation/code/CI_RoleCode[ISO 19115-1's CI Role Code] or link:https://linked.data.gov.au/def/data-roles[the Data Roles vocabulary]." ;
     sh:minCount 1 ;
     sh:name "prov:hadRole" ;
     sh:nodeKind sh:IRI ;
@@ -1903,10 +1976,9 @@ tern-shapes:ObservationCollection-hasSiteVisit
     reg:status reg:statusExperimental ;
     skos:prefLabel "has site visit" ;
     sh:class tern:SiteVisit ;
-    sh:description "An ObservationCollection must reference exactly one SiteVisit." ;
+    sh:description "An ObservationCollection may reference at most one SiteVisit. Protocols that are always carried out during a site visit constrain this further in their own shapes." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:ObservationCollection` _MUST_ have exactly 1 `tern:hasSiteVisit` predicate with an IRI value of type `tern:SiteVisit`." ;
-    sh:minCount 1 ;
+    sh:message "A `tern:ObservationCollection` _MAY_ have a maximum of 1 `tern:hasSiteVisit` predicate with an IRI value of type `tern:SiteVisit`." ;
     sh:name "tern:hasSiteVisit" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:hasSiteVisit ;
@@ -3027,12 +3099,11 @@ tern-shapes:Value-value
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "value" ;
-    sh:description "The value of the `tern:Value`." ;
+    sh:description "The value of the `tern:Value`. The node kind is constrained by the shapes of the subclasses of `tern:Value`, for example `tern:IRI` requires an IRI and `tern:Text` requires a literal." ;
     sh:maxCount 1 ;
     sh:message "A `tern:Value` _MUST_ have exactly one `rdf:value` predicate." ;
     sh:minCount 1 ;
     sh:name "rdf:value" ;
-    sh:nodeKind sh:Literal ;
     sh:path rdf:value ;
 .
 
@@ -3341,11 +3412,21 @@ tern-shapes:ssn-deployedSystem
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "deployed system" ;
-    sh:class tern:System ;
-    sh:description "Relation between a Deployment and a deployed System." ;
-    sh:message "A `tern:Deployment` _MAY_ have one or many `ssn:deployedSystem` predicate where the value node is an IRI of type `tern:System`." ;
+    sh:description "Relation between a Deployment and a deployed System. Subclasses of `tern:System`, such as `tern:Sampler` and `tern:Sensor`, are accepted because data is often supplied without the superclass type." ;
+    sh:message "A `tern:Deployment` _MAY_ have one or many `ssn:deployedSystem` predicate where the value node is an IRI of type `tern:System`, `tern:Sampler` or `tern:Sensor`." ;
     sh:name "ssn:deployedSystem" ;
     sh:nodeKind sh:IRI ;
+    sh:or (
+            [
+                sh:class tern:System
+            ]
+            [
+                sh:class tern:Sampler
+            ]
+            [
+                sh:class tern:Sensor
+            ]
+        ) ;
     sh:path ssn:deployedSystem ;
 .
 
@@ -3512,10 +3593,9 @@ tern-shapes:tern-hasIGSN
     reg:status reg:statusExperimental ;
     skos:prefLabel "has IGSN" ;
     sh:class tern:IGSN ;
-    sh:description "Relation between a MaterialSample and an IGSN." ;
+    sh:description "Relation between a MaterialSample and an IGSN. Not every material sample has an IGSN minted for it, for example a voucher identified only by a barcode." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:MaterialSample` _MUST_ have exactly 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`." ;
-    sh:minCount 1 ;
+    sh:message "A `tern:MaterialSample` _MAY_ have a maximum of 1 `tern:hasIGSN` predicate where the value node is an IRI of type `tern:IGSN`." ;
     sh:name "tern:hasIGSN" ;
     sh:path tern:hasIGSN ;
 .
@@ -4323,13 +4403,20 @@ tern-shapes:prov-startedAtTime
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "started at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity started." ;
+    sh:description "The time at which an activity started. `xsd:date` is accepted for activities recorded with a date only." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime` or `xsd:date`." ;
     sh:minCount 1 ;
     sh:name "prov:startedAtTime" ;
     sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:dateTime
+            ]
+            [
+                sh:datatype xsd:date
+            ]
+        ) ;
     sh:path prov:startedAtTime ;
 .
 
@@ -4369,12 +4456,19 @@ tern-shapes:prov-endedAtTime
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
     skos:prefLabel "ended at time" ;
-    sh:datatype xsd:dateTime ;
-    sh:description "The time at which an activity ended." ;
+    sh:description "The time at which an activity ended. `xsd:date` is accepted for activities recorded with a date only." ;
     sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime`." ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MAY_ have a maximum of 1 `prov:endedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime` or `xsd:date`." ;
     sh:name "prov:endedAtTime" ;
     sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:dateTime
+            ]
+            [
+                sh:datatype xsd:date
+            ]
+        ) ;
     sh:path prov:endedAtTime ;
 .
 
