@@ -426,6 +426,23 @@ target_classes:
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#IRI
       path: https://w3id.org/tern/ontologies/tern/featureType
+  https://w3id.org/tern/ontologies/tern/SiteVisit:
+    required_properties:
+    - max_count: 1
+      min_count: 1
+      or:
+        class:
+        - https://w3id.org/tern/ontologies/tern/Site
+        - https://w3id.org/tern/ontologies/tern/Transect
+      path: https://w3id.org/tern/ontologies/tern/hasSite
+    - max_count: 1
+      min_count: 1
+      node_kind: http://www.w3.org/ns/shacl#Literal
+      or: &id001
+        datatype:
+        - http://www.w3.org/2001/XMLSchema#date
+        - http://www.w3.org/2001/XMLSchema#dateTime
+      path: http://www.w3.org/ns/prov#startedAtTime
   https://w3id.org/tern/ontologies/tern/Survey:
     required_properties:
     - class: https://w3id.org/tern/ontologies/tern/RDFDataset
@@ -436,10 +453,7 @@ target_classes:
     - max_count: 1
       min_count: 1
       node_kind: http://www.w3.org/ns/shacl#Literal
-      or:
-        datatype:
-        - http://www.w3.org/2001/XMLSchema#date
-        - http://www.w3.org/2001/XMLSchema#dateTime
+      or: *id001
       path: http://www.w3.org/ns/prov#startedAtTime
   https://w3id.org/tern/ontologies/tern/System:
     required_properties:
