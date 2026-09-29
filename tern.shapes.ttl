@@ -1198,10 +1198,11 @@ tern-shapes:SiteVisit
     a sh:NodeShape ;
     rdfs:label "Site Visit" ;
     sh:property
+        tern-shapes:SiteVisit-hasSite ,
         tern-shapes:dcterms-identifier ,
         tern-shapes:dcterms-type ,
+        tern-shapes:prov-startedAtTime ,
         tern-shapes:tern-hasAttribute ,
-        tern-shapes:tern-hasSite ,
         tern-shapes:tern-locationDescription ,
         tern-shapes:tern-siteDescription ;
     sh:targetClass tern:SiteVisit ;
@@ -2476,6 +2477,26 @@ tern-shapes:Site-locationProcedure
     sh:name "tern:locationProcedure" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:locationProcedure ;
+.
+
+tern-shapes:SiteVisit-hasSite
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has site" ;
+    sh:description "A site visit is a visit to exactly one site. The value is a `tern:Site` or a `tern:Transect`, the same types allowed by `tern-shapes:tern-hasSite`." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:SiteVisit` _MUST_ have exactly 1 `tern:hasSite` predicate where the value node is of type `tern:Site` or `tern:Transect`." ;
+    sh:minCount 1 ;
+    sh:name "tern:hasSite" ;
+    sh:or (
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
+    sh:path tern:hasSite ;
 .
 
 tern-shapes:System-hasDeployment
