@@ -1,0 +1,30 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sdo: <https://schema.org/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: a tern:SiteVisit must have exactly 1 tern:hasSite, not 2.
+<urn:example:visit-1>
+    a tern:SiteVisit ;
+    prov:startedAtTime "2024-01-04T00:00:00"^^xsd:dateTime ;
+    tern:hasSite
+        <urn:example:site-1> ,
+        <urn:example:site-2> ;
+.
+
+<urn:example:site-1>
+    a tern:Site ;
+    tern:featureType <https://example.com/site-type/plot> ;
+    sdo:spatial _:geom-site-1 ;
+.
+
+_:geom-site-1 a geo:Geometry .
+
+<urn:example:site-2>
+    a tern:Site ;
+    tern:featureType <https://example.com/site-type/plot> ;
+    sdo:spatial _:geom-site-2 ;
+.
+
+_:geom-site-2 a geo:Geometry .
