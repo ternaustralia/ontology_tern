@@ -225,6 +225,25 @@ tern-shapes:Dimension
         [
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
+            skos:prefLabel "diemnsion width" ;
+            sh:description "The width dimension." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
+            sh:minCount 1 ;
+            sh:name "tern:width" ;
+            sh:or (
+                    [
+                        sh:datatype xsd:double
+                    ]
+                    [
+                        sh:datatype xsd:integer
+                    ]
+                ) ;
+            sh:path tern:width
+        ] ,
+        [
+            a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
             skos:prefLabel "dimension unit" ;
             sh:class qudt:Unit ;
             sh:description "The unit of measurement for the dimensions." ;
@@ -252,25 +271,6 @@ tern-shapes:Dimension
                     ]
                 ) ;
             sh:path tern:length
-        ] ,
-        [
-            a sh:PropertyShape ;
-            reg:status reg:statusExperimental ;
-            skos:prefLabel "diemnsion width" ;
-            sh:description "The width dimension." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:Dimension` _MUST_ have exactly 1 `tern:width` predicate with a double or integer value." ;
-            sh:minCount 1 ;
-            sh:name "tern:width" ;
-            sh:or (
-                    [
-                        sh:datatype xsd:double
-                    ]
-                    [
-                        sh:datatype xsd:integer
-                    ]
-                ) ;
-            sh:path tern:width
         ] ;
     sh:targetClass tern:Dimension ;
 .
@@ -869,28 +869,6 @@ tern-shapes:ObservableProperty
         [
             a sh:PropertyShape ;
             reg:status reg:statusExperimental ;
-            skos:prefLabel "vocabulary of observable property" ;
-            sh:description "The vocabulary of the observable property." ;
-            sh:maxCount 1 ;
-            sh:message "A `tern:ObservableProperty` _MUST_ have exactly 1 `tern:vocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
-            sh:minCount 1 ;
-            sh:name "tern:vocabulary" ;
-            sh:or (
-                    [
-                        sh:class skos:ConceptScheme
-                    ]
-                    [
-                        sh:class skos:Collection
-                    ]
-                    [
-                        sh:class owl:Ontology
-                    ]
-                ) ;
-            sh:path tern:vocabulary
-        ] ,
-        [
-            a sh:PropertyShape ;
-            reg:status reg:statusExperimental ;
             skos:prefLabel "local value of observable property" ;
             sh:class skos:Concept ;
             sh:description "The local value of the observable property." ;
@@ -931,6 +909,28 @@ tern-shapes:ObservableProperty
                     ]
                 ) ;
             sh:path tern:localVocabulary
+        ] ,
+        [
+            a sh:PropertyShape ;
+            reg:status reg:statusExperimental ;
+            skos:prefLabel "vocabulary of observable property" ;
+            sh:description "The vocabulary of the observable property." ;
+            sh:maxCount 1 ;
+            sh:message "A `tern:ObservableProperty` _MUST_ have exactly 1 `tern:vocabulary` predicate with a value of type `skos:ConceptScheme`, `skos:Collection`, or `owl:Ontology`." ;
+            sh:minCount 1 ;
+            sh:name "tern:vocabulary" ;
+            sh:or (
+                    [
+                        sh:class skos:ConceptScheme
+                    ]
+                    [
+                        sh:class skos:Collection
+                    ]
+                    [
+                        sh:class owl:Ontology
+                    ]
+                ) ;
+            sh:path tern:vocabulary
         ] ;
     sh:targetClass tern:ObservableProperty ;
 .
@@ -3645,6 +3645,24 @@ tern-shapes:tern-hasSimpleValue
     sh:path tern:hasSimpleValue ;
 .
 
+tern-shapes:tern-hasSite
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "has site" ;
+    sh:description "A property that links, e.g., a FeatureOfInterest to a Site or Transect." ;
+    sh:message "A `tern:FeatureOfInterest` _MAY_ have a `tern:hasSite` predicate where the value node is an IRI of type `tern:Site` or `tern:Transect`." ;
+    sh:name "tern:hasSite" ;
+    sh:or (
+            [
+                sh:class tern:Site
+            ]
+            [
+                sh:class tern:Transect
+            ]
+        ) ;
+    sh:path tern:hasSite ;
+.
+
 tern-shapes:tern-hasValue
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -4213,24 +4231,6 @@ tern-shapes:tern-dateDecommissioned
     sh:path tern:dateDecommissioned ;
 .
 
-tern-shapes:tern-hasSite
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "has site" ;
-    sh:description "A property that links, e.g., a FeatureOfInterest to a Site or Transect." ;
-    sh:message "A `tern:FeatureOfInterest` _MAY_ have a `tern:hasSite` predicate where the value node is an IRI of type `tern:Site` or `tern:Transect`." ;
-    sh:name "tern:hasSite" ;
-    sh:or (
-            [
-                sh:class tern:Site
-            ]
-            [
-                sh:class tern:Transect
-            ]
-        ) ;
-    sh:path tern:hasSite ;
-.
-
 tern-shapes:tern-hasSurvey
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -4420,27 +4420,6 @@ tern-shapes:prov-qualifiedAssociation
     sh:path prov:qualifiedAssociation ;
 .
 
-tern-shapes:prov-startedAtTime
-    a sh:PropertyShape ;
-    reg:status reg:statusStable ;
-    skos:prefLabel "started at time" ;
-    sh:description "The time at which an activity started. `xsd:date` is accepted for activities recorded with a date only." ;
-    sh:maxCount 1 ;
-    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime` or `xsd:date`." ;
-    sh:minCount 1 ;
-    sh:name "prov:startedAtTime" ;
-    sh:nodeKind sh:Literal ;
-    sh:or (
-            [
-                sh:datatype xsd:dateTime
-            ]
-            [
-                sh:datatype xsd:date
-            ]
-        ) ;
-    sh:path prov:startedAtTime ;
-.
-
 tern-shapes:sosa-usedProcedure
     a sh:PropertyShape ;
     reg:status reg:statusStable ;
@@ -4471,6 +4450,27 @@ tern-shapes:tern-unit
     sh:name "tern:unit" ;
     sh:nodeKind sh:IRI ;
     sh:path tern:unit ;
+.
+
+tern-shapes:prov-startedAtTime
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    skos:prefLabel "started at time" ;
+    sh:description "The time at which an activity started. `xsd:date` is accepted for activities recorded with a date only." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Survey`, `tern:SiteVisit` or a `tern:Intervention` _MUST_ have exactly 1 `prov:startedAtTime` predicate where the value node is a literal with the datatype `xsd:dateTime` or `xsd:date`." ;
+    sh:minCount 1 ;
+    sh:name "prov:startedAtTime" ;
+    sh:nodeKind sh:Literal ;
+    sh:or (
+            [
+                sh:datatype xsd:dateTime
+            ]
+            [
+                sh:datatype xsd:date
+            ]
+        ) ;
+    sh:path prov:startedAtTime ;
 .
 
 tern-shapes:prov-endedAtTime
