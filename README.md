@@ -14,8 +14,6 @@ The TERN Ontology makes GitHub Releases for each version. See [TERN Ontology rel
 
 Source files are maintained as RDF Turtle files, and they are located in the [docs/](docs/) directory as files ending in `.ttl`.
 
-> Only edit the source files in TopBraid Composer.
-
 Source files:
 
 - [docs/tern.profile.ttl](docs/tern.profile.ttl) TERN Ontology Profiles declaration
@@ -70,9 +68,18 @@ This will normalize the `tern.shacl.ttl` file.
 ontotools file normalize docs/tern.shacl.ttl
 ```
 
+### Validate the TERN Ontology SHACL shapes
+
+After editing `tern.shapes.ttl`, we recommend validating it with the [ValPub](https://agldwg.github.io/valpub-profile/specification.html) validator and the shapes publication validator.
+
+```bash
+pyshacl -s tests/validators/valpub.validator.ttl docs/tern.shapes.ttl
+pyshacl -s tests/validators/tern.shapes.publication.ttl docs/tern.shapes.ttl
+```
+
 ## Making modifications
 
-- Bump the version number in the ontology, the version information, and the modified date.
+- Bump the version number in the ontology, the version information, and the modified date (in both `tern.ttl` and `tern.shapes.ttl`).
 - Enter the new changes into `CHANGELOG.md` following the conventions of semantic versioning.
 
 Each version should:
