@@ -1,0 +1,82 @@
+# Publication metadata checks for shapes in docs/tern.shapes.ttl.
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX pub-shapes: <urn:tern:shapes:publication:>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX sdo: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX tern-shapes: <https://w3id.org/tern/shapes/tern/>
+
+pub-shapes:
+    a owl:Ontology ;
+    rdfs:label "TERN Ontology Shapes publication checks" ;
+.
+
+pub-shapes:Shape
+    a sh:NodeShape ;
+    rdfs:label "Shape" ;
+    sh:property
+        [
+            sh:hasValue tern-shapes: ;
+            sh:maxCount 1 ;
+            sh:message "Requires exactly 1 `rdfs:isDefinedBy tern-shapes:`." ;
+            sh:minCount 1 ;
+            sh:path rdfs:isDefinedBy
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "Requires exactly 1 `sdo:name` literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path sdo:name
+        ] ,
+        [
+            sh:maxCount 1 ;
+            sh:message "Requires exactly 1 `sdo:description` literal." ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path sdo:description
+        ] ;
+    sh:targetClass
+        sh:NodeShape ,
+        sh:PropertyShape ;
+    sh:targetSubjectsOf sh:path ;
+.
+
+pub-shapes:PropertyShape
+    a sh:NodeShape ;
+    rdfs:label "Property Shape" ;
+    sh:property [
+            sh:maxCount 1 ;
+            sh:message "Requires exactly 1 `sh:path`." ;
+            sh:minCount 1 ;
+            sh:path sh:path
+        ] ;
+    sh:targetClass sh:PropertyShape ;
+.
+
+pub-shapes:NodeShape
+    a sh:NodeShape ;
+    rdfs:label "Node Shape" ;
+    sh:property [
+            sh:message "Requires `reg:status` on each property shape." ;
+            sh:node pub-shapes:StatusedShape ;
+            sh:path sh:property
+        ] ;
+    sh:targetClass sh:NodeShape ;
+.
+
+pub-shapes:StatusedShape
+    a sh:NodeShape ;
+    rdfs:label "Statused Shape" ;
+    sh:property [
+            sh:in (
+                    reg:statusStable
+                    reg:statusExperimental
+                ) ;
+            sh:maxCount 1 ;
+            sh:message "Requires exactly 1 `reg:status` of `reg:statusStable` or `reg:statusExperimental`." ;
+            sh:minCount 1 ;
+            sh:path reg:status
+        ] ;
+.

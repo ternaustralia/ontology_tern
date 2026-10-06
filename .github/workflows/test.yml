@@ -35,6 +35,10 @@ jobs:
             command: pyshacl -s docs/meta.shapes.ttl docs/tern.ecoplots.shapes.ttl
           - name: Validate shapes with meta shapes - docs/meta.shapes.ttl
             command: pyshacl -s docs/meta.shapes.ttl docs/meta.shapes.ttl
+          - name: Validate publication metadata with ValPub - docs/tern.shapes.ttl
+            command: pyshacl -s tests/validators/valpub.validator.ttl docs/tern.shapes.ttl
+          - name: Validate shape publication metadata - docs/tern.shapes.ttl
+            command: pyshacl -s tests/validators/tern.shapes.publication.ttl docs/tern.shapes.ttl
           - name: Run shapes test suite
             command: pytest -q tests/shapes
 
