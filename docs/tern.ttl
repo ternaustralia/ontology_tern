@@ -103,8 +103,8 @@ sosa:isSampleOf
         sosa: ,
         ssn: ,
         <https://raw.githubusercontent.com/w3c/sdw/gh-pages/ssn-extensions/rdf/ssn-ext.ttl> ;
-    owl:versionIRI tern:0.8.0 ;
-    owl:versionInfo "0.8.0" ;
+    owl:versionIRI tern:0.9.0 ;
+    owl:versionInfo "0.9.0" ;
     skos:definition "The TERN Ontology comprises a set of vocabularies for representing plot-based ecological data. It was developed primarily based on the SOSA (Sensor, Observation, Sample, and Actuator) ontology. The TERN Ontology's classes and properties have been tailored to describe terrestrial ecology survey data including flora, vegetation and soil, following the methodologies outlined in the Australian Soil and Land Survey Field Handbook." ;
     skos:prefLabel "TERN Ontology" ;
     sdo:codeRepository "https://github.com/ternaustralia/ontology_tern"^^xsd:anyURI ;
@@ -122,7 +122,7 @@ sosa:isSampleOf
         <https://orcid.org/0000-0002-6047-9864> ;
     sdo:dateCreated "2020-09-07"^^xsd:date ;
     sdo:dateIssued "2020-09-07"^^xsd:date ;
-    sdo:dateModified "2022-04-26"^^xsd:date ;
+    sdo:dateModified "2026-10-06"^^xsd:date ;
     sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
     sdo:publisher <https://linked.data.gov.au/org/tern> ;
 .
