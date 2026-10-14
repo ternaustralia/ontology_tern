@@ -1,0 +1,68 @@
+# Sample RDF data using SOSA Ontology
+# Turtle format (.ttl)
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ex: <http://example.org/> .
+
+# Weather station example
+ex:WeatherStation42 a ex:WeatherStation ;
+    rdfs:label "Campus Weather Station 42" ;
+    sosa:hosts ex:Thermometer123, ex:HumiditySensor456 ;
+    ex:location ex:Room104 .
+
+ex:Room104 a ex:Room ;
+    rdfs:label "Room 104" ;
+    ex:hasLocation ex:Building7 .
+
+ex:Building7 a ex:Building ;
+    rdfs:label "Science Building" .
+
+# Sensors
+ex:Thermometer123 a sosa:Sensor ;
+    rdfs:label "Temperature Sensor 123" ;
+    sosa:observes ex:Temperature ;
+    ex:serialNumber "TS-123-ABC" ;
+    ex:manufacturer "SensorTech" .
+
+ex:HumiditySensor456 a sosa:Sensor ;
+    rdfs:label "Humidity Sensor 456" ;
+    sosa:observes ex:Humidity ;
+    ex:serialNumber "HS-456-DEF" ;
+    ex:manufacturer "SensorTech" .
+
+# Observable properties
+ex:Temperature a sosa:ObservableProperty ;
+    rdfs:label "Air Temperature" ;
+    rdfs:comment "The ambient air temperature in degrees Celsius" .
+
+ex:Humidity a sosa:ObservableProperty ;
+    rdfs:label "Air Humidity" ;
+    rdfs:comment "The relative humidity in percent" .
+
+# Observations
+ex:Observation_Temp_001 a sosa:Observation ;
+    sosa:observedProperty ex:Temperature ;
+    sosa:madeBySensor ex:Thermometer123 ;
+    sosa:resultTime "2023-05-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:hasResult ex:Result_Temp_001 ;
+    sosa:hasFeatureOfInterest ex:Room104 .
+
+ex:Observation_Humidity_001 a sosa:Observation ;
+    sosa:observedProperty ex:Humidity ;
+    sosa:madeBySensor ex:HumiditySensor456 ;
+    sosa:resultTime "2023-05-15T10:30:00Z"^^xsd:dateTime ;
+    sosa:hasResult ex:Result_Humidity_001 ;
+    sosa:hasFeatureOfInterest ex:Room104 .
+
+# Results
+ex:Result_Temp_001 a sosa:Result ;
+    sosa:hasSimpleResult "23.5"^^xsd:decimal ;
+    ex:unit "°C" .
+
+ex:Result_Humidity_001 a sosa:Result ;
+    sosa:hasSimpleResult "42.0"^^xsd:decimal ;
+    ex:unit "%" . 
