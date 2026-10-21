@@ -13,6 +13,7 @@
 
 <urn:example:platform-2>
     a tern:Platform ;
+    rdfs:label "Example platform" ;
     tern:dateCommissioned "2021-01-01"^^xsd:date ;
     tern:platformType <urn:example:platform-type-2> ;
 .

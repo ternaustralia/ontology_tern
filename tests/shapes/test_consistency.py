@@ -13,6 +13,7 @@ IGNORED_TARGET_CLASSES = {
     URIRef("https://w3id.org/tern/ontologies/tern/MeasurementRange"),
     URIRef("https://w3id.org/tern/ontologies/tern/RDFDataset"),
     URIRef("https://w3id.org/tern/ontologies/tern/Sample"),
+    URIRef("https://w3id.org/tern/ontologies/tern/Sensor"),
     URIRef("https://w3id.org/tern/ontologies/tern/Taxon"),
     URIRef("https://w3id.org/tern/ontologies/tern/VerticalExtent"),
 }

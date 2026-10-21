@@ -1,0 +1,23 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: ssn:implements is optional on tern:Sensor.
+<urn:example:sensor-1>
+    a tern:Sensor ;
+    rdfs:label "Example sensor" ;
+    sosa:isHostedBy <urn:example:platform-1> ;
+.
+
+<urn:example:platform-1>
+    a tern:Platform ;
+    rdfs:label "Example platform" ;
+    tern:dateCommissioned "2020-01-01"^^xsd:date ;
+    tern:platformType <urn:example:platform-type-1> ;
+.
+
+<urn:example:platform-type-1>
+    a skos:Concept ;
+.

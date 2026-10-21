@@ -341,6 +341,10 @@ target_classes:
       path: http://www.w3.org/ns/sosa/hasMember
   https://w3id.org/tern/ontologies/tern/Platform:
     required_properties:
+    - datatype: http://www.w3.org/2001/XMLSchema#string
+      max_count: 1
+      min_count: 1
+      path: http://www.w3.org/2000/01/rdf-schema#label
     - datatype: http://www.w3.org/2001/XMLSchema#date
       max_count: 1
       min_count: 1
@@ -415,11 +419,6 @@ target_classes:
         - http://www.w3.org/2001/XMLSchema#dateTime
         - http://www.w3.org/2001/XMLSchema#dateTimeStamp
       path: https://w3id.org/tern/ontologies/tern/resultDateTime
-  https://w3id.org/tern/ontologies/tern/Sensor:
-    required_properties:
-    - min_count: 1
-      node_kind: http://www.w3.org/ns/shacl#IRI
-      path: http://www.w3.org/ns/ssn/implements
   https://w3id.org/tern/ontologies/tern/Site:
     required_properties:
     - max_count: 1
