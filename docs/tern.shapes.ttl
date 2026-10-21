@@ -1217,6 +1217,7 @@ tern-shapes:Platform
     rdfs:label "Platform" ;
     rdfs:isDefinedBy tern-shapes: ;
     sh:property
+        tern-shapes:Platform-label ,
         tern-shapes:dcterms-description ,
         tern-shapes:geo-hasGeometry ,
         tern-shapes:sdo-spatial ,
@@ -2532,6 +2533,22 @@ tern-shapes:ObservationCollection-usedProcedure
     sdo:name "used procedure" ;
 .
 
+tern-shapes:Platform-label
+    a sh:PropertyShape ;
+    reg:status reg:statusStable ;
+    rdfs:isDefinedBy tern-shapes: ;
+    skos:prefLabel "platform label" ;
+    sh:datatype xsd:string ;
+    sh:description "The primary label or name of the platform." ;
+    sh:maxCount 1 ;
+    sh:message "A `tern:Platform` _MUST_ have exactly 1 `rdfs:label` predicate with a string value." ;
+    sh:minCount 1 ;
+    sh:name "rdfs:label" ;
+    sh:path rdfs:label ;
+    sdo:description "The primary label or name of the platform." ;
+    sdo:name "platform label" ;
+.
+
 tern-shapes:Procedure-startedAtTime
     a sh:PropertyShape ;
     reg:status reg:statusExperimental ;
@@ -2936,8 +2953,7 @@ tern-shapes:Sensor-implements
     rdfs:isDefinedBy tern-shapes: ;
     skos:prefLabel "implements" ;
     sh:description "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)." ;
-    sh:message "A `tern:Sensor` _MUST_ have at least 1 `ssn:implements` predicate where the value node is an IRI." ;
-    sh:minCount 1 ;
+    sh:message "A `tern:Sensor` _MAY_ have an `ssn:implements` predicate where the value node is an IRI." ;
     sh:name "ssn:implements" ;
     sh:nodeKind sh:IRI ;
     sh:path ssn:implements ;
@@ -5634,7 +5650,7 @@ tern-shapes:
     sdo:creator <https://orcid.org/0000-0002-6047-9864> ;
     sdo:dateCreated "2022-02-04"^^xsd:date ;
     sdo:dateIssued "2022-02-04"^^xsd:date ;
-    sdo:dateModified "2026-10-02"^^xsd:date ;
+    sdo:dateModified "2026-10-21"^^xsd:date ;
     sdo:description "SHACL Shapes for the TERN Ontology. The version number of this SHACL file is kept in sync with the main TERN Ontology" ;
     sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
     sdo:name "TERN Ontology Shapes" ;

@@ -1,0 +1,14 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tern: <https://w3id.org/tern/ontologies/tern/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Rule: tern:Platform must have exactly 1 rdfs:label.
+<urn:example:platform-1>
+    a tern:Platform ;
+    tern:dateCommissioned "2020-01-01"^^xsd:date ;
+    tern:platformType <urn:example:platform-type-1> ;
+.
+
+<urn:example:platform-type-1>
+    a skos:Concept ;
+.
